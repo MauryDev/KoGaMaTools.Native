@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="../Il2CppInteropCpp/Il2CppInterop/Il2CppInterop.vcxitems" />
+  <Project Path="KoGaMaTools.Native/KoGaMaTools.Native.vcxproj" />
+</Solution>

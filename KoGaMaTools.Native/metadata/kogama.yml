@@ -1,0 +1,17 @@
+---
+name: KoGaMaAPI::KoGaMa
+output: KoGaMaAPI.KoGaMa
+klasses:
+- fullname: PaintCubes
+- fullname: CubeModelTool
+- fullname: MVInputWrapper
+- fullname: KogamaControls
+- fullname: CubeModelingStateMachine 
+- fullname: MVCubeModelBase
+- fullname: CubePickingInfo 
+- fullname: EditCubeChange
+- fullname: PaintCursor
+- fullname: AudioActions
+- fullname: ConstraintVisualizer
+- fullname: ModelingDynamicBoxConstraint
+- fullname: ModelingBoxCountConstraint
