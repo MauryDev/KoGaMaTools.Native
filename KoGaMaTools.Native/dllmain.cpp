@@ -1,7 +1,7 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include <windows.h>
 
-#include "MinHook.h"
+#include <MinHook.h>
 
 #include <Tools.Il2Cpp.Lib.h>
 #include <Tools.Il2Cpp.ICalls.h>

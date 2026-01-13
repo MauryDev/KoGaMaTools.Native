@@ -3,6 +3,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="../Il2CppInteropCpp/Il2CppInterop/Il2CppInterop.vcxitems" />
-  <Project Path="KoGaMaTools.Native/KoGaMaTools.Native.vcxproj" />
+  <Project Path="../Il2CppInteropCpp/Il2CppInterop/Il2CppInterop.vcxitems" Id="ae889856-0645-42a7-8f1d-eb06456884bf" />
+  <Project Path="KoGaMaTools.Native/KoGaMaTools.Native.vcxproj" Id="5babd33d-5355-41a4-bd6b-3ea27184ae0b" />
 </Solution>

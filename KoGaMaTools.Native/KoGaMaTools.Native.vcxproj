@@ -150,7 +150,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="kiero\kiero.cpp" />
     <ClCompile Include="metadata\KoGaMaAPI.KoGaMa.cpp" />
     <ClCompile Include="services\KieroUI.cpp" />
     <ClCompile Include="services\NoLimit.cpp" />
@@ -158,7 +157,6 @@
     <ClCompile Include="services\SinglePaintFace.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="kiero\kiero.h" />
     <ClInclude Include="metadata\KoGaMaAPI.KoGaMa.h" />
     <ClInclude Include="services\KieroUI.h" />
     <ClInclude Include="services\NoLimit.h" />
