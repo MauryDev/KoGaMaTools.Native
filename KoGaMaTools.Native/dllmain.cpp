@@ -12,8 +12,11 @@
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
 	KoGaMaTools::Services::PathHelper::Install((HMODULE)lpReserved);
+	do {
+		Sleep(2000);
 
-	Sleep(10000);
+	} while (GetModuleHandleA("GameAssembly.dll") == nullptr);
+
 	auto& folderWork = KoGaMaTools::Services::PathHelper::GetFolderWork();
 	auto region = KoGaMaTools::Services::PathHelper::RegionToStr(KoGaMaTools::Services::PathHelper::GetRegion());
 #ifdef NDEBUG
@@ -29,12 +32,11 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 
 
 	KoGaMaTools::Services::KieroUI::InitHook();
-	KoGaMaTools::UI::MainUI::Install();
 
 
 
 	Tools::Il2Cpp::Init();
-
+	Tools::Il2Cpp::il2cpp_init("");
 
 	auto metadata1 = Tools::Il2Cpp::Metadata::ReadMetadataFromFile(metadata1Path.c_str());
 
@@ -53,6 +55,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 
 	KoGaMaTools::Services::SinglePaintFace::Install();
 	KoGaMaTools::Services::NoLimit::Install();
+	KoGaMaTools::UI::MainUI::Install();
 
 
 
