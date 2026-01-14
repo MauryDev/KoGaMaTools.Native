@@ -9,7 +9,6 @@ void KoGaMaTools::UI::MainUI::Install()
 
 	Services::KieroUI::SetOnRender(Render);
 }
-// TODO: Add ignore input in-game
 void KoGaMaTools::UI::MainUI::Render()
 {
 	namespace K = KoGaMaAPI::KoGaMa;
