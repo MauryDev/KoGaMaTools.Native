@@ -4,6 +4,9 @@
 
 namespace KoGaMaTools::Services::SinglePaintFace
 {
+	namespace {
+		void (*OldFunc)(void* instance, void* e, void* methodInfo);
+	}
 	void Install()
 	{
 		auto methodVer = (void**)KoGaMaAPI::KoGaMa::PaintCubes::m_Execute.ptr;
@@ -18,8 +21,7 @@ namespace KoGaMaTools::Services::SinglePaintFace
 		namespace K = KoGaMaAPI::KoGaMa;
 		if (Enable)
 		{
-			auto klass = Il2CppObject(instance).GetClass().getName();
-			auto klass2 = Il2CppObject(e).GetClass().getName();
+			
 
 			if (K::CubeModelTool::f_waitForMouseUp.Get<Tools::Il2Cpp::Il2CppBoolean>(instance))
 			{

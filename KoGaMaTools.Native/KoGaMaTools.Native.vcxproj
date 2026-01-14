@@ -155,13 +155,16 @@
     <ClCompile Include="services\NoLimit.cpp" />
     <ClCompile Include="services\PathHelper.cpp" />
     <ClCompile Include="services\SinglePaintFace.cpp" />
+    <ClCompile Include="UI\MainUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="metadata\KoGaMaAPI.KoGaMa.h" />
     <ClInclude Include="services\KieroUI.h" />
     <ClInclude Include="services\NoLimit.h" />
     <ClInclude Include="services\PathHelper.h" />
+    <ClInclude Include="services\services.h" />
     <ClInclude Include="services\SinglePaintFace.h" />
+    <ClInclude Include="UI\MainUI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

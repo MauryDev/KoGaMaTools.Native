@@ -9,7 +9,8 @@ namespace KoGaMaTools::Services::PathHelper {
 		Friends,
 		Custom
 	};
-	inline HMODULE moduleDll;
+
+	void Install(HMODULE moduleDll);
 	const std::filesystem::path& GetDllPath();
 	const std::filesystem::path& GetFolderWork();
 	const std::filesystem::path& GetKoGaMaPath();

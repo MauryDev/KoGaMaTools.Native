@@ -12,9 +12,13 @@ namespace KoGaMaTools::Services::PathHelper {
             {"Friends", KoGaMaRegion::Friends},
             {"Custom", KoGaMaRegion::Custom}
         };
-
+        HMODULE moduleDll;
        
 
+    }
+    void Install(HMODULE moduleDll)
+    {
+        PathHelper::moduleDll = moduleDll;
     }
     const std::filesystem::path& GetDllPath()
     {

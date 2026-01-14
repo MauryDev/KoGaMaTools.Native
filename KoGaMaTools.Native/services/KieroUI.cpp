@@ -8,11 +8,26 @@
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
 
+
+
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 
 namespace KoGaMaTools::Services::KieroUI
 {
+	namespace {
+		OnRender RenderUi;
+
+		Present oPresent;
+		HWND window = NULL;
+		WNDPROC oWndProc;
+		ID3D11Device* pDevice = NULL;
+		ID3D11DeviceContext* pContext = NULL;
+		ID3D11RenderTargetView* mainRenderTargetView;
+		HRESULT(__stdcall* oResizeBuffers)(IDXGISwapChain*, UINT, UINT, UINT, DXGI_FORMAT, UINT);
+		bool init = false;
+
+	}
 	void InitHook()
 	{
 		bool init_hook = false;
@@ -37,6 +52,11 @@ namespace KoGaMaTools::Services::KieroUI
 		io.ConfigFlags = ImGuiConfigFlags_NoMouseCursorChange;
 		ImGui_ImplWin32_Init(window);
 		ImGui_ImplDX11_Init(pDevice, pContext);
+	}
+
+	void SetOnRender(OnRender render)
+	{
+		RenderUi = render;
 	}
 
 	LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
@@ -78,17 +98,6 @@ namespace KoGaMaTools::Services::KieroUI
 		return hr;
 	}
 
-	void RenderUi()
-	{
-		static bool IsEnableView = true;
-		
-		ImGui::Begin("KoGaMa Build");
-		ImGui::Checkbox("Single Face", &SinglePaintFace::Enable);
-		ImGui::Checkbox("No Limit", &NoLimit::Enable);
-
-		ImGui::End();
-
-	}
 
 	HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
 	{
@@ -117,7 +126,8 @@ namespace KoGaMaTools::Services::KieroUI
 		ImGui_ImplWin32_NewFrame();
 		ImGui::NewFrame();
 
-		RenderUi();
+		if (KieroUI::RenderUi != nullptr)
+			KieroUI::RenderUi();
 
 		ImGui::Render();
 
