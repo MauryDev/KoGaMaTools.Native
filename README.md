@@ -2,7 +2,7 @@
 
 ![Banner do Projeto](src/img/banner.jpg)
 
-Uma ferramenta nativa desenvolvida em C++ para injetar funcionalidades extras e modificações no cliente do jogo KoGaMa (Standalone). O projeto utiliza instrumentação IL2CPP para interagir diretamente com as classes internas do jogo, oferecendo recursos como "No Limit" para construção e pintura de faces individuais.
+A native tool developed in C++ designed to inject extra features and modifications into the KoGaMa (Standalone) game client. The project utilizes IL2CPP instrumentation to interact directly with internal game classes, offering features such as "No Limit" for building and single-face painting.
 
 ## 🛡 Badges
 
@@ -11,85 +11,85 @@ Uma ferramenta nativa desenvolvida em C++ para injetar funcionalidades extras e 
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Develop-orange)
 
-## 🚧 Status do Projeto
+## 🚧 Project Status
 
-O projeto encontra-se em desenvolvimento ativo (branch `develop`). Novas funcionalidades e metadados estão sendo mapeados continuamente.
+The project is under active development (develop `branch`). New features and metadata are being mapped continuously.
 
 ## 📋 Tabela de Conteúdos
 
-- [Sobre](#kogamatoolsnative)
+- [About](#kogamatoolsnative)
 - [Features](#-features)
-- [Demonstração](#-demonstração-da-aplicação)
-- [Pré-requisitos](#-pré-requisitos)
-- [Como Rodar](#-como-rodar-a-aplicação)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Contribuição](#-contribuição)
-- [Autor](#-autor)
-- [Licença](#-licença)
+- [Demonstration](#-application-demonstration)
+- [Prerequisites](#-prerequisites)
+- [How to Run](#-how-to-run)
+- [Technologies Used](#-techonologies-used)
+- [Contribution](#-contribution)
+- [Author](#-author)
+- [License](#-license)
 
 ## 🚀 Features
 
-O projeto injeta uma DLL no processo do jogo e apresenta um menu (Overlay) utilizando ImGui e DirectX 11.
+The project injects a DLL into the game process and presents an Overlay menu using ImGui and DirectX 11.
 
-* **In-Game Menu**: Interface gráfica acessível dentro do jogo para ativar/desativar funções em tempo real.
-* **No Limit**: Remove as restrições de construção do jogo.
-    * Ignora limites de quantidade de cubos (BoxCountConstraint).
-    * Ignora limites de área dinâmica (DynamicBoxConstraint).
-* **Single Paint Face**: Modifica a ferramenta de pintura para permitir pintar apenas uma face única de um cubo, ao invés do cubo inteiro ou áreas adjacentes.
-* **Suporte Multi-Região**: Detecção automática da região do servidor (BR, WWW, Friends) para carregar os metadados corretos.
+* **In-Game Menu**: A graphical interface accessible within the game to toggle functions in real-time.
+* **No Limit**: Removes the game's building restrictions.
+    * Ignores cube count limits (BoxCountConstraint).
+    * Ignores dynamic area limits (DynamicBoxConstraint).
+* **Single Paint Face**: Modifies the painting tool to allow painting a single face of a cube rather than the entire cube or adjacent areas.
+* **Multi-Region Support**: Automatic detection of the server region (BR, WWW, Friends) to load the correct metadata.
 
-## 📷 Demonstração da Aplicação
+## 📷 Application Demonstration
 
-![In-Game Projeto](src/img/demostração.png)
+![In-Game Project](src/img/demostração.png)
 
-## ⚙️ Pré-requisitos
+## ⚙️ Prerequisites
 
-Para compilar e executar o projeto, você precisará de:
+To compile and run the project, you will need:
 
-* **Sistema Operacional**: Windows (x64).
-* **IDE**: Visual Studio 2022 (com suporte a C++ v145).
-* **Dependências**:
-    * O projeto depende de metadados IL2CPP gerados (`Tools.Il2Cpp.ICalls.dat`, `KoGaMaAPI.KoGaMa.dat`).
-    * Biblioteca MinHook (já referenciada no projeto).
+* **Operating System**: Windows (x64).
+* **IDE**: Visual Studio 2022 (C++ v145 support).
+* **Dependencies**:
+    * The project relies on generated IL2CPP metadata (`Tools.Il2Cpp.ICalls.dat`, `KoGaMaAPI.KoGaMa.dat`).
+    * MinHook and Kiero Libraries  (already referenced in the project).
 
-## 🏃 Como rodar a aplicação
+## 🏃 How to Run
 
-### Compilação
+### Compilation
 
-1.  Clone o repositório.
-2.  Abra o arquivo de solução `KoGaMaTools.Native.slnx` no Visual Studio.
-3.  Selecione a configuração `Release` ou `Debug` e a plataforma `x64`.
-4.  Compile o projeto.
+1.  Clone the repository.
+2.  Open the solution file `KoGaMaTools.Native.slnx` in Visual Studio.
+3.  Select the `Release` or `Debug` configuration and the `x64` platform.
+4.  Build the project.
 
-### Instalação/Injeção
+### Installation/Injection
 
-Após a compilação, o script de build (`build/publish.cmd`) organiza os arquivos de saída.
+After compilation, the build script (`build/publish.cmd`) organizes the output files.
 
-1.  A DLL gerada (`KoGaMaTools.Native.dll`) deve ser injetada no processo do jogo KoGaMa.
-2.  **Importante**: A DLL espera encontrar uma estrutura de pastas específica para carregar os metadados corretos baseados na região do executável do jogo. Certifique-se de que a DLL `minhook.x64.dll` e a pasta com os metadados (ex: `BR/`, `WWW/`) estejam no diretório de trabalho esperado pela injeção.
+1.  The generated DLL (`KoGaMaTools.Native.dll`) must be injected into the KoGaMa game process.
+2.  **Important**: The DLL expects a specific folder structure to load the correct metadata based on the game executable's region. Ensure that `minhook.x64.dll` and the metadata folder (e.g., `BR/`, `WWW/`) are in the working directory expected by the injector.
 
-## 🛠 Tecnologias utilizadas
+## 🛠 Technologies used
 
-* **[C++ 20](https://en.cppreference.com/w/cpp/20)** - Linguagem principal do projeto.
-* **[MinHook](https://github.com/TsudaKageyu/minhook)** - Biblioteca para hook de funções da API do Windows.
-* **[Kiero](https://github.com/Rebzzel/kiero)** - Hook universal para interfaces gráficas (DirectX 11).
-* **[ImGui](https://github.com/ocornut/imgui)** - Biblioteca para criação da interface de usuário (Overlay).
-* **IL2CPP Interop** - Sistema para interação com o backend IL2CPP da Unity.
+* **[C++ 20](https://en.cppreference.com/w/cpp/20)** - Main programming language.
+* **[MinHook](https://github.com/TsudaKageyu/minhook)** - Library for hooking Windows API functions.
+* **[Kiero](https://github.com/Rebzzel/kiero)** - Universal hook for graphical interfaces (DirectX 11).
+* **[ImGui](https://github.com/ocornut/imgui)** - Library for creating the user interface (Overlay).
+* **IL2CPP Interop** - System for interacting with Unity's IL2CPP backend.
 
 ## 🤝 Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues relatando problemas ou pull requests com melhorias.
 
-1.  Faça um Fork do projeto
-2.  Crie sua Feature Branch (`git checkout -b feature/MinhaFeature`)
-3.  Commit suas mudanças (`git commit -m 'Adicionando nova feature'`)
-4.  Push para a Branch (`git push origin feature/MinhaFeature`)
-5.  Abra um Pull Request
+1.  Fork the project.
+2.  Create your Feature Branch (`git checkout -b feature/MyFeature`)
+3.  Commit your changes (`git commit -m 'Adding new feature'`)
+4.  Push to the Branch (`git push origin feature/MyFeature`)
+5.  Open a Pull Request.
 
-## 👤 Autor
+## 👤 Author
 
-* **maurydev** - *Desenvolvimento inicial* - [Perfil GitHub](https://github.com/MauryDev)
+* **MauryDev** - *Initial Development* - [GitHub Profile](https://github.com/MauryDev)
 
-## 📝 Licença
+## 📝 License
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE.txt](LICENSE.txt) para detalhes.
+This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details.

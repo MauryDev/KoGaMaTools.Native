@@ -12,8 +12,20 @@ void KoGaMaTools::UI::MainUI::Install()
 void KoGaMaTools::UI::MainUI::Render()
 {
 	namespace K = KoGaMaAPI::KoGaMa;
-	ImGui::SetNextWindowSize(ImVec2(300, 200));
+	static bool first = true, enable = true;
+	if (first)
+	{
+		ImGui::SetNextWindowSize(ImVec2(300, 200));
+		first = false;
+	}
+	if ((ImGui::IsKeyDown(ImGuiKey::ImGuiKey_LeftCtrl) || ImGui::IsKeyDown(ImGuiKey::ImGuiKey_RightCtrl)) && ImGui::IsKeyPressed(ImGuiKey::ImGuiKey_B))
+	{
+		enable = !enable;
+	}
+	if (!enable)
+		return;
 	ImGui::Begin("KoGaMa Build");
+	
 	if (ImGui::IsWindowHovered())
 	{
 		K::MVInputWrapper::m_SuppressAllInput();
@@ -23,6 +35,7 @@ void KoGaMaTools::UI::MainUI::Render()
 	}
 	ImGui::Checkbox("Single Face", &Services::SinglePaintFace::Enable);
 	ImGui::Checkbox("No Limit", &Services::NoLimit::Enable);
+	ImGui::TextUnformatted("Ctrl + B - Toggle Enable UI");
 
 	ImGui::End();
 }
