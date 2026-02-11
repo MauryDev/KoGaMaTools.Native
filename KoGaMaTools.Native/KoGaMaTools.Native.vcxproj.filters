@@ -27,13 +27,19 @@
     <ClCompile Include="services\KieroUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\SinglePaintFace.cpp">
+    <ClCompile Include="services\Build\SinglePaintFace.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\NoLimit.cpp">
+    <ClCompile Include="services\Build\NoLimit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UI\MainUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="services\Build\BlueModeTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="services\LoggerService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,16 +53,22 @@
     <ClInclude Include="services\KieroUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\SinglePaintFace.h">
+    <ClInclude Include="services\Build\SinglePaintFace.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\NoLimit.h">
+    <ClInclude Include="services\Build\NoLimit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UI\MainUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="services\services.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="services\Build\BlueModeTool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="services\LoggerService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

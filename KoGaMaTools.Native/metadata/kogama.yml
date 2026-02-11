@@ -15,3 +15,4 @@ klasses:
 - fullname: ConstraintVisualizer
 - fullname: ModelingDynamicBoxConstraint
 - fullname: ModelingBoxCountConstraint
+- fullname: MainCameraManager

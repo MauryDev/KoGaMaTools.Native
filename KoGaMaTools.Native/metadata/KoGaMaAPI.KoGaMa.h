@@ -267,5 +267,58 @@ struct ModelingBoxCountConstraint {
     static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
     
 };
+struct MainCameraManager {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<true> /* System.Action`1<System.Boolean> */ f_OnMuteChange,/* System.Action`1<System.Boolean> */ f_OnCameraEffectsChange,/* System.Action */ f_OnCameraSettingAdded,/* System.Action`1<System.Boolean> */ f_OnCameraCubeAddedRemoved,/* System.Action`1<System.Boolean> */ f_OnGameCameraEffectsChange,/* System.Single */ f_DistanceToAvatarBase,/* CameraType */ f_DefaultCameraType,/* System.Boolean */ f_IsCameraForcedFirstPerson,/* ICameraSettings */ f_cameraSettings,/* System.Single */ f_baseVolume,/* System.Boolean */ f_isMuted,/* System.Boolean */ f_isTemporarilyMuted,/* System.Boolean */ f_storedMuteValue;
+inline static Utils::FieldInfo<false> /* UnityEngine.Camera */  f_mainCamera,/* UnityEngine.Transform */  f_secondaryCamera,/* UnityEngine.Transform */  f_tertiaryCamera,/* TransitionCamera */  f_transitionCamera,/* UnityEngine.AudioSource */  f_plingSound,/* GrayscaleEffect */  f_greyScaleEffect,/* UnityEngine.Skybox */  f_skybox,/* UnityEngine.AudioListener */  f_audioListener,/* LineDrawManager */  f_lineDrawManager,/* ScreenSizeOptimizer */  f_screenSizeOptimizer,/* UnityEngine.Shader */  f_transparentMultiplyColor,/* System.EventHandler`1<OnIgnoreInputTypesArgs> */  f_OnIgnoreInputTypes,/* PostProcessingManager */  f_postProcessingManager,/* MVCameraController */  f_cameraController,/* ProtectedTransform */  f_protectedTransform,/* System.Boolean */  f_isLogicRendered,/* System.Boolean */  f_blueModeEnabled,/* System.Int32 */  f_cullingMask,/* MaskMode */  f_maskMode;
+
+	/*System.Void add_OnIgnoreInputTypes(System.EventHandler`1<OnIgnoreInputTypesArgs> value)*/ inline static Utils::MethodInfo<false,false> m_add_OnIgnoreInputTypes;
+/*System.Void remove_OnIgnoreInputTypes(System.EventHandler`1<OnIgnoreInputTypesArgs> value)*/ inline static Utils::MethodInfo<false,false> m_remove_OnIgnoreInputTypes;
+/*UnityEngine.Skybox get_Skybox()*/ inline static Utils::MethodInfo<false,false> m_get_Skybox;
+/*LineDrawManager get_LineDrawManager()*/ inline static Utils::MethodInfo<false,false> m_get_LineDrawManager;
+/*System.Single get_FieldOfView()*/ inline static Utils::MethodInfo<false,false> m_get_FieldOfView;
+/*System.Void set_FieldOfView(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_FieldOfView;
+/*UnityEngine.Camera get_MainCamera()*/ inline static Utils::MethodInfo<false,false> m_get_MainCamera;
+/*UnityEngine.Camera get_TertiaryCamera()*/ inline static Utils::MethodInfo<false,false> m_get_TertiaryCamera;
+/*UnityEngine.Camera get_SecondaryCamera()*/ inline static Utils::MethodInfo<false,false> m_get_SecondaryCamera;
+/*MVCameraBase get_CurrentCamera()*/ inline static Utils::MethodInfo<false,false> m_get_CurrentCamera;
+/*ProtectedTransform get_ProtectedTransform()*/ inline static Utils::MethodInfo<false,false> m_get_ProtectedTransform;
+/*UnityEngine.Vector3 get_FireDirection()*/ inline static Utils::MethodInfo<false,false> m_get_FireDirection;
+/*UnityEngine.Vector3 get_FireOrigin()*/ inline static Utils::MethodInfo<false,false> m_get_FireOrigin;
+/*PostProcessingManager get_PostProcessingManager()*/ inline static Utils::MethodInfo<false,false> m_get_PostProcessingManager;
+/*System.Boolean get_BlueModeEnabled()*/ inline static Utils::MethodInfo<false,false> m_get_BlueModeEnabled;
+/*System.Void set_BlueModeEnabled(System.Boolean value)*/ inline static Utils::MethodInfo<false,false> m_set_BlueModeEnabled;
+/*System.Boolean get_Mute()*/ inline static Utils::MethodInfo<true,false> m_get_Mute;
+/*System.Void set_Mute(System.Boolean value)*/ inline static Utils::MethodInfo<true,false> m_set_Mute;
+/*MaskMode get_CamMaskMode()*/ inline static Utils::MethodInfo<false,false> m_get_CamMaskMode;
+/*System.Void set_CamMaskMode(MaskMode value)*/ inline static Utils::MethodInfo<false,false> m_set_CamMaskMode;
+/*System.Boolean get_TertiaryCameraActive()*/ inline static Utils::MethodInfo<false,false> m_get_TertiaryCameraActive;
+/*System.Void set_TertiaryCameraActive(System.Boolean value)*/ inline static Utils::MethodInfo<false,false> m_set_TertiaryCameraActive;
+/*System.Boolean get_IsLogicRendered()*/ inline static Utils::MethodInfo<false,false> m_get_IsLogicRendered;
+/*System.Void set_IsLogicRendered(System.Boolean value)*/ inline static Utils::MethodInfo<false,false> m_set_IsLogicRendered;
+/*System.Void Awake()*/ inline static Utils::MethodInfo<false,false> m_Awake;
+/*System.Void Init()*/ inline static Utils::MethodInfo<false,false> m_Init;
+/*System.Void EnableScreenOptimizer()*/ inline static Utils::MethodInfo<false,false> m_EnableScreenOptimizer;
+/*System.Void PlayPlingSound()*/ inline static Utils::MethodInfo<false,false> m_PlayPlingSound;
+/*System.Void SetCameraController(MVCameraController camController)*/ inline static Utils::MethodInfo<false,false> m_SetCameraController;
+/*System.Void UpdateAudioListener()*/ inline static Utils::MethodInfo<false,false> m_UpdateAudioListener;
+/*System.Boolean IsCameraControllerSet()*/ inline static Utils::MethodInfo<false,false> m_IsCameraControllerSet;
+/*System.Void IgnoreInputTypes(IgnoreInputTypes inputTypes)*/ inline static Utils::MethodInfo<false,false> m_IgnoreInputTypes;
+/*System.Void UpdateCamera()*/ inline static Utils::MethodInfo<false,false> m_UpdateCamera;
+/*System.Void StartTransitionCam(System.Single transitionTime = 2, System.Boolean soft = False)*/ inline static Utils::MethodInfo<false,false> m_StartTransitionCam;
+/*System.Void CancelTransitionCam()*/ inline static Utils::MethodInfo<false,false> m_CancelTransitionCam;
+/*System.Void RenderLogic(System.Boolean renderLogic)*/ inline static Utils::MethodInfo<false,false> m_RenderLogic;
+/*System.Void OnDestroy()*/ inline static Utils::MethodInfo<false,false> m_OnDestroy;
+/*System.Void TemporaryMute(System.Boolean muteTemporarily)*/ inline static Utils::MethodInfo<true,false> m_TemporaryMute;
+/*System.Void RegisterCameraWithSettings(ICameraSettings camSettings)*/ inline static Utils::MethodInfo<true,false> m_RegisterCameraWithSettings;
+/*System.Void UnRegisterCameraWithSettings()*/ inline static Utils::MethodInfo<true,false> m_UnRegisterCameraWithSettings;
+/*ICameraSettings GetSettings()*/ inline static Utils::MethodInfo<true,false> m_GetSettings;
+/*System.Boolean HasSetting()*/ inline static Utils::MethodInfo<true,false> m_HasSetting;
+/*System.Void .ctor()*/ inline static Utils::MethodInfo<false,false> m_ctor;
+/*System.Void .cctor()*/ inline static Utils::MethodInfo<true,false> m_cctor;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
 
 }

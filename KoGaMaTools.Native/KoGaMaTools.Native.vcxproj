@@ -151,19 +151,23 @@
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="metadata\KoGaMaAPI.KoGaMa.cpp" />
+    <ClCompile Include="services\Build\BlueModeTool.cpp" />
     <ClCompile Include="services\KieroUI.cpp" />
-    <ClCompile Include="services\NoLimit.cpp" />
+    <ClCompile Include="services\Build\NoLimit.cpp" />
+    <ClCompile Include="services\LoggerService.cpp" />
     <ClCompile Include="services\PathHelper.cpp" />
-    <ClCompile Include="services\SinglePaintFace.cpp" />
+    <ClCompile Include="services\Build\SinglePaintFace.cpp" />
     <ClCompile Include="UI\MainUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="metadata\KoGaMaAPI.KoGaMa.h" />
+    <ClInclude Include="services\Build\BlueModeTool.h" />
     <ClInclude Include="services\KieroUI.h" />
-    <ClInclude Include="services\NoLimit.h" />
+    <ClInclude Include="services\Build\NoLimit.h" />
+    <ClInclude Include="services\LoggerService.h" />
     <ClInclude Include="services\PathHelper.h" />
     <ClInclude Include="services\services.h" />
-    <ClInclude Include="services\SinglePaintFace.h" />
+    <ClInclude Include="services\Build\SinglePaintFace.h" />
     <ClInclude Include="UI\MainUI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

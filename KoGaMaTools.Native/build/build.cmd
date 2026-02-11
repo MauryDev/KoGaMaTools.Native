@@ -1,3 +1,9 @@
+@echo off
+
+SETLOCAL
 set Il2CppGenerator="C:\dev\Visual Studio\Il2CppInteropCpp\GeneratorCode\bin\Release\net9.0\publish\GeneratorCode.exe"
-cd ..\metadata
+cd ..\metadata 
 %Il2CppGenerator% build WWW "kogama.yml"
+
+
+ENDLOCAL

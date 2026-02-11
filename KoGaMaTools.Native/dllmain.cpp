@@ -13,9 +13,9 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 {
 	KoGaMaTools::Services::PathHelper::Install((HMODULE)lpReserved);
 	do {
-		Sleep(2000);
+		Sleep(4000);
 
-	} while (GetModuleHandleA("GameAssembly.dll") == nullptr);
+	} while (GetModuleHandleA("GameAssembly.dll") == nullptr || GetModuleHandleA("UnityPlayer.dll") == nullptr);
 
 	auto& folderWork = KoGaMaTools::Services::PathHelper::GetFolderWork();
 	auto region = KoGaMaTools::Services::PathHelper::RegionToStr(KoGaMaTools::Services::PathHelper::GetRegion());
@@ -55,6 +55,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 
 	KoGaMaTools::Services::SinglePaintFace::Install();
 	KoGaMaTools::Services::NoLimit::Install();
+	KoGaMaTools::Services::BlueModeTool::Install();
+
 	KoGaMaTools::UI::MainUI::Install();
 
 

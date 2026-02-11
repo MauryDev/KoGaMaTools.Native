@@ -1,9 +1,12 @@
 #include "MainUI.h"
 #include <imgui.h>
 #include "..\services\KieroUI.h"
-#include "..\services\NoLimit.h"
-#include "..\services\SinglePaintFace.h"
+#include "../services/Build/NoLimit.h"
+#include "../services/Build/SinglePaintFace.h"
+#include "../services/Build/BlueModeTool.h"
+
 #include "../metadata/KoGaMaAPI.KoGaMa.h"
+
 void KoGaMaTools::UI::MainUI::Install()
 {
 
@@ -33,9 +36,32 @@ void KoGaMaTools::UI::MainUI::Render()
 		K::MVInputWrapper::m_SuppressShortcutKeys();
 
 	}
-	ImGui::Checkbox("Single Face", &Services::SinglePaintFace::Enable);
-	ImGui::Checkbox("No Limit", &Services::NoLimit::Enable);
+
+	TabBarTools();
 	ImGui::TextUnformatted("Ctrl + B - Toggle Enable UI");
 
 	ImGui::End();
+}
+
+void KoGaMaTools::UI::MainUI::TabBarTools()
+{
+	if (ImGui::BeginTabBar("##tabs1"))
+	{
+		TabItem_Build();
+
+		ImGui::EndTabBar();
+	}
+}
+
+void KoGaMaTools::UI::MainUI::TabItem_Build()
+{
+	if (ImGui::BeginTabItem("Build"))
+	{
+		ImGui::Checkbox("Single Face", &Services::SinglePaintFace::Enable);
+		ImGui::Checkbox("No Limit", &Services::NoLimit::Enable);
+
+		ImGui::Checkbox("Blue Mode", &Services::BlueModeTool::Enable);
+
+		ImGui::EndTabItem();
+	}
 }

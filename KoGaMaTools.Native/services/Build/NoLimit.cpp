@@ -1,5 +1,5 @@
 #include "NoLimit.h"
-#include "..\metadata\KoGaMaAPI.KoGaMa.h"
+#include "..\..\metadata\KoGaMaAPI.KoGaMa.h"
 #include "MinHook.h"
 
 namespace KoGaMaTools::Services::NoLimit

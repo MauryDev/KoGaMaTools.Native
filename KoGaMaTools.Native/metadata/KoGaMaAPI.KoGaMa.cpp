@@ -19,6 +19,7 @@ AudioActions::Init(klassData[9]);
 ConstraintVisualizer::Init(klassData[10]);
 ModelingDynamicBoxConstraint::Init(klassData[11]);
 ModelingBoxCountConstraint::Init(klassData[12]);
+MainCameraManager::Init(klassData[13]);
 
 
         ::Tools::Il2Cpp::Metadata::Free(metadata);        
@@ -506,6 +507,99 @@ getM(CanAddCubeAt,1);
 getM(CanRemoveCubeAt,2);
 getM(CanEditCubeAt,3);
 getM(CubeModel_Changed,4);
+
+#undef getF
+#undef getM
+#undef getMi
+    }
+
+    void MainCameraManager::Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition) {
+        #define getF(a,b) f_##a = klass.getField(#b)
+#define getMi(a,i,token) m##i##_##a = klass.getMethodByToken( classdefinition.GetMethodToken(token))
+#define getM(a,token) m_##a = klass.getMethodByToken(classdefinition.GetMethodToken(token))
+klass = Il2CppClass("Assembly-CSharp.dll", "", "MainCameraManager");
+
+if (klass.isNull()) {
+return;
+}
+		klass.RuntimeInit();
+getF(OnMuteChange,OnMuteChange);
+getF(OnCameraEffectsChange,OnCameraEffectsChange);
+getF(OnCameraSettingAdded,OnCameraSettingAdded);
+getF(OnCameraCubeAddedRemoved,OnCameraCubeAddedRemoved);
+getF(OnGameCameraEffectsChange,OnGameCameraEffectsChange);
+getF(DistanceToAvatarBase,DistanceToAvatarBase);
+getF(DefaultCameraType,DefaultCameraType);
+getF(IsCameraForcedFirstPerson,IsCameraForcedFirstPerson);
+getF(cameraSettings,cameraSettings);
+getF(baseVolume,baseVolume);
+getF(isMuted,isMuted);
+getF(isTemporarilyMuted,isTemporarilyMuted);
+getF(storedMuteValue,storedMuteValue);
+getF(mainCamera,mainCamera);
+getF(secondaryCamera,secondaryCamera);
+getF(tertiaryCamera,tertiaryCamera);
+getF(transitionCamera,transitionCamera);
+getF(plingSound,plingSound);
+getF(greyScaleEffect,greyScaleEffect);
+getF(skybox,skybox);
+getF(audioListener,audioListener);
+getF(lineDrawManager,lineDrawManager);
+getF(screenSizeOptimizer,screenSizeOptimizer);
+getF(transparentMultiplyColor,transparentMultiplyColor);
+getF(OnIgnoreInputTypes,OnIgnoreInputTypes);
+getF(postProcessingManager,postProcessingManager);
+getF(cameraController,cameraController);
+getF(protectedTransform,protectedTransform);
+getF(isLogicRendered,isLogicRendered);
+getF(blueModeEnabled,blueModeEnabled);
+getF(cullingMask,cullingMask);
+getF(maskMode,maskMode);
+
+		getM(add_OnIgnoreInputTypes,0);
+getM(remove_OnIgnoreInputTypes,1);
+getM(get_Skybox,2);
+getM(get_LineDrawManager,3);
+getM(get_FieldOfView,4);
+getM(set_FieldOfView,5);
+getM(get_MainCamera,6);
+getM(get_TertiaryCamera,7);
+getM(get_SecondaryCamera,8);
+getM(get_CurrentCamera,9);
+getM(get_ProtectedTransform,10);
+getM(get_FireDirection,11);
+getM(get_FireOrigin,12);
+getM(get_PostProcessingManager,13);
+getM(get_BlueModeEnabled,14);
+getM(set_BlueModeEnabled,15);
+getM(get_Mute,16);
+getM(set_Mute,17);
+getM(get_CamMaskMode,18);
+getM(set_CamMaskMode,19);
+getM(get_TertiaryCameraActive,20);
+getM(set_TertiaryCameraActive,21);
+getM(get_IsLogicRendered,22);
+getM(set_IsLogicRendered,23);
+getM(Awake,24);
+getM(Init,25);
+getM(EnableScreenOptimizer,26);
+getM(PlayPlingSound,27);
+getM(SetCameraController,28);
+getM(UpdateAudioListener,29);
+getM(IsCameraControllerSet,30);
+getM(IgnoreInputTypes,31);
+getM(UpdateCamera,32);
+getM(StartTransitionCam,33);
+getM(CancelTransitionCam,34);
+getM(RenderLogic,35);
+getM(OnDestroy,36);
+getM(TemporaryMute,37);
+getM(RegisterCameraWithSettings,38);
+getM(UnRegisterCameraWithSettings,39);
+getM(GetSettings,40);
+getM(HasSetting,41);
+getM(ctor,42);
+getM(cctor,43);
 
 #undef getF
 #undef getM
