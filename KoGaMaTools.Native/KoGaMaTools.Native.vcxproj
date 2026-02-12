@@ -152,6 +152,11 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="metadata\KoGaMaAPI.KoGaMa.cpp" />
     <ClCompile Include="services\Build\BlueModeTool.cpp" />
+    <ClCompile Include="services\Build\CustomGrid.cpp" />
+    <ClCompile Include="services\Build\DestructiblesUnlock.cpp" />
+    <ClCompile Include="services\Build\EditModeSpeed.cpp" />
+    <ClCompile Include="services\Build\RotationStep.cpp" />
+    <ClCompile Include="services\Build\UnlimitedConfig.cpp" />
     <ClCompile Include="services\KieroUI.cpp" />
     <ClCompile Include="services\Build\NoLimit.cpp" />
     <ClCompile Include="services\LoggerService.cpp" />
@@ -162,6 +167,11 @@
   <ItemGroup>
     <ClInclude Include="metadata\KoGaMaAPI.KoGaMa.h" />
     <ClInclude Include="services\Build\BlueModeTool.h" />
+    <ClInclude Include="services\Build\CustomGrid.h" />
+    <ClInclude Include="services\Build\DestructiblesUnlock.h" />
+    <ClInclude Include="services\Build\EditModeSpeed.h" />
+    <ClInclude Include="services\Build\RotationStep.h" />
+    <ClInclude Include="services\Build\UnlimitedConfig.h" />
     <ClInclude Include="services\KieroUI.h" />
     <ClInclude Include="services\Build\NoLimit.h" />
     <ClInclude Include="services\LoggerService.h" />

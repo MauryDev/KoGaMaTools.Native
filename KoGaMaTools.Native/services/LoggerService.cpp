@@ -36,9 +36,7 @@ namespace KoGaMaTools::Services {
             << "[" << level << "] " << message << "\n";
 
         // Flush apenas em erros para não matar a performance em código gerado
-        if (level == "ERROR") {
-            _logFile.flush();
-        }
+        _logFile.flush();
     }
 
     void LoggerService::Info(const std::string& message) { LogWithLevel("INFO", message); }
@@ -52,22 +50,31 @@ namespace KoGaMaTools::Services {
         Info("Teste de diagnóstico executado com sucesso.");
         return true;
     }
+    LoggerService* LoggerService::GetMainTest()
+    {
+        static LoggerService* mainTester = nullptr;
+        if (mainTester == nullptr)
+            mainTester = new LoggerService("teste");
+        return mainTester;
+    }
     bool LoggerService::Assert(bool condition, const std::string& test_name) {
         if (condition) {
             // Opcional: Logar sucesso apenas para debug pesado
-            // LogWithLevel("PASS", test_name); 
-            return true;
+            LogWithLevel("PASS", test_name); 
+        }
+        else {
+            // Se a condição for falsa, registramos o erro com destaque
+            std::string failure_msg = "ASSERT FAILED: " + test_name;
+            LogWithLevel("CRITICAL", failure_msg);
+
+            
         }
 
-        // Se a condição for falsa, registramos o erro com destaque
-        std::string failure_msg = "ASSERT FAILED: " + test_name;
-        LogWithLevel("CRITICAL", failure_msg);
-
+        
         // Forçamos o flush para garantir que o erro esteja no arquivo se o app crashar
         if (_logFile.is_open()) {
             _logFile.flush();
         }
-
-        return false;
+        return condition;
     }
 }

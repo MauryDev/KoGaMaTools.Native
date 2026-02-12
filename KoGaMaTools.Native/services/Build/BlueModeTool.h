@@ -1,10 +1,14 @@
 #pragma once
 #include <cinttypes>
-namespace KoGaMaTools::Services::BlueModeTool {
-	inline bool Enable = true;
+namespace KoGaMaTools::Services {
+	struct BlueModeTool {
+		inline static bool Enable = true;
 
-	void OnExecute(void* instance, uint8_t value, void* methodInfo);
+		static void OnExecute(void* instance, uint8_t value, void* methodInfo);
 
-	void Install();
+		static void Install();
+		static void Render();
+	};
+	
 
 }

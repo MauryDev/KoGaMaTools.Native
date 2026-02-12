@@ -16,3 +16,11 @@ klasses:
 - fullname: ModelingDynamicBoxConstraint
 - fullname: ModelingBoxCountConstraint
 - fullname: MainCameraManager
+- fullname: MVMaterial
+- fullname: ESTranslate
+- fullname: SharedCubeFunctions
+- fullname: MVBuildModeAvatarLocal+EditMode
+  name: MVBuildModeAvatarLocal_EditMode
+- fullname: UGUI.Desktop.Scripts.EditMode.Gizmo.RotationHelper
+  name: RotationHelper
+- fullname: SettingsSlider

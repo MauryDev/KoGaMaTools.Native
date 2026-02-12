@@ -1,13 +1,14 @@
 #include "SinglePaintFace.h"
 #include "..\..\metadata\KoGaMaAPI.KoGaMa.h"
 #include "MinHook.h"
+#include <imgui.h>
 
-namespace KoGaMaTools::Services::SinglePaintFace
+namespace KoGaMaTools::Services
 {
 	namespace {
 		void (*OldFunc)(void* instance, void* e, void* methodInfo);
 	}
-	void Install()
+	void SinglePaintFace::Install()
 	{
 		auto methodVer = (void**)KoGaMaAPI::KoGaMa::PaintCubes::m_Execute.ptr;
 
@@ -16,7 +17,12 @@ namespace KoGaMaTools::Services::SinglePaintFace
 
 		MH_EnableHook(*methodVer);
 	}
-	void PaintCubes_Execute(void* instance, void* e, void* methodInfo)
+	void SinglePaintFace::Render()
+	{
+		ImGui::Checkbox("Single Face", &Enable);
+
+	}
+	void SinglePaintFace::PaintCubes_Execute(void* instance, void* e, void* methodInfo)
 	{
 		namespace K = KoGaMaAPI::KoGaMa;
 		if (Enable)

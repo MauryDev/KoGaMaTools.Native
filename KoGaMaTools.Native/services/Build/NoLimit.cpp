@@ -1,16 +1,17 @@
 #include "NoLimit.h"
 #include "..\..\metadata\KoGaMaAPI.KoGaMa.h"
 #include "MinHook.h"
+#include <imgui.h>
 
-namespace KoGaMaTools::Services::NoLimit
+namespace KoGaMaTools::Services
 {
 	namespace {
-		bool (*ModelingDynamicBoxConstraint_CanAddCubeAt_Old)(void* instance, IntVector pos, void* methodInfo);
-		bool (*ModelingBoxCountConstraint_CanAddCubeAt_Old)(void* instance, IntVector pos, void* methodInfo);
-		bool (*ModelingBoxCountConstraint_CanRemoveCubeAt_Old)(void* instance, IntVector pos, void* methodInfo);
+		bool (*ModelingDynamicBoxConstraint_CanAddCubeAt_Old)(void* instance, NoLimit::IntVector pos, void* methodInfo);
+		bool (*ModelingBoxCountConstraint_CanAddCubeAt_Old)(void* instance, NoLimit::IntVector pos, void* methodInfo);
+		bool (*ModelingBoxCountConstraint_CanRemoveCubeAt_Old)(void* instance, NoLimit::IntVector pos, void* methodInfo);
 		void (*ConstraintVisualizer_Init_Old)(void* instance, void* targetCubeModel, void* constraint, void* layer, void* methodInfo);
 	}
-	void Install()
+	void NoLimit::Install()
 	{
 		auto methodVer = (void**)KoGaMaAPI::KoGaMa::ConstraintVisualizer::m_Init.ptr;
 		auto methodVer2 = (void**)KoGaMaAPI::KoGaMa::ModelingDynamicBoxConstraint::m_CanAddCubeAt.ptr;
@@ -28,25 +29,30 @@ namespace KoGaMaTools::Services::NoLimit
 		MH_EnableHook(*methodVer4);
 
 	}
-	void ConstraintVisualizer_Init(void* instance, void* targetCubeModel, void* constraint, void* layer, void* methodInfo)
+	void NoLimit::Render()
+	{
+		ImGui::Checkbox("No Limit", &Enable);
+
+	}
+	void NoLimit::ConstraintVisualizer_Init(void* instance, void* targetCubeModel, void* constraint, void* layer, void* methodInfo)
 	{
 		if (!Enable)
 			ConstraintVisualizer_Init_Old(instance, targetCubeModel, constraint, layer, methodInfo);
 	}
 
-	bool ModelingDynamicBoxConstraint_CanAddCubeAt(void* instance, IntVector pos, void* methodInfo)
+	bool NoLimit::ModelingDynamicBoxConstraint_CanAddCubeAt(void* instance, IntVector pos, void* methodInfo)
 	{
 		if (Enable)
 			return true;
 		return ModelingDynamicBoxConstraint_CanAddCubeAt_Old(instance, pos, methodInfo);
 	}
-	bool ModelingBoxCountConstraint_CanAddCubeAt(void* instance, IntVector pos, void* methodInfo)
+	bool NoLimit::ModelingBoxCountConstraint_CanAddCubeAt(void* instance, IntVector pos, void* methodInfo)
 	{
 		if (Enable)
 			return true;
 		return ModelingBoxCountConstraint_CanAddCubeAt_Old(instance, pos, methodInfo);
 	}
-	bool ModelingBoxCountConstraint_CanRemoveCubeAt(void* instance, IntVector pos, void* methodInfo)
+	bool NoLimit::ModelingBoxCountConstraint_CanRemoveCubeAt(void* instance, IntVector pos, void* methodInfo)
 	{
 		if (Enable)
 			return true;

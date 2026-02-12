@@ -9,6 +9,12 @@
 #include "metadata/KoGaMaAPI.KoGaMa.h"
 #include "UI\MainUI.h"
 
+
+template<typename... T>
+void InstallMultiple() {
+	(T::Install(), ...);
+}
+
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
 	KoGaMaTools::Services::PathHelper::Install((HMODULE)lpReserved);
@@ -52,12 +58,19 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 
 
 	MH_Initialize();
+	KoGaMaTools::Services::LoggerService::GetMainTest();
 
-	KoGaMaTools::Services::SinglePaintFace::Install();
-	KoGaMaTools::Services::NoLimit::Install();
-	KoGaMaTools::Services::BlueModeTool::Install();
 
-	KoGaMaTools::UI::MainUI::Install();
+	namespace S = KoGaMaTools::Services;
+	InstallMultiple<S::SinglePaintFace, 
+		S::NoLimit,
+		S::BlueModeTool,
+		S::DestructiblesUnlock,
+		S::CustomGrid,
+		S::EditModeSpeed,
+		S::RotationStep,
+		S::UnlimitedConfig,
+		KoGaMaTools::UI::MainUI>();
 
 
 

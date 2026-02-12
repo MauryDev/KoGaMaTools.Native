@@ -42,6 +42,21 @@
     <ClCompile Include="services\LoggerService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="services\Build\DestructiblesUnlock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="services\Build\CustomGrid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="services\Build\EditModeSpeed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="services\Build\RotationStep.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="services\Build\UnlimitedConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="services\PathHelper.h">
@@ -69,6 +84,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="services\LoggerService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="services\Build\DestructiblesUnlock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="services\Build\CustomGrid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="services\Build\EditModeSpeed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="services\Build\RotationStep.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="services\Build\UnlimitedConfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -20,6 +20,12 @@ ConstraintVisualizer::Init(klassData[10]);
 ModelingDynamicBoxConstraint::Init(klassData[11]);
 ModelingBoxCountConstraint::Init(klassData[12]);
 MainCameraManager::Init(klassData[13]);
+MVMaterial::Init(klassData[14]);
+ESTranslate::Init(klassData[15]);
+SharedCubeFunctions::Init(klassData[16]);
+MVBuildModeAvatarLocal_EditMode::Init(klassData[17]);
+RotationHelper::Init(klassData[18]);
+SettingsSlider::Init(klassData[19]);
 
 
         ::Tools::Il2Cpp::Metadata::Free(metadata);        
@@ -600,6 +606,290 @@ getM(GetSettings,40);
 getM(HasSetting,41);
 getM(ctor,42);
 getM(cctor,43);
+
+#undef getF
+#undef getM
+#undef getMi
+    }
+
+    void MVMaterial::Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition) {
+        #define getF(a,b) f_##a = klass.getField(#b)
+#define getMi(a,i,token) m##i##_##a = klass.getMethodByToken( classdefinition.GetMethodToken(token))
+#define getM(a,token) m_##a = klass.getMethodByToken(classdefinition.GetMethodToken(token))
+klass = Il2CppClass("Assembly-CSharp.dll", "", "MVMaterial");
+
+if (klass.isNull()) {
+return;
+}
+		klass.RuntimeInit();
+getF(unlockPriceGold,unlockPriceGold);
+getF(isUnlocked,isUnlocked);
+getF(Mesh_k_BackingField,<Mesh>k__BackingField);
+getF(Name_k_BackingField,<Name>k__BackingField);
+getF(Description_k_BackingField,<Description>k__BackingField);
+getF(PhysicalProperties_k_BackingField,<PhysicalProperties>k__BackingField);
+getF(ModifierPackageType_k_BackingField,<ModifierPackageType>k__BackingField);
+getF(ButtonTexture_k_BackingField,<ButtonTexture>k__BackingField);
+
+		getM(get_Mesh,0);
+getM(set_Mesh,1);
+getM(get_Name,2);
+getM(set_Name,3);
+getM(get_Description,4);
+getM(set_Description,5);
+getM(get_PhysicalProperties,6);
+getM(set_PhysicalProperties,7);
+getM(get_ModifierPackageType,8);
+getM(set_ModifierPackageType,9);
+getM(get_ButtonTexture,10);
+getM(set_ButtonTexture,11);
+getM(get_IsAvailable,12);
+getM(get_IsDestructible,13);
+getMi(ctor,0,14);
+getMi(ctor,1,15);
+getMi(ctor,2,16);
+getMi(ctor,3,17);
+getM(RegenerateButtonTexture,18);
+getM(GenerateCube,19);
+getM(AddVertices,20);
+
+#undef getF
+#undef getM
+#undef getMi
+    }
+
+    void ESTranslate::Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition) {
+        #define getF(a,b) f_##a = klass.getField(#b)
+#define getMi(a,i,token) m##i##_##a = klass.getMethodByToken( classdefinition.GetMethodToken(token))
+#define getM(a,token) m_##a = klass.getMethodByToken(classdefinition.GetMethodToken(token))
+klass = Il2CppClass("Assembly-CSharp.dll", "", "ESTranslate");
+
+if (klass.isNull()) {
+return;
+}
+		klass.RuntimeInit();
+getF(TranslateModeType,TranslateModeType);
+getF(MoveWithAvatar,MoveWithAvatar);
+getF(gridSize,gridSize);
+getF(stickyModifier,stickyModifier);
+getF(completelyStuckLimit,completelyStuckLimit);
+getF(recalcLocalDirCamToObjects,recalcLocalDirCamToObjects);
+getF(translateDatas,translateDatas);
+getF(targets,targets);
+getF(mouseSensitivity,_mouseSensitivity);
+getF(initialDistance,initialDistance);
+getF(originPrevFrame,originPrevFrame);
+getF(playTranslateSounds,playTranslateSounds);
+getF(scrollMoveDistance,scrollMoveDistance);
+getF(translateMode,translateMode);
+getF(woIds,woIds);
+getF(fixedToYPlane,fixedToYPlane);
+getF(moveWithAvatar,moveWithAvatar);
+getF(enteredStateWithPointerSelectReleased,enteredStateWithPointerSelectReleased);
+
+		getM(Enter,0);
+getM(Execute,1);
+getM(IsValid,2);
+getM(UpdateLaserPosition,3);
+getM(Exit,4);
+getM(GetInitialAvatarMoveObjectHitDistance,5);
+getM(GetInitialAvatarMoveObjectDistance,6);
+getM(RotateWithCamera,7);
+getM(GetDeltaMouse,8);
+getM(ctor,9);
+
+#undef getF
+#undef getM
+#undef getMi
+    }
+
+    void SharedCubeFunctions::Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition) {
+        #define getF(a,b) f_##a = klass.getField(#b)
+#define getMi(a,i,token) m##i##_##a = klass.getMethodByToken( classdefinition.GetMethodToken(token))
+#define getM(a,token) m_##a = klass.getMethodByToken(classdefinition.GetMethodToken(token))
+klass = Il2CppClass("Assembly-CSharp.dll", "", "SharedCubeFunctions");
+
+if (klass.isNull()) {
+return;
+}
+		klass.RuntimeInit();
+getF(constraint,constraint);
+getF(LowestCubeSize,LowestCubeSize);
+getF(CubeSegmentSize,CubeSegmentSize);
+getF(Gridsize,Gridsize);
+getF(NoneGridSize,NoneGridSize);
+getF(forceEdgeDistance,forceEdgeDistance);
+getF(FaceIndexToVertexIndexes,FaceIndexToVertexIndexes);
+getF(VertexIndexToFaceIndexes,VertexIndexToFaceIndexes);
+getF(LightTestOffsets,LightTestOffsets);
+getF(LightTestNormalTargetFaces,LightTestNormalTargetFaces);
+getF(LightTestNormalSecondaryTargetFaces,LightTestNormalSecondaryTargetFaces);
+getF(LightTestOppositeFaceCorners,LightTestOppositeFaceCorners);
+getF(LightTestSameFaceCorners,LightTestSameFaceCorners);
+getF(LightTestInwardsOffset,LightTestInwardsOffset);
+getF(FaceHeightAxis,FaceHeightAxis);
+getF(FaceDirectionScalar,FaceDirectionScalar);
+
+		getM(get_CubeConstraint,0);
+getM(get_CubeConstraintVector3,1);
+getM(AddCubeMeshCubeLines,2);
+getM(AddCubeLine,3);
+getM(AddCubeMesh,4);
+getMi(GetCorners,0,5);
+getMi(GetCorners,1,6);
+getMi(GetCorners,2,7);
+getMi(GetVertices,0,8);
+getMi(GetVertices,1,9);
+getMi(GetVertices,2,10);
+getM(GetClosestGridPoint,11);
+getM(WorldToLocal,12);
+getM(WorldPosToValidGridPos,13);
+getM(LocalToWorld,14);
+getM(CreateFromBytePackage,15);
+getMi(GetAxisAlignedBoundsRecursively,0,16);
+getMi(GetAxisAlignedBoundsRecursively,1,17);
+getMi(GetAxisAlignedBoundsRecursively,2,18);
+getM(GetTriangleVertices,19);
+getMi(ScaleFactor,0,20);
+getMi(ScaleFactor,1,21);
+getM(MoveEdge,22);
+getMi(GetWorldCenter,0,23);
+getMi(GetWorldCenter,1,24);
+getM(SetLayerRecursively,25);
+getM(CubePosToChunk,26);
+getM(cctor,27);
+
+#undef getF
+#undef getM
+#undef getMi
+    }
+
+    void MVBuildModeAvatarLocal_EditMode::Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition) {
+        #define getF(a,b) f_##a = klass.getField(#b)
+#define getMi(a,i,token) m##i##_##a = klass.getMethodByToken( classdefinition.GetMethodToken(token))
+#define getM(a,token) m_##a = klass.getMethodByToken(classdefinition.GetMethodToken(token))
+klass = Il2CppClass("Assembly-CSharp.dll", "", "MVBuildModeAvatarLocal");
+klass = klass.getNestedTypeByName("EditMode");
+
+if (klass.isNull()) {
+return;
+}
+		klass.RuntimeInit();
+getF(avatarBuildModeRuntimeState,_avatarBuildModeRuntimeState);
+getF(pitchSensitivity,pitchSensitivity);
+getF(yawSensitivity,yawSensitivity);
+getF(basePitch,basePitch);
+getF(minimumY,minimumY);
+getF(maximumY,maximumY);
+getF(maxSpeed,maxSpeed);
+getF(speedModifier,speedModifier);
+getF(jetPackTargetDeltaPos,jetPackTargetDeltaPos);
+getF(targetSpeed,targetSpeed);
+getF(speed,speed);
+getF(speedSmoothingTime,speedSmoothingTime);
+getF(moveConstraintSet,moveConstraintSet);
+getF(moveConstraintCenter,moveConstraintCenter);
+getF(moveConstraintRadius,moveConstraintRadius);
+getF(moveSlowDownPoint,moveSlowDownPoint);
+getF(YMovementSpeedScale_k_BackingField,<YMovementSpeedScale>k__BackingField);
+getF(XZMovementSpeedScale_k_BackingField,<XZMovementSpeedScale>k__BackingField);
+getF(doubleTap,doubleTap);
+getF(mainCamera,mainCamera);
+getF(keyVelocity,keyVelocity);
+getF(keyAcceleration,keyAcceleration);
+getF(keyDamping,keyDamping);
+getF(heightAdjustSpeed,heightAdjustSpeed);
+
+		getM(ctor,0);
+getM(Activate,1);
+getM(SetCamera,2);
+getM(get_AvatarBuildModeRuntimeState,3);
+getM(get_YMovementSpeedScale,4);
+getM(set_YMovementSpeedScale,5);
+getM(get_XZMovementSpeedScale,6);
+getM(set_XZMovementSpeedScale,7);
+getM(get_MovementConstrained,8);
+getM(set_MovementConstrained,9);
+getM(AvatarCommandsBuildModeOnOnSetSpawn,10);
+getM(DeActivate,11);
+getM(ModifySpeed,12);
+getM(FrameUpdate,13);
+getM(FixedUpdate,14);
+getM(SetMoveConstraint,15);
+getM(TouchRotationToCamera,16);
+getM(UpdateRotationToCamera,17);
+getM(SetToEditMode,18);
+getM(MoveCharacter,19);
+getM(GetElevationVelocity,20);
+getM(Move,21);
+getM(GetDirection,22);
+getM(GetTouchInputDirection,23);
+getM(GetInputDirection,24);
+getM(GetMovementVelocity,25);
+getM(AvatarCommandsBuildModeOnEnterBuildStateEvent,26);
+getM(ESLeaveCubeTutorialSetup,27);
+getM(FocusOnPosition,28);
+getM(ESEditCubeTutorialSetup,29);
+getM(AvatarCommandsBuildModeOnExitBuildStateEvent,30);
+getM(EditCubesExitSetup,31);
+getM(ESEditCubeTutorialExitSetup,32);
+getM(CERoamUUIExitSetup,33);
+getM(CEEditBodyUUIExitSetup,34);
+getM(CEEditBodyUUIEnterSetup,35);
+getM(CERoamUUIEnterSetup,36);
+getM(EditCubesDataEnterSetup,37);
+
+#undef getF
+#undef getM
+#undef getMi
+    }
+
+    void RotationHelper::Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition) {
+        #define getF(a,b) f_##a = klass.getField(#b)
+#define getMi(a,i,token) m##i##_##a = klass.getMethodByToken( classdefinition.GetMethodToken(token))
+#define getM(a,token) m_##a = klass.getMethodByToken(classdefinition.GetMethodToken(token))
+klass = Il2CppClass("Assembly-CSharp.dll", "UGUI.Desktop.Scripts.EditMode.Gizmo", "RotationHelper");
+
+if (klass.isNull()) {
+return;
+}
+		klass.RuntimeInit();
+getF(editorStateMachine,editorStateMachine);
+
+		getM(ctor,0);
+getM(ResetRotation,1);
+getM(RotateStep,2);
+getM(IsRotationInvalid,3);
+getM(GetPivot,4);
+getM(DoGridSnapping,5);
+getM(ValidateTargets,6);
+
+#undef getF
+#undef getM
+#undef getMi
+    }
+
+    void SettingsSlider::Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition) {
+        #define getF(a,b) f_##a = klass.getField(#b)
+#define getMi(a,i,token) m##i##_##a = klass.getMethodByToken( classdefinition.GetMethodToken(token))
+#define getM(a,token) m_##a = klass.getMethodByToken(classdefinition.GetMethodToken(token))
+klass = Il2CppClass("Assembly-CSharp.dll", "", "SettingsSlider");
+
+if (klass.isNull()) {
+return;
+}
+		klass.RuntimeInit();
+getF(slider,slider);
+getF(interval,interval);
+getF(round,round);
+getF(key,key);
+
+		getM(get_Value,0);
+getMi(Initialize,0,1);
+getMi(Initialize,1,2);
+getM(ValueChanged,3);
+getM(Reset,4);
+getM(ctor,5);
 
 #undef getF
 #undef getM

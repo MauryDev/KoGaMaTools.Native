@@ -1,7 +1,10 @@
 #pragma once
-namespace KoGaMaTools::UI::MainUI {
-	void Install();
-	void Render();
-	void TabBarTools();
-	void TabItem_Build();
+namespace KoGaMaTools::UI {
+	struct MainUI {
+		static void Install();
+		static void Render();
+		static void TabBarTools();
+		static void TabItem_Build();
+	};
+	
 }

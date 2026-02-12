@@ -320,5 +320,165 @@ inline static Utils::FieldInfo<false> /* UnityEngine.Camera */  f_mainCamera,/* 
     static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
     
 };
+struct MVMaterial {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<false> /* System.Int32 */  f_unlockPriceGold,/* System.Boolean */  f_isUnlocked,/* UnityEngine.Mesh */  f_Mesh_k_BackingField,/* System.String */  f_Name_k_BackingField,/* System.String */  f_Description_k_BackingField,/* MV.WorldObject.PhysicalProperties */  f_PhysicalProperties_k_BackingField,/* AvatarModifierPackageType */  f_ModifierPackageType_k_BackingField,/* UnityEngine.Texture2D */  f_ButtonTexture_k_BackingField;
+
+	/*UnityEngine.Mesh get_Mesh()*/ inline static Utils::MethodInfo<false,false> m_get_Mesh;
+/*System.Void set_Mesh(UnityEngine.Mesh value)*/ inline static Utils::MethodInfo<false,false> m_set_Mesh;
+/*System.String get_Name()*/ inline static Utils::MethodInfo<false,false> m_get_Name;
+/*System.Void set_Name(System.String value)*/ inline static Utils::MethodInfo<false,false> m_set_Name;
+/*System.String get_Description()*/ inline static Utils::MethodInfo<false,false> m_get_Description;
+/*System.Void set_Description(System.String value)*/ inline static Utils::MethodInfo<false,false> m_set_Description;
+/*MV.WorldObject.PhysicalProperties get_PhysicalProperties()*/ inline static Utils::MethodInfo<false,false> m_get_PhysicalProperties;
+/*System.Void set_PhysicalProperties(MV.WorldObject.PhysicalProperties value)*/ inline static Utils::MethodInfo<false,false> m_set_PhysicalProperties;
+/*AvatarModifierPackageType get_ModifierPackageType()*/ inline static Utils::MethodInfo<false,false> m_get_ModifierPackageType;
+/*System.Void set_ModifierPackageType(AvatarModifierPackageType value)*/ inline static Utils::MethodInfo<false,false> m_set_ModifierPackageType;
+/*UnityEngine.Texture2D get_ButtonTexture()*/ inline static Utils::MethodInfo<false,false> m_get_ButtonTexture;
+/*System.Void set_ButtonTexture(UnityEngine.Texture2D value)*/ inline static Utils::MethodInfo<false,false> m_set_ButtonTexture;
+/*System.Boolean get_IsAvailable()*/ inline static Utils::MethodInfo<false,false> m_get_IsAvailable;
+/*System.Boolean get_IsDestructible()*/ inline static Utils::MethodInfo<false,false> m_get_IsDestructible;
+/*System.Void .ctor()*/ inline static Utils::MethodInfo<false,false> m0_ctor;
+/*System.Void .ctor(MV.WorldObject.PhysicalProperties physicalProperties, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType)*/ inline static Utils::MethodInfo<false,false> m1_ctor;
+/*System.Void .ctor(System.String name, System.String description, MV.WorldObject.PhysicalProperties physicalProperties, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType, System.Int32 unlockPriceGold, System.Boolean isUnlocked)*/ inline static Utils::MethodInfo<false,false> m2_ctor;
+/*System.Void .ctor(System.Int32 materialId, System.String name, System.String description, MV.WorldObject.PhysicalProperties physicalProperties, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType, System.Int32 unlockPriceGold, System.Boolean isUnlocked, MaterialButtonTextureGenerator materialButtonTextureGenerator = null)*/ inline static Utils::MethodInfo<false,false> m3_ctor;
+/*System.Void RegenerateButtonTexture(MaterialButtonTextureGenerator materialButtonTextureGenerator)*/ inline static Utils::MethodInfo<false,false> m_RegenerateButtonTexture;
+/*System.Void GenerateCube(System.Int32 materialID)*/ inline static Utils::MethodInfo<false,false> m_GenerateCube;
+/*System.Void AddVertices(System.Int32 direction)*/ inline static Utils::MethodInfo<false,false> m_AddVertices;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct ESTranslate {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<true> /* System.String */ f_TranslateModeType,/* System.String */ f_MoveWithAvatar,/* System.Single */ f_mouseSensitivity;
+inline static Utils::FieldInfo<false> /* System.Single */  f_gridSize,/* System.Single */  f_stickyModifier,/* System.Single */  f_completelyStuckLimit,/* System.Boolean */  f_recalcLocalDirCamToObjects,/* System.Collections.Generic.List`1<TranslateData> */  f_translateDatas,/* System.Collections.Generic.List`1<MVWorldObjectClient> */  f_targets,/* System.Single */  f_initialDistance,/* UnityEngine.Vector3 */  f_originPrevFrame,/* System.Boolean */  f_playTranslateSounds,/* System.Single */  f_scrollMoveDistance,/* TranslateMode */  f_translateMode,/* System.Collections.Generic.HashSet`1<System.Int32> */  f_woIds,/* System.Boolean */  f_fixedToYPlane,/* System.Boolean */  f_moveWithAvatar,/* System.Boolean */  f_enteredStateWithPointerSelectReleased;
+
+	/*System.Void Enter(EditorStateMachine e)*/ inline static Utils::MethodInfo<false,true> m_Enter;
+/*System.Void Execute(EditorStateMachine e)*/ inline static Utils::MethodInfo<false,true> m_Execute;
+/*System.Boolean IsValid()*/ inline static Utils::MethodInfo<false,false> m_IsValid;
+/*System.Void UpdateLaserPosition(System.Collections.Generic.List`1<MVWorldObjectClient> wos)*/ inline static Utils::MethodInfo<false,false> m_UpdateLaserPosition;
+/*System.Void Exit(EditorStateMachine e)*/ inline static Utils::MethodInfo<false,true> m_Exit;
+/*System.Boolean GetInitialAvatarMoveObjectHitDistance(EditorStateMachine e, ref System.Single hitDistance)*/ inline static Utils::MethodInfo<false,false> m_GetInitialAvatarMoveObjectHitDistance;
+/*System.Single GetInitialAvatarMoveObjectDistance(EditorStateMachine e)*/ inline static Utils::MethodInfo<false,false> m_GetInitialAvatarMoveObjectDistance;
+/*System.Void RotateWithCamera(EditorStateMachine e, System.Int32 targetIndex)*/ inline static Utils::MethodInfo<false,false> m_RotateWithCamera;
+/*UnityEngine.Vector3 GetDeltaMouse(EditorStateMachine e)*/ inline static Utils::MethodInfo<false,false> m_GetDeltaMouse;
+/*System.Void .ctor()*/ inline static Utils::MethodInfo<false,false> m_ctor;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct SharedCubeFunctions {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<true> /* MV.WorldObject.IntVector */ f_constraint,/* System.Single */ f_LowestCubeSize,/* System.Single */ f_CubeSegmentSize,/* System.Single */ f_Gridsize,/* System.Single */ f_NoneGridSize,/* System.Single */ f_forceEdgeDistance,/* System.Int32[][] */ f_FaceIndexToVertexIndexes,/* System.Collections.Generic.Dictionary`2<System.Int32, System.Int32>[] */ f_VertexIndexToFaceIndexes,/* MV.WorldObject.IntVector[][] */ f_LightTestOffsets,/* MV.WorldObject.Face[][] */ f_LightTestNormalTargetFaces,/* MV.WorldObject.Face[] */ f_LightTestNormalSecondaryTargetFaces,/* System.Int32[][] */ f_LightTestOppositeFaceCorners,/* System.Int32[][] */ f_LightTestSameFaceCorners,/* MV.WorldObject.IntVector[] */ f_LightTestInwardsOffset,/* System.Int32[] */ f_FaceHeightAxis,/* System.Int32[] */ f_FaceDirectionScalar;
+
+	/*MV.WorldObject.IntVector get_CubeConstraint()*/ inline static Utils::MethodInfo<true,false> m_get_CubeConstraint;
+/*UnityEngine.Vector3 get_CubeConstraintVector3()*/ inline static Utils::MethodInfo<true,false> m_get_CubeConstraintVector3;
+/*System.Void AddCubeMeshCubeLines(UnityEngine.Mesh mesh, UnityEngine.Vector3[] corners, System.Single diagonalWidth)*/ inline static Utils::MethodInfo<true,false> m_AddCubeMeshCubeLines;
+/*System.Void AddCubeLine(UnityEngine.Mesh mesh, UnityEngine.Vector3 p0, UnityEngine.Vector3 p1, System.Single diagonalWidth)*/ inline static Utils::MethodInfo<true,false> m_AddCubeLine;
+/*System.Void AddCubeMesh(UnityEngine.Mesh mesh, UnityEngine.Vector3[] corners, System.Boolean insideOut)*/ inline static Utils::MethodInfo<true,false> m_AddCubeMesh;
+/*UnityEngine.Vector3[] GetCorners()*/ inline static Utils::MethodInfo<true,false> m0_GetCorners;
+/*UnityEngine.Vector3[] GetCorners(UnityEngine.Bounds bounds)*/ inline static Utils::MethodInfo<true,false> m1_GetCorners;
+/*UnityEngine.Vector3[] GetCorners(UnityEngine.Vector3 min, UnityEngine.Vector3 max)*/ inline static Utils::MethodInfo<true,false> m2_GetCorners;
+/*UnityEngine.Vector3[] GetVertices()*/ inline static Utils::MethodInfo<true,false> m0_GetVertices;
+/*UnityEngine.Vector3[] GetVertices(UnityEngine.Vector3[] corners)*/ inline static Utils::MethodInfo<true,false> m1_GetVertices;
+/*System.Void GetVertices(CubePickingInfo info, UnityEngine.GameObject gameObject)*/ inline static Utils::MethodInfo<true,false> m2_GetVertices;
+/*UnityEngine.Vector3 GetClosestGridPoint(UnityEngine.Vector3 worldPosition, UnityEngine.Quaternion rotation, System.Single gridSize, UnityEngine.Vector3 scale)*/ inline static Utils::MethodInfo<true,false> m_GetClosestGridPoint;
+/*MV.WorldObject.IntVector WorldToLocal(UnityEngine.GameObject gameObject, UnityEngine.Vector3 point, System.Boolean floor = False)*/ inline static Utils::MethodInfo<true,false> m_WorldToLocal;
+/*UnityEngine.Vector3 WorldPosToValidGridPos(UnityEngine.GameObject gameObject, UnityEngine.Vector3 worldPos, System.Int32 cubeSegments)*/ inline static Utils::MethodInfo<true,false> m_WorldPosToValidGridPos;
+/*UnityEngine.Vector3 LocalToWorld(UnityEngine.GameObject gameObject, MV.WorldObject.IntVector iVector)*/ inline static Utils::MethodInfo<true,false> m_LocalToWorld;
+/*System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cube> CreateFromBytePackage(MV.WorldObject.BytePacker bp)*/ inline static Utils::MethodInfo<true,false> m_CreateFromBytePackage;
+/*System.Nullable`1<UnityEngine.Bounds> GetAxisAlignedBoundsRecursively(UnityEngine.Transform transform)*/ inline static Utils::MethodInfo<true,false> m0_GetAxisAlignedBoundsRecursively;
+/*System.Nullable`1<UnityEngine.Bounds> GetAxisAlignedBoundsRecursively(System.Collections.Generic.List`1<MVWorldObjectClient> wos)*/ inline static Utils::MethodInfo<true,false> m1_GetAxisAlignedBoundsRecursively;
+/*System.Nullable`1<UnityEngine.Bounds> GetAxisAlignedBoundsRecursively(System.Collections.Generic.List`1<UnityEngine.Transform> transforms)*/ inline static Utils::MethodInfo<true,false> m2_GetAxisAlignedBoundsRecursively;
+/*UnityEngine.Vector3[] GetTriangleVertices(System.Int32 triangleIndex, UnityEngine.GameObject gameObject)*/ inline static Utils::MethodInfo<true,false> m_GetTriangleVertices;
+/*System.Single ScaleFactor(UnityEngine.GameObject gameObject)*/ inline static Utils::MethodInfo<true,false> m0_ScaleFactor;
+/*System.Single ScaleFactor(UnityEngine.GameObject gameObject, MV.WorldObject.Face face)*/ inline static Utils::MethodInfo<true,false> m1_ScaleFactor;
+/*CubeOutOfBoundState MoveEdge(MVCubeModelBase cmb, CubePickingInfo info, UnityEngine.Vector3 mousePositionDelta, ref System.Single delta, ref System.Single deltaAccum, System.Single mouseSensitivity, ref System.Boolean edgeMoved, System.Boolean edgeIndex0, System.Boolean edgeIndex1, ref EditCubeChange editCubeChange)*/ inline static Utils::MethodInfo<true,false> m_MoveEdge;
+/*UnityEngine.Vector3 GetWorldCenter(System.Collections.Generic.List`1<UnityEngine.Transform> transforms)*/ inline static Utils::MethodInfo<true,false> m0_GetWorldCenter;
+/*UnityEngine.Vector3 GetWorldCenter(UnityEngine.Transform transform)*/ inline static Utils::MethodInfo<true,false> m1_GetWorldCenter;
+/*System.Void SetLayerRecursively(UnityEngine.Transform t, System.Boolean select)*/ inline static Utils::MethodInfo<true,false> m_SetLayerRecursively;
+/*MV.WorldObject.IntVector CubePosToChunk(MV.WorldObject.IntVector cubePos, System.Int32 chunkSize)*/ inline static Utils::MethodInfo<true,false> m_CubePosToChunk;
+/*System.Void .cctor()*/ inline static Utils::MethodInfo<true,false> m_cctor;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct MVBuildModeAvatarLocal_EditMode {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<true> /* System.Single */ f_pitchSensitivity,/* System.Single */ f_yawSensitivity,/* System.Single */ f_basePitch,/* System.Single */ f_minimumY,/* System.Single */ f_maximumY,/* System.Single */ f_moveSlowDownPoint;
+inline static Utils::FieldInfo<false> /* MVBuildModeAvatarLocal+AvatarBuildModes */  f_avatarBuildModeRuntimeState,/* System.Single */  f_maxSpeed,/* System.Single */  f_speedModifier,/* UnityEngine.Vector3 */  f_jetPackTargetDeltaPos,/* System.Single */  f_targetSpeed,/* System.Single */  f_speed,/* System.Single */  f_speedSmoothingTime,/* System.Boolean */  f_moveConstraintSet,/* UnityEngine.Vector3 */  f_moveConstraintCenter,/* System.Single */  f_moveConstraintRadius,/* System.Single */  f_YMovementSpeedScale_k_BackingField,/* System.Single */  f_XZMovementSpeedScale_k_BackingField,/* DoubleTapMovementChecker */  f_doubleTap,/* UnityEngine.Camera */  f_mainCamera,/* System.Single */  f_keyVelocity,/* System.Single */  f_keyAcceleration,/* System.Single */  f_keyDamping,/* System.Single */  f_heightAdjustSpeed;
+
+	/*System.Void .ctor(MVBuildModeAvatarLocal buildModeAvatar)*/ inline static Utils::MethodInfo<false,false> m_ctor;
+/*System.Void Activate(MVBuildModeAvatarLocal+AvatarBuildModes fromMode)*/ inline static Utils::MethodInfo<false,true> m_Activate;
+/*System.Void SetCamera(CameraType cameraType)*/ inline static Utils::MethodInfo<false,false> m_SetCamera;
+/*MVBuildModeAvatarLocal+AvatarBuildModes get_AvatarBuildModeRuntimeState()*/ inline static Utils::MethodInfo<false,true> m_get_AvatarBuildModeRuntimeState;
+/*System.Single get_YMovementSpeedScale()*/ inline static Utils::MethodInfo<false,false> m_get_YMovementSpeedScale;
+/*System.Void set_YMovementSpeedScale(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_YMovementSpeedScale;
+/*System.Single get_XZMovementSpeedScale()*/ inline static Utils::MethodInfo<false,false> m_get_XZMovementSpeedScale;
+/*System.Void set_XZMovementSpeedScale(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_XZMovementSpeedScale;
+/*System.Boolean get_MovementConstrained()*/ inline static Utils::MethodInfo<false,false> m_get_MovementConstrained;
+/*System.Void set_MovementConstrained(System.Boolean value)*/ inline static Utils::MethodInfo<false,false> m_set_MovementConstrained;
+/*System.Void AvatarCommandsBuildModeOnOnSetSpawn(UnityEngine.Vector3 position, UnityEngine.Quaternion rotation)*/ inline static Utils::MethodInfo<false,false> m_AvatarCommandsBuildModeOnOnSetSpawn;
+/*System.Void DeActivate(MVBuildModeAvatarLocal+AvatarBuildModes toMode)*/ inline static Utils::MethodInfo<false,true> m_DeActivate;
+/*System.Void ModifySpeed(System.Single xz, System.Single y)*/ inline static Utils::MethodInfo<false,false> m_ModifySpeed;
+/*System.Void FrameUpdate(InputToInGameAction interactionMap)*/ inline static Utils::MethodInfo<false,true> m_FrameUpdate;
+/*System.Void FixedUpdate(IInputToPlayerMovement movementMap)*/ inline static Utils::MethodInfo<false,true> m_FixedUpdate;
+/*System.Void SetMoveConstraint(UnityEngine.Vector3 center, System.Single radius)*/ inline static Utils::MethodInfo<false,false> m_SetMoveConstraint;
+/*System.Void TouchRotationToCamera()*/ inline static Utils::MethodInfo<false,false> m_TouchRotationToCamera;
+/*System.Void UpdateRotationToCamera()*/ inline static Utils::MethodInfo<false,false> m_UpdateRotationToCamera;
+/*System.Void SetToEditMode()*/ inline static Utils::MethodInfo<false,false> m_SetToEditMode;
+/*System.Void MoveCharacter(UnityEngine.Vector3 moveDelta)*/ inline static Utils::MethodInfo<false,false> m_MoveCharacter;
+/*UnityEngine.Vector3 GetElevationVelocity()*/ inline static Utils::MethodInfo<false,false> m_GetElevationVelocity;
+/*System.Void Move(UnityEngine.Vector3 velocity)*/ inline static Utils::MethodInfo<false,false> m_Move;
+/*UnityEngine.Vector3 GetDirection(System.Boolean freeFlight)*/ inline static Utils::MethodInfo<false,false> m_GetDirection;
+/*UnityEngine.Vector3 GetTouchInputDirection()*/ inline static Utils::MethodInfo<true,false> m_GetTouchInputDirection;
+/*UnityEngine.Vector3 GetInputDirection()*/ inline static Utils::MethodInfo<true,false> m_GetInputDirection;
+/*UnityEngine.Vector3 GetMovementVelocity()*/ inline static Utils::MethodInfo<false,false> m_GetMovementVelocity;
+/*System.Void AvatarCommandsBuildModeOnEnterBuildStateEvent(EditorEvent editorEvent, System.Object data)*/ inline static Utils::MethodInfo<false,false> m_AvatarCommandsBuildModeOnEnterBuildStateEvent;
+/*System.Void ESLeaveCubeTutorialSetup()*/ inline static Utils::MethodInfo<false,false> m_ESLeaveCubeTutorialSetup;
+/*System.Void FocusOnPosition()*/ inline static Utils::MethodInfo<false,false> m_FocusOnPosition;
+/*System.Void ESEditCubeTutorialSetup(MVBuildModeAvatarLocal+EditMode+ESEditCubeTutorialData data)*/ inline static Utils::MethodInfo<false,false> m_ESEditCubeTutorialSetup;
+/*System.Void AvatarCommandsBuildModeOnExitBuildStateEvent(EditorEvent editorEvent, System.Object data)*/ inline static Utils::MethodInfo<false,false> m_AvatarCommandsBuildModeOnExitBuildStateEvent;
+/*System.Void EditCubesExitSetup()*/ inline static Utils::MethodInfo<false,false> m_EditCubesExitSetup;
+/*System.Void ESEditCubeTutorialExitSetup()*/ inline static Utils::MethodInfo<false,false> m_ESEditCubeTutorialExitSetup;
+/*System.Void CERoamUUIExitSetup()*/ inline static Utils::MethodInfo<false,false> m_CERoamUUIExitSetup;
+/*System.Void CEEditBodyUUIExitSetup()*/ inline static Utils::MethodInfo<false,false> m_CEEditBodyUUIExitSetup;
+/*System.Void CEEditBodyUUIEnterSetup(MVBuildModeAvatarLocal+EditMode+CEEditBodyUUIData data)*/ inline static Utils::MethodInfo<false,false> m_CEEditBodyUUIEnterSetup;
+/*System.Void CERoamUUIEnterSetup(MVBuildModeAvatarLocal+EditMode+CERoamUUISetupData data)*/ inline static Utils::MethodInfo<false,false> m_CERoamUUIEnterSetup;
+/*System.Void EditCubesDataEnterSetup(MVBuildModeAvatarLocal+EditMode+EditCubesSetupData data)*/ inline static Utils::MethodInfo<false,false> m_EditCubesDataEnterSetup;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct RotationHelper {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<false> /* EditorStateMachine */  f_editorStateMachine;
+
+	/*System.Void .ctor(EditorStateMachine editorStateMachine)*/ inline static Utils::MethodInfo<false,false> m_ctor;
+/*System.Void ResetRotation()*/ inline static Utils::MethodInfo<false,false> m_ResetRotation;
+/*System.Void RotateStep(RotationMode rotationMode, System.Single rotationSpeed)*/ inline static Utils::MethodInfo<false,false> m_RotateStep;
+/*System.Boolean IsRotationInvalid()*/ inline static Utils::MethodInfo<false,false> m_IsRotationInvalid;
+/*UnityEngine.Vector3 GetPivot(System.Collections.Generic.List`1<WorldObjectClientRef> targets, System.Collections.Generic.List`1<UnityEngine.Transform> targetTransforms)*/ inline static Utils::MethodInfo<true,false> m_GetPivot;
+/*System.Void DoGridSnapping(System.Collections.Generic.List`1<WorldObjectClientRef> targets)*/ inline static Utils::MethodInfo<true,false> m_DoGridSnapping;
+/*System.Boolean ValidateTargets(System.Collections.Generic.List`1<WorldObjectClientRef> targets)*/ inline static Utils::MethodInfo<true,false> m_ValidateTargets;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct SettingsSlider {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<false> /* UnityEngine.UI.Slider */  f_slider,/* System.Single */  f_interval,/* System.Boolean */  f_round,/* System.String */  f_key;
+
+	/*System.Single get_Value()*/ inline static Utils::MethodInfo<false,false> m_get_Value;
+/*System.Void Initialize(System.String key, System.Single value, System.Single minValue, System.Single maxValue)*/ inline static Utils::MethodInfo<false,false> m0_Initialize;
+/*System.Void Initialize(System.String key, System.Int32 value, System.Int32 minValue, System.Int32 maxValue)*/ inline static Utils::MethodInfo<false,false> m1_Initialize;
+/*System.Void ValueChanged()*/ inline static Utils::MethodInfo<false,false> m_ValueChanged;
+/*System.Void Reset()*/ inline static Utils::MethodInfo<false,false> m_Reset;
+/*System.Void .ctor()*/ inline static Utils::MethodInfo<false,false> m_ctor;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
 
 }

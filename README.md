@@ -37,6 +37,7 @@ The project injects a DLL into the game process and presents an Overlay menu usi
     * Ignores dynamic area limits (DynamicBoxConstraint).
 * **Single Paint Face**: Modifies the painting tool to allow painting a single face of a cube rather than the entire cube or adjacent areas.
 * **Multi-Region Support**: Automatic detection of the server region (BR, WWW, Friends) to load the correct metadata.
+* **Blue Mode Toggle**: Toggle Effect of Blue Mode.
 
 ## 📷 Application Demonstration
 

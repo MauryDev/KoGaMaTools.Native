@@ -65,9 +65,8 @@ namespace KoGaMaTools::Services::PathHelper {
     KoGaMaRegion GetRegion()
     {
         static std::optional<KoGaMaRegion> cache_;
-        
         if (cache_)
-            return cache_.value();
+            return *cache_;
         auto& kogamaPath = GetKoGaMaPath();
 
         if (std::distance(kogamaPath.begin(), kogamaPath.end()) < 3) {
@@ -86,7 +85,7 @@ namespace KoGaMaTools::Services::PathHelper {
             cache_ = FromStr(rootPath.substr(findMinus + 1));
         else 
             cache_ = KoGaMaRegion::Custom;
-        return cache_.value();
+        return *cache_;
     }
 
     KoGaMaRegion FromStr(const std::string_view& value)

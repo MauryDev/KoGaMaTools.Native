@@ -1,12 +1,16 @@
 #include "MainUI.h"
 #include <imgui.h>
-#include "..\services\KieroUI.h"
-#include "../services/Build/NoLimit.h"
-#include "../services/Build/SinglePaintFace.h"
-#include "../services/Build/BlueModeTool.h"
+#include "../services/services.h"
+
 
 #include "../metadata/KoGaMaAPI.KoGaMa.h"
 
+
+template <typename ...T>
+void RenderSingletones()
+{
+	(T::Render(), ...);
+}
 void KoGaMaTools::UI::MainUI::Install()
 {
 
@@ -57,10 +61,17 @@ void KoGaMaTools::UI::MainUI::TabItem_Build()
 {
 	if (ImGui::BeginTabItem("Build"))
 	{
-		ImGui::Checkbox("Single Face", &Services::SinglePaintFace::Enable);
-		ImGui::Checkbox("No Limit", &Services::NoLimit::Enable);
 
-		ImGui::Checkbox("Blue Mode", &Services::BlueModeTool::Enable);
+
+		RenderSingletones<Services::SinglePaintFace,
+			Services::NoLimit,
+			Services::BlueModeTool,
+			Services::DestructiblesUnlock,
+			Services::CustomGrid,
+			Services::EditModeSpeed,
+			Services::RotationStep,
+			Services::UnlimitedConfig>();
+		
 
 		ImGui::EndTabItem();
 	}

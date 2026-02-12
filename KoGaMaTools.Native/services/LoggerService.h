@@ -23,6 +23,7 @@ namespace KoGaMaTools::Services {
 
         // Função de Teste para verificar se o arquivo está acessível
         bool RunDiagnostics();
+        static LoggerService* GetMainTest();
 
     private:
         std::ofstream _logFile;
