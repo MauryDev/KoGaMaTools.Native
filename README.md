@@ -15,7 +15,7 @@ A native tool developed in C++ designed to inject extra features and modificatio
 
 The project is under active development (develop `branch`). New features and metadata are being mapped continuously.
 
-## 📋 Tabela de Conteúdos
+## 📋 Table of Contents
 
 - [About](#kogamatoolsnative)
 - [Features](#-features)
@@ -77,7 +77,7 @@ After compilation, the build script (`build/publish.cmd`) organizes the output f
 * **[ImGui](https://github.com/ocornut/imgui)** - Library for creating the user interface (Overlay).
 * **IL2CPP Interop** - System for interacting with Unity's IL2CPP backend.
 
-## 🤝 Contribuição
+## 🤝 Contribution
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues relatando problemas ou pull requests com melhorias.
 
