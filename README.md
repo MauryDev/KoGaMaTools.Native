@@ -2,7 +2,7 @@
 
 ![Banner do Projeto](src/img/banner.jpg)
 
-A native tool developed in C++ designed to inject extra features and modifications into the KoGaMa (Standalone) game client. The project utilizes IL2CPP instrumentation to interact directly with internal game classes, offering features such as "No Limit" for building and single-face painting.
+A native tool developed in C++ designed to inject extra features and modifications into the KoGaMa (Standalone) game client. The project utilizes IL2CPP instrumentation to interact directly with internal game classes, offering features such as "No Limit" for building, single-face painting, and advanced building enhancements.
 
 ## 🛡 Badges
 
@@ -32,12 +32,18 @@ The project is under active development (develop `branch`). New features and met
 The project injects a DLL into the game process and presents an Overlay menu using ImGui and DirectX 11.
 
 * **In-Game Menu**: A graphical interface accessible within the game to toggle functions in real-time.
+    * Press `Ctrl + B` to toggle the UI visibility.
 * **No Limit**: Removes the game's building restrictions.
     * Ignores cube count limits (BoxCountConstraint).
     * Ignores dynamic area limits (DynamicBoxConstraint).
 * **Single Paint Face**: Modifies the painting tool to allow painting a single face of a cube rather than the entire cube or adjacent areas.
+* **Custom Grid**: Allows custom grid size configuration for precise building placement and manipulation.
+* **Edit Mode Speed**: Adjustable movement speed multiplier in edit mode for faster or slower navigation.
+* **Rotation Step**: Customizable rotation step angles for more precise object orientation control.
+* **Destructibles Unlock**: Unlocks access to destructible objects that are normally restricted.
+* **Blue Mode Toggle**: Toggle the Blue Mode visual effect on demand.
+* **Unlimited Config**: Advanced configuration options for extending building capabilities beyond standard limits.
 * **Multi-Region Support**: Automatic detection of the server region (BR, WWW, Friends) to load the correct metadata.
-* **Blue Mode Toggle**: Toggle Effect of Blue Mode.
 
 ## 📷 Application Demonstration
 
@@ -51,7 +57,7 @@ To compile and run the project, you will need:
 * **IDE**: Visual Studio 2022 (C++ v145 support).
 * **Dependencies**:
     * The project relies on generated IL2CPP metadata (`Tools.Il2Cpp.ICalls.dat`, `KoGaMaAPI.KoGaMa.dat`).
-    * MinHook and Kiero Libraries  (already referenced in the project).
+    * MinHook and Kiero Libraries (already referenced in the project).
 
 ## 🏃 How to Run
 
@@ -79,7 +85,7 @@ After compilation, the build script (`build/publish.cmd`) organizes the output f
 
 ## 🤝 Contribution
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues relatando problemas ou pull requests com melhorias.
+Contributions are welcome! Feel free to open issues reporting problems or pull requests with improvements.
 
 1.  Fork the project.
 2.  Create your Feature Branch (`git checkout -b feature/MyFeature`)
