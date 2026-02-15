@@ -157,11 +157,13 @@
     <ClCompile Include="services\Build\EditModeSpeed.cpp" />
     <ClCompile Include="services\Build\RotationStep.cpp" />
     <ClCompile Include="services\Build\UnlimitedConfig.cpp" />
+    <ClCompile Include="services\Common\MainComponent.cpp" />
     <ClCompile Include="services\KieroUI.cpp" />
     <ClCompile Include="services\Build\NoLimit.cpp" />
     <ClCompile Include="services\LoggerService.cpp" />
     <ClCompile Include="services\PathHelper.cpp" />
     <ClCompile Include="services\Build\SinglePaintFace.cpp" />
+    <ClCompile Include="services\PvP\AntiAfk.cpp" />
     <ClCompile Include="UI\MainUI.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -172,10 +174,12 @@
     <ClInclude Include="services\Build\EditModeSpeed.h" />
     <ClInclude Include="services\Build\RotationStep.h" />
     <ClInclude Include="services\Build\UnlimitedConfig.h" />
+    <ClInclude Include="services\Common\MainComponent.h" />
     <ClInclude Include="services\KieroUI.h" />
     <ClInclude Include="services\Build\NoLimit.h" />
     <ClInclude Include="services\LoggerService.h" />
     <ClInclude Include="services\PathHelper.h" />
+    <ClInclude Include="services\PvP\AntiAfk.h" />
     <ClInclude Include="services\services.h" />
     <ClInclude Include="services\Build\SinglePaintFace.h" />
     <ClInclude Include="UI\MainUI.h" />

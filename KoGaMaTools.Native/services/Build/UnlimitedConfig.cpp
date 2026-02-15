@@ -33,8 +33,8 @@ void KoGaMaTools::Services::UnlimitedConfig::Render()
 
         // Usage of InputFloat for "No Limit" feel (unlike Sliders which are bounded)
         // We use "%.3f" to allow precision for float settings
-        ImGui::InputFloat("Min Value##unlim_min", &MinValue, 1.0f, 10.0f, "%.3f");
-        ImGui::InputFloat("Max Value##unlim_max", &MaxValue, 1.0f, 10.0f, "%.3f");
+        ImGui::InputFloat("Min Value##unlim_min", &MinValue, 1.0f, 100000.0f, "%.3f");
+        ImGui::InputFloat("Max Value##unlim_max", &MaxValue, 10000.0f, 100000.0f, "%.3f");
 
         ImGui::Spacing();
 

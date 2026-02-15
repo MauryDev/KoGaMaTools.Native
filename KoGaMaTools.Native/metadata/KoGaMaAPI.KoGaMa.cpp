@@ -26,6 +26,8 @@ SharedCubeFunctions::Init(klassData[16]);
 MVBuildModeAvatarLocal_EditMode::Init(klassData[17]);
 RotationHelper::Init(klassData[18]);
 SettingsSlider::Init(klassData[19]);
+MVGameControllerBase::Init(klassData[20]);
+AwayMonitor::Init(klassData[21]);
 
 
         ::Tools::Il2Cpp::Metadata::Free(metadata);        
@@ -890,6 +892,234 @@ getMi(Initialize,1,2);
 getM(ValueChanged,3);
 getM(Reset,4);
 getM(ctor,5);
+
+#undef getF
+#undef getM
+#undef getMi
+    }
+
+    void MVGameControllerBase::Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition) {
+        #define getF(a,b) f_##a = klass.getField(#b)
+#define getMi(a,i,token) m##i##_##a = klass.getMethodByToken( classdefinition.GetMethodToken(token))
+#define getM(a,token) m_##a = klass.getMethodByToken(classdefinition.GetMethodToken(token))
+klass = Il2CppClass("Assembly-CSharp.dll", "", "MVGameControllerBase");
+
+if (klass.isNull()) {
+return;
+}
+		klass.RuntimeInit();
+getF(LevelingTestMode,LevelingTestMode);
+getF(ClientShopInsideInventory,ClientShopInsideInventory);
+getF(regionConfigManager,regionConfigManager);
+getF(debugLogHandler,debugLogHandler);
+getF(mainCameraManager,mainCameraManager);
+getF(styles,styles);
+getF(materialLoader,materialLoader);
+getF(prefabPool,prefabPool);
+getF(textureIntegrityChecker,textureIntegrityChecker);
+getF(themeRepository,themeRepository);
+getF(streamingAssetManager,streamingAssetManager);
+getF(embeddedPlayerConfig,embeddedPlayerConfig);
+getF(IsInitialized_k_BackingField,<IsInitialized>k__BackingField);
+getF(DisconnectIsOk_k_BackingField,<DisconnectIsOk>k__BackingField);
+getF(PlayModeUI_k_BackingField,<PlayModeUI>k__BackingField);
+getF(EditModeUI_k_BackingField,<EditModeUI>k__BackingField);
+getF(OnReceivedGameMsg,OnReceivedGameMsg);
+getF(OnReceivedNotification,OnReceivedNotification);
+getF(OnPostGameInit,OnPostGameInit);
+getF(instance,instance);
+getF(game,game);
+getF(audioManager,audioManager);
+getF(browserComm,browserComm);
+getF(levelLoader,levelLoader);
+getF(skinnedMeshOptimizeManager,skinnedMeshOptimizeManager);
+getF(flagDebriefingControl,flagDebriefingControl);
+getF(goldRewardManager,goldRewardManager);
+getF(joystickControllerStack,joystickControllerStack);
+getF(quitHasBeenCalled,quitHasBeenCalled);
+getF(timeReward,timeReward);
+getF(overrideMaterials,overrideMaterials);
+getF(loadStats,loadStats);
+getF(joinState,_joinState);
+getF(firstFrameUpdateActorReady,firstFrameUpdateActorReady);
+getF(reAuthTestTries,reAuthTestTries);
+getF(modeController,modeController);
+getF(WebPlayAsTouch_k_BackingField,<WebPlayAsTouch>k__BackingField);
+getF(PortalUI_k_BackingField,<PortalUI>k__BackingField);
+getF(ShuttingDown_k_BackingField,<ShuttingDown>k__BackingField);
+getF(WebPlayAsTouchInitialized_k_BackingField,<WebPlayAsTouchInitialized>k__BackingField);
+getF(GameSessionData_k_BackingField,<GameSessionData>k__BackingField);
+getF(onJoinStateChanged,onJoinStateChanged);
+getF(SeekAdConsent_k_BackingField,<SeekAdConsent>k__BackingField);
+getF(audioBuild,audioBuild);
+getF(waterPlaneManagerPrefab,waterPlaneManagerPrefab);
+getF(waterPlaneManager,waterPlaneManager);
+getF(skyboxManager,skyboxManager);
+getF(subscriberCooldownsManager,subscriberCooldownsManager);
+getF(Quitting_k_BackingField,<Quitting>k__BackingField);
+getF(LeavingEditPlayMode_k_BackingField,<LeavingEditPlayMode>k__BackingField);
+
+		getM(get_SpawnRoleDataMediatorLocal,0);
+getM(get_LocalPlayer,1);
+getM(get_GameEventManager,2);
+getM(IsInCorrectInventory,3);
+getM(get_IsInitialized,4);
+getM(set_IsInitialized,5);
+getM(get_DisconnectIsOk,6);
+getM(set_DisconnectIsOk,7);
+getM(get_PlayModeUI,8);
+getM(set_PlayModeUI,9);
+getM(get_EditModeUI,10);
+getM(set_EditModeUI,11);
+getM(get_IsAlive,12);
+getM(get_Game,13);
+getM(get_AudioManager,14);
+getM(get_BrowserComm,15);
+getM(get_LevelLoader,16);
+getM(get_SkinnedMeshOptimizeManager,17);
+getM(get_FlagDebriefingControl,18);
+getM(get_GoldRewardManager,19);
+getM(get_TextureIntegrityChecker,20);
+getM(get_StreamingAssetManager,21);
+getM(get_EmbeddedPlayerConfig,22);
+getM(get_RegionConfig,23);
+getM(get_StaticAssetsConfig,24);
+getM(get_WebPlayAsTouch,25);
+getM(set_WebPlayAsTouch,26);
+getM(get_PortalUI,27);
+getM(set_PortalUI,28);
+getM(get_ShuttingDown,29);
+getM(set_ShuttingDown,30);
+getM(get_WebPlayAsTouchInitialized,31);
+getM(set_WebPlayAsTouchInitialized,32);
+getM(get_GameSessionData,33);
+getM(set_GameSessionData,34);
+getM(get_BuildTarget,35);
+getM(get_OnFirstFrameUpdateActorReady,36);
+getM(set_OnFirstFrameUpdateActorReady,37);
+getM(get_OkToReAuth,38);
+getM(get_ReAuthTries,39);
+getM(get_UsingDevSessionData,40);
+getM(get_OperationRequests,41);
+getM(get_LoadStats,42);
+getM(get_GameMode,43);
+getM(get_WOCM,44);
+getM(get_TimeReward,45);
+getM(get_IsTouristSession,46);
+getM(get_AdManager,47);
+getM(get_GetAdManager,48);
+getM(get_SeekAdConsent,49);
+getM(set_SeekAdConsent,50);
+getM(get_JoinState,51);
+getM(set_JoinState,52);
+getM(get_OnJoinStateChanged,53);
+getM(set_OnJoinStateChanged,54);
+getM(get_IsPlayingInternal,55);
+getM(get_IsPlaying,56);
+getM(get_MaterialLoader,57);
+getM(get_MainCameraManager,58);
+getM(get_WaterPlaneManager,59);
+getM(get_SkyboxManager,60);
+getM(get_SubscriberCooldownsManager,61);
+getM(Awake,62);
+getM(InitRegionDependent,63);
+getM(Start,64);
+getM(OnDestroy,65);
+getM(UnregisterPlayModeController,66);
+getM(Update,67);
+getM(FixedUpdate,68);
+getM(LateUpdate,69);
+getM(OnDrawGizmos,70);
+getM(OnRTGAppInitialize,71);
+getM(RegisterPlayModeController,72);
+getMi(PostGameMsg,0,73);
+getMi(PostGameMsg,1,74);
+getM(PostDestroyCleanup,75);
+getM(UpdateControllerUpdate,76);
+getM(RegisterJoystickControllerStack,77);
+getM(PushJoystick,78);
+getM(PopJoystick,79);
+getM(SetGameSessionData,80);
+getM(TryReauth,81);
+getM(ApplicationQuit,82);
+getM(RegisterOverrideMaterials,83);
+getM(SetWindowPos,84);
+getM(FindWindow,85);
+getM(SetPosition,86);
+getM(get_Quitting,87);
+getM(set_Quitting,88);
+getM(get_LeavingEditPlayMode,89);
+getM(set_LeavingEditPlayMode,90);
+getM(OnApplicationQuit,91);
+getM(ShutDown,92);
+getM(HandleApplicationQuit,93);
+getM(CleanUp,94);
+getM(CleanUpPortal,95);
+getM(HandleQuitDisconnect,96);
+getM(AlternatePortTest,97);
+getM(StartGame,98);
+getM(InitWebGL,99);
+getM(InitStandAlone,100);
+getM(OnReceivedReAuthWebParametersFromHttpRequest,101);
+getM(OnReceivedSessionData,102);
+getM(UpdateInternal,103);
+getM(Initialize,104);
+getM(HandleDebugShortCuts,105);
+getM(StartGameWithSessionData,106);
+getM(ReceivedLoadStatsCallback,107);
+getM(UpdateGame,108);
+getM(DeleteScreenPlayerPrefs,109);
+getM(UpdateControllerLateUpdate,110);
+getM(ForceEmbedSite,111);
+getM(TogglePlayerIndicators,112);
+getM(ctor,113);
+
+#undef getF
+#undef getM
+#undef getMi
+    }
+
+    void AwayMonitor::Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition) {
+        #define getF(a,b) f_##a = klass.getField(#b)
+#define getMi(a,i,token) m##i##_##a = klass.getMethodByToken( classdefinition.GetMethodToken(token))
+#define getM(a,token) m_##a = klass.getMethodByToken(classdefinition.GetMethodToken(token))
+klass = Il2CppClass("Assembly-CSharp.dll", "", "AwayMonitor");
+
+if (klass.isNull()) {
+return;
+}
+		klass.RuntimeInit();
+getF(instance,instance);
+getF(latestResetAFKTime,latestResetAFKTime);
+getF(awayCheckFrequency,awayCheckFrequency);
+getF(idleKickTimes,idleKickTimes);
+getF(state,state);
+getF(idleKickEnabled,idleKickEnabled);
+getF(latestMouseMoveTime,latestMouseMoveTime);
+getF(mouseX,mouseX);
+getF(mouseY,mouseY);
+getF(scroll,scroll);
+getF(platformerLeft,platformerLeft);
+getF(platformerRight,platformerRight);
+getF(allAxisAvailable,allAxisAvailable);
+getF(allPlatformerButtonsAvailable,allPlatformerButtonsAvailable);
+
+		getM(get_IdleKickEnabled,0);
+getM(set_IdleKickEnabled,1);
+getM(get_LatestMouseMoveTime,2);
+getM(ctor,3);
+getM(Initialize,4);
+getM(Destroy,5);
+getM(UpdateMobile,6);
+getM(BackgroundUpdate,7);
+getM(InternalUpdate,8);
+getM(UpdateButtons,9);
+getM(Update,10);
+getM(UpdateIdleAction,11);
+getM(UpdateIdle,12);
+getM(UpdateMouse,13);
+getM(HandleIdle,14);
+getM(CheckAndResolvePendingKick,15);
 
 #undef getF
 #undef getM

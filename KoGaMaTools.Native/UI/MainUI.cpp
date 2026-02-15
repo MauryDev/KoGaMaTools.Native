@@ -5,12 +5,21 @@
 
 #include "../metadata/KoGaMaAPI.KoGaMa.h"
 
-
-template <typename ...T>
-void RenderSingletones()
-{
-	(T::Render(), ...);
+namespace KoGaMaTools::UI {
+	namespace {
+		template <typename ...T>
+		void RenderSingletones(const char* str)
+		{
+			if (ImGui::BeginTabItem(str))
+			{
+				(T::Render(), ...);
+				ImGui::EndTabItem();
+			}
+		}
+	}
+	
 }
+
 void KoGaMaTools::UI::MainUI::Install()
 {
 
@@ -52,27 +61,26 @@ void KoGaMaTools::UI::MainUI::TabBarTools()
 	if (ImGui::BeginTabBar("##tabs1"))
 	{
 		TabItem_Build();
-
+		TabItem_PvP();
 		ImGui::EndTabBar();
 	}
 }
 
 void KoGaMaTools::UI::MainUI::TabItem_Build()
 {
-	if (ImGui::BeginTabItem("Build"))
-	{
+	RenderSingletones<Services::SinglePaintFace,
+		Services::NoLimit,
+		Services::BlueModeTool,
+		Services::DestructiblesUnlock,
+		Services::CustomGrid,
+		Services::EditModeSpeed,
+		Services::RotationStep,
+		Services::UnlimitedConfig>("Build");
 
 
-		RenderSingletones<Services::SinglePaintFace,
-			Services::NoLimit,
-			Services::BlueModeTool,
-			Services::DestructiblesUnlock,
-			Services::CustomGrid,
-			Services::EditModeSpeed,
-			Services::RotationStep,
-			Services::UnlimitedConfig>();
-		
+}
 
-		ImGui::EndTabItem();
-	}
+void KoGaMaTools::UI::MainUI::TabItem_PvP()
+{
+	RenderSingletones<Services::AntiAfk>("PvP");
 }

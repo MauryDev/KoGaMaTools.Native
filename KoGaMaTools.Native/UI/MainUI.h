@@ -5,6 +5,8 @@ namespace KoGaMaTools::UI {
 		static void Render();
 		static void TabBarTools();
 		static void TabItem_Build();
+		static void TabItem_PvP();
+
 	};
 	
 }

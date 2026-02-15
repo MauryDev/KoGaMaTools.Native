@@ -12,3 +12,6 @@
 #include "Build/RotationStep.h"
 
 #include "Build/UnlimitedConfig.h"
+#include "PvP/AntiAfk.h"
+
+#include "Common/MainComponent.h"

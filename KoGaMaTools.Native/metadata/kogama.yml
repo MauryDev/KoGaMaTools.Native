@@ -24,3 +24,5 @@ klasses:
 - fullname: UGUI.Desktop.Scripts.EditMode.Gizmo.RotationHelper
   name: RotationHelper
 - fullname: SettingsSlider
+- fullname: MVGameControllerBase
+- fullname: AwayMonitor

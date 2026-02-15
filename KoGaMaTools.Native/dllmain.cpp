@@ -62,7 +62,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 
 
 	namespace S = KoGaMaTools::Services;
-	InstallMultiple<S::SinglePaintFace, 
+	InstallMultiple<S::MainComponent,
+		S::SinglePaintFace, 
 		S::NoLimit,
 		S::BlueModeTool,
 		S::DestructiblesUnlock,
@@ -70,6 +71,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::EditModeSpeed,
 		S::RotationStep,
 		S::UnlimitedConfig,
+		S::AntiAfk,
 		KoGaMaTools::UI::MainUI>();
 
 
