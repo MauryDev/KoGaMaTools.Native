@@ -59,19 +59,16 @@ namespace KoGaMaTools::Services {
     }
     bool LoggerService::Assert(bool condition, const std::string& test_name) {
         if (condition) {
-            // Opcional: Logar sucesso apenas para debug pesado
             LogWithLevel("PASS", test_name); 
         }
         else {
-            // Se a condição for falsa, registramos o erro com destaque
             std::string failure_msg = "ASSERT FAILED: " + test_name;
             LogWithLevel("CRITICAL", failure_msg);
 
-            
+			throw std::runtime_error(failure_msg);
         }
 
         
-        // Forçamos o flush para garantir que o erro esteja no arquivo se o app crashar
         if (_logFile.is_open()) {
             _logFile.flush();
         }

@@ -164,6 +164,7 @@
     <ClCompile Include="services\PathHelper.cpp" />
     <ClCompile Include="services\Build\SinglePaintFace.cpp" />
     <ClCompile Include="services\PvP\AntiAfk.cpp" />
+    <ClCompile Include="services\PvP\CustomCrossHairColor.cpp" />
     <ClCompile Include="UI\MainUI.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -180,8 +181,10 @@
     <ClInclude Include="services\LoggerService.h" />
     <ClInclude Include="services\PathHelper.h" />
     <ClInclude Include="services\PvP\AntiAfk.h" />
+    <ClInclude Include="services\PvP\CustomCrossHairColor.h" />
     <ClInclude Include="services\services.h" />
     <ClInclude Include="services\Build\SinglePaintFace.h" />
+    <ClInclude Include="Types\Vector4.h" />
     <ClInclude Include="UI\MainUI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

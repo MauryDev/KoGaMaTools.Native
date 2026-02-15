@@ -33,10 +33,18 @@ void KoGaMaTools::Services::EditModeSpeed::Install()
 
     auto ptr = (void**)K::MVBuildModeAvatarLocal_EditMode::m_MoveCharacter.ptr;
 
-    logger->Assert(MH_CreateHook(*ptr, MoveCharacter, (void**)&MoveCharacter_Old) == MH_OK, "[EditModeSpeed] - CreateHook");
-    logger->Assert(MH_EnableHook(*ptr) == MH_OK, "[EditModeSpeed - EnableHook]");
+    logger->Assert(ptr != nullptr, "[EditModeSpeed] - Null methodPtr");
+    logger->Assert(*ptr != nullptr, "[EditModeSpeed] - Null target");
 
+    logger->Assert(
+        MH_CreateHook(*ptr, MoveCharacter, (void**)&MoveCharacter_Old) == MH_OK,
+        "[EditModeSpeed] - CreateHook"
+    );
 
+    logger->Assert(
+        MH_EnableHook(*ptr) == MH_OK,
+        "[EditModeSpeed] - EnableHook"
+    );
 }
 
 void KoGaMaTools::Services::EditModeSpeed::Render()

@@ -26,3 +26,6 @@ klasses:
 - fullname: SettingsSlider
 - fullname: MVGameControllerBase
 - fullname: AwayMonitor
+- fullname: CrossHair
+- fullname: UnityEngine.UI.Graphic
+  name: UI_Graphic

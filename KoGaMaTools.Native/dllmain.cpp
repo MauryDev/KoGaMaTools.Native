@@ -72,6 +72,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::RotationStep,
 		S::UnlimitedConfig,
 		S::AntiAfk,
+		S::CustomCrossHairColor,
 		KoGaMaTools::UI::MainUI>();
 
 

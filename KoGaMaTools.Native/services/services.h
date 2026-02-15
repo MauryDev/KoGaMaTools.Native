@@ -13,5 +13,6 @@
 
 #include "Build/UnlimitedConfig.h"
 #include "PvP/AntiAfk.h"
+#include "PvP/CustomCrossHairColor.h"
 
 #include "Common/MainComponent.h"

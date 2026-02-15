@@ -2,7 +2,7 @@
 #include "..\..\metadata\KoGaMaAPI.KoGaMa.h"
 #include "MinHook.h"
 #include <imgui.h>
-
+#include "../LoggerService.h"
 namespace KoGaMaTools::Services
 {
 	namespace {
@@ -10,12 +10,22 @@ namespace KoGaMaTools::Services
 	}
 	void SinglePaintFace::Install()
 	{
+		auto logger = LoggerService::GetMainTest();
+
 		auto methodVer = (void**)KoGaMaAPI::KoGaMa::PaintCubes::m_Execute.ptr;
 
+		logger->Assert(methodVer != nullptr, "[SinglePaintFace] - Null methodPtr");
+		logger->Assert(*methodVer != nullptr, "[SinglePaintFace] - Null target");
 
-		MH_CreateHook(*methodVer, PaintCubes_Execute, (void**)&OldFunc);
+		logger->Assert(
+			MH_CreateHook(*methodVer, PaintCubes_Execute, (void**)&OldFunc) == MH_OK,
+			"[SinglePaintFace] - CreateHook"
+		);
 
-		MH_EnableHook(*methodVer);
+		logger->Assert(
+			MH_EnableHook(*methodVer) == MH_OK,
+			"[SinglePaintFace] - EnableHook"
+		);
 	}
 	void SinglePaintFace::Render()
 	{

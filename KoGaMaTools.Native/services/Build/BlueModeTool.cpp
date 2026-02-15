@@ -22,12 +22,25 @@ void KoGaMaTools::Services::BlueModeTool::OnExecute(void* instance, uint8_t valu
 
 void KoGaMaTools::Services::BlueModeTool::Install()
 {
-	
-	auto methodPtr = (void**)KoGaMaAPI::KoGaMa::MainCameraManager::m_set_BlueModeEnabled.ptr;
-	auto result = MH_CreateHook(*methodPtr, OnExecute, (void**)&MainCameraManager_set_BlueModeEnabled_Old);
-	
+	auto logger = LoggerService::GetMainTest();
 
-	auto result2 = MH_EnableHook(*methodPtr);
+	auto methodPtr = (void**)KoGaMaAPI::KoGaMa::MainCameraManager::m_set_BlueModeEnabled.ptr;
+	logger->Assert(methodPtr != nullptr, "[BlueMode] - Null target");
+	logger->Assert(*methodPtr != nullptr, "[BlueMode] - Method Pointer is null");
+
+	
+	logger->Assert(
+		MH_CreateHook(
+			*methodPtr,
+			OnExecute,
+			(void**)&MainCameraManager_set_BlueModeEnabled_Old
+		) == MH_OK,
+		"[BlueMode] - CreateHook"
+	);
+	logger->Assert(
+		MH_EnableHook(*methodPtr) == MH_OK,
+		"[BlueMode] - EnableHook"
+	);
 
 
 }

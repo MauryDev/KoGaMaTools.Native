@@ -628,5 +628,93 @@ inline static Utils::FieldInfo<false> /* System.DateTime */  f_latestResetAFKTim
     static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
     
 };
+struct CrossHair {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<false> /* UnityEngine.UI.Image */  f_crossHair,/* UnityEngine.GameObject */  f_ammoRoot,/* UnityEngine.UI.Text */  f_ammoCount,/* UnityEngine.UI.Image */  f_chargeFill,/* System.Single */  f_toggleInterval,/* UnityEngine.UI.Image */  f_hitIndicatorImage,/* UnityEngine.AnimationCurve */  f_fadeCurve,/* System.Single */  f_timeSinceLastToggle,/* System.Boolean */  f_isFillOn;
+
+	/*System.Boolean get_Visible()*/ inline static Utils::MethodInfo<false,true> m_get_Visible;
+/*System.Void set_Visible(System.Boolean value)*/ inline static Utils::MethodInfo<false,true> m_set_Visible;
+/*System.Void ShowHasHitEffect()*/ inline static Utils::MethodInfo<false,true> m_ShowHasHitEffect;
+/*System.Collections.IEnumerator HitIndicatorAnimation()*/ inline static Utils::MethodInfo<false,false> m_HitIndicatorAnimation;
+/*System.Void UpdateCrossHair(PickupItem pickupItem)*/ inline static Utils::MethodInfo<false,true> m_UpdateCrossHair;
+/*System.Void UpdateAmmoCount(PickupItem pickupItem)*/ inline static Utils::MethodInfo<false,false> m_UpdateAmmoCount;
+/*System.Void UpdateChargeState(PickupItem pickupItem)*/ inline static Utils::MethodInfo<false,false> m_UpdateChargeState;
+/*System.Void UpdateCrosshairColor(PickupItem pickupItem)*/ inline static Utils::MethodInfo<false,false> m_UpdateCrosshairColor;
+/*System.Void .ctor()*/ inline static Utils::MethodInfo<false,false> m_ctor;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct UI_Graphic {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<true> /* UnityEngine.Material */ f_s_DefaultUI,/* UnityEngine.Texture2D */ f_s_WhiteTexture,/* UnityEngine.Mesh */ f_s_Mesh,/* UnityEngine.UI.VertexHelper */ f_s_VertexHelper;
+inline static Utils::FieldInfo<false> /* UnityEngine.Material */  f_m_Material,/* UnityEngine.Color */  f_m_Color,/* System.Boolean */  f_m_SkipLayoutUpdate,/* System.Boolean */  f_m_SkipMaterialUpdate,/* System.Boolean */  f_m_RaycastTarget,/* System.Boolean */  f_m_RaycastTargetCache,/* UnityEngine.Vector4 */  f_m_RaycastPadding,/* UnityEngine.RectTransform */  f_m_RectTransform,/* UnityEngine.CanvasRenderer */  f_m_CanvasRenderer,/* UnityEngine.Canvas */  f_m_Canvas,/* System.Boolean */  f_m_VertsDirty,/* System.Boolean */  f_m_MaterialDirty,/* UnityEngine.Events.UnityAction */  f_m_OnDirtyLayoutCallback,/* UnityEngine.Events.UnityAction */  f_m_OnDirtyVertsCallback,/* UnityEngine.Events.UnityAction */  f_m_OnDirtyMaterialCallback,/* UnityEngine.Mesh */  f_m_CachedMesh,/* UnityEngine.Vector2[] */  f_m_CachedUvs,/* UnityEngine.UI.CoroutineTween.TweenRunner`1<UnityEngine.UI.CoroutineTween.ColorTween> */  f_m_ColorTweenRunner,/* System.Boolean */  f_useLegacyMeshGeneration_k_BackingField;
+
+	/*UnityEngine.Material get_defaultGraphicMaterial()*/ inline static Utils::MethodInfo<true,false> m_get_defaultGraphicMaterial;
+/*UnityEngine.Color get_color()*/ inline static Utils::MethodInfo<false,true> m_get_color;
+/*System.Void set_color(UnityEngine.Color value)*/ inline static Utils::MethodInfo<false,true> m_set_color;
+/*System.Boolean get_raycastTarget()*/ inline static Utils::MethodInfo<false,true> m_get_raycastTarget;
+/*System.Void set_raycastTarget(System.Boolean value)*/ inline static Utils::MethodInfo<false,true> m_set_raycastTarget;
+/*UnityEngine.Vector4 get_raycastPadding()*/ inline static Utils::MethodInfo<false,false> m_get_raycastPadding;
+/*System.Void set_raycastPadding(UnityEngine.Vector4 value)*/ inline static Utils::MethodInfo<false,false> m_set_raycastPadding;
+/*System.Boolean get_useLegacyMeshGeneration()*/ inline static Utils::MethodInfo<false,false> m_get_useLegacyMeshGeneration;
+/*System.Void set_useLegacyMeshGeneration(System.Boolean value)*/ inline static Utils::MethodInfo<false,false> m_set_useLegacyMeshGeneration;
+/*System.Void .ctor()*/ inline static Utils::MethodInfo<false,false> m_ctor;
+/*System.Void SetAllDirty()*/ inline static Utils::MethodInfo<false,true> m_SetAllDirty;
+/*System.Void SetLayoutDirty()*/ inline static Utils::MethodInfo<false,true> m_SetLayoutDirty;
+/*System.Void SetVerticesDirty()*/ inline static Utils::MethodInfo<false,true> m_SetVerticesDirty;
+/*System.Void SetMaterialDirty()*/ inline static Utils::MethodInfo<false,true> m_SetMaterialDirty;
+/*System.Void SetRaycastDirty()*/ inline static Utils::MethodInfo<false,false> m_SetRaycastDirty;
+/*System.Void OnRectTransformDimensionsChange()*/ inline static Utils::MethodInfo<false,true> m_OnRectTransformDimensionsChange;
+/*System.Void OnBeforeTransformParentChanged()*/ inline static Utils::MethodInfo<false,true> m_OnBeforeTransformParentChanged;
+/*System.Void OnTransformParentChanged()*/ inline static Utils::MethodInfo<false,true> m_OnTransformParentChanged;
+/*System.Int32 get_depth()*/ inline static Utils::MethodInfo<false,false> m_get_depth;
+/*UnityEngine.RectTransform get_rectTransform()*/ inline static Utils::MethodInfo<false,true> m_get_rectTransform;
+/*UnityEngine.Canvas get_canvas()*/ inline static Utils::MethodInfo<false,false> m_get_canvas;
+/*System.Void CacheCanvas()*/ inline static Utils::MethodInfo<false,false> m_CacheCanvas;
+/*UnityEngine.CanvasRenderer get_canvasRenderer()*/ inline static Utils::MethodInfo<false,false> m_get_canvasRenderer;
+/*UnityEngine.Material get_defaultMaterial()*/ inline static Utils::MethodInfo<false,true> m_get_defaultMaterial;
+/*UnityEngine.Material get_material()*/ inline static Utils::MethodInfo<false,true> m_get_material;
+/*System.Void set_material(UnityEngine.Material value)*/ inline static Utils::MethodInfo<false,true> m_set_material;
+/*UnityEngine.Material get_materialForRendering()*/ inline static Utils::MethodInfo<false,true> m_get_materialForRendering;
+/*UnityEngine.Texture get_mainTexture()*/ inline static Utils::MethodInfo<false,true> m_get_mainTexture;
+/*System.Void OnEnable()*/ inline static Utils::MethodInfo<false,true> m_OnEnable;
+/*System.Void OnDisable()*/ inline static Utils::MethodInfo<false,true> m_OnDisable;
+/*System.Void OnDestroy()*/ inline static Utils::MethodInfo<false,true> m_OnDestroy;
+/*System.Void OnCanvasHierarchyChanged()*/ inline static Utils::MethodInfo<false,true> m_OnCanvasHierarchyChanged;
+/*System.Void OnCullingChanged()*/ inline static Utils::MethodInfo<false,true> m_OnCullingChanged;
+/*System.Void Rebuild(UnityEngine.UI.CanvasUpdate update)*/ inline static Utils::MethodInfo<false,true> m_Rebuild;
+/*System.Void LayoutComplete()*/ inline static Utils::MethodInfo<false,true> m_LayoutComplete;
+/*System.Void GraphicUpdateComplete()*/ inline static Utils::MethodInfo<false,true> m_GraphicUpdateComplete;
+/*System.Void UpdateMaterial()*/ inline static Utils::MethodInfo<false,true> m_UpdateMaterial;
+/*System.Void UpdateGeometry()*/ inline static Utils::MethodInfo<false,true> m_UpdateGeometry;
+/*System.Void DoMeshGeneration()*/ inline static Utils::MethodInfo<false,false> m_DoMeshGeneration;
+/*System.Void DoLegacyMeshGeneration()*/ inline static Utils::MethodInfo<false,false> m_DoLegacyMeshGeneration;
+/*UnityEngine.Mesh get_workerMesh()*/ inline static Utils::MethodInfo<true,false> m_get_workerMesh;
+/*System.Void OnFillVBO(System.Collections.Generic.List`1<UnityEngine.UIVertex> vbo)*/ inline static Utils::MethodInfo<false,true> m_OnFillVBO;
+/*System.Void OnPopulateMesh(UnityEngine.Mesh m)*/ inline static Utils::MethodInfo<false,true> m0_OnPopulateMesh;
+/*System.Void OnPopulateMesh(UnityEngine.UI.VertexHelper vh)*/ inline static Utils::MethodInfo<false,true> m1_OnPopulateMesh;
+/*System.Void OnDidApplyAnimationProperties()*/ inline static Utils::MethodInfo<false,true> m_OnDidApplyAnimationProperties;
+/*System.Void SetNativeSize()*/ inline static Utils::MethodInfo<false,true> m_SetNativeSize;
+/*System.Boolean Raycast(UnityEngine.Vector2 sp, UnityEngine.Camera eventCamera)*/ inline static Utils::MethodInfo<false,true> m0_Raycast;
+/*System.Boolean Raycast(UnityEngine.Vector2 sp, UnityEngine.Camera eventCamera, System.Boolean ignoreMasks)*/ inline static Utils::MethodInfo<false,false> m1_Raycast;
+/*UnityEngine.Vector2 PixelAdjustPoint(UnityEngine.Vector2 point)*/ inline static Utils::MethodInfo<false,false> m_PixelAdjustPoint;
+/*UnityEngine.Rect GetPixelAdjustedRect()*/ inline static Utils::MethodInfo<false,false> m_GetPixelAdjustedRect;
+/*System.Void CrossFadeColor(UnityEngine.Color targetColor, System.Single duration, System.Boolean ignoreTimeScale, System.Boolean useAlpha)*/ inline static Utils::MethodInfo<false,true> m0_CrossFadeColor;
+/*System.Void CrossFadeColor(UnityEngine.Color targetColor, System.Single duration, System.Boolean ignoreTimeScale, System.Boolean useAlpha, System.Boolean useRGB)*/ inline static Utils::MethodInfo<false,true> m1_CrossFadeColor;
+/*UnityEngine.Color CreateColorFromAlpha(System.Single alpha)*/ inline static Utils::MethodInfo<true,false> m_CreateColorFromAlpha;
+/*System.Void CrossFadeAlpha(System.Single alpha, System.Single duration, System.Boolean ignoreTimeScale)*/ inline static Utils::MethodInfo<false,true> m_CrossFadeAlpha;
+/*System.Void RegisterDirtyLayoutCallback(UnityEngine.Events.UnityAction action)*/ inline static Utils::MethodInfo<false,false> m_RegisterDirtyLayoutCallback;
+/*System.Void UnregisterDirtyLayoutCallback(UnityEngine.Events.UnityAction action)*/ inline static Utils::MethodInfo<false,false> m_UnregisterDirtyLayoutCallback;
+/*System.Void RegisterDirtyVerticesCallback(UnityEngine.Events.UnityAction action)*/ inline static Utils::MethodInfo<false,false> m_RegisterDirtyVerticesCallback;
+/*System.Void UnregisterDirtyVerticesCallback(UnityEngine.Events.UnityAction action)*/ inline static Utils::MethodInfo<false,false> m_UnregisterDirtyVerticesCallback;
+/*System.Void RegisterDirtyMaterialCallback(UnityEngine.Events.UnityAction action)*/ inline static Utils::MethodInfo<false,false> m_RegisterDirtyMaterialCallback;
+/*System.Void UnregisterDirtyMaterialCallback(UnityEngine.Events.UnityAction action)*/ inline static Utils::MethodInfo<false,false> m_UnregisterDirtyMaterialCallback;
+/*System.Void .cctor()*/ inline static Utils::MethodInfo<true,false> m_cctor;
+/*UnityEngine.Transform UnityEngine.UI.ICanvasElement.get_transform()*/ inline static Utils::MethodInfo<false,true> m_UnityEngine_UI_ICanvasElement_get_transform;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
 
 }

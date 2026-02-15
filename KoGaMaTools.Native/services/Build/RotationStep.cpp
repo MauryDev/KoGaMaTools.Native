@@ -11,8 +11,18 @@ void KoGaMaTools::Services::RotationStep::Install()
 {
 	auto logger = LoggerService::GetMainTest();
 	auto methodPtr = (void**)KoGaMaAPI::KoGaMa::RotationHelper::m_RotateStep.ptr;
-	logger->Assert(MH_CreateHook(*methodPtr, RotateStep_Detour, (void**)&RotateStep_Old) == MH_OK,"[RotationStep] - CreateHook");
-	logger->Assert(MH_EnableHook(*methodPtr) == MH_OK, "[RotationStep] - EnableHook");
+    logger->Assert(methodPtr != nullptr, "[RotationStep] - Null method");
+
+    logger->Assert(*methodPtr != nullptr, "[RotationStep] - Null methodPointer");
+
+	logger->Assert(
+        MH_CreateHook(*methodPtr, RotateStep_Detour, (void**)&RotateStep_Old) == MH_OK,
+        "[RotationStep] - CreateHook"
+    );
+	logger->Assert(
+        MH_EnableHook(*methodPtr) == MH_OK, 
+        "[RotationStep] - EnableHook"
+    );
 
 }
 

@@ -3,20 +3,44 @@
 #include <imgui.h>
 #include "../../metadata/KoGaMaAPI.KoGaMa.h"
 #include  <algorithm>
+#include "../LoggerService.h"
 namespace {
 	void(*m0_Initialize_Old)(void*, void* key, float value, float minValue, float maxValue);
 	void(*m1_Initialize_Old)(void*, void* key, int value, int minValue, int maxValue);
 }
 void KoGaMaTools::Services::UnlimitedConfig::Install()
 {
-	namespace K = KoGaMaAPI::KoGaMa;
-	auto methodPtr1 = (void**)K::SettingsSlider::m0_Initialize.ptr;
-	auto methodPtr2 = (void**)K::SettingsSlider::m1_Initialize.ptr;
-	MH_CreateHook(*methodPtr1, Initialize1, (void**)&m0_Initialize_Old);
-	MH_CreateHook(*methodPtr2, Initialize2, (void**)&m1_Initialize_Old);
+    namespace K = KoGaMaAPI::KoGaMa;
+    auto logger = LoggerService::GetMainTest();
 
-	MH_EnableHook(*methodPtr1);
-	MH_EnableHook(*methodPtr2);
+    auto methodPtr1 = (void**)K::SettingsSlider::m0_Initialize.ptr;
+    auto methodPtr2 = (void**)K::SettingsSlider::m1_Initialize.ptr;
+
+    logger->Assert(methodPtr1 != nullptr, "[UnlimitedConfig] - Null methodPtr1");
+    logger->Assert(methodPtr2 != nullptr, "[UnlimitedConfig] - Null methodPtr2");
+
+    logger->Assert(*methodPtr1 != nullptr, "[UnlimitedConfig] - Null target m0_Initialize");
+    logger->Assert(*methodPtr2 != nullptr, "[UnlimitedConfig] - Null target m1_Initialize");
+
+    logger->Assert(
+        MH_CreateHook(*methodPtr1, Initialize1, (void**)&m0_Initialize_Old) == MH_OK,
+        "[UnlimitedConfig] - CreateHook m0_Initialize"
+    );
+
+    logger->Assert(
+        MH_CreateHook(*methodPtr2, Initialize2, (void**)&m1_Initialize_Old) == MH_OK,
+        "[UnlimitedConfig] - CreateHook m1_Initialize"
+    );
+
+    logger->Assert(
+        MH_EnableHook(*methodPtr1) == MH_OK,
+        "[UnlimitedConfig] - EnableHook m0_Initialize"
+    );
+
+    logger->Assert(
+        MH_EnableHook(*methodPtr2) == MH_OK,
+        "[UnlimitedConfig] - EnableHook m1_Initialize"
+    );
 }
 
 void KoGaMaTools::Services::UnlimitedConfig::Render()

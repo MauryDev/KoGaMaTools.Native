@@ -2,6 +2,7 @@
 #include "..\..\metadata\KoGaMaAPI.KoGaMa.h"
 #include "MinHook.h"
 #include <imgui.h>
+#include "../LoggerService.h"
 
 namespace KoGaMaTools::Services
 {
@@ -13,21 +14,27 @@ namespace KoGaMaTools::Services
 	}
 	void NoLimit::Install()
 	{
+		auto logger = LoggerService::GetMainTest();
+
 		auto methodVer = (void**)KoGaMaAPI::KoGaMa::ConstraintVisualizer::m_Init.ptr;
 		auto methodVer2 = (void**)KoGaMaAPI::KoGaMa::ModelingDynamicBoxConstraint::m_CanAddCubeAt.ptr;
 		auto methodVer3 = (void**)KoGaMaAPI::KoGaMa::ModelingBoxCountConstraint::m_CanAddCubeAt.ptr;
 		auto methodVer4 = (void**)KoGaMaAPI::KoGaMa::ModelingBoxCountConstraint::m_CanRemoveCubeAt.ptr;
 
-		MH_CreateHook(*methodVer, ConstraintVisualizer_Init, (void**)&ConstraintVisualizer_Init_Old);
-		MH_CreateHook(*methodVer2, ModelingDynamicBoxConstraint_CanAddCubeAt, (void**)&ModelingDynamicBoxConstraint_CanAddCubeAt_Old);
-		MH_CreateHook(*methodVer3, ModelingBoxCountConstraint_CanAddCubeAt, (void**)&ModelingBoxCountConstraint_CanAddCubeAt_Old);
-		MH_CreateHook(*methodVer4, ModelingBoxCountConstraint_CanRemoveCubeAt, (void**)&ModelingBoxCountConstraint_CanRemoveCubeAt_Old);
+		logger->Assert(methodVer && *methodVer, "[NoLimit] - Null ConstraintVisualizer::Init");
+		logger->Assert(methodVer2 && *methodVer2, "[NoLimit] - Null DynamicBoxConstraint::CanAdd");
+		logger->Assert(methodVer3 && *methodVer3, "[NoLimit] - Null BoxCountConstraint::CanAdd");
+		logger->Assert(methodVer4 && *methodVer4, "[NoLimit] - Null BoxCountConstraint::CanRemove");
 
-		MH_EnableHook(*methodVer);
-		MH_EnableHook(*methodVer2);
-		MH_EnableHook(*methodVer3);
-		MH_EnableHook(*methodVer4);
+		logger->Assert(MH_CreateHook(*methodVer, ConstraintVisualizer_Init, (void**)&ConstraintVisualizer_Init_Old) == MH_OK, "[NoLimit] - CreateHook Init");
+		logger->Assert(MH_CreateHook(*methodVer2, ModelingDynamicBoxConstraint_CanAddCubeAt, (void**)&ModelingDynamicBoxConstraint_CanAddCubeAt_Old) == MH_OK, "[NoLimit] - CreateHook DynamicAdd");
+		logger->Assert(MH_CreateHook(*methodVer3, ModelingBoxCountConstraint_CanAddCubeAt, (void**)&ModelingBoxCountConstraint_CanAddCubeAt_Old) == MH_OK, "[NoLimit] - CreateHook BoxAdd");
+		logger->Assert(MH_CreateHook(*methodVer4, ModelingBoxCountConstraint_CanRemoveCubeAt, (void**)&ModelingBoxCountConstraint_CanRemoveCubeAt_Old) == MH_OK, "[NoLimit] - CreateHook BoxRemove");
 
+		logger->Assert(MH_EnableHook(*methodVer) == MH_OK, "[NoLimit] - EnableHook Init");
+		logger->Assert(MH_EnableHook(*methodVer2) == MH_OK, "[NoLimit] - EnableHook DynamicAdd");
+		logger->Assert(MH_EnableHook(*methodVer3) == MH_OK, "[NoLimit] - EnableHook BoxAdd");
+		logger->Assert(MH_EnableHook(*methodVer4) == MH_OK, "[NoLimit] - EnableHook BoxRemove");
 	}
 	void NoLimit::Render()
 	{

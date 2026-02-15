@@ -23,9 +23,7 @@ void KoGaMaTools::Services::CustomGrid::Execute(void* instance, void* methodInfo
 
 std::array<float, 3> KoGaMaTools::Services::CustomGrid::GetClosestGridPoint(std::array<float, 3> worldPosition, std::array<float, 4> rotation, float gridSize, std::array<float, 3> scale, void* methodInfo)
 {
-    auto logger = LoggerService::GetMainTest();
 
-    logger->Info(std::format("Enabled: {}\nGridSize: {}", Enabled, GridSize));
     if (Enabled)
         gridSize = GridSize;
 
@@ -37,12 +35,24 @@ void KoGaMaTools::Services::CustomGrid::Install()
     auto logger = LoggerService::GetMainTest();
     auto methodPtr1 = (void**)KoGaMaAPI::KoGaMa::ESTranslate::m_Execute.ptr;
     auto methodPtr2 = (void**)KoGaMaAPI::KoGaMa::SharedCubeFunctions::m_GetClosestGridPoint.ptr;
+    logger->Assert(methodPtr1 != nullptr && *methodPtr1 != nullptr,"[CustomGrid] - Method or Method Pointer is null");
+    logger->Assert(
+        MH_CreateHook(*methodPtr1, Execute,(void**)&Execute_Old) == MH_OK,
+        "[CustomGrid] - Create Hook #1"
+    );
+    logger->Assert(
+        MH_CreateHook(*methodPtr2, GetClosestGridPoint, (void**)&GetClosestGridPoint_Old) == MH_OK,
+        "[CustomGrid] - Create Hook #2"
+    );
 
-    logger->Assert(MH_CreateHook(*methodPtr1, Execute,(void**)&Execute_Old) == MH_OK,"CustomGrid - Create Hook #1");
-    logger->Assert(MH_CreateHook(*methodPtr2, GetClosestGridPoint, (void**)&GetClosestGridPoint_Old) == MH_OK, "CustomGrid - Create Hook #2");
-
-    logger->Assert(MH_EnableHook(*methodPtr1) == MH_OK, "CustomGrid - Enable Hook #1");
-    logger->Assert(MH_EnableHook(*methodPtr2) == MH_OK, "CustomGrid - Enable Hook #2");
+    logger->Assert(
+        MH_EnableHook(*methodPtr1) == MH_OK,
+        "[CustomGrid] - Enable Hook #1"
+    );
+    logger->Assert(
+        MH_EnableHook(*methodPtr2) == MH_OK,
+        "[CustomGrid] - Enable Hook #2"
+    );
 
 }
 

@@ -82,5 +82,6 @@ void KoGaMaTools::UI::MainUI::TabItem_Build()
 
 void KoGaMaTools::UI::MainUI::TabItem_PvP()
 {
-	RenderSingletones<Services::AntiAfk>("PvP");
+	RenderSingletones<Services::AntiAfk,
+		Services::CustomCrossHairColor>("PvP");
 }

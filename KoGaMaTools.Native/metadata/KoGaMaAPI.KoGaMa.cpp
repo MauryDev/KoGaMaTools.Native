@@ -28,6 +28,8 @@ RotationHelper::Init(klassData[18]);
 SettingsSlider::Init(klassData[19]);
 MVGameControllerBase::Init(klassData[20]);
 AwayMonitor::Init(klassData[21]);
+CrossHair::Init(klassData[22]);
+UI_Graphic::Init(klassData[23]);
 
 
         ::Tools::Il2Cpp::Metadata::Free(metadata);        
@@ -1120,6 +1122,143 @@ getM(UpdateIdle,12);
 getM(UpdateMouse,13);
 getM(HandleIdle,14);
 getM(CheckAndResolvePendingKick,15);
+
+#undef getF
+#undef getM
+#undef getMi
+    }
+
+    void CrossHair::Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition) {
+        #define getF(a,b) f_##a = klass.getField(#b)
+#define getMi(a,i,token) m##i##_##a = klass.getMethodByToken( classdefinition.GetMethodToken(token))
+#define getM(a,token) m_##a = klass.getMethodByToken(classdefinition.GetMethodToken(token))
+klass = Il2CppClass("Assembly-CSharp.dll", "", "CrossHair");
+
+if (klass.isNull()) {
+return;
+}
+		klass.RuntimeInit();
+getF(crossHair,crossHair);
+getF(ammoRoot,ammoRoot);
+getF(ammoCount,ammoCount);
+getF(chargeFill,chargeFill);
+getF(toggleInterval,toggleInterval);
+getF(hitIndicatorImage,hitIndicatorImage);
+getF(fadeCurve,fadeCurve);
+getF(timeSinceLastToggle,timeSinceLastToggle);
+getF(isFillOn,isFillOn);
+
+		getM(get_Visible,0);
+getM(set_Visible,1);
+getM(ShowHasHitEffect,2);
+getM(HitIndicatorAnimation,3);
+getM(UpdateCrossHair,4);
+getM(UpdateAmmoCount,5);
+getM(UpdateChargeState,6);
+getM(UpdateCrosshairColor,7);
+getM(ctor,8);
+
+#undef getF
+#undef getM
+#undef getMi
+    }
+
+    void UI_Graphic::Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition) {
+        #define getF(a,b) f_##a = klass.getField(#b)
+#define getMi(a,i,token) m##i##_##a = klass.getMethodByToken( classdefinition.GetMethodToken(token))
+#define getM(a,token) m_##a = klass.getMethodByToken(classdefinition.GetMethodToken(token))
+klass = Il2CppClass("UnityEngine.UI.dll", "UnityEngine.UI", "Graphic");
+
+if (klass.isNull()) {
+return;
+}
+		klass.RuntimeInit();
+getF(s_DefaultUI,s_DefaultUI);
+getF(s_WhiteTexture,s_WhiteTexture);
+getF(m_Material,m_Material);
+getF(m_Color,m_Color);
+getF(m_SkipLayoutUpdate,m_SkipLayoutUpdate);
+getF(m_SkipMaterialUpdate,m_SkipMaterialUpdate);
+getF(m_RaycastTarget,m_RaycastTarget);
+getF(m_RaycastTargetCache,m_RaycastTargetCache);
+getF(m_RaycastPadding,m_RaycastPadding);
+getF(m_RectTransform,m_RectTransform);
+getF(m_CanvasRenderer,m_CanvasRenderer);
+getF(m_Canvas,m_Canvas);
+getF(m_VertsDirty,m_VertsDirty);
+getF(m_MaterialDirty,m_MaterialDirty);
+getF(m_OnDirtyLayoutCallback,m_OnDirtyLayoutCallback);
+getF(m_OnDirtyVertsCallback,m_OnDirtyVertsCallback);
+getF(m_OnDirtyMaterialCallback,m_OnDirtyMaterialCallback);
+getF(s_Mesh,s_Mesh);
+getF(s_VertexHelper,s_VertexHelper);
+getF(m_CachedMesh,m_CachedMesh);
+getF(m_CachedUvs,m_CachedUvs);
+getF(m_ColorTweenRunner,m_ColorTweenRunner);
+getF(useLegacyMeshGeneration_k_BackingField,<useLegacyMeshGeneration>k__BackingField);
+
+		getM(get_defaultGraphicMaterial,0);
+getM(get_color,1);
+getM(set_color,2);
+getM(get_raycastTarget,3);
+getM(set_raycastTarget,4);
+getM(get_raycastPadding,5);
+getM(set_raycastPadding,6);
+getM(get_useLegacyMeshGeneration,7);
+getM(set_useLegacyMeshGeneration,8);
+getM(ctor,9);
+getM(SetAllDirty,10);
+getM(SetLayoutDirty,11);
+getM(SetVerticesDirty,12);
+getM(SetMaterialDirty,13);
+getM(SetRaycastDirty,14);
+getM(OnRectTransformDimensionsChange,15);
+getM(OnBeforeTransformParentChanged,16);
+getM(OnTransformParentChanged,17);
+getM(get_depth,18);
+getM(get_rectTransform,19);
+getM(get_canvas,20);
+getM(CacheCanvas,21);
+getM(get_canvasRenderer,22);
+getM(get_defaultMaterial,23);
+getM(get_material,24);
+getM(set_material,25);
+getM(get_materialForRendering,26);
+getM(get_mainTexture,27);
+getM(OnEnable,28);
+getM(OnDisable,29);
+getM(OnDestroy,30);
+getM(OnCanvasHierarchyChanged,31);
+getM(OnCullingChanged,32);
+getM(Rebuild,33);
+getM(LayoutComplete,34);
+getM(GraphicUpdateComplete,35);
+getM(UpdateMaterial,36);
+getM(UpdateGeometry,37);
+getM(DoMeshGeneration,38);
+getM(DoLegacyMeshGeneration,39);
+getM(get_workerMesh,40);
+getM(OnFillVBO,41);
+getMi(OnPopulateMesh,0,42);
+getMi(OnPopulateMesh,1,43);
+getM(OnDidApplyAnimationProperties,44);
+getM(SetNativeSize,45);
+getMi(Raycast,0,46);
+getMi(Raycast,1,47);
+getM(PixelAdjustPoint,48);
+getM(GetPixelAdjustedRect,49);
+getMi(CrossFadeColor,0,50);
+getMi(CrossFadeColor,1,51);
+getM(CreateColorFromAlpha,52);
+getM(CrossFadeAlpha,53);
+getM(RegisterDirtyLayoutCallback,54);
+getM(UnregisterDirtyLayoutCallback,55);
+getM(RegisterDirtyVerticesCallback,56);
+getM(UnregisterDirtyVerticesCallback,57);
+getM(RegisterDirtyMaterialCallback,58);
+getM(UnregisterDirtyMaterialCallback,59);
+getM(cctor,60);
+getM(UnityEngine_UI_ICanvasElement_get_transform,61);
 
 #undef getF
 #undef getM

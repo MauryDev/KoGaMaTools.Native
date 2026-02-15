@@ -63,6 +63,9 @@
     <ClCompile Include="services\PvP\AntiAfk.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="services\PvP\CustomCrossHairColor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="services\PathHelper.h">
@@ -111,6 +114,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="services\Common\MainComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="services\PvP\CustomCrossHairColor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Types\Vector4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
