@@ -31,7 +31,8 @@ void KoGaMaTools::UI::MainUI::Render()
 	static bool first = true, enable = true;
 	if (first)
 	{
-		ImGui::SetNextWindowSize(ImVec2(300, 200));
+		ImGui::SetNextWindowSize(ImVec2(360, 0.0f));
+		ImGui::SetNextWindowPos(ImVec2(10, 10));
 		first = false;
 	}
 	if ((ImGui::IsKeyDown(ImGuiKey::ImGuiKey_LeftCtrl) || ImGui::IsKeyDown(ImGuiKey::ImGuiKey_RightCtrl)) && ImGui::IsKeyPressed(ImGuiKey::ImGuiKey_B))

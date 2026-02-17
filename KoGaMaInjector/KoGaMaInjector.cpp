@@ -392,9 +392,11 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
     nid.cbSize = sizeof(NOTIFYICONDATA);
     nid.hWnd = hwnd;
     nid.uID = 1;
-    nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
+    nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP | NIN_BALLOONSHOW;
     nid.uCallbackMessage = WM_TRAYICON;
     nid.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ICON1));
+    nid.hBalloonIcon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON1)); // Custom icon for balloon
+
     lstrcpy(nid.szTip, L"KoGaMa Native Tools (Running)");
 
     Shell_NotifyIcon(NIM_ADD, &nid);

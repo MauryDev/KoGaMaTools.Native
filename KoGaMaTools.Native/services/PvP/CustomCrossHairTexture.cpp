@@ -71,7 +71,8 @@ void KoGaMaTools::Services::CustomCrossHairTexture::OpenFileDialog()
 
 void KoGaMaTools::Services::CustomCrossHairTexture::Render()
 {
-	if (Busy) {
+	auto busynow = Busy;
+	if (busynow) {
 		ImGui::BeginDisabled();
 	}
 	const char* buttonLabel = Busy ? "Opening File Dialog... ##btn" : "Load CrossHair Texture";
@@ -82,7 +83,7 @@ void KoGaMaTools::Services::CustomCrossHairTexture::Render()
 		
 		
 	}
-	if (Busy) {
+	if (busynow) {
 		ImGui::EndDisabled();
 	}
 }

@@ -45,7 +45,7 @@ namespace KoGaMaTools::Services::KieroUI
 	void InitImGui()
 	{
 
-		ImGui::CreateContext();
+		ImGui::SetCurrentContext(ImGui::CreateContext());
 		ImGuiIO& io = ImGui::GetIO();
 		io.ConfigFlags = ImGuiConfigFlags_NoMouseCursorChange;
 		ImGui_ImplWin32_Init(window);
