@@ -1,6 +1,6 @@
 #include "MainComponent.h"
 #include <Tools.Il2Cpp.ICalls.h>
-#include "../../metadata/KoGaMaAPI.KoGaMa.h"
+#include "metadata/KoGaMaAPI.KoGaMa.h"
 namespace {
 	void(*oldUpdate)(void* instance);
 }

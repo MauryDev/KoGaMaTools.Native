@@ -3,7 +3,7 @@
 #include "../services/services.h"
 
 
-#include "../metadata/KoGaMaAPI.KoGaMa.h"
+#include <metadata/KoGaMaAPI.KoGaMa.h>
 
 namespace KoGaMaTools::UI {
 	namespace {
@@ -83,5 +83,7 @@ void KoGaMaTools::UI::MainUI::TabItem_Build()
 void KoGaMaTools::UI::MainUI::TabItem_PvP()
 {
 	RenderSingletones<Services::AntiAfk,
-		Services::CustomCrossHairColor>("PvP");
+		Services::CustomCrossHairColor,
+	Services::FastRespawn,
+	Services::CustomCrossHairTexture>("PvP");
 }

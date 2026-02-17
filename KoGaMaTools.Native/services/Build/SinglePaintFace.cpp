@@ -1,5 +1,5 @@
 #include "SinglePaintFace.h"
-#include "..\..\metadata\KoGaMaAPI.KoGaMa.h"
+#include "metadata/KoGaMaAPI.KoGaMa.h"
 #include "MinHook.h"
 #include <imgui.h>
 #include "../LoggerService.h"

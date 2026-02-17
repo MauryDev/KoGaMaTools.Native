@@ -4,5 +4,7 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="../Il2CppInteropCpp/Il2CppInterop/Il2CppInterop.vcxitems" Id="ae889856-0645-42a7-8f1d-eb06456884bf" />
+  <Project Path="KoGaMaAPI.Metadata/KoGaMaAPI.Metadata.vcxproj" Id="5b051167-4000-4d3a-a2ce-ed39c6b1380a" />
+  <Project Path="KoGaMaInjector/KoGaMaInjector.vcxproj" Id="90155d9e-63cb-4d7a-8f59-6d3a2d099933" />
   <Project Path="KoGaMaTools.Native/KoGaMaTools.Native.vcxproj" Id="5babd33d-5355-41a4-bd6b-3ea27184ae0b" />
 </Solution>

@@ -1,7 +1,7 @@
 #include "UnlimitedConfig.h"
 #include <MinHook.h>
 #include <imgui.h>
-#include "../../metadata/KoGaMaAPI.KoGaMa.h"
+#include "metadata/KoGaMaAPI.KoGaMa.h"
 #include  <algorithm>
 #include "../LoggerService.h"
 namespace {

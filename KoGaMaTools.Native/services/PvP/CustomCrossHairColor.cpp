@@ -1,6 +1,6 @@
 #include "CustomCrossHairColor.h"
 #include <MinHook.h>
-#include "../../metadata/KoGaMaAPI.KoGaMa.h"
+#include "metadata/KoGaMaAPI.KoGaMa.h"
 #include <imgui.h>
 #include "../LoggerService.h"
 namespace {
@@ -28,9 +28,10 @@ void KoGaMaTools::Services::CustomCrossHairColor::Install()
 
 void KoGaMaTools::Services::CustomCrossHairColor::OnExecute(void* instance, void* pickupItem)
 {
+    UpdateCrossHair_old(instance, pickupItem);
+
     auto crossHair = KoGaMaAPI::KoGaMa::CrossHair::f_crossHair.Get<Il2CppObject>(instance);
 	KoGaMaAPI::KoGaMa::UI_Graphic::m_set_color(crossHair, Color);
-	UpdateCrossHair_old(instance, pickupItem);
 }
 
 void KoGaMaTools::Services::CustomCrossHairColor::Render()

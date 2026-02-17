@@ -1,6 +1,6 @@
 #include "DestructiblesUnlock.h"
 #include <MinHook.h>
-#include "../../metadata/KoGaMaAPI.KoGaMa.h"
+#include "metadata/KoGaMaAPI.KoGaMa.h"
 #include <imgui.h>
 #include "../LoggerService.h"
 

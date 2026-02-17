@@ -716,5 +716,433 @@ inline static Utils::FieldInfo<false> /* UnityEngine.Material */  f_m_Material,/
     static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
     
 };
+struct PlayButton {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<false> /* TimedPlayReward */  f_timedPlayReward,/* UnityEngine.UI.Button */  f_button,/* System.Boolean */  f_shouldConfirmPlay,/* ContinueButtonLockCursor */  f_continueButtonPrefab,/* EmbeddedPlayerConfig */  f_embeddedPlayerConfig,/* System.Boolean */  f_isMouseOver,/* System.Action */  f_OnPlayButtonPressed;
+
+	/*System.Void OnPointerUp(UnityEngine.EventSystems.PointerEventData eventData)*/ inline static Utils::MethodInfo<false,true> m_OnPointerUp;
+/*System.Void OnPointerDown(UnityEngine.EventSystems.PointerEventData eventData)*/ inline static Utils::MethodInfo<false,false> m_OnPointerDown;
+/*System.Void OnPointerEnter(UnityEngine.EventSystems.PointerEventData eventData)*/ inline static Utils::MethodInfo<false,true> m_OnPointerEnter;
+/*System.Void OnPointerExit(UnityEngine.EventSystems.PointerEventData eventData)*/ inline static Utils::MethodInfo<false,true> m_OnPointerExit;
+/*System.Void Play()*/ inline static Utils::MethodInfo<false,false> m_Play;
+/*System.Void OnPromotionShown(System.Boolean promotionShown, System.Boolean withAd)*/ inline static Utils::MethodInfo<false,false> m_OnPromotionShown;
+/*System.Void OnContinuePressed()*/ inline static Utils::MethodInfo<false,false> m_OnContinuePressed;
+/*System.Void HandlePlayPress()*/ inline static Utils::MethodInfo<false,false> m_HandlePlayPress;
+/*System.Void ConfirmPlay()*/ inline static Utils::MethodInfo<false,false> m_ConfirmPlay;
+/*System.Void Update()*/ inline static Utils::MethodInfo<false,false> m_Update;
+/*System.Void OnEnable()*/ inline static Utils::MethodInfo<false,false> m_OnEnable;
+/*System.Boolean HandlePlayAvailable()*/ inline static Utils::MethodInfo<false,true> m_HandlePlayAvailable;
+/*System.Void OnCountDownEnd()*/ inline static Utils::MethodInfo<false,true> m_OnCountDownEnd;
+/*System.Void .ctor()*/ inline static Utils::MethodInfo<false,false> m_ctor;
+/*System.Void <Play>b__11_0(IDeathPromotionSelector x, UnityEngine.EventSystems.BaseEventData y)*/ inline static Utils::MethodInfo<false,false> m_Play_b_11_0;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct DeathUIBoostMenuController {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<false> /* UnityEngine.UI.Text */  f_restartText,/* NotificationFade */  f_fader,/* NotificationFade */  f_buttonFader,/* NotificationFade */  f_resetButtonFader,/* NotificationFade */  f_boostFader,/* NotificationFade */  f_menuButtonFader,/* UnityEngine.UI.Image */  f_readyToPlayTimerFill,/* PointerDownController */  f_respawnButton,/* PointerDownController */  f_resetButton,/* BoostMenuController */  f_boostMenu,/* ContinueTierBoostPopup */  f_continueTierBoostPopupPrefab,/* ContinueButtonLockCursor */  f_continueButtonLockCursor,/* UnityEngine.UI.Image */  f_adIcon,/* EmbeddedPlayerConfig */  f_embeddedPlayerConfig,/* System.Single */  f_startTime,/* System.Single */  f_timeUntilGhostMode,/* System.Boolean */  f_shouldPop,/* System.Boolean */  f_wantsToPlay,/* System.Boolean */  f_isGhost;
+
+	/*System.Void Initialize()*/ inline static Utils::MethodInfo<false,false> m_Initialize;
+/*System.Void OpenMenu()*/ inline static Utils::MethodInfo<false,false> m_OpenMenu;
+/*System.Void OnDestroy()*/ inline static Utils::MethodInfo<false,false> m_OnDestroy;
+/*System.Void Update()*/ inline static Utils::MethodInfo<false,false> m_Update;
+/*System.Void OnEnable()*/ inline static Utils::MethodInfo<false,false> m_OnEnable;
+/*System.Void OnResetToSpawnPoint()*/ inline static Utils::MethodInfo<false,false> m_OnResetToSpawnPoint;
+/*System.Void OnRespawn()*/ inline static Utils::MethodInfo<false,false> m_OnRespawn;
+/*System.Void ReadyToSpawn(System.Boolean promotionPushedToStack, System.Boolean withAd)*/ inline static Utils::MethodInfo<false,false> m_ReadyToSpawn;
+/*System.Void LockCursorAndPop()*/ inline static Utils::MethodInfo<false,false> m_LockCursorAndPop;
+/*System.Void OnAvatarStateChanged(MV.Common.SpawnRoleModeType mode)*/ inline static Utils::MethodInfo<false,false> m_OnAvatarStateChanged;
+/*System.Void .ctor()*/ inline static Utils::MethodInfo<false,false> m_ctor;
+/*System.Void <OnRespawn>b__25_0(IDeathPromotionSelector x, UnityEngine.EventSystems.BaseEventData y)*/ inline static Utils::MethodInfo<false,false> m_OnRespawn_b_25_0;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct ImageConversion {
+	inline static Il2CppClass klass;
+    
+	/*System.Byte[] EncodeToPNG(UnityEngine.Texture2D tex)*/ inline static Utils::MethodInfo<true,false> m_EncodeToPNG;
+/*System.Boolean LoadImage(UnityEngine.Texture2D tex, System.ReadOnlySpan`1<System.Byte> data, System.Boolean markNonReadable)*/ inline static Utils::MethodInfo<true,false> m0_LoadImage;
+/*System.Boolean LoadImage(UnityEngine.Texture2D tex, System.Byte[] data)*/ inline static Utils::MethodInfo<true,false> m1_LoadImage;
+/*System.Void EncodeToPNG_Injected(System.IntPtr tex, out UnityEngine.Bindings.BlittableArrayWrapper ret)*/ inline static Utils::MethodInfo<true,false> m_EncodeToPNG_Injected;
+/*System.Boolean LoadImage_Injected(System.IntPtr tex, ref UnityEngine.Bindings.ManagedSpanWrapper data, System.Boolean markNonReadable)*/ inline static Utils::MethodInfo<true,false> m_LoadImage_Injected;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct Texture2D {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<true> /* System.Int32 */ f_streamingMipmapsPriorityMin,/* System.Int32 */ f_streamingMipmapsPriorityMax;
+
+	/*UnityEngine.TextureFormat get_format()*/ inline static Utils::MethodInfo<false,false> m_get_format;
+/*UnityEngine.Texture2D get_whiteTexture()*/ inline static Utils::MethodInfo<true,false> m_get_whiteTexture;
+/*System.Boolean Internal_CreateEmptyImpl(UnityEngine.Texture2D mono)*/ inline static Utils::MethodInfo<true,false> m_Internal_CreateEmptyImpl;
+/*System.Boolean Internal_CreateImpl(UnityEngine.Texture2D mono, System.Int32 w, System.Int32 h, System.Int32 mipCount, UnityEngine.Experimental.Rendering.GraphicsFormat format, UnityEngine.TextureColorSpace colorSpace, UnityEngine.Experimental.Rendering.TextureCreationFlags flags, System.IntPtr nativeTex, System.Boolean ignoreMipmapLimit, System.String mipmapLimitGroupName)*/ inline static Utils::MethodInfo<true,false> m_Internal_CreateImpl;
+/*System.Void Internal_Create(UnityEngine.Texture2D mono, System.Int32 w, System.Int32 h, System.Int32 mipCount, UnityEngine.Experimental.Rendering.GraphicsFormat format, UnityEngine.TextureColorSpace colorSpace, UnityEngine.Experimental.Rendering.TextureCreationFlags flags, System.IntPtr nativeTex, System.Boolean ignoreMipmapLimit, System.String mipmapLimitGroupName)*/ inline static Utils::MethodInfo<true,false> m_Internal_Create;
+/*System.Boolean get_isReadable()*/ inline static Utils::MethodInfo<false,true> m_get_isReadable;
+/*System.Void ApplyImpl(System.Boolean updateMipmaps, System.Boolean makeNoLongerReadable)*/ inline static Utils::MethodInfo<false,false> m_ApplyImpl;
+/*System.Boolean ReinitializeImpl(System.Int32 width, System.Int32 height)*/ inline static Utils::MethodInfo<false,false> m_ReinitializeImpl;
+/*System.Void SetPixelImpl(System.Int32 image, System.Int32 mip, System.Int32 x, System.Int32 y, UnityEngine.Color color)*/ inline static Utils::MethodInfo<false,false> m_SetPixelImpl;
+/*UnityEngine.Color GetPixelImpl(System.Int32 image, System.Int32 mip, System.Int32 x, System.Int32 y)*/ inline static Utils::MethodInfo<false,false> m_GetPixelImpl;
+/*UnityEngine.Color GetPixelBilinearImpl(System.Int32 image, System.Int32 mip, System.Single u, System.Single v)*/ inline static Utils::MethodInfo<false,false> m_GetPixelBilinearImpl;
+/*System.Boolean ReinitializeWithTextureFormatImpl(System.Int32 width, System.Int32 height, UnityEngine.TextureFormat textureFormat, System.Boolean hasMipMap)*/ inline static Utils::MethodInfo<false,false> m_ReinitializeWithTextureFormatImpl;
+/*System.Void ReadPixelsImpl(UnityEngine.Rect source, System.Int32 destX, System.Int32 destY, System.Boolean recalculateMipMaps)*/ inline static Utils::MethodInfo<false,false> m_ReadPixelsImpl;
+/*System.IntPtr GetWritableImageData(System.Int32 frame)*/ inline static Utils::MethodInfo<false,false> m_GetWritableImageData;
+/*System.UInt64 GetImageDataSize()*/ inline static Utils::MethodInfo<false,false> m_GetImageDataSize;
+/*System.Void SetAllPixels32(UnityEngine.Color32[] colors, System.Int32 miplevel)*/ inline static Utils::MethodInfo<false,false> m_SetAllPixels32;
+/*UnityEngine.Color[] GetPixels(System.Int32 x, System.Int32 y, System.Int32 blockWidth, System.Int32 blockHeight, System.Int32 miplevel)*/ inline static Utils::MethodInfo<false,false> m0_GetPixels;
+/*UnityEngine.Color[] GetPixels(System.Int32 x, System.Int32 y, System.Int32 blockWidth, System.Int32 blockHeight)*/ inline static Utils::MethodInfo<false,false> m1_GetPixels;
+/*UnityEngine.Color32[] GetPixels32(System.Int32 miplevel)*/ inline static Utils::MethodInfo<false,false> m0_GetPixels32;
+/*UnityEngine.Color32[] GetPixels32()*/ inline static Utils::MethodInfo<false,false> m1_GetPixels32;
+/*System.Boolean ValidateFormat(UnityEngine.TextureFormat format, System.Int32 width, System.Int32 height)*/ inline static Utils::MethodInfo<false,false> m_ValidateFormat;
+/*System.Void .ctor(System.Int32 width, System.Int32 height, UnityEngine.TextureFormat textureFormat, System.Int32 mipCount, System.Boolean linear, System.IntPtr nativeTex, System.Boolean createUninitialized, UnityEngine.MipmapLimitDescriptor mipmapLimitDescriptor)*/ inline static Utils::MethodInfo<false,false> m0_ctor;
+/*System.Void .ctor(System.Int32 width, System.Int32 height, UnityEngine.TextureFormat textureFormat, System.Int32 mipCount, System.Boolean linear)*/ inline static Utils::MethodInfo<false,false> m1_ctor;
+/*System.Void .ctor(System.Int32 width, System.Int32 height, UnityEngine.TextureFormat textureFormat, System.Boolean mipChain)*/ inline static Utils::MethodInfo<false,false> m2_ctor;
+/*System.Void .ctor(System.Int32 width, System.Int32 height)*/ inline static Utils::MethodInfo<false,false> m3_ctor;
+/*System.Void SetPixel(System.Int32 x, System.Int32 y, UnityEngine.Color color)*/ inline static Utils::MethodInfo<false,false> m_SetPixel;
+/*UnityEngine.Color GetPixel(System.Int32 x, System.Int32 y)*/ inline static Utils::MethodInfo<false,false> m_GetPixel;
+/*UnityEngine.Color GetPixelBilinear(System.Single u, System.Single v)*/ inline static Utils::MethodInfo<false,false> m_GetPixelBilinear;
+/*Unity.Collections.NativeArray`1<T> GetRawTextureData()*/ inline static Utils::MethodInfo<false,false> m_GetRawTextureData;
+/*System.Void Apply(System.Boolean updateMipmaps, System.Boolean makeNoLongerReadable)*/ inline static Utils::MethodInfo<false,false> m0_Apply;
+/*System.Void Apply()*/ inline static Utils::MethodInfo<false,false> m1_Apply;
+/*System.Boolean Reinitialize(System.Int32 width, System.Int32 height)*/ inline static Utils::MethodInfo<false,false> m0_Reinitialize;
+/*System.Boolean Reinitialize(System.Int32 width, System.Int32 height, UnityEngine.TextureFormat format, System.Boolean hasMipMap)*/ inline static Utils::MethodInfo<false,false> m1_Reinitialize;
+/*System.Void ReadPixels(UnityEngine.Rect source, System.Int32 destX, System.Int32 destY, System.Boolean recalculateMipMaps)*/ inline static Utils::MethodInfo<false,false> m0_ReadPixels;
+/*System.Void ReadPixels(UnityEngine.Rect source, System.Int32 destX, System.Int32 destY)*/ inline static Utils::MethodInfo<false,false> m1_ReadPixels;
+/*System.Void SetPixels32(UnityEngine.Color32[] colors, System.Int32 miplevel)*/ inline static Utils::MethodInfo<false,false> m0_SetPixels32;
+/*System.Void SetPixels32(UnityEngine.Color32[] colors)*/ inline static Utils::MethodInfo<false,false> m1_SetPixels32;
+/*UnityEngine.TextureFormat get_format_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_get_format_Injected;
+/*System.IntPtr get_whiteTexture_Injected()*/ inline static Utils::MethodInfo<true,false> m_get_whiteTexture_Injected;
+/*System.Boolean Internal_CreateImpl_Injected(UnityEngine.Texture2D mono, System.Int32 w, System.Int32 h, System.Int32 mipCount, UnityEngine.Experimental.Rendering.GraphicsFormat format, UnityEngine.TextureColorSpace colorSpace, UnityEngine.Experimental.Rendering.TextureCreationFlags flags, System.IntPtr nativeTex, System.Boolean ignoreMipmapLimit, ref UnityEngine.Bindings.ManagedSpanWrapper mipmapLimitGroupName)*/ inline static Utils::MethodInfo<true,false> m_Internal_CreateImpl_Injected;
+/*System.Boolean get_isReadable_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_get_isReadable_Injected;
+/*System.Void ApplyImpl_Injected(System.IntPtr _unity_self, System.Boolean updateMipmaps, System.Boolean makeNoLongerReadable)*/ inline static Utils::MethodInfo<true,false> m_ApplyImpl_Injected;
+/*System.Boolean ReinitializeImpl_Injected(System.IntPtr _unity_self, System.Int32 width, System.Int32 height)*/ inline static Utils::MethodInfo<true,false> m_ReinitializeImpl_Injected;
+/*System.Void SetPixelImpl_Injected(System.IntPtr _unity_self, System.Int32 image, System.Int32 mip, System.Int32 x, System.Int32 y, in UnityEngine.Color color)*/ inline static Utils::MethodInfo<true,false> m_SetPixelImpl_Injected;
+/*System.Void GetPixelImpl_Injected(System.IntPtr _unity_self, System.Int32 image, System.Int32 mip, System.Int32 x, System.Int32 y, out UnityEngine.Color ret)*/ inline static Utils::MethodInfo<true,false> m_GetPixelImpl_Injected;
+/*System.Void GetPixelBilinearImpl_Injected(System.IntPtr _unity_self, System.Int32 image, System.Int32 mip, System.Single u, System.Single v, out UnityEngine.Color ret)*/ inline static Utils::MethodInfo<true,false> m_GetPixelBilinearImpl_Injected;
+/*System.Boolean ReinitializeWithTextureFormatImpl_Injected(System.IntPtr _unity_self, System.Int32 width, System.Int32 height, UnityEngine.TextureFormat textureFormat, System.Boolean hasMipMap)*/ inline static Utils::MethodInfo<true,false> m_ReinitializeWithTextureFormatImpl_Injected;
+/*System.Void ReadPixelsImpl_Injected(System.IntPtr _unity_self, in UnityEngine.Rect source, System.Int32 destX, System.Int32 destY, System.Boolean recalculateMipMaps)*/ inline static Utils::MethodInfo<true,false> m_ReadPixelsImpl_Injected;
+/*System.IntPtr GetWritableImageData_Injected(System.IntPtr _unity_self, System.Int32 frame)*/ inline static Utils::MethodInfo<true,false> m_GetWritableImageData_Injected;
+/*System.UInt64 GetImageDataSize_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_GetImageDataSize_Injected;
+/*System.Void SetAllPixels32_Injected(System.IntPtr _unity_self, ref UnityEngine.Bindings.ManagedSpanWrapper colors, System.Int32 miplevel)*/ inline static Utils::MethodInfo<true,false> m_SetAllPixels32_Injected;
+/*UnityEngine.Color[] GetPixels_Injected(System.IntPtr _unity_self, System.Int32 x, System.Int32 y, System.Int32 blockWidth, System.Int32 blockHeight, System.Int32 miplevel)*/ inline static Utils::MethodInfo<true,false> m_GetPixels_Injected;
+/*UnityEngine.Color32[] GetPixels32_Injected(System.IntPtr _unity_self, System.Int32 miplevel)*/ inline static Utils::MethodInfo<true,false> m_GetPixels32_Injected;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct IPlayModeUI {
+	inline static Il2CppClass klass;
+    
+	/*System.Void ShowEUseIcon(ShowUseOption option, System.Int32 woId = 0)*/ inline static Utils::MethodInfo<false,true> m_ShowEUseIcon;
+/*System.Void HideEUseIcon()*/ inline static Utils::MethodInfo<false,true> m_HideEUseIcon;
+/*IGUICrossHair GetCrossHair()*/ inline static Utils::MethodInfo<false,true> m_GetCrossHair;
+/*System.Action`1<System.Boolean> get_IsPausedStateChange()*/ inline static Utils::MethodInfo<false,true> m_get_IsPausedStateChange;
+/*System.Void set_IsPausedStateChange(System.Action`1<System.Boolean> value)*/ inline static Utils::MethodInfo<false,true> m_set_IsPausedStateChange;
+/*System.Action`1<ChatConsoleMode> get_IsChatConsoleStateChange()*/ inline static Utils::MethodInfo<false,true> m_get_IsChatConsoleStateChange;
+/*System.Void set_IsChatConsoleStateChange(System.Action`1<ChatConsoleMode> value)*/ inline static Utils::MethodInfo<false,true> m_set_IsChatConsoleStateChange;
+/*System.Boolean get_IsInPauseMenu()*/ inline static Utils::MethodInfo<false,true> m_get_IsInPauseMenu;
+/*System.Void set_IsInPauseMenu(System.Boolean value)*/ inline static Utils::MethodInfo<false,true> m_set_IsInPauseMenu;
+/*System.Boolean get_IsInLobby()*/ inline static Utils::MethodInfo<false,true> m_get_IsInLobby;
+/*System.Void set_IsInLobby(System.Boolean value)*/ inline static Utils::MethodInfo<false,true> m_set_IsInLobby;
+/*System.Boolean get_IsDying()*/ inline static Utils::MethodInfo<false,true> m_get_IsDying;
+/*System.Void set_IsDying(System.Boolean value)*/ inline static Utils::MethodInfo<false,true> m_set_IsDying;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct Image {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<true> /* UnityEngine.Material */ f_s_ETC1DefaultUI,/* UnityEngine.SecondarySpriteTexture[] */ f_s_TempNewSecondaryTextures,/* UnityEngine.Vector2[] */ f_s_VertScratch,/* UnityEngine.Vector2[] */ f_s_UVScratch,/* UnityEngine.Vector3[] */ f_s_Xy,/* UnityEngine.Vector3[] */ f_s_Uv,/* System.Collections.Generic.List`1<UnityEngine.UI.Image> */ f_m_TrackedTexturelessImages,/* System.Boolean */ f_s_Initialized;
+inline static Utils::FieldInfo<false> /* UnityEngine.Sprite */  f_m_Sprite,/* UnityEngine.Sprite */  f_m_OverrideSprite,/* UnityEngine.UI.Image+Type */  f_m_Type,/* System.Boolean */  f_m_PreserveAspect,/* System.Boolean */  f_m_FillCenter,/* UnityEngine.UI.Image+FillMethod */  f_m_FillMethod,/* System.Single */  f_m_FillAmount,/* System.Boolean */  f_m_FillClockwise,/* System.Int32 */  f_m_FillOrigin,/* System.Single */  f_m_AlphaHitTestMinimumThreshold,/* System.Boolean */  f_m_Tracked,/* System.Boolean */  f_m_UseSpriteMesh,/* System.Single */  f_m_PixelsPerUnitMultiplier,/* System.Single */  f_m_CachedReferencePixelsPerUnit,/* UnityEngine.SecondarySpriteTexture[] */  f_m_SecondaryTextures;
+
+	/*UnityEngine.Sprite get_sprite()*/ inline static Utils::MethodInfo<false,false> m_get_sprite;
+/*System.Void set_sprite(UnityEngine.Sprite value)*/ inline static Utils::MethodInfo<false,false> m_set_sprite;
+/*System.Void DisableSpriteOptimizations()*/ inline static Utils::MethodInfo<false,false> m_DisableSpriteOptimizations;
+/*UnityEngine.Sprite get_overrideSprite()*/ inline static Utils::MethodInfo<false,false> m_get_overrideSprite;
+/*System.Void set_overrideSprite(UnityEngine.Sprite value)*/ inline static Utils::MethodInfo<false,false> m_set_overrideSprite;
+/*UnityEngine.Sprite get_activeSprite()*/ inline static Utils::MethodInfo<false,false> m_get_activeSprite;
+/*UnityEngine.UI.Image+Type get_type()*/ inline static Utils::MethodInfo<false,false> m_get_type;
+/*System.Void set_type(UnityEngine.UI.Image+Type value)*/ inline static Utils::MethodInfo<false,false> m_set_type;
+/*System.Boolean get_preserveAspect()*/ inline static Utils::MethodInfo<false,false> m_get_preserveAspect;
+/*System.Void set_preserveAspect(System.Boolean value)*/ inline static Utils::MethodInfo<false,false> m_set_preserveAspect;
+/*System.Boolean get_fillCenter()*/ inline static Utils::MethodInfo<false,false> m_get_fillCenter;
+/*System.Void set_fillCenter(System.Boolean value)*/ inline static Utils::MethodInfo<false,false> m_set_fillCenter;
+/*UnityEngine.UI.Image+FillMethod get_fillMethod()*/ inline static Utils::MethodInfo<false,false> m_get_fillMethod;
+/*System.Void set_fillMethod(UnityEngine.UI.Image+FillMethod value)*/ inline static Utils::MethodInfo<false,false> m_set_fillMethod;
+/*System.Single get_fillAmount()*/ inline static Utils::MethodInfo<false,false> m_get_fillAmount;
+/*System.Void set_fillAmount(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_fillAmount;
+/*System.Boolean get_fillClockwise()*/ inline static Utils::MethodInfo<false,false> m_get_fillClockwise;
+/*System.Void set_fillClockwise(System.Boolean value)*/ inline static Utils::MethodInfo<false,false> m_set_fillClockwise;
+/*System.Int32 get_fillOrigin()*/ inline static Utils::MethodInfo<false,false> m_get_fillOrigin;
+/*System.Void set_fillOrigin(System.Int32 value)*/ inline static Utils::MethodInfo<false,false> m_set_fillOrigin;
+/*System.Single get_eventAlphaThreshold()*/ inline static Utils::MethodInfo<false,false> m_get_eventAlphaThreshold;
+/*System.Void set_eventAlphaThreshold(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_eventAlphaThreshold;
+/*System.Single get_alphaHitTestMinimumThreshold()*/ inline static Utils::MethodInfo<false,false> m_get_alphaHitTestMinimumThreshold;
+/*System.Void set_alphaHitTestMinimumThreshold(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_alphaHitTestMinimumThreshold;
+/*System.Boolean get_useSpriteMesh()*/ inline static Utils::MethodInfo<false,false> m_get_useSpriteMesh;
+/*System.Void set_useSpriteMesh(System.Boolean value)*/ inline static Utils::MethodInfo<false,false> m_set_useSpriteMesh;
+/*System.Void .ctor()*/ inline static Utils::MethodInfo<false,false> m_ctor;
+/*UnityEngine.Material get_defaultETC1GraphicMaterial()*/ inline static Utils::MethodInfo<true,false> m_get_defaultETC1GraphicMaterial;
+/*UnityEngine.Texture get_mainTexture()*/ inline static Utils::MethodInfo<false,true> m_get_mainTexture;
+/*System.Boolean get_hasBorder()*/ inline static Utils::MethodInfo<false,false> m_get_hasBorder;
+/*System.Single get_pixelsPerUnitMultiplier()*/ inline static Utils::MethodInfo<false,false> m_get_pixelsPerUnitMultiplier;
+/*System.Void set_pixelsPerUnitMultiplier(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_pixelsPerUnitMultiplier;
+/*System.Single get_pixelsPerUnit()*/ inline static Utils::MethodInfo<false,false> m_get_pixelsPerUnit;
+/*System.Single get_multipliedPixelsPerUnit()*/ inline static Utils::MethodInfo<false,false> m_get_multipliedPixelsPerUnit;
+/*UnityEngine.Material get_material()*/ inline static Utils::MethodInfo<false,true> m_get_material;
+/*System.Void set_material(UnityEngine.Material value)*/ inline static Utils::MethodInfo<false,true> m_set_material;
+/*System.Void OnBeforeSerialize()*/ inline static Utils::MethodInfo<false,true> m_OnBeforeSerialize;
+/*System.Void OnAfterDeserialize()*/ inline static Utils::MethodInfo<false,true> m_OnAfterDeserialize;
+/*System.Void PreserveSpriteAspectRatio(ref UnityEngine.Rect rect, UnityEngine.Vector2 spriteSize)*/ inline static Utils::MethodInfo<false,false> m_PreserveSpriteAspectRatio;
+/*UnityEngine.Vector4 GetDrawingDimensions(System.Boolean shouldPreserveAspect)*/ inline static Utils::MethodInfo<false,false> m_GetDrawingDimensions;
+/*System.Void SetNativeSize()*/ inline static Utils::MethodInfo<false,true> m_SetNativeSize;
+/*System.Void OnPopulateMesh(UnityEngine.UI.VertexHelper toFill)*/ inline static Utils::MethodInfo<false,true> m_OnPopulateMesh;
+/*System.Void TrackSprite()*/ inline static Utils::MethodInfo<false,false> m_TrackSprite;
+/*System.Void OnEnable()*/ inline static Utils::MethodInfo<false,true> m_OnEnable;
+/*System.Void OnDisable()*/ inline static Utils::MethodInfo<false,true> m_OnDisable;
+/*UnityEngine.SecondarySpriteTexture[] get_secondaryTextures()*/ inline static Utils::MethodInfo<false,false> m_get_secondaryTextures;
+/*System.Void ClearArray(ref UnityEngine.SecondarySpriteTexture[] array)*/ inline static Utils::MethodInfo<true,false> m_ClearArray;
+/*System.Boolean CheckSecondaryTexturesChanged(UnityEngine.Sprite sprite)*/ inline static Utils::MethodInfo<false,false> m0_CheckSecondaryTexturesChanged;
+/*System.Boolean CheckSecondaryTexturesChanged(UnityEngine.Sprite sprite, ref UnityEngine.SecondarySpriteTexture[] newSecondaryTextures)*/ inline static Utils::MethodInfo<false,false> m1_CheckSecondaryTexturesChanged;
+/*System.Void SetSecondaryTextures(UnityEngine.CanvasRenderer renderer)*/ inline static Utils::MethodInfo<false,false> m_SetSecondaryTextures;
+/*System.Void UpdateMaterial()*/ inline static Utils::MethodInfo<false,true> m_UpdateMaterial;
+/*System.Void OnCanvasHierarchyChanged()*/ inline static Utils::MethodInfo<false,true> m_OnCanvasHierarchyChanged;
+/*System.Void GenerateSimpleSprite(UnityEngine.UI.VertexHelper vh, System.Boolean lPreserveAspect)*/ inline static Utils::MethodInfo<false,false> m_GenerateSimpleSprite;
+/*System.Void GenerateSprite(UnityEngine.UI.VertexHelper vh, System.Boolean lPreserveAspect)*/ inline static Utils::MethodInfo<false,false> m_GenerateSprite;
+/*System.Void GenerateSlicedSprite(UnityEngine.UI.VertexHelper toFill)*/ inline static Utils::MethodInfo<false,false> m_GenerateSlicedSprite;
+/*System.Void GenerateTiledSprite(UnityEngine.UI.VertexHelper toFill)*/ inline static Utils::MethodInfo<false,false> m_GenerateTiledSprite;
+/*System.Void AddQuad(UnityEngine.UI.VertexHelper vertexHelper, UnityEngine.Vector3[] quadPositions, UnityEngine.Color32 color, UnityEngine.Vector3[] quadUVs)*/ inline static Utils::MethodInfo<true,false> m0_AddQuad;
+/*System.Void AddQuad(UnityEngine.UI.VertexHelper vertexHelper, UnityEngine.Vector2 posMin, UnityEngine.Vector2 posMax, UnityEngine.Color32 color, UnityEngine.Vector2 uvMin, UnityEngine.Vector2 uvMax)*/ inline static Utils::MethodInfo<true,false> m1_AddQuad;
+/*UnityEngine.Vector4 GetAdjustedBorders(UnityEngine.Vector4 border, UnityEngine.Rect adjustedRect)*/ inline static Utils::MethodInfo<false,false> m_GetAdjustedBorders;
+/*System.Void GenerateFilledSprite(UnityEngine.UI.VertexHelper toFill, System.Boolean preserveAspect)*/ inline static Utils::MethodInfo<false,false> m_GenerateFilledSprite;
+/*System.Boolean RadialCut(UnityEngine.Vector3[] xy, UnityEngine.Vector3[] uv, System.Single fill, System.Boolean invert, System.Int32 corner)*/ inline static Utils::MethodInfo<true,false> m0_RadialCut;
+/*System.Void RadialCut(UnityEngine.Vector3[] xy, System.Single cos, System.Single sin, System.Boolean invert, System.Int32 corner)*/ inline static Utils::MethodInfo<true,false> m1_RadialCut;
+/*System.Void CalculateLayoutInputHorizontal()*/ inline static Utils::MethodInfo<false,true> m_CalculateLayoutInputHorizontal;
+/*System.Void CalculateLayoutInputVertical()*/ inline static Utils::MethodInfo<false,true> m_CalculateLayoutInputVertical;
+/*System.Single get_minWidth()*/ inline static Utils::MethodInfo<false,true> m_get_minWidth;
+/*System.Single get_preferredWidth()*/ inline static Utils::MethodInfo<false,true> m_get_preferredWidth;
+/*System.Single get_flexibleWidth()*/ inline static Utils::MethodInfo<false,true> m_get_flexibleWidth;
+/*System.Single get_minHeight()*/ inline static Utils::MethodInfo<false,true> m_get_minHeight;
+/*System.Single get_preferredHeight()*/ inline static Utils::MethodInfo<false,true> m_get_preferredHeight;
+/*System.Single get_flexibleHeight()*/ inline static Utils::MethodInfo<false,true> m_get_flexibleHeight;
+/*System.Int32 get_layoutPriority()*/ inline static Utils::MethodInfo<false,true> m_get_layoutPriority;
+/*System.Boolean IsRaycastLocationValid(UnityEngine.Vector2 screenPoint, UnityEngine.Camera eventCamera)*/ inline static Utils::MethodInfo<false,true> m_IsRaycastLocationValid;
+/*UnityEngine.Vector2 MapCoordinate(UnityEngine.Vector2 local, UnityEngine.Rect rect)*/ inline static Utils::MethodInfo<false,false> m_MapCoordinate;
+/*System.Void RebuildImage(UnityEngine.U2D.SpriteAtlas spriteAtlas)*/ inline static Utils::MethodInfo<true,false> m_RebuildImage;
+/*System.Void TrackImage(UnityEngine.UI.Image g)*/ inline static Utils::MethodInfo<true,false> m_TrackImage;
+/*System.Void UnTrackImage(UnityEngine.UI.Image g)*/ inline static Utils::MethodInfo<true,false> m_UnTrackImage;
+/*System.Void OnDidApplyAnimationProperties()*/ inline static Utils::MethodInfo<false,true> m_OnDidApplyAnimationProperties;
+/*System.Void .cctor()*/ inline static Utils::MethodInfo<true,false> m_cctor;
+/*System.Void <set_sprite>g__ResetAlphaHitThresholdIfNeeded|11_0()*/ inline static Utils::MethodInfo<false,false> m_set_sprite_g_ResetAlphaHitThresholdIfNeeded_11_0;
+/*System.Boolean <set_sprite>g__SpriteSupportsAlphaHitTest|11_1()*/ inline static Utils::MethodInfo<false,false> m_set_sprite_g_SpriteSupportsAlphaHitTest_11_1;
+/*System.Boolean <CheckSecondaryTexturesChanged>g__Compare|93_0(UnityEngine.SecondarySpriteTexture[] array1, UnityEngine.SecondarySpriteTexture[] array2)*/ inline static Utils::MethodInfo<true,false> m_CheckSecondaryTexturesChanged_g_Compare_93_0;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct Sprite {
+	inline static Il2CppClass klass;
+    
+	/*System.Void .ctor()*/ inline static Utils::MethodInfo<false,false> m_ctor;
+/*System.Int32 GetPackingRotation()*/ inline static Utils::MethodInfo<false,false> m_GetPackingRotation;
+/*System.Int32 GetPacked()*/ inline static Utils::MethodInfo<false,false> m_GetPacked;
+/*UnityEngine.Vector2 GetTextureRectOffset()*/ inline static Utils::MethodInfo<false,false> m_GetTextureRectOffset;
+/*UnityEngine.Vector4 GetInnerUVs()*/ inline static Utils::MethodInfo<false,false> m_GetInnerUVs;
+/*UnityEngine.Vector4 GetOuterUVs()*/ inline static Utils::MethodInfo<false,false> m_GetOuterUVs;
+/*UnityEngine.Vector4 GetPadding()*/ inline static Utils::MethodInfo<false,false> m_GetPadding;
+/*UnityEngine.Sprite CreateSprite(UnityEngine.Texture2D texture, UnityEngine.Rect rect, UnityEngine.Vector2 pivot, System.Single pixelsPerUnit, System.UInt32 extrude, UnityEngine.SpriteMeshType meshType, UnityEngine.Vector4 border, System.Boolean generateFallbackPhysicsShape, UnityEngine.SecondarySpriteTexture[] secondaryTexture)*/ inline static Utils::MethodInfo<true,false> m_CreateSprite;
+/*UnityEngine.Bounds get_bounds()*/ inline static Utils::MethodInfo<false,false> m_get_bounds;
+/*UnityEngine.Rect get_rect()*/ inline static Utils::MethodInfo<false,false> m_get_rect;
+/*UnityEngine.Vector4 get_border()*/ inline static Utils::MethodInfo<false,false> m_get_border;
+/*UnityEngine.Texture2D get_texture()*/ inline static Utils::MethodInfo<false,false> m_get_texture;
+/*System.Int32 GetSecondaryTextureCount()*/ inline static Utils::MethodInfo<false,false> m_GetSecondaryTextureCount;
+/*System.Int32 GetSecondaryTextures(UnityEngine.SecondarySpriteTexture[] secondaryTexture)*/ inline static Utils::MethodInfo<false,false> m_GetSecondaryTextures;
+/*System.Single get_pixelsPerUnit()*/ inline static Utils::MethodInfo<false,false> m_get_pixelsPerUnit;
+/*UnityEngine.Texture2D get_associatedAlphaSplitTexture()*/ inline static Utils::MethodInfo<false,false> m_get_associatedAlphaSplitTexture;
+/*UnityEngine.Vector2 get_pivot()*/ inline static Utils::MethodInfo<false,false> m_get_pivot;
+/*System.Boolean get_packed()*/ inline static Utils::MethodInfo<false,false> m_get_packed;
+/*UnityEngine.SpritePackingRotation get_packingRotation()*/ inline static Utils::MethodInfo<false,false> m_get_packingRotation;
+/*UnityEngine.Vector2 get_textureRectOffset()*/ inline static Utils::MethodInfo<false,false> m_get_textureRectOffset;
+/*UnityEngine.Vector2[] get_vertices()*/ inline static Utils::MethodInfo<false,false> m_get_vertices;
+/*System.UInt16[] get_triangles()*/ inline static Utils::MethodInfo<false,false> m_get_triangles;
+/*UnityEngine.Vector2[] get_uv()*/ inline static Utils::MethodInfo<false,false> m_get_uv;
+/*UnityEngine.Sprite Create(UnityEngine.Texture2D texture, UnityEngine.Rect rect, UnityEngine.Vector2 pivot, System.Single pixelsPerUnit, System.UInt32 extrude, UnityEngine.SpriteMeshType meshType, UnityEngine.Vector4 border, System.Boolean generateFallbackPhysicsShape)*/ inline static Utils::MethodInfo<true,false> m0_Create;
+/*UnityEngine.Sprite Create(UnityEngine.Texture2D texture, UnityEngine.Rect rect, UnityEngine.Vector2 pivot, System.Single pixelsPerUnit, System.UInt32 extrude, UnityEngine.SpriteMeshType meshType, UnityEngine.Vector4 border, System.Boolean generateFallbackPhysicsShape, UnityEngine.SecondarySpriteTexture[] secondaryTextures)*/ inline static Utils::MethodInfo<true,false> m1_Create;
+/*UnityEngine.Sprite Create(UnityEngine.Texture2D texture, UnityEngine.Rect rect, UnityEngine.Vector2 pivot, System.Single pixelsPerUnit, System.UInt32 extrude, UnityEngine.SpriteMeshType meshType, UnityEngine.Vector4 border)*/ inline static Utils::MethodInfo<true,false> m2_Create;
+/*UnityEngine.Sprite Create(UnityEngine.Texture2D texture, UnityEngine.Rect rect, UnityEngine.Vector2 pivot, System.Single pixelsPerUnit, System.UInt32 extrude, UnityEngine.SpriteMeshType meshType)*/ inline static Utils::MethodInfo<true,false> m3_Create;
+/*UnityEngine.Sprite Create(UnityEngine.Texture2D texture, UnityEngine.Rect rect, UnityEngine.Vector2 pivot, System.Single pixelsPerUnit, System.UInt32 extrude)*/ inline static Utils::MethodInfo<true,false> m4_Create;
+/*UnityEngine.Sprite Create(UnityEngine.Texture2D texture, UnityEngine.Rect rect, UnityEngine.Vector2 pivot, System.Single pixelsPerUnit)*/ inline static Utils::MethodInfo<true,false> m5_Create;
+/*UnityEngine.Sprite Create(UnityEngine.Texture2D texture, UnityEngine.Rect rect, UnityEngine.Vector2 pivot)*/ inline static Utils::MethodInfo<true,false> m6_Create;
+/*System.Int32 GetPackingRotation_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_GetPackingRotation_Injected;
+/*System.Int32 GetPacked_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_GetPacked_Injected;
+/*System.Void GetTextureRectOffset_Injected(System.IntPtr _unity_self, out UnityEngine.Vector2 ret)*/ inline static Utils::MethodInfo<true,false> m_GetTextureRectOffset_Injected;
+/*System.Void GetInnerUVs_Injected(System.IntPtr _unity_self, out UnityEngine.Vector4 ret)*/ inline static Utils::MethodInfo<true,false> m_GetInnerUVs_Injected;
+/*System.Void GetOuterUVs_Injected(System.IntPtr _unity_self, out UnityEngine.Vector4 ret)*/ inline static Utils::MethodInfo<true,false> m_GetOuterUVs_Injected;
+/*System.Void GetPadding_Injected(System.IntPtr _unity_self, out UnityEngine.Vector4 ret)*/ inline static Utils::MethodInfo<true,false> m_GetPadding_Injected;
+/*System.IntPtr CreateSprite_Injected(System.IntPtr texture, in UnityEngine.Rect rect, in UnityEngine.Vector2 pivot, System.Single pixelsPerUnit, System.UInt32 extrude, UnityEngine.SpriteMeshType meshType, in UnityEngine.Vector4 border, System.Boolean generateFallbackPhysicsShape, UnityEngine.SecondarySpriteTexture[] secondaryTexture)*/ inline static Utils::MethodInfo<true,false> m_CreateSprite_Injected;
+/*System.Void get_bounds_Injected(System.IntPtr _unity_self, out UnityEngine.Bounds ret)*/ inline static Utils::MethodInfo<true,false> m_get_bounds_Injected;
+/*System.Void get_rect_Injected(System.IntPtr _unity_self, out UnityEngine.Rect ret)*/ inline static Utils::MethodInfo<true,false> m_get_rect_Injected;
+/*System.Void get_border_Injected(System.IntPtr _unity_self, out UnityEngine.Vector4 ret)*/ inline static Utils::MethodInfo<true,false> m_get_border_Injected;
+/*System.IntPtr get_texture_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_get_texture_Injected;
+/*System.Int32 GetSecondaryTextureCount_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_GetSecondaryTextureCount_Injected;
+/*System.Int32 GetSecondaryTextures_Injected(System.IntPtr _unity_self, UnityEngine.SecondarySpriteTexture[] secondaryTexture)*/ inline static Utils::MethodInfo<true,false> m_GetSecondaryTextures_Injected;
+/*System.Single get_pixelsPerUnit_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_get_pixelsPerUnit_Injected;
+/*System.IntPtr get_associatedAlphaSplitTexture_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_get_associatedAlphaSplitTexture_Injected;
+/*System.Void get_pivot_Injected(System.IntPtr _unity_self, out UnityEngine.Vector2 ret)*/ inline static Utils::MethodInfo<true,false> m_get_pivot_Injected;
+/*UnityEngine.Vector2[] get_vertices_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_get_vertices_Injected;
+/*System.UInt16[] get_triangles_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_get_triangles_Injected;
+/*UnityEngine.Vector2[] get_uv_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_get_uv_Injected;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct Vector2 {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<true> /* UnityEngine.Vector2 */ f_zeroVector,/* UnityEngine.Vector2 */ f_oneVector,/* UnityEngine.Vector2 */ f_upVector,/* UnityEngine.Vector2 */ f_downVector,/* UnityEngine.Vector2 */ f_leftVector,/* UnityEngine.Vector2 */ f_rightVector,/* UnityEngine.Vector2 */ f_positiveInfinityVector,/* UnityEngine.Vector2 */ f_negativeInfinityVector,/* System.Single */ f_kEpsilon,/* System.Single */ f_kEpsilonNormalSqrt;
+inline static Utils::FieldInfo<false> /* System.Single */  f_x,/* System.Single */  f_y;
+
+	/*System.Single get_Item(System.Int32 index)*/ inline static Utils::MethodInfo<false,false> m_get_Item;
+/*System.Void set_Item(System.Int32 index, System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_Item;
+/*System.Void .ctor(System.Single x, System.Single y)*/ inline static Utils::MethodInfo<false,false> m_ctor;
+/*System.Void Set(System.Single newX, System.Single newY)*/ inline static Utils::MethodInfo<false,false> m_Set;
+/*UnityEngine.Vector2 Lerp(UnityEngine.Vector2 a, UnityEngine.Vector2 b, System.Single t)*/ inline static Utils::MethodInfo<true,false> m_Lerp;
+/*UnityEngine.Vector2 LerpUnclamped(UnityEngine.Vector2 a, UnityEngine.Vector2 b, System.Single t)*/ inline static Utils::MethodInfo<true,false> m_LerpUnclamped;
+/*UnityEngine.Vector2 Scale(UnityEngine.Vector2 a, UnityEngine.Vector2 b)*/ inline static Utils::MethodInfo<true,false> m_Scale;
+/*System.Void Normalize()*/ inline static Utils::MethodInfo<false,false> m_Normalize;
+/*UnityEngine.Vector2 get_normalized()*/ inline static Utils::MethodInfo<false,false> m_get_normalized;
+/*System.String ToString()*/ inline static Utils::MethodInfo<false,true> m0_ToString;
+/*System.String ToString(System.String format)*/ inline static Utils::MethodInfo<false,false> m1_ToString;
+/*System.String ToString(System.String format, System.IFormatProvider formatProvider)*/ inline static Utils::MethodInfo<false,true> m2_ToString;
+/*System.Int32 GetHashCode()*/ inline static Utils::MethodInfo<false,true> m_GetHashCode;
+/*System.Boolean Equals(System.Object other)*/ inline static Utils::MethodInfo<false,true> m0_Equals;
+/*System.Boolean Equals(UnityEngine.Vector2 other)*/ inline static Utils::MethodInfo<false,true> m1_Equals;
+/*System.Single Dot(UnityEngine.Vector2 lhs, UnityEngine.Vector2 rhs)*/ inline static Utils::MethodInfo<true,false> m_Dot;
+/*System.Single get_magnitude()*/ inline static Utils::MethodInfo<false,false> m_get_magnitude;
+/*System.Single get_sqrMagnitude()*/ inline static Utils::MethodInfo<false,false> m_get_sqrMagnitude;
+/*System.Single Angle(UnityEngine.Vector2 from, UnityEngine.Vector2 to)*/ inline static Utils::MethodInfo<true,false> m_Angle;
+/*System.Single Distance(UnityEngine.Vector2 a, UnityEngine.Vector2 b)*/ inline static Utils::MethodInfo<true,false> m_Distance;
+/*System.Single SqrMagnitude()*/ inline static Utils::MethodInfo<false,false> m_SqrMagnitude;
+/*UnityEngine.Vector2 Min(UnityEngine.Vector2 lhs, UnityEngine.Vector2 rhs)*/ inline static Utils::MethodInfo<true,false> m_Min;
+/*UnityEngine.Vector2 Max(UnityEngine.Vector2 lhs, UnityEngine.Vector2 rhs)*/ inline static Utils::MethodInfo<true,false> m_Max;
+/*UnityEngine.Vector2 op_Addition(UnityEngine.Vector2 a, UnityEngine.Vector2 b)*/ inline static Utils::MethodInfo<true,false> m_op_Addition;
+/*UnityEngine.Vector2 op_Subtraction(UnityEngine.Vector2 a, UnityEngine.Vector2 b)*/ inline static Utils::MethodInfo<true,false> m_op_Subtraction;
+/*UnityEngine.Vector2 op_Multiply(UnityEngine.Vector2 a, UnityEngine.Vector2 b)*/ inline static Utils::MethodInfo<true,false> m0_op_Multiply;
+/*UnityEngine.Vector2 op_Multiply(UnityEngine.Vector2 a, System.Single d)*/ inline static Utils::MethodInfo<true,false> m1_op_Multiply;
+/*UnityEngine.Vector2 op_Multiply(System.Single d, UnityEngine.Vector2 a)*/ inline static Utils::MethodInfo<true,false> m2_op_Multiply;
+/*UnityEngine.Vector2 op_Division(UnityEngine.Vector2 a, UnityEngine.Vector2 b)*/ inline static Utils::MethodInfo<true,false> m0_op_Division;
+/*UnityEngine.Vector2 op_Division(UnityEngine.Vector2 a, System.Single d)*/ inline static Utils::MethodInfo<true,false> m1_op_Division;
+/*UnityEngine.Vector2 op_UnaryNegation(UnityEngine.Vector2 a)*/ inline static Utils::MethodInfo<true,false> m_op_UnaryNegation;
+/*System.Boolean op_Equality(UnityEngine.Vector2 lhs, UnityEngine.Vector2 rhs)*/ inline static Utils::MethodInfo<true,false> m_op_Equality;
+/*System.Boolean op_Inequality(UnityEngine.Vector2 lhs, UnityEngine.Vector2 rhs)*/ inline static Utils::MethodInfo<true,false> m_op_Inequality;
+/*UnityEngine.Vector2 op_Implicit(UnityEngine.Vector3 v)*/ inline static Utils::MethodInfo<true,false> m0_op_Implicit;
+/*UnityEngine.Vector3 op_Implicit(UnityEngine.Vector2 v)*/ inline static Utils::MethodInfo<true,false> m1_op_Implicit;
+/*UnityEngine.Vector2 get_zero()*/ inline static Utils::MethodInfo<true,false> m_get_zero;
+/*UnityEngine.Vector2 get_one()*/ inline static Utils::MethodInfo<true,false> m_get_one;
+/*UnityEngine.Vector2 get_up()*/ inline static Utils::MethodInfo<true,false> m_get_up;
+/*UnityEngine.Vector2 get_down()*/ inline static Utils::MethodInfo<true,false> m_get_down;
+/*UnityEngine.Vector2 get_left()*/ inline static Utils::MethodInfo<true,false> m_get_left;
+/*UnityEngine.Vector2 get_right()*/ inline static Utils::MethodInfo<true,false> m_get_right;
+/*UnityEngine.Vector2 get_negativeInfinity()*/ inline static Utils::MethodInfo<true,false> m_get_negativeInfinity;
+/*System.Void .cctor()*/ inline static Utils::MethodInfo<true,false> m_cctor;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct Rect {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<false> /* System.Single */  f_m_XMin,/* System.Single */  f_m_YMin,/* System.Single */  f_m_Width,/* System.Single */  f_m_Height;
+
+	/*System.Void .ctor(System.Single x, System.Single y, System.Single width, System.Single height)*/ inline static Utils::MethodInfo<false,false> m0_ctor;
+/*System.Void .ctor(UnityEngine.Vector2 position, UnityEngine.Vector2 size)*/ inline static Utils::MethodInfo<false,false> m1_ctor;
+/*System.Void .ctor(UnityEngine.Rect source)*/ inline static Utils::MethodInfo<false,false> m2_ctor;
+/*UnityEngine.Rect get_zero()*/ inline static Utils::MethodInfo<true,false> m_get_zero;
+/*UnityEngine.Rect MinMaxRect(System.Single xmin, System.Single ymin, System.Single xmax, System.Single ymax)*/ inline static Utils::MethodInfo<true,false> m_MinMaxRect;
+/*System.Single get_x()*/ inline static Utils::MethodInfo<false,false> m_get_x;
+/*System.Void set_x(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_x;
+/*System.Single get_y()*/ inline static Utils::MethodInfo<false,false> m_get_y;
+/*System.Void set_y(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_y;
+/*UnityEngine.Vector2 get_position()*/ inline static Utils::MethodInfo<false,false> m_get_position;
+/*System.Void set_position(UnityEngine.Vector2 value)*/ inline static Utils::MethodInfo<false,false> m_set_position;
+/*UnityEngine.Vector2 get_center()*/ inline static Utils::MethodInfo<false,false> m_get_center;
+/*UnityEngine.Vector2 get_min()*/ inline static Utils::MethodInfo<false,false> m_get_min;
+/*System.Void set_min(UnityEngine.Vector2 value)*/ inline static Utils::MethodInfo<false,false> m_set_min;
+/*UnityEngine.Vector2 get_max()*/ inline static Utils::MethodInfo<false,false> m_get_max;
+/*System.Void set_max(UnityEngine.Vector2 value)*/ inline static Utils::MethodInfo<false,false> m_set_max;
+/*System.Single get_width()*/ inline static Utils::MethodInfo<false,false> m_get_width;
+/*System.Void set_width(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_width;
+/*System.Single get_height()*/ inline static Utils::MethodInfo<false,false> m_get_height;
+/*System.Void set_height(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_height;
+/*UnityEngine.Vector2 get_size()*/ inline static Utils::MethodInfo<false,false> m_get_size;
+/*System.Void set_size(UnityEngine.Vector2 value)*/ inline static Utils::MethodInfo<false,false> m_set_size;
+/*System.Single get_xMin()*/ inline static Utils::MethodInfo<false,false> m_get_xMin;
+/*System.Void set_xMin(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_xMin;
+/*System.Single get_yMin()*/ inline static Utils::MethodInfo<false,false> m_get_yMin;
+/*System.Void set_yMin(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_yMin;
+/*System.Single get_xMax()*/ inline static Utils::MethodInfo<false,false> m_get_xMax;
+/*System.Void set_xMax(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_xMax;
+/*System.Single get_yMax()*/ inline static Utils::MethodInfo<false,false> m_get_yMax;
+/*System.Void set_yMax(System.Single value)*/ inline static Utils::MethodInfo<false,false> m_set_yMax;
+/*System.Boolean Contains(UnityEngine.Vector2 point)*/ inline static Utils::MethodInfo<false,false> m0_Contains;
+/*System.Boolean Contains(UnityEngine.Vector3 point)*/ inline static Utils::MethodInfo<false,false> m1_Contains;
+/*System.Boolean Contains(UnityEngine.Vector3 point, System.Boolean allowInverse)*/ inline static Utils::MethodInfo<false,false> m2_Contains;
+/*UnityEngine.Rect OrderMinMax(UnityEngine.Rect rect)*/ inline static Utils::MethodInfo<true,false> m_OrderMinMax;
+/*System.Boolean Overlaps(UnityEngine.Rect other)*/ inline static Utils::MethodInfo<false,false> m0_Overlaps;
+/*System.Boolean Overlaps(UnityEngine.Rect other, System.Boolean allowInverse)*/ inline static Utils::MethodInfo<false,false> m1_Overlaps;
+/*System.Boolean op_Inequality(UnityEngine.Rect lhs, UnityEngine.Rect rhs)*/ inline static Utils::MethodInfo<true,false> m_op_Inequality;
+/*System.Boolean op_Equality(UnityEngine.Rect lhs, UnityEngine.Rect rhs)*/ inline static Utils::MethodInfo<true,false> m_op_Equality;
+/*System.Int32 GetHashCode()*/ inline static Utils::MethodInfo<false,true> m_GetHashCode;
+/*System.Boolean Equals(System.Object other)*/ inline static Utils::MethodInfo<false,true> m0_Equals;
+/*System.Boolean Equals(UnityEngine.Rect other)*/ inline static Utils::MethodInfo<false,true> m1_Equals;
+/*System.String ToString()*/ inline static Utils::MethodInfo<false,true> m0_ToString;
+/*System.String ToString(System.String format, System.IFormatProvider formatProvider)*/ inline static Utils::MethodInfo<false,true> m1_ToString;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
+struct Texture {
+	inline static Il2CppClass klass;
+    inline static Utils::FieldInfo<true> /* System.Int32 */ f_GenerateAllMips;
+
+	/*System.Void .ctor()*/ inline static Utils::MethodInfo<false,false> m_ctor;
+/*System.Int32 GetDataWidth()*/ inline static Utils::MethodInfo<false,false> m_GetDataWidth;
+/*System.Int32 GetDataHeight()*/ inline static Utils::MethodInfo<false,false> m_GetDataHeight;
+/*System.Int32 get_width()*/ inline static Utils::MethodInfo<false,true> m_get_width;
+/*System.Void set_width(System.Int32 value)*/ inline static Utils::MethodInfo<false,true> m_set_width;
+/*System.Int32 get_height()*/ inline static Utils::MethodInfo<false,true> m_get_height;
+/*System.Void set_height(System.Int32 value)*/ inline static Utils::MethodInfo<false,true> m_set_height;
+/*System.Boolean get_isReadable()*/ inline static Utils::MethodInfo<false,true> m_get_isReadable;
+/*UnityEngine.TextureWrapMode get_wrapMode()*/ inline static Utils::MethodInfo<false,false> m_get_wrapMode;
+/*System.Void set_wrapMode(UnityEngine.TextureWrapMode value)*/ inline static Utils::MethodInfo<false,false> m_set_wrapMode;
+/*UnityEngine.FilterMode get_filterMode()*/ inline static Utils::MethodInfo<false,false> m_get_filterMode;
+/*System.Void set_filterMode(UnityEngine.FilterMode value)*/ inline static Utils::MethodInfo<false,false> m_set_filterMode;
+/*System.Int32 get_anisoLevel()*/ inline static Utils::MethodInfo<false,false> m_get_anisoLevel;
+/*System.Void set_anisoLevel(System.Int32 value)*/ inline static Utils::MethodInfo<false,false> m_set_anisoLevel;
+/*UnityEngine.Vector2 get_texelSize()*/ inline static Utils::MethodInfo<false,false> m_get_texelSize;
+/*System.Int32 Internal_GetActiveTextureColorSpace()*/ inline static Utils::MethodInfo<false,false> m_Internal_GetActiveTextureColorSpace;
+/*UnityEngine.ColorSpace get_activeTextureColorSpace()*/ inline static Utils::MethodInfo<false,false> m_get_activeTextureColorSpace;
+/*UnityEngine.TextureColorSpace GetTextureColorSpace(System.Boolean linear)*/ inline static Utils::MethodInfo<false,false> m0_GetTextureColorSpace;
+/*UnityEngine.TextureColorSpace GetTextureColorSpace(UnityEngine.Experimental.Rendering.GraphicsFormat format)*/ inline static Utils::MethodInfo<false,false> m1_GetTextureColorSpace;
+/*System.Boolean ValidateFormat(UnityEngine.TextureFormat format)*/ inline static Utils::MethodInfo<false,false> m0_ValidateFormat;
+/*System.Boolean ValidateFormat(UnityEngine.Experimental.Rendering.GraphicsFormat format, UnityEngine.Experimental.Rendering.GraphicsFormatUsage usage)*/ inline static Utils::MethodInfo<false,false> m1_ValidateFormat;
+/*UnityEngine.UnityException CreateNonReadableException(UnityEngine.Texture t)*/ inline static Utils::MethodInfo<false,false> m_CreateNonReadableException;
+/*UnityEngine.UnityException CreateNativeArrayLengthOverflowException()*/ inline static Utils::MethodInfo<false,false> m_CreateNativeArrayLengthOverflowException;
+/*System.Void .cctor()*/ inline static Utils::MethodInfo<true,false> m_cctor;
+/*System.Int32 GetDataWidth_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_GetDataWidth_Injected;
+/*System.Int32 GetDataHeight_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_GetDataHeight_Injected;
+/*System.Boolean get_isReadable_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_get_isReadable_Injected;
+/*UnityEngine.TextureWrapMode get_wrapMode_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_get_wrapMode_Injected;
+/*System.Void set_wrapMode_Injected(System.IntPtr _unity_self, UnityEngine.TextureWrapMode value)*/ inline static Utils::MethodInfo<true,false> m_set_wrapMode_Injected;
+/*UnityEngine.FilterMode get_filterMode_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_get_filterMode_Injected;
+/*System.Void set_filterMode_Injected(System.IntPtr _unity_self, UnityEngine.FilterMode value)*/ inline static Utils::MethodInfo<true,false> m_set_filterMode_Injected;
+/*System.Int32 get_anisoLevel_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_get_anisoLevel_Injected;
+/*System.Void set_anisoLevel_Injected(System.IntPtr _unity_self, System.Int32 value)*/ inline static Utils::MethodInfo<true,false> m_set_anisoLevel_Injected;
+/*System.Void get_texelSize_Injected(System.IntPtr _unity_self, out UnityEngine.Vector2 ret)*/ inline static Utils::MethodInfo<true,false> m_get_texelSize_Injected;
+/*System.Int32 Internal_GetActiveTextureColorSpace_Injected(System.IntPtr _unity_self)*/ inline static Utils::MethodInfo<true,false> m_Internal_GetActiveTextureColorSpace_Injected;
+
+    static void Init(::Tools::Il2Cpp::Metadata::ClassDefinition& classdefinition);
+    
+};
 
 }

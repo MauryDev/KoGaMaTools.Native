@@ -29,3 +29,20 @@ klasses:
 - fullname: CrossHair
 - fullname: UnityEngine.UI.Graphic
   name: UI_Graphic
+- fullname: PlayButton
+- fullname: DeathUIBoostMenuController
+- fullname: UnityEngine.ImageConversion
+  name: ImageConversion
+- fullname: UnityEngine.Texture2D
+  name: Texture2D
+- fullname: IPlayModeUI
+- name: Image
+  fullname: UnityEngine.UI.Image
+- name: Sprite
+  fullname: UnityEngine.Sprite
+- name: Vector2
+  fullname: UnityEngine.Vector2
+- name: Rect
+  fullname: UnityEngine.Rect
+- fullname: UnityEngine.Texture
+  name: Texture

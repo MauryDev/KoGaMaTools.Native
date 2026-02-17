@@ -1,5 +1,5 @@
-#include "BlueModeTool.h"
-#include "..\..\metadata\KoGaMaAPI.KoGaMa.h"
+#include "BlueModeTool.h" 
+#include "metadata/KoGaMaAPI.KoGaMa.h"
 #include "MinHook.h"
 #include "../LoggerService.h"
 #include <format>

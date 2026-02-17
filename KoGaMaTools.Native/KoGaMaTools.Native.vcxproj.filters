@@ -21,9 +21,6 @@
     <ClCompile Include="services\PathHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="metadata\KoGaMaAPI.KoGaMa.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="services\KieroUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -66,12 +63,15 @@
     <ClCompile Include="services\PvP\CustomCrossHairColor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="services\PvP\FastRespawn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="services\PvP\CustomCrossHairTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="services\PathHelper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="metadata\KoGaMaAPI.KoGaMa.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="services\KieroUI.h">
@@ -120,6 +120,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Types\Vector4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="services\PvP\FastRespawn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="services\PvP\CustomCrossHairTexture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

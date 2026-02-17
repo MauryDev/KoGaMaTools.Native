@@ -1,5 +1,5 @@
 #include "RotationStep.h"
-#include "../../metadata/KoGaMaAPI.KoGaMa.h"
+#include "metadata/KoGaMaAPI.KoGaMa.h"
 #include <MinHook.h>
 #include "../LoggerService.h"
 #include <imgui.h>

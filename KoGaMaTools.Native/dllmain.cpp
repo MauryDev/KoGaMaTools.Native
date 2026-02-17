@@ -73,6 +73,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::UnlimitedConfig,
 		S::AntiAfk,
 		S::CustomCrossHairColor,
+		S::FastRespawn,
+		S::CustomCrossHairTexture,
 		KoGaMaTools::UI::MainUI>();
 
 
