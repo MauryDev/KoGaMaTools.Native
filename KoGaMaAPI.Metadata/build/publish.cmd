@@ -6,7 +6,7 @@ IF "%1" NEQ "" (
 ) ELSE (
 	set ModeOutput=Release
 )
-set OutputDir=..\..\x64\%ModeOutput%
+set OutputDir=..\..\x64\%ModeOutput%\Native
 set OutputMetadataWWW=%OutputDir%\WWW
 set OutputMetadataBR=%OutputDir%\BR
 set OutputMetadataFriends=%OutputDir%\Friends

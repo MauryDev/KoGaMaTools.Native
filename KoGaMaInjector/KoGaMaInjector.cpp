@@ -7,6 +7,8 @@
 #include <chrono>
 #include <windows.h>
 #include <tlhelp32.h>
+#include <cpr/cpr.h>
+#include <libzippp/libzippp.h>
 
 namespace fs = std::filesystem;
 
@@ -106,6 +108,74 @@ void WaitForProcessExit(DWORD pid) {
     }
 }
 
+void ExtractZip(const std::string& zipPath, const std::string& exportPath) {
+    libzippp::ZipArchive zf(zipPath);
+
+    if (!zf.open(libzippp::ZipArchive::ReadOnly)) {
+        // Trate o erro aqui (lançar exception ou log)
+        return;
+    }
+
+    for (const auto& entry : zf.getEntries()) {
+        if (entry.isFile()) {
+            fs::path fullPath = fs::path(exportPath) / entry.getName();
+
+            fs::create_directories(fullPath.parent_path());
+
+            void* data = entry.readAsBinary();
+
+            if (data != nullptr) {
+                std::ofstream ofs(fullPath, std::ios::binary);
+                ofs.write(static_cast<const char*>(data), entry.getSize());
+                ofs.close();
+
+                delete[] static_cast<char*>(data);
+            }
+        }
+    }
+    zf.close(); 
+}
+void CheckIfNeedUpdate() {
+    const std::string baseUrl = "https://raw.githubusercontent.com/MauryDev/KoGaMaTools.Native/refs/heads/develop/KoGaMaInjector/src/app/";
+    const std::string nativeFolder = "./Native";
+
+    if (!fs::exists(nativeFolder)) {
+        fs::create_directory(nativeFolder);
+    }
+
+    std::optional<std::string> versionAtual;
+    if (fs::exists("version.txt")) {
+        versionAtual = ReadConfig("version.txt"); 
+    }
+
+    auto versionResponse = cpr::Get(cpr::Url{ baseUrl + "version.txt" });
+    std::string remoteVersion = versionResponse.text;
+
+    if (!versionAtual.has_value() || remoteVersion != versionAtual.value()) {
+        auto zipRequest = cpr::Get(cpr::Url{ baseUrl + "last-release.zip" });
+
+        if (zipRequest.status_code == 200) {
+            std::string tempZip = "temp_update.zip";
+            std::ofstream ofs(tempZip, std::ios::binary);
+            ofs << zipRequest.text;
+            ofs.close();
+
+            try {
+                ExtractZip(tempZip, nativeFolder);
+
+                fs::remove(tempZip);
+                std::ofstream vFile("version.txt");
+                vFile << remoteVersion;
+
+                std::cout << "Update installed successfully in " << nativeFolder << std::endl;
+            }
+            catch (const std::exception& e) {
+                std::cerr << "Extraction failed: " << e.what() << std::endl;
+            }
+        }
+    }
+}
+
 int main() {
     const std::string configFile = "config.txt";
     const std::wstring targetProcess = L"kogama.exe";
@@ -114,6 +184,9 @@ int main() {
     std::cout << "[*] Injector Started. Waiting for " << "kogama.exe" << "..." << std::endl;
 
     while (true) {
+#if !_DEBUG
+        CheckIfNeedUpdate();
+#endif
         std::string dllName = ReadConfig(configFile);
         if (dllName.empty()) {
             std::cerr << "[!] Error: config.txt is empty or not found." << std::endl;
