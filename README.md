@@ -24,12 +24,15 @@ The project is under active development (develop `branch`). New features and met
 - [How to Run](#-how-to-run)
 - [Technologies Used](#-techonologies-used)
 - [Contribution](#-contribution)
+- [Acknowledgments](#-acknowledgments)
 - [Author](#-author)
 - [License](#-license)
 
 ## 🚀 Features
 
 The project injects a DLL into the game process and presents an Overlay menu using ImGui and DirectX 11.
+
+### Build Mode Features
 
 * **In-Game Menu**: A graphical interface accessible within the game to toggle functions in real-time.
     * Press `Ctrl + B` to toggle the UI visibility.
@@ -43,6 +46,16 @@ The project injects a DLL into the game process and presents an Overlay menu usi
 * **Destructibles Unlock**: Unlocks access to destructible objects that are normally restricted.
 * **Blue Mode Toggle**: Toggle the Blue Mode visual effect on demand.
 * **Unlimited Config**: Advanced configuration options for extending building capabilities beyond standard limits.
+
+### PvP Mode Features
+
+* **Anti-AFK**: Prevents automatic idle kick by disabling the idle detection system.
+* **Custom Crosshair Color**: Customize the crosshair color to suit your preference.
+* **Custom Crosshair Texture**: Replace the default crosshair with custom textures for improved visibility.
+* **Fast Respawn**: Speeds up the respawn timer for quicker re-engagement in PvP matches.
+
+### General Features
+
 * **Multi-Region Support**: Automatic detection of the server region (BR, WWW, Friends) to load the correct metadata.
 
 ## 📷 Application Demonstration
@@ -92,6 +105,12 @@ Contributions are welcome! Feel free to open issues reporting problems or pull r
 3.  Commit your changes (`git commit -m 'Adding new feature'`)
 4.  Push to the Branch (`git push origin feature/MyFeature`)
 5.  Open a Pull Request.
+
+## 👏 Acknowledgments
+
+Special thanks to the following for testing and feedback:
+
+* **Snowy** - *Testing and Feedback*
 
 ## 👤 Author
 
