@@ -3,6 +3,8 @@
 #include "MinHook.h"
 #include <imgui.h>
 #include "../LoggerService.h"
+using namespace Tools::Il2Cpp;
+
 namespace KoGaMaTools::Services
 {
 	namespace {

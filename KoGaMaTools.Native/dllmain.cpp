@@ -44,9 +44,9 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 	Tools::Il2Cpp::Init();
 	Tools::Il2Cpp::il2cpp_init("");
 
-	auto metadata1 = Tools::Il2Cpp::Metadata::ReadMetadataFromFile(metadata1Path.c_str());
+	auto metadata1 = Tools::Il2Cpp::Metadata::MetadataRoot::ReadFromFile(metadata1Path.c_str());
 
-	auto metadata2 = Tools::Il2Cpp::Metadata::ReadMetadataFromFile(metadata2Path.c_str());
+	auto metadata2 = Tools::Il2Cpp::Metadata::MetadataRoot::ReadFromFile(metadata2Path.c_str());
 
 
 	auto domain = Tools::Il2Cpp::il2cpp_domain_get();

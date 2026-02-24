@@ -14,8 +14,6 @@ void KoGaMaTools::Services::AntiAfk::Render()
 	{
 		MainComponent::Instance->ExecuteCallback([](void*) {
 			KoGaMaAPI::KoGaMa::AwayMonitor::m_set_IdleKickEnabled(!Enable);
-
 			});
 	}
-
 }

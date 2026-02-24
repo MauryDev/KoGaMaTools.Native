@@ -6,6 +6,7 @@
 #include "DestructiblesUnlock.h"
 #include <imgui.h>
 
+using namespace Tools::Il2Cpp;
 namespace {
 	void (*MainCameraManager_set_BlueModeEnabled_Old)(void* instance, uint8_t value, void* methodInfo);
 }

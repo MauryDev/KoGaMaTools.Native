@@ -4,6 +4,8 @@
 #include "../LoggerService.h"
 #include <imgui.h>
 
+using namespace Tools::Il2Cpp;
+
 namespace {
 	bool(*Respawn_old)(void* instance);
 	void(*Update_old)(void* instance);

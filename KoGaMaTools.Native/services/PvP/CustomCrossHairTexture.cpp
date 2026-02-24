@@ -9,6 +9,7 @@
 #include <portable-file-dialogs.h>
 #include "../Common/MainComponent.h"
 #include <future>
+using namespace Tools::Il2Cpp;
 
 void KoGaMaTools::Services::CustomCrossHairTexture::Install()
 {

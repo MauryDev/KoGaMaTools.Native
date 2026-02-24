@@ -3,6 +3,9 @@
 #include "metadata/KoGaMaAPI.KoGaMa.h"
 #include <imgui.h>
 #include "../LoggerService.h"
+
+using namespace Tools::Il2Cpp;
+
 namespace {
 	void(*UpdateCrossHair_old)(void* instance, void* pickupItem);
 }

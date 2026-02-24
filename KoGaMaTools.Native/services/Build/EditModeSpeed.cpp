@@ -4,6 +4,7 @@
 #include "../LoggerService.h"
 #include <imgui.h>
 
+using namespace Tools::Il2Cpp;
 
 namespace {
     void(*MoveCharacter_Old)(void* instance, std::array<float, 3> moveDelta, void* methodInfo);
