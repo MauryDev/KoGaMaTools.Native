@@ -2,35 +2,19 @@
 #include "metadata/KoGaMaAPI.KoGaMa.h"
 #include <MinHook.h>
 #include "../LoggerService.h"
+#include "../Common/ConfigService.h"
 #include <imgui.h>
 
 namespace {
 	void(*RotateStep_Old)(void*,int, float);
 }
-void KoGaMaTools::Services::RotationStep::Install()
-{
-	auto logger = LoggerService::GetMainTest();
-	auto methodPtr = (void**)KoGaMaAPI::KoGaMa::RotationHelper::m_RotateStep.ptr;
-    logger->Assert(methodPtr != nullptr, "[RotationStep] - Null method");
 
-    logger->Assert(*methodPtr != nullptr, "[RotationStep] - Null methodPointer");
-
-	logger->Assert(
-        MH_CreateHook(*methodPtr, RotateStep_Detour, (void**)&RotateStep_Old) == MH_OK,
-        "[RotationStep] - CreateHook"
-    );
-	logger->Assert(
-        MH_EnableHook(*methodPtr) == MH_OK, 
-        "[RotationStep] - EnableHook"
-    );
-
-}
 
 void KoGaMaTools::Services::RotationStep::RotateStep_Detour(void* instance, int rotationMode, float rotationSpeed)
 {
-	if (Enable)
+	if (Instance->Enabled)
 	{
-		rotationSpeed = std::copysign(Step, rotationSpeed);
+		rotationSpeed = std::copysign(Instance->Step, rotationSpeed);
 	}
 	RotateStep_Old(instance, rotationMode, rotationSpeed);
 }
@@ -39,13 +23,13 @@ void KoGaMaTools::Services::RotationStep::Render()
 {
 
     // Main Toggle
-    ImGui::Checkbox("Enable Rotation Step", &Enable);
+    ImGui::Checkbox("Enabled Rotation Step", &Enabled);
 
     if (ImGui::IsItemHovered())
         ImGui::SetTooltip("Overrides the default rotation speed with a fixed step value.");
 
     // Disable controls if the feature is off
-    ImGui::BeginDisabled(!Enable);
+    ImGui::BeginDisabled(!Enabled);
     {
         ImGui::Indent(10.0f);
 
@@ -67,4 +51,47 @@ void KoGaMaTools::Services::RotationStep::Render()
     ImGui::EndDisabled();
 
     ImGui::Separator();
+}
+
+void KoGaMaTools::Services::RotationStep::Init(Core::DIContainer& di)
+{
+    Instance = di.Get<RotationStep>();
+    auto logger = di.Get<LoggerService>();
+    auto configService = di.Get<ConfigService>();
+    
+    // Load initial configuration values
+	LoadConfig(configService->GetConfig());
+    
+    
+    
+    auto methodPtr = (void**)KoGaMaAPI::KoGaMa::RotationHelper::m_RotateStep.ptr;
+    logger->Assert(methodPtr != nullptr, "[RotationStep] - Null method");
+
+    logger->Assert(*methodPtr != nullptr, "[RotationStep] - Null methodPointer");
+
+    logger->Assert(
+        MH_CreateHook(*methodPtr, RotateStep_Detour, (void**)&RotateStep_Old) == MH_OK,
+        "[RotationStep] - CreateHook"
+    );
+    logger->Assert(
+        MH_EnableHook(*methodPtr) == MH_OK,
+        "[RotationStep] - EnableHook"
+    );
+}
+
+void KoGaMaTools::Services::RotationStep::LoadConfig(const nlohmann::json& value)
+{
+    Enabled = value.value("RotationStep.Enabled", Enabled);
+	Step = value.value("RotationStep.Step", Step);
+}
+
+void KoGaMaTools::Services::RotationStep::OnChangedConfig(const nlohmann::json& value)
+{
+	LoadConfig(value);
+}
+
+void KoGaMaTools::Services::RotationStep::OnSavingConfig(nlohmann::json& value)
+{
+    value["RotationStep.Enabled"] = Enabled;
+	value["RotationStep.Step"] = Step;
 }

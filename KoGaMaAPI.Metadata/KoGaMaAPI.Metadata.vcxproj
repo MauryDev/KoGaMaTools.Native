@@ -148,9 +148,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MetadataInit.cpp" />
     <ClCompile Include="metadata\KoGaMaAPI.KoGaMa.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MetadataInit.h" />
     <ClInclude Include="metadata\KoGaMaAPI.KoGaMa.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

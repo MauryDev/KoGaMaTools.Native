@@ -13,9 +13,36 @@ namespace {
 
 }
 
-void KoGaMaTools::Services::FastRespawn::Install()
+
+void KoGaMaTools::Services::FastRespawn::Render()
 {
-	auto logger = LoggerService::GetMainTest();
+	ImGui::Checkbox("Enabled Fast Respawn", &Enabled);
+
+}
+
+bool KoGaMaTools::Services::FastRespawn::OnExecute(void* instance)
+{
+	if (Instance->Enabled)
+		return false;
+	return Respawn_old(instance);
+}
+
+void KoGaMaTools::Services::FastRespawn::OnUpdate(void* instance)
+{
+	if (Instance->Enabled)
+	{
+		KoGaMaAPI::KoGaMa::DeathUIBoostMenuController::f_startTime.Set(Il2CppObject(instance), 0.0f);
+	}
+	Update_old(instance);
+}
+
+void KoGaMaTools::Services::FastRespawn::Init(Core::DIContainer& di)
+{
+	Instance = di.Get<FastRespawn>();
+	auto logger = di.Get<LoggerService>();
+	auto configService = di.Get<ConfigService>();
+
+	LoadConfig(configService->GetConfig());
 	auto method1 = (void**)KoGaMaAPI::KoGaMa::PlayButton::m_HandlePlayAvailable.ptr;
 	auto method2 = (void**)KoGaMaAPI::KoGaMa::DeathUIBoostMenuController::m_Update.ptr;
 
@@ -40,26 +67,20 @@ void KoGaMaTools::Services::FastRespawn::Install()
 		MH_EnableHook(*method2) == MH_OK,
 		"[FastRespawn] - EnableHook #2"
 	);
+	
 }
 
-void KoGaMaTools::Services::FastRespawn::Render()
+void KoGaMaTools::Services::FastRespawn::LoadConfig(const nlohmann::json& value)
 {
-	ImGui::Checkbox("Enable Fast Respawn", &Enable);
-
+	Enabled = value.value("FastRespawn.Enabled", Enabled);
 }
 
-bool KoGaMaTools::Services::FastRespawn::OnExecute(void* instance)
+void KoGaMaTools::Services::FastRespawn::OnChangedConfig(const nlohmann::json& value)
 {
-	if (KoGaMaTools::Services::FastRespawn::Enable)
-		return false;
-	return Respawn_old(instance);
+	this->LoadConfig(value);
 }
 
-void KoGaMaTools::Services::FastRespawn::OnUpdate(void* instance)
+void KoGaMaTools::Services::FastRespawn::OnSavingConfig(nlohmann::json& value)
 {
-	if (KoGaMaTools::Services::FastRespawn::Enable)
-	{
-		KoGaMaAPI::KoGaMa::DeathUIBoostMenuController::f_startTime.Set(Il2CppObject(instance), 0.0f);
-	}
-	Update_old(instance);
+	value["FastRespawn.Enabled"] = Enabled;
 }

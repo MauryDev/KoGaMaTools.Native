@@ -1,11 +1,8 @@
 #include "BlueModeTool.h" 
 #include "metadata/KoGaMaAPI.KoGaMa.h"
-#include "MinHook.h"
 #include "../LoggerService.h"
-#include <format>
-#include "DestructiblesUnlock.h"
 #include <imgui.h>
-
+#include <MinHook.h>
 using namespace Tools::Il2Cpp;
 namespace {
 	void (*MainCameraManager_set_BlueModeEnabled_Old)(void* instance, uint8_t value, void* methodInfo);
@@ -15,15 +12,17 @@ void KoGaMaTools::Services::BlueModeTool::OnExecute(void* instance, uint8_t valu
 	
 
 	namespace K = KoGaMaAPI::KoGaMa;
-	auto newValue = Il2CppBoolean(&value) && Enable;
+	auto newValue = Il2CppBoolean(&value) && Instance->Enabled;
 	MainCameraManager_set_BlueModeEnabled_Old(instance, newValue, methodInfo);
 
 
 }
 
-void KoGaMaTools::Services::BlueModeTool::Install()
+void KoGaMaTools::Services::BlueModeTool::Init(Core::DIContainer& di)
 {
-	auto logger = LoggerService::GetMainTest();
+	auto logger = di.Get<LoggerService>();
+	auto configService = di.Get<ConfigService>();
+	LoadConfig(configService->GetConfig());
 
 	auto methodPtr = (void**)KoGaMaAPI::KoGaMa::MainCameraManager::m_set_BlueModeEnabled.ptr;
 	logger->Assert(methodPtr != nullptr, "[BlueMode] - Null target");
@@ -42,12 +41,30 @@ void KoGaMaTools::Services::BlueModeTool::Install()
 		MH_EnableHook(*methodPtr) == MH_OK,
 		"[BlueMode] - EnableHook"
 	);
+	Instance = di.Get<BlueModeTool>();
 
-
+	
 }
 
 void KoGaMaTools::Services::BlueModeTool::Render()
 {
-	ImGui::Checkbox("Blue Mode", &Enable);
+	ImGui::Checkbox("Blue Mode", &Enabled);
 
+}
+
+void KoGaMaTools::Services::BlueModeTool::LoadConfig(const nlohmann::json& value)
+{
+	Enabled = value.value("BlueMode.Enabled", Enabled);
+
+	
+}
+
+void KoGaMaTools::Services::BlueModeTool::OnChangedConfig(const nlohmann::json& value)
+{
+	LoadConfig(value);
+}
+
+void KoGaMaTools::Services::BlueModeTool::OnSavingConfig(nlohmann::json& value)
+{
+	value["BlueMode.Enabled"] = Enabled;
 }

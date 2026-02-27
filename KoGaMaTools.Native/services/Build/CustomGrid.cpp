@@ -2,6 +2,7 @@
 #include "metadata/KoGaMaAPI.KoGaMa.h"
 #include <MinHook.h>
 #include "../LoggerService.h"
+#include "../Common/ConfigService.h"
 #include <imgui.h>
 #include <format>
 
@@ -14,9 +15,9 @@ namespace {
 }
 void KoGaMaTools::Services::CustomGrid::Execute(void* instance, void* methodInfo)
 {
-    if (Enabled)
+    if (Instance->Enabled)
     {
-        KoGaMaAPI::KoGaMa::ESTranslate::f_gridSize.Set(instance, GridSize);
+        KoGaMaAPI::KoGaMa::ESTranslate::f_gridSize.Set(instance, Instance->GridSize);
     }
     Execute_Old(instance, methodInfo);
 }
@@ -24,15 +25,20 @@ void KoGaMaTools::Services::CustomGrid::Execute(void* instance, void* methodInfo
 std::array<float, 3> KoGaMaTools::Services::CustomGrid::GetClosestGridPoint(std::array<float, 3> worldPosition, std::array<float, 4> rotation, float gridSize, std::array<float, 3> scale, void* methodInfo)
 {
 
-    if (Enabled)
-        gridSize = GridSize;
+    if (Instance->Enabled)
+        gridSize = Instance->GridSize;
 
     return GetClosestGridPoint_Old(worldPosition, rotation, gridSize, scale, methodInfo);
 }
 
-void KoGaMaTools::Services::CustomGrid::Install()
+void KoGaMaTools::Services::CustomGrid::Init(Core::DIContainer& diContainer)
 {
-    auto logger = LoggerService::GetMainTest();
+    Instance = diContainer.Get<CustomGrid>();
+    auto logger = diContainer.Get<LoggerService>();
+    auto configService = diContainer.Get<ConfigService>();
+    
+    LoadConfig(configService->GetConfig());
+
     auto methodPtr1 = (void**)KoGaMaAPI::KoGaMa::ESTranslate::m_Execute.ptr;
     auto methodPtr2 = (void**)KoGaMaAPI::KoGaMa::SharedCubeFunctions::m_GetClosestGridPoint.ptr;
     logger->Assert(methodPtr1 != nullptr && *methodPtr1 != nullptr,"[CustomGrid] - Method or Method Pointer is null");
@@ -47,11 +53,11 @@ void KoGaMaTools::Services::CustomGrid::Install()
 
     logger->Assert(
         MH_EnableHook(*methodPtr1) == MH_OK,
-        "[CustomGrid] - Enable Hook #1"
+        "[CustomGrid] - Enabled Hook #1"
     );
     logger->Assert(
         MH_EnableHook(*methodPtr2) == MH_OK,
-        "[CustomGrid] - Enable Hook #2"
+        "[CustomGrid] - Enabled Hook #2"
     );
 
 }
@@ -59,7 +65,7 @@ void KoGaMaTools::Services::CustomGrid::Install()
 void KoGaMaTools::Services::CustomGrid::Render()
 {
     // Main Toggle
-    ImGui::Checkbox("Enable Custom Grid", &Enabled);
+    ImGui::Checkbox("Enabled Custom Grid", &Enabled);
 
     // Keep UI stable by disabling instead of hiding
     ImGui::BeginDisabled(!Enabled);
@@ -86,4 +92,22 @@ void KoGaMaTools::Services::CustomGrid::Render()
     ImGui::EndDisabled();
 
     ImGui::Separator();
+}
+
+void KoGaMaTools::Services::CustomGrid::LoadConfig(const nlohmann::json& value)
+{
+    this->Enabled = value.value("CustomGrid.Enabled", Enabled);
+    this->GridSize = value.value("CustomGrid.GridSize", GridSize);
+}
+
+
+void KoGaMaTools::Services::CustomGrid::OnChangedConfig(const nlohmann::json& value)
+{
+    this->LoadConfig(value);
+}
+
+void KoGaMaTools::Services::CustomGrid::OnSavingConfig(nlohmann::json& value)
+{
+    value["CustomGrid.Enabled"] = this->Enabled;
+	value["CustomGrid.GridSize"] = this->GridSize;
 }

@@ -2,6 +2,7 @@
 #include "metadata/KoGaMaAPI.KoGaMa.h"
 #include <MinHook.h>
 #include "../LoggerService.h"
+#include "../Common/ConfigService.h"
 #include <imgui.h>
 
 using namespace Tools::Il2Cpp;
@@ -12,14 +13,17 @@ namespace {
 void KoGaMaTools::Services::EditModeSpeed::MoveCharacter(void* instance, std::array<float, 3> moveDelta, void* methodInfo)
 {
     namespace K = KoGaMaAPI::KoGaMa;
-    if (MultiplierEnabled)
+    if (Instance->MultiplierEnabled)
     {
-        moveDelta[0] *= Multiplier;
-        moveDelta[1] *= Multiplier;
-        moveDelta[2] *= Multiplier;
+        moveDelta[0] *= Instance->Multiplier;
+        moveDelta[1] *= Instance->Multiplier;
+        moveDelta[2] *= Instance->Multiplier;
     }
 
-    auto value = K::MVBuildModeAvatarLocal_EditMode::m_get_MovementConstrained(instance).Unbox<Il2CppBoolean>() && MovementConstrained;
+    auto value = K::MVBuildModeAvatarLocal_EditMode::m_get_MovementConstrained(instance)
+        .Unbox<Il2CppBoolean>() &&
+        Instance->MovementConstrained;
+
     K::MVBuildModeAvatarLocal_EditMode::m_set_MovementConstrained(instance, value);
 
     MoveCharacter_Old(instance, moveDelta, methodInfo);
@@ -27,10 +31,16 @@ void KoGaMaTools::Services::EditModeSpeed::MoveCharacter(void* instance, std::ar
 
 }
 
-void KoGaMaTools::Services::EditModeSpeed::Install()
+void KoGaMaTools::Services::EditModeSpeed::Init(Core::DIContainer& di)
 {
+    Instance = di.Get<EditModeSpeed>();
+
     namespace K = KoGaMaAPI::KoGaMa;
-    auto logger = LoggerService::GetMainTest();
+    auto logger = di.Get<LoggerService>();
+    auto configService = di.Get<ConfigService>();
+
+    // Load initial configuration values
+	LoadConfig(configService->GetConfig());
 
     auto ptr = (void**)K::MVBuildModeAvatarLocal_EditMode::m_MoveCharacter.ptr;
 
@@ -51,7 +61,7 @@ void KoGaMaTools::Services::EditModeSpeed::Install()
 void KoGaMaTools::Services::EditModeSpeed::Render()
 {
     // Main Toggle
-    ImGui::Checkbox("Enable Edit Speed Multiplier", &MultiplierEnabled);
+    ImGui::Checkbox("Enabled Edit Speed Multiplier", &MultiplierEnabled);
 
     // Visual grouping: everything below is grayed out if MultiplierEnabled is false
     ImGui::BeginDisabled(!MultiplierEnabled);
@@ -79,4 +89,23 @@ void KoGaMaTools::Services::EditModeSpeed::Render()
     ImGui::EndDisabled();
 
     ImGui::Separator();
+}
+
+void KoGaMaTools::Services::EditModeSpeed::LoadConfig(const nlohmann::json& value)
+{
+    MultiplierEnabled = value.value("EditModeSpeed.MultiplierEnabled", MultiplierEnabled);
+    Multiplier = value.value("EditModeSpeed.Multiplier", Multiplier);
+	MovementConstrained = value.value("EditModeSpeed.MovementConstrained", MovementConstrained);
+}
+
+void KoGaMaTools::Services::EditModeSpeed::OnChangedConfig(const nlohmann::json& value)
+{
+    LoadConfig(value);
+}
+
+void KoGaMaTools::Services::EditModeSpeed::OnSavingConfig(nlohmann::json& value)
+{
+    value["EditModeSpeed.MultiplierEnabled"] = MultiplierEnabled;
+    value["EditModeSpeed.Multiplier"] = Multiplier;
+	value["EditModeSpeed.MovementConstrained"] = MovementConstrained;
 }

@@ -3,6 +3,7 @@
 #include "MinHook.h"
 #include <imgui.h>
 #include "../LoggerService.h"
+#include "../Common/ConfigService.h"
 using namespace Tools::Il2Cpp;
 
 namespace KoGaMaTools::Services
@@ -10,9 +11,20 @@ namespace KoGaMaTools::Services
 	namespace {
 		void (*OldFunc)(void* instance, void* e, void* methodInfo);
 	}
-	void SinglePaintFace::Install()
+	
+	void SinglePaintFace::Render()
 	{
-		auto logger = LoggerService::GetMainTest();
+		ImGui::Checkbox("Single Face", &Enabled);
+
+	}
+	void SinglePaintFace::Init(Core::DIContainer& di)
+	{
+		Instance = di.Get<SinglePaintFace>();
+		auto logger = di.Get<LoggerService>();
+		auto configService = di.Get<ConfigService>();
+
+		// Load initial configuration values
+		LoadConfig(configService->GetConfig());
 
 		auto methodVer = (void**)KoGaMaAPI::KoGaMa::PaintCubes::m_Execute.ptr;
 
@@ -29,18 +41,23 @@ namespace KoGaMaTools::Services
 			"[SinglePaintFace] - EnableHook"
 		);
 	}
-	void SinglePaintFace::Render()
+	void SinglePaintFace::LoadConfig(const nlohmann::json& value)
 	{
-		ImGui::Checkbox("Single Face", &Enable);
-
+		Enabled = value.value("SinglePaintFace.Enabled", Enabled);
+	}
+	void SinglePaintFace::OnChangedConfig(const nlohmann::json& value)
+	{
+		LoadConfig(value);
+	}
+	void SinglePaintFace::OnSavingConfig(nlohmann::json& value)
+	{
+		value["SinglePaintFace.Enabled"] = Enabled;
 	}
 	void SinglePaintFace::PaintCubes_Execute(void* instance, void* e, void* methodInfo)
 	{
 		namespace K = KoGaMaAPI::KoGaMa;
-		if (Enable)
+		if (Instance->Enabled)
 		{
-			
-
 			if (K::CubeModelTool::f_waitForMouseUp.Get<Tools::Il2Cpp::Il2CppBoolean>(instance))
 			{
 				auto value = K::MVInputWrapper::m0_GetBooleanControl(K::KogamaControls::f_PointerSelect.Get<int>()).Unbox<Il2CppBoolean>();

@@ -4,13 +4,14 @@
 #include <functional>
 #include <string>
 #include <mutex>
+#include "../../Core/DITools.h"
 
 namespace KoGaMaTools::Services {
-	struct MainComponent {
+	struct MainComponent: Core::IInitializable  {
 		using CallbackType = std::function<void(void*)>;
-		static inline MainComponent* Instance = nullptr;
+		static inline std::shared_ptr<MainComponent> Instance = nullptr;
 		std::mutex mtx;
-		static void Install();
+		void Init(Core::DIContainer& di) override;
 		void AddCallback(const std::string& name, CallbackType callback);
 		void ExecuteCallback(CallbackType callback);
 

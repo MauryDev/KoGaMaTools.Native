@@ -11,9 +11,7 @@
 #include <future>
 using namespace Tools::Il2Cpp;
 
-void KoGaMaTools::Services::CustomCrossHairTexture::Install()
-{
-}
+
 void KoGaMaTools::Services::CustomCrossHairTexture::SetTexture(const std::string& filePath) {
 	namespace K = KoGaMaAPI::KoGaMa;
 	
@@ -62,12 +60,17 @@ void KoGaMaTools::Services::CustomCrossHairTexture::OpenFileDialog()
 	auto selection = pfd::open_file("Select a file").result();
 	if (!selection.empty())
 	{
-		auto filePath = selection[0];
+		auto& filePath = selection[0];
 		MainComponent::Instance->ExecuteCallback([filePath](void*) {
-			SetTexture(filePath);
+			Instance->SetTexture(filePath);
 			});
 	}
 	Busy = false;
+}
+
+void KoGaMaTools::Services::CustomCrossHairTexture::Init(Core::DIContainer& di)
+{
+	Instance = di.Get<CustomCrossHairTexture>();
 }
 
 void KoGaMaTools::Services::CustomCrossHairTexture::Render()
@@ -80,7 +83,7 @@ void KoGaMaTools::Services::CustomCrossHairTexture::Render()
 	if (ImGui::Button(buttonLabel))
 	{
 		Busy = true;
-		std::thread(OpenFileDialog).detach();
+		std::thread([this]() {this->OpenFileDialog(); }).detach();
 		
 		
 	}

@@ -3,19 +3,25 @@
 #include "metadata/KoGaMaAPI.KoGaMa.h"
 #include <imgui.h>
 #include "../LoggerService.h"
+#include "../Common/ConfigService.h"
 
 namespace {
 	bool(*IsAvailable_Old)(void* instance, void* methodInfo);
 }
 bool KoGaMaTools::Services::DestructiblesUnlock::IsAvailable(void* instance, void* methodInfo)
 {
-	if (Unlock) return true;
+	if (Instance->Unlock) return true;
 	return IsAvailable_Old(instance, methodInfo);
 }
 
-void KoGaMaTools::Services::DestructiblesUnlock::Install()
+void KoGaMaTools::Services::DestructiblesUnlock::Init(Core::DIContainer& di)
 {
-    auto logger = LoggerService::GetMainTest();
+    Instance = di.Get<DestructiblesUnlock>();
+    auto logger = di.Get<LoggerService>();
+    auto configService = di.Get<ConfigService>();
+
+    LoadConfig(configService->GetConfig());
+    
 
     auto methodPtr = (void**)KoGaMaAPI::KoGaMa::MVMaterial::m_get_IsAvailable.ptr;
 
@@ -37,4 +43,20 @@ void KoGaMaTools::Services::DestructiblesUnlock::Render()
 {
 	ImGui::Checkbox("Destructibles Unlock", &Unlock);
 
+}
+
+void KoGaMaTools::Services::DestructiblesUnlock::LoadConfig(const nlohmann::json& value)
+{
+    Unlock = value.value("DestructiblesUnlock.Unlock", Unlock);
+
+}
+
+void KoGaMaTools::Services::DestructiblesUnlock::OnChangedConfig(const nlohmann::json& value)
+{
+    this->LoadConfig(value);
+}
+
+void KoGaMaTools::Services::DestructiblesUnlock::OnSavingConfig(nlohmann::json& value)
+{
+    value["DestructiblesUnlock.Unlock"] = Unlock;
 }

@@ -1,12 +1,21 @@
 #pragma once
 #include <array>
+#include "../../UI/MainUI.h"
+#include "../../Core/DITools.h"
+#include "../Common/ConfigService.h"
 
 namespace KoGaMaTools::Services {
-	struct SinglePaintFace {
-		inline static bool Enable = false;
-		 static void PaintCubes_Execute(void* instance, void* e, void* methodInfo);
-		 static void Install();
-		 static void Render();
+	struct SinglePaintFace : UI::MainUI::IComponent, Core::IInitializable, Services::IConfigurable {
+		inline static std::shared_ptr<SinglePaintFace> Instance;
+		bool Enabled = false;
+		static void PaintCubes_Execute(void* instance, void* e, void* methodInfo);
+		void Render() override;
+
+		// Inherited via IInitializable
+		void Init(Core::DIContainer& di) override;
+		void LoadConfig(const nlohmann::json& value);
+		void OnChangedConfig(const nlohmann::json& value) override;
+		void OnSavingConfig(nlohmann::json& value) override;
 	};
 	
 }

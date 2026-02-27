@@ -5,16 +5,6 @@
 
 namespace KoGaMaTools::Services {
 
-    LoggerService::LoggerService(const char* name) : _currentName(name) {
-        auto localPath = PathHelper::GetFolderWork() / (std::string(name) + ".log");
-
-        // Abrimos em modo append
-        _logFile.open(localPath.string(), std::ios::out);
-
-        if (_logFile.is_open()) {
-            LogWithLevel("SYSTEM", "=== Início da Sessão de Log ===");
-        }
-    }
 
     LoggerService::~LoggerService() {
         if (_logFile.is_open()) {
@@ -39,6 +29,18 @@ namespace KoGaMaTools::Services {
         _logFile.flush();
     }
 
+    void LoggerService::Init(Core::DIContainer& di)
+    {
+        auto localPath = PathHelper::GetFolderWork() / (std::string("") + ".log");
+
+        // Abrimos em modo append
+        _logFile.open(localPath.string(), std::ios::out);
+
+        if (_logFile.is_open()) {
+            LogWithLevel("SYSTEM", "=== Início da Sessão de Log ===");
+        }
+    }
+
     void LoggerService::Info(const std::string& message) { LogWithLevel("INFO", message); }
     void LoggerService::Warning(const std::string& message) { LogWithLevel("WARN", message); }
     void LoggerService::Error(const std::string& message) { LogWithLevel("ERROR", message); }
@@ -50,13 +52,7 @@ namespace KoGaMaTools::Services {
         Info("Teste de diagnóstico executado com sucesso.");
         return true;
     }
-    LoggerService* LoggerService::GetMainTest()
-    {
-        static LoggerService* mainTester = nullptr;
-        if (mainTester == nullptr)
-            mainTester = new LoggerService("teste");
-        return mainTester;
-    }
+
     bool LoggerService::Assert(bool condition, const std::string& test_name) {
         if (condition) {
             LogWithLevel("PASS", test_name); 

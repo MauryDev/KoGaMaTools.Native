@@ -18,3 +18,5 @@
 #include "PvP/CustomCrossHairTexture.h"
 
 #include "Common/MainComponent.h"
+
+#include "Common/ConfigService.h"

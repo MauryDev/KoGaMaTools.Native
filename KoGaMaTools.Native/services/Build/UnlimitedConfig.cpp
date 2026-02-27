@@ -4,49 +4,17 @@
 #include "metadata/KoGaMaAPI.KoGaMa.h"
 #include  <algorithm>
 #include "../LoggerService.h"
+#include "../Common/ConfigService.h"
 namespace {
 	void(*m0_Initialize_Old)(void*, void* key, float value, float minValue, float maxValue);
 	void(*m1_Initialize_Old)(void*, void* key, int value, int minValue, int maxValue);
 }
-void KoGaMaTools::Services::UnlimitedConfig::Install()
-{
-    namespace K = KoGaMaAPI::KoGaMa;
-    auto logger = LoggerService::GetMainTest();
 
-    auto methodPtr1 = (void**)K::SettingsSlider::m0_Initialize.ptr;
-    auto methodPtr2 = (void**)K::SettingsSlider::m1_Initialize.ptr;
-
-    logger->Assert(methodPtr1 != nullptr, "[UnlimitedConfig] - Null methodPtr1");
-    logger->Assert(methodPtr2 != nullptr, "[UnlimitedConfig] - Null methodPtr2");
-
-    logger->Assert(*methodPtr1 != nullptr, "[UnlimitedConfig] - Null target m0_Initialize");
-    logger->Assert(*methodPtr2 != nullptr, "[UnlimitedConfig] - Null target m1_Initialize");
-
-    logger->Assert(
-        MH_CreateHook(*methodPtr1, Initialize1, (void**)&m0_Initialize_Old) == MH_OK,
-        "[UnlimitedConfig] - CreateHook m0_Initialize"
-    );
-
-    logger->Assert(
-        MH_CreateHook(*methodPtr2, Initialize2, (void**)&m1_Initialize_Old) == MH_OK,
-        "[UnlimitedConfig] - CreateHook m1_Initialize"
-    );
-
-    logger->Assert(
-        MH_EnableHook(*methodPtr1) == MH_OK,
-        "[UnlimitedConfig] - EnableHook m0_Initialize"
-    );
-
-    logger->Assert(
-        MH_EnableHook(*methodPtr2) == MH_OK,
-        "[UnlimitedConfig] - EnableHook m1_Initialize"
-    );
-}
 
 void KoGaMaTools::Services::UnlimitedConfig::Render()
 {
     // Main Master Switch
-    ImGui::Checkbox("Enable Unlimited Config", &Enabled);
+    ImGui::Checkbox("Enabled Unlimited Config", &Enabled);
 
     if (ImGui::IsItemHovered())
         ImGui::SetTooltip("Allows overriding the default Min/Max limits of game sliders.");
@@ -103,17 +71,77 @@ void KoGaMaTools::Services::UnlimitedConfig::ProcessLimits(void* instance,auto& 
     namespace K = KoGaMaAPI::KoGaMa;
 
 	using T = std::remove_reference_t<decltype(value)>;
-	if (Enabled)
+	if (Instance->Enabled)
 	{
 
 		// Converte os membros da classe (que parecem ser floats) para o tipo T
-		minValue = static_cast<T>(MinValue);
-		maxValue = static_cast<T>(MaxValue);
+		minValue = static_cast<T>(Instance->MinValue);
+		maxValue = static_cast<T>(Instance->MaxValue);
 
-		if (ClampValues)
+		if (Instance->ClampValues)
 		{
 			value = std::clamp<T>(value, minValue, maxValue);
 		}
 
 	}
+}
+
+void KoGaMaTools::Services::UnlimitedConfig::Init(Core::DIContainer& di)
+{
+    namespace K = KoGaMaAPI::KoGaMa;
+    Instance = di.Get<UnlimitedConfig>();
+    auto logger = di.Get<LoggerService>();
+    auto configService = di.Get<ConfigService>();
+
+	LoadConfig(configService->GetConfig());
+
+    auto methodPtr1 = (void**)K::SettingsSlider::m0_Initialize.ptr;
+    auto methodPtr2 = (void**)K::SettingsSlider::m1_Initialize.ptr;
+
+    logger->Assert(methodPtr1 != nullptr, "[UnlimitedConfig] - Null methodPtr1");
+    logger->Assert(methodPtr2 != nullptr, "[UnlimitedConfig] - Null methodPtr2");
+
+    logger->Assert(*methodPtr1 != nullptr, "[UnlimitedConfig] - Null target m0_Initialize");
+    logger->Assert(*methodPtr2 != nullptr, "[UnlimitedConfig] - Null target m1_Initialize");
+
+    logger->Assert(
+        MH_CreateHook(*methodPtr1, Initialize1, (void**)&m0_Initialize_Old) == MH_OK,
+        "[UnlimitedConfig] - CreateHook m0_Initialize"
+    );
+
+    logger->Assert(
+        MH_CreateHook(*methodPtr2, Initialize2, (void**)&m1_Initialize_Old) == MH_OK,
+        "[UnlimitedConfig] - CreateHook m1_Initialize"
+    );
+
+    logger->Assert(
+        MH_EnableHook(*methodPtr1) == MH_OK,
+        "[UnlimitedConfig] - EnableHook m0_Initialize"
+    );
+
+    logger->Assert(
+        MH_EnableHook(*methodPtr2) == MH_OK,
+        "[UnlimitedConfig] - EnableHook m1_Initialize"
+    );
+}
+
+void KoGaMaTools::Services::UnlimitedConfig::LoadConfig(const nlohmann::json& value)
+{
+    Enabled = value.value("UnlimitedConfig.Enabled", Enabled);
+    MinValue = value.value("UnlimitedConfig.MinValue", MinValue);
+    MaxValue = value.value("UnlimitedConfig.MaxValue", MaxValue);
+	ClampValues = value.value("UnlimitedConfig.ClampValues", ClampValues);
+}
+
+void KoGaMaTools::Services::UnlimitedConfig::OnChangedConfig(const nlohmann::json& value)
+{
+	LoadConfig(value);
+}
+
+void KoGaMaTools::Services::UnlimitedConfig::OnSavingConfig(nlohmann::json& value)
+{
+    value["UnlimitedConfig.Enabled"] = Enabled;
+    value["UnlimitedConfig.MinValue"] = MinValue;
+    value["UnlimitedConfig.MaxValue"] = MaxValue;
+	value["UnlimitedConfig.ClampValues"] = ClampValues;
 }

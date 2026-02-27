@@ -1,21 +1,27 @@
 #pragma once
 #include <array>
+#include <memory>
+#include "../../UI/MainUI.h"
+#include "../../Core/DITools.h"
+#include "../Common/ConfigService.h"
+
 namespace KoGaMaTools::Services {
-	struct NoLimit {
-		inline static bool Enable = false;
+	struct NoLimit : UI::MainUI::IComponent, Core::IInitializable, Services::IConfigurable {
+		inline static std::shared_ptr<NoLimit> Instance;
+		bool Enabled = false;
 		using IntVector = std::array<short, 3>;
-
-
 
 		static void ConstraintVisualizer_Init(void* instance, void* targetCubeModel, void* constraint, void* layer, void* methodInfo);
 		static bool ModelingDynamicBoxConstraint_CanAddCubeAt(void* instance, IntVector pos, void* methodInfo);
 		static bool ModelingBoxCountConstraint_CanAddCubeAt(void* instance, IntVector pos, void* methodInfo);
 		static bool ModelingBoxCountConstraint_CanRemoveCubeAt(void* instance, IntVector pos, void* methodInfo);
 
-		static void Install();
+		void Init(Core::DIContainer& di) override;
 
-		static void Render();
+		void Render() override;
+
+		void LoadConfig(const nlohmann::json& value);
+		void OnChangedConfig(const nlohmann::json& value) override;
+		void OnSavingConfig(nlohmann::json& value) override;
 	};
-	
-
 }

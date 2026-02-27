@@ -2,14 +2,19 @@
 #include <cinttypes>
 #include <string>
 #include <memory>
+#include "../../Core/DITools.h"
+#include "../../UI/MainUI.h"
 namespace KoGaMaTools::Services {
-	struct CustomCrossHairTexture {
-		inline static bool Enable = false;
-		inline static bool Busy = false;
-		static void Install();
-		static void Render();
-		static void SetTexture(const std::string& filePath);
-		static void OpenFileDialog();
+	struct CustomCrossHairTexture : UI::MainUI::IComponent, Core::IInitializable {
+		inline static std::shared_ptr<CustomCrossHairTexture> Instance;
+		bool Enabled = false;
+		bool Busy = false;
+		void Render() override;
+		void SetTexture(const std::string& filePath);
+		void OpenFileDialog();
+
+		// Inherited via IInitializable
+		void Init(Core::DIContainer& di) override;
 	};
 
 

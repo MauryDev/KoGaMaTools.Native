@@ -4,10 +4,10 @@
 namespace {
 	void(*oldUpdate)(void* instance);
 }
-void KoGaMaTools::Services::MainComponent::Install()
+void KoGaMaTools::Services::MainComponent::Init(Core::DIContainer& di)
 {
 
-	Instance = new MainComponent();
+	Instance = di.Get<MainComponent>();
 	Tools::Il2Cpp::Utils::HookFn(KoGaMaAPI::KoGaMa::MVGameControllerBase::m_Update, Update, (void**)&oldUpdate);
 }
 

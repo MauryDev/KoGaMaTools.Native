@@ -5,14 +5,23 @@
 
 #include <Tools.Il2Cpp.Lib.h>
 #include <Tools.Il2Cpp.ICalls.h>
-#include "services\services.h"
+#include "services/services.h"
 #include "metadata/KoGaMaAPI.KoGaMa.h"
-#include "UI\MainUI.h"
-
+#include "UI/MainUI.h"
+#include <MetadataInit.h>
+#include "Core/DITools.h"
 
 template<typename... T>
 void InstallMultiple() {
 	(T::Install(), ...);
+}
+
+template <typename ...T>
+void SetupUI(KoGaMaTools::UI::MainUI& ui, int i)
+{
+	auto& app = KoGaMaTools::Core::DIContainer::GetInstance();
+
+	ui.AddComponents(i, app.Get<T>()...);
 }
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
@@ -39,30 +48,18 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 
 	KoGaMaTools::Services::KieroUI::InitHook();
 
-
-
-	Tools::Il2Cpp::Init();
-	Tools::Il2Cpp::il2cpp_init("");
-
-	auto metadata1 = Tools::Il2Cpp::Metadata::MetadataRoot::ReadFromFile(metadata1Path.c_str());
-
-	auto metadata2 = Tools::Il2Cpp::Metadata::MetadataRoot::ReadFromFile(metadata2Path.c_str());
-
-
-	auto domain = Tools::Il2Cpp::il2cpp_domain_get();
-	Tools::Il2Cpp::Il2CppThread::Attach(domain);
-
-	Tools::Il2Cpp::ICalls::Init(metadata1);
-
-	KoGaMaAPI::KoGaMa::Init(metadata2);
-
+	KoGaMaAPI::Metadata::Install(metadata1Path, metadata2Path);
 
 	MH_Initialize();
-	KoGaMaTools::Services::LoggerService::GetMainTest();
-
-
+	auto& app = KoGaMaTools::Core::DIContainer::GetInstance();
+	
+	
 	namespace S = KoGaMaTools::Services;
-	InstallMultiple<S::MainComponent,
+
+	KoGaMaTools::Core::InstallMultiple<S::MainComponent,
+		S::LoggerService,
+		KoGaMaTools::UI::MainUI,
+		S::ConfigService,
 		S::SinglePaintFace, 
 		S::NoLimit,
 		S::BlueModeTool,
@@ -74,9 +71,29 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::AntiAfk,
 		S::CustomCrossHairColor,
 		S::FastRespawn,
-		S::CustomCrossHairTexture,
-		KoGaMaTools::UI::MainUI>();
+		S::CustomCrossHairTexture>();
 
+	app.InitAll();
+
+	auto ui = app.Get<KoGaMaTools::UI::MainUI>();
+	
+	SetupUI<S::SinglePaintFace,
+		S::NoLimit,
+		S::BlueModeTool,
+		S::DestructiblesUnlock,
+		S::CustomGrid,
+		S::EditModeSpeed,
+		S::RotationStep,
+		S::UnlimitedConfig>(*ui, 0);
+
+	SetupUI<S::AntiAfk,
+		S::CustomCrossHairColor,
+		S::FastRespawn,
+		S::CustomCrossHairTexture>(*ui, 1);
+
+	SetupUI<S::ConfigService>(*ui, 2);
+
+	app.Get<S::ConfigService>()->SetupConfigurables();
 
 
 	return TRUE;

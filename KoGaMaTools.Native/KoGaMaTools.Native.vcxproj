@@ -157,6 +157,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Core\DITools.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="services\Build\BlueModeTool.cpp" />
     <ClCompile Include="services\Build\CustomGrid.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="services\Build\EditModeSpeed.cpp" />
     <ClCompile Include="services\Build\RotationStep.cpp" />
     <ClCompile Include="services\Build\UnlimitedConfig.cpp" />
+    <ClCompile Include="services\Common\ConfigService.cpp" />
     <ClCompile Include="services\Common\MainComponent.cpp" />
     <ClCompile Include="services\KieroUI.cpp" />
     <ClCompile Include="services\Build\NoLimit.cpp" />
@@ -177,12 +179,14 @@
     <ClCompile Include="UI\MainUI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Core\DITools.h" />
     <ClInclude Include="services\Build\BlueModeTool.h" />
     <ClInclude Include="services\Build\CustomGrid.h" />
     <ClInclude Include="services\Build\DestructiblesUnlock.h" />
     <ClInclude Include="services\Build\EditModeSpeed.h" />
     <ClInclude Include="services\Build\RotationStep.h" />
     <ClInclude Include="services\Build\UnlimitedConfig.h" />
+    <ClInclude Include="services\Common\ConfigService.h" />
     <ClInclude Include="services\Common\MainComponent.h" />
     <ClInclude Include="services\KieroUI.h" />
     <ClInclude Include="services\Build\NoLimit.h" />

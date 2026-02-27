@@ -146,9 +146,4 @@ namespace KoGaMaTools::Services::KieroUI
 		return oPresent(pSwapChain, SyncInterval, Flags);
 	}
 
-
-
 }
-
-
-

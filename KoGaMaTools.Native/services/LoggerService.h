@@ -1,12 +1,12 @@
 #pragma once
 #include <string>
 #include <fstream>
+#include "../Core/DITools.h"
 
 namespace KoGaMaTools::Services {
     
-    class LoggerService {
+    class LoggerService: public Core::IInitializable {
     public:
-        LoggerService(const char* name);
         ~LoggerService();
 
         // Níveis de Log
@@ -23,11 +23,13 @@ namespace KoGaMaTools::Services {
 
         // Função de Teste para verificar se o arquivo está acessível
         bool RunDiagnostics();
-        static LoggerService* GetMainTest();
 
     private:
         std::ofstream _logFile;
         std::string _currentName;
         void LogWithLevel(const std::string& level, const std::string& message);
+
+        // Inherited via IInitializable
+        void Init(Core::DIContainer& di) override;
     };
 }

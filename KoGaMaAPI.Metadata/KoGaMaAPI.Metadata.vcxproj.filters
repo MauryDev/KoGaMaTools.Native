@@ -18,9 +18,15 @@
     <ClCompile Include="metadata\KoGaMaAPI.KoGaMa.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MetadataInit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="metadata\KoGaMaAPI.KoGaMa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MetadataInit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

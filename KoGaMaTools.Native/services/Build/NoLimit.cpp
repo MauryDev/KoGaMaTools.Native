@@ -3,6 +3,7 @@
 #include "MinHook.h"
 #include <imgui.h>
 #include "../LoggerService.h"
+#include "../Common/ConfigService.h"
 
 namespace KoGaMaTools::Services
 {
@@ -12,9 +13,14 @@ namespace KoGaMaTools::Services
 		bool (*ModelingBoxCountConstraint_CanRemoveCubeAt_Old)(void* instance, NoLimit::IntVector pos, void* methodInfo);
 		void (*ConstraintVisualizer_Init_Old)(void* instance, void* targetCubeModel, void* constraint, void* layer, void* methodInfo);
 	}
-	void NoLimit::Install()
+	void NoLimit::Init(Core::DIContainer& di)
 	{
-		auto logger = LoggerService::GetMainTest();
+		Instance = di.Get<NoLimit>();
+		auto logger = di.Get<LoggerService>();
+		auto configService = di.Get<ConfigService>();
+
+		// Load initial configuration values
+		LoadConfig(configService->GetConfig());
 
 		auto methodVer = (void**)KoGaMaAPI::KoGaMa::ConstraintVisualizer::m_Init.ptr;
 		auto methodVer2 = (void**)KoGaMaAPI::KoGaMa::ModelingDynamicBoxConstraint::m_CanAddCubeAt.ptr;
@@ -38,30 +44,42 @@ namespace KoGaMaTools::Services
 	}
 	void NoLimit::Render()
 	{
-		ImGui::Checkbox("No Limit", &Enable);
+		ImGui::Checkbox("No Limit", &Enabled);
 
+	}
+	void NoLimit::LoadConfig(const nlohmann::json& value)
+	{
+		Enabled = value.value("NoLimit.Enabled", Enabled);
+	}
+	void NoLimit::OnChangedConfig(const nlohmann::json& value)
+	{
+		LoadConfig(value);
+	}
+	void NoLimit::OnSavingConfig(nlohmann::json& value)
+	{
+		value["NoLimit.Enabled"] = Enabled;
 	}
 	void NoLimit::ConstraintVisualizer_Init(void* instance, void* targetCubeModel, void* constraint, void* layer, void* methodInfo)
 	{
-		if (!Enable)
+		if (!Instance->Enabled)
 			ConstraintVisualizer_Init_Old(instance, targetCubeModel, constraint, layer, methodInfo);
 	}
 
 	bool NoLimit::ModelingDynamicBoxConstraint_CanAddCubeAt(void* instance, IntVector pos, void* methodInfo)
 	{
-		if (Enable)
+		if (Instance->Enabled)
 			return true;
 		return ModelingDynamicBoxConstraint_CanAddCubeAt_Old(instance, pos, methodInfo);
 	}
 	bool NoLimit::ModelingBoxCountConstraint_CanAddCubeAt(void* instance, IntVector pos, void* methodInfo)
 	{
-		if (Enable)
+		if (Instance->Enabled)
 			return true;
 		return ModelingBoxCountConstraint_CanAddCubeAt_Old(instance, pos, methodInfo);
 	}
 	bool NoLimit::ModelingBoxCountConstraint_CanRemoveCubeAt(void* instance, IntVector pos, void* methodInfo)
 	{
-		if (Enable)
+		if (Instance->Enabled)
 			return true;
 		return ModelingBoxCountConstraint_CanRemoveCubeAt_Old(instance, pos, methodInfo);
 	}
