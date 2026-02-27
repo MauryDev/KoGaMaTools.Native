@@ -3,44 +3,43 @@
 The following diagram describes the DLL lifecycle, from process injection to the final configuration of the UI and services.
 
 ```mermaid
-graph TD
-    %% Entrada da DLL
-    Start((Injeção da DLL)) --> DllMain[DllMain: DLL_PROCESS_ATTACH]
+graph LR
+    %% DLL Entry Point
+    Start((DLL Injection)) --> DllMain[DllMain: DLL_PROCESS_ATTACH]
     DllMain --> Thread[CreateThread: MainThread]
 
-    subgraph "Fase de Inicialização e Espera"
-        Thread --> PathHelper[PathHelper: Define caminhos e região]
-        PathHelper --> WaitGame{Loop: GameAssembly.dll & <br/>UnityPlayer.dll carregados?}
-        WaitGame -- Não --> WaitGame
-        WaitGame -- Sim --> LoadDeps[Carregar Dependências Extras: <br/>MinHook e Metadados .dat]
+    subgraph Init["Initialization & Wait Phase"]
+        Thread --> PathHelper[PathHelper: Define paths/region]
+        PathHelper --> WaitGame{Loop: DLLs loaded?}
+        WaitGame -- No --> WaitGame
+        WaitGame -- Yes --> LoadDeps[Load MinHook & .dat Metadata]
     end
 
-    subgraph "Core e Hooks"
-        LoadDeps --> Kiero[KieroUI: Init Hook do Renderizador]
-        Kiero --> MetaInstall[KoGaMaAPI: Instalar Metadados Il2Cpp]
-        MetaInstall --> MHInit[MH_Initialize: Iniciar MinHook]
+    subgraph Core["Core & Hooks"]
+        LoadDeps --> Kiero[KieroUI: Init Hook]
+        Kiero --> MetaInstall[KoGaMaAPI: Metadata]
+        MetaInstall --> MHInit[MH_Initialize: MinHook]
     end
 
-    subgraph "Injeção de Dependência (DI Container)"
-        MHInit --> DI_Registry[Registrar Módulos no DI Container <br/>via InstallMultiple]
-        
+    subgraph DI["Dependency Injection (DI)"]
+        MHInit --> DI_Registry[InstallMultiple]
         DI_Registry --> S1[MainComponent]
         DI_Registry --> S2[LoggerService]
         DI_Registry --> S3[MainUI]
-        DI_Registry --> S4[Serviços de Mods: NoLimit, AntiAfk, etc.]
+        DI_Registry --> S4[Mod Services]
         
-        S4 --> InitAll[app.InitAll: Inicializa todos os Singletons]
+        S1 & S2 & S3 & S4 --> InitAll[app.InitAll]
     end
 
-    subgraph "Configuração da UI"
-        InitAll --> GetUI[Recuperar instância da MainUI]
-        GetUI --> SetupUI1[SetupUI Grupo 0: Ferramentas de Edição]
-        SetupUI1 --> SetupUI2[SetupUI Grupo 1: Jogabilidade/Vantagens]
-        SetupUI2 --> SetupUI3[SetupUI Grupo 2: Configurações]
-        SetupUI3 --> Finalize[ConfigService: SetupConfigurables]
+    subgraph UI["UI Configuration"]
+        InitAll --> GetUI[Retrieve MainUI Instance]
+        GetUI --> SetupUI1[Group 0: Editing]
+        SetupUI1 --> SetupUI2[Group 1: Gameplay]
+        SetupUI2 --> SetupUI3[Group 2: Settings]
+        SetupUI3 --> Finalize[Config: SetupConfigurables]
     end
 
-    Finalize --> End((Pronto para Uso))
+    Finalize --> End((Ready for Use))
 
     %% Estilização
     style Start stroke:#333,stroke-width:2px
