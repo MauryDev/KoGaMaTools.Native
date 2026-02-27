@@ -4,49 +4,50 @@ The following diagram describes the DLL lifecycle, from process injection to the
 
 ```mermaid
 graph TD
-    %% DLL Entry Point
-    Start((DLL Injection)) --> DllMain[DllMain: DLL_PROCESS_ATTACH]
+    %% Entrada da DLL
+    Start((Injeção da DLL)) --> DllMain[DllMain: DLL_PROCESS_ATTACH]
     DllMain --> Thread[CreateThread: MainThread]
 
-    subgraph "Initialization & Wait Phase"
-        Thread --> PathHelper[PathHelper: Define paths and region]
-        PathHelper --> WaitGame{Loop: GameAssembly.dll & <br/>UnityPlayer.dll loaded?}
-        WaitGame -- No --> WaitGame
-        WaitGame -- Yes --> LoadDeps[Load Extra Dependencies: <br/>MinHook and .dat Metadata]
+    subgraph "Fase de Inicialização e Espera"
+        Thread --> PathHelper[PathHelper: Define caminhos e região]
+        PathHelper --> WaitGame{Loop: GameAssembly.dll & <br/>UnityPlayer.dll carregados?}
+        WaitGame -- Não --> WaitGame
+        WaitGame -- Sim --> LoadDeps[Carregar Dependências Extras: <br/>MinHook e Metadados .dat]
     end
 
-    subgraph "Core & Hooks"
-        LoadDeps --> Kiero[KieroUI: Init Renderer Hook]
-        Kiero --> MetaInstall[KoGaMaAPI: Install Il2Cpp Metadata]
-        MetaInstall --> MHInit[MH_Initialize: Start MinHook]
+    subgraph "Core e Hooks"
+        LoadDeps --> Kiero[KieroUI: Init Hook do Renderizador]
+        Kiero --> MetaInstall[KoGaMaAPI: Instalar Metadados Il2Cpp]
+        MetaInstall --> MHInit[MH_Initialize: Iniciar MinHook]
     end
 
-    subgraph "Dependency Injection (DI Container)"
-        MHInit --> DI_Registry[Register Modules in DI Container <br/>via InstallMultiple]
+    subgraph "Injeção de Dependência (DI Container)"
+        MHInit --> DI_Registry[Registrar Módulos no DI Container <br/>via InstallMultiple]
         
         DI_Registry --> S1[MainComponent]
         DI_Registry --> S2[LoggerService]
         DI_Registry --> S3[MainUI]
-        DI_Registry --> S4[Mod Services: NoLimit, AntiAfk, etc.]
+        DI_Registry --> S4[Serviços de Mods: NoLimit, AntiAfk, etc.]
         
-        S4 --> InitAll[app.InitAll: Initialize all Singletons]
+        S4 --> InitAll[app.InitAll: Inicializa todos os Singletons]
     end
 
-    subgraph "UI Configuration"
-        InitAll --> GetUI[Retrieve MainUI Instance]
-        GetUI --> SetupUI1[SetupUI Group 0: Editing Tools]
-        SetupUI1 --> SetupUI2[SetupUI Group 1: Gameplay/Cheats]
-        SetupUI2 --> SetupUI3[SetupUI Group 2: Settings]
+    subgraph "Configuração da UI"
+        InitAll --> GetUI[Recuperar instância da MainUI]
+        GetUI --> SetupUI1[SetupUI Grupo 0: Ferramentas de Edição]
+        SetupUI1 --> SetupUI2[SetupUI Grupo 1: Jogabilidade/Vantagens]
+        SetupUI2 --> SetupUI3[SetupUI Grupo 2: Configurações]
         SetupUI3 --> Finalize[ConfigService: SetupConfigurables]
     end
 
-    Finalize --> End((Ready for Use))
+    Finalize --> End((Pronto para Uso))
 
-    %% Styling
-    style Start fill:#f9f,stroke:#333,stroke-width:2px
-    style DI_Registry fill:#bbf,stroke:#333,stroke-width:2px
-    style WaitGame fill:#fff4dd,stroke:#d4a017,stroke-width:2px
-    style S4 fill:#d1f2eb,stroke:#16a085
+    %% Estilização
+    style Start stroke:#333,stroke-width:2px
+    style DI_Registry stroke:#333,stroke-width:2px
+    style WaitGame stroke:#d4a017,stroke-width:2px
+    style S4 stroke:#16a085
+
 ```
 
 ## Technical Component Breakdown:
