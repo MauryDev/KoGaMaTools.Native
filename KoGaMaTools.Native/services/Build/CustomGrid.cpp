@@ -10,7 +10,7 @@
 
 namespace {
     void(*Execute_Old)(void* instance, void* methodInfo);
-    std::array<float, 3>(*GetClosestGridPoint_Old)(std::array<float, 3> worldPosition, std::array<float, 4> rotation, float gridSize, std::array<float, 3> scale, void* methodInfo);
+    KoGaMaTools::Types::Vector3(*GetClosestGridPoint_Old)(KoGaMaTools::Types::Vector3 worldPosition, KoGaMaTools::Types::Quaternion rotation, float gridSize, KoGaMaTools::Types::Vector3 scale, void* methodInfo);
 
 }
 void KoGaMaTools::Services::CustomGrid::Execute(void* instance, void* methodInfo)
@@ -22,7 +22,7 @@ void KoGaMaTools::Services::CustomGrid::Execute(void* instance, void* methodInfo
     Execute_Old(instance, methodInfo);
 }
 
-std::array<float, 3> KoGaMaTools::Services::CustomGrid::GetClosestGridPoint(std::array<float, 3> worldPosition, std::array<float, 4> rotation, float gridSize, std::array<float, 3> scale, void* methodInfo)
+KoGaMaTools::Types::Vector3 KoGaMaTools::Services::CustomGrid::GetClosestGridPoint(KoGaMaTools::Types::Vector3 worldPosition, KoGaMaTools::Types::Quaternion rotation, float gridSize, KoGaMaTools::Types::Vector3 scale, void* methodInfo)
 {
 
     if (Instance->Enabled)
@@ -41,6 +41,7 @@ void KoGaMaTools::Services::CustomGrid::Init(Core::DIContainer& diContainer)
 
     auto methodPtr1 = (void**)KoGaMaAPI::KoGaMa::ESTranslate::m_Execute.ptr;
     auto methodPtr2 = (void**)KoGaMaAPI::KoGaMa::SharedCubeFunctions::m_GetClosestGridPoint.ptr;
+
     logger->Assert(methodPtr1 != nullptr && *methodPtr1 != nullptr,"[CustomGrid] - Method or Method Pointer is null");
     logger->Assert(
         MH_CreateHook(*methodPtr1, Execute,(void**)&Execute_Old) == MH_OK,
@@ -110,4 +111,44 @@ void KoGaMaTools::Services::CustomGrid::OnSavingConfig(nlohmann::json& value)
 {
     value["CustomGrid.Enabled"] = this->Enabled;
 	value["CustomGrid.GridSize"] = this->GridSize;
+}
+bool KoGaMaTools::Services::CustomGrid::Resolve(TextCommandService::CommandData& command)
+{
+    if (command.name != L"grid") return false;
+
+    if (command.args.empty()) {
+        this->Enabled = !this->Enabled;
+    }
+    else {
+        std::wstring_view arg = command.args[0];
+
+        if (arg == L"on") {
+            this->Enabled = true;
+        }
+        else if (arg == L"off") {
+            this->Enabled = false;
+        }
+        else {
+            // Tenta converter o argumento para float (Tamanho do Grid)
+            try {
+                // Convertemos wstring_view para string comum para usar stof
+                std::wstring argStr(arg);
+                float value = std::stof(argStr);
+                
+                this->GridSize = value;
+                this->Enabled = true; // Ativa automaticamente ao mudar o valor
+
+                TextCommandService::NotifyUser("Grid Size set to: " + std::to_string(value));
+                return true;
+            }
+            catch (...) {
+                TextCommandService::NotifyUser("Usage: /grid <on/off/value>");
+                return true;
+            }
+        }
+    }
+
+    // Feedback visual do estado
+    TextCommandService::NotifyUser(this->Enabled ? "Custom Grid: ON" : "Custom Grid: OFF");
+    return true;
 }

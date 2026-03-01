@@ -3,9 +3,14 @@
 #include "../../Core/DITools.h"
 #include "../../UI/MainUI.h"
 #include "../Common/ConfigService.h"
+#include "../Common/TextCommandService.h"
 
 namespace KoGaMaTools::Services {
-	struct FastRespawn : UI::MainUI::IComponent, Core::IInitializable, Services::IConfigurable {
+	struct FastRespawn : UI::MainUI::IComponent, 
+		Core::IInitializable,
+		Services::IConfigurable,
+		Services::ICommandResolve
+	{
 		inline static std::shared_ptr<FastRespawn> Instance;
 		bool Enabled = false;
 		void Render() override;
@@ -20,6 +25,7 @@ namespace KoGaMaTools::Services {
 		void LoadConfig(const nlohmann::json& value);
 		void OnChangedConfig(const nlohmann::json& value) override;
 		void OnSavingConfig(nlohmann::json& value) override;
+		bool Resolve(TextCommandService::CommandData& command) override;
 	};
 
 

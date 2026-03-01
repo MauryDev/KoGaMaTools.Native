@@ -60,6 +60,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::LoggerService,
 		KoGaMaTools::UI::MainUI,
 		S::ConfigService,
+		S::TextCommandService,
 		S::SinglePaintFace, 
 		S::NoLimit,
 		S::BlueModeTool,
@@ -94,6 +95,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 	SetupUI<S::ConfigService>(*ui, 2);
 
 	app.Get<S::ConfigService>()->SetupConfigurables();
+	app.Get<S::TextCommandService>()->SetupCommandsResolve();
 
 
 	return TRUE;

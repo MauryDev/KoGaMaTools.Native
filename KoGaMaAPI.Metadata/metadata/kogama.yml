@@ -46,3 +46,4 @@ klasses:
   fullname: UnityEngine.Rect
 - fullname: UnityEngine.Texture
   name: Texture
+- fullname: TextCommand

@@ -7,7 +7,11 @@
 #include <algorithm>
 namespace KoGaMaTools::Core {
     class DIContainer;
-
+    template <typename TInterface, typename TImplementation>
+    struct Bind {
+        using Interface = TInterface;
+        using Implementation = TImplementation;
+    };
     class IBaseService { public: virtual ~IBaseService() = default; };
     /**
      * @brief Interface opcional para serviços que precisam de lógica de inicialização.
@@ -54,6 +58,38 @@ namespace KoGaMaTools::Core {
             auto service = std::make_shared<T>(std::forward<Args>(args)...);
             AddService<T>(service);
             return *this;
+        }
+
+        /**
+ * @brief Adiciona um serviço mapeando uma Interface para uma Implementação.
+ * Exemplo: container.AddServiceAs<ICommandService>(meuServicoConcreto);
+ */
+        template <typename Interface, typename Implementation>
+        inline DIContainer& AddServiceAs(std::shared_ptr<Implementation> service) {
+            static_assert(std::is_base_of<Interface, Implementation>::value,
+                "A classe de implementacao deve herdar da interface!");
+
+            if (!service) return *this;
+
+            auto typeId = std::type_index(typeid(Interface));
+
+            if (m_services.find(typeId) == m_services.end()) {
+                m_order.push_back(typeId);
+            }
+
+            // Armazena a implementação sob o ID da Interface
+            m_services[typeId] = std::static_pointer_cast<IBaseService>(service);
+            return *this;
+        }
+
+        /**
+         * @brief Cria uma nova instância de Implementation e a registra como Interface.
+         * Exemplo: container.NewServiceAs<ITextService, TextService>("meu_arg");
+         */
+        template <typename Interface, typename Implementation, typename... Args>
+        inline DIContainer& NewServiceAs(Args&&... args) {
+            auto service = std::make_shared<Implementation>(std::forward<Args>(args)...);
+            return AddServiceAs<Interface, Implementation>(service);
         }
 
         template <typename T>
@@ -119,12 +155,39 @@ namespace KoGaMaTools::Core {
         std::unordered_map<std::type_index, std::shared_ptr<IBaseService >> m_services;
     };
 
+    // --- Helper para detectar o Bind (Precisa estar antes do InstallMultiple) ---
+    template <typename T> struct is_bind : std::false_type {};
+    template <typename I, typename C> struct is_bind<Bind<I, C>> : std::true_type {};
+    template <typename T> inline constexpr bool is_bind_v = is_bind<T>::value;
+
     /**
-     * @brief Helper variadic para registrar múltiplos serviços de uma vez.
-     * Exemplo: InstallMultiple<ServiceA, ServiceB, ServiceC>();
-     */
+    * @brief Registra múltiplos serviços.
+    * Aceita tanto tipos simples quanto Bind<Interface, Implementação>.
+    * * Exemplo:
+    * InstallMultiple<
+    * ServiceA,                               // Classe concreta direta
+    * Bind<ICommandService, TextCommandService> // Interface -> Implementação
+    * >();
+    */
     template <typename... Ts>
     void InstallMultiple() {
-        (DIContainer::GetInstance().NewService<Ts>(), ...);
+        auto& di = DIContainer::GetInstance();
+
+        auto register_service = [&di](auto t) {
+            using T = decltype(t);
+
+            // Verifica se o tipo T é uma instância de Bind<I, C>
+            if constexpr (is_bind_v<T>) {
+                di.NewServiceAs<typename T::Interface, typename T::Implementation>();
+            }
+            else {
+                di.NewService<T>();
+            }
+            };
+
+        // "Expande" o pack variadic chamando a lambda para cada tipo
+        (register_service(Ts{}), ...);
     }
+
+   
 }

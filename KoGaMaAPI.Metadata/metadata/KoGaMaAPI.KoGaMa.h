@@ -52,13 +52,13 @@ inline static auto /* System.Boolean */ &f_waitForMouseUp = fields.get<false>(0)
     /* System.Void Enter(CubeModelingStateMachine esm) */
     inline static auto& m0_Enter = methods.get<false, true>(6);
     /* System.Void Enter(FSMEntity e) */
-    inline static auto& m1_Enter = methods.get<false, true>(7);
+    inline static auto& m1_Enter = methods.get<false, true>(9);
     /* System.Void Execute(CubeModelingStateMachine e) */
-    inline static auto& m0_Execute = methods.get<false, true>(8);
+    inline static auto& m0_Execute = methods.get<false, true>(7);
     /* System.Void Execute(FSMEntity e) */
-    inline static auto& m1_Execute = methods.get<false, true>(9);
+    inline static auto& m1_Execute = methods.get<false, true>(10);
     /* System.Void Exit(CubeModelingStateMachine esm) */
-    inline static auto& m0_Exit = methods.get<false, true>(10);
+    inline static auto& m0_Exit = methods.get<false, true>(8);
     /* System.Void Exit(FSMEntity e) */
     inline static auto& m1_Exit = methods.get<false, true>(11);
     /* System.Void HideCursor() */
@@ -99,11 +99,11 @@ inline static auto /* System.Single */ &f_mouseSensitivtyModifier = fields.get<t
     /* System.Boolean GetBooleanControl(KogamaControls control) */
     inline static auto& m0_GetBooleanControl = methods.get<true, false>(9);
     /* System.Boolean GetBooleanControl(KogamaControls control, KeyState keyState) */
-    inline static auto& m1_GetBooleanControl = methods.get<true, false>(10);
+    inline static auto& m1_GetBooleanControl = methods.get<true, false>(12);
     /* System.Boolean GetBooleanControlDown(KogamaControls control) */
-    inline static auto& m_GetBooleanControlDown = methods.get<true, false>(11);
+    inline static auto& m_GetBooleanControlDown = methods.get<true, false>(10);
     /* System.Boolean GetBooleanControlUp(KogamaControls control) */
-    inline static auto& m_GetBooleanControlUp = methods.get<true, false>(12);
+    inline static auto& m_GetBooleanControlUp = methods.get<true, false>(11);
     /* UnityEngine.Vector3 GetPointerPosition() */
     inline static auto& m_GetPointerPosition = methods.get<true, false>(13);
     /* System.Single GetAxis(System.String axis) */
@@ -701,31 +701,31 @@ inline static auto /* MV.WorldObject.IntVector */ &f_constraint = fields.get<tru
     /* UnityEngine.Vector3[] GetVertices(UnityEngine.Vector3[] corners) */
     inline static auto& m1_GetVertices = methods.get<true, false>(9);
     /* System.Void GetVertices(CubePickingInfo info, UnityEngine.GameObject gameObject) */
-    inline static auto& m2_GetVertices = methods.get<true, false>(10);
+    inline static auto& m2_GetVertices = methods.get<true, false>(20);
     /* UnityEngine.Vector3 GetClosestGridPoint(UnityEngine.Vector3 worldPosition, UnityEngine.Quaternion rotation, System.Single gridSize, UnityEngine.Vector3 scale) */
-    inline static auto& m_GetClosestGridPoint = methods.get<true, false>(11);
+    inline static auto& m_GetClosestGridPoint = methods.get<true, false>(10);
     /* MV.WorldObject.IntVector WorldToLocal(UnityEngine.GameObject gameObject, UnityEngine.Vector3 point, System.Boolean floor = False) */
-    inline static auto& m_WorldToLocal = methods.get<true, false>(12);
+    inline static auto& m_WorldToLocal = methods.get<true, false>(11);
     /* UnityEngine.Vector3 WorldPosToValidGridPos(UnityEngine.GameObject gameObject, UnityEngine.Vector3 worldPos, System.Int32 cubeSegments) */
-    inline static auto& m_WorldPosToValidGridPos = methods.get<true, false>(13);
+    inline static auto& m_WorldPosToValidGridPos = methods.get<true, false>(12);
     /* UnityEngine.Vector3 LocalToWorld(UnityEngine.GameObject gameObject, MV.WorldObject.IntVector iVector) */
-    inline static auto& m_LocalToWorld = methods.get<true, false>(14);
+    inline static auto& m_LocalToWorld = methods.get<true, false>(13);
     /* System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cube> CreateFromBytePackage(MV.WorldObject.BytePacker bp) */
-    inline static auto& m_CreateFromBytePackage = methods.get<true, false>(15);
+    inline static auto& m_CreateFromBytePackage = methods.get<true, false>(14);
     /* System.Nullable`1<UnityEngine.Bounds> GetAxisAlignedBoundsRecursively(UnityEngine.Transform transform) */
-    inline static auto& m0_GetAxisAlignedBoundsRecursively = methods.get<true, false>(16);
+    inline static auto& m0_GetAxisAlignedBoundsRecursively = methods.get<true, false>(15);
     /* System.Nullable`1<UnityEngine.Bounds> GetAxisAlignedBoundsRecursively(System.Collections.Generic.List`1<MVWorldObjectClient> wos) */
-    inline static auto& m1_GetAxisAlignedBoundsRecursively = methods.get<true, false>(17);
+    inline static auto& m1_GetAxisAlignedBoundsRecursively = methods.get<true, false>(21);
     /* System.Nullable`1<UnityEngine.Bounds> GetAxisAlignedBoundsRecursively(System.Collections.Generic.List`1<UnityEngine.Transform> transforms) */
-    inline static auto& m2_GetAxisAlignedBoundsRecursively = methods.get<true, false>(18);
+    inline static auto& m2_GetAxisAlignedBoundsRecursively = methods.get<true, false>(22);
     /* UnityEngine.Vector3[] GetTriangleVertices(System.Int32 triangleIndex, UnityEngine.GameObject gameObject) */
-    inline static auto& m_GetTriangleVertices = methods.get<true, false>(19);
+    inline static auto& m_GetTriangleVertices = methods.get<true, false>(16);
     /* System.Single ScaleFactor(UnityEngine.GameObject gameObject) */
-    inline static auto& m0_ScaleFactor = methods.get<true, false>(20);
+    inline static auto& m0_ScaleFactor = methods.get<true, false>(17);
     /* System.Single ScaleFactor(UnityEngine.GameObject gameObject, MV.WorldObject.Face face) */
-    inline static auto& m1_ScaleFactor = methods.get<true, false>(21);
+    inline static auto& m1_ScaleFactor = methods.get<true, false>(18);
     /* CubeOutOfBoundState MoveEdge(MVCubeModelBase cmb, CubePickingInfo info, UnityEngine.Vector3 mousePositionDelta, ref System.Single delta, ref System.Single deltaAccum, System.Single mouseSensitivity, ref System.Boolean edgeMoved, System.Boolean edgeIndex0, System.Boolean edgeIndex1, ref EditCubeChange editCubeChange) */
-    inline static auto& m_MoveEdge = methods.get<true, false>(22);
+    inline static auto& m_MoveEdge = methods.get<true, false>(19);
     /* UnityEngine.Vector3 GetWorldCenter(System.Collections.Generic.List`1<UnityEngine.Transform> transforms) */
     inline static auto& m0_GetWorldCenter = methods.get<true, false>(23);
     /* UnityEngine.Vector3 GetWorldCenter(UnityEngine.Transform transform) */
@@ -1947,15 +1947,15 @@ inline static auto /* System.Single */ &f_x = fields.get<false>(0), /* System.Si
     /* UnityEngine.Vector2 op_Multiply(UnityEngine.Vector2 a, UnityEngine.Vector2 b) */
     inline static auto& m0_op_Multiply = methods.get<true, false>(25);
     /* UnityEngine.Vector2 op_Multiply(UnityEngine.Vector2 a, System.Single d) */
-    inline static auto& m1_op_Multiply = methods.get<true, false>(26);
+    inline static auto& m1_op_Multiply = methods.get<true, false>(28);
     /* UnityEngine.Vector2 op_Multiply(System.Single d, UnityEngine.Vector2 a) */
-    inline static auto& m2_op_Multiply = methods.get<true, false>(27);
+    inline static auto& m2_op_Multiply = methods.get<true, false>(29);
     /* UnityEngine.Vector2 op_Division(UnityEngine.Vector2 a, UnityEngine.Vector2 b) */
-    inline static auto& m0_op_Division = methods.get<true, false>(28);
+    inline static auto& m0_op_Division = methods.get<true, false>(26);
     /* UnityEngine.Vector2 op_Division(UnityEngine.Vector2 a, System.Single d) */
-    inline static auto& m1_op_Division = methods.get<true, false>(29);
+    inline static auto& m1_op_Division = methods.get<true, false>(30);
     /* UnityEngine.Vector2 op_UnaryNegation(UnityEngine.Vector2 a) */
-    inline static auto& m_op_UnaryNegation = methods.get<true, false>(30);
+    inline static auto& m_op_UnaryNegation = methods.get<true, false>(27);
     /* System.Boolean op_Equality(UnityEngine.Vector2 lhs, UnityEngine.Vector2 rhs) */
     inline static auto& m_op_Equality = methods.get<true, false>(31);
     /* System.Boolean op_Inequality(UnityEngine.Vector2 lhs, UnityEngine.Vector2 rhs) */
@@ -2162,6 +2162,26 @@ inline static auto /* System.Int32 */ &f_GenerateAllMips = fields.get<true>(0);
     inline static auto& m_get_texelSize_Injected = methods.get<true, false>(33);
     /* System.Int32 Internal_GetActiveTextureColorSpace_Injected(System.IntPtr _unity_self) */
     inline static auto& m_Internal_GetActiveTextureColorSpace_Injected = methods.get<true, false>(34);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct TextCommand {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<0> fields;
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<4> methods;
+    /* System.Void Resolve(System.String commandLine) */
+    inline static auto& m_Resolve = methods.get<true, false>(0);
+    /* System.Void Command_AssetBundleCacheTest(TextCommand+Command command) */
+    inline static auto& m_Command_AssetBundleCacheTest = methods.get<true, false>(1);
+    /* System.Void Command_Invalid(TextCommand+Command command) */
+    inline static auto& m_Command_Invalid = methods.get<true, false>(2);
+    /* System.Void NotifyUser(System.String msg) */
+    inline static auto& m_NotifyUser = methods.get<true, false>(3);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 

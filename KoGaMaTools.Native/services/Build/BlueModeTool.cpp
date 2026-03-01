@@ -68,3 +68,25 @@ void KoGaMaTools::Services::BlueModeTool::OnSavingConfig(nlohmann::json& value)
 {
 	value["BlueMode.Enabled"] = Enabled;
 }
+
+bool KoGaMaTools::Services::BlueModeTool::Resolve(TextCommandService::CommandData& command)
+{
+	if (command.name != L"bluemode") return false;
+
+	if (!command.args.empty()) {
+		std::wstring_view arg = command.args[0];
+		if (arg == L"on") Enabled = true;
+		else if (arg == L"off") Enabled = false;
+		else {
+			TextCommandService::NotifyUser("Usage: bluemode <on/off>");
+			return true;
+		}
+	}
+	else {
+		Enabled = !Enabled; 
+	}
+
+	TextCommandService::NotifyUser(std::string(Enabled ? "Enabled" : "Disabled") + " Blue Mode");
+
+	return true;
+}

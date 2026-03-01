@@ -20,3 +20,4 @@
 #include "Common/MainComponent.h"
 
 #include "Common/ConfigService.h"
+#include "Common/TextCommandService.h"

@@ -31,7 +31,7 @@ namespace KoGaMaTools::Services {
 
     void LoggerService::Init(Core::DIContainer& di)
     {
-        auto localPath = PathHelper::GetFolderWork() / (std::string("") + ".log");
+        auto localPath = PathHelper::GetFolderWork() / (std::string("teste") + ".log");
 
         // Abrimos em modo append
         _logFile.open(localPath.string(), std::ios::out);

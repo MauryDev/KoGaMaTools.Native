@@ -167,6 +167,7 @@
     <ClCompile Include="services\Build\UnlimitedConfig.cpp" />
     <ClCompile Include="services\Common\ConfigService.cpp" />
     <ClCompile Include="services\Common\MainComponent.cpp" />
+    <ClCompile Include="services\Common\TextCommandService.cpp" />
     <ClCompile Include="services\KieroUI.cpp" />
     <ClCompile Include="services\Build\NoLimit.cpp" />
     <ClCompile Include="services\LoggerService.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="services\Build\UnlimitedConfig.h" />
     <ClInclude Include="services\Common\ConfigService.h" />
     <ClInclude Include="services\Common\MainComponent.h" />
+    <ClInclude Include="services\Common\TextCommandService.h" />
     <ClInclude Include="services\KieroUI.h" />
     <ClInclude Include="services\Build\NoLimit.h" />
     <ClInclude Include="services\LoggerService.h" />
@@ -198,6 +200,8 @@
     <ClInclude Include="services\PvP\FastRespawn.h" />
     <ClInclude Include="services\services.h" />
     <ClInclude Include="services\Build\SinglePaintFace.h" />
+    <ClInclude Include="Types\Quaternion.h" />
+    <ClInclude Include="Types\Vector3.h" />
     <ClInclude Include="Types\Vector4.h" />
     <ClInclude Include="UI\MainUI.h" />
   </ItemGroup>

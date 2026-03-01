@@ -84,3 +84,29 @@ void KoGaMaTools::Services::FastRespawn::OnSavingConfig(nlohmann::json& value)
 {
 	value["FastRespawn.Enabled"] = Enabled;
 }
+
+bool KoGaMaTools::Services::FastRespawn::Resolve(TextCommandService::CommandData& command)
+{
+	auto stateVar = Enabled;
+	if (command.name != L"bluemode") return false;
+
+	if (command.args.empty()) {
+		stateVar = !stateVar;
+	}
+	else {
+		auto arg = command.args[0];
+		if (arg == L"on") stateVar = true;
+		else if (arg == L"off") stateVar = false;
+		else {
+			TextCommandService::NotifyUser("Usage: " + std::string("Blue Mode") + " <on/off> or just command to toggle");
+			return true;
+		}
+	}
+
+	// Feedback unificado
+	std::string status = stateVar ? "Enabled " : "Disabled ";
+	TextCommandService::NotifyUser(status + "Blue Mode");
+	return true;
+
+	
+}

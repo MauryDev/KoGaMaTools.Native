@@ -171,6 +171,11 @@ void Texture::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 
 }
 
+void TextCommand::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 34, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -206,5 +211,6 @@ void Texture::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         Vector2::Init(metadataInfo);
         Rect::Init(metadataInfo);
         Texture::Init(metadataInfo);
+        TextCommand::Init(metadataInfo);
     }
 }

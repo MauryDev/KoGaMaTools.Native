@@ -60,3 +60,25 @@ void KoGaMaTools::Services::DestructiblesUnlock::OnSavingConfig(nlohmann::json& 
 {
     value["DestructiblesUnlock.Unlock"] = Unlock;
 }
+
+bool KoGaMaTools::Services::DestructiblesUnlock::Resolve(TextCommandService::CommandData& command)
+{
+    if (command.name != L"destructiblesunlock") return false;
+
+    if (!command.args.empty()) {
+        std::wstring_view arg = command.args[0];
+        if (arg == L"on") Unlock = true;
+        else if (arg == L"off") Unlock = false;
+        else {
+            TextCommandService::NotifyUser("Usage: destructiblesunlock <on/off>");
+            return true;
+        }
+    }
+    else {
+        Unlock = !Unlock;
+    }
+
+    TextCommandService::NotifyUser(std::string(Unlock ? "Enabled" : "Disabled") + " Blue Mode");
+
+    return true;
+}

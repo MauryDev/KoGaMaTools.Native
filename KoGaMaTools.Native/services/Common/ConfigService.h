@@ -11,6 +11,8 @@ namespace KoGaMaTools::Services {
 	struct IConfigurable {
 		virtual void OnChangedConfig(const nlohmann::json& value) {}
 		virtual void OnSavingConfig(nlohmann::json& value) {}
+		virtual ~IConfigurable() = default;
+
 	};
 	struct ConfigService: UI::MainUI::IComponent, Core::IInitializable
 	{
