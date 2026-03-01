@@ -57,10 +57,16 @@ The project injects a DLL into the game process and presents an Overlay menu usi
 ### General Features
 
 * **Multi-Region Support**: Automatic detection of the server region (BR, WWW, Friends) to load the correct metadata.
+* **Chat Command**: A system that allows executing commands through the in-game chat, providing quick access to features without opening the menu.
+* **Configuration**: The project includes a configuration system that allows users to save and load their settings, ensuring that preferences are retained across gaming sessions.
 
 ## 📷 Application Demonstration
 
 ![In-Game Project](src/img/demostração.png)
+
+![In-Game Project](src/img/demostração2.png)
+
+![In-Game Project](src/img/demostração3.png)
 
 ## ⚙️ Prerequisites
 
