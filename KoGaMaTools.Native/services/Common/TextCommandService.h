@@ -2,6 +2,7 @@
 #include "../../Core/DITools.h"
 #include <string>
 #include <string_view>
+
 namespace KoGaMaTools::Services {
 	struct ICommandResolve;
 	
@@ -35,6 +36,11 @@ namespace KoGaMaTools::Services {
 
 	struct ICommandResolve {
 		virtual bool Resolve(TextCommandService::CommandData& command) { return false; }
+		virtual std::string_view GetCommandHelp() { return ""; }
+		
 		virtual ~ICommandResolve() = default;
+
+		
+
 	};
 }

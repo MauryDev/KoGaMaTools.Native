@@ -4,9 +4,10 @@
 #include "../../Core/DITools.h"
 #include "../../UI/MainUI.h"
 #include "../Common/ConfigService.h"
+#include "../Common/TextCommandService.h"
 
 namespace KoGaMaTools::Services {
-	struct CustomCrossHairColor : UI::MainUI::IComponent, Core::IInitializable, Services::IConfigurable {
+	struct CustomCrossHairColor : UI::MainUI::IComponent, Core::IInitializable, Services::IConfigurable, Services::ICommandResolve {
 		inline static std::shared_ptr<CustomCrossHairColor> Instance;
 		bool Enabled = false;
 		Types::Vector4 Color = { 0, 1, 0, 1 };
@@ -18,6 +19,7 @@ namespace KoGaMaTools::Services {
 		void LoadConfig(const nlohmann::json& value);
 		void OnChangedConfig(const nlohmann::json& value) override;
 		void OnSavingConfig(nlohmann::json& value) override;
+		bool Resolve(TextCommandService::CommandData& command) override;
 
 	};
 }

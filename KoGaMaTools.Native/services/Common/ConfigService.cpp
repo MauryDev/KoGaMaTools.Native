@@ -127,4 +127,26 @@ namespace KoGaMaTools::Services {
 			firstLoad = false;
 		}
 	}
+	bool ConfigService::Resolve(TextCommandService::CommandData& command)
+	{
+		if (command.name == L"saveconfig") {
+			if (SaveConfig()) {
+				TextCommandService::NotifyUser("Configuration saved successfully.");
+			}
+			else {
+				TextCommandService::NotifyUser("Failed to save configuration.");
+			}
+			return true;
+		}
+		else if (command.name == L"reloadconfig") {
+			if (LoadConfig()) {
+				TextCommandService::NotifyUser("Configuration reloaded successfully.");
+			}
+			else {
+				TextCommandService::NotifyUser("Failed to reload configuration.");
+			}
+			return true;
+		}
+		return false;
+	}
 }

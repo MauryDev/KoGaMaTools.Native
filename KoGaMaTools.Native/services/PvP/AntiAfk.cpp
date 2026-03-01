@@ -19,3 +19,31 @@ void KoGaMaTools::Services::AntiAfk::Init(Core::DIContainer& di)
 	Instance = di.Get<AntiAfk>();
 
 }
+
+bool KoGaMaTools::Services::AntiAfk::Resolve(TextCommandService::CommandData& command)
+{
+	if (command.name == L"antiafk")
+	{
+		if (command.args.empty())
+		{
+			Enabled = !Enabled;
+			TextCommandService::NotifyUser(L"AntiAfk: " + std::wstring(Enabled ? L"enabled" : L"disabled"));
+		}
+		else
+		{
+			std::wstring_view subcommand = command.args[0];
+			if (subcommand == L"enable")
+			{
+				Enabled = true;
+				TextCommandService::NotifyUser(L"AntiAfk enabled");
+			}
+			else if (subcommand == L"disable")
+			{
+				Enabled = false;
+				TextCommandService::NotifyUser(L"AntiAfk disabled");
+			}
+		}
+		return true;
+	}
+	return false;
+}

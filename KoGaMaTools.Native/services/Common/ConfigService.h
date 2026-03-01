@@ -6,7 +6,7 @@
 #include <filesystem>
 #include "../../UI/MainUI.h"
 #include "../../Core/DITools.h"
-
+#include "TextCommandService.h"
 namespace KoGaMaTools::Services {
 	struct IConfigurable {
 		virtual void OnChangedConfig(const nlohmann::json& value) {}
@@ -14,7 +14,7 @@ namespace KoGaMaTools::Services {
 		virtual ~IConfigurable() = default;
 
 	};
-	struct ConfigService: UI::MainUI::IComponent, Core::IInitializable
+	struct ConfigService : UI::MainUI::IComponent, Core::IInitializable, ICommandResolve
 	{
 		using json = nlohmann::json;
 		
@@ -38,6 +38,7 @@ namespace KoGaMaTools::Services {
 		ConfigService() = default;
 		// Inherited via IInitializable
 		void Init(Core::DIContainer& di) override;
+		bool Resolve(TextCommandService::CommandData& command) override;
 
 	private:
 		

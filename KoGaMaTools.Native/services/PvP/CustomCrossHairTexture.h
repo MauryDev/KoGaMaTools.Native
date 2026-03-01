@@ -4,8 +4,10 @@
 #include <memory>
 #include "../../Core/DITools.h"
 #include "../../UI/MainUI.h"
+#include "../Common/TextCommandService.h"
+
 namespace KoGaMaTools::Services {
-	struct CustomCrossHairTexture : UI::MainUI::IComponent, Core::IInitializable {
+	struct CustomCrossHairTexture : UI::MainUI::IComponent, Core::IInitializable, Services::ICommandResolve {
 		inline static std::shared_ptr<CustomCrossHairTexture> Instance;
 		bool Enabled = false;
 		bool Busy = false;
@@ -15,6 +17,7 @@ namespace KoGaMaTools::Services {
 
 		// Inherited via IInitializable
 		void Init(Core::DIContainer& di) override;
+		bool Resolve(TextCommandService::CommandData& command) override;
 	};
 
 

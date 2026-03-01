@@ -89,4 +89,32 @@ namespace KoGaMaTools::Services
 			OldFunc(instance, e, methodInfo);
 		}
 	}
+
+	bool SinglePaintFace::Resolve(TextCommandService::CommandData& command)
+	{
+		if (command.name == L"singlepaintface")
+		{
+			if (command.args.empty())
+			{
+				Enabled = !Enabled;
+				TextCommandService::NotifyUser(L"SinglePaintFace: " + std::wstring(Enabled ? L"enabled" : L"disabled"));
+				return true;
+			}
+
+			std::wstring_view subcommand = command.args[0];
+			if (subcommand == L"enable")
+			{
+				Enabled = true;
+				TextCommandService::NotifyUser(L"SinglePaintFace enabled");
+				return true;
+			}
+			else if (subcommand == L"disable")
+			{
+				Enabled = false;
+				TextCommandService::NotifyUser(L"SinglePaintFace disabled");
+				return true;
+			}
+		}
+		return false;
+	}
 }

@@ -109,3 +109,46 @@ void KoGaMaTools::Services::EditModeSpeed::OnSavingConfig(nlohmann::json& value)
     value["EditModeSpeed.Multiplier"] = Multiplier;
 	value["EditModeSpeed.MovementConstrained"] = MovementConstrained;
 }
+
+bool KoGaMaTools::Services::EditModeSpeed::Resolve(TextCommandService::CommandData& command)
+{
+    if (command.name == L"editmodespeed")
+    {
+        if (command.args.empty())
+        {
+            TextCommandService::NotifyUser(L"EditModeSpeed - Usage: editmodespeed <enable|disable|multiplier|constrain>");
+            return true;
+        }
+
+        std::wstring_view subcommand = command.args[0];
+        if (subcommand == L"enable")
+        {
+            MultiplierEnabled = true;
+            TextCommandService::NotifyUser(L"EditModeSpeed enabled");
+            return true;
+        }
+        else if (subcommand == L"disable")
+        {
+            MultiplierEnabled = false;
+            TextCommandService::NotifyUser(L"EditModeSpeed disabled");
+            return true;
+        }
+        else if (subcommand == L"multiplier" && command.args.size() > 1)
+        {
+            try
+            {
+                Multiplier = std::stof(std::wstring(command.args[1]));
+                TextCommandService::NotifyUser(L"EditModeSpeed multiplier set to " + std::to_wstring(Multiplier));
+            }
+            catch (...) { }
+            return true;
+        }
+        else if (subcommand == L"constrain")
+        {
+            MovementConstrained = !MovementConstrained;
+            TextCommandService::NotifyUser(L"EditModeSpeed constrain movement: " + std::wstring(MovementConstrained ? L"enabled" : L"disabled"));
+            return true;
+        }
+    }
+    return false;
+}

@@ -145,3 +145,57 @@ void KoGaMaTools::Services::UnlimitedConfig::OnSavingConfig(nlohmann::json& valu
     value["UnlimitedConfig.MaxValue"] = MaxValue;
 	value["UnlimitedConfig.ClampValues"] = ClampValues;
 }
+
+bool KoGaMaTools::Services::UnlimitedConfig::Resolve(TextCommandService::CommandData& command)
+{
+	if (command.name == L"unlimitedconfig")
+	{
+		if (command.args.empty())
+		{
+			Enabled = !Enabled;
+			TextCommandService::NotifyUser(L"UnlimitedConfig: " + std::wstring(Enabled ? L"enabled" : L"disabled"));
+			return true;
+		}
+
+		std::wstring_view subcommand = command.args[0];
+		if (subcommand == L"enable")
+		{
+			Enabled = true;
+			TextCommandService::NotifyUser(L"UnlimitedConfig enabled");
+			return true;
+		}
+		else if (subcommand == L"disable")
+		{
+			Enabled = false;
+			TextCommandService::NotifyUser(L"UnlimitedConfig disabled");
+			return true;
+		}
+		else if (subcommand == L"min" && command.args.size() > 1)
+		{
+			try
+			{
+				MinValue = std::stof(std::wstring(command.args[1]));
+				TextCommandService::NotifyUser(L"UnlimitedConfig MinValue set to " + std::to_wstring(MinValue));
+			}
+			catch (...) { }
+			return true;
+		}
+		else if (subcommand == L"max" && command.args.size() > 1)
+		{
+			try
+			{
+				MaxValue = std::stof(std::wstring(command.args[1]));
+				TextCommandService::NotifyUser(L"UnlimitedConfig MaxValue set to " + std::to_wstring(MaxValue));
+			}
+			catch (...) { }
+			return true;
+		}
+		else if (subcommand == L"clamp")
+		{
+			ClampValues = !ClampValues;
+			TextCommandService::NotifyUser(L"UnlimitedConfig clamp: " + std::wstring(ClampValues ? L"enabled" : L"disabled"));
+			return true;
+		}
+	}
+	return false;
+}

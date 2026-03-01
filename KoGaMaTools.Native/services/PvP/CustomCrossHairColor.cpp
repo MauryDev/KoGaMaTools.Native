@@ -89,3 +89,31 @@ void KoGaMaTools::Services::CustomCrossHairColor::OnSavingConfig(nlohmann::json&
     value["CustomCrossHairColor.Color.z"] = Color.z;
 	value["CustomCrossHairColor.Color.w"] = Color.w;
 }
+
+bool KoGaMaTools::Services::CustomCrossHairColor::Resolve(TextCommandService::CommandData& command)
+{
+	if (command.name == L"crosshaircolor")
+	{
+		if (command.args.empty())
+		{
+			Enabled = !Enabled;
+			TextCommandService::NotifyUser(L"CustomCrossHairColor: " + std::wstring(Enabled ? L"enabled" : L"disabled"));
+			return true;
+		}
+
+		std::wstring_view subcommand = command.args[0];
+		if (subcommand == L"enable")
+		{
+			Enabled = true;
+			TextCommandService::NotifyUser(L"CustomCrossHairColor enabled");
+			return true;
+		}
+		else if (subcommand == L"disable")
+		{
+			Enabled = false;
+			TextCommandService::NotifyUser(L"CustomCrossHairColor disabled");
+			return true;
+		}
+	}
+	return false;
+}

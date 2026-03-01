@@ -90,3 +90,8 @@ bool KoGaMaTools::Services::BlueModeTool::Resolve(TextCommandService::CommandDat
 
 	return true;
 }
+
+std::string_view KoGaMaTools::Services::BlueModeTool::GetCommandHelp()
+{
+	return "bluemode <on/off>";
+}

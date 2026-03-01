@@ -84,4 +84,31 @@ namespace KoGaMaTools::Services
 		return ModelingBoxCountConstraint_CanRemoveCubeAt_Old(instance, pos, methodInfo);
 	}
 
+	bool NoLimit::Resolve(TextCommandService::CommandData& command)
+	{
+		if (command.name == L"nolimit")
+		{
+			if (command.args.empty())
+			{
+				Enabled = !Enabled;
+				TextCommandService::NotifyUser(L"NoLimit: " + std::wstring(Enabled ? L"enabled" : L"disabled"));
+				return true;
+			}
+
+			std::wstring_view subcommand = command.args[0];
+			if (subcommand == L"enable")
+			{
+				Enabled = true;
+				TextCommandService::NotifyUser(L"NoLimit enabled");
+				return true;
+			}
+			else if (subcommand == L"disable")
+			{
+				Enabled = false;
+				TextCommandService::NotifyUser(L"NoLimit disabled");
+				return true;
+			}
+		}
+		return false;
+	}
 }

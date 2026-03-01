@@ -91,3 +91,22 @@ void KoGaMaTools::Services::CustomCrossHairTexture::Render()
 		ImGui::EndDisabled();
 	}
 }
+
+bool KoGaMaTools::Services::CustomCrossHairTexture::Resolve(TextCommandService::CommandData& command)
+{
+	if (command.name == L"crosshairtexture")
+	{
+		if (command.args.empty())
+		{
+			TextCommandService::NotifyUser(L"CustomCrossHairTexture - Usage: crosshairtexture <file_path>");
+			return true;
+		}
+
+		std::string filePath = std::string(command.args[0].begin(), command.args[0].end());
+		SetTexture(filePath);
+		auto str = std::wstring(L"CustomCrossHairTexture loading: ") + std::wstring(command.args[0]);
+		TextCommandService::NotifyUser(str);
+		return true;
+	}
+	return false;
+}

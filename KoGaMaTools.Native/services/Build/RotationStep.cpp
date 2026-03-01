@@ -95,3 +95,41 @@ void KoGaMaTools::Services::RotationStep::OnSavingConfig(nlohmann::json& value)
     value["RotationStep.Enabled"] = Enabled;
 	value["RotationStep.Step"] = Step;
 }
+
+bool KoGaMaTools::Services::RotationStep::Resolve(TextCommandService::CommandData& command)
+{
+	if (command.name == L"rotationstep")
+	{
+		if (command.args.empty())
+		{
+			Enabled = !Enabled;
+			TextCommandService::NotifyUser(L"RotationStep: " + std::wstring(Enabled ? L"enabled" : L"disabled"));
+			return true;
+		}
+
+		std::wstring_view subcommand = command.args[0];
+		if (subcommand == L"enable")
+		{
+			Enabled = true;
+			TextCommandService::NotifyUser(L"RotationStep enabled");
+			return true;
+		}
+		else if (subcommand == L"disable")
+		{
+			Enabled = false;
+			TextCommandService::NotifyUser(L"RotationStep disabled");
+			return true;
+		}
+		else if (subcommand == L"step" && command.args.size() > 1)
+		{
+			try
+			{
+				Step = std::stof(std::wstring(command.args[1]));
+				TextCommandService::NotifyUser(L"RotationStep set to " + std::to_wstring(Step) + L" degrees");
+			}
+			catch (...) { }
+			return true;
+		}
+	}
+	return false;
+}
