@@ -10,10 +10,23 @@ namespace {
 }
 void KoGaMaTools::Services::TextCommandService::OnTextCommand(void* _txt)
 {
-	for (auto& handler : Instance->Handlers)
+	auto s = Tools::Il2Cpp::Il2CppString(_txt);
+	auto command = ParseCommand(std::wstring_view(s.getChars(), s.getLength()));
+	auto& handlers = Instance->Handlers;
+	if (command.name == L"help-tools") {
+		std::wstring helpMessage = L"Available commands:\n";
+		for (const auto& handler : handlers) {
+			auto helpText = handler->GetCommandHelp();
+			if (!helpText.empty()) {
+				helpMessage += L"- " + std::wstring(helpText.begin(), helpText.end()) + L"\n";
+			}
+		}
+		NotifyUser(helpMessage);
+		return;
+
+	}
+	for (auto& handler : handlers)
 	{
-		auto s = Tools::Il2Cpp::Il2CppString(_txt);
-		auto command = ParseCommand(std::wstring_view(s.getChars(), s.getLength()));
 		
 		if (handler->Resolve(command))
 			return;

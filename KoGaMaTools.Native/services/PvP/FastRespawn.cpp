@@ -88,7 +88,7 @@ void KoGaMaTools::Services::FastRespawn::OnSavingConfig(nlohmann::json& value)
 bool KoGaMaTools::Services::FastRespawn::Resolve(TextCommandService::CommandData& command)
 {
 	auto stateVar = Enabled;
-	if (command.name != L"bluemode") return false;
+	if (command.name != L"fastrespawn") return false;
 
 	if (command.args.empty()) {
 		stateVar = !stateVar;
@@ -109,4 +109,10 @@ bool KoGaMaTools::Services::FastRespawn::Resolve(TextCommandService::CommandData
 	return true;
 
 	
+}
+
+std::string_view KoGaMaTools::Services::FastRespawn::GetCommandHelp()
+{
+	return "/fastrespawn: Toggle or control fast respawn mode.\n"
+		   "Usage: /fastrespawn [on|off] or just command to toggle";
 }

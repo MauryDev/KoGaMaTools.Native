@@ -149,4 +149,9 @@ namespace KoGaMaTools::Services {
 		}
 		return false;
 	}
+	std::string_view ConfigService::GetCommandHelp()
+	{
+		return "/saveconfig: Save the current configuration to file.\n"
+			   "/reloadconfig: Reload the configuration from file, discarding unsaved changes.";
+	}
 }

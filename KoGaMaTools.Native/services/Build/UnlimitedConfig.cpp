@@ -199,3 +199,9 @@ bool KoGaMaTools::Services::UnlimitedConfig::Resolve(TextCommandService::Command
 	}
 	return false;
 }
+
+std::string_view KoGaMaTools::Services::UnlimitedConfig::GetCommandHelp()
+{
+	return "/unlimitedconfig: Override min/max limits for game sliders.\n"
+		   "Usage: /unlimitedconfig [enable|disable|min <value>|max <value>|clamp]";
+}

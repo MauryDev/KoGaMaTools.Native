@@ -1,5 +1,6 @@
 #pragma once
 #include <cinttypes>
+#include <string_view>
 #include "../../Core/DITools.h"
 #include "../../UI/MainUI.h"
 #include "../Common/ConfigService.h"
@@ -26,7 +27,6 @@ namespace KoGaMaTools::Services {
 		void OnChangedConfig(const nlohmann::json& value) override;
 		void OnSavingConfig(nlohmann::json& value) override;
 		bool Resolve(TextCommandService::CommandData& command) override;
+		std::string_view GetCommandHelp() override;
 	};
-
-
 }

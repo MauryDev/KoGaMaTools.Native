@@ -133,3 +133,9 @@ bool KoGaMaTools::Services::RotationStep::Resolve(TextCommandService::CommandDat
 	}
 	return false;
 }
+
+std::string_view KoGaMaTools::Services::RotationStep::GetCommandHelp()
+{
+	return "/rotationstep: Set fixed rotation angle step for object rotation.\n"
+		   "Usage: /rotationstep [enable|disable|step <degrees>]";
+}

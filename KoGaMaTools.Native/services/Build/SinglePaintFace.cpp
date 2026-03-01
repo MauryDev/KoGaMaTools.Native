@@ -117,4 +117,10 @@ namespace KoGaMaTools::Services
 		}
 		return false;
 	}
+
+	std::string_view SinglePaintFace::GetCommandHelp()
+	{
+		return "/singlepaintface: Paint only a single face of a cube.\n"
+			   "Usage: /singlepaintface [enable|disable]";
+	}
 }

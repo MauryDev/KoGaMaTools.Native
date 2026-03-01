@@ -117,3 +117,9 @@ bool KoGaMaTools::Services::CustomCrossHairColor::Resolve(TextCommandService::Co
 	}
 	return false;
 }
+
+std::string_view KoGaMaTools::Services::CustomCrossHairColor::GetCommandHelp()
+{
+	return "/crosshaircolor: Toggle or control custom crosshair color.\n"
+		   "Usage: /crosshaircolor [on/off] or just command to toggle";
+}

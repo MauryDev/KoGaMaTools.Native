@@ -152,3 +152,9 @@ bool KoGaMaTools::Services::EditModeSpeed::Resolve(TextCommandService::CommandDa
     }
     return false;
 }
+
+std::string_view KoGaMaTools::Services::EditModeSpeed::GetCommandHelp()
+{
+	return "/editmodespeed: Control edit mode movement speed multiplier.\n"
+		   "Usage: /editmodespeed [enable|disable|multiplier <value>|constrain]";
+}

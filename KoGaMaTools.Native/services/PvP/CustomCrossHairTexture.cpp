@@ -110,3 +110,9 @@ bool KoGaMaTools::Services::CustomCrossHairTexture::Resolve(TextCommandService::
 	}
 	return false;
 }
+
+std::string_view KoGaMaTools::Services::CustomCrossHairTexture::GetCommandHelp()
+{
+	return "/crosshairtexture: Load a custom crosshair texture from file.\n"
+		   "Usage: /crosshairtexture <file_path>";
+}

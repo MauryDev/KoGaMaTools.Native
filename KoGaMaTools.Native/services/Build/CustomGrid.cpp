@@ -152,3 +152,9 @@ bool KoGaMaTools::Services::CustomGrid::Resolve(TextCommandService::CommandData&
     TextCommandService::NotifyUser(this->Enabled ? "Custom Grid: ON" : "Custom Grid: OFF");
     return true;
 }
+
+std::string_view KoGaMaTools::Services::CustomGrid::GetCommandHelp()
+{
+	return "/grid: Toggle or set custom grid size for snapping.\n"
+		   "Usage: /grid [on/off/value] - Set numeric value to change grid size";
+}

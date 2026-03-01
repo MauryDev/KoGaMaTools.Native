@@ -82,3 +82,9 @@ bool KoGaMaTools::Services::DestructiblesUnlock::Resolve(TextCommandService::Com
 
     return true;
 }
+
+std::string_view KoGaMaTools::Services::DestructiblesUnlock::GetCommandHelp()
+{
+	return "/destructiblesunlock: Toggle or control destructible objects unlock.\n"
+		   "Usage: /destructiblesunlock [on/off] or just command to toggle";
+}

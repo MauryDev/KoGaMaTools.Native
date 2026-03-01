@@ -3,6 +3,7 @@
 #include <vector>
 #include <memory>
 #include <string>
+#include <string_view>
 #include <filesystem>
 #include "../../UI/MainUI.h"
 #include "../../Core/DITools.h"
@@ -39,6 +40,7 @@ namespace KoGaMaTools::Services {
 		// Inherited via IInitializable
 		void Init(Core::DIContainer& di) override;
 		bool Resolve(TextCommandService::CommandData& command) override;
+		std::string_view GetCommandHelp() override;
 
 	private:
 		

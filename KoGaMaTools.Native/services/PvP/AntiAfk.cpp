@@ -47,3 +47,9 @@ bool KoGaMaTools::Services::AntiAfk::Resolve(TextCommandService::CommandData& co
 	}
 	return false;
 }
+
+std::string_view KoGaMaTools::Services::AntiAfk::GetCommandHelp()
+{
+	return "/antiafk: Toggle or control anti-AFK (idle kick prevention).\n"
+		   "Usage: /antiafk [enable|disable] or just command to toggle";
+}
