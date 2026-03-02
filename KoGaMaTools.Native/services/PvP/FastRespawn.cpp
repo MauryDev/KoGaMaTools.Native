@@ -98,14 +98,14 @@ bool KoGaMaTools::Services::FastRespawn::Resolve(TextCommandService::CommandData
 		if (arg == L"on") stateVar = true;
 		else if (arg == L"off") stateVar = false;
 		else {
-			TextCommandService::NotifyUser("Usage: " + std::string("Blue Mode") + " <on/off> or just command to toggle");
+			TextCommandService::NotifyUser("Usage: " + std::string("Fast Respawn") + " <on/off> or just command to toggle");
 			return true;
 		}
 	}
 
 	// Feedback unificado
 	std::string status = stateVar ? "Enabled " : "Disabled ";
-	TextCommandService::NotifyUser(status + "Blue Mode");
+	TextCommandService::NotifyUser(status + "Fast Respawn");
 	return true;
 
 	

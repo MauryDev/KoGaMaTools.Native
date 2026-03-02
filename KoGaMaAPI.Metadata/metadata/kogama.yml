@@ -47,3 +47,18 @@ klasses:
 - fullname: UnityEngine.Texture
   name: Texture
 - fullname: TextCommand
+- fullname: MVWorldObjectClientManager
+- fullname: MVWorldObjectClient
+- fullname: WorldNetwork
+- fullname: Links
+- fullname: ObjectLinks
+- fullname: World
+- fullname: MVWorldInventory
+- fullname: MVNetworkGame
+- fullname: ExitGames.Client.Photon.PhotonPeer 
+  name: PhotonPeer
+- fullname: UnityEngine.Time
+  name: UE_Time
+- fullname: BuildSystem.GameBuildSettings
+  name: BuildSystem_GameBuildSettings
+- fullname: InteractionFlags

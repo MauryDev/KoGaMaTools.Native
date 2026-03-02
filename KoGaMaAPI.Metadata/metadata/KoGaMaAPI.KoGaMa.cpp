@@ -176,6 +176,66 @@ void TextCommand::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 
 }
 
+void MVWorldObjectClientManager::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 35, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVWorldObjectClient::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 36, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void WorldNetwork::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 37, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void Links::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 38, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void ObjectLinks::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 39, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void World::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 40, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVWorldInventory::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 41, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVNetworkGame::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 42, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void PhotonPeer::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 43, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void UE_Time::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 44, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void BuildSystem_GameBuildSettings::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 45, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void InteractionFlags::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 46, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -212,5 +272,17 @@ void TextCommand::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         Rect::Init(metadataInfo);
         Texture::Init(metadataInfo);
         TextCommand::Init(metadataInfo);
+        MVWorldObjectClientManager::Init(metadataInfo);
+        MVWorldObjectClient::Init(metadataInfo);
+        WorldNetwork::Init(metadataInfo);
+        Links::Init(metadataInfo);
+        ObjectLinks::Init(metadataInfo);
+        World::Init(metadataInfo);
+        MVWorldInventory::Init(metadataInfo);
+        MVNetworkGame::Init(metadataInfo);
+        PhotonPeer::Init(metadataInfo);
+        UE_Time::Init(metadataInfo);
+        BuildSystem_GameBuildSettings::Init(metadataInfo);
+        InteractionFlags::Init(metadataInfo);
     }
 }

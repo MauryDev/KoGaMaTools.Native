@@ -78,6 +78,9 @@
     <ClCompile Include="services\Common\TextCommandService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="services\Info\GameInfoService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="services\PathHelper.h">
@@ -150,6 +153,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="services\Common\TextCommandService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="services\Info\GameInfoService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

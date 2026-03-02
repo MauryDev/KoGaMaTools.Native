@@ -17,11 +17,11 @@ void InstallMultiple() {
 }
 
 template <typename ...T>
-void SetupUI(KoGaMaTools::UI::MainUI& ui, int i)
+void SetupUI(KoGaMaTools::UI::MainUI& ui, const std::string& name)
 {
 	auto& app = KoGaMaTools::Core::DIContainer::GetInstance();
 
-	ui.AddComponents(i, app.Get<T>()...);
+	ui.AddComponents(name, app.Get<T>()...);
 }
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
@@ -72,7 +72,9 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::AntiAfk,
 		S::CustomCrossHairColor,
 		S::FastRespawn,
-		S::CustomCrossHairTexture>();
+		S::CustomCrossHairTexture,
+		S::GameInfoService
+	>();
 
 	app.InitAll();
 
@@ -85,18 +87,21 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::CustomGrid,
 		S::EditModeSpeed,
 		S::RotationStep,
-		S::UnlimitedConfig>(*ui, 0);
+		S::UnlimitedConfig>(*ui, "Build");
 
 	SetupUI<S::AntiAfk,
 		S::CustomCrossHairColor,
 		S::FastRespawn,
-		S::CustomCrossHairTexture>(*ui, 1);
+		S::CustomCrossHairTexture>(*ui, "PvP");
 
-	SetupUI<S::ConfigService>(*ui, 2);
+	SetupUI<S::GameInfoService>(*ui, "Info");
+
+	SetupUI<S::ConfigService>(*ui, "Others");
 
 	app.Get<S::ConfigService>()->SetupConfigurables();
 	app.Get<S::TextCommandService>()->SetupCommandsResolve();
 
+	ui->StartUI();
 
 	return TRUE;
 }

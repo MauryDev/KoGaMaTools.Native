@@ -114,6 +114,6 @@ namespace KoGaMaTools::Services
 	std::string_view NoLimit::GetCommandHelp()
 	{
 		return "/nolimit: Toggle or enable/disable unlimited building mode.\n"
-			   "/tUsage: /nolimit [enable|disable]";
+			   "Usage: /nolimit [enable|disable]";
 	}
 }

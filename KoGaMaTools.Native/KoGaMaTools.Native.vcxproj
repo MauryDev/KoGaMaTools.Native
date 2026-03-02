@@ -168,6 +168,7 @@
     <ClCompile Include="services\Common\ConfigService.cpp" />
     <ClCompile Include="services\Common\MainComponent.cpp" />
     <ClCompile Include="services\Common\TextCommandService.cpp" />
+    <ClCompile Include="services\Info\GameInfoService.cpp" />
     <ClCompile Include="services\KieroUI.cpp" />
     <ClCompile Include="services\Build\NoLimit.cpp" />
     <ClCompile Include="services\LoggerService.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="services\Common\ConfigService.h" />
     <ClInclude Include="services\Common\MainComponent.h" />
     <ClInclude Include="services\Common\TextCommandService.h" />
+    <ClInclude Include="services\Info\GameInfoService.h" />
     <ClInclude Include="services\KieroUI.h" />
     <ClInclude Include="services\Build\NoLimit.h" />
     <ClInclude Include="services\LoggerService.h" />

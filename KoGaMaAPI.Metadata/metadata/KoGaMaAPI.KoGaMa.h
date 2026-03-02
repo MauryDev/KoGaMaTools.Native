@@ -2189,4 +2189,1083 @@ struct TextCommand {
 };
 
 
+struct MVWorldObjectClientManager {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<13> fields;
+inline static auto /* System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> */ &f_worldObjects = fields.get<false>(0), /* System.Collections.Generic.Queue`1<System.Int32> */ &f_pendingUngroupQueue = fields.get<false>(1), /* MVWorldObjectClientManager+WorldObjectMapping */ &f_worldObjectMapping = fields.get<false>(2), /* System.Collections.Generic.Dictionary`2<System.Int32, System.Action`2<System.Object, WorldObjectDestroyedEventArgs>> */ &f_woDestroyedEventSubscribers = fields.get<false>(3), /* System.Collections.Generic.Dictionary`2<System.Type, System.Action`2<System.Object, WorldObjectCreatedEventArgs>> */ &f_woCreatedEventSubscribers = fields.get<false>(4), /* System.Int32 */ &f_rootGroupId = fields.get<false>(5), /* MoveableController */ &f_MoveableController_k_BackingField = fields.get<false>(6), /* UnityEngine.Bounds */ &f_worldBounds = fields.get<false>(7), /* System.EventHandler`1<OnTransferOwnershipResponseEventArgs> */ &f_OnWorldObjectTransferOwnershipResponse = fields.get<false>(8), /* System.EventHandler`1<OnHierarchyLockedEventArgs> */ &f_OnHierarchyLockedResponse = fields.get<false>(9), /* System.EventHandler`1<OnTransferWosResponseEventArgs> */ &f_OnTransferWosResponse = fields.get<false>(10), /* System.EventHandler`1<CloneWorldObjectTreeResponseEventArgs> */ &f_CloneWorldObjectTreeResponse = fields.get<false>(11), /* System.EventHandler`1<System.EventArgs> */ &f_OnResetWorldDone = fields.get<false>(12);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<41> methods;
+    /* MoveableController get_MoveableController() */
+    inline static auto& m_get_MoveableController = methods.get<false, false>(0);
+    /* System.Void set_MoveableController(MoveableController value) */
+    inline static auto& m_set_MoveableController = methods.get<false, false>(1);
+    /* UnityEngine.Bounds get_WorldBounds() */
+    inline static auto& m_get_WorldBounds = methods.get<false, false>(2);
+    /* System.Int32 get_Count() */
+    inline static auto& m_get_Count = methods.get<false, false>(3);
+    /* MVGroup get_RootGroup() */
+    inline static auto& m_get_RootGroup = methods.get<false, false>(4);
+    /* System.Void set_RootGroup(MVGroup value) */
+    inline static auto& m_set_RootGroup = methods.get<false, false>(5);
+    /* System.Void .ctor() */
+    inline static auto& m_ctor = methods.get<false, false>(6);
+    /* System.Boolean Contains(System.Int32 woID) */
+    inline static auto& m_Contains = methods.get<false, false>(7);
+    /* System.Boolean IsType(System.Int32 woID, MV.WorldObject.WorldObjectType worldObjectType) */
+    inline static auto& m_IsType = methods.get<false, false>(8);
+    /* System.Void GetAllWoIds(System.Int32 id, System.Collections.Generic.HashSet`1<System.Int32> ids) */
+    inline static auto& m_GetAllWoIds = methods.get<false, false>(9);
+    /* System.Void UpdateWorldBounds(UnityEngine.Bounds bounds) */
+    inline static auto& m_UpdateWorldBounds = methods.get<false, false>(10);
+    /* System.Collections.Generic.List`1<MVWorldObjectClient> GetWorldObjectsByType(MV.WorldObject.WorldObjectType type) */
+    inline static auto& m_GetWorldObjectsByType = methods.get<false, false>(11);
+    /* System.Int32 GetWoIDHighestInHierarchyWithComponent(System.Int32 woId) */
+    inline static auto& m_GetWoIDHighestInHierarchyWithComponent = methods.get<false, false>(12);
+    /* T GetSingletonWorldObject() */
+    inline static auto& m_GetSingletonWorldObject = methods.get<false, false>(13);
+    /* WorldObjectClientRef`1<T> GetSingletonWorldObjectRef() */
+    inline static auto& m_GetSingletonWorldObjectRef = methods.get<false, false>(14);
+    /* MVWorldObjectClient GetSingletonWorldObjectByType(MV.WorldObject.WorldObjectType worldObjectType) */
+    inline static auto& m_GetSingletonWorldObjectByType = methods.get<false, false>(15);
+    /* T GetEnabledMonoBehaviourHighestInHierarchy(UnityEngine.GameObject gameObject) */
+    inline static auto& m_GetEnabledMonoBehaviourHighestInHierarchy = methods.get<true, false>(16);
+    /* System.Int32 GetWoIDWithLocalOwnerHighestInHierarchy(System.Int32 woID) */
+    inline static auto& m_GetWoIDWithLocalOwnerHighestInHierarchy = methods.get<false, false>(17);
+    /* System.Collections.Generic.List`1<MVWorldObjectClient> GetBlueprintWorldObjectsByType(System.Type type) */
+    inline static auto& m_GetBlueprintWorldObjectsByType = methods.get<false, false>(18);
+    /* System.Boolean GetUnmodifiedWorldObject(KoGaMaPackageClient koGaMaPackageClient, ref System.Int32 worldObjectId) */
+    inline static auto& m_GetUnmodifiedWorldObject = methods.get<false, false>(19);
+    /* MVWorldObjectClient GetWorldObjectClient(System.Int32 id) */
+    inline static auto& m0_GetWorldObjectClient = methods.get<false, false>(20);
+    /* T GetWorldObjectClient(System.Int32 id) */
+    inline static auto& m1_GetWorldObjectClient = methods.get<false, false>(21);
+    /* WorldObjectClientRef`1<T> GetWorldObjectClientRef(System.Int32 id) */
+    inline static auto& m0_GetWorldObjectClientRef = methods.get<false, false>(22);
+    /* WorldObjectClientRef GetWorldObjectClientRef(System.Int32 id) */
+    inline static auto& m1_GetWorldObjectClientRef = methods.get<false, false>(24);
+    /* WorldObjectClientRef`1<MVWorldObjectClient> GetWorldObjectClientRefNullRefTyped() */
+    inline static auto& m_GetWorldObjectClientRefNullRefTyped = methods.get<true, false>(23);
+    /* WorldObjectClientRef GetWorldObjectClientRefNullRef() */
+    inline static auto& m_GetWorldObjectClientRefNullRef = methods.get<true, false>(25);
+    /* MV.WorldObject.MVWorldObject GetWorldObject(System.Int32 id) */
+    inline static auto& m_GetWorldObject = methods.get<false, true>(26);
+    /* System.Boolean TryGetWorldObject(System.Int32 id, out MV.WorldObject.MVWorldObject worldObject) */
+    inline static auto& m_TryGetWorldObject = methods.get<false, true>(27);
+    /* MVWorldObjectClient GetWorldObjectClientRoot(System.Int32 id) */
+    inline static auto& m_GetWorldObjectClientRoot = methods.get<false, false>(28);
+    /* MVWorldObjectClient GetWorldObjectClientWhere(System.Func`2<MVWorldObjectClient, System.Boolean> predicate) */
+    inline static auto& m_GetWorldObjectClientWhere = methods.get<false, false>(29);
+    /* System.Collections.Generic.IEnumerable`1<MVWorldObjectClient> GetWorldObjectClientsWhere(System.Func`2<MVWorldObjectClient, System.Boolean> predicate) */
+    inline static auto& m_GetWorldObjectClientsWhere = methods.get<false, false>(30);
+    /* MVWorldObjectClient GetWorldObjectByGoId(System.Int32 goId) */
+    inline static auto& m_GetWorldObjectByGoId = methods.get<false, false>(31);
+    /* MVWorldObjectClient GetMVObject(UnityEngine.Transform t) */
+    inline static auto& m_GetMVObject = methods.get<true, false>(32);
+    /* MVWorldObjectClient GetValidSpawnPoint() */
+    inline static auto& m_GetValidSpawnPoint = methods.get<true, false>(33);
+    /* MV.WorldObject.WorldObjectType GetSpawnPointTypeForNoneTeam() */
+    inline static auto& m_GetSpawnPointTypeForNoneTeam = methods.get<false, false>(34);
+    /* System.Void SubscribeWODestroyedEvent(System.Int32 woID, System.Action`2<System.Object, WorldObjectDestroyedEventArgs> woDestroyedEventHandler) */
+    inline static auto& m_SubscribeWODestroyedEvent = methods.get<false, false>(35);
+    /* System.Void UnsubscribeWODestroyedEvent(System.Int32 woID, System.Action`2<System.Object, WorldObjectDestroyedEventArgs> woDestroyedEventHandler) */
+    inline static auto& m_UnsubscribeWODestroyedEvent = methods.get<false, false>(36);
+    /* System.Void SubscribeWOCreatedEvent(System.Type type, System.Action`2<System.Object, WorldObjectCreatedEventArgs> woCreatedEventHandler) */
+    inline static auto& m_SubscribeWOCreatedEvent = methods.get<false, false>(37);
+    /* System.Void UnsubscribeWOCreatedEvent(System.Type type, System.Action`2<System.Object, WorldObjectCreatedEventArgs> woCreatedEventHandler) */
+    inline static auto& m_UnsubscribeWOCreatedEvent = methods.get<false, false>(38);
+    /* System.Boolean UnregisterWorldObject(System.Int32 worldObjectId) */
+    inline static auto& m_UnregisterWorldObject = methods.get<false, false>(39);
+    /* System.Void CloneWorldObjectTree(MVWorldObjectClient root, System.Boolean localOwner, System.Boolean setAsPreviewItem, System.Boolean cloneToRootGroup) */
+    inline static auto& m_CloneWorldObjectTree = methods.get<false, false>(40);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVWorldObjectClient {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<26> fields;
+inline static auto /* System.Int32 */ &f_woShadowCastersCount = fields.get<true>(5), /* System.Int32 */ &f_woMaxShadowCasters = fields.get<true>(6);
+inline static auto /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, PositionChangedEventArgs> */ &f_PositionChanged = fields.get<false>(0), /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, RotationChangedEventArgs> */ &f_RotationChanged = fields.get<false>(1), /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, ScaleChangedEventArgs> */ &f_ScaleChanged = fields.get<false>(2), /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, SelectedEventArgs> */ &f_SelectedChanged = fields.get<false>(3), /* System.Boolean */ &f_isCastingShadows = fields.get<false>(4), /* System.Int32 */ &f_goId = fields.get<false>(7), /* System.String */ &f_name = fields.get<false>(8), /* UnityEngine.GameObject */ &f_gameObject = fields.get<false>(9), /* UnityEngine.Collider */ &f_collider = fields.get<false>(10), /* UnityEngine.Transform */ &f_transform = fields.get<false>(11), /* InteractionDataHandlerBase */ &f_interactionDataHandlerBase = fields.get<false>(12), /* ObjectPrefab */ &f_component = fields.get<false>(13), /* MVGroup */ &f_group = fields.get<false>(14), /* System.Boolean */ &f_selected = fields.get<false>(15), /* SelectedConnector */ &f_selectedConnector = fields.get<false>(16), /* UnityEngine.GameObject */ &f_inputConnectorObject = fields.get<false>(17), /* UnityEngine.GameObject */ &f_outputConnectorObject = fields.get<false>(18), /* UnityEngine.GameObject */ &f_objectConnectorObject = fields.get<false>(19), /* InteractionFlags */ &f_interactionFlags = fields.get<false>(20), /* InteractionFlags */ &f_eliteRequiredFlags = fields.get<false>(21), /* LayerFlags */ &f_previewLayerMask = fields.get<false>(22), /* PlayInteractionType */ &f_PlayInteractionType_k_BackingField = fields.get<false>(23), /* MVRuntimeDataVariables */ &f_runtimeDataVariables = fields.get<false>(24), /* System.Boolean */ &f_initializedFromInventory = fields.get<false>(25);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<129> methods;
+    /* UnityEngine.Vector3 get_Position() */
+    inline static auto& m_get_Position = methods.get<false, true>(0);
+    /* System.Void set_Position(UnityEngine.Vector3 value) */
+    inline static auto& m_set_Position = methods.get<false, true>(1);
+    /* UnityEngine.Quaternion get_Rotation() */
+    inline static auto& m_get_Rotation = methods.get<false, true>(2);
+    /* System.Void set_Rotation(UnityEngine.Quaternion value) */
+    inline static auto& m_set_Rotation = methods.get<false, true>(3);
+    /* UnityEngine.Vector3 get_EulerAngles() */
+    inline static auto& m_get_EulerAngles = methods.get<false, false>(4);
+    /* System.Void set_EulerAngles(UnityEngine.Vector3 value) */
+    inline static auto& m_set_EulerAngles = methods.get<false, false>(5);
+    /* UnityEngine.Vector3 get_Scale() */
+    inline static auto& m_get_Scale = methods.get<false, true>(6);
+    /* System.Void set_Scale(UnityEngine.Vector3 value) */
+    inline static auto& m_set_Scale = methods.get<false, true>(7);
+    /* UnityEngine.Vector3 get_WorldPosition() */
+    inline static auto& m_get_WorldPosition = methods.get<false, true>(8);
+    /* System.Void set_WorldPosition(UnityEngine.Vector3 value) */
+    inline static auto& m_set_WorldPosition = methods.get<false, true>(9);
+    /* System.Boolean get_IsTransformDefined() */
+    inline static auto& m_get_IsTransformDefined = methods.get<false, true>(10);
+    /* UnityEngine.Quaternion get_WorldRotation() */
+    inline static auto& m_get_WorldRotation = methods.get<false, true>(11);
+    /* System.Void set_WorldRotation(UnityEngine.Quaternion value) */
+    inline static auto& m_set_WorldRotation = methods.get<false, false>(12);
+    /* UnityEngine.Vector3 get_WorldEulerAngles() */
+    inline static auto& m_get_WorldEulerAngles = methods.get<false, false>(13);
+    /* System.Void set_WorldEulerAngles(UnityEngine.Vector3 value) */
+    inline static auto& m_set_WorldEulerAngles = methods.get<false, false>(14);
+    /* UnityEngine.Vector3 get_SyncPos() */
+    inline static auto& m_get_SyncPos = methods.get<false, true>(15);
+    /* System.Void set_SyncPos(UnityEngine.Vector3 value) */
+    inline static auto& m_set_SyncPos = methods.get<false, true>(16);
+    /* UnityEngine.Quaternion get_SyncRot() */
+    inline static auto& m_get_SyncRot = methods.get<false, true>(17);
+    /* System.Void set_SyncRot(UnityEngine.Quaternion value) */
+    inline static auto& m_set_SyncRot = methods.get<false, true>(18);
+    /* System.Void PositionChangedNotify() */
+    inline static auto& m_PositionChangedNotify = methods.get<false, true>(19);
+    /* MVGroup get_Group() */
+    inline static auto& m_get_Group = methods.get<false, false>(20);
+    /* System.Void set_Group(MVGroup value) */
+    inline static auto& m_set_Group = methods.get<false, false>(21);
+    /* System.Boolean get_Selected() */
+    inline static auto& m_get_Selected = methods.get<false, false>(22);
+    /* System.Void set_Selected(System.Boolean value) */
+    inline static auto& m_set_Selected = methods.get<false, false>(23);
+    /* System.Collections.Generic.HashSet`1<System.Int32> get_WorldIDsRecursive() */
+    inline static auto& m_get_WorldIDsRecursive = methods.get<false, false>(24);
+    /* UnityEngine.Vector3 get_WorldPivot() */
+    inline static auto& m_get_WorldPivot = methods.get<false, true>(25);
+    /* System.Boolean get_HasInputConnector() */
+    inline static auto& m_get_HasInputConnector = methods.get<false, true>(26);
+    /* System.Boolean get_HasOutputConnector() */
+    inline static auto& m_get_HasOutputConnector = methods.get<false, true>(27);
+    /* System.Boolean get_HasObjectConnector() */
+    inline static auto& m_get_HasObjectConnector = methods.get<false, true>(28);
+    /* InteractionFlags get_InteractionFlags() */
+    inline static auto& m_get_InteractionFlags = methods.get<false, true>(29);
+    /* System.Void set_InteractionFlags(InteractionFlags value) */
+    inline static auto& m_set_InteractionFlags = methods.get<false, false>(30);
+    /* LayerFlags get_PreviewLayerMask() */
+    inline static auto& m_get_PreviewLayerMask = methods.get<false, false>(31);
+    /* PlayInteractionType get_PlayInteractionType() */
+    inline static auto& m_get_PlayInteractionType = methods.get<false, false>(32);
+    /* System.Void set_PlayInteractionType(PlayInteractionType value) */
+    inline static auto& m_set_PlayInteractionType = methods.get<false, false>(33);
+    /* System.Int32 get_GameObjectID() */
+    inline static auto& m_get_GameObjectID = methods.get<false, false>(34);
+    /* UnityEngine.GameObject get_GameObject() */
+    inline static auto& m_get_GameObject = methods.get<false, true>(35);
+    /* ObjectPrefab get_Component() */
+    inline static auto& m_get_Component = methods.get<false, false>(36);
+    /* UnityEngine.Collider get_Collider() */
+    inline static auto& m_get_Collider = methods.get<false, false>(37);
+    /* UnityEngine.Transform get_Transform() */
+    inline static auto& m_get_Transform = methods.get<false, true>(38);
+    /* InteractionDataHandlerBase get_InteractionDataHandlerBase() */
+    inline static auto& m_get_InteractionDataHandlerBase = methods.get<false, false>(39);
+    /* SelectedConnector get_SelectedConnector() */
+    inline static auto& m_get_SelectedConnector = methods.get<false, false>(40);
+    /* UnityEngine.Vector3 get_InputConnectorOffset() */
+    inline static auto& m_get_InputConnectorOffset = methods.get<false, true>(41);
+    /* UnityEngine.Vector3 get_OutputConnectorOffset() */
+    inline static auto& m_get_OutputConnectorOffset = methods.get<false, true>(42);
+    /* UnityEngine.Vector3 get_ObjectConnectorOffset() */
+    inline static auto& m_get_ObjectConnectorOffset = methods.get<false, true>(43);
+    /* UnityEngine.Quaternion get_InputConnectorRotation() */
+    inline static auto& m_get_InputConnectorRotation = methods.get<false, true>(44);
+    /* UnityEngine.Quaternion get_OutputConnectorRotation() */
+    inline static auto& m_get_OutputConnectorRotation = methods.get<false, true>(45);
+    /* UnityEngine.Quaternion get_ObjectConnectorRotation() */
+    inline static auto& m_get_ObjectConnectorRotation = methods.get<false, true>(46);
+    /* MVRuntimeDataVariables get_RuntimeDataVariables() */
+    inline static auto& m_get_RuntimeDataVariables = methods.get<false, false>(47);
+    /* System.Collections.Generic.Dictionary`2<System.Object, System.Object> get_RunTimeData() */
+    inline static auto& m_get_RunTimeData = methods.get<false, true>(48);
+    /* System.Void set_RunTimeData(System.Collections.Generic.Dictionary`2<System.Object, System.Object> value) */
+    inline static auto& m_set_RunTimeData = methods.get<false, true>(49);
+    /* MVWorldObjectDocumentationType get_DocumentationType() */
+    inline static auto& m_get_DocumentationType = methods.get<false, true>(50);
+    /* System.Void set_DocumentationType(MVWorldObjectDocumentationType value) */
+    inline static auto& m_set_DocumentationType = methods.get<false, false>(51);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, UnityEngine.GameObject prefabObject, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m0_ctor = methods.get<false, false>(52);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, ObjectPrefab prefabObject, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m1_ctor = methods.get<false, false>(53);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m2_ctor = methods.get<false, false>(56);
+    /* UnityEngine.GameObject InstantiatePrefab(UnityEngine.GameObject prefabObject, MVWorldObjectClient+TransformData transformData) */
+    inline static auto& m0_InstantiatePrefab = methods.get<false, false>(54);
+    /* ObjectPrefab InstantiatePrefab(ObjectPrefab prefabObject, MVWorldObjectClient+TransformData transformData) */
+    inline static auto& m1_InstantiatePrefab = methods.get<false, false>(55);
+    /* System.Boolean HasInteractionFlag(InteractionFlags flag) */
+    inline static auto& m_HasInteractionFlag = methods.get<false, false>(57);
+    /* System.Boolean HasEliteRequiredFlag(InteractionFlags flag) */
+    inline static auto& m_HasEliteRequiredFlag = methods.get<false, false>(58);
+    /* System.Void SetupBusinessLogic() */
+    inline static auto& m_SetupBusinessLogic = methods.get<false, false>(59);
+    /* MVWorldObjectClient+TransformData GetTransformData(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data) */
+    inline static auto& m_GetTransformData = methods.get<false, false>(60);
+    /* System.Void ApplyData(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data) */
+    inline static auto& m_ApplyData = methods.get<false, false>(61);
+    /* System.Void CreateWorldObject(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m_CreateWorldObject = methods.get<false, false>(62);
+    /* MVWorldObjectClient GetHitInteractionHandlingWO() */
+    inline static auto& m_GetHitInteractionHandlingWO = methods.get<false, false>(63);
+    /* System.Void TraverseRecursiveTail(MVWorldObjectClient+CallBackDelegate callBack) */
+    inline static auto& m_TraverseRecursiveTail = methods.get<false, true>(64);
+    /* System.Boolean CompareWithKoGaMaPackage(MVWorldObjectClient wo, KoGaMaPackageClient koGaMaPackageClient, ref System.Int32 insertedByProfileId) */
+    inline static auto& m_CompareWithKoGaMaPackage = methods.get<false, true>(65);
+    /* System.Void Compare(MVWorldObjectClient wo, System.Boolean visibleCubesOnly, ref System.Int32 matchingCubeCount, ref System.Int32 investigatedCubeCount) */
+    inline static auto& m_Compare = methods.get<false, true>(66);
+    /* MVWorldObjectClient Clone(System.Int32 ownerActorNumber, System.Int32 cloneGroupId, CloneBookkeeping cloneBookkeeping, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects, System.Collections.Generic.Dictionary`2<System.Int32, RuntimePrototypeCubeModel> prototypes) */
+    inline static auto& m_Clone = methods.get<false, true>(67);
+    /* System.Void SetWorldObjectToPurchased() */
+    inline static auto& m_SetWorldObjectToPurchased = methods.get<false, true>(68);
+    /* System.Void SetNetworkObject(System.Boolean local) */
+    inline static auto& m_SetNetworkObject = methods.get<false, false>(69);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(70);
+    /* System.Void InventoryInitialize() */
+    inline static auto& m_InventoryInitialize = methods.get<false, false>(71);
+    /* System.Void InitializeInventory() */
+    inline static auto& m_InitializeInventory = methods.get<false, true>(72);
+    /* System.Void PlayModeInitialize() */
+    inline static auto& m_PlayModeInitialize = methods.get<false, true>(73);
+    /* System.Void SetupTierInventory() */
+    inline static auto& m_SetupTierInventory = methods.get<false, true>(74);
+    /* System.Void UnSetupTierInventory() */
+    inline static auto& m_UnSetupTierInventory = methods.get<false, true>(75);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<false, true>(76);
+    /* System.Void OnDataUpdate() */
+    inline static auto& m_OnDataUpdate = methods.get<false, true>(77);
+    /* System.Void OnRunTimeDataUpdate() */
+    inline static auto& m_OnRunTimeDataUpdate = methods.get<false, true>(78);
+    /* System.Boolean OnEnterObject(EditorStateMachine e) */
+    inline static auto& m_OnEnterObject = methods.get<false, true>(79);
+    /* System.Boolean OnExitObject(EditorStateMachine e) */
+    inline static auto& m_OnExitObject = methods.get<false, true>(80);
+    /* System.Void OnSelectedChanged(System.Boolean selected) */
+    inline static auto& m_OnSelectedChanged = methods.get<false, true>(81);
+    /* System.Boolean ValidateObjectLinkTarget(MVWorldObjectClient wo) */
+    inline static auto& m_ValidateObjectLinkTarget = methods.get<false, true>(82);
+    /* System.Void SendPackage(System.Collections.Generic.Dictionary`2<System.Object, System.Object> package) */
+    inline static auto& m_SendPackage = methods.get<false, false>(83);
+    /* System.Void ReceivePackage(MVPlayer p, System.Collections.Generic.Dictionary`2<System.Object, System.Object> package) */
+    inline static auto& m_ReceivePackage = methods.get<false, true>(84);
+    /* System.Void ReceiveInteractionPackage(MV.WorldObject.InteractionData interactionStruct, MVPlayer p) */
+    inline static auto& m_ReceiveInteractionPackage = methods.get<false, true>(85);
+    /* System.Void CreateConnectors() */
+    inline static auto& m_CreateConnectors = methods.get<false, false>(86);
+    /* System.Void RuntimeDataUpdate(System.Collections.Generic.Dictionary`2<System.Object, System.Object> dataDelta) */
+    inline static auto& m_RuntimeDataUpdate = methods.get<false, false>(87);
+    /* System.Void PartialUpdateWOData(System.Collections.Generic.Dictionary`2<System.Object, System.Object> woData) */
+    inline static auto& m_PartialUpdateWOData = methods.get<false, true>(88);
+    /* System.Void PartialRemoveFromWOData(System.Collections.Generic.Dictionary`2<System.Object, System.Object> entriesToRemove) */
+    inline static auto& m_PartialRemoveFromWOData = methods.get<false, true>(89);
+    /* System.Void HandleInput(NetworkInputActionCodes actionCode, NetworkInputKeyCodes keyCode) */
+    inline static auto& m_HandleInput = methods.get<false, true>(90);
+    /* UnityEngine.Vector3 GetClosestGridPoint(System.Single gridSize, UnityEngine.Vector3 position) */
+    inline static auto& m_GetClosestGridPoint = methods.get<false, true>(91);
+    /* System.Boolean OnClickHandler(EditorStateMachine esm, UnityEngine.Collider collider) */
+    inline static auto& m_OnClickHandler = methods.get<false, true>(92);
+    /* UnityEngine.Vector3 GetInputConnectorPos() */
+    inline static auto& m_GetInputConnectorPos = methods.get<false, false>(93);
+    /* UnityEngine.Vector3 GetOutputConnectorPos() */
+    inline static auto& m_GetOutputConnectorPos = methods.get<false, false>(94);
+    /* UnityEngine.Vector3 GetObjectConnectorPos() */
+    inline static auto& m_GetObjectConnectorPos = methods.get<false, false>(95);
+    /* System.Boolean IsPointOverInputConnector(UnityEngine.Vector3 mousePoint) */
+    inline static auto& m_IsPointOverInputConnector = methods.get<false, false>(96);
+    /* System.Boolean IsPointOverOutputConnector(UnityEngine.Vector3 mousePoint) */
+    inline static auto& m_IsPointOverOutputConnector = methods.get<false, false>(97);
+    /* System.Void HighlightConnector(System.Boolean state) */
+    inline static auto& m_HighlightConnector = methods.get<false, true>(98);
+    /* System.Boolean DoesScreenPointHitCollider(UnityEngine.Vector3 point, UnityEngine.Collider collider) */
+    inline static auto& m_DoesScreenPointHitCollider = methods.get<false, false>(99);
+    /* UnityEngine.Bounds GetLocalBounds(BoundsContext boundsContext) */
+    inline static auto& m_GetLocalBounds = methods.get<false, true>(100);
+    /* UnityEngine.Vector3[] GetBoundsCornersLocal(BoundsContext boundsContext) */
+    inline static auto& m_GetBoundsCornersLocal = methods.get<false, false>(101);
+    /* UnityEngine.Vector3[] GetBoundsCornersWorld(BoundsContext boundsContext) */
+    inline static auto& m_GetBoundsCornersWorld = methods.get<false, false>(102);
+    /* System.Void Select() */
+    inline static auto& m0_Select = methods.get<false, true>(103);
+    /* System.Void Select(UnityEngine.Color color) */
+    inline static auto& m1_Select = methods.get<false, true>(104);
+    /* System.Void DeSelect() */
+    inline static auto& m_DeSelect = methods.get<false, true>(105);
+    /* System.Void AddPreviewBox() */
+    inline static auto& m_AddPreviewBox = methods.get<false, true>(106);
+    /* System.Void AddSelectionBox() */
+    inline static auto& m_AddSelectionBox = methods.get<false, true>(107);
+    /* UnityEngine.GameObject CreateBox(System.String name, System.Single scale) */
+    inline static auto& m_CreateBox = methods.get<false, false>(108);
+    /* System.Void RemoveSelectionBox() */
+    inline static auto& m_RemoveSelectionBox = methods.get<false, true>(109);
+    /* System.Void RemovePreviewBox() */
+    inline static auto& m_RemovePreviewBox = methods.get<false, true>(110);
+    /* System.Void HideConnectors() */
+    inline static auto& m_HideConnectors = methods.get<false, true>(111);
+    /* System.Void ShowConnectors() */
+    inline static auto& m_ShowConnectors = methods.get<false, true>(112);
+    /* System.Boolean Delete(MVWorldObjectClientManager worldObjectClientManager, ref System.String errorText) */
+    inline static auto& m_Delete = methods.get<false, true>(113);
+    /* System.Void SetName() */
+    inline static auto& m_SetName = methods.get<false, false>(114);
+    /* System.String ToString() */
+    inline static auto& m_ToString = methods.get<false, true>(115);
+    /* System.Boolean get_Visible() */
+    inline static auto& m_get_Visible = methods.get<false, true>(116);
+    /* System.Void set_Visible(System.Boolean value) */
+    inline static auto& m_set_Visible = methods.get<false, true>(117);
+    /* UnityEngine.Vector3 GetTargetPosition() */
+    inline static auto& m_GetTargetPosition = methods.get<false, true>(118);
+    /* System.Single ComputeObjectRadius() */
+    inline static auto& m_ComputeObjectRadius = methods.get<false, false>(119);
+    /* System.Single ComputeObjectSqrRadius() */
+    inline static auto& m_ComputeObjectSqrRadius = methods.get<false, false>(120);
+    /* System.Void RotateAround(UnityEngine.Vector3 pivot, UnityEngine.Vector3 axis, System.Single angle) */
+    inline static auto& m_RotateAround = methods.get<false, false>(121);
+    /* System.Void RotateAroundLocal(UnityEngine.Vector3 pivot, RotationMode rotationMode, System.Single angle) */
+    inline static auto& m_RotateAroundLocal = methods.get<false, false>(122);
+    /* UnityEngine.Vector3 GetLocalAxis(RotationMode rotationMode) */
+    inline static auto& m_GetLocalAxis = methods.get<false, false>(123);
+    /* System.Void ResetRotation() */
+    inline static auto& m_ResetRotation = methods.get<false, false>(124);
+    /* System.Void DestroyRecursive(MVWorldObjectClient wo) */
+    inline static auto& m_DestroyRecursive = methods.get<true, false>(125);
+    /* System.Void DrawTransformGizmo() */
+    inline static auto& m_DrawTransformGizmo = methods.get<false, true>(126);
+    /* System.Void OnContextMenu() */
+    inline static auto& m_OnContextMenu = methods.get<false, true>(127);
+    /* System.Void .cctor() */
+    inline static auto& m_cctor = methods.get<true, false>(128);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct WorldNetwork {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<2> fields;
+inline static auto /* Links */ &f_links = fields.get<false>(0), /* ObjectLinks */ &f_objectLinks = fields.get<false>(1);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<26> methods;
+    /* MVWorldObjectClientManagerNetwork get_WorldObjectClientManagerNetwork() */
+    inline static auto& m_get_WorldObjectClientManagerNetwork = methods.get<false, false>(0);
+    /* RuntimeEventManagerNetwork get_RuntimeEventManagerNetwork() */
+    inline static auto& m_get_RuntimeEventManagerNetwork = methods.get<false, false>(1);
+    /* System.Void .ctor() */
+    inline static auto& m_ctor = methods.get<false, false>(2);
+    /* System.Void Update(MVNetworkGame game) */
+    inline static auto& m_Update = methods.get<false, false>(3);
+    /* System.Void CreateGameWorldFromQueryData(MV.WorldObject.BytePacker queryData, System.Int32 instigatorActorNumber) */
+    inline static auto& m_CreateGameWorldFromQueryData = methods.get<false, false>(4);
+    /* System.Void OnGameDataDeserialized(MV.WorldObject.BytePacker queryData, System.Int32 instigatorActorNumber, System.Int32 rootId) */
+    inline static auto& m_OnGameDataDeserialized = methods.get<false, false>(5);
+    /* System.Void ConstructRuntimeEventManager() */
+    inline static auto& m_ConstructRuntimeEventManager = methods.get<false, false>(6);
+    /* System.Void AddGameQueryDataToGameWorld(MV.WorldObject.BytePacker queryData, System.Int32 instigatorActorNumber) */
+    inline static auto& m_AddGameQueryDataToGameWorld = methods.get<false, false>(7);
+    /* MVWorldObjectClient InitializeQueryData(MV.WorldObject.BytePacker queryData) */
+    inline static auto& m_InitializeQueryData = methods.get<false, false>(8);
+    /* System.Void DeserializeRuntimeEvents(MV.WorldObject.BytePacker queryData) */
+    inline static auto& m_DeserializeRuntimeEvents = methods.get<false, false>(9);
+    /* System.Void CreateQueryEvent(MVWorldObjectClient root, System.Int32 instigatorActorNumber) */
+    inline static auto& m_CreateQueryEvent = methods.get<false, false>(10);
+    /* System.Void HandleDeserializedWorldData(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, MV.WorldObject.KogamaDataType dataType) */
+    inline static auto& m_HandleDeserializedWorldData = methods.get<false, false>(11);
+    /* System.Void AddPrototype(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data) */
+    inline static auto& m_AddPrototype = methods.get<false, false>(12);
+    /* System.Void AddWorldObject(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data) */
+    inline static auto& m_AddWorldObject = methods.get<false, false>(13);
+    /* System.Void AddLink(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data) */
+    inline static auto& m0_AddLink = methods.get<false, false>(14);
+    /* System.Void AddLink(MV.WorldObject.Link link) */
+    inline static auto& m1_AddLink = methods.get<false, false>(20);
+    /* System.Void AddObjectLink(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data) */
+    inline static auto& m0_AddObjectLink = methods.get<false, false>(15);
+    /* System.Void AddObjectLink(MV.WorldObject.ObjectLink objectLink) */
+    inline static auto& m1_AddObjectLink = methods.get<false, false>(23);
+    /* MVWorldObjectClient OnCloneWorldObjectTreeEvent(System.Int32 ownerActorNumber, System.Int32 previewProfileOwnerId, System.Boolean cloneToRootGroup, System.Int32 originalId, System.Int32 cloneId, System.Int32 cloneLinkId, System.Int32 cloneObjectLinkId) */
+    inline static auto& m_OnCloneWorldObjectTreeEvent = methods.get<false, false>(16);
+    /* System.Void CloneLinks(CloneBookkeeping cloneBookkeeping) */
+    inline static auto& m_CloneLinks = methods.get<false, false>(17);
+    /* System.Void CloneObjectLinks(CloneBookkeeping cloneBookkeeping) */
+    inline static auto& m_CloneObjectLinks = methods.get<false, false>(18);
+    /* System.Boolean OnUnregisterWorldObject(System.Int32 id) */
+    inline static auto& m_OnUnregisterWorldObject = methods.get<false, false>(19);
+    /* MV.WorldObject.Link RemoveLink(System.Int32 linkID) */
+    inline static auto& m_RemoveLink = methods.get<false, false>(21);
+    /* System.Boolean LinksContains(System.Int32 linkID) */
+    inline static auto& m_LinksContains = methods.get<false, false>(22);
+    /* System.Void RemoveObjectLink(System.Int32 objectLinkID) */
+    inline static auto& m_RemoveObjectLink = methods.get<false, false>(24);
+    /* System.Boolean ObjectLinksContains(System.Int32 linkID) */
+    inline static auto& m_ObjectLinksContains = methods.get<false, false>(25);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct Links {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<2> fields;
+inline static auto /* System.Collections.Generic.Dictionary`2<System.Int32, MV.WorldObject.Link> */ &f_links = fields.get<false>(0), /* System.Collections.Generic.Dictionary`2<System.Int32, LinkObjectScript> */ &f_linkObjects = fields.get<false>(1);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<6> methods;
+    /* System.Boolean RemoveLink(System.Int32 linkID, MVWorldObjectClient outputWo, MVWorldObjectClient inputWo) */
+    inline static auto& m_RemoveLink = methods.get<false, false>(0);
+    /* System.Void Update() */
+    inline static auto& m_Update = methods.get<false, false>(1);
+    /* System.Boolean Contains(System.Int32 linkID) */
+    inline static auto& m_Contains = methods.get<false, false>(2);
+    /* MV.WorldObject.Link GetLink(System.Int32 linkID) */
+    inline static auto& m_GetLink = methods.get<false, false>(3);
+    /* System.Void AddLink(MV.WorldObject.Link link, MVWorldObjectClient outputWo, MVWorldObjectClient inputWo) */
+    inline static auto& m_AddLink = methods.get<false, false>(4);
+    /* System.Void .ctor() */
+    inline static auto& m_ctor = methods.get<false, false>(5);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct ObjectLinks {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<2> fields;
+inline static auto /* System.Collections.Generic.Dictionary`2<System.Int32, MV.WorldObject.ObjectLink> */ &f_objectLinks = fields.get<false>(0), /* System.Collections.Generic.Dictionary`2<System.Int32, ObjectLinkObjectScript> */ &f_objectLinkObjects = fields.get<false>(1);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<6> methods;
+    /* MV.WorldObject.ObjectLink GetObjectLink(System.Int32 objectLinkID) */
+    inline static auto& m_GetObjectLink = methods.get<false, false>(0);
+    /* System.Void Update() */
+    inline static auto& m_Update = methods.get<false, false>(1);
+    /* System.Boolean Contains(System.Int32 objectLinkID) */
+    inline static auto& m_Contains = methods.get<false, false>(2);
+    /* System.Boolean RemoveObjectLink(MV.WorldObject.ObjectLink link, MVWorldObjectClient objectConnectorWo, MVWorldObjectClient objectWo) */
+    inline static auto& m_RemoveObjectLink = methods.get<false, false>(3);
+    /* System.Boolean AddObjectLink(MV.WorldObject.ObjectLink objectLink, MVWorldObjectClient objectConnectorWo, MVWorldObjectClient objectWo) */
+    inline static auto& m_AddObjectLink = methods.get<false, false>(4);
+    /* System.Void .ctor() */
+    inline static auto& m_ctor = methods.get<false, false>(5);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct World {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<4> fields;
+inline static auto /* MVWorldObjectClientManagerNetwork */ &f_worldObjectClientManager = fields.get<false>(0), /* MVWorldInventory */ &f_worldInventory = fields.get<false>(1), /* RuntimeEventManagerNetwork */ &f_runtimeEventManagerNetwork = fields.get<false>(2), /* System.EventHandler`1<InitializedGameQueryDataEventArgs> */ &f_InitializedGameQueryData = fields.get<false>(3);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<4> methods;
+    /* MVWorldInventory get_WorldInventory() */
+    inline static auto& m_get_WorldInventory = methods.get<false, false>(0);
+    /* MVWorldObjectClientManager get_WorldObjectClientManager() */
+    inline static auto& m_get_WorldObjectClientManager = methods.get<false, false>(1);
+    /* RuntimeEventManager get_RuntimeEventManager() */
+    inline static auto& m_get_RuntimeEventManager = methods.get<false, false>(2);
+    /* System.Void .ctor() */
+    inline static auto& m_ctor = methods.get<false, false>(3);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVWorldInventory {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<5> fields;
+inline static auto /* System.Int32 */ &f_NumberOfLowPriorityMeshGenerations = fields.get<true>(3);
+inline static auto /* System.Collections.Generic.Dictionary`2<System.Int32, RuntimePrototypeCubeModel> */ &f_runtimePrototypes = fields.get<false>(0), /* System.Collections.Generic.Dictionary`2<System.Int32, PendingPrototypeData> */ &f_pendingRuntimePrototypes = fields.get<false>(1), /* System.Collections.Generic.List`1<RuntimePrototypeCubeModel> */ &f_dirtyRPCM = fields.get<false>(2), /* MVWorldInventory+OnWorldInventoryChangeDelegate */ &f_OnWorldInventoryChange = fields.get<false>(4);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<17> methods;
+    /* System.Collections.Generic.Dictionary`2<System.Int32, RuntimePrototypeCubeModel> get_RuntimePrototypes() */
+    inline static auto& m_get_RuntimePrototypes = methods.get<false, false>(0);
+    /* System.Void AddRuntimePrototypeToDirty(RuntimePrototypeCubeModel rpcm) */
+    inline static auto& m_AddRuntimePrototypeToDirty = methods.get<false, false>(1);
+    /* System.Void OnUpdatePrototypeEvent(System.Int32 worldInventoryID, System.Byte[] worldInventoryData) */
+    inline static auto& m_OnUpdatePrototypeEvent = methods.get<false, false>(2);
+    /* System.Void OnUpdatePrototypeScaleEvent(System.Int32 worldInventoryID, System.Single scale) */
+    inline static auto& m_OnUpdatePrototypeScaleEvent = methods.get<false, false>(3);
+    /* System.Void GenerateAllDirty(ref System.Int32 counter) */
+    inline static auto& m_GenerateAllDirty = methods.get<false, false>(4);
+    /* System.Boolean GenerateDirty(MeshGeneratePriority priority, ref System.Int32 counter) */
+    inline static auto& m_GenerateDirty = methods.get<false, false>(5);
+    /* System.Void GenerateDirtyRPCM() */
+    inline static auto& m_GenerateDirtyRPCM = methods.get<false, false>(6);
+    /* System.Void LateUpdate() */
+    inline static auto& m_LateUpdate = methods.get<false, false>(7);
+    /* System.Void AddPrototype(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data) */
+    inline static auto& m_AddPrototype = methods.get<false, false>(8);
+    /* System.Void RemovePrototype(System.Int32 id) */
+    inline static auto& m_RemovePrototype = methods.get<false, false>(9);
+    /* System.Void UnpendRuntimePrototype(System.Int32 woId) */
+    inline static auto& m_UnpendRuntimePrototype = methods.get<false, false>(10);
+    /* System.Void OnReplaceWoPrototype(System.Int32 woId, System.Int32 worldInventoryId) */
+    inline static auto& m_OnReplaceWoPrototype = methods.get<false, false>(11);
+    /* System.Void RequestWoMakeUniquePrototype(System.Int32 woId) */
+    inline static auto& m_RequestWoMakeUniquePrototype = methods.get<false, false>(12);
+    /* System.Void ReplaceWithPendingRuntimePrototype(System.Int32 woId) */
+    inline static auto& m_ReplaceWithPendingRuntimePrototype = methods.get<false, false>(13);
+    /* RuntimePrototypeCubeModel CreatePendingPrototype(System.Int32 prototypeId) */
+    inline static auto& m_CreatePendingPrototype = methods.get<false, false>(14);
+    /* System.Void NotifyWorldInventoryChange() */
+    inline static auto& m_NotifyWorldInventoryChange = methods.get<false, false>(15);
+    /* System.Void .ctor() */
+    inline static auto& m_ctor = methods.get<false, false>(16);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVNetworkGame {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<69> fields;
+inline static auto /* System.String */ &f_appName = fields.get<true>(0), /* System.Single */ &f_serviceCallInterval = fields.get<true>(1);
+inline static auto /* GameEventManager */ &f_GameEventManager = fields.get<false>(2), /* System.EventHandler`1<ReceivedItemFromQueryEventArgs> */ &f_ReceivedItemFromQuery = fields.get<false>(3), /* System.EventHandler`1<ReceivedItemFromQueryEventArgs> */ &f_ReceivedAvatarBodiesFromQuery = fields.get<false>(4), /* System.Action`1<System.String> */ &f_ReceivedAccessoryData = fields.get<false>(5), /* System.Action`1<MV.WorldObject.OwnershipData.PlanetOwnershipsData> */ &f_ReceivedPlanetOwnershipData = fields.get<false>(6), /* System.Action`1<System.Collections.Generic.Dictionary`2<System.Int32, System.Collections.Generic.List`1<System.Int32>>> */ &f_ReceivedPlanetPermissionsData = fields.get<false>(7), /* System.Collections.Generic.Dictionary`2<MV.Common.Region, System.Single> */ &f_timeZoneMap = fields.get<false>(8), /* System.Boolean */ &f_isPublished = fields.get<false>(9), /* MVConnState */ &f_connState = fields.get<false>(10), /* MVItemBusinessLogic */ &f_itemBusinessLogic = fields.get<false>(11), /* MVNetworkGame+GameDataQueryManager */ &f_gameDataQueryManager = fields.get<false>(12), /* TransformNetworkManager */ &f_transformNetworkManager = fields.get<false>(13), /* MVTeamManager */ &f_teamManager = fields.get<false>(14), /* GameStatCounterManager */ &f_gameStatCounterManager = fields.get<false>(15), /* LevelRewardsManager */ &f_levelRewardsManager = fields.get<false>(16), /* System.Single */ &f_prevServiceCallTime = fields.get<false>(17), /* LogicObjectManagerClient */ &f_LogicObjectManager_k_BackingField = fields.get<false>(18), /* MV.Common.Region */ &f_Region_k_BackingField = fields.get<false>(19), /* MVGameCoinManager */ &f_GameCoinManager_k_BackingField = fields.get<false>(20), /* ItemCategories */ &f_ItemCategories_k_BackingField = fields.get<false>(21), /* MVNetworkGameStateListener */ &f_NetworkGameStateListener_k_BackingField = fields.get<false>(22), /* ExitGames.Client.Photon.PhotonPeer */ &f_Peer_k_BackingField = fields.get<false>(23), /* CodeStage.AntiCheat.ObscuredTypes.ObscuredString */ &f_XpKey_k_BackingField = fields.get<false>(24), /* System.Int32 */ &f_MarketPlaceLevel_k_BackingField = fields.get<false>(25), /* System.Int32 */ &f_PublishLevel_k_BackingField = fields.get<false>(26), /* System.String */ &f_AdConsentEndpointURL_k_BackingField = fields.get<false>(27), /* System.String */ &f_KogamaMainpageURL_k_BackingField = fields.get<false>(28), /* CreySettings */ &f_CreySettings_k_BackingField = fields.get<false>(29), /* CustomTouristPromotionSettings */ &f_CustomTouristPromotionSettings_k_BackingField = fields.get<false>(30), /* ElitePromotionSettings */ &f_EliteSettings_k_BackingField = fields.get<false>(31), /* System.Int32 */ &f_serverTimeInMilliseconds = fields.get<false>(32), /* System.Int32 */ &f_lastFrameServerTimeUpdate = fields.get<false>(33), /* System.Int32 */ &f_localTimeInMilliseconds = fields.get<false>(34), /* System.Int32 */ &f_lastFrameLocalTimeUpdate = fields.get<false>(35), /* MVMaterialRepository */ &f_MaterialRepository_k_BackingField = fields.get<false>(36), /* PlayerRepository */ &f_PlayerRepository_k_BackingField = fields.get<false>(37), /* ShopRepository */ &f_ShopRepository_k_BackingField = fields.get<false>(38), /* GameTierShopRepository */ &f_GameTierShopRepository_k_BackingField = fields.get<false>(39), /* AvatarRepository */ &f_AvatarShopRepository_k_BackingField = fields.get<false>(40), /* MV.WorldObject.MvAvatarMetaDataWoMap */ &f_AvatarMetaDataWoMap_k_BackingField = fields.get<false>(41), /* MVGameModeChangeNotifier */ &f_GameStateController_k_BackingField = fields.get<false>(42), /* FriendList */ &f_Friends_k_BackingField = fields.get<false>(43), /* MVLocalObjectController */ &f_PlayerController_k_BackingField = fields.get<false>(44), /* WinningConditionManager */ &f_WinningConditionManager_k_BackingField = fields.get<false>(45), /* WorldNetwork */ &f_worldNetwork = fields.get<false>(46), /* System.Action`2<System.Int32, System.Collections.Generic.Dictionary`2<System.Object, System.Object>> */ &f_PurchaseProductResponseHandler = fields.get<false>(47), /* System.Action`1<IWinningCondition> */ &f_OnWinningConditionFulfilled = fields.get<false>(48), /* System.Action`1<System.Int32> */ &f_OnActiveAvatar = fields.get<false>(49), /* System.Action`1<System.Boolean> */ &f_OnItemAddedToWorld = fields.get<false>(50), /* UnityEngine.Events.UnityAction`1<System.String> */ &f_OnPublishedPlanet = fields.get<false>(51), /* UnityEngine.Events.UnityAction`1<System.String> */ &f_OnAddWorldObjectToInventoryCallbackDev = fields.get<false>(52), /* System.Action`1<System.Boolean> */ &f_OnSetAvatarAccessoryResponse = fields.get<false>(53), /* MVNetworkGame+OnReceivedChatMessageDelegate */ &f_OnReceivedChatMessage = fields.get<false>(54), /* MVNetworkGame+OnMarketPlaceActionCompleteDelegate */ &f_OnMarketPlaceActionComplete = fields.get<false>(55), /* System.EventHandler`1<ScreenshotUploadedEventArgs> */ &f_ScreenshotUploaded = fields.get<false>(56), /* System.Action */ &f_OnActiveAvatarSet = fields.get<false>(57), /* System.Action */ &f_OnAccessoryUnequipped = fields.get<false>(58), /* MVPlayerContainer */ &f_playerContainer = fields.get<false>(59), /* PhotonLoggingConfig */ &f_photonLoggingConfig = fields.get<false>(60), /* EmbeddedSiteConfigData */ &f_embeddedSiteConfigData = fields.get<false>(61), /* MVNetworkGame+LogicObjectManagerClientWrapper */ &f_logicObjectManagerClientWrapper = fields.get<false>(62), /* RuntimeVariableNetworkManager */ &f_runtimeVariableNetworkManager = fields.get<false>(63), /* MVNetworkGame+GameDataQueryManager+GameDataQuery */ &f_gameDataQuery = fields.get<false>(64), /* MVNetworkGame+EventHandling */ &f_eventHandling = fields.get<false>(65), /* MVNetworkGame+OperationRequests */ &f_operationRequests = fields.get<false>(66), /* MVNetworkGame+OperationResponseHandling */ &f_operationResponseHandling = fields.get<false>(67), /* MVNetworkGame+StatusChangedHandling */ &f_statusChangedHandling = fields.get<false>(68);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<163> methods;
+    /* System.Void add_ReceivedItemFromQuery(System.EventHandler`1<ReceivedItemFromQueryEventArgs> value) */
+    inline static auto& m_add_ReceivedItemFromQuery = methods.get<false, false>(0);
+    /* System.Void remove_ReceivedItemFromQuery(System.EventHandler`1<ReceivedItemFromQueryEventArgs> value) */
+    inline static auto& m_remove_ReceivedItemFromQuery = methods.get<false, false>(1);
+    /* System.Void add_ReceivedAvatarBodiesFromQuery(System.EventHandler`1<ReceivedItemFromQueryEventArgs> value) */
+    inline static auto& m_add_ReceivedAvatarBodiesFromQuery = methods.get<false, false>(2);
+    /* System.Void remove_ReceivedAvatarBodiesFromQuery(System.EventHandler`1<ReceivedItemFromQueryEventArgs> value) */
+    inline static auto& m_remove_ReceivedAvatarBodiesFromQuery = methods.get<false, false>(3);
+    /* System.Void add_ReceivedAccessoryData(System.Action`1<System.String> value) */
+    inline static auto& m_add_ReceivedAccessoryData = methods.get<false, false>(4);
+    /* System.Void remove_ReceivedAccessoryData(System.Action`1<System.String> value) */
+    inline static auto& m_remove_ReceivedAccessoryData = methods.get<false, false>(5);
+    /* System.Void add_ReceivedPlanetOwnershipData(System.Action`1<MV.WorldObject.OwnershipData.PlanetOwnershipsData> value) */
+    inline static auto& m_add_ReceivedPlanetOwnershipData = methods.get<false, false>(6);
+    /* System.Void remove_ReceivedPlanetOwnershipData(System.Action`1<MV.WorldObject.OwnershipData.PlanetOwnershipsData> value) */
+    inline static auto& m_remove_ReceivedPlanetOwnershipData = methods.get<false, false>(7);
+    /* System.Void add_ReceivedPlanetPermissionsData(System.Action`1<System.Collections.Generic.Dictionary`2<System.Int32, System.Collections.Generic.List`1<System.Int32>>> value) */
+    inline static auto& m_add_ReceivedPlanetPermissionsData = methods.get<false, false>(8);
+    /* System.Void remove_ReceivedPlanetPermissionsData(System.Action`1<System.Collections.Generic.Dictionary`2<System.Int32, System.Collections.Generic.List`1<System.Int32>>> value) */
+    inline static auto& m_remove_ReceivedPlanetPermissionsData = methods.get<false, false>(9);
+    /* LogicObjectManagerClient get_LogicObjectManager() */
+    inline static auto& m_get_LogicObjectManager = methods.get<false, false>(10);
+    /* System.Void set_LogicObjectManager(LogicObjectManagerClient value) */
+    inline static auto& m_set_LogicObjectManager = methods.get<false, false>(11);
+    /* MV.Common.Region get_Region() */
+    inline static auto& m_get_Region = methods.get<false, false>(12);
+    /* System.Void set_Region(MV.Common.Region value) */
+    inline static auto& m_set_Region = methods.get<false, false>(13);
+    /* System.Single get_TimeZone() */
+    inline static auto& m_get_TimeZone = methods.get<false, false>(14);
+    /* MVItemBusinessLogic get_ItemBusinessLogic() */
+    inline static auto& m_get_ItemBusinessLogic = methods.get<false, false>(15);
+    /* MVGameCoinManager get_GameCoinManager() */
+    inline static auto& m_get_GameCoinManager = methods.get<false, false>(16);
+    /* System.Void set_GameCoinManager(MVGameCoinManager value) */
+    inline static auto& m_set_GameCoinManager = methods.get<false, false>(17);
+    /* ItemCategories get_ItemCategories() */
+    inline static auto& m_get_ItemCategories = methods.get<false, false>(18);
+    /* System.Void set_ItemCategories(ItemCategories value) */
+    inline static auto& m_set_ItemCategories = methods.get<false, false>(19);
+    /* MVConnState get_ConnState() */
+    inline static auto& m_get_ConnState = methods.get<false, false>(20);
+    /* System.Void set_ConnState(MVConnState value) */
+    inline static auto& m_set_ConnState = methods.get<false, false>(21);
+    /* System.Boolean get_IsPlaying() */
+    inline static auto& m_get_IsPlaying = methods.get<false, false>(22);
+    /* MVNetworkGameStateListener get_NetworkGameStateListener() */
+    inline static auto& m_get_NetworkGameStateListener = methods.get<false, false>(23);
+    /* System.Void set_NetworkGameStateListener(MVNetworkGameStateListener value) */
+    inline static auto& m_set_NetworkGameStateListener = methods.get<false, false>(24);
+    /* ExitGames.Client.Photon.PhotonPeer get_Peer() */
+    inline static auto& m_get_Peer = methods.get<false, false>(25);
+    /* System.Void set_Peer(ExitGames.Client.Photon.PhotonPeer value) */
+    inline static auto& m_set_Peer = methods.get<false, false>(26);
+    /* CodeStage.AntiCheat.ObscuredTypes.ObscuredString get_XpKey() */
+    inline static auto& m_get_XpKey = methods.get<false, false>(27);
+    /* System.Void set_XpKey(CodeStage.AntiCheat.ObscuredTypes.ObscuredString value) */
+    inline static auto& m_set_XpKey = methods.get<false, false>(28);
+    /* System.Int32 get_MarketPlaceLevel() */
+    inline static auto& m_get_MarketPlaceLevel = methods.get<false, false>(29);
+    /* System.Void set_MarketPlaceLevel(System.Int32 value) */
+    inline static auto& m_set_MarketPlaceLevel = methods.get<false, false>(30);
+    /* System.Int32 get_PublishLevel() */
+    inline static auto& m_get_PublishLevel = methods.get<false, false>(31);
+    /* System.Void set_PublishLevel(System.Int32 value) */
+    inline static auto& m_set_PublishLevel = methods.get<false, false>(32);
+    /* System.String get_AdConsentEndpointURL() */
+    inline static auto& m_get_AdConsentEndpointURL = methods.get<false, false>(33);
+    /* System.Void set_AdConsentEndpointURL(System.String value) */
+    inline static auto& m_set_AdConsentEndpointURL = methods.get<false, false>(34);
+    /* System.String get_KogamaMainpageURL() */
+    inline static auto& m_get_KogamaMainpageURL = methods.get<false, false>(35);
+    /* System.Void set_KogamaMainpageURL(System.String value) */
+    inline static auto& m_set_KogamaMainpageURL = methods.get<false, false>(36);
+    /* CreySettings get_CreySettings() */
+    inline static auto& m_get_CreySettings = methods.get<false, false>(37);
+    /* System.Void set_CreySettings(CreySettings value) */
+    inline static auto& m_set_CreySettings = methods.get<false, false>(38);
+    /* CustomTouristPromotionSettings get_CustomTouristPromotionSettings() */
+    inline static auto& m_get_CustomTouristPromotionSettings = methods.get<false, false>(39);
+    /* System.Void set_CustomTouristPromotionSettings(CustomTouristPromotionSettings value) */
+    inline static auto& m_set_CustomTouristPromotionSettings = methods.get<false, false>(40);
+    /* ElitePromotionSettings get_EliteSettings() */
+    inline static auto& m_get_EliteSettings = methods.get<false, false>(41);
+    /* System.Void set_EliteSettings(ElitePromotionSettings value) */
+    inline static auto& m_set_EliteSettings = methods.get<false, false>(42);
+    /* System.Int32 get_ServerTimeInMilliSeconds() */
+    inline static auto& m_get_ServerTimeInMilliSeconds = methods.get<false, false>(43);
+    /* System.Int32 get_LocalTimeInMilliSeconds() */
+    inline static auto& m_get_LocalTimeInMilliSeconds = methods.get<false, false>(44);
+    /* System.Int32 get_StepTimeStamp() */
+    inline static auto& m_get_StepTimeStamp = methods.get<false, false>(45);
+    /* MVMaterialRepository get_MaterialRepository() */
+    inline static auto& m_get_MaterialRepository = methods.get<false, false>(46);
+    /* System.Void set_MaterialRepository(MVMaterialRepository value) */
+    inline static auto& m_set_MaterialRepository = methods.get<false, false>(47);
+    /* PlayerRepository get_PlayerRepository() */
+    inline static auto& m_get_PlayerRepository = methods.get<false, false>(48);
+    /* System.Void set_PlayerRepository(PlayerRepository value) */
+    inline static auto& m_set_PlayerRepository = methods.get<false, false>(49);
+    /* ShopRepository get_ShopRepository() */
+    inline static auto& m_get_ShopRepository = methods.get<false, false>(50);
+    /* System.Void set_ShopRepository(ShopRepository value) */
+    inline static auto& m_set_ShopRepository = methods.get<false, false>(51);
+    /* GameTierShopRepository get_GameTierShopRepository() */
+    inline static auto& m_get_GameTierShopRepository = methods.get<false, false>(52);
+    /* System.Void set_GameTierShopRepository(GameTierShopRepository value) */
+    inline static auto& m_set_GameTierShopRepository = methods.get<false, false>(53);
+    /* AvatarRepository get_AvatarShopRepository() */
+    inline static auto& m_get_AvatarShopRepository = methods.get<false, false>(54);
+    /* System.Void set_AvatarShopRepository(AvatarRepository value) */
+    inline static auto& m_set_AvatarShopRepository = methods.get<false, false>(55);
+    /* MV.WorldObject.MvAvatarMetaDataWoMap get_AvatarMetaDataWoMap() */
+    inline static auto& m_get_AvatarMetaDataWoMap = methods.get<false, false>(56);
+    /* System.Void set_AvatarMetaDataWoMap(MV.WorldObject.MvAvatarMetaDataWoMap value) */
+    inline static auto& m_set_AvatarMetaDataWoMap = methods.get<false, false>(57);
+    /* LevelRewardsManager get_LevelRewardsManager() */
+    inline static auto& m_get_LevelRewardsManager = methods.get<false, false>(58);
+    /* MVTeamManager get_TeamManager() */
+    inline static auto& m_get_TeamManager = methods.get<false, false>(59);
+    /* MVGameModeChangeNotifier get_GameStateController() */
+    inline static auto& m_get_GameStateController = methods.get<false, false>(60);
+    /* System.Void set_GameStateController(MVGameModeChangeNotifier value) */
+    inline static auto& m_set_GameStateController = methods.get<false, false>(61);
+    /* FriendList get_Friends() */
+    inline static auto& m_get_Friends = methods.get<false, false>(62);
+    /* System.Void set_Friends(FriendList value) */
+    inline static auto& m_set_Friends = methods.get<false, false>(63);
+    /* MVLocalObjectController get_PlayerController() */
+    inline static auto& m_get_PlayerController = methods.get<false, false>(64);
+    /* System.Void set_PlayerController(MVLocalObjectController value) */
+    inline static auto& m_set_PlayerController = methods.get<false, false>(65);
+    /* GameStatCounterManager get_GameStatCounterManager() */
+    inline static auto& m_get_GameStatCounterManager = methods.get<false, false>(66);
+    /* WinningConditionManager get_WinningConditionManager() */
+    inline static auto& m_get_WinningConditionManager = methods.get<false, false>(67);
+    /* System.Void set_WinningConditionManager(WinningConditionManager value) */
+    inline static auto& m_set_WinningConditionManager = methods.get<false, false>(68);
+    /* World get_World() */
+    inline static auto& m_get_World = methods.get<false, false>(69);
+    /* MVWorldObjectClientManager get_WorldObjectClientManager() */
+    inline static auto& m_get_WorldObjectClientManager = methods.get<false, false>(70);
+    /* MVNetworkGame+OperationRequests get_OperationRequestSender() */
+    inline static auto& m_get_OperationRequestSender = methods.get<false, false>(71);
+    /* System.Void add_ScreenshotUploaded(System.EventHandler`1<ScreenshotUploadedEventArgs> value) */
+    inline static auto& m_add_ScreenshotUploaded = methods.get<false, false>(72);
+    /* System.Void remove_ScreenshotUploaded(System.EventHandler`1<ScreenshotUploadedEventArgs> value) */
+    inline static auto& m_remove_ScreenshotUploaded = methods.get<false, false>(73);
+    /* TransformNetworkManager get_TransformNetworkManager() */
+    inline static auto& m_get_TransformNetworkManager = methods.get<false, false>(74);
+    /* MVPlayerContainer get_MVPlayerContainer() */
+    inline static auto& m_get_MVPlayerContainer = methods.get<false, false>(75);
+    /* MVLocalPlayer get_LocalPlayer() */
+    inline static auto& m_get_LocalPlayer = methods.get<false, false>(76);
+    /* System.Void .ctor(PhotonLoggingConfig photonLoggingConfig, EmbeddedSiteConfigData embeddedSiteConfigData) */
+    inline static auto& m_ctor = methods.get<false, false>(77);
+    /* System.Void SubscribeToEvent(MV.Common.MVEventCodes eventCode, System.Action`1<ExitGames.Client.Photon.EventData> callback) */
+    inline static auto& m_SubscribeToEvent = methods.get<false, false>(78);
+    /* System.Void UnSubscribeToEvent(MV.Common.MVEventCodes eventCode, System.Action`1<ExitGames.Client.Photon.EventData> callback) */
+    inline static auto& m_UnSubscribeToEvent = methods.get<false, false>(79);
+    /* System.Void CreatePrivateClasses() */
+    inline static auto& m_CreatePrivateClasses = methods.get<false, false>(80);
+    /* System.Void networkGameStateListener_OnGameStateChanged(System.Object sender, GameStateChangeEventArgs e) */
+    inline static auto& m_networkGameStateListener_OnGameStateChanged = methods.get<false, false>(81);
+    /* System.Void Update() */
+    inline static auto& m_Update = methods.get<false, false>(82);
+    /* System.Void Cleanup() */
+    inline static auto& m_Cleanup = methods.get<false, false>(83);
+    /* RuntimeVariableNetworkManager get_RuntimeVariableNetworkManager() */
+    inline static auto& m_get_RuntimeVariableNetworkManager = methods.get<false, false>(84);
+    /* System.Void UpdateGame() */
+    inline static auto& m_UpdateGame = methods.get<false, false>(85);
+    /* System.Void Service() */
+    inline static auto& m_Service = methods.get<false, false>(86);
+    /* System.Boolean Join() */
+    inline static auto& m_Join = methods.get<false, false>(87);
+    /* System.Void GeneratePlanetScreenShot(System.Action`1<System.Byte[]> callback) */
+    inline static auto& m_GeneratePlanetScreenShot = methods.get<true, false>(88);
+    /* System.Void OnUnregisterWorldObjectResponse(System.Int32 worldObjectID) */
+    inline static auto& m_OnUnregisterWorldObjectResponse = methods.get<false, false>(89);
+    /* System.Void OnResetLogicChunkEvent(System.Int32 worldObjectID) */
+    inline static auto& m_OnResetLogicChunkEvent = methods.get<false, false>(90);
+    /* System.Void OnPickupItemStateChangeEvent(MV.WorldObject.PickupItemState state, System.Int32 worldObjectID, System.Int32 instigatorActorNr) */
+    inline static auto& m_OnPickupItemStateChangeEvent = methods.get<false, false>(91);
+    /* System.Void OnUpdateLineOfFire(System.Int32 worldObjectID, UnityEngine.Vector3 camOrigin, UnityEngine.Vector3 camDir) */
+    inline static auto& m_OnUpdateLineOfFire = methods.get<false, false>(92);
+    /* System.Void AllModesSetup(ExitGames.Client.Photon.EventData photonEvent) */
+    inline static auto& m_AllModesSetup = methods.get<false, false>(93);
+    /* System.Void PlayModeSetup(ExitGames.Client.Photon.EventData photonEvent) */
+    inline static auto& m_PlayModeSetup = methods.get<false, false>(94);
+    /* System.Void BuildModeSetup(ExitGames.Client.Photon.EventData photonEvent) */
+    inline static auto& m_BuildModeSetup = methods.get<false, false>(95);
+    /* System.Void SetupLogicManager(System.Int32 stepTimestamp) */
+    inline static auto& m_SetupLogicManager = methods.get<false, false>(96);
+    /* System.Void OnNotificationEventReceived(MV.Common.NotificationType type, System.Collections.Generic.Dictionary`2<System.Object, System.Object> data) */
+    inline static auto& m_OnNotificationEventReceived = methods.get<false, false>(97);
+    /* System.Void OnRequestFriendshipResponse(System.Int32 returnCode) */
+    inline static auto& m_OnRequestFriendshipResponse = methods.get<false, false>(98);
+    /* System.Void OnPurchaseProductResponse(System.Int32 returnCode, System.Collections.Generic.Dictionary`2<System.Object, System.Object> purchaseResponseData) */
+    inline static auto& m_OnPurchaseProductResponse = methods.get<false, false>(99);
+    /* System.Void AddCloneToWorldObjects(MVWorldObjectClient wo) */
+    inline static auto& m_AddCloneToWorldObjects = methods.get<false, false>(100);
+    /* System.Collections.Generic.Dictionary`2<System.Byte, System.Object> GetAttachWorldObjectToSeatData(VehicleSeatBase seatBase) */
+    inline static auto& m_GetAttachWorldObjectToSeatData = methods.get<false, false>(101);
+    /* System.Void OnJoinResponse(System.Collections.Generic.Dictionary`2<System.Byte, System.Object> returnValues) */
+    inline static auto& m_OnJoinResponse = methods.get<false, false>(102);
+    /* MVLocalPlayer CreateLocalPlayer(System.Int32 actorNr, System.Int32 planetOwnershipTypeID, System.Collections.Generic.List`1<System.Int32> planetPermissionIDs, MV.WorldObject.MetaData.UserProfileData userProfileData) */
+    inline static auto& m_CreateLocalPlayer = methods.get<false, false>(103);
+    /* System.Void InitializeManagers() */
+    inline static auto& m_InitializeManagers = methods.get<false, false>(104);
+    /* System.Void OnRequestMaterialsResponse(System.Collections.Generic.Dictionary`2<System.Object, System.Object> materialList) */
+    inline static auto& m_OnRequestMaterialsResponse = methods.get<false, false>(105);
+    /* System.Void CreatePlayersFromUserList(System.Collections.Generic.Dictionary`2<System.Object, System.Object> userList) */
+    inline static auto& m_CreatePlayersFromUserList = methods.get<false, false>(106);
+    /* System.Void OnGetBuiltInItemBusinessData(System.Collections.Generic.Dictionary`2<System.Object, System.Object> builtInItemBusinessData) */
+    inline static auto& m_OnGetBuiltInItemBusinessData = methods.get<false, false>(107);
+    /* System.Void OnRequestFriendsResponse(System.Collections.Generic.Dictionary`2<System.Object, System.Object> friendsList) */
+    inline static auto& m_OnRequestFriendsResponse = methods.get<false, false>(108);
+    /* System.Void WOCM_InitializedGameQueryDataHandler(System.Object sender, InitializedGameQueryDataEventArgs e) */
+    inline static auto& m_WOCM_InitializedGameQueryDataHandler = methods.get<false, false>(109);
+    /* System.Void TransferBodyResponseHandler(System.Object sender, OnTransferWosResponseEventArgs e) */
+    inline static auto& m_TransferBodyResponseHandler = methods.get<false, false>(110);
+    /* System.Void OnTransferOwnershipResponse(System.Collections.Generic.Dictionary`2<System.Byte, System.Object> returnValues, System.Int32 returnCode) */
+    inline static auto& m_OnTransferOwnershipResponse = methods.get<false, false>(111);
+    /* System.Void OnLockHierarchyResponse(System.Collections.Generic.Dictionary`2<System.Byte, System.Object> returnValues, System.Int32 returnCode) */
+    inline static auto& m_OnLockHierarchyResponse = methods.get<false, false>(112);
+    /* System.Void OnRequestWoUniquePrototypeFailed(System.Collections.Generic.Dictionary`2<System.Byte, System.Object> returnValues) */
+    inline static auto& m_OnRequestWoUniquePrototypeFailed = methods.get<false, false>(113);
+    /* System.Void OnInventoryChange(System.Collections.Generic.Dictionary`2<System.Object, System.Object> inventory, System.Int64 inventoryVersion) */
+    inline static auto& m_OnInventoryChange = methods.get<false, false>(114);
+    /* System.Void OnLockHierarchyEvent(ExitGames.Client.Photon.EventData eventData) */
+    inline static auto& m_OnLockHierarchyEvent = methods.get<false, false>(115);
+    /* System.Void OnUnregisterWorldObjectEvent(System.Int32 worldObjectID) */
+    inline static auto& m_OnUnregisterWorldObjectEvent = methods.get<false, false>(116);
+    /* System.Void OnUpdateWorldObjectEvent(ExitGames.Client.Photon.EventData photonEvent) */
+    inline static auto& m_OnUpdateWorldObjectEvent = methods.get<false, false>(117);
+    /* System.Void OnWorldObjectRPCEvent(ExitGames.Client.Photon.EventData photonEvent) */
+    inline static auto& m_OnWorldObjectRPCEvent = methods.get<false, false>(118);
+    /* System.Void OnTransferOwnershipEvent(ExitGames.Client.Photon.EventData photonEvent) */
+    inline static auto& m_OnTransferOwnershipEvent = methods.get<false, false>(119);
+    /* System.Void OnUnregisterPrototypeEvent(System.Int32 worldInventoryID) */
+    inline static auto& m_OnUnregisterPrototypeEvent = methods.get<false, false>(120);
+    /* System.Void OnFriendRequestEvent(System.Int32 friendID, System.Int32 profileID, System.Int32 friendProfileID) */
+    inline static auto& m_OnFriendRequestEvent = methods.get<false, false>(121);
+    /* System.Void OnFriendUpdateEvent(System.Int32 friendID, System.Int32 profileID, MV.Common.FriendStatus status) */
+    inline static auto& m_OnFriendUpdateEvent = methods.get<false, false>(122);
+    /* System.Void OnAddLinkEvent(System.Int32 fromID, System.Int32 toID, System.Int32 linkID) */
+    inline static auto& m_OnAddLinkEvent = methods.get<false, false>(123);
+    /* System.Void OnRemoveLinkEvent(System.Int32 linkID) */
+    inline static auto& m_OnRemoveLinkEvent = methods.get<false, false>(124);
+    /* System.Void OnAddObjectLinkEvent(System.Int32 fromID, System.Int32 toID, System.Int32 linkID) */
+    inline static auto& m_OnAddObjectLinkEvent = methods.get<false, false>(125);
+    /* System.Void OnRemoveObjectLinkEvent(System.Int32 linkID) */
+    inline static auto& m_OnRemoveObjectLinkEvent = methods.get<false, false>(126);
+    /* System.Void OnTriggerBoxEnterEvent(System.Int32 actorNr, System.Int32 worldObjectID) */
+    inline static auto& m_OnTriggerBoxEnterEvent = methods.get<false, false>(127);
+    /* System.Void OnTriggerBoxExitEvent(System.Int32 actorNr, System.Int32 worldObjectID) */
+    inline static auto& m_OnTriggerBoxExitEvent = methods.get<false, false>(128);
+    /* System.Void OnTriggerBoxStayBegin(System.Int32 worldObjectID, System.Int32 instigatorId) */
+    inline static auto& m_OnTriggerBoxStayBegin = methods.get<false, false>(129);
+    /* System.Void OnTriggerBoxStayEnd(System.Int32 worldObjectID) */
+    inline static auto& m_OnTriggerBoxStayEnd = methods.get<false, false>(130);
+    /* System.Void OnRemoveItemFromInventory(System.Int32 itemID) */
+    inline static auto& m_OnRemoveItemFromInventory = methods.get<false, false>(131);
+    /* System.Void OnWoUniquePrototypeEvent(System.Int32 woId, System.Int32 worldInventoryId) */
+    inline static auto& m_OnWoUniquePrototypeEvent = methods.get<false, false>(132);
+    /* System.Void ResetPlayer() */
+    inline static auto& m_ResetPlayer = methods.get<false, false>(133);
+    /* System.Void OnSetWorldObjectsToPurchasedEvent(System.Int32 purchaseProfileId, System.Int32 itemId) */
+    inline static auto& m_OnSetWorldObjectsToPurchasedEvent = methods.get<false, false>(134);
+    /* System.Void OnTransferWorldObjectsToGroup(ExitGames.Client.Photon.EventData eventData) */
+    inline static auto& m_OnTransferWorldObjectsToGroup = methods.get<false, false>(135);
+    /* MVWorldObjectClient OnCloneWorldObjectTree(ExitGames.Client.Photon.EventData eventData) */
+    inline static auto& m_OnCloneWorldObjectTree = methods.get<false, false>(136);
+    /* MVWorldObjectClient OnCloneWorldObjectTreePosition(ExitGames.Client.Photon.EventData eventData) */
+    inline static auto& m_OnCloneWorldObjectTreePosition = methods.get<false, false>(137);
+    /* System.Void OnCloneTempWorldObjectWithOriginalReferenceEvent(ExitGames.Client.Photon.EventData eventData) */
+    inline static auto& m_OnCloneTempWorldObjectWithOriginalReferenceEvent = methods.get<false, false>(138);
+    /* System.Void OnGetGameBatch(ExitGames.Client.Photon.EventData eventData) */
+    inline static auto& m_OnGetGameBatch = methods.get<false, false>(139);
+    /* System.Void OnGameQueryReady(ExitGames.Client.Photon.EventData eventData) */
+    inline static auto& m_OnGameQueryReady = methods.get<false, false>(140);
+    /* System.Void OnPostWinnerReportEvent() */
+    inline static auto& m_OnPostWinnerReportEvent = methods.get<false, false>(141);
+    /* IWinningCondition GetWinningCondition() */
+    inline static auto& m_GetWinningCondition = methods.get<false, false>(142);
+    /* System.Void OnCollectiblePickedUp(ExitGames.Client.Photon.EventData photonEvent) */
+    inline static auto& m_OnCollectiblePickedUp = methods.get<false, false>(143);
+    /* System.Void OnGetActiveAvatarResponse(System.Int32 woid) */
+    inline static auto& m_OnGetActiveAvatarResponse = methods.get<false, false>(144);
+    /* System.Void OnSetTeamEvent(System.Int32 actorNr, MV.WorldObject.MVTeam team) */
+    inline static auto& m_OnSetTeamEvent = methods.get<false, false>(145);
+    /* System.Void OnGetItemCategories(System.Collections.Generic.Dictionary`2<System.Object, System.Object> outData) */
+    inline static auto& m_OnGetItemCategories = methods.get<false, false>(146);
+    /* System.Void OnGetPlanetOwnershipTypes(System.Collections.Generic.Dictionary`2<System.Object, System.Object> outData) */
+    inline static auto& m_OnGetPlanetOwnershipTypes = methods.get<false, false>(147);
+    /* System.Void OnInventoryResultSetResponse(System.Collections.Generic.Dictionary`2<System.Object, System.Object> outData) */
+    inline static auto& m_OnInventoryResultSetResponse = methods.get<false, false>(148);
+    /* System.Void OnShopInventoryResultSetResponse(System.Collections.Generic.Dictionary`2<System.Object, System.Object> outData, System.Boolean isDone) */
+    inline static auto& m_OnShopInventoryResultSetResponse = methods.get<false, false>(149);
+    /* System.Void OnAvatarShopInventoryResultSetResponse(System.Collections.Generic.Dictionary`2<System.Object, System.Object> outData) */
+    inline static auto& m_OnAvatarShopInventoryResultSetResponse = methods.get<false, false>(150);
+    /* System.Void OnAddItemToInventory(System.Collections.Generic.Dictionary`2<System.Byte, System.Object> returnValues, System.Int16 returnCode) */
+    inline static auto& m_OnAddItemToInventory = methods.get<false, false>(151);
+    /* System.Void OnAddWorldObjectToInventoryResponseDev(System.Int32 returnCode, System.Int32 worldObjectID, System.Int32 itemID) */
+    inline static auto& m_OnAddWorldObjectToInventoryResponseDev = methods.get<false, false>(152);
+    /* System.Void OnOperationResponse(ExitGames.Client.Photon.OperationResponse operationResponse) */
+    inline static auto& m_OnOperationResponse = methods.get<false, true>(153);
+    /* System.Void OnStatusChanged(ExitGames.Client.Photon.StatusCode statusCode) */
+    inline static auto& m_OnStatusChanged = methods.get<false, true>(154);
+    /* System.Void OnEvent(ExitGames.Client.Photon.EventData eventData) */
+    inline static auto& m_OnEvent = methods.get<false, true>(155);
+    /* System.Void HandleGameSnapshotData(MV.WorldObject.BytePacker bytePacker, MV.Common.QueryType queryType, System.Boolean dataLeft) */
+    inline static auto& m_HandleGameSnapshotData = methods.get<false, false>(156);
+    /* System.Void CreateGame() */
+    inline static auto& m_CreateGame = methods.get<false, false>(157);
+    /* System.Void OnGameCreated(System.Object sender, InitializedGameQueryDataEventArgs initializedGameQueryDataEventArgs) */
+    inline static auto& m_OnGameCreated = methods.get<false, false>(158);
+    /* System.Void OnLevelChanged(System.Int32 actorNr, System.Int32 level) */
+    inline static auto& m_OnLevelChanged = methods.get<false, false>(159);
+    /* System.Void OnSetSayChatBubbleVisible(System.Int32 actorNr, System.Boolean visible) */
+    inline static auto& m_OnSetSayChatBubbleVisible = methods.get<false, false>(160);
+    /* System.Void LoadModeGui() */
+    inline static auto& m_LoadModeGui = methods.get<false, false>(161);
+    /* System.Void DebugReturn(ExitGames.Client.Photon.DebugLevel level, System.String debug) */
+    inline static auto& m_DebugReturn = methods.get<false, true>(162);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct PhotonPeer {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<43> fields;
+inline static auto /* System.Boolean */ &f_NoSocket = fields.get<true>(3), /* System.Boolean */ &f_NativeDatagramEncrypt = fields.get<true>(4), /* System.Boolean */ &f_DebugBuild = fields.get<true>(5), /* System.Int32 */ &f_OutgoingStreamBufferSize = fields.get<true>(25), /* System.Boolean */ &f_AsyncKeyExchange = fields.get<true>(28);
+inline static auto /* System.Int32 */ &f_CommandBufferSize_k_BackingField = fields.get<false>(0), /* System.Int32 */ &f_LimitOfUnreliableCommands_k_BackingField = fields.get<false>(1), /* System.Int32 */ &f_WarningSize = fields.get<false>(2), /* System.Byte */ &f_ClientSdkId = fields.get<false>(6), /* System.String */ &f_clientVersion = fields.get<false>(7), /* ExitGames.Client.Photon.SerializationProtocol */ &f_SerializationProtocolType_k_BackingField = fields.get<false>(8), /* System.Collections.Generic.Dictionary`2<ExitGames.Client.Photon.ConnectionProtocol, System.Type> */ &f_SocketImplementationConfig = fields.get<false>(9), /* System.Type */ &f_SocketImplementation_k_BackingField = fields.get<false>(10), /* ExitGames.Client.Photon.DebugLevel */ &f_DebugOut = fields.get<false>(11), /* ExitGames.Client.Photon.IPhotonPeerListener */ &f_Listener_k_BackingField = fields.get<false>(12), /* System.Boolean */ &f_reuseEventInstance = fields.get<false>(13), /* System.Boolean */ &f_EnableServerTracing_k_BackingField = fields.get<false>(14), /* System.Byte */ &f_quickResendAttempts = fields.get<false>(15), /* System.Int32 */ &f_RhttpMinConnections = fields.get<false>(16), /* System.Int32 */ &f_RhttpMaxConnections = fields.get<false>(17), /* System.Byte */ &f_ChannelCount = fields.get<false>(18), /* System.Boolean */ &f_crcEnabled = fields.get<false>(19), /* System.Int32 */ &f_SentCountAllowance = fields.get<false>(20), /* System.Int32 */ &f_InitialResendTimeMax = fields.get<false>(21), /* System.Int32 */ &f_TimePingInterval = fields.get<false>(22), /* System.Int32 */ &f_DisconnectTimeout = fields.get<false>(23), /* ExitGames.Client.Photon.ConnectionProtocol */ &f_TransportProtocol_k_BackingField = fields.get<false>(24), /* System.Int32 */ &f_mtu = fields.get<false>(26), /* System.Boolean */ &f_IsSendingOnlyAcks_k_BackingField = fields.get<false>(27), /* System.Boolean */ &f_RandomizeSequenceNumbers = fields.get<false>(29), /* System.Byte[] */ &f_RandomizedSequenceNumbers = fields.get<false>(30), /* ExitGames.Client.Photon.TrafficStats */ &f_TrafficStatsIncoming_k_BackingField = fields.get<false>(31), /* ExitGames.Client.Photon.TrafficStats */ &f_TrafficStatsOutgoing_k_BackingField = fields.get<false>(32), /* ExitGames.Client.Photon.TrafficStatsGameLevel */ &f_TrafficStatsGameLevel_k_BackingField = fields.get<false>(33), /* System.Diagnostics.Stopwatch */ &f_trafficStatsStopwatch = fields.get<false>(34), /* System.Boolean */ &f_trafficStatsEnabled = fields.get<false>(35), /* ExitGames.Client.Photon.PeerBase */ &f_peerBase = fields.get<false>(36), /* System.Object */ &f_SendOutgoingLockObject = fields.get<false>(37), /* System.Object */ &f_DispatchLockObject = fields.get<false>(38), /* System.Object */ &f_EnqueueLock = fields.get<false>(39), /* System.Byte[] */ &f_PayloadEncryptionSecret = fields.get<false>(40), /* System.Type */ &f_encryptorType = fields.get<false>(41), /* ExitGames.Client.Photon.Encryption.IPhotonEncryptor */ &f_Encryptor = fields.get<false>(42);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<36> methods;
+    /* System.Byte get_ClientSdkIdShifted() */
+    inline static auto& m_get_ClientSdkIdShifted = methods.get<false, false>(0);
+    /* System.String get_ClientVersion() */
+    inline static auto& m_get_ClientVersion = methods.get<false, false>(1);
+    /* ExitGames.Client.Photon.SerializationProtocol get_SerializationProtocolType() */
+    inline static auto& m_get_SerializationProtocolType = methods.get<false, false>(2);
+    /* System.Type get_SocketImplementation() */
+    inline static auto& m_get_SocketImplementation = methods.get<false, false>(3);
+    /* System.Void set_SocketImplementation(System.Type value) */
+    inline static auto& m_set_SocketImplementation = methods.get<false, false>(4);
+    /* ExitGames.Client.Photon.IPhotonPeerListener get_Listener() */
+    inline static auto& m_get_Listener = methods.get<false, false>(5);
+    /* System.Void set_Listener(ExitGames.Client.Photon.IPhotonPeerListener value) */
+    inline static auto& m_set_Listener = methods.get<false, false>(6);
+    /* System.Boolean get_ReuseEventInstance() */
+    inline static auto& m_get_ReuseEventInstance = methods.get<false, false>(7);
+    /* System.Boolean get_EnableServerTracing() */
+    inline static auto& m_get_EnableServerTracing = methods.get<false, false>(8);
+    /* System.Byte get_QuickResendAttempts() */
+    inline static auto& m_get_QuickResendAttempts = methods.get<false, false>(9);
+    /* System.Boolean get_CrcEnabled() */
+    inline static auto& m_get_CrcEnabled = methods.get<false, false>(10);
+    /* System.Int32 get_ServerTimeInMilliSeconds() */
+    inline static auto& m_get_ServerTimeInMilliSeconds = methods.get<false, false>(11);
+    /* System.Int32 get_RoundTripTime() */
+    inline static auto& m_get_RoundTripTime = methods.get<false, false>(12);
+    /* ExitGames.Client.Photon.ConnectionProtocol get_TransportProtocol() */
+    inline static auto& m_get_TransportProtocol = methods.get<false, false>(13);
+    /* System.Void set_TransportProtocol(ExitGames.Client.Photon.ConnectionProtocol value) */
+    inline static auto& m_set_TransportProtocol = methods.get<false, false>(14);
+    /* System.Int32 get_MaximumTransferUnit() */
+    inline static auto& m_get_MaximumTransferUnit = methods.get<false, false>(15);
+    /* System.Boolean get_IsSendingOnlyAcks() */
+    inline static auto& m_get_IsSendingOnlyAcks = methods.get<false, false>(16);
+    /* ExitGames.Client.Photon.TrafficStats get_TrafficStatsIncoming() */
+    inline static auto& m_get_TrafficStatsIncoming = methods.get<false, false>(17);
+    /* System.Void set_TrafficStatsIncoming(ExitGames.Client.Photon.TrafficStats value) */
+    inline static auto& m_set_TrafficStatsIncoming = methods.get<false, false>(18);
+    /* ExitGames.Client.Photon.TrafficStats get_TrafficStatsOutgoing() */
+    inline static auto& m_get_TrafficStatsOutgoing = methods.get<false, false>(19);
+    /* System.Void set_TrafficStatsOutgoing(ExitGames.Client.Photon.TrafficStats value) */
+    inline static auto& m_set_TrafficStatsOutgoing = methods.get<false, false>(20);
+    /* ExitGames.Client.Photon.TrafficStatsGameLevel get_TrafficStatsGameLevel() */
+    inline static auto& m_get_TrafficStatsGameLevel = methods.get<false, false>(21);
+    /* System.Void set_TrafficStatsGameLevel(ExitGames.Client.Photon.TrafficStatsGameLevel value) */
+    inline static auto& m_set_TrafficStatsGameLevel = methods.get<false, false>(22);
+    /* System.Boolean get_TrafficStatsEnabled() */
+    inline static auto& m_get_TrafficStatsEnabled = methods.get<false, false>(23);
+    /* System.Void InitializeTrafficStats() */
+    inline static auto& m_InitializeTrafficStats = methods.get<false, false>(24);
+    /* System.Void .ctor(ExitGames.Client.Photon.ConnectionProtocol protocolType) */
+    inline static auto& m0_ctor = methods.get<false, false>(25);
+    /* System.Void .ctor(ExitGames.Client.Photon.IPhotonPeerListener listener, ExitGames.Client.Photon.ConnectionProtocol protocolType) */
+    inline static auto& m1_ctor = methods.get<false, false>(26);
+    /* System.Boolean Connect(System.String serverAddress, System.String applicationName) */
+    inline static auto& m0_Connect = methods.get<false, true>(27);
+    /* System.Boolean Connect(System.String serverAddress, System.String applicationName, System.Object custom) */
+    inline static auto& m1_Connect = methods.get<false, true>(28);
+    /* System.Void CreatePeerBase() */
+    inline static auto& m_CreatePeerBase = methods.get<false, false>(29);
+    /* System.Void Disconnect() */
+    inline static auto& m_Disconnect = methods.get<false, true>(30);
+    /* System.Void Service() */
+    inline static auto& m_Service = methods.get<false, true>(31);
+    /* System.Boolean SendOutgoingCommands() */
+    inline static auto& m_SendOutgoingCommands = methods.get<false, true>(32);
+    /* System.Boolean DispatchIncomingCommands() */
+    inline static auto& m_DispatchIncomingCommands = methods.get<false, true>(33);
+    /* System.Boolean SendOperation(System.Byte operationCode, System.Collections.Generic.Dictionary`2<System.Byte, System.Object> operationParameters, ExitGames.Client.Photon.SendOptions sendOptions) */
+    inline static auto& m_SendOperation = methods.get<false, true>(34);
+    /* System.Void .cctor() */
+    inline static auto& m_cctor = methods.get<true, false>(35);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct UE_Time {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<0> fields;
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<15> methods;
+    /* System.Single get_time() */
+    inline static auto& m_get_time = methods.get<true, false>(0);
+    /* System.Double get_timeAsDouble() */
+    inline static auto& m_get_timeAsDouble = methods.get<true, false>(1);
+    /* Unity.IntegerTime.RationalTime get_timeAsRational() */
+    inline static auto& m_get_timeAsRational = methods.get<true, false>(2);
+    /* System.Single get_timeSinceLevelLoad() */
+    inline static auto& m_get_timeSinceLevelLoad = methods.get<true, false>(3);
+    /* System.Single get_deltaTime() */
+    inline static auto& m_get_deltaTime = methods.get<true, false>(4);
+    /* System.Single get_fixedTime() */
+    inline static auto& m_get_fixedTime = methods.get<true, false>(5);
+    /* System.Single get_unscaledTime() */
+    inline static auto& m_get_unscaledTime = methods.get<true, false>(6);
+    /* System.Single get_unscaledDeltaTime() */
+    inline static auto& m_get_unscaledDeltaTime = methods.get<true, false>(7);
+    /* System.Single get_fixedDeltaTime() */
+    inline static auto& m_get_fixedDeltaTime = methods.get<true, false>(8);
+    /* System.Single get_smoothDeltaTime() */
+    inline static auto& m_get_smoothDeltaTime = methods.get<true, false>(9);
+    /* System.Single get_timeScale() */
+    inline static auto& m_get_timeScale = methods.get<true, false>(10);
+    /* System.Int32 get_frameCount() */
+    inline static auto& m_get_frameCount = methods.get<true, false>(11);
+    /* System.Single get_realtimeSinceStartup() */
+    inline static auto& m_get_realtimeSinceStartup = methods.get<true, false>(12);
+    /* System.Double get_realtimeSinceStartupAsDouble() */
+    inline static auto& m_get_realtimeSinceStartupAsDouble = methods.get<true, false>(13);
+    /* System.Void get_timeAsRational_Injected(out Unity.IntegerTime.RationalTime ret) */
+    inline static auto& m_get_timeAsRational_Injected = methods.get<true, false>(14);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct BuildSystem_GameBuildSettings {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<0> fields;
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<17> methods;
+    /* System.String get_VersionString() */
+    inline static auto& m_get_VersionString = methods.get<true, false>(0);
+    /* System.String get_VersionStringNoBuild() */
+    inline static auto& m_get_VersionStringNoBuild = methods.get<true, false>(1);
+    /* System.Int32 get_VersionCode() */
+    inline static auto& m_get_VersionCode = methods.get<true, false>(2);
+    /* System.String get_ReleaseName() */
+    inline static auto& m_get_ReleaseName = methods.get<true, false>(3);
+    /* System.String get_BranchName() */
+    inline static auto& m_get_BranchName = methods.get<true, false>(4);
+    /* System.String get_BuildTime() */
+    inline static auto& m_get_BuildTime = methods.get<true, false>(5);
+    /* System.Boolean get_ShowDebugLogin() */
+    inline static auto& m_get_ShowDebugLogin = methods.get<true, false>(6);
+    /* System.String get_VersionGuid() */
+    inline static auto& m_get_VersionGuid = methods.get<true, false>(7);
+    /* System.Int32 get_LocalDiscCacheAssetVersion() */
+    inline static auto& m_get_LocalDiscCacheAssetVersion = methods.get<true, false>(8);
+    /* System.String get_UrlCacheAssetVersionArgument() */
+    inline static auto& m_get_UrlCacheAssetVersionArgument = methods.get<true, false>(9);
+    /* System.Int32 get_VersionMajor() */
+    inline static auto& m_get_VersionMajor = methods.get<true, false>(10);
+    /* System.Int32 get_VersionMinor() */
+    inline static auto& m_get_VersionMinor = methods.get<true, false>(11);
+    /* System.Int32 get_VersionMicro() */
+    inline static auto& m_get_VersionMicro = methods.get<true, false>(12);
+    /* System.Int32 get_VersionBuild() */
+    inline static auto& m_get_VersionBuild = methods.get<true, false>(13);
+    /* System.DateTime get_BuildTimeDateTime() */
+    inline static auto& m_get_BuildTimeDateTime = methods.get<true, false>(14);
+    /* System.String GetBuildInfoString() */
+    inline static auto& m_GetBuildInfoString = methods.get<true, false>(15);
+    /* System.Void SetStreamingAssetVersion(System.Int32 version) */
+    inline static auto& m_SetStreamingAssetVersion = methods.get<true, false>(16);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct InteractionFlags {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<43> fields;
+inline static auto /* InteractionFlags */ &f_None = fields.get<true>(1), /* InteractionFlags */ &f_Selectable = fields.get<true>(2), /* InteractionFlags */ &f_HasCubeModel = fields.get<true>(3), /* InteractionFlags */ &f_IsTerrain = fields.get<true>(4), /* InteractionFlags */ &f_DirectlySelectable = fields.get<true>(5), /* InteractionFlags */ &f_SelectionRequiresEditGroup = fields.get<true>(6), /* InteractionFlags */ &f_NotUserTransformable = fields.get<true>(7), /* InteractionFlags */ &f_DontPushGroupToSelectionStack = fields.get<true>(8), /* InteractionFlags */ &f_CanRotateX = fields.get<true>(9), /* InteractionFlags */ &f_CanRotateY = fields.get<true>(10), /* InteractionFlags */ &f_CanRotateZ = fields.get<true>(11), /* InteractionFlags */ &f_NotTranslatbleY = fields.get<true>(12), /* InteractionFlags */ &f_NotTranslatbleXZ = fields.get<true>(13), /* InteractionFlags */ &f_CanEdit = fields.get<true>(14), /* InteractionFlags */ &f_CanClone = fields.get<true>(15), /* InteractionFlags */ &f_CanAddToInventory = fields.get<true>(16), /* InteractionFlags */ &f_HasSettings = fields.get<true>(17), /* InteractionFlags */ &f_CanResetLogic = fields.get<true>(18), /* InteractionFlags */ &f_IsPreview = fields.get<true>(19), /* InteractionFlags */ &f_IsUsable = fields.get<true>(20), /* InteractionFlags */ &f_CantAddChildren = fields.get<true>(21), /* InteractionFlags */ &f_CanUseGameCoins = fields.get<true>(22), /* InteractionFlags */ &f_CanUseLevel = fields.get<true>(23), /* InteractionFlags */ &f_CanUseStars = fields.get<true>(24), /* InteractionFlags */ &f_TranslatbleXZ2D = fields.get<true>(25), /* InteractionFlags */ &f_Sounds = fields.get<true>(26), /* InteractionFlags */ &f_CanUseTeam = fields.get<true>(27), /* InteractionFlags */ &f_CanCloneRoot = fields.get<true>(28), /* InteractionFlags */ &f_GlobalSounds = fields.get<true>(29), /* InteractionFlags */ &f_CanUseGameRank = fields.get<true>(30), /* InteractionFlags */ &f_CanEarnGamePoints = fields.get<true>(31), /* InteractionFlags */ &f_CanEarnGamePointsMinor = fields.get<true>(32), /* InteractionFlags */ &f_CanEnterPlay = fields.get<true>(33), /* InteractionFlags */ &f_CanRespawn = fields.get<true>(34), /* InteractionFlags */ &f_CanUseRewardedAd = fields.get<true>(35), /* InteractionFlags */ &f_UnlockRotateX = fields.get<true>(36), /* InteractionFlags */ &f_UnlockRotateZ = fields.get<true>(37), /* InteractionFlags */ &f_LockRotateY = fields.get<true>(38), /* InteractionFlags */ &f_RemoveResetRotation = fields.get<true>(39), /* InteractionFlags */ &f_CanChangeScale = fields.get<true>(40), /* InteractionFlags */ &f_Info = fields.get<true>(41), /* InteractionFlags */ &f_CanEditMuzzle = fields.get<true>(42);
+inline static auto /* System.Int64 */ &f_value = fields.get<false>(0);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<0> methods;
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

@@ -21,3 +21,4 @@
 
 #include "Common/ConfigService.h"
 #include "Common/TextCommandService.h"
+#include "Info/GameInfoService.h"

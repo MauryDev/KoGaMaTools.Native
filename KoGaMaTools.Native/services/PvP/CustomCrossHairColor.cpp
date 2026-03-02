@@ -92,34 +92,66 @@ void KoGaMaTools::Services::CustomCrossHairColor::OnSavingConfig(nlohmann::json&
 
 bool KoGaMaTools::Services::CustomCrossHairColor::Resolve(TextCommandService::CommandData& command)
 {
-	if (command.name == L"crosshaircolor")
-	{
-		if (command.args.empty())
-		{
-			Enabled = !Enabled;
-			TextCommandService::NotifyUser(L"CustomCrossHairColor: " + std::wstring(Enabled ? L"enabled" : L"disabled"));
-			return true;
-		}
+    auto parseArg = [](std::wstring_view view) -> float {
+        return std::stof(std::wstring(view));
+        };
+    if (command.name == L"crosshaircolor")
+    {
+        if (command.args.empty())
+        {
+            Enabled = !Enabled;
+            TextCommandService::NotifyUser(L"CustomCrossHairColor: " + std::wstring(Enabled ? L"enabled" : L"disabled"));
+            return true;
+        }
 
-		std::wstring_view subcommand = command.args[0];
-		if (subcommand == L"enable")
-		{
-			Enabled = true;
-			TextCommandService::NotifyUser(L"CustomCrossHairColor enabled");
-			return true;
-		}
-		else if (subcommand == L"disable")
-		{
-			Enabled = false;
-			TextCommandService::NotifyUser(L"CustomCrossHairColor disabled");
-			return true;
-		}
-	}
-	return false;
+        std::wstring_view subcommand = command.args[0];
+
+        if (subcommand == L"enable")
+        {
+            Enabled = true;
+            TextCommandService::NotifyUser(L"CustomCrossHairColor enabled");
+            return true;
+        }
+        else if (subcommand == L"disable")
+        {
+            Enabled = false;
+            TextCommandService::NotifyUser(L"CustomCrossHairColor disabled");
+            return true;
+        }
+        // New subcommand for ARGB floats
+        else if (subcommand == L"set" || subcommand == L"color")
+        {
+            if (command.args.size() < 5)
+            {
+                TextCommandService::NotifyUser(L"Usage: /crosshaircolor set <A> <R> <G> <B> (floats 0-1)");
+                return true;
+            }
+
+            try
+            {
+                // Parsing arguments (A, R, G, B)
+                float a = parseArg(command.args[1].data());
+                float r = parseArg(command.args[2]);
+                float g = parseArg(command.args[3]);
+                float b = parseArg(command.args[4]);
+
+                // Assuming you have a member variable 'Color' of a type like Unity::Color
+                this->Color = { r, g, b, a };
+
+                TextCommandService::NotifyUser(L"Crosshair color updated.");
+            }
+            catch (const std::exception&)
+            {
+                TextCommandService::NotifyUser(L"Invalid input. Please provide four numbers.");
+            }
+            return true;
+        }
+    }
+    return false;
 }
 
 std::string_view KoGaMaTools::Services::CustomCrossHairColor::GetCommandHelp()
 {
 	return "/crosshaircolor: Toggle or control custom crosshair color.\n"
-		   "Usage: /crosshaircolor [on/off] or just command to toggle";
+		   "Usage: /crosshaircolor [on/off/set <A> <R> <G> <B>] or just command to toggle";
 }

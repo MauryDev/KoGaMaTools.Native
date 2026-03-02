@@ -22,12 +22,7 @@ namespace KoGaMaTools::UI {
 void KoGaMaTools::UI::MainUI::Init(Core::DIContainer& di)
 {
 	Instance = di.Get<MainUI>();
-	logger = di.Get<Services::LoggerService>();
-	AddComponentType("Build");
-	AddComponentType("PvP");
-	AddComponentType("Config");
-
-	Services::KieroUI::SetOnRender(Render);
+	
 }
 void KoGaMaTools::UI::MainUI::Render()
 {
@@ -89,15 +84,18 @@ void KoGaMaTools::UI::MainUI::TabBarTools()
 
 void KoGaMaTools::UI::MainUI::AddComponentType(const std::string& name)
 {
-	logger->Info("[MainUI::AddComponentType] - " + std::to_string(components.size()));
 	components.push_back({ name, {} });
 }
 
 void KoGaMaTools::UI::MainUI::AddComponent(int i, const PtrIComponent& value)
 {
-	logger->Info("[MainUI::AddComponent] - len = " + std::to_string(components.size()));
-	logger->Assert(i < components.size(), "[MainUI::AddComponent] - i < components.size()");
 	components.at(i).second.push_back(value);
+
+}
+
+void KoGaMaTools::UI::MainUI::StartUI()
+{
+	Services::KieroUI::SetOnRender(Render);
 
 }
 
