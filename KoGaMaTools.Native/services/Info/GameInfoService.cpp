@@ -40,6 +40,11 @@ void KoGaMaTools::Services::GameInfoService::Render()
         AddRow("Object Links", "%d", objectlinks);
         AddRow("Unique Models", "%d", models_unique);
         AddRow("Total Models", "%d", models);
+        AddRow("Username", "%s", playerName.empty() ? "" : playerName.c_str());
+
+        AddRow("Player ID", "%d", playerId);
+        AddRow("Level", "%d", level);
+        AddRow("XP", "%d xp", xp);
 
         ImGui::EndTable();
     }
@@ -72,6 +77,10 @@ void KoGaMaTools::Services::GameInfoService::Update(void* ptr)
 
         Instance->GetFps();
 
+        Instance->GetPlayerName();
+        Instance->GetPlayerId();
+        Instance->GetPlayerLevel();
+        Instance->GetPlayerXp();
 		if (Instance->version.empty())
             Instance->GetVersion();
         lastExecutionTime = currentTime;
@@ -96,7 +105,11 @@ void KoGaMaTools::Services::GameInfoService::GetLogicObjects()
 	if (worldObjectsObj.isNull()) return;
 
 	auto worldObjectsObjValues = Tools::Il2Cpp::ICalls::IDictionary::m_get_Values(worldObjectsObj);
-	auto enumerator = Tools::Il2Cpp::ICalls::IEnumerable::m_GetEnumerator(worldObjectsObjValues);
+    if (worldObjectsObjValues.isNull()) return;
+
+    auto enumerator = Tools::Il2Cpp::ICalls::IEnumerable::m_GetEnumerator(worldObjectsObjValues);
+    if (enumerator.isNull()) return;
+
     int count = 0;
     while (Tools::Il2Cpp::ICalls::IEnumerator::m_MoveNext(enumerator).Unbox<Tools::Il2Cpp::Il2CppBoolean>())
     {
@@ -172,6 +185,8 @@ void KoGaMaTools::Services::GameInfoService::GetUniquePrototypeCount()
 	auto inventory = World::f_worldInventory.Get<Tools::Il2Cpp::Il2CppObject>(worldNetwork);
     if (inventory.isNull()) return;
 
+    auto ptr = MVWorldInventory::m_get_RuntimePrototypes.ptr;
+    
 	auto runtimePrototypes = MVWorldInventory::m_get_RuntimePrototypes(inventory);
     if (runtimePrototypes.isNull()) return;
 
@@ -188,9 +203,14 @@ void KoGaMaTools::Services::GameInfoService::GetPrototypeCount()
 	if (wocm.isNull()) return;
 
 	auto worldObjectsObj = MVWorldObjectClientManager::f_worldObjects.Get<Tools::Il2Cpp::Il2CppObject>(wocm);
+    if (worldObjectsObj.isNull()) return;
 
     auto worldObjectsObjValues = Tools::Il2Cpp::ICalls::IDictionary::m_get_Values(worldObjectsObj);
+    if (worldObjectsObjValues.isNull()) return;
+
     auto enumerator = Tools::Il2Cpp::ICalls::IEnumerable::m_GetEnumerator(worldObjectsObjValues);
+    if (enumerator.isNull()) return;
+
     while (Tools::Il2Cpp::ICalls::IEnumerator::m_MoveNext(enumerator).Unbox<Tools::Il2Cpp::Il2CppBoolean>())
     {
         auto wo = Tools::Il2Cpp::ICalls::IEnumerator::m_get_Current(enumerator);
@@ -234,4 +254,50 @@ void KoGaMaTools::Services::GameInfoService::GetVersion()
 	if (versionObj.isNull()) return;
 
     this->version = Tools::Il2Cpp::Utils::convert_il2cpstring_to_char_array(versionObj);
+}
+
+void KoGaMaTools::Services::GameInfoService::GetPlayerName()
+{
+    using namespace KoGaMaAPI::KoGaMa;
+    if (!this->playerName.empty()) return;
+
+    auto localPlayer = MVGameControllerBase::m_get_LocalPlayer();
+    if (localPlayer.isNull()) return;
+    auto userProfileData = MVPlayer::m_get_UserProfileData(localPlayer);
+    if (userProfileData.isNull()) return;
+	auto username = Metadata_UserProfileData::f_UserName.Get<Tools::Il2Cpp::Il2CppString>(userProfileData);
+	this->playerName = Tools::Il2Cpp::Utils::convert_il2cpstring_to_char_array(username);
+}
+
+void KoGaMaTools::Services::GameInfoService::GetPlayerId()
+{
+    using namespace KoGaMaAPI::KoGaMa;
+	if (this->playerId != -1) return;
+    auto localPlayer = MVGameControllerBase::m_get_LocalPlayer();
+    if (localPlayer.isNull()) return;
+	this->playerId = MVPlayer::m_get_ProfileID(localPlayer)
+        .Unbox<int>();
+
+}
+
+void KoGaMaTools::Services::GameInfoService::GetPlayerLevel()
+{
+    using namespace KoGaMaAPI::KoGaMa;
+
+    auto localPlayer = MVGameControllerBase::m_get_LocalPlayer();
+    if (localPlayer.isNull()) return;
+    this->level = MVPlayer::m_get_Level(localPlayer)
+        .Unbox<int>();
+}
+
+void KoGaMaTools::Services::GameInfoService::GetPlayerXp()
+{
+    using namespace KoGaMaAPI::KoGaMa;
+
+    auto localPlayer = MVGameControllerBase::m_get_LocalPlayer();
+    if (localPlayer.isNull()) return;
+    auto xpProgressData = MVLocalPlayer::m_get_XPProgressData(localPlayer);
+    if (xpProgressData.isNull()) return;
+
+	this->xp = XPProgressData::m_get_XP(xpProgressData).Unbox<int>();
 }

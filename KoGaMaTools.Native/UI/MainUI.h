@@ -40,7 +40,7 @@ namespace KoGaMaTools::UI {
 			AddComponentType(name);
 			auto i = this->components.size() - 1;
 			// 2. Fold expression to call the single-component AddComponent for each item
-			(AddComponent(i, std::static_pointer_cast<IComponent>(components)), ...);
+			(AddComponent(static_cast<int>(i), std::static_pointer_cast<IComponent>(components)), ...);
 		}
 		void StartUI();
 	};

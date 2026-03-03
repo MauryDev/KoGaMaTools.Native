@@ -25,9 +25,15 @@ namespace KoGaMaTools::Services {
 
 		void GetFps();
 		void GetVersion();
-		int worldObjects, logicObjects, links, objectlinks, models_unique, models, ping;
+
+		void GetPlayerName();
+		void GetPlayerId();
+		void GetPlayerLevel();
+		void GetPlayerXp();
+
+		int worldObjects, logicObjects, links, objectlinks, models_unique, models, ping, playerId = -1, level, xp;
 		float Fps;
-		std::string version;
+		std::string version, playerName;
 
 	};
 

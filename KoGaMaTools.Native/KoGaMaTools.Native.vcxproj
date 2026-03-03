@@ -159,6 +159,7 @@
   <ItemGroup>
     <ClCompile Include="Core\DITools.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Helpers\StringExtensions.cpp" />
     <ClCompile Include="services\Build\BlueModeTool.cpp" />
     <ClCompile Include="services\Build\CustomGrid.cpp" />
     <ClCompile Include="services\Build\DestructiblesUnlock.cpp" />
@@ -182,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\DITools.h" />
+    <ClInclude Include="Helpers\StringExtensions.h" />
     <ClInclude Include="services\Build\BlueModeTool.h" />
     <ClInclude Include="services\Build\CustomGrid.h" />
     <ClInclude Include="services\Build\DestructiblesUnlock.h" />

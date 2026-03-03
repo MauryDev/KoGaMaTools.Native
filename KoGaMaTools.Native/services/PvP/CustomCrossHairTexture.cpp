@@ -8,7 +8,9 @@
 #include <fstream>
 #include <portable-file-dialogs.h>
 #include "../Common/MainComponent.h"
-#include <future>
+#include "../../Helpers/StringExtensions.h"
+
+
 using namespace Tools::Il2Cpp;
 
 
@@ -101,8 +103,8 @@ bool KoGaMaTools::Services::CustomCrossHairTexture::Resolve(TextCommandService::
 			TextCommandService::NotifyUser(L"CustomCrossHairTexture - Usage: crosshairtexture <file_path>");
 			return true;
 		}
-
-		std::string filePath = std::string(command.args[0].begin(), command.args[0].end());
+		
+		std::string filePath = Helpers::ViewToNarrow(command.args[0]);
 		SetTexture(filePath);
 		auto str = std::wstring(L"CustomCrossHairTexture loading: ") + std::wstring(command.args[0]);
 		TextCommandService::NotifyUser(str);

@@ -3268,4 +3268,263 @@ inline static auto /* System.Int64 */ &f_value = fields.get<false>(0);
 };
 
 
+struct MVPlayer {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<18> fields;
+inline static auto /* System.Int32 */ &f_checkpointWOID = fields.get<false>(0), /* MV.WorldObject.GamePassSystem.PlayerPlanetDataRemote */ &f_playerPlanetDataRemote = fields.get<false>(1), /* System.Int32 */ &f_level = fields.get<false>(2), /* System.Action */ &f_OnGoldAmountChange = fields.get<false>(3), /* UnityEngine.Events.UnityAction`1<System.Int32> */ &f_OnLevelChanged = fields.get<false>(4), /* UnityEngine.Events.UnityAction */ &f_OnCheckpointReached = fields.get<false>(5), /* UnityEngine.Events.UnityAction */ &f_OnPause = fields.get<false>(6), /* UnityEngine.Events.UnityAction */ &f_OnResume = fields.get<false>(7), /* UnityEngine.Events.UnityAction */ &f_OnObserve = fields.get<false>(8), /* System.Int32 */ &f_ProfileID_k_BackingField = fields.get<false>(9), /* System.Int32 */ &f_ActorNr_k_BackingField = fields.get<false>(10), /* System.String */ &f_RegionCode_k_BackingField = fields.get<false>(11), /* MV.Common.BuildTarget */ &f_BuildTarget_k_BackingField = fields.get<false>(12), /* MV.WorldObject.MetaData.UserProfileData */ &f_UserProfileData_k_BackingField = fields.get<false>(13), /* MV.WorldObject.Subscription.SubscriptionRulesWrapper */ &f_SubscriptionRules_k_BackingField = fields.get<false>(14), /* MV.Common.PlayerGameState */ &f_playerState = fields.get<false>(15), /* MV.WorldObject.MVTeam */ &f_Team_k_BackingField = fields.get<false>(16), /* SpawnRolesManager */ &f_spawnRolesManager = fields.get<false>(17);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<38> methods;
+    /* System.Int32 get_ProfileID() */
+    inline static auto& m_get_ProfileID = methods.get<false, false>(0);
+    /* System.Void set_ProfileID(System.Int32 value) */
+    inline static auto& m_set_ProfileID = methods.get<false, false>(1);
+    /* System.Boolean get_IsTourist() */
+    inline static auto& m_get_IsTourist = methods.get<false, false>(2);
+    /* System.Int32 get_WoId() */
+    inline static auto& m_get_WoId = methods.get<false, false>(3);
+    /* System.Int32 get_ActorNr() */
+    inline static auto& m_get_ActorNr = methods.get<false, false>(4);
+    /* System.Void set_ActorNr(System.Int32 value) */
+    inline static auto& m_set_ActorNr = methods.get<false, false>(5);
+    /* System.String get_RegionCode() */
+    inline static auto& m_get_RegionCode = methods.get<false, false>(6);
+    /* System.Void set_RegionCode(System.String value) */
+    inline static auto& m_set_RegionCode = methods.get<false, false>(7);
+    /* MV.Common.BuildTarget get_BuildTarget() */
+    inline static auto& m_get_BuildTarget = methods.get<false, false>(8);
+    /* System.Void set_BuildTarget(MV.Common.BuildTarget value) */
+    inline static auto& m_set_BuildTarget = methods.get<false, false>(9);
+    /* MV.WorldObject.GamePassSystem.PlayerPlanetDataRemote get_PlayerPlanetDataRemote() */
+    inline static auto& m_get_PlayerPlanetDataRemote = methods.get<false, false>(10);
+    /* System.Void set_PlayerPlanetDataRemote(MV.WorldObject.GamePassSystem.PlayerPlanetDataRemote value) */
+    inline static auto& m_set_PlayerPlanetDataRemote = methods.get<false, false>(11);
+    /* MV.WorldObject.MetaData.UserProfileData get_UserProfileData() */
+    inline static auto& m_get_UserProfileData = methods.get<false, false>(12);
+    /* System.Void set_UserProfileData(MV.WorldObject.MetaData.UserProfileData value) */
+    inline static auto& m_set_UserProfileData = methods.get<false, false>(13);
+    /* MV.WorldObject.Subscription.SubscriptionRulesWrapper get_SubscriptionRules() */
+    inline static auto& m_get_SubscriptionRules = methods.get<false, false>(14);
+    /* System.Void set_SubscriptionRules(MV.WorldObject.Subscription.SubscriptionRulesWrapper value) */
+    inline static auto& m_set_SubscriptionRules = methods.get<false, false>(15);
+    /* System.Boolean get_IsSubscriber() */
+    inline static auto& m_get_IsSubscriber = methods.get<false, false>(16);
+    /* MV.Common.PlayerGameState get_PlayerState() */
+    inline static auto& m_get_PlayerState = methods.get<false, false>(17);
+    /* System.Void set_PlayerState(MV.Common.PlayerGameState value) */
+    inline static auto& m_set_PlayerState = methods.get<false, false>(18);
+    /* System.Boolean get_IsReady() */
+    inline static auto& m_get_IsReady = methods.get<false, false>(19);
+    /* System.Boolean get_IsPlayerStateInWorld() */
+    inline static auto& m_get_IsPlayerStateInWorld = methods.get<false, false>(20);
+    /* System.Int32 get_Level() */
+    inline static auto& m_get_Level = methods.get<false, false>(21);
+    /* System.Void set_Level(System.Int32 value) */
+    inline static auto& m_set_Level = methods.get<false, false>(22);
+    /* System.Void .ctor(System.Int32 actorNumber, System.Int32 profileID, System.String regionCode, MV.Common.BuildTarget buildTarget, MV.WorldObject.MetaData.UserProfileData userProfileData, System.Boolean isReady, System.Boolean observer) */
+    inline static auto& m0_ctor = methods.get<false, false>(23);
+    /* System.Void .ctor(System.Int32 actorNumber, System.Int32 profileID, System.Int32 level, System.String regionCode, MV.Common.BuildTarget buildTarget, MV.WorldObject.MetaData.UserProfileData userProfileData, System.Boolean isReady, System.Boolean observer, MV.WorldObject.GamePassSystem.PlayerPlanetDataRemote playerPlanetDataRemote) */
+    inline static auto& m1_ctor = methods.get<false, false>(24);
+    /* System.Void NotifyAvatarCreated(System.Int32 id) */
+    inline static auto& m_NotifyAvatarCreated = methods.get<false, false>(25);
+    /* System.Boolean IsOnSameTeam(MVPlayer other) */
+    inline static auto& m0_IsOnSameTeam = methods.get<false, false>(26);
+    /* System.Boolean IsOnSameTeam(MVWorldObjectClient wo) */
+    inline static auto& m1_IsOnSameTeam = methods.get<false, false>(28);
+    /* System.Boolean IsOnTeam(MV.WorldObject.MVTeam otherTeam) */
+    inline static auto& m_IsOnTeam = methods.get<false, false>(27);
+    /* System.Void SetCheckpoint(System.Int32 woid) */
+    inline static auto& m_SetCheckpoint = methods.get<false, false>(29);
+    /* MVCheckpoint GetCheckpoint() */
+    inline static auto& m_GetCheckpoint = methods.get<false, false>(30);
+    /* System.Void ResetCheckpoint() */
+    inline static auto& m_ResetCheckpoint = methods.get<false, false>(31);
+    /* MV.WorldObject.MVTeam get_Team() */
+    inline static auto& m_get_Team = methods.get<false, false>(32);
+    /* System.Void set_Team(MV.WorldObject.MVTeam value) */
+    inline static auto& m_set_Team = methods.get<false, false>(33);
+    /* System.Int32 GetGameStat(GameStatCounterType gameStatCounterType) */
+    inline static auto& m_GetGameStat = methods.get<false, false>(34);
+    /* System.Void SetReady() */
+    inline static auto& m_SetReady = methods.get<false, false>(35);
+    /* SpawnRolesManager get_SpawnRolesManager() */
+    inline static auto& m_get_SpawnRolesManager = methods.get<false, false>(36);
+    /* System.Void SetupSpawnRoleManager(ISpawnRoleChangeHandler spawnRoleChangeHandler, MV.WorldObject.SpawnRoles.SpawnRolesRuntimeData spawnRolesRuntimeData) */
+    inline static auto& m_SetupSpawnRoleManager = methods.get<false, false>(37);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct Metadata_UserProfileData {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<6> fields;
+inline static auto /* System.Boolean */ &f_IsAdmin = fields.get<false>(0), /* System.String */ &f_UserName = fields.get<false>(1), /* System.Int32 */ &f_Gold = fields.get<false>(2), /* System.Boolean */ &f_IsTourist = fields.get<false>(3), /* System.Boolean */ &f_IsUnderAge = fields.get<false>(4), /* MV.WorldObject.MetaData.SubscriptionData */ &f_SubscriptionData = fields.get<false>(5);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<4> methods;
+    /* System.Void .ctor() */
+    inline static auto& m_ctor = methods.get<false, false>(0);
+    /* MV.WorldObject.MetaData.UserProfileData CreateRegisteredProfileData(System.Boolean admin, System.String username, System.Int32 gold, System.Nullable`1<System.DateTime> age) */
+    inline static auto& m_CreateRegisteredProfileData = methods.get<true, false>(1);
+    /* System.Boolean CheckUnderAge(System.Boolean admin, System.Nullable`1<System.DateTime> age) */
+    inline static auto& m_CheckUnderAge = methods.get<true, false>(2);
+    /* MV.WorldObject.MetaData.UserProfileData GetTouristProfileData(System.String userName) */
+    inline static auto& m_GetTouristProfileData = methods.get<true, false>(3);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct XPProgressData {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<5> fields;
+inline static auto /* XPLevelLimits */ &f_xpLevelLimits = fields.get<false>(0), /* System.Int32 */ &f_playerCurrentXP = fields.get<false>(1), /* MV.Common.XPRewardType */ &f_xpId = fields.get<false>(2), /* System.Int32 */ &f_memberCount = fields.get<false>(3), /* System.Int32 */ &f_xpDelta = fields.get<false>(4);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<17> methods;
+    /* System.Void set_XPLevelLimits(XPLevelLimits value) */
+    inline static auto& m_set_XPLevelLimits = methods.get<false, false>(0);
+    /* System.Int32 get_NextXP() */
+    inline static auto& m_get_NextXP = methods.get<false, false>(1);
+    /* System.Int32 get_PrevXP() */
+    inline static auto& m_get_PrevXP = methods.get<false, false>(2);
+    /* MV.Common.XPRewardType get_XpID() */
+    inline static auto& m_get_XpID = methods.get<false, false>(3);
+    /* System.Void set_XpID(MV.Common.XPRewardType value) */
+    inline static auto& m_set_XpID = methods.get<false, false>(4);
+    /* System.Int32 get_XP() */
+    inline static auto& m_get_XP = methods.get<false, false>(5);
+    /* System.Void set_XP(System.Int32 value) */
+    inline static auto& m_set_XP = methods.get<false, false>(6);
+    /* System.Int32 get_MemberCount() */
+    inline static auto& m_get_MemberCount = methods.get<false, false>(7);
+    /* System.Void set_MemberCount(System.Int32 value) */
+    inline static auto& m_set_MemberCount = methods.get<false, false>(8);
+    /* System.String get_XPString() */
+    inline static auto& m_get_XPString = methods.get<false, false>(9);
+    /* System.Int32 get_XPDelta() */
+    inline static auto& m_get_XPDelta = methods.get<false, false>(10);
+    /* System.Void set_XPDelta(System.Int32 value) */
+    inline static auto& m_set_XPDelta = methods.get<false, false>(11);
+    /* System.Int32 get_XpRel() */
+    inline static auto& m_get_XpRel = methods.get<false, false>(12);
+    /* System.Int32 get_XpNextRel() */
+    inline static auto& m_get_XpNextRel = methods.get<false, false>(13);
+    /* System.Boolean get_XPLimitExceeded() */
+    inline static auto& m_get_XPLimitExceeded = methods.get<false, false>(14);
+    /* System.Int32 get_Level() */
+    inline static auto& m_get_Level = methods.get<false, false>(15);
+    /* System.Void .ctor(System.Int32 playerCurrentXP, XPLevelLimits xpLevelLimits) */
+    inline static auto& m_ctor = methods.get<false, false>(16);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVLocalPlayer {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<18> fields;
+inline static auto /* System.Int32 */ &f_NrOfTimesDiedOffset = fields.get<true>(4), /* System.Single */ &f_respawnDuration = fields.get<true>(14), /* System.Single */ &f_reviveTimeout = fields.get<true>(16);
+inline static auto /* MV.WorldObject.SpawnRoles.SpawnRolesMetaData */ &f_spawnRolesMetaData = fields.get<false>(0), /* MV.WorldObject.GamePassSystem.PlayerPlanetData */ &f_playerPlanetData = fields.get<false>(1), /* BoostController */ &f_boostController = fields.get<false>(2), /* System.Int32 */ &f_defaultBodyWoId = fields.get<false>(3), /* CodeStage.AntiCheat.ObscuredTypes.ObscuredInt */ &f_numberOfTimesDiedInRound = fields.get<false>(5), /* System.Action */ &f_OnInitializeLeveling = fields.get<false>(6), /* Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.Mediator.SpawnRoleDataMediator */ &f_spawnRoleDataMediator = fields.get<false>(7), /* WorldObjectTypes.Avatar.Local.WorldObjectUseRequirementTracker */ &f_WorldObjectUseRequirementTracker_k_BackingField = fields.get<false>(8), /* XPProgress */ &f_xpProgress = fields.get<false>(9), /* System.Int32 */ &f_planetOwnershipTypeID = fields.get<false>(10), /* System.Collections.Generic.List`1<System.Int32> */ &f_planetPermissionIDs = fields.get<false>(11), /* XPProgress+OnXPProgressDataDelegate */ &f_OnXPProgressData = fields.get<false>(12), /* System.Int32 */ &f_joinTime = fields.get<false>(13), /* System.Single */ &f_respawnTime = fields.get<false>(15), /* System.Int32 */ &f_oldLevel = fields.get<false>(17);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<44> methods;
+    /* MVBody get_Body() */
+    inline static auto& m_get_Body = methods.get<false, false>(0);
+    /* System.Int32 get_DefaultSpawnRoleId() */
+    inline static auto& m_get_DefaultSpawnRoleId = methods.get<false, false>(1);
+    /* Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.Mediator.SpawnRoleDataMediator get_SpawnRoleDataMediator() */
+    inline static auto& m_get_SpawnRoleDataMediator = methods.get<false, false>(2);
+    /* MV.WorldObject.GamePassSystem.PlayerPlanetData get_PlayerPlanetData() */
+    inline static auto& m_get_PlayerPlanetData = methods.get<false, false>(3);
+    /* System.Void set_PlayerPlanetData(MV.WorldObject.GamePassSystem.PlayerPlanetData value) */
+    inline static auto& m_set_PlayerPlanetData = methods.get<false, false>(4);
+    /* BoostController get_BoostController() */
+    inline static auto& m_get_BoostController = methods.get<false, false>(5);
+    /* System.Void set_BoostController(BoostController value) */
+    inline static auto& m_set_BoostController = methods.get<false, false>(6);
+    /* WorldObjectTypes.Avatar.Local.WorldObjectUseRequirementTracker get_WorldObjectUseRequirementTracker() */
+    inline static auto& m_get_WorldObjectUseRequirementTracker = methods.get<false, false>(7);
+    /* System.Void set_WorldObjectUseRequirementTracker(WorldObjectTypes.Avatar.Local.WorldObjectUseRequirementTracker value) */
+    inline static auto& m_set_WorldObjectUseRequirementTracker = methods.get<false, false>(8);
+    /* System.Int32 get_DefaultBodyWoId() */
+    inline static auto& m_get_DefaultBodyWoId = methods.get<false, false>(9);
+    /* System.Int32 get_PlanetOwnershipTypeID() */
+    inline static auto& m_get_PlanetOwnershipTypeID = methods.get<false, false>(10);
+    /* System.Void set_PlanetOwnershipTypeID(System.Int32 value) */
+    inline static auto& m_set_PlanetOwnershipTypeID = methods.get<false, false>(11);
+    /* MV.Common.PlanetOwnershipType get_PlanetOwnership() */
+    inline static auto& m_get_PlanetOwnership = methods.get<false, false>(12);
+    /* System.Collections.Generic.List`1<MV.Common.PlanetPermissionType> get_PlanetPermissions() */
+    inline static auto& m_get_PlanetPermissions = methods.get<false, false>(13);
+    /* XPProgressData get_XPProgressData() */
+    inline static auto& m_get_XPProgressData = methods.get<false, false>(14);
+    /* System.Int32 get_JoinTime() */
+    inline static auto& m_get_JoinTime = methods.get<false, false>(15);
+    /* System.Boolean get_CanGetXPProgressData() */
+    inline static auto& m_get_CanGetXPProgressData = methods.get<false, false>(16);
+    /* System.Single get_RespawnDuration() */
+    inline static auto& m_get_RespawnDuration = methods.get<false, false>(17);
+    /* System.Single get_RespawnTime() */
+    inline static auto& m_get_RespawnTime = methods.get<false, false>(18);
+    /* System.Void set_RespawnTime(System.Single value) */
+    inline static auto& m_set_RespawnTime = methods.get<false, false>(19);
+    /* System.Single get_ReviveTimeout() */
+    inline static auto& m_get_ReviveTimeout = methods.get<false, false>(20);
+    /* System.Void .ctor(System.Int32 actorNumber, System.Int32 profileID, System.String regionCode, System.Int32 planetOwnershipTypeID, System.Collections.Generic.List`1<System.Int32> planetPermissionIDs, MV.WorldObject.MetaData.UserProfileData userProfileData) */
+    inline static auto& m_ctor = methods.get<false, false>(21);
+    /* System.Void SpawnRoleModeOnOnChange(MV.Common.SpawnRoleModeType value) */
+    inline static auto& m_SpawnRoleModeOnOnChange = methods.get<false, false>(22);
+    /* System.Void SetupPlayerWorldObjects(System.Int32 defaultBodyWoId, MV.WorldObject.SpawnRoles.SpawnRolesRuntimeData spawnRolesRuntimeData) */
+    inline static auto& m_SetupPlayerWorldObjects = methods.get<false, false>(23);
+    /* System.Void InitializeLeveling(InitialLevelData initialLevelData) */
+    inline static auto& m_InitializeLeveling = methods.get<false, true>(24);
+    /* System.Void SetSpawnRoleMetaData(MV.WorldObject.SpawnRoles.SpawnRolesMetaData spawnRolesMetaData) */
+    inline static auto& m_SetSpawnRoleMetaData = methods.get<false, false>(25);
+    /* System.Void SetActiveSpawnRole(System.Int32 existingAvatarWoId) */
+    inline static auto& m_SetActiveSpawnRole = methods.get<false, false>(26);
+    /* System.Void CreateSpawnRole(System.Int32 avatarSpawnerWoId) */
+    inline static auto& m_CreateSpawnRole = methods.get<false, false>(27);
+    /* System.Void CreateSpawnRoleFailed() */
+    inline static auto& m_CreateSpawnRoleFailed = methods.get<false, false>(28);
+    /* System.Void SuspendCurrentSpawnRole() */
+    inline static auto& m_SuspendCurrentSpawnRole = methods.get<false, false>(29);
+    /* System.Void UnSuspendCurrentSpawnRole() */
+    inline static auto& m_UnSuspendCurrentSpawnRole = methods.get<false, false>(30);
+    /* System.Void AddXp(System.Int32 currentPlayerXP, MV.Common.XPRewardType typeId, System.Int32 xpDelta, System.Int32 memberCount) */
+    inline static auto& m_AddXp = methods.get<false, false>(31);
+    /* System.Void SendXpProgressEvent(XPProgressData xpProgressData) */
+    inline static auto& m_SendXpProgressEvent = methods.get<false, false>(32);
+    /* System.Void OnLevelChangedLocal(System.Int32 level) */
+    inline static auto& m_OnLevelChangedLocal = methods.get<false, false>(33);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<false, true>(34);
+    /* MVAvatarLocal get_AvatarLocal() */
+    inline static auto& m_get_AvatarLocal = methods.get<false, false>(35);
+    /* System.Boolean get_IsAdmin() */
+    inline static auto& m_get_IsAdmin = methods.get<false, false>(36);
+    /* System.Boolean get_IsChatLocked() */
+    inline static auto& m_get_IsChatLocked = methods.get<false, false>(37);
+    /* System.Boolean IsPlaying() */
+    inline static auto& m_IsPlaying = methods.get<false, false>(38);
+    /* System.Void DiedInRound() */
+    inline static auto& m_DiedInRound = methods.get<false, false>(39);
+    /* System.Boolean HasDiedInRound() */
+    inline static auto& m_HasDiedInRound = methods.get<false, false>(40);
+    /* System.Void RoundEnded() */
+    inline static auto& m_RoundEnded = methods.get<false, false>(41);
+    /* System.Boolean IsAvatarDriving(MVVehicleBase vehicleBase) */
+    inline static auto& m_IsAvatarDriving = methods.get<false, false>(42);
+    /* System.Void SetLocalAvatarEarsState(System.Boolean activeState) */
+    inline static auto& m_SetLocalAvatarEarsState = methods.get<false, false>(43);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

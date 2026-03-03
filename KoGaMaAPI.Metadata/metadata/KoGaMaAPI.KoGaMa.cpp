@@ -236,6 +236,26 @@ void InteractionFlags::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInf
 
 }
 
+void MVPlayer::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 47, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void Metadata_UserProfileData::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 48, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void XPProgressData::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 49, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVLocalPlayer::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 50, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -284,5 +304,9 @@ void InteractionFlags::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInf
         UE_Time::Init(metadataInfo);
         BuildSystem_GameBuildSettings::Init(metadataInfo);
         InteractionFlags::Init(metadataInfo);
+        MVPlayer::Init(metadataInfo);
+        Metadata_UserProfileData::Init(metadataInfo);
+        XPProgressData::Init(metadataInfo);
+        MVLocalPlayer::Init(metadataInfo);
     }
 }

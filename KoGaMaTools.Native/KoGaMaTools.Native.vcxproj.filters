@@ -81,6 +81,9 @@
     <ClCompile Include="services\Info\GameInfoService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Helpers\StringExtensions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="services\PathHelper.h">
@@ -156,6 +159,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="services\Info\GameInfoService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\StringExtensions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

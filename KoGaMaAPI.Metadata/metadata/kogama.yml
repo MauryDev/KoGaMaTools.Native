@@ -62,3 +62,8 @@ klasses:
 - fullname: BuildSystem.GameBuildSettings
   name: BuildSystem_GameBuildSettings
 - fullname: InteractionFlags
+- fullname: MVPlayer
+- fullname: MV.WorldObject.MetaData.UserProfileData
+  name: Metadata_UserProfileData
+- fullname: XPProgressData
+- fullname: MVLocalPlayer
