@@ -67,3 +67,9 @@ klasses:
   name: Metadata_UserProfileData
 - fullname: XPProgressData
 - fullname: MVLocalPlayer
+- fullname: ContextMenu
+- fullname: UnityEngine.Events.UnityAction
+  name: UE_Events_UnityAction
+- fullname: TM
+- fullname: DesktopEditModeController
+- fullname: EditorStateMachine

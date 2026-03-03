@@ -47,6 +47,12 @@ void KoGaMaTools::Services::GameInfoService::Render()
         AddRow("XP", "%d xp", xp);
 
         ImGui::EndTable();
+
+        ImGui::Separator();
+
+        ImGui::TextUnformatted("Made by MauryDev");
+        ImGui::TextUnformatted("Special thanks to Becko and Snowy");
+
     }
 }
 

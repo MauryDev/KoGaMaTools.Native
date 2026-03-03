@@ -256,6 +256,31 @@ void MVLocalPlayer::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) 
 
 }
 
+void ContextMenu::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 51, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void UE_Events_UnityAction::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 52, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void TM::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 53, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void DesktopEditModeController::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 54, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void EditorStateMachine::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 55, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -308,5 +333,10 @@ void MVLocalPlayer::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) 
         Metadata_UserProfileData::Init(metadataInfo);
         XPProgressData::Init(metadataInfo);
         MVLocalPlayer::Init(metadataInfo);
+        ContextMenu::Init(metadataInfo);
+        UE_Events_UnityAction::Init(metadataInfo);
+        TM::Init(metadataInfo);
+        DesktopEditModeController::Init(metadataInfo);
+        EditorStateMachine::Init(metadataInfo);
     }
 }

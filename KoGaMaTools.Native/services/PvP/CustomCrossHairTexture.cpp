@@ -28,7 +28,7 @@ void KoGaMaTools::Services::CustomCrossHairTexture::SetTexture(const std::string
 
 		tex = Il2CppObject::New(K::Texture2D::klass);
 
-		K::Texture2D::m3_ctor(tex, 1, 1);;
+		K::Texture2D::m3__ctor(tex, 1, 1);;
 		K::ImageConversion::m1_LoadImage(tex, fileData);
 
 	}
@@ -47,7 +47,7 @@ void KoGaMaTools::Services::CustomCrossHairTexture::SetTexture(const std::string
 	auto rect = Il2CppObject::New(K::Rect::klass).Unbox();
 	auto width = K::Texture::m_get_width(tex).Unbox<int>();
 	auto height = K::Texture::m_get_height(tex).Unbox<int>();
-	K::Rect::m0_ctor(rect,
+	K::Rect::m0__ctor(rect,
 		0, 0,
 		(float)width,
 		(float)height

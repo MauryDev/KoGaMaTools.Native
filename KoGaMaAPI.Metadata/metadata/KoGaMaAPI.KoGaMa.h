@@ -22,7 +22,7 @@ inline static auto /* PaintCursor */ &f_paintCursor = fields.get<false>(0);
     /* System.Void HideCursor() */
     inline static auto& m_HideCursor = methods.get<false, true>(3);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(4);
+    inline static auto& m__ctor = methods.get<false, false>(4);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -34,7 +34,7 @@ struct CubeModelTool {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<5> fields;
 inline static auto /* EditCubeChange */ &f_cubeChange = fields.get<true>(1), /* System.Int32 */ &f_cubeCount = fields.get<true>(2), /* System.Action`2<System.Int32, EditCubeChange> */ &f_OnEditCubeChange = fields.get<true>(3);
-inline static auto /* System.Boolean */ &f_waitForMouseUp = fields.get<false>(0), /* CubeModelingEvent */ &f_StateType_k_BackingField = fields.get<false>(4);
+inline static auto /* System.Boolean */ &f_waitForMouseUp = fields.get<false>(0), /* CubeModelingEvent */ &f__StateType_k__BackingField = fields.get<false>(4);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<14> methods;
     /* CubeModelingEvent get_StateType() */
@@ -64,7 +64,7 @@ inline static auto /* System.Boolean */ &f_waitForMouseUp = fields.get<false>(0)
     /* System.Void HideCursor() */
     inline static auto& m_HideCursor = methods.get<false, true>(12);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(13);
+    inline static auto& m__ctor = methods.get<false, false>(13);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -137,7 +137,7 @@ inline static auto /* System.Single */ &f_mouseSensitivtyModifier = fields.get<t
     /* System.String GetStringInput() */
     inline static auto& m_GetStringInput = methods.get<true, false>(28);
     /* System.Void .cctor() */
-    inline static auto& m_cctor = methods.get<true, false>(29);
+    inline static auto& m__cctor = methods.get<true, false>(29);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -149,7 +149,7 @@ struct KogamaControls {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<56> fields;
 inline static auto /* KogamaControls */ &f_MoveForward = fields.get<true>(1), /* KogamaControls */ &f_MoveLeft = fields.get<true>(2), /* KogamaControls */ &f_MoveRight = fields.get<true>(3), /* KogamaControls */ &f_MoveBackwards = fields.get<true>(4), /* KogamaControls */ &f_AlternateCameraControls = fields.get<true>(5), /* KogamaControls */ &f_PointerSelect = fields.get<true>(6), /* KogamaControls */ &f_PointerSelectAlt = fields.get<true>(7), /* KogamaControls */ &f_EnterObject = fields.get<true>(8), /* KogamaControls */ &f_DeleteObject = fields.get<true>(9), /* KogamaControls */ &f_LeaveObject = fields.get<true>(10), /* KogamaControls */ &f_AddToSelection = fields.get<true>(11), /* KogamaControls */ &f_MoveDrawPlaneUp = fields.get<true>(12), /* KogamaControls */ &f_MoveDrawPlaneDown = fields.get<true>(13), /* KogamaControls */ &f_EmbedChangeGame = fields.get<true>(14), /* KogamaControls */ &f_ToggleFullScreen = fields.get<true>(15), /* KogamaControls */ &f_ShowChat = fields.get<true>(16), /* KogamaControls */ &f_Respawn = fields.get<true>(17), /* KogamaControls */ &f_TogglePlayerParticles = fields.get<true>(18), /* KogamaControls */ &f_ShowPlayerWindow = fields.get<true>(19), /* KogamaControls */ &f_DropCurrentItem = fields.get<true>(20), /* KogamaControls */ &f_Use = fields.get<true>(21), /* KogamaControls */ &f_FocusOnSelectedModel = fields.get<true>(22), /* KogamaControls */ &f_TogglePlayInEditor = fields.get<true>(23), /* KogamaControls */ &f_ToggleLogicRendering = fields.get<true>(24), /* KogamaControls */ &f_ToggleGripdSnapSize = fields.get<true>(25), /* KogamaControls */ &f_ActivateEditCubeTool = fields.get<true>(26), /* KogamaControls */ &f_ActivateDeleteCubeTool = fields.get<true>(27), /* KogamaControls */ &f_ActivatePaintCubeTool = fields.get<true>(28), /* KogamaControls */ &f_ChangeMaterial = fields.get<true>(29), /* KogamaControls */ &f_OpenInventory = fields.get<true>(30), /* KogamaControls */ &f_CreateNewModel = fields.get<true>(31), /* KogamaControls */ &f_ToggleDrawPlane = fields.get<true>(32), /* KogamaControls */ &f_Fire = fields.get<true>(33), /* KogamaControls */ &f_Jump = fields.get<true>(34), /* KogamaControls */ &f_DrawAudioBox = fields.get<true>(35), /* KogamaControls */ &f_ChatSendLine = fields.get<true>(36), /* KogamaControls */ &f_ChatShiftLineUp = fields.get<true>(37), /* KogamaControls */ &f_ChatShiftLineDown = fields.get<true>(38), /* KogamaControls */ &f_ChangeFocus = fields.get<true>(39), /* KogamaControls */ &f_ChangeChangeFocusDirection = fields.get<true>(40), /* KogamaControls */ &f_Deprecated_ToggleHD = fields.get<true>(41), /* KogamaControls */ &f_PauseMenu = fields.get<true>(42), /* KogamaControls */ &f_Escape = fields.get<true>(43), /* KogamaControls */ &f_Holster = fields.get<true>(44), /* KogamaControls */ &f_EditMoveUp = fields.get<true>(45), /* KogamaControls */ &f_EditMoveDown = fields.get<true>(46), /* KogamaControls */ &f_EditMoveForward = fields.get<true>(47), /* KogamaControls */ &f_EditMoveLeft = fields.get<true>(48), /* KogamaControls */ &f_EditMoveRight = fields.get<true>(49), /* KogamaControls */ &f_EditMoveBackwards = fields.get<true>(50), /* KogamaControls */ &f_EditMoveFast = fields.get<true>(51), /* KogamaControls */ &f_NotificationAcceptFriendshipRequest = fields.get<true>(52), /* KogamaControls */ &f_ToggleCameraEffects = fields.get<true>(53), /* KogamaControls */ &f_ActivatePickColorTool = fields.get<true>(54), /* KogamaControls */ &f_Size = fields.get<true>(55);
-inline static auto /* System.Int32 */ &f_value = fields.get<false>(0);
+inline static auto /* System.Int32 */ &f_value__ = fields.get<false>(0);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<0> methods;
 
@@ -162,7 +162,7 @@ inline static auto /* System.Int32 */ &f_value = fields.get<false>(0);
 struct CubeModelingStateMachine {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<8> fields;
-inline static auto /* System.Boolean */ &f_useLasers = fields.get<false>(0), /* CubeModelingStateMachine+OnCurrentMaterialChangeDelegate */ &f_OnCurrentMaterialChange = fields.get<false>(1), /* CodeStage.AntiCheat.ObscuredTypes.ObscuredByte */ &f_currentMaterialId = fields.get<false>(2), /* IModelingConstraint */ &f_constraint = fields.get<false>(3), /* UnityEngine.GameObject */ &f_gameObject = fields.get<false>(4), /* UnityEngine.Camera */ &f_mainCamera = fields.get<false>(5), /* CubePickingInfo */ &f_SelectedCube_k_BackingField = fields.get<false>(6), /* MVCubeModelBase */ &f_TargetCubeModel_k_BackingField = fields.get<false>(7);
+inline static auto /* System.Boolean */ &f_useLasers = fields.get<false>(0), /* CubeModelingStateMachine+OnCurrentMaterialChangeDelegate */ &f_OnCurrentMaterialChange = fields.get<false>(1), /* CodeStage.AntiCheat.ObscuredTypes.ObscuredByte */ &f_currentMaterialId = fields.get<false>(2), /* IModelingConstraint */ &f_constraint = fields.get<false>(3), /* UnityEngine.GameObject */ &f_gameObject = fields.get<false>(4), /* UnityEngine.Camera */ &f_mainCamera = fields.get<false>(5), /* CubePickingInfo */ &f__SelectedCube_k__BackingField = fields.get<false>(6), /* MVCubeModelBase */ &f__TargetCubeModel_k__BackingField = fields.get<false>(7);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<27> methods;
     /* CubePickingInfo get_SelectedCube() */
@@ -188,7 +188,7 @@ inline static auto /* System.Boolean */ &f_useLasers = fields.get<false>(0), /* 
     /* System.Void set_CursorVisible(System.Boolean value) */
     inline static auto& m_set_CursorVisible = methods.get<false, false>(10);
     /* System.Void .ctor(UnityEngine.GameObject gameObject) */
-    inline static auto& m_ctor = methods.get<false, false>(11);
+    inline static auto& m__ctor = methods.get<false, false>(11);
     /* System.Void StartEdit(MVCubeModelBase targetCubeModel, IModelingConstraint constraint = null) */
     inline static auto& m_StartEdit = methods.get<false, false>(12);
     /* System.Void SetConstraint(IModelingConstraint constraint) */
@@ -218,7 +218,7 @@ inline static auto /* System.Boolean */ &f_useLasers = fields.get<false>(0), /* 
     /* CanPerformCubeActionResult CanReplaceCube(CubePickingInfo requestedCube, System.Byte materialId) */
     inline static auto& m_CanReplaceCube = methods.get<false, false>(25);
     /* System.Void <set_CurrentMaterialId>b__23_0(UnityEngine.EventSystems.IHandleMaterial x, UnityEngine.EventSystems.BaseEventData y) */
-    inline static auto& m_set_CurrentMaterialId_b_23_0 = methods.get<false, false>(26);
+    inline static auto& m__set_CurrentMaterialId_b__23_0 = methods.get<false, false>(26);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -230,7 +230,7 @@ struct MVCubeModelBase {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<9> fields;
 inline static auto /* System.Int32 */ &f_TransparencyShaderProperty = fields.get<true>(0);
-inline static auto /* RuntimePrototypeCubeModel */ &f_prototypeCubeModel = fields.get<false>(1), /* ChunkInstances */ &f_chunkInstances = fields.get<false>(2), /* System.Func`1<IModelingConstraint> */ &f_ModelingConstraintBuilder_k_BackingField = fields.get<false>(3), /* System.Boolean */ &f_beingEdited = fields.get<false>(4), /* System.Collections.Generic.Queue`1<CubeModelChangedEventArgs> */ &f_changedEventArgsQueue = fields.get<false>(5), /* System.Action`1<CubeModelChangedEventArgs> */ &f_Changed = fields.get<false>(6), /* System.Action`1<System.Collections.Generic.HashSet`1<MV.WorldObject.IntVector>> */ &f_ChunksChanged = fields.get<false>(7), /* System.EventHandler`1<EditStateEventArgs> */ &f_BeingEditedChanged = fields.get<false>(8);
+inline static auto /* RuntimePrototypeCubeModel */ &f_prototypeCubeModel = fields.get<false>(1), /* ChunkInstances */ &f_chunkInstances = fields.get<false>(2), /* System.Func`1<IModelingConstraint> */ &f__ModelingConstraintBuilder_k__BackingField = fields.get<false>(3), /* System.Boolean */ &f_beingEdited = fields.get<false>(4), /* System.Collections.Generic.Queue`1<CubeModelChangedEventArgs> */ &f_changedEventArgsQueue = fields.get<false>(5), /* System.Action`1<CubeModelChangedEventArgs> */ &f_Changed = fields.get<false>(6), /* System.Action`1<System.Collections.Generic.HashSet`1<MV.WorldObject.IntVector>> */ &f_ChunksChanged = fields.get<false>(7), /* System.EventHandler`1<EditStateEventArgs> */ &f_BeingEditedChanged = fields.get<false>(8);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<49> methods;
     /* ChunkInstances get_ChunkInstances() */
@@ -258,7 +258,7 @@ inline static auto /* RuntimePrototypeCubeModel */ &f_prototypeCubeModel = field
     /* System.Void remove_BeingEditedChanged(System.EventHandler`1<EditStateEventArgs> value) */
     inline static auto& m_remove_BeingEditedChanged = methods.get<false, false>(11);
     /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects, System.Collections.Generic.Dictionary`2<System.Int32, RuntimePrototypeCubeModel> prototypes) */
-    inline static auto& m_ctor = methods.get<false, false>(12);
+    inline static auto& m__ctor = methods.get<false, false>(12);
     /* System.Void Initialize() */
     inline static auto& m_Initialize = methods.get<false, true>(13);
     /* System.String ToString() */
@@ -326,11 +326,11 @@ inline static auto /* RuntimePrototypeCubeModel */ &f_prototypeCubeModel = field
     /* System.Void AddToChunkInstances(MV.WorldObject.IntVector chunkPos, ChunkInstances+ChunkInstanceVariables civ) */
     inline static auto& m_AddToChunkInstances = methods.get<false, false>(45);
     /* System.Void .cctor() */
-    inline static auto& m_cctor = methods.get<true, false>(46);
+    inline static auto& m__cctor = methods.get<true, false>(46);
     /* System.Int32 ICubeModelCollider.get_Id() */
     inline static auto& m_ICubeModelCollider_get_Id = methods.get<false, true>(47);
     /* IModelingConstraint <.ctor>b__28_0() */
-    inline static auto& m_ctor_b_28_0 = methods.get<false, false>(48);
+    inline static auto& m___ctor_b__28_0 = methods.get<false, false>(48);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -345,9 +345,9 @@ inline static auto /* Cube */ &f_cube = fields.get<false>(0), /* MV.WorldObject.
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<2> methods;
     /* System.Void .ctor() */
-    inline static auto& m0_ctor = methods.get<false, false>(0);
+    inline static auto& m0__ctor = methods.get<false, false>(0);
     /* System.Void .ctor(CubePickingInfo cubePickingInfo) */
-    inline static auto& m1_ctor = methods.get<false, false>(1);
+    inline static auto& m1__ctor = methods.get<false, false>(1);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -359,7 +359,7 @@ struct EditCubeChange {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<9> fields;
 inline static auto /* EditCubeChange */ &f_None = fields.get<true>(1), /* EditCubeChange */ &f_VertexMoved = fields.get<true>(2), /* EditCubeChange */ &f_EdgeMoved = fields.get<true>(3), /* EditCubeChange */ &f_FaceMoved = fields.get<true>(4), /* EditCubeChange */ &f_CubeUnindented = fields.get<true>(5), /* EditCubeChange */ &f_CubeAdded = fields.get<true>(6), /* EditCubeChange */ &f_CubePainted = fields.get<true>(7), /* EditCubeChange */ &f_CubeDeleted = fields.get<true>(8);
-inline static auto /* System.Int32 */ &f_value = fields.get<false>(0);
+inline static auto /* System.Int32 */ &f_value__ = fields.get<false>(0);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<0> methods;
 
@@ -376,7 +376,7 @@ inline static auto /* CellCursor */ &f_paintCursor = fields.get<false>(0), /* Sy
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<4> methods;
     /* System.Void .ctor(UnityEngine.Vector3[] cubeCorners) */
-    inline static auto& m_ctor = methods.get<false, false>(0);
+    inline static auto& m__ctor = methods.get<false, false>(0);
     /* System.Void UpdateCursor(CubePickingInfo selectedCube, MVCubeModelBase targetCubeModel, System.Boolean isPainting) */
     inline static auto& m_UpdateCursor = methods.get<false, false>(1);
     /* System.Void Remove() */
@@ -394,7 +394,7 @@ struct AudioActions {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<7> fields;
 inline static auto /* AudioActions */ &f_CubeAdded = fields.get<true>(1), /* AudioActions */ &f_CubeRemoved = fields.get<true>(2), /* AudioActions */ &f_FaceMoved = fields.get<true>(3), /* AudioActions */ &f_EdgeMoved = fields.get<true>(4), /* AudioActions */ &f_VertexMoved = fields.get<true>(5), /* AudioActions */ &f_CubePainted = fields.get<true>(6);
-inline static auto /* System.Int32 */ &f_value = fields.get<false>(0);
+inline static auto /* System.Int32 */ &f_value__ = fields.get<false>(0);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<0> methods;
 
@@ -421,7 +421,7 @@ inline static auto /* IModelingConstraint */ &f_constraint = fields.get<false>(0
     /* System.Void BuildMesh(UnityEngine.Vector3[] vertices) */
     inline static auto& m_BuildMesh = methods.get<false, false>(4);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(5);
+    inline static auto& m__ctor = methods.get<false, false>(5);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -432,7 +432,7 @@ inline static auto /* IModelingConstraint */ &f_constraint = fields.get<false>(0
 struct ModelingDynamicBoxConstraint {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<2> fields;
-inline static auto /* MVCubeModelBase */ &f_cubeModel = fields.get<false>(0), /* ObscuredIntVector */ &f_Size_k_BackingField = fields.get<false>(1);
+inline static auto /* MVCubeModelBase */ &f_cubeModel = fields.get<false>(0), /* ObscuredIntVector */ &f__Size_k__BackingField = fields.get<false>(1);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<9> methods;
     /* ObscuredIntVector get_Size() */
@@ -440,7 +440,7 @@ inline static auto /* MVCubeModelBase */ &f_cubeModel = fields.get<false>(0), /*
     /* System.Void set_Size(ObscuredIntVector value) */
     inline static auto& m_set_Size = methods.get<false, false>(1);
     /* System.Void .ctor(MVCubeModelBase cubeModel, MV.WorldObject.IntVector constraintSize) */
-    inline static auto& m_ctor = methods.get<false, false>(2);
+    inline static auto& m__ctor = methods.get<false, false>(2);
     /* System.Void DetachFromCubeModel() */
     inline static auto& m_DetachFromCubeModel = methods.get<false, false>(3);
     /* System.Boolean CanAddCubeAt(MV.WorldObject.IntVector pos) */
@@ -467,7 +467,7 @@ inline static auto /* MVCubeModelBase */ &f_cubeModel = fields.get<false>(0), /*
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<5> methods;
     /* System.Void .ctor(MVCubeModelBase cubeModel, MV.WorldObject.IntVector minCorner, MV.WorldObject.IntVector maxCorner, System.Int32 minCubeCount) */
-    inline static auto& m_ctor = methods.get<false, false>(0);
+    inline static auto& m__ctor = methods.get<false, false>(0);
     /* System.Boolean CanAddCubeAt(MV.WorldObject.IntVector pos) */
     inline static auto& m_CanAddCubeAt = methods.get<false, true>(1);
     /* System.Boolean CanRemoveCubeAt(MV.WorldObject.IntVector pos) */
@@ -575,9 +575,9 @@ inline static auto /* UnityEngine.Camera */ &f_mainCamera = fields.get<false>(13
     /* System.Boolean HasSetting() */
     inline static auto& m_HasSetting = methods.get<true, false>(41);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(42);
+    inline static auto& m__ctor = methods.get<false, false>(42);
     /* System.Void .cctor() */
-    inline static auto& m_cctor = methods.get<true, false>(43);
+    inline static auto& m__cctor = methods.get<true, false>(43);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -588,7 +588,7 @@ inline static auto /* UnityEngine.Camera */ &f_mainCamera = fields.get<false>(13
 struct MVMaterial {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<8> fields;
-inline static auto /* System.Int32 */ &f_unlockPriceGold = fields.get<false>(0), /* System.Boolean */ &f_isUnlocked = fields.get<false>(1), /* UnityEngine.Mesh */ &f_Mesh_k_BackingField = fields.get<false>(2), /* System.String */ &f_Name_k_BackingField = fields.get<false>(3), /* System.String */ &f_Description_k_BackingField = fields.get<false>(4), /* MV.WorldObject.PhysicalProperties */ &f_PhysicalProperties_k_BackingField = fields.get<false>(5), /* AvatarModifierPackageType */ &f_ModifierPackageType_k_BackingField = fields.get<false>(6), /* UnityEngine.Texture2D */ &f_ButtonTexture_k_BackingField = fields.get<false>(7);
+inline static auto /* System.Int32 */ &f_unlockPriceGold = fields.get<false>(0), /* System.Boolean */ &f_isUnlocked = fields.get<false>(1), /* UnityEngine.Mesh */ &f__Mesh_k__BackingField = fields.get<false>(2), /* System.String */ &f__Name_k__BackingField = fields.get<false>(3), /* System.String */ &f__Description_k__BackingField = fields.get<false>(4), /* MV.WorldObject.PhysicalProperties */ &f__PhysicalProperties_k__BackingField = fields.get<false>(5), /* AvatarModifierPackageType */ &f__ModifierPackageType_k__BackingField = fields.get<false>(6), /* UnityEngine.Texture2D */ &f__ButtonTexture_k__BackingField = fields.get<false>(7);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<21> methods;
     /* UnityEngine.Mesh get_Mesh() */
@@ -620,13 +620,13 @@ inline static auto /* System.Int32 */ &f_unlockPriceGold = fields.get<false>(0),
     /* System.Boolean get_IsDestructible() */
     inline static auto& m_get_IsDestructible = methods.get<false, false>(13);
     /* System.Void .ctor() */
-    inline static auto& m0_ctor = methods.get<false, false>(14);
+    inline static auto& m0__ctor = methods.get<false, false>(14);
     /* System.Void .ctor(MV.WorldObject.PhysicalProperties physicalProperties, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType) */
-    inline static auto& m1_ctor = methods.get<false, false>(15);
+    inline static auto& m1__ctor = methods.get<false, false>(15);
     /* System.Void .ctor(System.String name, System.String description, MV.WorldObject.PhysicalProperties physicalProperties, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType, System.Int32 unlockPriceGold, System.Boolean isUnlocked) */
-    inline static auto& m2_ctor = methods.get<false, false>(16);
+    inline static auto& m2__ctor = methods.get<false, false>(16);
     /* System.Void .ctor(System.Int32 materialId, System.String name, System.String description, MV.WorldObject.PhysicalProperties physicalProperties, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType, System.Int32 unlockPriceGold, System.Boolean isUnlocked, MaterialButtonTextureGenerator materialButtonTextureGenerator = null) */
-    inline static auto& m3_ctor = methods.get<false, false>(17);
+    inline static auto& m3__ctor = methods.get<false, false>(17);
     /* System.Void RegenerateButtonTexture(MaterialButtonTextureGenerator materialButtonTextureGenerator) */
     inline static auto& m_RegenerateButtonTexture = methods.get<false, false>(18);
     /* System.Void GenerateCube(System.Int32 materialID) */
@@ -643,7 +643,7 @@ inline static auto /* System.Int32 */ &f_unlockPriceGold = fields.get<false>(0),
 struct ESTranslate {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<18> fields;
-inline static auto /* System.String */ &f_TranslateModeType = fields.get<true>(0), /* System.String */ &f_MoveWithAvatar = fields.get<true>(1), /* System.Single */ &f_mouseSensitivity = fields.get<true>(8);
+inline static auto /* System.String */ &f_TranslateModeType = fields.get<true>(0), /* System.String */ &f_MoveWithAvatar = fields.get<true>(1), /* System.Single */ &f__mouseSensitivity = fields.get<true>(8);
 inline static auto /* System.Single */ &f_gridSize = fields.get<false>(2), /* System.Single */ &f_stickyModifier = fields.get<false>(3), /* System.Single */ &f_completelyStuckLimit = fields.get<false>(4), /* System.Boolean */ &f_recalcLocalDirCamToObjects = fields.get<false>(5), /* System.Collections.Generic.List`1<TranslateData> */ &f_translateDatas = fields.get<false>(6), /* System.Collections.Generic.List`1<MVWorldObjectClient> */ &f_targets = fields.get<false>(7), /* System.Single */ &f_initialDistance = fields.get<false>(9), /* UnityEngine.Vector3 */ &f_originPrevFrame = fields.get<false>(10), /* System.Boolean */ &f_playTranslateSounds = fields.get<false>(11), /* System.Single */ &f_scrollMoveDistance = fields.get<false>(12), /* TranslateMode */ &f_translateMode = fields.get<false>(13), /* System.Collections.Generic.HashSet`1<System.Int32> */ &f_woIds = fields.get<false>(14), /* System.Boolean */ &f_fixedToYPlane = fields.get<false>(15), /* System.Boolean */ &f_moveWithAvatar = fields.get<false>(16), /* System.Boolean */ &f_enteredStateWithPointerSelectReleased = fields.get<false>(17);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<10> methods;
@@ -666,7 +666,7 @@ inline static auto /* System.Single */ &f_gridSize = fields.get<false>(2), /* Sy
     /* UnityEngine.Vector3 GetDeltaMouse(EditorStateMachine e) */
     inline static auto& m_GetDeltaMouse = methods.get<false, false>(8);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(9);
+    inline static auto& m__ctor = methods.get<false, false>(9);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -735,7 +735,7 @@ inline static auto /* MV.WorldObject.IntVector */ &f_constraint = fields.get<tru
     /* MV.WorldObject.IntVector CubePosToChunk(MV.WorldObject.IntVector cubePos, System.Int32 chunkSize) */
     inline static auto& m_CubePosToChunk = methods.get<true, false>(26);
     /* System.Void .cctor() */
-    inline static auto& m_cctor = methods.get<true, false>(27);
+    inline static auto& m__cctor = methods.get<true, false>(27);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -747,11 +747,11 @@ struct MVBuildModeAvatarLocal_EditMode {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<24> fields;
 inline static auto /* System.Single */ &f_pitchSensitivity = fields.get<true>(1), /* System.Single */ &f_yawSensitivity = fields.get<true>(2), /* System.Single */ &f_basePitch = fields.get<true>(3), /* System.Single */ &f_minimumY = fields.get<true>(4), /* System.Single */ &f_maximumY = fields.get<true>(5), /* System.Single */ &f_moveSlowDownPoint = fields.get<true>(15);
-inline static auto /* MVBuildModeAvatarLocal+AvatarBuildModes */ &f_avatarBuildModeRuntimeState = fields.get<false>(0), /* System.Single */ &f_maxSpeed = fields.get<false>(6), /* System.Single */ &f_speedModifier = fields.get<false>(7), /* UnityEngine.Vector3 */ &f_jetPackTargetDeltaPos = fields.get<false>(8), /* System.Single */ &f_targetSpeed = fields.get<false>(9), /* System.Single */ &f_speed = fields.get<false>(10), /* System.Single */ &f_speedSmoothingTime = fields.get<false>(11), /* System.Boolean */ &f_moveConstraintSet = fields.get<false>(12), /* UnityEngine.Vector3 */ &f_moveConstraintCenter = fields.get<false>(13), /* System.Single */ &f_moveConstraintRadius = fields.get<false>(14), /* System.Single */ &f_YMovementSpeedScale_k_BackingField = fields.get<false>(16), /* System.Single */ &f_XZMovementSpeedScale_k_BackingField = fields.get<false>(17), /* DoubleTapMovementChecker */ &f_doubleTap = fields.get<false>(18), /* UnityEngine.Camera */ &f_mainCamera = fields.get<false>(19), /* System.Single */ &f_keyVelocity = fields.get<false>(20), /* System.Single */ &f_keyAcceleration = fields.get<false>(21), /* System.Single */ &f_keyDamping = fields.get<false>(22), /* System.Single */ &f_heightAdjustSpeed = fields.get<false>(23);
+inline static auto /* MVBuildModeAvatarLocal+AvatarBuildModes */ &f__avatarBuildModeRuntimeState = fields.get<false>(0), /* System.Single */ &f_maxSpeed = fields.get<false>(6), /* System.Single */ &f_speedModifier = fields.get<false>(7), /* UnityEngine.Vector3 */ &f_jetPackTargetDeltaPos = fields.get<false>(8), /* System.Single */ &f_targetSpeed = fields.get<false>(9), /* System.Single */ &f_speed = fields.get<false>(10), /* System.Single */ &f_speedSmoothingTime = fields.get<false>(11), /* System.Boolean */ &f_moveConstraintSet = fields.get<false>(12), /* UnityEngine.Vector3 */ &f_moveConstraintCenter = fields.get<false>(13), /* System.Single */ &f_moveConstraintRadius = fields.get<false>(14), /* System.Single */ &f__YMovementSpeedScale_k__BackingField = fields.get<false>(16), /* System.Single */ &f__XZMovementSpeedScale_k__BackingField = fields.get<false>(17), /* DoubleTapMovementChecker */ &f_doubleTap = fields.get<false>(18), /* UnityEngine.Camera */ &f_mainCamera = fields.get<false>(19), /* System.Single */ &f_keyVelocity = fields.get<false>(20), /* System.Single */ &f_keyAcceleration = fields.get<false>(21), /* System.Single */ &f_keyDamping = fields.get<false>(22), /* System.Single */ &f_heightAdjustSpeed = fields.get<false>(23);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<38> methods;
     /* System.Void .ctor(MVBuildModeAvatarLocal buildModeAvatar) */
-    inline static auto& m_ctor = methods.get<false, false>(0);
+    inline static auto& m__ctor = methods.get<false, false>(0);
     /* System.Void Activate(MVBuildModeAvatarLocal+AvatarBuildModes fromMode) */
     inline static auto& m_Activate = methods.get<false, true>(1);
     /* System.Void SetCamera(CameraType cameraType) */
@@ -840,7 +840,7 @@ inline static auto /* EditorStateMachine */ &f_editorStateMachine = fields.get<f
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<7> methods;
     /* System.Void .ctor(EditorStateMachine editorStateMachine) */
-    inline static auto& m_ctor = methods.get<false, false>(0);
+    inline static auto& m__ctor = methods.get<false, false>(0);
     /* System.Void ResetRotation() */
     inline static auto& m_ResetRotation = methods.get<false, false>(1);
     /* System.Void RotateStep(RotationMode rotationMode, System.Single rotationSpeed) */
@@ -877,7 +877,7 @@ inline static auto /* UnityEngine.UI.Slider */ &f_slider = fields.get<false>(0),
     /* System.Void Reset() */
     inline static auto& m_Reset = methods.get<false, false>(4);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(5);
+    inline static auto& m__ctor = methods.get<false, false>(5);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -888,8 +888,8 @@ inline static auto /* UnityEngine.UI.Slider */ &f_slider = fields.get<false>(0),
 struct MVGameControllerBase {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<50> fields;
-inline static auto /* System.Boolean */ &f_LevelingTestMode = fields.get<true>(0), /* System.Boolean */ &f_ClientShopInsideInventory = fields.get<true>(1), /* System.Boolean */ &f_IsInitialized_k_BackingField = fields.get<true>(12), /* System.Boolean */ &f_DisconnectIsOk_k_BackingField = fields.get<true>(13), /* IPlayModeUI */ &f_PlayModeUI_k_BackingField = fields.get<true>(14), /* IEditModeUI */ &f_EditModeUI_k_BackingField = fields.get<true>(15), /* MVGameControllerBase+OnReceivedGameMsgDelegate */ &f_OnReceivedGameMsg = fields.get<true>(16), /* MVGameControllerBase+OnReceivedNotificationEventDelegate */ &f_OnReceivedNotification = fields.get<true>(17), /* MVGameControllerBase+OnPostGameInitDelegate */ &f_OnPostGameInit = fields.get<true>(18), /* MVGameControllerBase */ &f_instance = fields.get<true>(19), /* System.Boolean */ &f_WebPlayAsTouch_k_BackingField = fields.get<true>(36), /* System.Boolean */ &f_PortalUI_k_BackingField = fields.get<true>(37), /* System.Boolean */ &f_WebPlayAsTouchInitialized_k_BackingField = fields.get<true>(39), /* GameSessionData */ &f_GameSessionData_k_BackingField = fields.get<true>(40), /* System.Boolean */ &f_SeekAdConsent_k_BackingField = fields.get<true>(42), /* System.Boolean */ &f_Quitting_k_BackingField = fields.get<true>(48), /* System.Boolean */ &f_LeavingEditPlayMode_k_BackingField = fields.get<true>(49);
-inline static auto /* RegionConfigManager */ &f_regionConfigManager = fields.get<false>(2), /* DebugLogHandler */ &f_debugLogHandler = fields.get<false>(3), /* MainCameraManager */ &f_mainCameraManager = fields.get<false>(4), /* Styles */ &f_styles = fields.get<false>(5), /* MaterialLoader */ &f_materialLoader = fields.get<false>(6), /* PrefabPool */ &f_prefabPool = fields.get<false>(7), /* AntiHack.TextureIntegrityChecker */ &f_textureIntegrityChecker = fields.get<false>(8), /* ThemeRepository */ &f_themeRepository = fields.get<false>(9), /* StreamingAssetManager */ &f_streamingAssetManager = fields.get<false>(10), /* EmbeddedPlayerConfig */ &f_embeddedPlayerConfig = fields.get<false>(11), /* MVNetworkGame */ &f_game = fields.get<false>(20), /* AudioManager */ &f_audioManager = fields.get<false>(21), /* BrowserComm */ &f_browserComm = fields.get<false>(22), /* LevelLoader */ &f_levelLoader = fields.get<false>(23), /* SkinnedMeshOptimizeManager */ &f_skinnedMeshOptimizeManager = fields.get<false>(24), /* FlagDebriefingControl */ &f_flagDebriefingControl = fields.get<false>(25), /* GoldRewardManager */ &f_goldRewardManager = fields.get<false>(26), /* JoystickControllerStack */ &f_joystickControllerStack = fields.get<false>(27), /* System.Boolean */ &f_quitHasBeenCalled = fields.get<false>(28), /* TimeReward */ &f_timeReward = fields.get<false>(29), /* OverrideMaterials */ &f_overrideMaterials = fields.get<false>(30), /* LoadStats */ &f_loadStats = fields.get<false>(31), /* MVJoinState */ &f_joinState = fields.get<false>(32), /* FirstFrameUpdateActorReady */ &f_firstFrameUpdateActorReady = fields.get<false>(33), /* System.Int32 */ &f_reAuthTestTries = fields.get<false>(34), /* ModeControllerBase */ &f_modeController = fields.get<false>(35), /* System.Boolean */ &f_ShuttingDown_k_BackingField = fields.get<false>(38), /* System.Action`1<MVJoinState> */ &f_onJoinStateChanged = fields.get<false>(41), /* AudioBuild */ &f_audioBuild = fields.get<false>(43), /* WaterPlaneManager */ &f_waterPlaneManagerPrefab = fields.get<false>(44), /* WaterPlaneManager */ &f_waterPlaneManager = fields.get<false>(45), /* SkyboxManager */ &f_skyboxManager = fields.get<false>(46), /* Assets.Scripts.Subscription.SubscriberCooldownsManager */ &f_subscriberCooldownsManager = fields.get<false>(47);
+inline static auto /* System.Boolean */ &f_LevelingTestMode = fields.get<true>(0), /* System.Boolean */ &f_ClientShopInsideInventory = fields.get<true>(1), /* System.Boolean */ &f__IsInitialized_k__BackingField = fields.get<true>(12), /* System.Boolean */ &f__DisconnectIsOk_k__BackingField = fields.get<true>(13), /* IPlayModeUI */ &f__PlayModeUI_k__BackingField = fields.get<true>(14), /* IEditModeUI */ &f__EditModeUI_k__BackingField = fields.get<true>(15), /* MVGameControllerBase+OnReceivedGameMsgDelegate */ &f_OnReceivedGameMsg = fields.get<true>(16), /* MVGameControllerBase+OnReceivedNotificationEventDelegate */ &f_OnReceivedNotification = fields.get<true>(17), /* MVGameControllerBase+OnPostGameInitDelegate */ &f_OnPostGameInit = fields.get<true>(18), /* MVGameControllerBase */ &f_instance = fields.get<true>(19), /* System.Boolean */ &f__WebPlayAsTouch_k__BackingField = fields.get<true>(36), /* System.Boolean */ &f__PortalUI_k__BackingField = fields.get<true>(37), /* System.Boolean */ &f__WebPlayAsTouchInitialized_k__BackingField = fields.get<true>(39), /* GameSessionData */ &f__GameSessionData_k__BackingField = fields.get<true>(40), /* System.Boolean */ &f__SeekAdConsent_k__BackingField = fields.get<true>(42), /* System.Boolean */ &f__Quitting_k__BackingField = fields.get<true>(48), /* System.Boolean */ &f__LeavingEditPlayMode_k__BackingField = fields.get<true>(49);
+inline static auto /* RegionConfigManager */ &f_regionConfigManager = fields.get<false>(2), /* DebugLogHandler */ &f_debugLogHandler = fields.get<false>(3), /* MainCameraManager */ &f_mainCameraManager = fields.get<false>(4), /* Styles */ &f_styles = fields.get<false>(5), /* MaterialLoader */ &f_materialLoader = fields.get<false>(6), /* PrefabPool */ &f_prefabPool = fields.get<false>(7), /* AntiHack.TextureIntegrityChecker */ &f_textureIntegrityChecker = fields.get<false>(8), /* ThemeRepository */ &f_themeRepository = fields.get<false>(9), /* StreamingAssetManager */ &f_streamingAssetManager = fields.get<false>(10), /* EmbeddedPlayerConfig */ &f_embeddedPlayerConfig = fields.get<false>(11), /* MVNetworkGame */ &f_game = fields.get<false>(20), /* AudioManager */ &f_audioManager = fields.get<false>(21), /* BrowserComm */ &f_browserComm = fields.get<false>(22), /* LevelLoader */ &f_levelLoader = fields.get<false>(23), /* SkinnedMeshOptimizeManager */ &f_skinnedMeshOptimizeManager = fields.get<false>(24), /* FlagDebriefingControl */ &f_flagDebriefingControl = fields.get<false>(25), /* GoldRewardManager */ &f_goldRewardManager = fields.get<false>(26), /* JoystickControllerStack */ &f_joystickControllerStack = fields.get<false>(27), /* System.Boolean */ &f_quitHasBeenCalled = fields.get<false>(28), /* TimeReward */ &f_timeReward = fields.get<false>(29), /* OverrideMaterials */ &f_overrideMaterials = fields.get<false>(30), /* LoadStats */ &f_loadStats = fields.get<false>(31), /* MVJoinState */ &f__joinState = fields.get<false>(32), /* FirstFrameUpdateActorReady */ &f_firstFrameUpdateActorReady = fields.get<false>(33), /* System.Int32 */ &f_reAuthTestTries = fields.get<false>(34), /* ModeControllerBase */ &f_modeController = fields.get<false>(35), /* System.Boolean */ &f__ShuttingDown_k__BackingField = fields.get<false>(38), /* System.Action`1<MVJoinState> */ &f_onJoinStateChanged = fields.get<false>(41), /* AudioBuild */ &f_audioBuild = fields.get<false>(43), /* WaterPlaneManager */ &f_waterPlaneManagerPrefab = fields.get<false>(44), /* WaterPlaneManager */ &f_waterPlaneManager = fields.get<false>(45), /* SkyboxManager */ &f_skyboxManager = fields.get<false>(46), /* Assets.Scripts.Subscription.SubscriberCooldownsManager */ &f_subscriberCooldownsManager = fields.get<false>(47);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<114> methods;
     /* Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.Mediator.SpawnRoleDataMediator get_SpawnRoleDataMediatorLocal() */
@@ -1119,7 +1119,7 @@ inline static auto /* RegionConfigManager */ &f_regionConfigManager = fields.get
     /* System.Void TogglePlayerIndicators() */
     inline static auto& m_TogglePlayerIndicators = methods.get<true, false>(112);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(113);
+    inline static auto& m__ctor = methods.get<false, false>(113);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -1141,7 +1141,7 @@ inline static auto /* System.DateTime */ &f_latestResetAFKTime = fields.get<fals
     /* System.DateTime get_LatestMouseMoveTime() */
     inline static auto& m_get_LatestMouseMoveTime = methods.get<false, false>(2);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(3);
+    inline static auto& m__ctor = methods.get<false, false>(3);
     /* System.Void Initialize(MV.Common.MVGameMode mode) */
     inline static auto& m_Initialize = methods.get<true, false>(4);
     /* System.Void Destroy() */
@@ -1196,7 +1196,7 @@ inline static auto /* UnityEngine.UI.Image */ &f_crossHair = fields.get<false>(0
     /* System.Void UpdateCrosshairColor(PickupItem pickupItem) */
     inline static auto& m_UpdateCrosshairColor = methods.get<false, false>(7);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(8);
+    inline static auto& m__ctor = methods.get<false, false>(8);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -1208,7 +1208,7 @@ struct UI_Graphic {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<23> fields;
 inline static auto /* UnityEngine.Material */ &f_s_DefaultUI = fields.get<true>(0), /* UnityEngine.Texture2D */ &f_s_WhiteTexture = fields.get<true>(1), /* UnityEngine.Mesh */ &f_s_Mesh = fields.get<true>(17), /* UnityEngine.UI.VertexHelper */ &f_s_VertexHelper = fields.get<true>(18);
-inline static auto /* UnityEngine.Material */ &f_m_Material = fields.get<false>(2), /* UnityEngine.Color */ &f_m_Color = fields.get<false>(3), /* System.Boolean */ &f_m_SkipLayoutUpdate = fields.get<false>(4), /* System.Boolean */ &f_m_SkipMaterialUpdate = fields.get<false>(5), /* System.Boolean */ &f_m_RaycastTarget = fields.get<false>(6), /* System.Boolean */ &f_m_RaycastTargetCache = fields.get<false>(7), /* UnityEngine.Vector4 */ &f_m_RaycastPadding = fields.get<false>(8), /* UnityEngine.RectTransform */ &f_m_RectTransform = fields.get<false>(9), /* UnityEngine.CanvasRenderer */ &f_m_CanvasRenderer = fields.get<false>(10), /* UnityEngine.Canvas */ &f_m_Canvas = fields.get<false>(11), /* System.Boolean */ &f_m_VertsDirty = fields.get<false>(12), /* System.Boolean */ &f_m_MaterialDirty = fields.get<false>(13), /* UnityEngine.Events.UnityAction */ &f_m_OnDirtyLayoutCallback = fields.get<false>(14), /* UnityEngine.Events.UnityAction */ &f_m_OnDirtyVertsCallback = fields.get<false>(15), /* UnityEngine.Events.UnityAction */ &f_m_OnDirtyMaterialCallback = fields.get<false>(16), /* UnityEngine.Mesh */ &f_m_CachedMesh = fields.get<false>(19), /* UnityEngine.Vector2[] */ &f_m_CachedUvs = fields.get<false>(20), /* UnityEngine.UI.CoroutineTween.TweenRunner`1<UnityEngine.UI.CoroutineTween.ColorTween> */ &f_m_ColorTweenRunner = fields.get<false>(21), /* System.Boolean */ &f_useLegacyMeshGeneration_k_BackingField = fields.get<false>(22);
+inline static auto /* UnityEngine.Material */ &f_m_Material = fields.get<false>(2), /* UnityEngine.Color */ &f_m_Color = fields.get<false>(3), /* System.Boolean */ &f_m_SkipLayoutUpdate = fields.get<false>(4), /* System.Boolean */ &f_m_SkipMaterialUpdate = fields.get<false>(5), /* System.Boolean */ &f_m_RaycastTarget = fields.get<false>(6), /* System.Boolean */ &f_m_RaycastTargetCache = fields.get<false>(7), /* UnityEngine.Vector4 */ &f_m_RaycastPadding = fields.get<false>(8), /* UnityEngine.RectTransform */ &f_m_RectTransform = fields.get<false>(9), /* UnityEngine.CanvasRenderer */ &f_m_CanvasRenderer = fields.get<false>(10), /* UnityEngine.Canvas */ &f_m_Canvas = fields.get<false>(11), /* System.Boolean */ &f_m_VertsDirty = fields.get<false>(12), /* System.Boolean */ &f_m_MaterialDirty = fields.get<false>(13), /* UnityEngine.Events.UnityAction */ &f_m_OnDirtyLayoutCallback = fields.get<false>(14), /* UnityEngine.Events.UnityAction */ &f_m_OnDirtyVertsCallback = fields.get<false>(15), /* UnityEngine.Events.UnityAction */ &f_m_OnDirtyMaterialCallback = fields.get<false>(16), /* UnityEngine.Mesh */ &f_m_CachedMesh = fields.get<false>(19), /* UnityEngine.Vector2[] */ &f_m_CachedUvs = fields.get<false>(20), /* UnityEngine.UI.CoroutineTween.TweenRunner`1<UnityEngine.UI.CoroutineTween.ColorTween> */ &f_m_ColorTweenRunner = fields.get<false>(21), /* System.Boolean */ &f__useLegacyMeshGeneration_k__BackingField = fields.get<false>(22);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<62> methods;
     /* UnityEngine.Material get_defaultGraphicMaterial() */
@@ -1230,7 +1230,7 @@ inline static auto /* UnityEngine.Material */ &f_m_Material = fields.get<false>(
     /* System.Void set_useLegacyMeshGeneration(System.Boolean value) */
     inline static auto& m_set_useLegacyMeshGeneration = methods.get<false, false>(8);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(9);
+    inline static auto& m__ctor = methods.get<false, false>(9);
     /* System.Void SetAllDirty() */
     inline static auto& m_SetAllDirty = methods.get<false, true>(10);
     /* System.Void SetLayoutDirty() */
@@ -1332,7 +1332,7 @@ inline static auto /* UnityEngine.Material */ &f_m_Material = fields.get<false>(
     /* System.Void UnregisterDirtyMaterialCallback(UnityEngine.Events.UnityAction action) */
     inline static auto& m_UnregisterDirtyMaterialCallback = methods.get<false, false>(59);
     /* System.Void .cctor() */
-    inline static auto& m_cctor = methods.get<true, false>(60);
+    inline static auto& m__cctor = methods.get<true, false>(60);
     /* UnityEngine.Transform UnityEngine.UI.ICanvasElement.get_transform() */
     inline static auto& m_UnityEngine_UI_ICanvasElement_get_transform = methods.get<false, true>(61);
 
@@ -1375,9 +1375,9 @@ inline static auto /* TimedPlayReward */ &f_timedPlayReward = fields.get<false>(
     /* System.Void OnCountDownEnd() */
     inline static auto& m_OnCountDownEnd = methods.get<false, true>(12);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(13);
+    inline static auto& m__ctor = methods.get<false, false>(13);
     /* System.Void <Play>b__11_0(IDeathPromotionSelector x, UnityEngine.EventSystems.BaseEventData y) */
-    inline static auto& m_Play_b_11_0 = methods.get<false, false>(14);
+    inline static auto& m__Play_b__11_0 = methods.get<false, false>(14);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -1412,9 +1412,9 @@ inline static auto /* UnityEngine.UI.Text */ &f_restartText = fields.get<false>(
     /* System.Void OnAvatarStateChanged(MV.Common.SpawnRoleModeType mode) */
     inline static auto& m_OnAvatarStateChanged = methods.get<false, false>(9);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(10);
+    inline static auto& m__ctor = methods.get<false, false>(10);
     /* System.Void <OnRespawn>b__25_0(IDeathPromotionSelector x, UnityEngine.EventSystems.BaseEventData y) */
-    inline static auto& m_OnRespawn_b_25_0 = methods.get<false, false>(11);
+    inline static auto& m__OnRespawn_b__25_0 = methods.get<false, false>(11);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -1493,13 +1493,13 @@ inline static auto /* System.Int32 */ &f_streamingMipmapsPriorityMin = fields.ge
     /* System.Boolean ValidateFormat(UnityEngine.TextureFormat format, System.Int32 width, System.Int32 height) */
     inline static auto& m_ValidateFormat = methods.get<false, false>(20);
     /* System.Void .ctor(System.Int32 width, System.Int32 height, UnityEngine.TextureFormat textureFormat, System.Int32 mipCount, System.Boolean linear, System.IntPtr nativeTex, System.Boolean createUninitialized, UnityEngine.MipmapLimitDescriptor mipmapLimitDescriptor) */
-    inline static auto& m0_ctor = methods.get<false, false>(21);
+    inline static auto& m0__ctor = methods.get<false, false>(21);
     /* System.Void .ctor(System.Int32 width, System.Int32 height, UnityEngine.TextureFormat textureFormat, System.Int32 mipCount, System.Boolean linear) */
-    inline static auto& m1_ctor = methods.get<false, false>(22);
+    inline static auto& m1__ctor = methods.get<false, false>(22);
     /* System.Void .ctor(System.Int32 width, System.Int32 height, UnityEngine.TextureFormat textureFormat, System.Boolean mipChain) */
-    inline static auto& m2_ctor = methods.get<false, false>(23);
+    inline static auto& m2__ctor = methods.get<false, false>(23);
     /* System.Void .ctor(System.Int32 width, System.Int32 height) */
-    inline static auto& m3_ctor = methods.get<false, false>(24);
+    inline static auto& m3__ctor = methods.get<false, false>(24);
     /* System.Void SetPixel(System.Int32 x, System.Int32 y, UnityEngine.Color color) */
     inline static auto& m_SetPixel = methods.get<false, false>(25);
     /* UnityEngine.Color GetPixel(System.Int32 x, System.Int32 y) */
@@ -1661,7 +1661,7 @@ inline static auto /* UnityEngine.Sprite */ &f_m_Sprite = fields.get<false>(1), 
     /* System.Void set_useSpriteMesh(System.Boolean value) */
     inline static auto& m_set_useSpriteMesh = methods.get<false, false>(25);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(26);
+    inline static auto& m__ctor = methods.get<false, false>(26);
     /* UnityEngine.Material get_defaultETC1GraphicMaterial() */
     inline static auto& m_get_defaultETC1GraphicMaterial = methods.get<true, false>(27);
     /* UnityEngine.Texture get_mainTexture() */
@@ -1763,13 +1763,13 @@ inline static auto /* UnityEngine.Sprite */ &f_m_Sprite = fields.get<false>(1), 
     /* System.Void OnDidApplyAnimationProperties() */
     inline static auto& m_OnDidApplyAnimationProperties = methods.get<false, true>(76);
     /* System.Void .cctor() */
-    inline static auto& m_cctor = methods.get<true, false>(77);
+    inline static auto& m__cctor = methods.get<true, false>(77);
     /* System.Void <set_sprite>g__ResetAlphaHitThresholdIfNeeded|11_0() */
-    inline static auto& m_set_sprite_g_ResetAlphaHitThresholdIfNeeded_11_0 = methods.get<false, false>(78);
+    inline static auto& m__set_sprite_g__ResetAlphaHitThresholdIfNeeded_11_0 = methods.get<false, false>(78);
     /* System.Boolean <set_sprite>g__SpriteSupportsAlphaHitTest|11_1() */
-    inline static auto& m_set_sprite_g_SpriteSupportsAlphaHitTest_11_1 = methods.get<false, false>(79);
+    inline static auto& m__set_sprite_g__SpriteSupportsAlphaHitTest_11_1 = methods.get<false, false>(79);
     /* System.Boolean <CheckSecondaryTexturesChanged>g__Compare|93_0(UnityEngine.SecondarySpriteTexture[] array1, UnityEngine.SecondarySpriteTexture[] array2) */
-    inline static auto& m_CheckSecondaryTexturesChanged_g_Compare_93_0 = methods.get<true, false>(80);
+    inline static auto& m__CheckSecondaryTexturesChanged_g__Compare_93_0 = methods.get<true, false>(80);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -1783,7 +1783,7 @@ struct Sprite {
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<49> methods;
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(0);
+    inline static auto& m__ctor = methods.get<false, false>(0);
     /* System.Int32 GetPackingRotation() */
     inline static auto& m_GetPackingRotation = methods.get<false, false>(1);
     /* System.Int32 GetPacked() */
@@ -1899,7 +1899,7 @@ inline static auto /* System.Single */ &f_x = fields.get<false>(0), /* System.Si
     /* System.Void set_Item(System.Int32 index, System.Single value) */
     inline static auto& m_set_Item = methods.get<false, false>(1);
     /* System.Void .ctor(System.Single x, System.Single y) */
-    inline static auto& m_ctor = methods.get<false, false>(2);
+    inline static auto& m__ctor = methods.get<false, false>(2);
     /* System.Void Set(System.Single newX, System.Single newY) */
     inline static auto& m_Set = methods.get<false, false>(3);
     /* UnityEngine.Vector2 Lerp(UnityEngine.Vector2 a, UnityEngine.Vector2 b, System.Single t) */
@@ -1979,7 +1979,7 @@ inline static auto /* System.Single */ &f_x = fields.get<false>(0), /* System.Si
     /* UnityEngine.Vector2 get_negativeInfinity() */
     inline static auto& m_get_negativeInfinity = methods.get<true, false>(41);
     /* System.Void .cctor() */
-    inline static auto& m_cctor = methods.get<true, false>(42);
+    inline static auto& m__cctor = methods.get<true, false>(42);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -1994,11 +1994,11 @@ inline static auto /* System.Single */ &f_m_XMin = fields.get<false>(0), /* Syst
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<43> methods;
     /* System.Void .ctor(System.Single x, System.Single y, System.Single width, System.Single height) */
-    inline static auto& m0_ctor = methods.get<false, false>(0);
+    inline static auto& m0__ctor = methods.get<false, false>(0);
     /* System.Void .ctor(UnityEngine.Vector2 position, UnityEngine.Vector2 size) */
-    inline static auto& m1_ctor = methods.get<false, false>(1);
+    inline static auto& m1__ctor = methods.get<false, false>(1);
     /* System.Void .ctor(UnityEngine.Rect source) */
-    inline static auto& m2_ctor = methods.get<false, false>(2);
+    inline static auto& m2__ctor = methods.get<false, false>(2);
     /* UnityEngine.Rect get_zero() */
     inline static auto& m_get_zero = methods.get<true, false>(3);
     /* UnityEngine.Rect MinMaxRect(System.Single xmin, System.Single ymin, System.Single xmax, System.Single ymax) */
@@ -2093,7 +2093,7 @@ inline static auto /* System.Int32 */ &f_GenerateAllMips = fields.get<true>(0);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<35> methods;
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(0);
+    inline static auto& m__ctor = methods.get<false, false>(0);
     /* System.Int32 GetDataWidth() */
     inline static auto& m_GetDataWidth = methods.get<false, false>(1);
     /* System.Int32 GetDataHeight() */
@@ -2139,7 +2139,7 @@ inline static auto /* System.Int32 */ &f_GenerateAllMips = fields.get<true>(0);
     /* UnityEngine.UnityException CreateNativeArrayLengthOverflowException() */
     inline static auto& m_CreateNativeArrayLengthOverflowException = methods.get<false, false>(22);
     /* System.Void .cctor() */
-    inline static auto& m_cctor = methods.get<true, false>(23);
+    inline static auto& m__cctor = methods.get<true, false>(23);
     /* System.Int32 GetDataWidth_Injected(System.IntPtr _unity_self) */
     inline static auto& m_GetDataWidth_Injected = methods.get<true, false>(24);
     /* System.Int32 GetDataHeight_Injected(System.IntPtr _unity_self) */
@@ -2192,7 +2192,7 @@ struct TextCommand {
 struct MVWorldObjectClientManager {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<13> fields;
-inline static auto /* System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> */ &f_worldObjects = fields.get<false>(0), /* System.Collections.Generic.Queue`1<System.Int32> */ &f_pendingUngroupQueue = fields.get<false>(1), /* MVWorldObjectClientManager+WorldObjectMapping */ &f_worldObjectMapping = fields.get<false>(2), /* System.Collections.Generic.Dictionary`2<System.Int32, System.Action`2<System.Object, WorldObjectDestroyedEventArgs>> */ &f_woDestroyedEventSubscribers = fields.get<false>(3), /* System.Collections.Generic.Dictionary`2<System.Type, System.Action`2<System.Object, WorldObjectCreatedEventArgs>> */ &f_woCreatedEventSubscribers = fields.get<false>(4), /* System.Int32 */ &f_rootGroupId = fields.get<false>(5), /* MoveableController */ &f_MoveableController_k_BackingField = fields.get<false>(6), /* UnityEngine.Bounds */ &f_worldBounds = fields.get<false>(7), /* System.EventHandler`1<OnTransferOwnershipResponseEventArgs> */ &f_OnWorldObjectTransferOwnershipResponse = fields.get<false>(8), /* System.EventHandler`1<OnHierarchyLockedEventArgs> */ &f_OnHierarchyLockedResponse = fields.get<false>(9), /* System.EventHandler`1<OnTransferWosResponseEventArgs> */ &f_OnTransferWosResponse = fields.get<false>(10), /* System.EventHandler`1<CloneWorldObjectTreeResponseEventArgs> */ &f_CloneWorldObjectTreeResponse = fields.get<false>(11), /* System.EventHandler`1<System.EventArgs> */ &f_OnResetWorldDone = fields.get<false>(12);
+inline static auto /* System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> */ &f_worldObjects = fields.get<false>(0), /* System.Collections.Generic.Queue`1<System.Int32> */ &f_pendingUngroupQueue = fields.get<false>(1), /* MVWorldObjectClientManager+WorldObjectMapping */ &f_worldObjectMapping = fields.get<false>(2), /* System.Collections.Generic.Dictionary`2<System.Int32, System.Action`2<System.Object, WorldObjectDestroyedEventArgs>> */ &f_woDestroyedEventSubscribers = fields.get<false>(3), /* System.Collections.Generic.Dictionary`2<System.Type, System.Action`2<System.Object, WorldObjectCreatedEventArgs>> */ &f_woCreatedEventSubscribers = fields.get<false>(4), /* System.Int32 */ &f_rootGroupId = fields.get<false>(5), /* MoveableController */ &f__MoveableController_k__BackingField = fields.get<false>(6), /* UnityEngine.Bounds */ &f_worldBounds = fields.get<false>(7), /* System.EventHandler`1<OnTransferOwnershipResponseEventArgs> */ &f_OnWorldObjectTransferOwnershipResponse = fields.get<false>(8), /* System.EventHandler`1<OnHierarchyLockedEventArgs> */ &f_OnHierarchyLockedResponse = fields.get<false>(9), /* System.EventHandler`1<OnTransferWosResponseEventArgs> */ &f_OnTransferWosResponse = fields.get<false>(10), /* System.EventHandler`1<CloneWorldObjectTreeResponseEventArgs> */ &f_CloneWorldObjectTreeResponse = fields.get<false>(11), /* System.EventHandler`1<System.EventArgs> */ &f_OnResetWorldDone = fields.get<false>(12);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<41> methods;
     /* MoveableController get_MoveableController() */
@@ -2208,7 +2208,7 @@ inline static auto /* System.Collections.Generic.Dictionary`2<System.Int32, MVWo
     /* System.Void set_RootGroup(MVGroup value) */
     inline static auto& m_set_RootGroup = methods.get<false, false>(5);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(6);
+    inline static auto& m__ctor = methods.get<false, false>(6);
     /* System.Boolean Contains(System.Int32 woID) */
     inline static auto& m_Contains = methods.get<false, false>(7);
     /* System.Boolean IsType(System.Int32 woID, MV.WorldObject.WorldObjectType worldObjectType) */
@@ -2288,7 +2288,7 @@ struct MVWorldObjectClient {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<26> fields;
 inline static auto /* System.Int32 */ &f_woShadowCastersCount = fields.get<true>(5), /* System.Int32 */ &f_woMaxShadowCasters = fields.get<true>(6);
-inline static auto /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, PositionChangedEventArgs> */ &f_PositionChanged = fields.get<false>(0), /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, RotationChangedEventArgs> */ &f_RotationChanged = fields.get<false>(1), /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, ScaleChangedEventArgs> */ &f_ScaleChanged = fields.get<false>(2), /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, SelectedEventArgs> */ &f_SelectedChanged = fields.get<false>(3), /* System.Boolean */ &f_isCastingShadows = fields.get<false>(4), /* System.Int32 */ &f_goId = fields.get<false>(7), /* System.String */ &f_name = fields.get<false>(8), /* UnityEngine.GameObject */ &f_gameObject = fields.get<false>(9), /* UnityEngine.Collider */ &f_collider = fields.get<false>(10), /* UnityEngine.Transform */ &f_transform = fields.get<false>(11), /* InteractionDataHandlerBase */ &f_interactionDataHandlerBase = fields.get<false>(12), /* ObjectPrefab */ &f_component = fields.get<false>(13), /* MVGroup */ &f_group = fields.get<false>(14), /* System.Boolean */ &f_selected = fields.get<false>(15), /* SelectedConnector */ &f_selectedConnector = fields.get<false>(16), /* UnityEngine.GameObject */ &f_inputConnectorObject = fields.get<false>(17), /* UnityEngine.GameObject */ &f_outputConnectorObject = fields.get<false>(18), /* UnityEngine.GameObject */ &f_objectConnectorObject = fields.get<false>(19), /* InteractionFlags */ &f_interactionFlags = fields.get<false>(20), /* InteractionFlags */ &f_eliteRequiredFlags = fields.get<false>(21), /* LayerFlags */ &f_previewLayerMask = fields.get<false>(22), /* PlayInteractionType */ &f_PlayInteractionType_k_BackingField = fields.get<false>(23), /* MVRuntimeDataVariables */ &f_runtimeDataVariables = fields.get<false>(24), /* System.Boolean */ &f_initializedFromInventory = fields.get<false>(25);
+inline static auto /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, PositionChangedEventArgs> */ &f_PositionChanged = fields.get<false>(0), /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, RotationChangedEventArgs> */ &f_RotationChanged = fields.get<false>(1), /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, ScaleChangedEventArgs> */ &f_ScaleChanged = fields.get<false>(2), /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, SelectedEventArgs> */ &f_SelectedChanged = fields.get<false>(3), /* System.Boolean */ &f_isCastingShadows = fields.get<false>(4), /* System.Int32 */ &f_goId = fields.get<false>(7), /* System.String */ &f_name = fields.get<false>(8), /* UnityEngine.GameObject */ &f_gameObject = fields.get<false>(9), /* UnityEngine.Collider */ &f_collider = fields.get<false>(10), /* UnityEngine.Transform */ &f_transform = fields.get<false>(11), /* InteractionDataHandlerBase */ &f_interactionDataHandlerBase = fields.get<false>(12), /* ObjectPrefab */ &f_component = fields.get<false>(13), /* MVGroup */ &f_group = fields.get<false>(14), /* System.Boolean */ &f_selected = fields.get<false>(15), /* SelectedConnector */ &f_selectedConnector = fields.get<false>(16), /* UnityEngine.GameObject */ &f_inputConnectorObject = fields.get<false>(17), /* UnityEngine.GameObject */ &f_outputConnectorObject = fields.get<false>(18), /* UnityEngine.GameObject */ &f_objectConnectorObject = fields.get<false>(19), /* InteractionFlags */ &f_interactionFlags = fields.get<false>(20), /* InteractionFlags */ &f_eliteRequiredFlags = fields.get<false>(21), /* LayerFlags */ &f_previewLayerMask = fields.get<false>(22), /* PlayInteractionType */ &f__PlayInteractionType_k__BackingField = fields.get<false>(23), /* MVRuntimeDataVariables */ &f_runtimeDataVariables = fields.get<false>(24), /* System.Boolean */ &f_initializedFromInventory = fields.get<false>(25);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<129> methods;
     /* UnityEngine.Vector3 get_Position() */
@@ -2396,11 +2396,11 @@ inline static auto /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, Posi
     /* System.Void set_DocumentationType(MVWorldObjectDocumentationType value) */
     inline static auto& m_set_DocumentationType = methods.get<false, false>(51);
     /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, UnityEngine.GameObject prefabObject, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
-    inline static auto& m0_ctor = methods.get<false, false>(52);
+    inline static auto& m0__ctor = methods.get<false, false>(52);
     /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, ObjectPrefab prefabObject, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
-    inline static auto& m1_ctor = methods.get<false, false>(53);
+    inline static auto& m1__ctor = methods.get<false, false>(53);
     /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
-    inline static auto& m2_ctor = methods.get<false, false>(56);
+    inline static auto& m2__ctor = methods.get<false, false>(56);
     /* UnityEngine.GameObject InstantiatePrefab(UnityEngine.GameObject prefabObject, MVWorldObjectClient+TransformData transformData) */
     inline static auto& m0_InstantiatePrefab = methods.get<false, false>(54);
     /* ObjectPrefab InstantiatePrefab(ObjectPrefab prefabObject, MVWorldObjectClient+TransformData transformData) */
@@ -2548,7 +2548,7 @@ inline static auto /* UnityEngine.Events.UnityAction`2<MVWorldObjectClient, Posi
     /* System.Void OnContextMenu() */
     inline static auto& m_OnContextMenu = methods.get<false, true>(127);
     /* System.Void .cctor() */
-    inline static auto& m_cctor = methods.get<true, false>(128);
+    inline static auto& m__cctor = methods.get<true, false>(128);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -2567,7 +2567,7 @@ inline static auto /* Links */ &f_links = fields.get<false>(0), /* ObjectLinks *
     /* RuntimeEventManagerNetwork get_RuntimeEventManagerNetwork() */
     inline static auto& m_get_RuntimeEventManagerNetwork = methods.get<false, false>(1);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(2);
+    inline static auto& m__ctor = methods.get<false, false>(2);
     /* System.Void Update(MVNetworkGame game) */
     inline static auto& m_Update = methods.get<false, false>(3);
     /* System.Void CreateGameWorldFromQueryData(MV.WorldObject.BytePacker queryData, System.Int32 instigatorActorNumber) */
@@ -2638,7 +2638,7 @@ inline static auto /* System.Collections.Generic.Dictionary`2<System.Int32, MV.W
     /* System.Void AddLink(MV.WorldObject.Link link, MVWorldObjectClient outputWo, MVWorldObjectClient inputWo) */
     inline static auto& m_AddLink = methods.get<false, false>(4);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(5);
+    inline static auto& m__ctor = methods.get<false, false>(5);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -2663,7 +2663,7 @@ inline static auto /* System.Collections.Generic.Dictionary`2<System.Int32, MV.W
     /* System.Boolean AddObjectLink(MV.WorldObject.ObjectLink objectLink, MVWorldObjectClient objectConnectorWo, MVWorldObjectClient objectWo) */
     inline static auto& m_AddObjectLink = methods.get<false, false>(4);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(5);
+    inline static auto& m__ctor = methods.get<false, false>(5);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -2684,7 +2684,7 @@ inline static auto /* MVWorldObjectClientManagerNetwork */ &f_worldObjectClientM
     /* RuntimeEventManager get_RuntimeEventManager() */
     inline static auto& m_get_RuntimeEventManager = methods.get<false, false>(2);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(3);
+    inline static auto& m__ctor = methods.get<false, false>(3);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -2732,7 +2732,7 @@ inline static auto /* System.Collections.Generic.Dictionary`2<System.Int32, Runt
     /* System.Void NotifyWorldInventoryChange() */
     inline static auto& m_NotifyWorldInventoryChange = methods.get<false, false>(15);
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(16);
+    inline static auto& m__ctor = methods.get<false, false>(16);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -2744,7 +2744,7 @@ struct MVNetworkGame {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<69> fields;
 inline static auto /* System.String */ &f_appName = fields.get<true>(0), /* System.Single */ &f_serviceCallInterval = fields.get<true>(1);
-inline static auto /* GameEventManager */ &f_GameEventManager = fields.get<false>(2), /* System.EventHandler`1<ReceivedItemFromQueryEventArgs> */ &f_ReceivedItemFromQuery = fields.get<false>(3), /* System.EventHandler`1<ReceivedItemFromQueryEventArgs> */ &f_ReceivedAvatarBodiesFromQuery = fields.get<false>(4), /* System.Action`1<System.String> */ &f_ReceivedAccessoryData = fields.get<false>(5), /* System.Action`1<MV.WorldObject.OwnershipData.PlanetOwnershipsData> */ &f_ReceivedPlanetOwnershipData = fields.get<false>(6), /* System.Action`1<System.Collections.Generic.Dictionary`2<System.Int32, System.Collections.Generic.List`1<System.Int32>>> */ &f_ReceivedPlanetPermissionsData = fields.get<false>(7), /* System.Collections.Generic.Dictionary`2<MV.Common.Region, System.Single> */ &f_timeZoneMap = fields.get<false>(8), /* System.Boolean */ &f_isPublished = fields.get<false>(9), /* MVConnState */ &f_connState = fields.get<false>(10), /* MVItemBusinessLogic */ &f_itemBusinessLogic = fields.get<false>(11), /* MVNetworkGame+GameDataQueryManager */ &f_gameDataQueryManager = fields.get<false>(12), /* TransformNetworkManager */ &f_transformNetworkManager = fields.get<false>(13), /* MVTeamManager */ &f_teamManager = fields.get<false>(14), /* GameStatCounterManager */ &f_gameStatCounterManager = fields.get<false>(15), /* LevelRewardsManager */ &f_levelRewardsManager = fields.get<false>(16), /* System.Single */ &f_prevServiceCallTime = fields.get<false>(17), /* LogicObjectManagerClient */ &f_LogicObjectManager_k_BackingField = fields.get<false>(18), /* MV.Common.Region */ &f_Region_k_BackingField = fields.get<false>(19), /* MVGameCoinManager */ &f_GameCoinManager_k_BackingField = fields.get<false>(20), /* ItemCategories */ &f_ItemCategories_k_BackingField = fields.get<false>(21), /* MVNetworkGameStateListener */ &f_NetworkGameStateListener_k_BackingField = fields.get<false>(22), /* ExitGames.Client.Photon.PhotonPeer */ &f_Peer_k_BackingField = fields.get<false>(23), /* CodeStage.AntiCheat.ObscuredTypes.ObscuredString */ &f_XpKey_k_BackingField = fields.get<false>(24), /* System.Int32 */ &f_MarketPlaceLevel_k_BackingField = fields.get<false>(25), /* System.Int32 */ &f_PublishLevel_k_BackingField = fields.get<false>(26), /* System.String */ &f_AdConsentEndpointURL_k_BackingField = fields.get<false>(27), /* System.String */ &f_KogamaMainpageURL_k_BackingField = fields.get<false>(28), /* CreySettings */ &f_CreySettings_k_BackingField = fields.get<false>(29), /* CustomTouristPromotionSettings */ &f_CustomTouristPromotionSettings_k_BackingField = fields.get<false>(30), /* ElitePromotionSettings */ &f_EliteSettings_k_BackingField = fields.get<false>(31), /* System.Int32 */ &f_serverTimeInMilliseconds = fields.get<false>(32), /* System.Int32 */ &f_lastFrameServerTimeUpdate = fields.get<false>(33), /* System.Int32 */ &f_localTimeInMilliseconds = fields.get<false>(34), /* System.Int32 */ &f_lastFrameLocalTimeUpdate = fields.get<false>(35), /* MVMaterialRepository */ &f_MaterialRepository_k_BackingField = fields.get<false>(36), /* PlayerRepository */ &f_PlayerRepository_k_BackingField = fields.get<false>(37), /* ShopRepository */ &f_ShopRepository_k_BackingField = fields.get<false>(38), /* GameTierShopRepository */ &f_GameTierShopRepository_k_BackingField = fields.get<false>(39), /* AvatarRepository */ &f_AvatarShopRepository_k_BackingField = fields.get<false>(40), /* MV.WorldObject.MvAvatarMetaDataWoMap */ &f_AvatarMetaDataWoMap_k_BackingField = fields.get<false>(41), /* MVGameModeChangeNotifier */ &f_GameStateController_k_BackingField = fields.get<false>(42), /* FriendList */ &f_Friends_k_BackingField = fields.get<false>(43), /* MVLocalObjectController */ &f_PlayerController_k_BackingField = fields.get<false>(44), /* WinningConditionManager */ &f_WinningConditionManager_k_BackingField = fields.get<false>(45), /* WorldNetwork */ &f_worldNetwork = fields.get<false>(46), /* System.Action`2<System.Int32, System.Collections.Generic.Dictionary`2<System.Object, System.Object>> */ &f_PurchaseProductResponseHandler = fields.get<false>(47), /* System.Action`1<IWinningCondition> */ &f_OnWinningConditionFulfilled = fields.get<false>(48), /* System.Action`1<System.Int32> */ &f_OnActiveAvatar = fields.get<false>(49), /* System.Action`1<System.Boolean> */ &f_OnItemAddedToWorld = fields.get<false>(50), /* UnityEngine.Events.UnityAction`1<System.String> */ &f_OnPublishedPlanet = fields.get<false>(51), /* UnityEngine.Events.UnityAction`1<System.String> */ &f_OnAddWorldObjectToInventoryCallbackDev = fields.get<false>(52), /* System.Action`1<System.Boolean> */ &f_OnSetAvatarAccessoryResponse = fields.get<false>(53), /* MVNetworkGame+OnReceivedChatMessageDelegate */ &f_OnReceivedChatMessage = fields.get<false>(54), /* MVNetworkGame+OnMarketPlaceActionCompleteDelegate */ &f_OnMarketPlaceActionComplete = fields.get<false>(55), /* System.EventHandler`1<ScreenshotUploadedEventArgs> */ &f_ScreenshotUploaded = fields.get<false>(56), /* System.Action */ &f_OnActiveAvatarSet = fields.get<false>(57), /* System.Action */ &f_OnAccessoryUnequipped = fields.get<false>(58), /* MVPlayerContainer */ &f_playerContainer = fields.get<false>(59), /* PhotonLoggingConfig */ &f_photonLoggingConfig = fields.get<false>(60), /* EmbeddedSiteConfigData */ &f_embeddedSiteConfigData = fields.get<false>(61), /* MVNetworkGame+LogicObjectManagerClientWrapper */ &f_logicObjectManagerClientWrapper = fields.get<false>(62), /* RuntimeVariableNetworkManager */ &f_runtimeVariableNetworkManager = fields.get<false>(63), /* MVNetworkGame+GameDataQueryManager+GameDataQuery */ &f_gameDataQuery = fields.get<false>(64), /* MVNetworkGame+EventHandling */ &f_eventHandling = fields.get<false>(65), /* MVNetworkGame+OperationRequests */ &f_operationRequests = fields.get<false>(66), /* MVNetworkGame+OperationResponseHandling */ &f_operationResponseHandling = fields.get<false>(67), /* MVNetworkGame+StatusChangedHandling */ &f_statusChangedHandling = fields.get<false>(68);
+inline static auto /* GameEventManager */ &f_GameEventManager = fields.get<false>(2), /* System.EventHandler`1<ReceivedItemFromQueryEventArgs> */ &f_ReceivedItemFromQuery = fields.get<false>(3), /* System.EventHandler`1<ReceivedItemFromQueryEventArgs> */ &f_ReceivedAvatarBodiesFromQuery = fields.get<false>(4), /* System.Action`1<System.String> */ &f_ReceivedAccessoryData = fields.get<false>(5), /* System.Action`1<MV.WorldObject.OwnershipData.PlanetOwnershipsData> */ &f_ReceivedPlanetOwnershipData = fields.get<false>(6), /* System.Action`1<System.Collections.Generic.Dictionary`2<System.Int32, System.Collections.Generic.List`1<System.Int32>>> */ &f_ReceivedPlanetPermissionsData = fields.get<false>(7), /* System.Collections.Generic.Dictionary`2<MV.Common.Region, System.Single> */ &f_timeZoneMap = fields.get<false>(8), /* System.Boolean */ &f_isPublished = fields.get<false>(9), /* MVConnState */ &f_connState = fields.get<false>(10), /* MVItemBusinessLogic */ &f_itemBusinessLogic = fields.get<false>(11), /* MVNetworkGame+GameDataQueryManager */ &f_gameDataQueryManager = fields.get<false>(12), /* TransformNetworkManager */ &f_transformNetworkManager = fields.get<false>(13), /* MVTeamManager */ &f_teamManager = fields.get<false>(14), /* GameStatCounterManager */ &f_gameStatCounterManager = fields.get<false>(15), /* LevelRewardsManager */ &f_levelRewardsManager = fields.get<false>(16), /* System.Single */ &f_prevServiceCallTime = fields.get<false>(17), /* LogicObjectManagerClient */ &f__LogicObjectManager_k__BackingField = fields.get<false>(18), /* MV.Common.Region */ &f__Region_k__BackingField = fields.get<false>(19), /* MVGameCoinManager */ &f__GameCoinManager_k__BackingField = fields.get<false>(20), /* ItemCategories */ &f__ItemCategories_k__BackingField = fields.get<false>(21), /* MVNetworkGameStateListener */ &f__NetworkGameStateListener_k__BackingField = fields.get<false>(22), /* ExitGames.Client.Photon.PhotonPeer */ &f__Peer_k__BackingField = fields.get<false>(23), /* CodeStage.AntiCheat.ObscuredTypes.ObscuredString */ &f__XpKey_k__BackingField = fields.get<false>(24), /* System.Int32 */ &f__MarketPlaceLevel_k__BackingField = fields.get<false>(25), /* System.Int32 */ &f__PublishLevel_k__BackingField = fields.get<false>(26), /* System.String */ &f__AdConsentEndpointURL_k__BackingField = fields.get<false>(27), /* System.String */ &f__KogamaMainpageURL_k__BackingField = fields.get<false>(28), /* CreySettings */ &f__CreySettings_k__BackingField = fields.get<false>(29), /* CustomTouristPromotionSettings */ &f__CustomTouristPromotionSettings_k__BackingField = fields.get<false>(30), /* ElitePromotionSettings */ &f__EliteSettings_k__BackingField = fields.get<false>(31), /* System.Int32 */ &f_serverTimeInMilliseconds = fields.get<false>(32), /* System.Int32 */ &f_lastFrameServerTimeUpdate = fields.get<false>(33), /* System.Int32 */ &f_localTimeInMilliseconds = fields.get<false>(34), /* System.Int32 */ &f_lastFrameLocalTimeUpdate = fields.get<false>(35), /* MVMaterialRepository */ &f__MaterialRepository_k__BackingField = fields.get<false>(36), /* PlayerRepository */ &f__PlayerRepository_k__BackingField = fields.get<false>(37), /* ShopRepository */ &f__ShopRepository_k__BackingField = fields.get<false>(38), /* GameTierShopRepository */ &f__GameTierShopRepository_k__BackingField = fields.get<false>(39), /* AvatarRepository */ &f__AvatarShopRepository_k__BackingField = fields.get<false>(40), /* MV.WorldObject.MvAvatarMetaDataWoMap */ &f__AvatarMetaDataWoMap_k__BackingField = fields.get<false>(41), /* MVGameModeChangeNotifier */ &f__GameStateController_k__BackingField = fields.get<false>(42), /* FriendList */ &f__Friends_k__BackingField = fields.get<false>(43), /* MVLocalObjectController */ &f__PlayerController_k__BackingField = fields.get<false>(44), /* WinningConditionManager */ &f__WinningConditionManager_k__BackingField = fields.get<false>(45), /* WorldNetwork */ &f_worldNetwork = fields.get<false>(46), /* System.Action`2<System.Int32, System.Collections.Generic.Dictionary`2<System.Object, System.Object>> */ &f_PurchaseProductResponseHandler = fields.get<false>(47), /* System.Action`1<IWinningCondition> */ &f_OnWinningConditionFulfilled = fields.get<false>(48), /* System.Action`1<System.Int32> */ &f_OnActiveAvatar = fields.get<false>(49), /* System.Action`1<System.Boolean> */ &f_OnItemAddedToWorld = fields.get<false>(50), /* UnityEngine.Events.UnityAction`1<System.String> */ &f_OnPublishedPlanet = fields.get<false>(51), /* UnityEngine.Events.UnityAction`1<System.String> */ &f_OnAddWorldObjectToInventoryCallbackDev = fields.get<false>(52), /* System.Action`1<System.Boolean> */ &f_OnSetAvatarAccessoryResponse = fields.get<false>(53), /* MVNetworkGame+OnReceivedChatMessageDelegate */ &f_OnReceivedChatMessage = fields.get<false>(54), /* MVNetworkGame+OnMarketPlaceActionCompleteDelegate */ &f_OnMarketPlaceActionComplete = fields.get<false>(55), /* System.EventHandler`1<ScreenshotUploadedEventArgs> */ &f_ScreenshotUploaded = fields.get<false>(56), /* System.Action */ &f_OnActiveAvatarSet = fields.get<false>(57), /* System.Action */ &f_OnAccessoryUnequipped = fields.get<false>(58), /* MVPlayerContainer */ &f_playerContainer = fields.get<false>(59), /* PhotonLoggingConfig */ &f_photonLoggingConfig = fields.get<false>(60), /* EmbeddedSiteConfigData */ &f_embeddedSiteConfigData = fields.get<false>(61), /* MVNetworkGame+LogicObjectManagerClientWrapper */ &f_logicObjectManagerClientWrapper = fields.get<false>(62), /* RuntimeVariableNetworkManager */ &f_runtimeVariableNetworkManager = fields.get<false>(63), /* MVNetworkGame+GameDataQueryManager+GameDataQuery */ &f_gameDataQuery = fields.get<false>(64), /* MVNetworkGame+EventHandling */ &f_eventHandling = fields.get<false>(65), /* MVNetworkGame+OperationRequests */ &f_operationRequests = fields.get<false>(66), /* MVNetworkGame+OperationResponseHandling */ &f_operationResponseHandling = fields.get<false>(67), /* MVNetworkGame+StatusChangedHandling */ &f_statusChangedHandling = fields.get<false>(68);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<163> methods;
     /* System.Void add_ReceivedItemFromQuery(System.EventHandler`1<ReceivedItemFromQueryEventArgs> value) */
@@ -2902,7 +2902,7 @@ inline static auto /* GameEventManager */ &f_GameEventManager = fields.get<false
     /* MVLocalPlayer get_LocalPlayer() */
     inline static auto& m_get_LocalPlayer = methods.get<false, false>(76);
     /* System.Void .ctor(PhotonLoggingConfig photonLoggingConfig, EmbeddedSiteConfigData embeddedSiteConfigData) */
-    inline static auto& m_ctor = methods.get<false, false>(77);
+    inline static auto& m__ctor = methods.get<false, false>(77);
     /* System.Void SubscribeToEvent(MV.Common.MVEventCodes eventCode, System.Action`1<ExitGames.Client.Photon.EventData> callback) */
     inline static auto& m_SubscribeToEvent = methods.get<false, false>(78);
     /* System.Void UnSubscribeToEvent(MV.Common.MVEventCodes eventCode, System.Action`1<ExitGames.Client.Photon.EventData> callback) */
@@ -3084,7 +3084,7 @@ struct PhotonPeer {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<43> fields;
 inline static auto /* System.Boolean */ &f_NoSocket = fields.get<true>(3), /* System.Boolean */ &f_NativeDatagramEncrypt = fields.get<true>(4), /* System.Boolean */ &f_DebugBuild = fields.get<true>(5), /* System.Int32 */ &f_OutgoingStreamBufferSize = fields.get<true>(25), /* System.Boolean */ &f_AsyncKeyExchange = fields.get<true>(28);
-inline static auto /* System.Int32 */ &f_CommandBufferSize_k_BackingField = fields.get<false>(0), /* System.Int32 */ &f_LimitOfUnreliableCommands_k_BackingField = fields.get<false>(1), /* System.Int32 */ &f_WarningSize = fields.get<false>(2), /* System.Byte */ &f_ClientSdkId = fields.get<false>(6), /* System.String */ &f_clientVersion = fields.get<false>(7), /* ExitGames.Client.Photon.SerializationProtocol */ &f_SerializationProtocolType_k_BackingField = fields.get<false>(8), /* System.Collections.Generic.Dictionary`2<ExitGames.Client.Photon.ConnectionProtocol, System.Type> */ &f_SocketImplementationConfig = fields.get<false>(9), /* System.Type */ &f_SocketImplementation_k_BackingField = fields.get<false>(10), /* ExitGames.Client.Photon.DebugLevel */ &f_DebugOut = fields.get<false>(11), /* ExitGames.Client.Photon.IPhotonPeerListener */ &f_Listener_k_BackingField = fields.get<false>(12), /* System.Boolean */ &f_reuseEventInstance = fields.get<false>(13), /* System.Boolean */ &f_EnableServerTracing_k_BackingField = fields.get<false>(14), /* System.Byte */ &f_quickResendAttempts = fields.get<false>(15), /* System.Int32 */ &f_RhttpMinConnections = fields.get<false>(16), /* System.Int32 */ &f_RhttpMaxConnections = fields.get<false>(17), /* System.Byte */ &f_ChannelCount = fields.get<false>(18), /* System.Boolean */ &f_crcEnabled = fields.get<false>(19), /* System.Int32 */ &f_SentCountAllowance = fields.get<false>(20), /* System.Int32 */ &f_InitialResendTimeMax = fields.get<false>(21), /* System.Int32 */ &f_TimePingInterval = fields.get<false>(22), /* System.Int32 */ &f_DisconnectTimeout = fields.get<false>(23), /* ExitGames.Client.Photon.ConnectionProtocol */ &f_TransportProtocol_k_BackingField = fields.get<false>(24), /* System.Int32 */ &f_mtu = fields.get<false>(26), /* System.Boolean */ &f_IsSendingOnlyAcks_k_BackingField = fields.get<false>(27), /* System.Boolean */ &f_RandomizeSequenceNumbers = fields.get<false>(29), /* System.Byte[] */ &f_RandomizedSequenceNumbers = fields.get<false>(30), /* ExitGames.Client.Photon.TrafficStats */ &f_TrafficStatsIncoming_k_BackingField = fields.get<false>(31), /* ExitGames.Client.Photon.TrafficStats */ &f_TrafficStatsOutgoing_k_BackingField = fields.get<false>(32), /* ExitGames.Client.Photon.TrafficStatsGameLevel */ &f_TrafficStatsGameLevel_k_BackingField = fields.get<false>(33), /* System.Diagnostics.Stopwatch */ &f_trafficStatsStopwatch = fields.get<false>(34), /* System.Boolean */ &f_trafficStatsEnabled = fields.get<false>(35), /* ExitGames.Client.Photon.PeerBase */ &f_peerBase = fields.get<false>(36), /* System.Object */ &f_SendOutgoingLockObject = fields.get<false>(37), /* System.Object */ &f_DispatchLockObject = fields.get<false>(38), /* System.Object */ &f_EnqueueLock = fields.get<false>(39), /* System.Byte[] */ &f_PayloadEncryptionSecret = fields.get<false>(40), /* System.Type */ &f_encryptorType = fields.get<false>(41), /* ExitGames.Client.Photon.Encryption.IPhotonEncryptor */ &f_Encryptor = fields.get<false>(42);
+inline static auto /* System.Int32 */ &f__CommandBufferSize_k__BackingField = fields.get<false>(0), /* System.Int32 */ &f__LimitOfUnreliableCommands_k__BackingField = fields.get<false>(1), /* System.Int32 */ &f_WarningSize = fields.get<false>(2), /* System.Byte */ &f_ClientSdkId = fields.get<false>(6), /* System.String */ &f_clientVersion = fields.get<false>(7), /* ExitGames.Client.Photon.SerializationProtocol */ &f__SerializationProtocolType_k__BackingField = fields.get<false>(8), /* System.Collections.Generic.Dictionary`2<ExitGames.Client.Photon.ConnectionProtocol, System.Type> */ &f_SocketImplementationConfig = fields.get<false>(9), /* System.Type */ &f__SocketImplementation_k__BackingField = fields.get<false>(10), /* ExitGames.Client.Photon.DebugLevel */ &f_DebugOut = fields.get<false>(11), /* ExitGames.Client.Photon.IPhotonPeerListener */ &f__Listener_k__BackingField = fields.get<false>(12), /* System.Boolean */ &f_reuseEventInstance = fields.get<false>(13), /* System.Boolean */ &f__EnableServerTracing_k__BackingField = fields.get<false>(14), /* System.Byte */ &f_quickResendAttempts = fields.get<false>(15), /* System.Int32 */ &f_RhttpMinConnections = fields.get<false>(16), /* System.Int32 */ &f_RhttpMaxConnections = fields.get<false>(17), /* System.Byte */ &f_ChannelCount = fields.get<false>(18), /* System.Boolean */ &f_crcEnabled = fields.get<false>(19), /* System.Int32 */ &f_SentCountAllowance = fields.get<false>(20), /* System.Int32 */ &f_InitialResendTimeMax = fields.get<false>(21), /* System.Int32 */ &f_TimePingInterval = fields.get<false>(22), /* System.Int32 */ &f_DisconnectTimeout = fields.get<false>(23), /* ExitGames.Client.Photon.ConnectionProtocol */ &f__TransportProtocol_k__BackingField = fields.get<false>(24), /* System.Int32 */ &f_mtu = fields.get<false>(26), /* System.Boolean */ &f__IsSendingOnlyAcks_k__BackingField = fields.get<false>(27), /* System.Boolean */ &f_RandomizeSequenceNumbers = fields.get<false>(29), /* System.Byte[] */ &f_RandomizedSequenceNumbers = fields.get<false>(30), /* ExitGames.Client.Photon.TrafficStats */ &f__TrafficStatsIncoming_k__BackingField = fields.get<false>(31), /* ExitGames.Client.Photon.TrafficStats */ &f__TrafficStatsOutgoing_k__BackingField = fields.get<false>(32), /* ExitGames.Client.Photon.TrafficStatsGameLevel */ &f__TrafficStatsGameLevel_k__BackingField = fields.get<false>(33), /* System.Diagnostics.Stopwatch */ &f_trafficStatsStopwatch = fields.get<false>(34), /* System.Boolean */ &f_trafficStatsEnabled = fields.get<false>(35), /* ExitGames.Client.Photon.PeerBase */ &f_peerBase = fields.get<false>(36), /* System.Object */ &f_SendOutgoingLockObject = fields.get<false>(37), /* System.Object */ &f_DispatchLockObject = fields.get<false>(38), /* System.Object */ &f_EnqueueLock = fields.get<false>(39), /* System.Byte[] */ &f_PayloadEncryptionSecret = fields.get<false>(40), /* System.Type */ &f_encryptorType = fields.get<false>(41), /* ExitGames.Client.Photon.Encryption.IPhotonEncryptor */ &f_Encryptor = fields.get<false>(42);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<36> methods;
     /* System.Byte get_ClientSdkIdShifted() */
@@ -3138,9 +3138,9 @@ inline static auto /* System.Int32 */ &f_CommandBufferSize_k_BackingField = fiel
     /* System.Void InitializeTrafficStats() */
     inline static auto& m_InitializeTrafficStats = methods.get<false, false>(24);
     /* System.Void .ctor(ExitGames.Client.Photon.ConnectionProtocol protocolType) */
-    inline static auto& m0_ctor = methods.get<false, false>(25);
+    inline static auto& m0__ctor = methods.get<false, false>(25);
     /* System.Void .ctor(ExitGames.Client.Photon.IPhotonPeerListener listener, ExitGames.Client.Photon.ConnectionProtocol protocolType) */
-    inline static auto& m1_ctor = methods.get<false, false>(26);
+    inline static auto& m1__ctor = methods.get<false, false>(26);
     /* System.Boolean Connect(System.String serverAddress, System.String applicationName) */
     inline static auto& m0_Connect = methods.get<false, true>(27);
     /* System.Boolean Connect(System.String serverAddress, System.String applicationName, System.Object custom) */
@@ -3158,7 +3158,7 @@ inline static auto /* System.Int32 */ &f_CommandBufferSize_k_BackingField = fiel
     /* System.Boolean SendOperation(System.Byte operationCode, System.Collections.Generic.Dictionary`2<System.Byte, System.Object> operationParameters, ExitGames.Client.Photon.SendOptions sendOptions) */
     inline static auto& m_SendOperation = methods.get<false, true>(34);
     /* System.Void .cctor() */
-    inline static auto& m_cctor = methods.get<true, false>(35);
+    inline static auto& m__cctor = methods.get<true, false>(35);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -3258,7 +3258,7 @@ struct InteractionFlags {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<43> fields;
 inline static auto /* InteractionFlags */ &f_None = fields.get<true>(1), /* InteractionFlags */ &f_Selectable = fields.get<true>(2), /* InteractionFlags */ &f_HasCubeModel = fields.get<true>(3), /* InteractionFlags */ &f_IsTerrain = fields.get<true>(4), /* InteractionFlags */ &f_DirectlySelectable = fields.get<true>(5), /* InteractionFlags */ &f_SelectionRequiresEditGroup = fields.get<true>(6), /* InteractionFlags */ &f_NotUserTransformable = fields.get<true>(7), /* InteractionFlags */ &f_DontPushGroupToSelectionStack = fields.get<true>(8), /* InteractionFlags */ &f_CanRotateX = fields.get<true>(9), /* InteractionFlags */ &f_CanRotateY = fields.get<true>(10), /* InteractionFlags */ &f_CanRotateZ = fields.get<true>(11), /* InteractionFlags */ &f_NotTranslatbleY = fields.get<true>(12), /* InteractionFlags */ &f_NotTranslatbleXZ = fields.get<true>(13), /* InteractionFlags */ &f_CanEdit = fields.get<true>(14), /* InteractionFlags */ &f_CanClone = fields.get<true>(15), /* InteractionFlags */ &f_CanAddToInventory = fields.get<true>(16), /* InteractionFlags */ &f_HasSettings = fields.get<true>(17), /* InteractionFlags */ &f_CanResetLogic = fields.get<true>(18), /* InteractionFlags */ &f_IsPreview = fields.get<true>(19), /* InteractionFlags */ &f_IsUsable = fields.get<true>(20), /* InteractionFlags */ &f_CantAddChildren = fields.get<true>(21), /* InteractionFlags */ &f_CanUseGameCoins = fields.get<true>(22), /* InteractionFlags */ &f_CanUseLevel = fields.get<true>(23), /* InteractionFlags */ &f_CanUseStars = fields.get<true>(24), /* InteractionFlags */ &f_TranslatbleXZ2D = fields.get<true>(25), /* InteractionFlags */ &f_Sounds = fields.get<true>(26), /* InteractionFlags */ &f_CanUseTeam = fields.get<true>(27), /* InteractionFlags */ &f_CanCloneRoot = fields.get<true>(28), /* InteractionFlags */ &f_GlobalSounds = fields.get<true>(29), /* InteractionFlags */ &f_CanUseGameRank = fields.get<true>(30), /* InteractionFlags */ &f_CanEarnGamePoints = fields.get<true>(31), /* InteractionFlags */ &f_CanEarnGamePointsMinor = fields.get<true>(32), /* InteractionFlags */ &f_CanEnterPlay = fields.get<true>(33), /* InteractionFlags */ &f_CanRespawn = fields.get<true>(34), /* InteractionFlags */ &f_CanUseRewardedAd = fields.get<true>(35), /* InteractionFlags */ &f_UnlockRotateX = fields.get<true>(36), /* InteractionFlags */ &f_UnlockRotateZ = fields.get<true>(37), /* InteractionFlags */ &f_LockRotateY = fields.get<true>(38), /* InteractionFlags */ &f_RemoveResetRotation = fields.get<true>(39), /* InteractionFlags */ &f_CanChangeScale = fields.get<true>(40), /* InteractionFlags */ &f_Info = fields.get<true>(41), /* InteractionFlags */ &f_CanEditMuzzle = fields.get<true>(42);
-inline static auto /* System.Int64 */ &f_value = fields.get<false>(0);
+inline static auto /* System.Int64 */ &f_value__ = fields.get<false>(0);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<0> methods;
 
@@ -3271,7 +3271,7 @@ inline static auto /* System.Int64 */ &f_value = fields.get<false>(0);
 struct MVPlayer {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<18> fields;
-inline static auto /* System.Int32 */ &f_checkpointWOID = fields.get<false>(0), /* MV.WorldObject.GamePassSystem.PlayerPlanetDataRemote */ &f_playerPlanetDataRemote = fields.get<false>(1), /* System.Int32 */ &f_level = fields.get<false>(2), /* System.Action */ &f_OnGoldAmountChange = fields.get<false>(3), /* UnityEngine.Events.UnityAction`1<System.Int32> */ &f_OnLevelChanged = fields.get<false>(4), /* UnityEngine.Events.UnityAction */ &f_OnCheckpointReached = fields.get<false>(5), /* UnityEngine.Events.UnityAction */ &f_OnPause = fields.get<false>(6), /* UnityEngine.Events.UnityAction */ &f_OnResume = fields.get<false>(7), /* UnityEngine.Events.UnityAction */ &f_OnObserve = fields.get<false>(8), /* System.Int32 */ &f_ProfileID_k_BackingField = fields.get<false>(9), /* System.Int32 */ &f_ActorNr_k_BackingField = fields.get<false>(10), /* System.String */ &f_RegionCode_k_BackingField = fields.get<false>(11), /* MV.Common.BuildTarget */ &f_BuildTarget_k_BackingField = fields.get<false>(12), /* MV.WorldObject.MetaData.UserProfileData */ &f_UserProfileData_k_BackingField = fields.get<false>(13), /* MV.WorldObject.Subscription.SubscriptionRulesWrapper */ &f_SubscriptionRules_k_BackingField = fields.get<false>(14), /* MV.Common.PlayerGameState */ &f_playerState = fields.get<false>(15), /* MV.WorldObject.MVTeam */ &f_Team_k_BackingField = fields.get<false>(16), /* SpawnRolesManager */ &f_spawnRolesManager = fields.get<false>(17);
+inline static auto /* System.Int32 */ &f_checkpointWOID = fields.get<false>(0), /* MV.WorldObject.GamePassSystem.PlayerPlanetDataRemote */ &f_playerPlanetDataRemote = fields.get<false>(1), /* System.Int32 */ &f_level = fields.get<false>(2), /* System.Action */ &f_OnGoldAmountChange = fields.get<false>(3), /* UnityEngine.Events.UnityAction`1<System.Int32> */ &f_OnLevelChanged = fields.get<false>(4), /* UnityEngine.Events.UnityAction */ &f_OnCheckpointReached = fields.get<false>(5), /* UnityEngine.Events.UnityAction */ &f_OnPause = fields.get<false>(6), /* UnityEngine.Events.UnityAction */ &f_OnResume = fields.get<false>(7), /* UnityEngine.Events.UnityAction */ &f_OnObserve = fields.get<false>(8), /* System.Int32 */ &f__ProfileID_k__BackingField = fields.get<false>(9), /* System.Int32 */ &f__ActorNr_k__BackingField = fields.get<false>(10), /* System.String */ &f__RegionCode_k__BackingField = fields.get<false>(11), /* MV.Common.BuildTarget */ &f__BuildTarget_k__BackingField = fields.get<false>(12), /* MV.WorldObject.MetaData.UserProfileData */ &f__UserProfileData_k__BackingField = fields.get<false>(13), /* MV.WorldObject.Subscription.SubscriptionRulesWrapper */ &f__SubscriptionRules_k__BackingField = fields.get<false>(14), /* MV.Common.PlayerGameState */ &f_playerState = fields.get<false>(15), /* MV.WorldObject.MVTeam */ &f__Team_k__BackingField = fields.get<false>(16), /* SpawnRolesManager */ &f_spawnRolesManager = fields.get<false>(17);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<38> methods;
     /* System.Int32 get_ProfileID() */
@@ -3321,9 +3321,9 @@ inline static auto /* System.Int32 */ &f_checkpointWOID = fields.get<false>(0), 
     /* System.Void set_Level(System.Int32 value) */
     inline static auto& m_set_Level = methods.get<false, false>(22);
     /* System.Void .ctor(System.Int32 actorNumber, System.Int32 profileID, System.String regionCode, MV.Common.BuildTarget buildTarget, MV.WorldObject.MetaData.UserProfileData userProfileData, System.Boolean isReady, System.Boolean observer) */
-    inline static auto& m0_ctor = methods.get<false, false>(23);
+    inline static auto& m0__ctor = methods.get<false, false>(23);
     /* System.Void .ctor(System.Int32 actorNumber, System.Int32 profileID, System.Int32 level, System.String regionCode, MV.Common.BuildTarget buildTarget, MV.WorldObject.MetaData.UserProfileData userProfileData, System.Boolean isReady, System.Boolean observer, MV.WorldObject.GamePassSystem.PlayerPlanetDataRemote playerPlanetDataRemote) */
-    inline static auto& m1_ctor = methods.get<false, false>(24);
+    inline static auto& m1__ctor = methods.get<false, false>(24);
     /* System.Void NotifyAvatarCreated(System.Int32 id) */
     inline static auto& m_NotifyAvatarCreated = methods.get<false, false>(25);
     /* System.Boolean IsOnSameTeam(MVPlayer other) */
@@ -3364,7 +3364,7 @@ inline static auto /* System.Boolean */ &f_IsAdmin = fields.get<false>(0), /* Sy
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<4> methods;
     /* System.Void .ctor() */
-    inline static auto& m_ctor = methods.get<false, false>(0);
+    inline static auto& m__ctor = methods.get<false, false>(0);
     /* MV.WorldObject.MetaData.UserProfileData CreateRegisteredProfileData(System.Boolean admin, System.String username, System.Int32 gold, System.Nullable`1<System.DateTime> age) */
     inline static auto& m_CreateRegisteredProfileData = methods.get<true, false>(1);
     /* System.Boolean CheckUnderAge(System.Boolean admin, System.Nullable`1<System.DateTime> age) */
@@ -3417,7 +3417,7 @@ inline static auto /* XPLevelLimits */ &f_xpLevelLimits = fields.get<false>(0), 
     /* System.Int32 get_Level() */
     inline static auto& m_get_Level = methods.get<false, false>(15);
     /* System.Void .ctor(System.Int32 playerCurrentXP, XPLevelLimits xpLevelLimits) */
-    inline static auto& m_ctor = methods.get<false, false>(16);
+    inline static auto& m__ctor = methods.get<false, false>(16);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 
@@ -3429,7 +3429,7 @@ struct MVLocalPlayer {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<18> fields;
 inline static auto /* System.Int32 */ &f_NrOfTimesDiedOffset = fields.get<true>(4), /* System.Single */ &f_respawnDuration = fields.get<true>(14), /* System.Single */ &f_reviveTimeout = fields.get<true>(16);
-inline static auto /* MV.WorldObject.SpawnRoles.SpawnRolesMetaData */ &f_spawnRolesMetaData = fields.get<false>(0), /* MV.WorldObject.GamePassSystem.PlayerPlanetData */ &f_playerPlanetData = fields.get<false>(1), /* BoostController */ &f_boostController = fields.get<false>(2), /* System.Int32 */ &f_defaultBodyWoId = fields.get<false>(3), /* CodeStage.AntiCheat.ObscuredTypes.ObscuredInt */ &f_numberOfTimesDiedInRound = fields.get<false>(5), /* System.Action */ &f_OnInitializeLeveling = fields.get<false>(6), /* Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.Mediator.SpawnRoleDataMediator */ &f_spawnRoleDataMediator = fields.get<false>(7), /* WorldObjectTypes.Avatar.Local.WorldObjectUseRequirementTracker */ &f_WorldObjectUseRequirementTracker_k_BackingField = fields.get<false>(8), /* XPProgress */ &f_xpProgress = fields.get<false>(9), /* System.Int32 */ &f_planetOwnershipTypeID = fields.get<false>(10), /* System.Collections.Generic.List`1<System.Int32> */ &f_planetPermissionIDs = fields.get<false>(11), /* XPProgress+OnXPProgressDataDelegate */ &f_OnXPProgressData = fields.get<false>(12), /* System.Int32 */ &f_joinTime = fields.get<false>(13), /* System.Single */ &f_respawnTime = fields.get<false>(15), /* System.Int32 */ &f_oldLevel = fields.get<false>(17);
+inline static auto /* MV.WorldObject.SpawnRoles.SpawnRolesMetaData */ &f_spawnRolesMetaData = fields.get<false>(0), /* MV.WorldObject.GamePassSystem.PlayerPlanetData */ &f_playerPlanetData = fields.get<false>(1), /* BoostController */ &f_boostController = fields.get<false>(2), /* System.Int32 */ &f_defaultBodyWoId = fields.get<false>(3), /* CodeStage.AntiCheat.ObscuredTypes.ObscuredInt */ &f_numberOfTimesDiedInRound = fields.get<false>(5), /* System.Action */ &f_OnInitializeLeveling = fields.get<false>(6), /* Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.Mediator.SpawnRoleDataMediator */ &f_spawnRoleDataMediator = fields.get<false>(7), /* WorldObjectTypes.Avatar.Local.WorldObjectUseRequirementTracker */ &f__WorldObjectUseRequirementTracker_k__BackingField = fields.get<false>(8), /* XPProgress */ &f_xpProgress = fields.get<false>(9), /* System.Int32 */ &f_planetOwnershipTypeID = fields.get<false>(10), /* System.Collections.Generic.List`1<System.Int32> */ &f_planetPermissionIDs = fields.get<false>(11), /* XPProgress+OnXPProgressDataDelegate */ &f_OnXPProgressData = fields.get<false>(12), /* System.Int32 */ &f_joinTime = fields.get<false>(13), /* System.Single */ &f_respawnTime = fields.get<false>(15), /* System.Int32 */ &f_oldLevel = fields.get<false>(17);
 
     inline static ::Tools::Il2Cpp::Metadata::array_method<44> methods;
     /* MVBody get_Body() */
@@ -3475,7 +3475,7 @@ inline static auto /* MV.WorldObject.SpawnRoles.SpawnRolesMetaData */ &f_spawnRo
     /* System.Single get_ReviveTimeout() */
     inline static auto& m_get_ReviveTimeout = methods.get<false, false>(20);
     /* System.Void .ctor(System.Int32 actorNumber, System.Int32 profileID, System.String regionCode, System.Int32 planetOwnershipTypeID, System.Collections.Generic.List`1<System.Int32> planetPermissionIDs, MV.WorldObject.MetaData.UserProfileData userProfileData) */
-    inline static auto& m_ctor = methods.get<false, false>(21);
+    inline static auto& m__ctor = methods.get<false, false>(21);
     /* System.Void SpawnRoleModeOnOnChange(MV.Common.SpawnRoleModeType value) */
     inline static auto& m_SpawnRoleModeOnOnChange = methods.get<false, false>(22);
     /* System.Void SetupPlayerWorldObjects(System.Int32 defaultBodyWoId, MV.WorldObject.SpawnRoles.SpawnRolesRuntimeData spawnRolesRuntimeData) */
@@ -3520,6 +3520,275 @@ inline static auto /* MV.WorldObject.SpawnRoles.SpawnRolesMetaData */ &f_spawnRo
     inline static auto& m_IsAvatarDriving = methods.get<false, false>(42);
     /* System.Void SetLocalAvatarEarsState(System.Boolean activeState) */
     inline static auto& m_SetLocalAvatarEarsState = methods.get<false, false>(43);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct ContextMenu {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<7> fields;
+inline static auto /* System.Single */ &f_Padding = fields.get<true>(0);
+inline static auto /* System.Boolean */ &f_linkMenu = fields.get<false>(1), /* UnityEngine.Vector3 */ &f_worldPosition = fields.get<false>(2), /* System.Int32 */ &f_woID = fields.get<false>(3), /* ContextMenuButton */ &f_contextMenuButtonPrefab = fields.get<false>(4), /* ContextMenuButton */ &f_contextMenuLockedButtonPrefab = fields.get<false>(5), /* UnityEngine.RectTransform */ &f_rectTransform = fields.get<false>(6);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<11> methods;
+    /* System.Void Initialize(System.Int32 woID, UnityEngine.Vector3 worldPosition) */
+    inline static auto& m_Initialize = methods.get<false, false>(0);
+    /* System.Void InitializeLink(System.Int32 linkID, UnityEngine.Vector3 worldPosition) */
+    inline static auto& m_InitializeLink = methods.get<false, false>(1);
+    /* System.Void PopWoDestroyed(System.Object obj, WorldObjectDestroyedEventArgs args) */
+    inline static auto& m_PopWoDestroyed = methods.get<false, false>(2);
+    /* System.Void Pop() */
+    inline static auto& m_Pop = methods.get<false, false>(3);
+    /* System.Void AddButton(System.String buttonText, UnityEngine.Events.UnityAction onClickCallback) */
+    inline static auto& m_AddButton = methods.get<false, false>(4);
+    /* System.Void AddLockedButton(System.String buttonText) */
+    inline static auto& m_AddLockedButton = methods.get<false, false>(5);
+    /* System.Void Update() */
+    inline static auto& m_Update = methods.get<false, false>(6);
+    /* System.Void SetToScreenPoint() */
+    inline static auto& m_SetToScreenPoint = methods.get<false, false>(7);
+    /* System.Void LateUpdate() */
+    inline static auto& m_LateUpdate = methods.get<false, false>(8);
+    /* System.Void OnDestroy() */
+    inline static auto& m_OnDestroy = methods.get<false, false>(9);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(10);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct UE_Events_UnityAction {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<0> fields;
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<2> methods;
+    /* System.Void .ctor(System.Object object, System.IntPtr method) */
+    inline static auto& m__ctor = methods.get<false, false>(0);
+    /* System.Void Invoke() */
+    inline static auto& m_Invoke = methods.get<false, true>(1);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct TM {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<7> fields;
+inline static auto /* System.String */ &f_baseResourcesPath = fields.get<true>(5), /* TM */ &f_instance = fields.get<true>(6);
+inline static auto /* GNU.Gettext.Catalog */ &f_catalog = fields.get<false>(0), /* System.String */ &f_fileName = fields.get<false>(1), /* System.Boolean */ &f_languageLoadingDone = fields.get<false>(2), /* System.Collections.Generic.List`1<System.Action> */ &f_languageChangedCallback = fields.get<false>(3), /* System.String */ &f_cultureName = fields.get<false>(4);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<13> methods;
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(0);
+    /* TM get_Instance() */
+    inline static auto& m_get_Instance = methods.get<true, false>(1);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<true, false>(2);
+    /* System.String _(System.String key) */
+    inline static auto& m__ = methods.get<true, false>(3);
+    /* System.Void LanguageChanged(System.Action onLanguageChangedCallback) */
+    inline static auto& m_LanguageChanged = methods.get<true, false>(4);
+    /* System.String GetTextWithValues(System.String index, ValueInsert values) */
+    inline static auto& m_GetTextWithValues = methods.get<true, false>(5);
+    /* System.String[] GetTextAsArray(System.String toArrayString) */
+    inline static auto& m_GetTextAsArray = methods.get<true, false>(6);
+    /* System.Void LoadLanguage(System.String languageName) */
+    inline static auto& m_LoadLanguage = methods.get<true, false>(7);
+    /* System.String GetFilename(System.String languageName) */
+    inline static auto& m_GetFilename = methods.get<true, false>(8);
+    /* System.Void TryGetTextAsset(System.String fileName) */
+    inline static auto& m_TryGetTextAsset = methods.get<true, false>(9);
+    /* System.Void StreamingAssetCallback(UnityEngine.Networking.UnityWebRequest www) */
+    inline static auto& m_StreamingAssetCallback = methods.get<true, false>(10);
+    /* System.Void SetLanguageLoadingDone() */
+    inline static auto& m_SetLanguageLoadingDone = methods.get<true, false>(11);
+    /* System.String StripAssetStringFromFuncIdentifier(System.String key) */
+    inline static auto& m_StripAssetStringFromFuncIdentifier = methods.get<true, false>(12);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct DesktopEditModeController {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<36> fields;
+inline static auto /* System.Single */ &f_focusTimeInputSupressTimeOut = fields.get<true>(0);
+inline static auto /* EditorWorldObjectCreation */ &f_editorWorldObjectCreation = fields.get<false>(1), /* UIStack */ &f_uiStack = fields.get<false>(2), /* InEditMenu */ &f_inEditMenuPrefab = fields.get<false>(3), /* UnityEngine.GameObject */ &f_stackBottom = fields.get<false>(4), /* UnityEngine.GameObject */ &f_playModeButton = fields.get<false>(5), /* ChatControllerUGUI */ &f_chatController = fields.get<false>(6), /* DrawPlaneControllerUUI */ &f_drawPlaneController = fields.get<false>(7), /* MaterialsControllerEditMode */ &f_materialsController = fields.get<false>(8), /* ContextMenuController */ &f_contextMenuController = fields.get<false>(9), /* GizmoController */ &f_gizmoController = fields.get<false>(10), /* EditModeRepositoryController */ &f_repositoryController = fields.get<false>(11), /* EditModeClientShopController */ &f_clientShopController = fields.get<false>(12), /* PlayerInventoryController */ &f_playerInventoryController = fields.get<false>(13), /* CreateCubeModelController */ &f_createCubeModelController = fields.get<false>(14), /* UnityEngine.RectTransform */ &f_notificationsManager = fields.get<false>(15), /* ChatBubbleController */ &f_chatBubbleController = fields.get<false>(16), /* FirstTimeSetupTerrainEditTutorial */ &f_firstTimeSetupTerrainEditTutorial = fields.get<false>(17), /* SetupCubeModelTutorialUI */ &f_setupCubeModelTutorialUI = fields.get<false>(18), /* GoldPurchasedTracker */ &f_goldPurchasedTracker = fields.get<false>(19), /* System.Single */ &f_focusTime = fields.get<false>(20), /* System.Boolean */ &f_enterPlayModeOnceGuard = fields.get<false>(21), /* System.Boolean */ &f_enterBuildModeOnceGuard = fields.get<false>(22), /* System.Boolean */ &f_isInPlayInEditMode = fields.get<false>(23), /* System.Boolean */ &f_gridSnap = fields.get<false>(24), /* System.Boolean */ &f_canEdit = fields.get<false>(25), /* System.Boolean */ &f_canEnterPlayMode = fields.get<false>(26), /* System.Boolean */ &f_storedRenderLogicState = fields.get<false>(27), /* System.Boolean */ &f_focusSuppressInput = fields.get<false>(28), /* System.Action`1<EditModeChangeArgs> */ &f_editModeChange = fields.get<false>(29), /* DesktopPlayModeController */ &f_desktopPlayModeController = fields.get<false>(30), /* PlayModeOnlyStateMachine */ &f_playModeOnlyStateMachine = fields.get<false>(31), /* InEditMenu */ &f_inEditMenu = fields.get<false>(32), /* FSMEntity */ &f_stateMachine = fields.get<false>(33), /* EditorStateMachine */ &f__EditModeStateMachine_k__BackingField = fields.get<false>(34), /* UGUI.Desktop.Scripts.EditMode.Inventories.PlayerShopInventoryRepository */ &f__PlayerShopInventoryRepository_k__BackingField = fields.get<false>(35);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<43> methods;
+    /* EditorStateMachine get_EditModeStateMachine() */
+    inline static auto& m_get_EditModeStateMachine = methods.get<false, false>(0);
+    /* System.Void set_EditModeStateMachine(EditorStateMachine value) */
+    inline static auto& m_set_EditModeStateMachine = methods.get<false, false>(1);
+    /* System.Boolean get_IsInPlayInEditMode() */
+    inline static auto& m_get_IsInPlayInEditMode = methods.get<false, true>(2);
+    /* UGUI.Desktop.Scripts.EditMode.Inventories.PlayerShopInventoryRepository get_PlayerShopInventoryRepository() */
+    inline static auto& m_get_PlayerShopInventoryRepository = methods.get<false, true>(3);
+    /* System.Void set_PlayerShopInventoryRepository(UGUI.Desktop.Scripts.EditMode.Inventories.PlayerShopInventoryRepository value) */
+    inline static auto& m_set_PlayerShopInventoryRepository = methods.get<false, true>(4);
+    /* System.Void Awake() */
+    inline static auto& m_Awake = methods.get<false, false>(5);
+    /* System.Void OnDestroy() */
+    inline static auto& m_OnDestroy = methods.get<false, false>(6);
+    /* System.Void Start() */
+    inline static auto& m_Start = methods.get<false, false>(7);
+    /* System.Void OnStackChanged() */
+    inline static auto& m_OnStackChanged = methods.get<false, false>(8);
+    /* System.Void HandleFocusInputSuppress() */
+    inline static auto& m_HandleFocusInputSuppress = methods.get<false, false>(9);
+    /* System.Void Update() */
+    inline static auto& m_Update = methods.get<false, false>(10);
+    /* System.Void HandleInput() */
+    inline static auto& m_HandleInput = methods.get<false, false>(11);
+    /* System.Void OnApplicationFocus(System.Boolean focus) */
+    inline static auto& m_OnApplicationFocus = methods.get<false, false>(12);
+    /* System.Void RegisterPlayModeController(DesktopPlayModeController desktopPlayModeController) */
+    inline static auto& m_RegisterPlayModeController = methods.get<false, false>(13);
+    /* System.Boolean CanEdit() */
+    inline static auto& m_CanEdit = methods.get<false, false>(14);
+    /* System.Boolean CanEnterPlayMode() */
+    inline static auto& m_CanEnterPlayMode = methods.get<false, false>(15);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(16);
+    /* System.Void InitializeEditSystems() */
+    inline static auto& m_InitializeEditSystems = methods.get<false, false>(17);
+    /* System.Void InitializePlayModeSystems() */
+    inline static auto& m_InitializePlayModeSystems = methods.get<false, false>(18);
+    /* System.Void DestroyFirstTimeEditTutorials() */
+    inline static auto& m_DestroyFirstTimeEditTutorials = methods.get<false, false>(19);
+    /* System.Void HideUI() */
+    inline static auto& m_HideUI = methods.get<false, false>(20);
+    /* System.Void DisableEditMode() */
+    inline static auto& m_DisableEditMode = methods.get<false, true>(21);
+    /* System.Void EnterPlayMode() */
+    inline static auto& m_EnterPlayMode = methods.get<false, true>(22);
+    /* System.Void LeaveEditPlayMode() */
+    inline static auto& m_LeaveEditPlayMode = methods.get<false, false>(23);
+    /* System.Void EnterBuildMode() */
+    inline static auto& m_EnterBuildMode = methods.get<false, true>(24);
+    /* IState GetCurrentState() */
+    inline static auto& m_GetCurrentState = methods.get<false, true>(25);
+    /* System.Void SetState(EditorEvent editorEvent) */
+    inline static auto& m0_SetState = methods.get<false, true>(26);
+    /* System.Void SetState(PlayModeOnlyEvent playModeOnlyEvent) */
+    inline static auto& m1_SetState = methods.get<false, false>(27);
+    /* System.Void ClearStateStack() */
+    inline static auto& m_ClearStateStack = methods.get<false, true>(28);
+    /* System.Collections.IEnumerator HandleCursorVisible() */
+    inline static auto& m_HandleCursorVisible = methods.get<false, false>(29);
+    /* System.Boolean IsGridSnap() */
+    inline static auto& m_IsGridSnap = methods.get<false, true>(30);
+    /* System.Action`1<EditModeChangeArgs> get_EditModeChange() */
+    inline static auto& m_get_EditModeChange = methods.get<false, true>(31);
+    /* System.Void set_EditModeChange(System.Action`1<EditModeChangeArgs> value) */
+    inline static auto& m_set_EditModeChange = methods.get<false, true>(32);
+    /* System.Void Set(System.Boolean snap) */
+    inline static auto& m_Set = methods.get<false, true>(33);
+    /* System.Void RegisterShortcuts() */
+    inline static auto& m_RegisterShortcuts = methods.get<false, false>(34);
+    /* System.Void Respawn() */
+    inline static auto& m_Respawn = methods.get<false, false>(35);
+    /* System.Void MoveToSelectedObject() */
+    inline static auto& m_MoveToSelectedObject = methods.get<false, false>(36);
+    /* System.Void DeleteWoid(System.Int32 woid) */
+    inline static auto& m_DeleteWoid = methods.get<false, true>(37);
+    /* System.Void SetUIReady() */
+    inline static auto& m_SetUIReady = methods.get<false, false>(38);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(39);
+    /* System.Void <HandleInput>b__50_0(UnityEngine.EventSystems.IUIStack x, UnityEngine.EventSystems.BaseEventData y) */
+    inline static auto& m__HandleInput_b__50_0 = methods.get<false, false>(40);
+    /* System.Void <RegisterShortcuts>b__74_0(UnityEngine.EventSystems.IShortcutKeyRegister x, UnityEngine.EventSystems.BaseEventData y) */
+    inline static auto& m__RegisterShortcuts_b__74_0 = methods.get<false, false>(41);
+    /* System.Void <RegisterShortcuts>b__74_1(UnityEngine.EventSystems.IShortcutKeyRegister x, UnityEngine.EventSystems.BaseEventData y) */
+    inline static auto& m__RegisterShortcuts_b__74_1 = methods.get<false, false>(42);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct EditorStateMachine {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<7> fields;
+inline static auto /* SelectionController */ &f_selectionController = fields.get<false>(0), /* MainCameraManager */ &f_weCamera = fields.get<false>(1), /* CubeModelingStateMachine */ &f_cubeModelingStateMachine = fields.get<false>(2), /* MVNetworkSelector */ &f_networkSelector = fields.get<false>(3), /* UnityEngine.GameObject */ &f_gameObject = fields.get<false>(4), /* System.Boolean */ &f__GridMode_k__BackingField = fields.get<false>(5), /* System.Boolean */ &f__MuzzleEditMode_k__BackingField = fields.get<false>(6);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<32> methods;
+    /* MVNetworkSelector get_NetworkSelector() */
+    inline static auto& m_get_NetworkSelector = methods.get<false, false>(0);
+    /* MainCameraManager get_MainCameraManager() */
+    inline static auto& m_get_MainCameraManager = methods.get<false, false>(1);
+    /* System.Boolean get_GridMode() */
+    inline static auto& m_get_GridMode = methods.get<false, false>(2);
+    /* System.Void set_GridMode(System.Boolean value) */
+    inline static auto& m_set_GridMode = methods.get<false, false>(3);
+    /* System.Boolean get_MuzzleEditMode() */
+    inline static auto& m_get_MuzzleEditMode = methods.get<false, false>(4);
+    /* System.Void set_MuzzleEditMode(System.Boolean value) */
+    inline static auto& m_set_MuzzleEditMode = methods.get<false, false>(5);
+    /* CubeModelingStateMachine get_CubeModelingStateMachine() */
+    inline static auto& m_get_CubeModelingStateMachine = methods.get<false, false>(6);
+    /* EditorEvent get_CurEvent() */
+    inline static auto& m_get_CurEvent = methods.get<false, false>(7);
+    /* EditorEvent get_PrevEvent() */
+    inline static auto& m_get_PrevEvent = methods.get<false, false>(8);
+    /* EditorEvent get_NextEvent() */
+    inline static auto& m_get_NextEvent = methods.get<false, false>(9);
+    /* ISelectionController get_SelectionController() */
+    inline static auto& m_get_SelectionController = methods.get<false, false>(10);
+    /* System.Collections.Generic.HashSet`1<System.Int32> get_SelectedIDs() */
+    inline static auto& m_get_SelectedIDs = methods.get<false, false>(11);
+    /* System.Collections.Generic.HashSet`1<MVWorldObjectClient> get_SelectedWOs() */
+    inline static auto& m_get_SelectedWOs = methods.get<false, false>(12);
+    /* MVWorldObjectClient get_SingleSelectedWO() */
+    inline static auto& m_get_SingleSelectedWO = methods.get<false, false>(13);
+    /* System.Int32 get_ParentGroupID() */
+    inline static auto& m_get_ParentGroupID = methods.get<false, false>(14);
+    /* MVGroup get_ParentGroup() */
+    inline static auto& m_get_ParentGroup = methods.get<false, false>(15);
+    /* System.Boolean get_ParentGroupIsRoot() */
+    inline static auto& m_get_ParentGroupIsRoot = methods.get<false, false>(16);
+    /* UnityEngine.GameObject get_GameObject() */
+    inline static auto& m_get_GameObject = methods.get<false, false>(17);
+    /* System.Void .ctor(UnityEngine.GameObject gameObject) */
+    inline static auto& m0__ctor = methods.get<false, false>(18);
+    /* System.Void .ctor(UnityEngine.GameObject gameObject, UnityEngine.Vector3 avatarEditModeCenterPos) */
+    inline static auto& m1__ctor = methods.get<false, false>(19);
+    /* System.Void .ctor(UnityEngine.GameObject gameObject, ContextMenuController contextMenuController, GizmoController gizmoController) */
+    inline static auto& m2__ctor = methods.get<false, false>(20);
+    /* System.Void EnterGroup(MVGroup group) */
+    inline static auto& m_EnterGroup = methods.get<false, false>(21);
+    /* System.Int32 ExitGroup() */
+    inline static auto& m_ExitGroup = methods.get<false, false>(22);
+    /* System.Int32 ExitGroupToRoot() */
+    inline static auto& m_ExitGroupToRoot = methods.get<false, false>(23);
+    /* WorldObjectClientRef Select(System.Boolean addToSelection, System.Int32 layerMask = -5) */
+    inline static auto& m0_Select = methods.get<false, false>(24);
+    /* WorldObjectClientRef Select(VoxelHit hit, System.Boolean addToSelection) */
+    inline static auto& m1_Select = methods.get<false, false>(25);
+    /* System.Void DeSelectWorldObject(MVWorldObjectClient wo) */
+    inline static auto& m_DeSelectWorldObject = methods.get<false, false>(26);
+    /* WorldObjectClientRef SelectWO(System.Int32 id, System.Boolean addToSelection, System.Boolean showVisuals = True) */
+    inline static auto& m_SelectWO = methods.get<false, false>(27);
+    /* System.Void DeSelectAll() */
+    inline static auto& m_DeSelectAll = methods.get<false, false>(28);
+    /* System.Void DeSelectAllExcept(System.Int32 id) */
+    inline static auto& m_DeSelectAllExcept = methods.get<false, false>(29);
+    /* System.Boolean IsSelected(System.Int32 id) */
+    inline static auto& m_IsSelected = methods.get<false, false>(30);
+    /* System.Void Update() */
+    inline static auto& m_Update = methods.get<false, true>(31);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 

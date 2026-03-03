@@ -159,6 +159,7 @@
   <ItemGroup>
     <ClCompile Include="Core\DITools.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Helpers\DelegateUtils.cpp" />
     <ClCompile Include="Helpers\StringExtensions.cpp" />
     <ClCompile Include="services\Build\BlueModeTool.cpp" />
     <ClCompile Include="services\Build\CustomGrid.cpp" />
@@ -167,6 +168,7 @@
     <ClCompile Include="services\Build\RotationStep.cpp" />
     <ClCompile Include="services\Build\UnlimitedConfig.cpp" />
     <ClCompile Include="services\Common\ConfigService.cpp" />
+    <ClCompile Include="services\Common\ContextMenuService.cpp" />
     <ClCompile Include="services\Common\MainComponent.cpp" />
     <ClCompile Include="services\Common\TextCommandService.cpp" />
     <ClCompile Include="services\Info\GameInfoService.cpp" />
@@ -183,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\DITools.h" />
+    <ClInclude Include="Helpers\DelegateUtils.h" />
     <ClInclude Include="Helpers\StringExtensions.h" />
     <ClInclude Include="services\Build\BlueModeTool.h" />
     <ClInclude Include="services\Build\CustomGrid.h" />
@@ -191,6 +194,7 @@
     <ClInclude Include="services\Build\RotationStep.h" />
     <ClInclude Include="services\Build\UnlimitedConfig.h" />
     <ClInclude Include="services\Common\ConfigService.h" />
+    <ClInclude Include="services\Common\ContextMenuService.h" />
     <ClInclude Include="services\Common\MainComponent.h" />
     <ClInclude Include="services\Common\TextCommandService.h" />
     <ClInclude Include="services\Info\GameInfoService.h" />

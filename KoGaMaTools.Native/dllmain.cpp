@@ -4,7 +4,6 @@
 #include <MinHook.h>
 
 #include <Tools.Il2Cpp.Lib.h>
-#include <Tools.Il2Cpp.ICalls.h>
 #include "services/services.h"
 #include "metadata/KoGaMaAPI.KoGaMa.h"
 #include "UI/MainUI.h"
@@ -61,6 +60,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		KoGaMaTools::UI::MainUI,
 		S::ConfigService,
 		S::TextCommandService,
+		S::ContextMenuService,
 		S::SinglePaintFace, 
 		S::NoLimit,
 		S::BlueModeTool,
