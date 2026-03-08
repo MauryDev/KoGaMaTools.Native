@@ -36,7 +36,7 @@ bool KoGaMaTools::Services::ModelModule::CopyModelService::Resolve(TextCommandSe
     if (command.name != L"copy-model") return false;
 
 	auto modelCurrent = ModelUtils::GetCurrentModel();
-	if (!modelCurrent.isNull())
+	if (!modelCurrent.isNull() && ModelUtils::IsOwner(modelCurrent))
 	{
 		copiedCubes = ModelUtils::GetCubesInfo(modelCurrent);
 		TextCommandService::NotifyUser("Model data copied from current model.");
