@@ -28,6 +28,8 @@ namespace KoGaMaTools::Services::ModelModule {
 		void Execute(Tools::Il2Cpp::Il2CppObject wo) override;
 
 		bool ShouldShow(Tools::Il2Cpp::Il2CppObject wo) override;
+		bool PasteCube(Tools::Il2Cpp::Il2CppObject wo);
+
 		static bool PasteCube(Tools::Il2Cpp::Il2CppObject wo, bool replaceOld,const std::vector<KoGaMaTools::Services::ModelModule::CubeInfo>& cubes);
 
 

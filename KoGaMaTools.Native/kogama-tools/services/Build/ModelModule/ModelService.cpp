@@ -1,5 +1,6 @@
 #include "ModelService.h"
 #include <imgui.h>
+#include "ModelUtils.h"
 void KoGaMaTools::Services::ModelModule::ModelService::Init(Core::DIContainer& di)
 {
 	Instance = di.Get<ModelService>();
@@ -15,9 +16,13 @@ void KoGaMaTools::Services::ModelModule::ModelService::Render()
     ImGui::Spacing();
 
     // Bloco de Ações Principais
-    if (ImGui::Button(" Copy ", ImVec2(100, 30))) { /* Lógica */ }
+    if (ImGui::Button(" Copy ", ImVec2(100, 30))) {
+        UI_CopyModel();
+    }
     ImGui::SameLine();
-    if (ImGui::Button(" Paste ", ImVec2(100, 30))) { /* Lógica */ }
+    if (ImGui::Button(" Paste ", ImVec2(100, 30))) {
+        UI_PasteModel();
+    }
 
     ImGui::Spacing();
 
@@ -36,4 +41,31 @@ void KoGaMaTools::Services::ModelModule::ModelService::Render()
     }
 
     ImGui::EndGroup();
+}
+
+void KoGaMaTools::Services::ModelModule::ModelService::UI_CopyModel()
+{
+    auto modelCurrent = ModelUtils::GetCurrentModel();
+    if (!modelCurrent.isNull() && ModelUtils::IsOwner(modelCurrent))
+    {
+        copyService->CopyModel(modelCurrent);
+        TextCommandService::NotifyUser("Model data copied from current model.");
+
+    }
+    else {
+        TextCommandService::NotifyUser("No model selected to copy.");
+    }
+}
+
+void KoGaMaTools::Services::ModelModule::ModelService::UI_PasteModel()
+{
+    auto modelCurrent = ModelUtils::GetCurrentModel();
+    if (!modelCurrent.isNull())
+    {
+        this->pasteService->PasteCube(modelCurrent, this->pasteService->ReplaceOld, this->copyService->copiedCubes);
+        TextCommandService::NotifyUser("Pasting model to current model.");
+    }
+    else {
+        TextCommandService::NotifyUser("No model selected to paste.");
+    }
 }

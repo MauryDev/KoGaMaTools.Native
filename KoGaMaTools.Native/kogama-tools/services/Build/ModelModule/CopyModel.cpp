@@ -13,9 +13,7 @@ void KoGaMaTools::Services::ModelModule::CopyModelService::Init(Core::DIContaine
 
 void KoGaMaTools::Services::ModelModule::CopyModelService::Execute(Tools::Il2Cpp::Il2CppObject wo)
 {
-	auto model = ModelUtils::GetModel(wo);
-
-    copiedCubes = ModelUtils::GetCubesInfo(model);
+	CopyModel(wo);
 
 
 }
@@ -38,7 +36,7 @@ bool KoGaMaTools::Services::ModelModule::CopyModelService::Resolve(TextCommandSe
 	auto modelCurrent = ModelUtils::GetCurrentModel();
 	if (!modelCurrent.isNull() && ModelUtils::IsOwner(modelCurrent))
 	{
-		copiedCubes = ModelUtils::GetCubesInfo(modelCurrent);
+		CopyModel(modelCurrent);
 		TextCommandService::NotifyUser("Model data copied from current model.");
 
 	}
@@ -46,6 +44,11 @@ bool KoGaMaTools::Services::ModelModule::CopyModelService::Resolve(TextCommandSe
 		TextCommandService::NotifyUser("No model selected to copy.");
 	}
     return true;
+}
+
+void KoGaMaTools::Services::ModelModule::CopyModelService::CopyModel(Tools::Il2Cpp::Il2CppObject wo)
+{
+	copiedCubes = ModelUtils::GetCubesInfo(ModelUtils::GetModel(wo));
 }
 
 std::string_view KoGaMaTools::Services::ModelModule::CopyModelService::GetCommandHelp()

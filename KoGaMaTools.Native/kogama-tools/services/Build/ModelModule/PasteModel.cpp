@@ -14,12 +14,17 @@ void KoGaMaTools::Services::ModelModule::PasteModelService::Init(Core::DIContain
 
 void KoGaMaTools::Services::ModelModule::PasteModelService::Execute(Tools::Il2Cpp::Il2CppObject wo)
 {
-	PasteCube( wo, ReplaceOld, this->copyService->copiedCubes);
+	PasteCube(wo);
 }
 
 bool KoGaMaTools::Services::ModelModule::PasteModelService::ShouldShow(Tools::Il2Cpp::Il2CppObject wo)
 {
 	return ModelUtils::ContainsModel(wo);
+}
+
+bool KoGaMaTools::Services::ModelModule::PasteModelService::PasteCube(Tools::Il2Cpp::Il2CppObject wo)
+{
+	return PasteCube(wo, ReplaceOld, this->copyService->copiedCubes);
 }
 
 bool KoGaMaTools::Services::ModelModule::PasteModelService::PasteCube(Tools::Il2Cpp::Il2CppObject wo, bool replaceOld, const std::vector<KoGaMaTools::Services::ModelModule::CubeInfo>& cubes)
@@ -40,7 +45,7 @@ bool KoGaMaTools::Services::ModelModule::PasteModelService::Resolve(TextCommandS
 		auto modelCurrent = ModelUtils::GetCurrentModel();
 		if (!modelCurrent.isNull())
 		{
-			Instance->mainComponent->AddCoroutine(ModelUtils::PasteCubeCoro(modelCurrent, ReplaceOld, this->copyService->copiedCubes));
+			PasteCube(modelCurrent);
 			TextCommandService::NotifyUser("Pasting model to current model.");
 		}
 		else {

@@ -23,7 +23,7 @@ namespace KoGaMaTools::Services::ModelModule{
 		bool ShouldShow(Tools::Il2Cpp::Il2CppObject wo) override;
 		std::string_view GetName() override;
 		bool Resolve(TextCommandService::CommandData& command) override;
-
+		void CopyModel(Tools::Il2Cpp::Il2CppObject wo);
 		std::string_view GetCommandHelp() override;
 
 	};

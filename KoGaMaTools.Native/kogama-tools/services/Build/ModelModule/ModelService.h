@@ -16,6 +16,8 @@ namespace KoGaMaTools::Services::ModelModule {
 
 		void Init(Core::DIContainer& di) override;
 		void Render() override;
+		void UI_CopyModel();
+		void UI_PasteModel();
 
 
 
