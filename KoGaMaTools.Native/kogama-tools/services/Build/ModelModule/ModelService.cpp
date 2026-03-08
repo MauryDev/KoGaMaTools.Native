@@ -6,6 +6,7 @@ void KoGaMaTools::Services::ModelModule::ModelService::Init(Core::DIContainer& d
 	Instance = di.Get<ModelService>();
 	copyService = di.Get<CopyModelService>();
 	pasteService = di.Get<PasteModelService>();
+	mainComponent = di.Get<MainComponent>();
 }
 
 void KoGaMaTools::Services::ModelModule::ModelService::Render()
@@ -48,12 +49,18 @@ void KoGaMaTools::Services::ModelModule::ModelService::UI_CopyModel()
     auto modelCurrent = ModelUtils::GetCurrentModel();
     if (!modelCurrent.isNull() && ModelUtils::IsOwner(modelCurrent))
     {
-        copyService->CopyModel(modelCurrent);
-        TextCommandService::NotifyUser("Model data copied from current model.");
+        mainComponent->ExecuteCallback([modelCurrent, this](void*) {
+            copyService->CopyModel(modelCurrent);
+            TextCommandService::NotifyUser("Model data copied from current model.");
+        });
+        
 
     }
     else {
-        TextCommandService::NotifyUser("No model selected to copy.");
+        mainComponent->ExecuteCallback([](void*) {
+            TextCommandService::NotifyUser("No model selected to copy.");
+
+        });
     }
 }
 
@@ -62,10 +69,16 @@ void KoGaMaTools::Services::ModelModule::ModelService::UI_PasteModel()
     auto modelCurrent = ModelUtils::GetCurrentModel();
     if (!modelCurrent.isNull())
     {
-        this->pasteService->PasteCube(modelCurrent, this->pasteService->ReplaceOld, this->copyService->copiedCubes);
-        TextCommandService::NotifyUser("Pasting model to current model.");
+        mainComponent->ExecuteCallback([this, modelCurrent](void*) {
+            this->pasteService->PasteCube(modelCurrent);
+            TextCommandService::NotifyUser("Pasting model to current model.");
+        });
+        
     }
     else {
-        TextCommandService::NotifyUser("No model selected to paste.");
+        mainComponent->ExecuteCallback([](void*) {
+            TextCommandService::NotifyUser("No model selected to copy.");
+
+            });
     }
 }

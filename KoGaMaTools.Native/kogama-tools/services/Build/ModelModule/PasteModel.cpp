@@ -29,6 +29,10 @@ bool KoGaMaTools::Services::ModelModule::PasteModelService::PasteCube(Tools::Il2
 
 bool KoGaMaTools::Services::ModelModule::PasteModelService::PasteCube(Tools::Il2Cpp::Il2CppObject wo, bool replaceOld, const std::vector<KoGaMaTools::Services::ModelModule::CubeInfo>& cubes)
 {
+	if (cubes.empty())
+	{
+		return false;
+	}
 	auto model = ModelUtils::GetModel(wo);
 	Instance->mainComponent->AddCoroutine(ModelUtils::PasteCubeCoro(model, replaceOld, cubes));
 	return true;
