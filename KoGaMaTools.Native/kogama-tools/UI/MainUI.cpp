@@ -31,6 +31,8 @@ void KoGaMaTools::UI::MainUI::Render()
 	if (first)
 	{
 		ImGui::SetNextWindowPos(ImVec2(10, 10), ImGuiCond_FirstUseEver);
+		ImGui::SetNextWindowSizeConstraints(ImVec2(140.0f, 380.0f), ImVec2(FLT_MAX, FLT_MAX));
+		ImGui::SetNextWindowSize(ImVec2(0.0f, 390.0f));
 		first = false;
 	}
 	if ((ImGui::IsKeyDown(ImGuiKey::ImGuiKey_LeftCtrl) || ImGui::IsKeyDown(ImGuiKey::ImGuiKey_RightCtrl)) && ImGui::IsKeyPressed(ImGuiKey::ImGuiKey_B))
@@ -39,10 +41,9 @@ void KoGaMaTools::UI::MainUI::Render()
 	}
 	if (!enable)
 		return;
-	ImGui::SetNextWindowSizeConstraints(ImVec2(140.0f, 380.0f), ImVec2(FLT_MAX, FLT_MAX));
-	ImGui::SetNextWindowSize(ImVec2(0.0f, 390.0f), ImGuiCond_Always);
+	
 
-	ImGui::Begin("KoGaMa Build", nullptr, ImGuiWindowFlags_AlwaysAutoResize);
+	ImGui::Begin("KoGaMa Tools", nullptr);
 	
 	if (ImGui::IsWindowHovered())
 	{

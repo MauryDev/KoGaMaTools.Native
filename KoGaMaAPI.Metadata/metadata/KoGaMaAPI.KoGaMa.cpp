@@ -281,6 +281,101 @@ void EditorStateMachine::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataI
 
 }
 
+void RuntimePrototypeCubeModel::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 56, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void CubeModelChunk::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 57, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void Cell::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 58, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void IntVector::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 59, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void CubeBase::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 60, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void Cube::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 61, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVAdvancedGhost::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 62, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void CollectTheItemCollectable::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 63, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void CollectTheItemDropOff::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 64, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVJetPack::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 65, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVSimpleOneSeatVehicle::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 66, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVDoorBlueprint::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 67, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVVehicleEnergy::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 68, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVSentryGunBlueprint::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 69, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVEditablePickupItemBaseBlueprint::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 70, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVMovingPlatformGroup::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 71, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVRotator::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 72, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void EditableCubeModelWrapper::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 73, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVMovable::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 74, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -338,5 +433,24 @@ void EditorStateMachine::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataI
         TM::Init(metadataInfo);
         DesktopEditModeController::Init(metadataInfo);
         EditorStateMachine::Init(metadataInfo);
+        RuntimePrototypeCubeModel::Init(metadataInfo);
+        CubeModelChunk::Init(metadataInfo);
+        Cell::Init(metadataInfo);
+        IntVector::Init(metadataInfo);
+        CubeBase::Init(metadataInfo);
+        Cube::Init(metadataInfo);
+        MVAdvancedGhost::Init(metadataInfo);
+        CollectTheItemCollectable::Init(metadataInfo);
+        CollectTheItemDropOff::Init(metadataInfo);
+        MVJetPack::Init(metadataInfo);
+        MVSimpleOneSeatVehicle::Init(metadataInfo);
+        MVDoorBlueprint::Init(metadataInfo);
+        MVVehicleEnergy::Init(metadataInfo);
+        MVSentryGunBlueprint::Init(metadataInfo);
+        MVEditablePickupItemBaseBlueprint::Init(metadataInfo);
+        MVMovingPlatformGroup::Init(metadataInfo);
+        MVRotator::Init(metadataInfo);
+        EditableCubeModelWrapper::Init(metadataInfo);
+        MVMovable::Init(metadataInfo);
     }
 }

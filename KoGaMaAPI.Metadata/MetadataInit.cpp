@@ -2,6 +2,11 @@
 #include <Tools.Il2Cpp.Lib.h>
 #include "metadata/KoGaMaAPI.KoGaMa.h"
 #include "Tools.Il2Cpp.ICalls.h"
+
+void InitGenerics()
+{
+	Tools::Il2Cpp::ICalls::KeyValuePair_2::ginst<KoGaMaAPI::KoGaMa::IntVector, KoGaMaAPI::KoGaMa::Cell>::Init();
+}
 void KoGaMaAPI::Metadata::Install(const std::string& icalls_dat, const std::string& kogama_dat)
 {
 	Tools::Il2Cpp::Init();
@@ -17,4 +22,6 @@ void KoGaMaAPI::Metadata::Install(const std::string& icalls_dat, const std::stri
 	Tools::Il2Cpp::ICalls::Init(metadata1);
 
 	KoGaMaAPI::KoGaMa::Init(metadata2);
+
+	InitGenerics();
 }

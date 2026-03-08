@@ -7,9 +7,9 @@
 #include <Tools.Il2Cpp.Lib.h>
 
 namespace KoGaMaTools::Services {
-	struct IContextAction {
+	struct IContextButtonAction {
 
-		virtual ~IContextAction() = default;
+		virtual ~IContextButtonAction() = default;
 		virtual void Execute(Tools::Il2Cpp::Il2CppObject wo) = 0;
 		virtual bool ShouldShow(Tools::Il2Cpp::Il2CppObject wo) = 0;
 		virtual std::string_view GetName() = 0;
@@ -18,9 +18,12 @@ namespace KoGaMaTools::Services {
 		Core::IInitializable
 	{
 		inline static std::shared_ptr<ContextMenuService> Instance;
-		inline static std::vector<std::shared_ptr<IContextAction>> Callbacks;
+		inline static std::vector<std::shared_ptr<IContextButtonAction>> Callbacks;
 		static void OnInitialize(void* instance, void* name, void* unityAction);
 		void Init(Core::DIContainer& di) override;
+
+
+		void SetupButtons();
 		// System.Object[] { System.IntPtr, ContextMenu}
 
 		static void HandlerFn(void* _arr);

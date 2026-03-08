@@ -4,24 +4,35 @@
 #include <MinHook.h>
 
 #include <Tools.Il2Cpp.Lib.h>
-#include "services/services.h"
+#include "kogama-tools/services/services.h"
 #include "metadata/KoGaMaAPI.KoGaMa.h"
-#include "UI/MainUI.h"
+#include "kogama-tools/UI/MainUI.h"
 #include <MetadataInit.h>
-#include "Core/DITools.h"
+#include "kogama-tools/Core/DITools.h"
+#include <kogama-tools/Helpers/TypeParameters.h>
 
-template<typename... T>
-void InstallMultiple() {
-	(T::Install(), ...);
+namespace {
+	template <typename T>
+	void AddComponent(KoGaMaTools::UI::MainUI& ui, size_t idx, const T&)
+	{
+		auto& app = KoGaMaTools::Core::DIContainer::GetInstance();
+		ui.AddComponent(static_cast<int>(idx), app.Get<T>());
+	}
+	template <typename ...T>
+	void AddComponent(KoGaMaTools::UI::MainUI& ui, size_t idx, const  KoGaMaTools::Helpers::TypeParameters<T...>&)
+	{
+		(AddComponent(ui, idx, T{}), ...);
+	}
+	template <typename ...T>
+	void SetupUI(KoGaMaTools::UI::MainUI& ui, const std::string& name)
+	{
+		ui.AddComponentType(name);
+		auto i = ui.components.size() - 1;
+		(AddComponent(ui, i, T{}), ...);
+	}
 }
 
-template <typename ...T>
-void SetupUI(KoGaMaTools::UI::MainUI& ui, const std::string& name)
-{
-	auto& app = KoGaMaTools::Core::DIContainer::GetInstance();
 
-	ui.AddComponents(name, app.Get<T>()...);
-}
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
@@ -75,6 +86,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::CustomCrossHairTexture,
 		S::GameInfoService
 	>();
+	KoGaMaTools::Services::ModelModule::Init(app);
+
 
 	app.InitAll();
 
@@ -87,7 +100,9 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::CustomGrid,
 		S::EditModeSpeed,
 		S::RotationStep,
-		S::UnlimitedConfig>(*ui, "Build");
+		S::UnlimitedConfig,
+		S::ModelModule::ModelService>(*ui, "Build");
+
 
 	SetupUI<S::AntiAfk,
 		S::CustomCrossHairColor,
@@ -98,11 +113,14 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 
 	SetupUI<S::ConfigService>(*ui, "Others");
 
+
 	app.Get<S::ConfigService>()->SetupConfigurables();
 	app.Get<S::TextCommandService>()->SetupCommandsResolve();
+	app.Get<S::ContextMenuService>()->SetupButtons();
 
 	ui->StartUI();
 
+	
 	return TRUE;
 }
 

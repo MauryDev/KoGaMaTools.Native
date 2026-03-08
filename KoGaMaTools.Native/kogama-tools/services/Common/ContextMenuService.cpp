@@ -10,10 +10,13 @@ namespace {
 }
 void KoGaMaTools::Services::ContextMenuService::OnInitialize(void* instance, void* name, void* unityAction)
 {
+	namespace K = KoGaMaAPI::KoGaMa;
+	namespace I = Tools::Il2Cpp::ICalls;
+
 	OnInitializeOld(instance, name, unityAction);
 
 	auto nameStr = Tools::Il2Cpp::Il2CppString(name);
-	auto keyCompare = KoGaMaAPI::KoGaMa::TM::m__(Tools::Il2Cpp::Il2CppString::New("Delete"))
+	auto keyCompare = K::TM::m__(Tools::Il2Cpp::Il2CppString::New("Delete"))
 		.As<Tools::Il2Cpp::Il2CppString>();
 
 	if (std::wstring_view(nameStr.getChars(), nameStr.getLength()) != std::wstring_view(keyCompare.getChars(), keyCompare.getLength()))
@@ -21,31 +24,31 @@ void KoGaMaTools::Services::ContextMenuService::OnInitialize(void* instance, voi
 		return;
 	}
 
-	using namespace KoGaMaAPI::KoGaMa;
-	auto editModeUi = MVGameControllerBase::m_get_EditModeUI();
-	auto editController = DesktopEditModeController::m_get_EditModeStateMachine(editModeUi);
-	auto wo = EditorStateMachine::m_get_SingleSelectedWO(editController);
+	auto editModeUi = K::MVGameControllerBase::m_get_EditModeUI();
+	auto editController = K::DesktopEditModeController::m_get_EditModeStateMachine(editModeUi);
+	auto wo = K::EditorStateMachine::m_get_SingleSelectedWO(editController);
 	for (auto& v : (Instance->Callbacks))
 	{
 		if (v->ShouldShow(wo))
 		{
 			auto _this = Tools::Il2Cpp::Il2CppObject(instance);
-			auto fn = Helpers::DelegateUtils::CreateDelegate<KoGaMaAPI::KoGaMa::UE_Events_UnityAction>(HandlerFn);
+			auto fn = Helpers::DelegateUtils::CreateDelegate<K::UE_Events_UnityAction>(HandlerFn);
 			
-			auto array = Tools::Il2Cpp::Il2CppArray::New(Tools::Il2Cpp::ICalls::Object::klass,2);
+			auto array = Tools::Il2Cpp::Il2CppArray::New(I::Object::klass,2);
 			
 			auto ptrStruct = (intptr_t)v.get();
 
-			auto pointer  = Tools::Il2Cpp::Il2CppObject::Box(&ptrStruct, Tools::Il2Cpp::ICalls::IntPtr::klass);
+			auto pointer  = Tools::Il2Cpp::Il2CppObject::Box(&ptrStruct, I::IntPtr::klass);
 
 			
-			Tools::Il2Cpp::ICalls::Array::m5_SetValue(array, pointer, 0);
-			Tools::Il2Cpp::ICalls::Array::m5_SetValue(array, _this, 1);
+			I::Array::m5_SetValue(array, pointer, 0);
+			I::Array::m5_SetValue(array, _this, 1);
 
-			Tools::Il2Cpp::ICalls::Delegate::f_m_target.Set(fn, array);
+			I::Delegate::f_m_target.Set(fn, array);
 			
 			auto toolName = v->GetName();
-			KoGaMaAPI::KoGaMa::ContextMenu::m_AddButton(_this, Tools::Il2Cpp::Il2CppString::NewLen(toolName.data(), toolName.size()), fn);
+			auto strNameIl2 = Tools::Il2Cpp::Il2CppString::NewLen(toolName.data(), static_cast<uint32_t>(toolName.size()));
+			K::ContextMenu::m_AddButton(_this, strNameIl2, fn);
 		}
 	}
 	
@@ -55,15 +58,7 @@ void KoGaMaTools::Services::ContextMenuService::OnInitialize(void* instance, voi
 
 void KoGaMaTools::Services::ContextMenuService::Init(Core::DIContainer& di)
 {
-	struct Teste: IContextAction {
-		void Execute(Tools::Il2Cpp::Il2CppObject wo) override {
-			TextCommandService::NotifyUser("Teste Clicked");
-		}
-		bool ShouldShow(Tools::Il2Cpp::Il2CppObject wo) override { return true; }
-		std::string_view GetName() override {
-			return "Teste";
-		}
-	};
+
 	Instance = di.Get<ContextMenuService>();
 
 	auto logger = di.Get<LoggerService>();
@@ -85,7 +80,12 @@ void KoGaMaTools::Services::ContextMenuService::Init(Core::DIContainer& di)
 		"[ContextMenuService] - EnableHook"
 	);
 
-	this->Callbacks.push_back(std::make_shared<Teste>());
+}
+
+void KoGaMaTools::Services::ContextMenuService::SetupButtons()
+{
+	auto& di = Core::DIContainer::GetInstance();
+	this->Callbacks = di.GetAllByInterface<IContextButtonAction>();
 }
 
 void KoGaMaTools::Services::ContextMenuService::HandlerFn(void* _del)
@@ -102,7 +102,7 @@ void KoGaMaTools::Services::ContextMenuService::HandlerFn(void* _del)
 	auto woId = KoGaMaAPI::KoGaMa::ContextMenu::f_woID.Get<int>(ctxMenu);
 	auto wocm = KoGaMaAPI::KoGaMa::MVGameControllerBase::m_get_WOCM();
 	auto wo = KoGaMaAPI::KoGaMa::MVWorldObjectClientManager::m0_GetWorldObjectClient(wocm, woId);
-	auto handler = reinterpret_cast<IContextAction*>(pointer.Unbox<intptr_t>());
+	auto handler = reinterpret_cast<IContextButtonAction*>(pointer.Unbox<intptr_t>());
 	handler->Execute(wo);
 
 	KoGaMaAPI::KoGaMa::ContextMenu::m_Pop(ctxMenu);

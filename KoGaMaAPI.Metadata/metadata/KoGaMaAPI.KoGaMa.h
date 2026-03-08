@@ -3796,4 +3796,1169 @@ inline static auto /* SelectionController */ &f_selectionController = fields.get
 };
 
 
+struct RuntimePrototypeCubeModel {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<16> fields;
+inline static auto /* System.Action`1<MV.WorldObject.IntVector> */ &f_OnChunkRebuilt = fields.get<false>(0), /* System.Nullable`1<System.Single> */ &f_PendingScaleUpdate = fields.get<false>(1), /* System.Action`1<System.Collections.Generic.HashSet`1<MV.WorldObject.IntVector>> */ &f_DirtyChunksRegenerated = fields.get<false>(2), /* System.Int32 */ &f_prototypeId = fields.get<false>(3), /* ILogger */ &f_logger = fields.get<false>(4), /* System.Collections.Generic.HashSet`1<MV.WorldObject.IntVector> */ &f_dirtyChunks = fields.get<false>(5), /* MeshGeneratePriority */ &f_meshGeneratePriority = fields.get<false>(6), /* System.Boolean */ &f_useMeshGeneratePrioritySystem = fields.get<false>(7), /* System.Int32 */ &f_chunkSize = fields.get<false>(8), /* PrototypeState */ &f_prototypeState = fields.get<false>(9), /* System.Collections.Generic.List`1<System.Byte> */ &f_pendingDeltaCubes = fields.get<false>(10), /* DeltaCubes */ &f_deltaCubes = fields.get<false>(11), /* System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, CubeModelChunk> */ &f_chunks = fields.get<false>(12), /* System.Collections.Generic.HashSet`1<System.Int32> */ &f_instances = fields.get<false>(13), /* System.Single */ &f__Scale_k__BackingField = fields.get<false>(14), /* System.Int32 */ &f__AuthorProfileID_k__BackingField = fields.get<false>(15);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<69> methods;
+    /* System.Int32 get_ChunkSize() */
+    inline static auto& m_get_ChunkSize = methods.get<false, false>(0);
+    /* MeshGeneratePriority get_MeshGeneratePriority() */
+    inline static auto& m_get_MeshGeneratePriority = methods.get<false, false>(1);
+    /* System.Single get_Scale() */
+    inline static auto& m_get_Scale = methods.get<false, false>(2);
+    /* System.Void set_Scale(System.Single value) */
+    inline static auto& m_set_Scale = methods.get<false, false>(3);
+    /* System.Int32 get_PrototypeId() */
+    inline static auto& m_get_PrototypeId = methods.get<false, false>(4);
+    /* System.Void set_PrototypeId(System.Int32 value) */
+    inline static auto& m_set_PrototypeId = methods.get<false, false>(5);
+    /* System.Int32 get_AuthorProfileID() */
+    inline static auto& m_get_AuthorProfileID = methods.get<false, false>(6);
+    /* System.Void set_AuthorProfileID(System.Int32 value) */
+    inline static auto& m_set_AuthorProfileID = methods.get<false, false>(7);
+    /* System.Int32 get_InstancesCount() */
+    inline static auto& m_get_InstancesCount = methods.get<false, false>(8);
+    /* System.Int32 get_DeltaCubesCount() */
+    inline static auto& m_get_DeltaCubesCount = methods.get<false, false>(9);
+    /* DeltaCubes get_DeltaCubes() */
+    inline static auto& m_get_DeltaCubes = methods.get<false, false>(10);
+    /* System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, CubeModelChunk> get_Chunks() */
+    inline static auto& m_get_Chunks = methods.get<false, false>(11);
+    /* System.Collections.Generic.HashSet`1<System.Int32> get_Instances() */
+    inline static auto& m_get_Instances = methods.get<false, false>(12);
+    /* System.Boolean get_ContainsCubes() */
+    inline static auto& m_get_ContainsCubes = methods.get<false, false>(13);
+    /* System.Int32 get_CubeCount() */
+    inline static auto& m_get_CubeCount = methods.get<false, false>(14);
+    /* PrototypeState get_PrototypeState() */
+    inline static auto& m_get_PrototypeState = methods.get<false, false>(15);
+    /* System.Void set_PrototypeState(PrototypeState value) */
+    inline static auto& m_set_PrototypeState = methods.get<false, false>(16);
+    /* System.Void .ctor() */
+    inline static auto& m0__ctor = methods.get<false, false>(17);
+    /* System.Void .ctor(System.Int32 id, System.Int32 authorProfileId, System.Single scale, System.Byte[] data) */
+    inline static auto& m1__ctor = methods.get<false, false>(18);
+    /* System.Void .ctor(System.Int32 id, System.Int32 authorProfileId, System.Single scale, System.Byte[] data, System.Int32 chunkSize) */
+    inline static auto& m2__ctor = methods.get<false, false>(19);
+    /* System.Void Create(System.Int32 id, System.Int32 authorProfileId, System.Single scale, System.Byte[] data) */
+    inline static auto& m_Create = methods.get<false, false>(20);
+    /* System.Void FineGrainedTerrainOverrideChunkSize(System.Int32 size) */
+    inline static auto& m_FineGrainedTerrainOverrideChunkSize = methods.get<false, false>(21);
+    /* RuntimePrototypeCubeModel CloneGeometry(System.Boolean withDeltaCubes = False) */
+    inline static auto& m_CloneGeometry = methods.get<false, false>(22);
+    /* System.Void RemoveAllCubesLocal() */
+    inline static auto& m_RemoveAllCubesLocal = methods.get<false, false>(23);
+    /* System.Boolean MeshGenerateDirtyChunksAll(ref System.Int32 meshUpdates) */
+    inline static auto& m_MeshGenerateDirtyChunksAll = methods.get<false, false>(24);
+    /* System.Boolean MeshGenerateDirtyChunks(ref System.Int32 meshUpdates) */
+    inline static auto& m_MeshGenerateDirtyChunks = methods.get<false, false>(25);
+    /* System.Boolean MeshGenerateStatus(System.Collections.Generic.HashSet`1<MV.WorldObject.IntVector> generatedChunks) */
+    inline static auto& m_MeshGenerateStatus = methods.get<false, false>(26);
+    /* UnityEngine.GameObject GetMesh() */
+    inline static auto& m_GetMesh = methods.get<false, false>(27);
+    /* System.Void SetVisibility() */
+    inline static auto& m_SetVisibility = methods.get<false, false>(28);
+    /* UnityEngine.Vector3 GetRandomCubePos(UnityEngine.GameObject go) */
+    inline static auto& m_GetRandomCubePos = methods.get<false, false>(29);
+    /* Cube GetCube(MV.WorldObject.IntVector cubePos) */
+    inline static auto& m_GetCube = methods.get<false, false>(30);
+    /* System.Boolean AddCube(MV.WorldObject.IntVector pos, Cube cube) */
+    inline static auto& m_AddCube = methods.get<false, false>(31);
+    /* System.Void UnIndentCubeFace(MV.WorldObject.IntVector localPos, MV.WorldObject.Face face, Cube cube) */
+    inline static auto& m_UnIndentCubeFace = methods.get<false, false>(32);
+    /* System.Void SetMaterial(MV.WorldObject.IntVector iVector, MV.WorldObject.Face face, System.Byte materialId) */
+    inline static auto& m_SetMaterial = methods.get<false, false>(33);
+    /* System.Void ReplaceCube(MV.WorldObject.IntVector iVector, System.Byte materialId) */
+    inline static auto& m_ReplaceCube = methods.get<false, false>(34);
+    /* System.Void CornersChangedDone(MV.WorldObject.IntVector iVector, Cube cube) */
+    inline static auto& m_CornersChangedDone = methods.get<false, false>(35);
+    /* System.Void CornersChanged(MV.WorldObject.IntVector iVector, Cube cube) */
+    inline static auto& m_CornersChanged = methods.get<false, false>(36);
+    /* System.Boolean RemoveCube(MV.WorldObject.IntVector iVector) */
+    inline static auto& m_RemoveCube = methods.get<false, false>(37);
+    /* System.Void CreateInstance(MVCubeModelBase cm) */
+    inline static auto& m_CreateInstance = methods.get<false, false>(38);
+    /* System.Void RemoveInstance(System.Int32 id) */
+    inline static auto& m_RemoveInstance = methods.get<false, false>(39);
+    /* System.Void ResetSharedMaterials(MVCubeModelInstance cm) */
+    inline static auto& m_ResetSharedMaterials = methods.get<false, false>(40);
+    /* System.Void DecodeBytePacker(MV.WorldObject.BytePacker bp, RuntimePrototypeCubeModel rpcm) */
+    inline static auto& m_DecodeBytePacker = methods.get<true, false>(41);
+    /* System.Void UpdatePrototype(MV.WorldObject.BytePacker bp) */
+    inline static auto& m_UpdatePrototype = methods.get<false, false>(42);
+    /* System.Void UpdatePrototypeScale(System.Single scale) */
+    inline static auto& m_UpdatePrototypeScale = methods.get<false, false>(43);
+    /* System.Void AddCubeNetworkUpdate(MV.WorldObject.IntVector iVector, Cube cube, MeshGeneratePriority priority) */
+    inline static auto& m_AddCubeNetworkUpdate = methods.get<false, false>(44);
+    /* System.Void RemoveCubeNetworkUpdate(MV.WorldObject.IntVector iVector, MeshGeneratePriority priority) */
+    inline static auto& m_RemoveCubeNetworkUpdate = methods.get<false, false>(45);
+    /* System.Void HandleDelta() */
+    inline static auto& m_HandleDelta = methods.get<false, false>(46);
+    /* System.Void RebuildChunk(MV.WorldObject.IntVector chunkPos, System.Single scale) */
+    inline static auto& m_RebuildChunk = methods.get<false, false>(47);
+    /* System.Void RebuildPrototypeMesh() */
+    inline static auto& m_RebuildPrototypeMesh = methods.get<false, false>(48);
+    /* System.Void AddChunk(MV.WorldObject.IntVector chunkPos) */
+    inline static auto& m_AddChunk = methods.get<false, false>(49);
+    /* System.Void RemoveChunk(MV.WorldObject.IntVector chunkPos) */
+    inline static auto& m_RemoveChunk = methods.get<false, false>(50);
+    /* System.Void SetInstanceDataRef(MV.WorldObject.IntVector chunkPos, MVCubeModelBase cubeInstance) */
+    inline static auto& m_SetInstanceDataRef = methods.get<false, false>(51);
+    /* System.Void CreateFromBytePackage(MV.WorldObject.BytePacker bp) */
+    inline static auto& m_CreateFromBytePackage = methods.get<false, false>(52);
+    /* System.Void AddToChunk(MV.WorldObject.IntVector iVector, Cube cube, MeshGeneratePriority meshGeneratePriority, System.Boolean setVisibility = True) */
+    inline static auto& m_AddToChunk = methods.get<false, false>(53);
+    /* CubeModelChunk GetChunkFromCubePos(MV.WorldObject.IntVector cubePos) */
+    inline static auto& m_GetChunkFromCubePos = methods.get<false, false>(54);
+    /* System.Void RemoveFromChunk(MV.WorldObject.IntVector iVector, MeshGeneratePriority meshGeneratePriority) */
+    inline static auto& m_RemoveFromChunk = methods.get<false, false>(55);
+    /* System.Void AddToDirtyChunks(MV.WorldObject.IntVector chunkPos, MeshGeneratePriority meshGeneratePriority) */
+    inline static auto& m_AddToDirtyChunks = methods.get<false, false>(56);
+    /* MV.WorldObject.BytePacker GetBytePackerFromCubeDict(System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cube> cubesDict, System.Boolean addCount) */
+    inline static auto& m_GetBytePackerFromCubeDict = methods.get<true, false>(57);
+    /* System.Void CubePosToChunkPos(ref MV.WorldObject.IntVector cubePos) */
+    inline static auto& m_CubePosToChunkPos = methods.get<false, false>(58);
+    /* System.Void AddRefenceToChunk(ref MV.WorldObject.IntVector chunkPosition) */
+    inline static auto& m_AddRefenceToChunk = methods.get<false, false>(59);
+    /* System.Void RemoveRefenceFromChunk(ref MV.WorldObject.IntVector chunkPosition) */
+    inline static auto& m_RemoveRefenceFromChunk = methods.get<false, false>(60);
+    /* System.Int32 GetRefenceCountFromChunk(ref MV.WorldObject.IntVector chunkPosition) */
+    inline static auto& m_GetRefenceCountFromChunk = methods.get<false, false>(61);
+    /* System.Void AddReferenceToAllChunks() */
+    inline static auto& m_AddReferenceToAllChunks = methods.get<false, false>(62);
+    /* System.Void RemoveReferenceFromAllChunks() */
+    inline static auto& m_RemoveReferenceFromAllChunks = methods.get<false, false>(63);
+    /* System.Boolean CompareGeometry(RuntimePrototypeCubeModel rpcm) */
+    inline static auto& m_CompareGeometry = methods.get<false, false>(64);
+    /* System.Void CompareGeometryDetailed(RuntimePrototypeCubeModel rpcm, System.Boolean visibleCubesOnly, ref System.Int32 matchingCubeCount, ref System.Int32 investigatedCubeCount) */
+    inline static auto& m_CompareGeometryDetailed = methods.get<false, false>(65);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<false, false>(66);
+    /* System.Void RebuildChunks() */
+    inline static auto& m_RebuildChunks = methods.get<false, false>(67);
+    /* System.String Guids() */
+    inline static auto& m_Guids = methods.get<false, false>(68);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct CubeModelChunk {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<11> fields;
+inline static auto /* System.Boolean */ &f_UseAOShadows = fields.get<true>(0), /* FaceData[] */ &f_faceData = fields.get<true>(10);
+inline static auto /* MV.WorldObject.IntVector */ &f_chunkPos = fields.get<false>(1), /* System.Collections.Generic.Dictionary`2<System.Guid, ChunkInstances+ChunkInstanceVariables> */ &f_instances = fields.get<false>(2), /* SharedMeshData */ &f_sharedMeshData = fields.get<false>(3), /* UnityEngine.Bounds */ &f_meshBounds = fields.get<false>(4), /* System.String */ &f_name = fields.get<false>(5), /* System.Int32 */ &f_cubeCount = fields.get<false>(6), /* System.Int32 */ &f_triangleCount = fields.get<false>(7), /* System.Int32 */ &f_activeInstances = fields.get<false>(8), /* System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cell> */ &f_cells = fields.get<false>(9);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<35> methods;
+    /* System.Int32 get_TriangleCount() */
+    inline static auto& m_get_TriangleCount = methods.get<false, false>(0);
+    /* System.Int32 get_ActiveInstances() */
+    inline static auto& m_get_ActiveInstances = methods.get<false, false>(1);
+    /* System.Void set_ActiveInstances(System.Int32 value) */
+    inline static auto& m_set_ActiveInstances = methods.get<false, false>(2);
+    /* System.Int32 get_CubeCount() */
+    inline static auto& m_get_CubeCount = methods.get<false, false>(3);
+    /* System.Void .ctor(MV.WorldObject.IntVector iVector) */
+    inline static auto& m__ctor = methods.get<false, false>(4);
+    /* CubeModelChunk CloneGeometry(System.Single scale) */
+    inline static auto& m_CloneGeometry = methods.get<false, false>(5);
+    /* System.Boolean CompareGeometry(CubeModelChunk chunk) */
+    inline static auto& m0_CompareGeometry = methods.get<false, false>(6);
+    /* System.Boolean CompareGeometry(CubeModelChunk chunk, ref System.Int32 matchingCubeCount, ref System.Int32 investigatedCubeCount, System.Boolean visibleCubesOnly) */
+    inline static auto& m1_CompareGeometry = methods.get<false, false>(7);
+    /* Cube GetCube(MV.WorldObject.IntVector iVector) */
+    inline static auto& m_GetCube = methods.get<false, false>(8);
+    /* System.Boolean ContainsCube(MV.WorldObject.IntVector iVector) */
+    inline static auto& m_ContainsCube = methods.get<false, false>(9);
+    /* System.Void AddToChunk(MV.WorldObject.IntVector iVector, Cube cube, System.Boolean setVisibility = True) */
+    inline static auto& m_AddToChunk = methods.get<false, false>(10);
+    /* MV.WorldObject.IntVector GetFirstSolidCubePos() */
+    inline static auto& m_GetFirstSolidCubePos = methods.get<false, false>(11);
+    /* System.Void RemoveFromChunk(MV.WorldObject.IntVector iVector) */
+    inline static auto& m_RemoveFromChunk = methods.get<false, false>(12);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<false, false>(13);
+    /* System.String Guids() */
+    inline static auto& m_Guids = methods.get<false, false>(14);
+    /* System.Void RebuildChunk(System.Single scale) */
+    inline static auto& m_RebuildChunk = methods.get<false, false>(15);
+    /* SharedMeshData GetMeshData() */
+    inline static auto& m_GetMeshData = methods.get<false, false>(16);
+    /* System.Void EvaluateReferenceCount(System.Int32 oldReferenceCount, System.Int32 newReferenceCount) */
+    inline static auto& m_EvaluateReferenceCount = methods.get<false, false>(17);
+    /* System.Void RevokeSharedMeshOnInstances() */
+    inline static auto& m_RevokeSharedMeshOnInstances = methods.get<false, false>(18);
+    /* System.Void RestoreSharedMeshOnInstances() */
+    inline static auto& m_RestoreSharedMeshOnInstances = methods.get<false, false>(19);
+    /* System.Void UpdateInstances() */
+    inline static auto& m_UpdateInstances = methods.get<false, false>(20);
+    /* System.Void SetInstanceDataRef(MV.WorldObject.IntVector chunkPos, MVCubeModelBase cubeInstance) */
+    inline static auto& m_SetInstanceDataRef = methods.get<false, false>(21);
+    /* System.Void ChunkInstancesChanged(System.Object sender, ChunkInstancesChanged e) */
+    inline static auto& m_ChunkInstancesChanged = methods.get<false, false>(22);
+    /* System.Void SetCubeVisibilityWithNeighbors(MV.WorldObject.IntVector pos) */
+    inline static auto& m_SetCubeVisibilityWithNeighbors = methods.get<false, false>(23);
+    /* System.Void SetCubeVisibility(MV.WorldObject.IntVector iVector) */
+    inline static auto& m0_SetCubeVisibility = methods.get<false, false>(24);
+    /* System.Void SetCubeVisibility() */
+    inline static auto& m1_SetCubeVisibility = methods.get<false, false>(25);
+    /* System.Void SetCubeVisibility(System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cell> cells) */
+    inline static auto& m2_SetCubeVisibility = methods.get<true, false>(26);
+    /* System.Void SetCubeVisibility(System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cell> cells, MV.WorldObject.IntVector pos, Cube cube) */
+    inline static auto& m3_SetCubeVisibility = methods.get<true, false>(27);
+    /* System.Void SimpleFaceVisibilityTest(MV.WorldObject.FaceFlags faceFlagCube, MV.WorldObject.FaceFlags faceFlagOpposite, ref Cube cube, ref Cube neighborCube) */
+    inline static auto& m_SimpleFaceVisibilityTest = methods.get<true, false>(28);
+    /* System.Boolean AllFaceCornersIsTouchingCubeBorder(MV.WorldObject.Face face, ref UnityEngine.Vector3[] faceIndices) */
+    inline static auto& m_AllFaceCornersIsTouchingCubeBorder = methods.get<true, false>(29);
+    /* System.Void AdvancedFaceVisibilityTest(MV.WorldObject.FaceFlags faceFlagCube, MV.WorldObject.FaceFlags faceFlagOpposite, ref Cube cube, ref Cube neighborCube) */
+    inline static auto& m_AdvancedFaceVisibilityTest = methods.get<true, false>(30);
+    /* System.Void GetMeshBounds(ref UnityEngine.Bounds bounds, System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cell> cells) */
+    inline static auto& m_GetMeshBounds = methods.get<true, false>(31);
+    /* System.Int32 RebuildMesh(System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cell> cells, System.Single scale) */
+    inline static auto& m_RebuildMesh = methods.get<true, false>(32);
+    /* UnityEngine.Vector2[] GetFaceUvs(UnityEngine.Vector3[] faceVertices, MV.WorldObject.Face face, System.Single scale) */
+    inline static auto& m_GetFaceUvs = methods.get<true, false>(33);
+    /* System.Void .cctor() */
+    inline static auto& m__cctor = methods.get<true, false>(34);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct Cell {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<2> fields;
+inline static auto /* Cube */ &f_cube = fields.get<false>(0), /* System.Byte */ &f_lightValue = fields.get<false>(1);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<2> methods;
+    /* System.Void .ctor(Cube cube) */
+    inline static auto& m__ctor = methods.get<false, false>(0);
+    /* Cell Clone() */
+    inline static auto& m_Clone = methods.get<false, false>(1);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct IntVector {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<5> fields;
+inline static auto /* MV.WorldObject.IntVector */ &f_One = fields.get<true>(3), /* MV.WorldObject.IntVector */ &f_Zero = fields.get<true>(4);
+inline static auto /* System.Int16 */ &f_x = fields.get<false>(0), /* System.Int16 */ &f_y = fields.get<false>(1), /* System.Int16 */ &f_z = fields.get<false>(2);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<20> methods;
+    /* System.Boolean Equals(System.Object obj) */
+    inline static auto& m0_Equals = methods.get<false, true>(0);
+    /* System.Boolean Equals(MV.WorldObject.IntVector iV) */
+    inline static auto& m1_Equals = methods.get<false, true>(1);
+    /* System.Int32 GetHashCode() */
+    inline static auto& m_GetHashCode = methods.get<false, true>(2);
+    /* System.Boolean op_Equality(MV.WorldObject.IntVector a, MV.WorldObject.IntVector b) */
+    inline static auto& m_op_Equality = methods.get<true, false>(3);
+    /* System.Boolean op_Inequality(MV.WorldObject.IntVector a, MV.WorldObject.IntVector b) */
+    inline static auto& m_op_Inequality = methods.get<true, false>(4);
+    /* System.Void .ctor(System.Int16 x, System.Int16 y, System.Int16 z) */
+    inline static auto& m0__ctor = methods.get<false, false>(5);
+    /* System.Void .ctor(System.Int32 x, System.Int32 y, System.Int32 z) */
+    inline static auto& m1__ctor = methods.get<false, false>(6);
+    /* System.Void .ctor(System.Single x, System.Single y, System.Single z) */
+    inline static auto& m2__ctor = methods.get<false, false>(7);
+    /* UnityEngine.Vector3 ToVector3() */
+    inline static auto& m_ToVector3 = methods.get<false, false>(8);
+    /* System.String ToString() */
+    inline static auto& m_ToString = methods.get<false, true>(9);
+    /* MV.WorldObject.IntVector op_UnaryNegation(MV.WorldObject.IntVector i1) */
+    inline static auto& m_op_UnaryNegation = methods.get<true, false>(10);
+    /* MV.WorldObject.IntVector op_Addition(MV.WorldObject.IntVector i1, MV.WorldObject.IntVector i2) */
+    inline static auto& m_op_Addition = methods.get<true, false>(11);
+    /* MV.WorldObject.IntVector op_Subtraction(MV.WorldObject.IntVector i1, MV.WorldObject.IntVector i2) */
+    inline static auto& m_op_Subtraction = methods.get<true, false>(12);
+    /* MV.WorldObject.IntVector op_Multiply(System.Int32 i, MV.WorldObject.IntVector iV) */
+    inline static auto& m0_op_Multiply = methods.get<true, false>(13);
+    /* MV.WorldObject.IntVector op_Multiply(MV.WorldObject.IntVector iV, System.Int32 i) */
+    inline static auto& m1_op_Multiply = methods.get<true, false>(14);
+    /* UnityEngine.Vector3 op_Multiply(MV.WorldObject.IntVector iV, UnityEngine.Vector3 vector3) */
+    inline static auto& m2_op_Multiply = methods.get<true, false>(15);
+    /* MV.WorldObject.IntVector op_Division(MV.WorldObject.IntVector iV, System.Int32 i) */
+    inline static auto& m_op_Division = methods.get<true, false>(16);
+    /* System.Int16 get_Item(System.Int32 key) */
+    inline static auto& m_get_Item = methods.get<false, false>(17);
+    /* System.Void set_Item(System.Int32 key, System.Int16 value) */
+    inline static auto& m_set_Item = methods.get<false, false>(18);
+    /* System.Void .cctor() */
+    inline static auto& m__cctor = methods.get<true, false>(19);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct CubeBase {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<5> fields;
+inline static auto /* System.Byte[] */ &f_identityByteCorners = fields.get<true>(1), /* MV.WorldObject.FaceFlags[] */ &f_faceFlagsArray = fields.get<true>(4);
+inline static auto /* System.Byte */ &f_unIndentedSides = fields.get<false>(0), /* System.Byte[] */ &f_byteCorners = fields.get<false>(2), /* System.Byte[] */ &f_faceMaterials = fields.get<false>(3);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<24> methods;
+    /* System.Byte[] get_ByteCorners() */
+    inline static auto& m_get_ByteCorners = methods.get<false, false>(0);
+    /* System.Byte[] get_FaceMaterials() */
+    inline static auto& m_get_FaceMaterials = methods.get<false, false>(1);
+    /* System.Byte[] get_IdentityByteCorners() */
+    inline static auto& m_get_IdentityByteCorners = methods.get<true, false>(2);
+    /* UnityEngine.Vector3[] get_IdentityCorners() */
+    inline static auto& m_get_IdentityCorners = methods.get<true, false>(3);
+    /* UnityEngine.Vector3[] get_Corners() */
+    inline static auto& m_get_Corners = methods.get<false, false>(4);
+    /* System.Void set_Corners(UnityEngine.Vector3[] value) */
+    inline static auto& m_set_Corners = methods.get<false, false>(5);
+    /* MV.WorldObject.FaceFlags[] get_FaceFlagsArray() */
+    inline static auto& m_get_FaceFlagsArray = methods.get<true, false>(6);
+    /* System.Void GetCorners(MV.WorldObject.CubeBase cube, ref UnityEngine.Vector3[] corners) */
+    inline static auto& m_GetCorners = methods.get<true, false>(7);
+    /* System.Byte GetMaterial(MV.WorldObject.CubeBase cube, MV.WorldObject.Face face) */
+    inline static auto& m_GetMaterial = methods.get<true, false>(8);
+    /* System.Byte get_UnIndentedSides() */
+    inline static auto& m_get_UnIndentedSides = methods.get<false, false>(9);
+    /* System.Void set_UnIndentedSides(System.Byte value) */
+    inline static auto& m_set_UnIndentedSides = methods.get<false, false>(10);
+    /* System.Void .ctor(System.Byte[] byteCorners, System.Byte[] faceMaterials) */
+    inline static auto& m0__ctor = methods.get<false, false>(11);
+    /* System.Void .ctor(MV.WorldObject.BytePacker bp, System.Byte byteFlags) */
+    inline static auto& m1__ctor = methods.get<false, false>(12);
+    /* System.Void .ctor(System.Byte material) */
+    inline static auto& m2__ctor = methods.get<false, false>(13);
+    /* System.Boolean Equals(System.Object obj) */
+    inline static auto& m0_Equals = methods.get<false, true>(14);
+    /* System.Boolean Equals(MV.WorldObject.CubeBase cube) */
+    inline static auto& m1_Equals = methods.get<false, false>(15);
+    /* System.Boolean op_Equality(MV.WorldObject.CubeBase a, MV.WorldObject.CubeBase b) */
+    inline static auto& m_op_Equality = methods.get<true, false>(16);
+    /* System.Boolean op_Inequality(MV.WorldObject.CubeBase a, MV.WorldObject.CubeBase b) */
+    inline static auto& m_op_Inequality = methods.get<true, false>(17);
+    /* System.Int32 GetHashCode() */
+    inline static auto& m_GetHashCode = methods.get<false, true>(18);
+    /* System.Void SetCubeFlags(MV.WorldObject.CubeBase cube) */
+    inline static auto& m_SetCubeFlags = methods.get<true, false>(19);
+    /* MV.WorldObject.Face FaceFlagToFace(MV.WorldObject.FaceFlags faceFlag) */
+    inline static auto& m_FaceFlagToFace = methods.get<true, false>(20);
+    /* MV.WorldObject.FaceFlags FaceToFaceFlag(MV.WorldObject.Face face) */
+    inline static auto& m_FaceToFaceFlag = methods.get<true, false>(21);
+    /* System.Void GetFace(ref UnityEngine.Vector3[] corners, ref UnityEngine.Vector3[] faceVertices, MV.WorldObject.Face face) */
+    inline static auto& m_GetFace = methods.get<true, false>(22);
+    /* System.Void .cctor() */
+    inline static auto& m__cctor = methods.get<true, false>(23);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct Cube {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<2> fields;
+inline static auto /* UnityEngine.Vector3[] */ &f_cornersBookkeeping = fields.get<true>(0);
+inline static auto /* System.Byte */ &f_hiddenSides = fields.get<false>(1);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<66> methods;
+    /* System.Byte get_HiddenSides() */
+    inline static auto& m_get_HiddenSides = methods.get<false, false>(0);
+    /* System.Void set_HiddenSides(System.Byte value) */
+    inline static auto& m_set_HiddenSides = methods.get<false, false>(1);
+    /* System.Void .ctor(System.Byte[] byteCorners, System.Byte[] faceMaterials) */
+    inline static auto& m0__ctor = methods.get<false, false>(2);
+    /* System.Void .ctor(MV.WorldObject.BytePacker bp, System.Byte byteFlags) */
+    inline static auto& m1__ctor = methods.get<false, false>(3);
+    /* Cube Clone() */
+    inline static auto& m0_Clone = methods.get<false, false>(4);
+    /* Cube Clone(Cube original) */
+    inline static auto& m1_Clone = methods.get<true, false>(6);
+    /* System.Boolean IsSideVisible(MV.WorldObject.FaceFlags face) */
+    inline static auto& m_IsSideVisible = methods.get<false, false>(5);
+    /* System.Byte[] CreateMaterialArray(System.Byte material) */
+    inline static auto& m_CreateMaterialArray = methods.get<true, false>(7);
+    /* UnityEngine.Vector3[] GetCorners(Cube cube, MV.WorldObject.Face face) */
+    inline static auto& m0_GetCorners = methods.get<true, false>(8);
+    /* System.Collections.Generic.List`1<UnityEngine.Vector3> GetCorners(System.Collections.Generic.List`1<UnityEngine.Vector2> clockwiseCorners, MV.WorldObject.Face direction) */
+    inline static auto& m1_GetCorners = methods.get<true, false>(14);
+    /* System.Collections.Generic.List`1<UnityEngine.Vector3> GetCorners(UnityEngine.Vector3[] counterClockwiseFace, MV.WorldObject.Face direction) */
+    inline static auto& m2_GetCorners = methods.get<true, false>(41);
+    /* System.Void SetMaterial(Cube cube, MV.WorldObject.Face face, System.Byte materialId) */
+    inline static auto& m_SetMaterial = methods.get<true, false>(9);
+    /* UnityEngine.Vector3[] GetVertices(Cube cube) */
+    inline static auto& m0_GetVertices = methods.get<true, false>(10);
+    /* UnityEngine.Vector3[] GetVertices(UnityEngine.Vector3[] corners) */
+    inline static auto& m1_GetVertices = methods.get<true, false>(44);
+    /* MV.WorldObject.IntVector GetCubePosAboveFace(MV.WorldObject.IntVector localPos, MV.WorldObject.Face face) */
+    inline static auto& m_GetCubePosAboveFace = methods.get<true, false>(11);
+    /* MV.WorldObject.Face GetFaceIdentityFromLocalDir(UnityEngine.Vector3 localDir) */
+    inline static auto& m_GetFaceIdentityFromLocalDir = methods.get<true, false>(12);
+    /* UnityEngine.Vector3 GetFaceAxis(MV.WorldObject.Face face) */
+    inline static auto& m_GetFaceAxis = methods.get<true, false>(13);
+    /* System.Void SetFace(Cube cube, MV.WorldObject.Face face, UnityEngine.Vector3[] faceVertices) */
+    inline static auto& m0_SetFace = methods.get<true, false>(15);
+    /* System.Void SetFace(ref UnityEngine.Vector3[] corners, MV.WorldObject.Face face, UnityEngine.Vector3[] faceVertices) */
+    inline static auto& m1_SetFace = methods.get<true, false>(45);
+    /* System.Boolean IsFaceBoxSideAligened(Cube cube, MV.WorldObject.Face face) */
+    inline static auto& m_IsFaceBoxSideAligened = methods.get<true, false>(16);
+    /* System.Void UnIndentFace(Cube cube, MV.WorldObject.Face face) */
+    inline static auto& m_UnIndentFace = methods.get<true, false>(17);
+    /* UnityEngine.Vector3[] GetVerticesWorldAxisAligned(Cube cube, MV.WorldObject.IntVector iVector) */
+    inline static auto& m_GetVerticesWorldAxisAligned = methods.get<true, false>(18);
+    /* System.Single CalculateAOLightCheap(MV.WorldObject.Face face, System.Int32 faceCornerIndex, System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cell> cells, MV.WorldObject.IntVector cubePos, System.Boolean inside) */
+    inline static auto& m_CalculateAOLightCheap = methods.get<true, false>(19);
+    /* System.Single CalculateAOLightExpensive(MV.WorldObject.Face face, System.Int32 faceCornerIndex, System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cell> cells, MV.WorldObject.IntVector cubePos, System.Int32[] cornerIndexToVertex, UnityEngine.Vector3 normal) */
+    inline static auto& m_CalculateAOLightExpensive = methods.get<true, false>(20);
+    /* FaceData[] GenerateCubeFaces(Cube cube, MV.WorldObject.IntVector cubePos, System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cell> cells) */
+    inline static auto& m_GenerateCubeFaces = methods.get<true, false>(21);
+    /* FaceData[] GenerateCubeFacesExpensive(Cube cube, MV.WorldObject.IntVector cubePos, System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cell> cells) */
+    inline static auto& m_GenerateCubeFacesExpensive = methods.get<true, false>(22);
+    /* FaceData[] GenerateCubeFacesCheap(Cube cube, MV.WorldObject.IntVector cubePos, System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cell> cells) */
+    inline static auto& m_GenerateCubeFacesCheap = methods.get<true, false>(23);
+    /* FaceData GenerateFaceDataExpensive(MV.WorldObject.Face face, MV.WorldObject.IntVector cubePos, System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cell> cells) */
+    inline static auto& m_GenerateFaceDataExpensive = methods.get<true, false>(24);
+    /* FaceData GenerateFaceDataCheap(MV.WorldObject.Face face, MV.WorldObject.IntVector cubePos, System.Collections.Generic.Dictionary`2<MV.WorldObject.IntVector, Cell> cells, System.Func`2<System.Int32, System.Boolean> insideCheck) */
+    inline static auto& m_GenerateFaceDataCheap = methods.get<true, false>(25);
+    /* System.Single CalculateAOBleed(FaceData faceData, System.Int32 index) */
+    inline static auto& m_CalculateAOBleed = methods.get<true, false>(26);
+    /* MV.WorldObject.Face GetFace(UnityEngine.Vector3[] corners, UnityEngine.Vector3[] triangleVertices) */
+    inline static auto& m0_GetFace = methods.get<true, false>(27);
+    /* UnityEngine.Vector3[] GetFace(UnityEngine.Vector3[] corners, MV.WorldObject.Face face) */
+    inline static auto& m1_GetFace = methods.get<true, false>(28);
+    /* UnityEngine.Vector3[] GetFaceVerticesWorld(UnityEngine.GameObject gameObject, Cube cube, MV.WorldObject.Face face, MV.WorldObject.IntVector iVector) */
+    inline static auto& m_GetFaceVerticesWorld = methods.get<true, false>(29);
+    /* UnityEngine.Vector3[] GetEdge(Cube cube, MV.WorldObject.Face face, Edge edge) */
+    inline static auto& m0_GetEdge = methods.get<true, false>(30);
+    /* Edge GetEdge(UnityEngine.GameObject gameObject, Cube cube, MV.WorldObject.Face face, UnityEngine.Vector3 pos, MV.WorldObject.IntVector iVector) */
+    inline static auto& m1_GetEdge = methods.get<true, false>(32);
+    /* System.Void SetEdge(Cube cube, MV.WorldObject.Face face, Edge edge, UnityEngine.Vector3[] edgeVertices) */
+    inline static auto& m0_SetEdge = methods.get<true, false>(31);
+    /* System.Void SetEdge(ref UnityEngine.Vector3[] corners, MV.WorldObject.Face face, Edge edge, UnityEngine.Vector3[] edgeVertices) */
+    inline static auto& m1_SetEdge = methods.get<true, false>(51);
+    /* UnityEngine.Vector3[] GetEdgeVerticesWorld(UnityEngine.GameObject gameObject, Cube cube, MV.WorldObject.Face face, Edge edge, MV.WorldObject.IntVector iVector) */
+    inline static auto& m_GetEdgeVerticesWorld = methods.get<true, false>(33);
+    /* System.Boolean IsOutOfBound(UnityEngine.Vector3[] corners) */
+    inline static auto& m_IsOutOfBound = methods.get<true, false>(34);
+    /* System.Void MoveVertex(CubePickingInfo info, System.Single value, UnityEngine.Vector3 axis, System.Boolean edgeIndex0, System.Boolean edgeIndex1, ref CubeOutOfBoundState coob) */
+    inline static auto& m_MoveVertex = methods.get<true, false>(35);
+    /* System.Void MoveEdge(CubePickingInfo info, System.Single value, UnityEngine.Vector3 axis, ref CubeOutOfBoundState coob) */
+    inline static auto& m_MoveEdge = methods.get<true, false>(36);
+    /* System.Boolean FaceIsOutOfCubeBoundery(UnityEngine.Vector3[] faceVertices) */
+    inline static auto& m_FaceIsOutOfCubeBoundery = methods.get<true, false>(37);
+    /* System.Void AddDeltaToFace(ref UnityEngine.Vector3[] faceVertices, System.Single delta, UnityEngine.Vector3 axis) */
+    inline static auto& m_AddDeltaToFace = methods.get<true, false>(38);
+    /* System.Void ClampFace(ref UnityEngine.Vector3[] faceVertices) */
+    inline static auto& m_ClampFace = methods.get<true, false>(39);
+    /* System.Void MoveFace(CubePickingInfo info, System.Single delta, UnityEngine.Vector3 axis, ref CubeOutOfBoundState outOfBoundState) */
+    inline static auto& m_MoveFace = methods.get<true, false>(40);
+    /* UnityEngine.Vector3[] GetNormals(UnityEngine.Vector3[] corners, MV.WorldObject.Face face) */
+    inline static auto& m_GetNormals = methods.get<true, false>(42);
+    /* UnityEngine.Vector3 GetDefaultNormal(MV.WorldObject.Face face) */
+    inline static auto& m_GetDefaultNormal = methods.get<true, false>(43);
+    /* System.Collections.Generic.List`1<UnityEngine.Vector3> SquareCornersToCubeCorners(System.Collections.Generic.List`1<UnityEngine.Vector2> corners, MV.WorldObject.Face direction) */
+    inline static auto& m_SquareCornersToCubeCorners = methods.get<true, false>(46);
+    /* System.Collections.Generic.List`1<UnityEngine.Vector3> CreateCubeCornersFromTopFace(System.Collections.Generic.List`1<UnityEngine.Vector3> cubeCorners, MV.WorldObject.Face direction) */
+    inline static auto& m_CreateCubeCornersFromTopFace = methods.get<true, false>(47);
+    /* UnityEngine.Quaternion GetFromTopRotation(MV.WorldObject.Face direction) */
+    inline static auto& m_GetFromTopRotation = methods.get<true, false>(48);
+    /* UnityEngine.Vector3[] RotateFaceToTop(Cube cube, MV.WorldObject.Face direction) */
+    inline static auto& m_RotateFaceToTop = methods.get<true, false>(49);
+    /* UnityEngine.Quaternion GetToTopRotation(MV.WorldObject.Face direction) */
+    inline static auto& m_GetToTopRotation = methods.get<true, false>(50);
+    /* System.Boolean IsFaceCollapsed(UnityEngine.Vector3[] faceIndices) */
+    inline static auto& m_IsFaceCollapsed = methods.get<true, false>(52);
+    /* System.Boolean IsFaceValid(UnityEngine.Vector3[] faceIndices, MV.WorldObject.Face face) */
+    inline static auto& m_IsFaceValid = methods.get<true, false>(53);
+    /* System.Boolean IsCollapsed(UnityEngine.Vector3[] corners) */
+    inline static auto& m_IsCollapsed = methods.get<true, false>(54);
+    /* System.Boolean GetPlaneVertices(UnityEngine.Vector3[] corners, ref UnityEngine.Vector3[] planeVertices) */
+    inline static auto& m_GetPlaneVertices = methods.get<true, false>(55);
+    /* System.Boolean IsLegal(UnityEngine.Vector3[] corners) */
+    inline static auto& m_IsLegal = methods.get<true, false>(56);
+    /* System.Boolean IsCornersValid(UnityEngine.Vector3[] corners) */
+    inline static auto& m_IsCornersValid = methods.get<true, false>(57);
+    /* System.Void GetTriangle(System.Int32 triangleNr, UnityEngine.Vector3[] triangleVertices, UnityEngine.Vector3[] corners) */
+    inline static auto& m_GetTriangle = methods.get<true, false>(58);
+    /* System.Void .cctor() */
+    inline static auto& m__cctor = methods.get<true, false>(59);
+    /* System.Boolean <GenerateCubeFacesCheap>g__insideCheck|26_0(System.Int32 i) */
+    inline static auto& m__GenerateCubeFacesCheap_g__insideCheck_26_0 = methods.get<true, false>(60);
+    /* System.Boolean <GenerateCubeFacesCheap>g__insideCheck|26_1(System.Int32 i) */
+    inline static auto& m__GenerateCubeFacesCheap_g__insideCheck_26_1 = methods.get<true, false>(61);
+    /* System.Boolean <GenerateCubeFacesCheap>g__insideCheck|26_2(System.Int32 i) */
+    inline static auto& m__GenerateCubeFacesCheap_g__insideCheck_26_2 = methods.get<true, false>(62);
+    /* System.Boolean <GenerateCubeFacesCheap>g__insideCheck|26_3(System.Int32 i) */
+    inline static auto& m__GenerateCubeFacesCheap_g__insideCheck_26_3 = methods.get<true, false>(63);
+    /* System.Boolean <GenerateCubeFacesCheap>g__insideCheck|26_4(System.Int32 i) */
+    inline static auto& m__GenerateCubeFacesCheap_g__insideCheck_26_4 = methods.get<true, false>(64);
+    /* System.Boolean <GenerateCubeFacesCheap>g__insideCheck|26_5(System.Int32 i) */
+    inline static auto& m__GenerateCubeFacesCheap_g__insideCheck_26_5 = methods.get<true, false>(65);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVAdvancedGhost {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<10> fields;
+inline static auto /* System.Single */ &f_deathExplosionDamageValue = fields.get<true>(7), /* System.Single */ &f_deathExplosionRadius = fields.get<true>(8), /* System.Single */ &f_deathExplosionImpulse = fields.get<true>(9);
+inline static auto /* AdvancedGhostBehaviour */ &f_advancedGhostBehaviour = fields.get<false>(0), /* ClientSideNPCInteractable */ &f_interactable = fields.get<false>(1), /* AdvancedGhostCubeModelWrapper */ &f_editableCubeModelWrapper = fields.get<false>(2), /* AdvancedGhostIcon */ &f_advancedGhostIcon = fields.get<false>(3), /* UnityEngine.GameObject */ &f_attachmentObject = fields.get<false>(4), /* AdvancedGhostObject */ &f_advGhostObject = fields.get<false>(5), /* ClientSideNPCInteractionHandler */ &f_interactionHandler = fields.get<false>(6);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<25> methods;
+    /* MVWorldObjectDocumentationType get_DocumentationType() */
+    inline static auto& m_get_DocumentationType = methods.get<false, true>(0);
+    /* MV.WorldObject.MVTeam get_Team() */
+    inline static auto& m_get_Team = methods.get<false, false>(1);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m__ctor = methods.get<false, false>(2);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(3);
+    /* System.Void OnPositionChanged(MVWorldObjectClient arg0, PositionChangedEventArgs positionChangedEventArgs) */
+    inline static auto& m_OnPositionChanged = methods.get<false, false>(4);
+    /* System.Void SetupEditorIcon(MVCubeModelBase cubeModelBody, System.Boolean enableCulling) */
+    inline static auto& m_SetupEditorIcon = methods.get<false, false>(5);
+    /* System.Void InitializeInventory() */
+    inline static auto& m_InitializeInventory = methods.get<false, true>(6);
+    /* System.Void SetGameMode(System.Boolean isPlayMode) */
+    inline static auto& m_SetGameMode = methods.get<false, false>(7);
+    /* System.Boolean OnEnterObject(EditorStateMachine e) */
+    inline static auto& m_OnEnterObject = methods.get<false, true>(8);
+    /* System.Boolean OnExitObject(EditorStateMachine e) */
+    inline static auto& m_OnExitObject = methods.get<false, true>(9);
+    /* UnityEngine.Vector3 get_WorldPivot() */
+    inline static auto& m_get_WorldPivot = methods.get<false, true>(10);
+    /* UnityEngine.Bounds GetLocalBounds(BoundsContext boundsContext) */
+    inline static auto& m_GetLocalBounds = methods.get<false, true>(11);
+    /* System.Void Select(UnityEngine.Color color) */
+    inline static auto& m_Select = methods.get<false, true>(12);
+    /* System.Void DeSelect() */
+    inline static auto& m_DeSelect = methods.get<false, true>(13);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<false, true>(14);
+    /* UnityEngine.Vector3 GetTargetPosition() */
+    inline static auto& m_GetTargetPosition = methods.get<false, true>(15);
+    /* System.Void ReceiveDamage(System.Single amount, MVPlayer damageDealer, MV.Common.PlayerKilledByType damageType) */
+    inline static auto& m_ReceiveDamage = methods.get<false, false>(16);
+    /* System.Void RecieveHealing(System.Single amount, MVPlayer damageDealer) */
+    inline static auto& m_RecieveHealing = methods.get<false, false>(17);
+    /* System.Void Reset() */
+    inline static auto& m_Reset = methods.get<false, true>(18);
+    /* System.Boolean IsOnSameTeam(MV.WorldObject.MVTeam team) */
+    inline static auto& m_IsOnSameTeam = methods.get<false, true>(19);
+    /* System.Void OnDataUpdate() */
+    inline static auto& m_OnDataUpdate = methods.get<false, true>(20);
+    /* System.Void SetTeam(MV.WorldObject.MVTeam team) */
+    inline static auto& m_SetTeam = methods.get<false, false>(21);
+    /* System.Void SetTeam_Edit(MV.WorldObject.MVTeam team) */
+    inline static auto& m_SetTeam_Edit = methods.get<false, false>(22);
+    /* System.Void GameStateChanged(UpdateCondition condition) */
+    inline static auto& m_GameStateChanged = methods.get<false, true>(23);
+    /* UnityEngine.GameObject GetHealRayAttachmentObject() */
+    inline static auto& m_GetHealRayAttachmentObject = methods.get<false, true>(24);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct CollectTheItemCollectable {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<9> fields;
+inline static auto /* System.Action */ &f_OnCollectTheItemDestroyed = fields.get<false>(0), /* CullingSubscriberBase */ &f_cullingSubscriberBase = fields.get<false>(1), /* MVCubeModelInstance */ &f_collectableModel = fields.get<false>(2), /* CollectTheItemCollectableInstance */ &f_collectableInstance = fields.get<false>(3), /* EditableCubeModelWrapper */ &f_editableCubeModelWrapper = fields.get<false>(4), /* CollectTheItem */ &f_controller = fields.get<false>(5), /* ObscuredIntVector */ &f_minBounds = fields.get<false>(6), /* ObscuredIntVector */ &f_maxBounds = fields.get<false>(7), /* CodeStage.AntiCheat.ObscuredTypes.ObscuredInt */ &f_minCubes = fields.get<false>(8);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<15> methods;
+    /* System.Boolean get_HasArrowIndicator() */
+    inline static auto& m_get_HasArrowIndicator = methods.get<false, false>(0);
+    /* System.Boolean get_HasDropOff() */
+    inline static auto& m_get_HasDropOff = methods.get<false, false>(1);
+    /* System.Int32 get_CollectableModelId() */
+    inline static auto& m_get_CollectableModelId = methods.get<false, false>(2);
+    /* System.Int32 get_DropOffId() */
+    inline static auto& m_get_DropOffId = methods.get<false, false>(3);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m__ctor = methods.get<false, false>(4);
+    /* System.Void InitializeWithController(CollectTheItem controller) */
+    inline static auto& m_InitializeWithController = methods.get<false, false>(5);
+    /* System.Void SetupCollectableModel() */
+    inline static auto& m_SetupCollectableModel = methods.get<false, false>(6);
+    /* System.Void OnPositionChanged(MVWorldObjectClient arg0, PositionChangedEventArgs positionChangedEventArgs) */
+    inline static auto& m_OnPositionChanged = methods.get<false, false>(7);
+    /* System.Collections.Generic.Dictionary`2<System.String, System.Object> GetItemData() */
+    inline static auto& m_GetItemData = methods.get<false, false>(8);
+    /* System.Void CreateCollectableInstance(UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) */
+    inline static auto& m_CreateCollectableInstance = methods.get<false, false>(9);
+    /* System.Boolean OnExitObject(EditorStateMachine e) */
+    inline static auto& m_OnExitObject = methods.get<false, true>(10);
+    /* System.Boolean OnEnterObject(EditorStateMachine e) */
+    inline static auto& m_OnEnterObject = methods.get<false, true>(11);
+    /* System.Void OnStateChanged(UnityEngine.CullingGroupEvent cullingEvent) */
+    inline static auto& m_OnStateChanged = methods.get<false, false>(12);
+    /* System.Boolean Delete(MVWorldObjectClientManager worldObjectClientManager, ref System.String errorText) */
+    inline static auto& m_Delete = methods.get<false, true>(13);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<false, true>(14);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct CollectTheItemDropOff {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<13> fields;
+inline static auto /* System.String */ &f_isActiveKey = fields.get<true>(0), /* System.String */ &f_doOnce = fields.get<true>(1);
+inline static auto /* System.Action`1<System.Boolean> */ &f_OnPickupCollected = fields.get<false>(2), /* EditableCubeModelWrapper */ &f_editableCubeModelWrapper = fields.get<false>(3), /* CollectTheItemDropOffObject */ &f_triggerObject = fields.get<false>(4), /* CullingSubscriberBase */ &f_cullingSubscriberBase = fields.get<false>(5), /* CollectTheItem */ &f_controller = fields.get<false>(6), /* ObscuredIntVector */ &f_minBounds = fields.get<false>(7), /* ObscuredIntVector */ &f_maxBounds = fields.get<false>(8), /* CodeStage.AntiCheat.ObscuredTypes.ObscuredInt */ &f_minCubes = fields.get<false>(9), /* OutputSignalTransmitter */ &f_outputSignalTransmitter = fields.get<false>(10), /* System.Boolean */ &f_sendSignal = fields.get<false>(11), /* IInputSignalReceiver */ &f__InputSignalReceiver_k__BackingField = fields.get<false>(12);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<26> methods;
+    /* UnityEngine.Vector3 get_OutputConnectorOffset() */
+    inline static auto& m_get_OutputConnectorOffset = methods.get<false, true>(0);
+    /* System.Boolean get_HasOutputConnector() */
+    inline static auto& m_get_HasOutputConnector = methods.get<false, true>(1);
+    /* System.Boolean get_HasInputConnector() */
+    inline static auto& m_get_HasInputConnector = methods.get<false, true>(2);
+    /* IInputSignalReceiver get_InputSignalReceiver() */
+    inline static auto& m_get_InputSignalReceiver = methods.get<false, true>(3);
+    /* System.Void set_InputSignalReceiver(IInputSignalReceiver value) */
+    inline static auto& m_set_InputSignalReceiver = methods.get<false, false>(4);
+    /* System.Boolean get_IsActive() */
+    inline static auto& m_get_IsActive = methods.get<false, false>(5);
+    /* System.Boolean get_DoOnce() */
+    inline static auto& m_get_DoOnce = methods.get<false, false>(6);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m__ctor = methods.get<false, false>(7);
+    /* System.Void InitializeWithController(CollectTheItem controller) */
+    inline static auto& m_InitializeWithController = methods.get<false, false>(8);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(9);
+    /* System.Void SignalCallback(System.Boolean b, System.Boolean wasHot, LogicObjectManager logicObjectManager) */
+    inline static auto& m_SignalCallback = methods.get<false, false>(10);
+    /* System.Void OnChunkEditReset(System.Object sender, EditStateEventArgs args) */
+    inline static auto& m_OnChunkEditReset = methods.get<false, false>(11);
+    /* System.Void ReInitializeVisuals() */
+    inline static auto& m_ReInitializeVisuals = methods.get<false, false>(12);
+    /* System.Void OnEditModeChange(EditModeChangeArgs arg) */
+    inline static auto& m_OnEditModeChange = methods.get<false, false>(13);
+    /* System.Void OnCollected(System.Boolean shouldbeActiveOnCollect) */
+    inline static auto& m_OnCollected = methods.get<false, false>(14);
+    /* System.Void Reset() */
+    inline static auto& m_Reset = methods.get<false, true>(15);
+    /* System.Void SetupCulling() */
+    inline static auto& m_SetupCulling = methods.get<false, false>(16);
+    /* System.Void OnPositionChanged(MVWorldObjectClient arg0, PositionChangedEventArgs positionChangedEventArgs) */
+    inline static auto& m_OnPositionChanged = methods.get<false, false>(17);
+    /* System.Void OnStateChanged(UnityEngine.CullingGroupEvent cullingEvent) */
+    inline static auto& m_OnStateChanged = methods.get<false, false>(18);
+    /* System.Void OnDataUpdate() */
+    inline static auto& m_OnDataUpdate = methods.get<false, true>(19);
+    /* System.Void DropWoId(System.Int32 instigatorWoID) */
+    inline static auto& m_DropWoId = methods.get<false, false>(20);
+    /* System.Void TriggerBoxEvents_TriggerEnter(System.Object sender, TriggerEventArgs e) */
+    inline static auto& m_TriggerBoxEvents_TriggerEnter = methods.get<false, false>(21);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<false, true>(22);
+    /* System.Boolean OnExitObject(EditorStateMachine e) */
+    inline static auto& m_OnExitObject = methods.get<false, true>(23);
+    /* System.Boolean OnEnterObject(EditorStateMachine e) */
+    inline static auto& m_OnEnterObject = methods.get<false, true>(24);
+    /* System.Boolean Delete(MVWorldObjectClientManager worldObjectClientManager, ref System.String errorText) */
+    inline static auto& m_Delete = methods.get<false, true>(25);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVJetPack {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<8> fields;
+inline static auto /* CullingSubscriberDynamic */ &f_cullingSubscriberDynamic = fields.get<false>(0), /* EditableCubeModelWrapper */ &f_editableCubeModelWrapper = fields.get<false>(1), /* MVRuntimeDataVariableClampedFloat */ &f_shield = fields.get<false>(2), /* MVRuntimeDataVariableClampedFloat */ &f_Health = fields.get<false>(3), /* MVRuntimeDataVariable */ &f_Modifiers = fields.get<false>(4), /* MVRuntimeDataVariable */ &f_JetMode = fields.get<false>(5), /* WorldObjectTypes.JetPack.JetPackParameters */ &f_jetPackParameters = fields.get<false>(6), /* MVJetPack+JetPackType */ &f_jetPackType = fields.get<false>(7);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<17> methods;
+    /* MVWorldObjectDocumentationType get_DocumentationType() */
+    inline static auto& m_get_DocumentationType = methods.get<false, true>(0);
+    /* System.Void set_Shield(MVRuntimeDataVariableClampedFloat value) */
+    inline static auto& m_set_Shield = methods.get<false, false>(1);
+    /* MVRuntimeDataVariableClampedFloat get_Shield() */
+    inline static auto& m_get_Shield = methods.get<false, false>(2);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m__ctor = methods.get<false, false>(3);
+    /* WorldObjectTypes.VehicleEnergy.VehicleEnergyContainerConfig SetupVehicleEnergyContainerConfig() */
+    inline static auto& m_SetupVehicleEnergyContainerConfig = methods.get<false, true>(4);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(5);
+    /* System.Void InitializeInventory() */
+    inline static auto& m_InitializeInventory = methods.get<false, true>(6);
+    /* System.Boolean OnEnterObject(EditorStateMachine e) */
+    inline static auto& m_OnEnterObject = methods.get<false, true>(7);
+    /* System.Boolean OnExitObject(EditorStateMachine e) */
+    inline static auto& m_OnExitObject = methods.get<false, true>(8);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<false, true>(9);
+    /* System.Boolean CompareWithKoGaMaPackage(MVWorldObjectClient wo, KoGaMaPackageClient koGaMaPackageClient, ref System.Int32 insertedByProfileId) */
+    inline static auto& m_CompareWithKoGaMaPackage = methods.get<false, true>(10);
+    /* System.Void VehicleEntered(MVAvatar vehicleUser, System.Int32 seatID) */
+    inline static auto& m_VehicleEntered = methods.get<false, true>(11);
+    /* MVVehicleBase+LocalObjectsBase CreateLocalObjects(System.Int32 seatID, MVAvatarLocal vehicleUser) */
+    inline static auto& m_CreateLocalObjects = methods.get<false, true>(12);
+    /* UnityEngine.Bounds GetLocalBounds(BoundsContext boundsContext) */
+    inline static auto& m_GetLocalBounds = methods.get<false, true>(13);
+    /* System.Void OnIsDeadChange(System.Object isDead) */
+    inline static auto& m_OnIsDeadChange = methods.get<false, false>(14);
+    /* MVJetPack+JetPackType GetJetPackType(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data) */
+    inline static auto& m_GetJetPackType = methods.get<true, false>(15);
+    /* WorldObjectTypes.VehiclesBase.Shared.VehicleBaseObject GetPickupPrefabName(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data) */
+    inline static auto& m_GetPickupPrefabName = methods.get<true, false>(16);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVSimpleOneSeatVehicle {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<8> fields;
+inline static auto /* MVRuntimeDataVariableClampedFloat */ &f_Health = fields.get<false>(0), /* MVRuntimeDataVariable */ &f_Modifiers = fields.get<false>(1), /* MVRuntimeDataVariable */ &f_CurrentItem = fields.get<false>(2), /* MVRuntimeDataVariable */ &f_IsFiring = fields.get<false>(3), /* MVRuntimeDataVariableClampedFloat */ &f_shield = fields.get<false>(4), /* EditableCubeModelWrapper */ &f_editableCubeModelWrapper = fields.get<false>(5), /* System.Single */ &f_maxHealth = fields.get<false>(6), /* System.Single */ &f_previousHealth = fields.get<false>(7);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<10> methods;
+    /* System.Void set_Shield(MVRuntimeDataVariableClampedFloat value) */
+    inline static auto& m_set_Shield = methods.get<false, false>(0);
+    /* MVRuntimeDataVariableClampedFloat get_Shield() */
+    inline static auto& m_get_Shield = methods.get<false, false>(1);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, WorldObjectTypes.VehiclesBase.Shared.VehicleBaseObject _vehiclePrefab, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m__ctor = methods.get<false, false>(2);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(3);
+    /* System.Void Select(UnityEngine.Color color) */
+    inline static auto& m_Select = methods.get<false, true>(4);
+    /* System.Void DeSelect() */
+    inline static auto& m_DeSelect = methods.get<false, true>(5);
+    /* System.Boolean OnEnterObject(EditorStateMachine e) */
+    inline static auto& m_OnEnterObject = methods.get<false, true>(6);
+    /* System.Boolean OnExitObject(EditorStateMachine e) */
+    inline static auto& m_OnExitObject = methods.get<false, true>(7);
+    /* System.Collections.Generic.Dictionary`2<System.Object, System.Object> GetCurrentItemState() */
+    inline static auto& m_GetCurrentItemState = methods.get<false, true>(8);
+    /* System.Void SetCurrentItemState(System.Collections.Generic.Dictionary`2<System.Object, System.Object> aNewState) */
+    inline static auto& m_SetCurrentItemState = methods.get<false, true>(9);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVDoorBlueprint {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<3> fields;
+inline static auto /* WorldObjectTypes.MVDoor.MVDoor */ &f_doorLogic = fields.get<false>(0), /* EditableCubeModelWrapper */ &f_editableCubeModelWrapper = fields.get<false>(1), /* MVCubeModelInstance */ &f_editableCubeModel = fields.get<false>(2);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<11> methods;
+    /* MVWorldObjectDocumentationType get_DocumentationType() */
+    inline static auto& m_get_DocumentationType = methods.get<false, true>(0);
+    /* WorldObjectTypes.MVDoor.MVDoor get_DoorLogic() */
+    inline static auto& m_get_DoorLogic = methods.get<false, false>(1);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m__ctor = methods.get<false, false>(2);
+    /* System.Void InitializeInventory() */
+    inline static auto& m_InitializeInventory = methods.get<false, true>(3);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(4);
+    /* System.Void SetCubeSize() */
+    inline static auto& m_SetCubeSize = methods.get<false, false>(5);
+    /* System.Void OnDataUpdate() */
+    inline static auto& m_OnDataUpdate = methods.get<false, true>(6);
+    /* System.Void Select(UnityEngine.Color color) */
+    inline static auto& m_Select = methods.get<false, true>(7);
+    /* System.Void DeSelect() */
+    inline static auto& m_DeSelect = methods.get<false, true>(8);
+    /* System.Boolean OnEnterObject(EditorStateMachine e) */
+    inline static auto& m_OnEnterObject = methods.get<false, true>(9);
+    /* System.Boolean OnExitObject(EditorStateMachine e) */
+    inline static auto& m_OnExitObject = methods.get<false, true>(10);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVVehicleEnergy {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<14> fields;
+inline static auto /* System.String */ &f_DefaultName = fields.get<true>(0), /* System.Int32 */ &f_DefaultSpawnOption = fields.get<true>(1), /* System.Int32 */ &f_MinSpawnOption = fields.get<true>(2), /* System.Int32 */ &f_MaxSpawnOption = fields.get<true>(3), /* System.Int32 */ &f_DefaultSpawnTime = fields.get<true>(4), /* System.Int32 */ &f_MinSpawnTime = fields.get<true>(5), /* System.Int32 */ &f_MaxSpawnTime = fields.get<true>(6), /* System.Int32 */ &f_DefaultEnergyAmount = fields.get<true>(7), /* System.Int32 */ &f_MinEnergyAmount = fields.get<true>(8), /* System.Int32 */ &f_MaxEnergyAmount = fields.get<true>(9);
+inline static auto /* EditableCubeModelWrapper */ &f_editableCubeModelWrapper = fields.get<false>(10), /* UnityEngine.GameObject */ &f__VehicleEnergyVisualsGameObject_k__BackingField = fields.get<false>(11), /* WorldObjectTypes.VehicleEnergy.MVVehicleEnergyObject */ &f_vehicleEnergyObject = fields.get<false>(12), /* WorldObjectTypes.VehicleEnergy.MVVehicleEnergy+VehicleEnergyConfiguration */ &f__VehicleEnergyConfig_k__BackingField = fields.get<false>(13);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<19> methods;
+    /* MVWorldObjectDocumentationType get_DocumentationType() */
+    inline static auto& m_get_DocumentationType = methods.get<false, true>(0);
+    /* MVCubeModelInstance get_CubeModelInstance() */
+    inline static auto& m_get_CubeModelInstance = methods.get<false, false>(1);
+    /* UnityEngine.GameObject get_VehicleEnergyVisualsGameObject() */
+    inline static auto& m_get_VehicleEnergyVisualsGameObject = methods.get<false, false>(2);
+    /* System.Void set_VehicleEnergyVisualsGameObject(UnityEngine.GameObject value) */
+    inline static auto& m_set_VehicleEnergyVisualsGameObject = methods.get<false, false>(3);
+    /* WorldObjectTypes.VehicleEnergy.MVVehicleEnergy+VehicleEnergyConfiguration get_VehicleEnergyConfig() */
+    inline static auto& m_get_VehicleEnergyConfig = methods.get<false, false>(4);
+    /* System.Void set_VehicleEnergyConfig(WorldObjectTypes.VehicleEnergy.MVVehicleEnergy+VehicleEnergyConfiguration value) */
+    inline static auto& m_set_VehicleEnergyConfig = methods.get<false, false>(5);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m__ctor = methods.get<false, false>(6);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(7);
+    /* System.Void UpdateVehicleEnergyConfig() */
+    inline static auto& m_UpdateVehicleEnergyConfig = methods.get<false, false>(8);
+    /* System.Void OnDataUpdate() */
+    inline static auto& m_OnDataUpdate = methods.get<false, true>(9);
+    /* WorldObjectTypes.VehicleEnergy.MVVehicleEnergy+VehicleEnergyConfiguration ReadWorldObjectData() */
+    inline static auto& m_ReadWorldObjectData = methods.get<false, false>(10);
+    /* WorldObjectTypes.VehicleEnergy.MVVehicleEnergy+VehicleEnergyConfiguration CreateDefaultVehicleEnergyConfig() */
+    inline static auto& m_CreateDefaultVehicleEnergyConfig = methods.get<true, false>(11);
+    /* System.Void Taken() */
+    inline static auto& m_Taken = methods.get<false, false>(12);
+    /* System.Void Spawned() */
+    inline static auto& m_Spawned = methods.get<false, false>(13);
+    /* System.Void ToggleColliders(System.Boolean val) */
+    inline static auto& m_ToggleColliders = methods.get<false, false>(14);
+    /* System.Void Select(UnityEngine.Color color) */
+    inline static auto& m_Select = methods.get<false, true>(15);
+    /* System.Void DeSelect() */
+    inline static auto& m_DeSelect = methods.get<false, true>(16);
+    /* System.Boolean OnEnterObject(EditorStateMachine e) */
+    inline static auto& m_OnEnterObject = methods.get<false, true>(17);
+    /* System.Boolean OnExitObject(EditorStateMachine e) */
+    inline static auto& m_OnExitObject = methods.get<false, true>(18);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVSentryGunBlueprint {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<2> fields;
+inline static auto /* MVCubeModelInstance */ &f_editableCubes = fields.get<false>(0), /* MVSentryGun */ &f_gun = fields.get<false>(1);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<10> methods;
+    /* MVWorldObjectDocumentationType get_DocumentationType() */
+    inline static auto& m_get_DocumentationType = methods.get<false, true>(0);
+    /* MVCubeModelBase get_EditableCubesWO() */
+    inline static auto& m_get_EditableCubesWO = methods.get<false, false>(1);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m__ctor = methods.get<false, false>(2);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(3);
+    /* System.Void InitializeInventory() */
+    inline static auto& m_InitializeInventory = methods.get<false, true>(4);
+    /* System.Void InitializeCommon() */
+    inline static auto& m_InitializeCommon = methods.get<false, false>(5);
+    /* System.Boolean CompareWithKoGaMaPackage(MVWorldObjectClient wo, KoGaMaPackageClient koGaMaPackageClient, ref System.Int32 insertedByProfileId) */
+    inline static auto& m_CompareWithKoGaMaPackage = methods.get<false, true>(6);
+    /* System.Boolean OnEnterObject(EditorStateMachine e) */
+    inline static auto& m_OnEnterObject = methods.get<false, true>(7);
+    /* System.Boolean OnExitObject(EditorStateMachine e) */
+    inline static auto& m_OnExitObject = methods.get<false, true>(8);
+    /* IModelingConstraint <InitializeCommon>b__9_0() */
+    inline static auto& m__InitializeCommon_b__9_0 = methods.get<false, false>(9);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVEditablePickupItemBaseBlueprint {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<8> fields;
+inline static auto /* System.String */ &f_ItemBaseKey = fields.get<true>(0), /* System.String */ &f_ItemCubeModelKey = fields.get<true>(1);
+inline static auto /* Assets.Scripts.WorldObjectTypes.EditablePickupItem.MVEditablePickupItemBase */ &f_itemBase = fields.get<false>(2), /* EditableCubeModelWrapper */ &f_editableCubeModelWrapper = fields.get<false>(3), /* MVCubeModelInstance */ &f_editableCubeModel = fields.get<false>(4), /* UnityEngine.Transform */ &f_cubeModelBaseParent = fields.get<false>(5), /* System.Int32 */ &f_cubeModelId = fields.get<false>(6), /* System.Int32 */ &f_cubeModelPid = fields.get<false>(7);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<16> methods;
+    /* Assets.Scripts.WorldObjectTypes.EditablePickupItem.MVEditablePickupItemBase get_ItemBase() */
+    inline static auto& m_get_ItemBase = methods.get<false, false>(0);
+    /* System.Int32 get_CubeModelId() */
+    inline static auto& m_get_CubeModelId = methods.get<false, false>(1);
+    /* System.Int32 get_CubeModelPid() */
+    inline static auto& m_get_CubeModelPid = methods.get<false, false>(2);
+    /* System.Single get_CubeModelScale() */
+    inline static auto& m_get_CubeModelScale = methods.get<false, true>(3);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m__ctor = methods.get<false, false>(4);
+    /* System.Void InitializeInventory() */
+    inline static auto& m_InitializeInventory = methods.get<false, true>(5);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(6);
+    /* System.Void OnStartEditing() */
+    inline static auto& m_OnStartEditing = methods.get<false, true>(7);
+    /* System.Void OnEndEditing() */
+    inline static auto& m_OnEndEditing = methods.get<false, true>(8);
+    /* System.Void OnDataUpdate() */
+    inline static auto& m_OnDataUpdate = methods.get<false, true>(9);
+    /* System.Void ToggleCubeModelColliders(System.Boolean state) */
+    inline static auto& m_ToggleCubeModelColliders = methods.get<false, false>(10);
+    /* System.Void Select(UnityEngine.Color color) */
+    inline static auto& m_Select = methods.get<false, true>(11);
+    /* System.Void DeSelect() */
+    inline static auto& m_DeSelect = methods.get<false, true>(12);
+    /* System.Boolean OnEnterObject(EditorStateMachine e) */
+    inline static auto& m_OnEnterObject = methods.get<false, true>(13);
+    /* System.Boolean OnExitObject(EditorStateMachine e) */
+    inline static auto& m_OnExitObject = methods.get<false, true>(14);
+    /* System.Void SetCubeSize() */
+    inline static auto& m_SetCubeSize = methods.get<false, true>(15);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVMovingPlatformGroup {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<8> fields;
+inline static auto /* UnityEngine.LineRenderer */ &f_lineRenderer = fields.get<false>(0), /* System.Collections.Generic.Dictionary`2<System.Object, System.Object> */ &f_nodeMap = fields.get<false>(1), /* System.Collections.Generic.Dictionary`2<System.Object, System.Object> */ &f_nextNodeMap = fields.get<false>(2), /* MVMovingPlatformNode */ &f_startNode = fields.get<false>(3), /* System.Collections.Generic.Dictionary`2<System.Int32, MVMovingPlatformNode> */ &f_nodeIdToWoMap = fields.get<false>(4), /* System.Collections.Generic.Dictionary`2<System.Int32, System.Int32> */ &f_woIdToNodeIdMap = fields.get<false>(5), /* MVMovingPlatform */ &f_platform = fields.get<false>(6), /* System.Boolean */ &f_initializeFailed = fields.get<false>(7);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<17> methods;
+    /* MVWorldObjectDocumentationType get_DocumentationType() */
+    inline static auto& m_get_DocumentationType = methods.get<false, true>(0);
+    /* MVMovingPlatform get_Platform() */
+    inline static auto& m_get_Platform = methods.get<false, false>(1);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m__ctor = methods.get<false, false>(2);
+    /* System.Boolean get_Visible() */
+    inline static auto& m_get_Visible = methods.get<false, true>(3);
+    /* System.Void set_Visible(System.Boolean value) */
+    inline static auto& m_set_Visible = methods.get<false, true>(4);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(5);
+    /* System.Void InitializeInventory() */
+    inline static auto& m_InitializeInventory = methods.get<false, true>(6);
+    /* System.Void InitializeCommon() */
+    inline static auto& m_InitializeCommon = methods.get<false, false>(7);
+    /* System.Void UpdateLine() */
+    inline static auto& m_UpdateLine = methods.get<false, false>(8);
+    /* System.Void WorldObjectClient_ScaleChangedHandler(System.Object sender, ScaleChangedEventArgs e) */
+    inline static auto& m_WorldObjectClient_ScaleChangedHandler = methods.get<false, false>(9);
+    /* System.Void WorldObjectClient_PositionChangedHandler(System.Object sender, PositionChangedEventArgs e) */
+    inline static auto& m_WorldObjectClient_PositionChangedHandler = methods.get<false, false>(10);
+    /* System.Void WorldObjectClient_RotationChangedHandler(System.Object sender, RotationChangedEventArgs e) */
+    inline static auto& m_WorldObjectClient_RotationChangedHandler = methods.get<false, false>(11);
+    /* System.Void WorldObjectClient_SelectedChangedHandler(System.Object sender, SelectedEventArgs e) */
+    inline static auto& m_WorldObjectClient_SelectedChangedHandler = methods.get<false, false>(12);
+    /* System.Boolean OnEnterObject(EditorStateMachine e) */
+    inline static auto& m_OnEnterObject = methods.get<false, true>(13);
+    /* System.Void SetWorldObjectToPurchased() */
+    inline static auto& m_SetWorldObjectToPurchased = methods.get<false, true>(14);
+    /* System.Void AddPreviewBox() */
+    inline static auto& m_AddPreviewBox = methods.get<false, true>(15);
+    /* System.Void AddPreviewBoxesToChildren() */
+    inline static auto& m_AddPreviewBoxesToChildren = methods.get<false, false>(16);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVRotator {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<3> fields;
+inline static auto /* System.Collections.Generic.HashSet`1<MVRotator> */ &f_selectedRotators = fields.get<true>(2);
+inline static auto /* UnityEngine.Vector3 */ &f__InitAngularVelocity_k__BackingField = fields.get<false>(0), /* CullingSubscriberBase */ &f_cullingSubscriberBase = fields.get<false>(1);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<22> methods;
+    /* MVWorldObjectDocumentationType get_DocumentationType() */
+    inline static auto& m_get_DocumentationType = methods.get<false, true>(0);
+    /* UnityEngine.Vector3 get_InitAngularVelocity() */
+    inline static auto& m_get_InitAngularVelocity = methods.get<false, false>(1);
+    /* System.Void set_InitAngularVelocity(UnityEngine.Vector3 value) */
+    inline static auto& m_set_InitAngularVelocity = methods.get<false, false>(2);
+    /* MVWorldObjectClientManager get_WOCM() */
+    inline static auto& m_get_WOCM = methods.get<false, false>(3);
+    /* System.Boolean get_Horizontal() */
+    inline static auto& m_get_Horizontal = methods.get<false, false>(4);
+    /* System.Boolean get_Vertical() */
+    inline static auto& m_get_Vertical = methods.get<false, false>(5);
+    /* UnityEngine.Vector3 get_WorldPivot() */
+    inline static auto& m_get_WorldPivot = methods.get<false, true>(6);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m__ctor = methods.get<false, false>(7);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(8);
+    /* System.Void SetupCulling() */
+    inline static auto& m_SetupCulling = methods.get<false, false>(9);
+    /* System.Void OnPositionChanged(System.Object sender, PositionChangedEventArgs positionChangedEventArgs) */
+    inline static auto& m_OnPositionChanged = methods.get<false, false>(10);
+    /* System.Void SetupCullingSphere() */
+    inline static auto& m_SetupCullingSphere = methods.get<false, false>(11);
+    /* System.Void Changed(CubeModelChangedEventArgs cubeModelChangedEventArgs) */
+    inline static auto& m_Changed = methods.get<false, false>(12);
+    /* System.Void OnStateChanged(UnityEngine.CullingGroupEvent cullingGroupEvent) */
+    inline static auto& m_OnStateChanged = methods.get<false, false>(13);
+    /* System.Void OnSelectedChanged(System.Boolean selected) */
+    inline static auto& m_OnSelectedChanged = methods.get<false, true>(14);
+    /* System.Void MVCubeModelBase_BeingEditedChanged(System.Object sender, EditStateEventArgs e) */
+    inline static auto& m_MVCubeModelBase_BeingEditedChanged = methods.get<false, false>(15);
+    /* System.Void WorldObjectClient_SelectedChangedHandler(System.Object sender, SelectedEventArgs e) */
+    inline static auto& m_WorldObjectClient_SelectedChangedHandler = methods.get<false, false>(16);
+    /* UnityEngine.Bounds GetLocalBounds(BoundsContext boundsContext) */
+    inline static auto& m_GetLocalBounds = methods.get<false, true>(17);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<false, true>(18);
+    /* System.Void SetWorldObjectToPurchased() */
+    inline static auto& m_SetWorldObjectToPurchased = methods.get<false, true>(19);
+    /* System.Void AddPreviewBox() */
+    inline static auto& m_AddPreviewBox = methods.get<false, true>(20);
+    /* System.Void .cctor() */
+    inline static auto& m__cctor = methods.get<true, false>(21);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct EditableCubeModelWrapper {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<1> fields;
+inline static auto /* MVCubeModelInstance */ &f_cubeModelBase = fields.get<false>(0);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<6> methods;
+    /* MVCubeModelInstance get_CubeModel() */
+    inline static auto& m_get_CubeModel = methods.get<false, false>(0);
+    /* System.Void .ctor(MVCubeModelInstance cubeModelBase) */
+    inline static auto& m0__ctor = methods.get<false, false>(1);
+    /* System.Void .ctor(MVCubeModelInstance cubeModelBase, MV.WorldObject.IntVector min, MV.WorldObject.IntVector max, System.Int32 minCubeCount) */
+    inline static auto& m1__ctor = methods.get<false, false>(2);
+    /* System.Boolean OnEnterObject(EditorStateMachine e) */
+    inline static auto& m_OnEnterObject = methods.get<false, true>(3);
+    /* System.Boolean OnExitObject(EditorStateMachine e) */
+    inline static auto& m_OnExitObject = methods.get<false, true>(4);
+    /* System.Void SetConstraints(MV.WorldObject.IntVector min, MV.WorldObject.IntVector max, System.Int32 minCubeCount) */
+    inline static auto& m_SetConstraints = methods.get<false, false>(5);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVMovable {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<17> fields;
+inline static auto /* System.Single */ &f_direction = fields.get<true>(0);
+inline static auto /* System.Collections.Generic.List`1<MVMovable> */ &f_MoveableChildren = fields.get<false>(1), /* UnityEngine.Vector3 */ &f_localPos = fields.get<false>(2), /* System.Single */ &f_timeToEnd = fields.get<false>(3), /* System.Single */ &f_linearTime = fields.get<false>(4), /* System.Single */ &f_fraction = fields.get<false>(5), /* MovableVisualization */ &f_movableVisualization = fields.get<false>(6), /* MVCubeModelInstance */ &f__CubeModel_k__BackingField = fields.get<false>(7), /* System.Single */ &f_distance = fields.get<false>(8), /* UnityEngine.Quaternion */ &f_orgRotation = fields.get<false>(9), /* UnityEngine.Vector3 */ &f_velocity = fields.get<false>(10), /* UnityEngine.Vector3 */ &f_angularDirection = fields.get<false>(11), /* System.Single */ &f_angularSpeed = fields.get<false>(12), /* System.Int32 */ &f_parentMoverID = fields.get<false>(13), /* System.Boolean */ &f_pausedMovement = fields.get<false>(14), /* System.Boolean */ &f_isVisible = fields.get<false>(15), /* MVMovable */ &f_parentMover = fields.get<false>(16);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<44> methods;
+    /* MVCubeModelInstance get_CubeModel() */
+    inline static auto& m_get_CubeModel = methods.get<false, false>(0);
+    /* System.Void set_CubeModel(MVCubeModelInstance value) */
+    inline static auto& m_set_CubeModel = methods.get<false, false>(1);
+    /* System.Int32 get_CubeModelID() */
+    inline static auto& m_get_CubeModelID = methods.get<false, false>(2);
+    /* System.Single get_Distance() */
+    inline static auto& m_get_Distance = methods.get<false, false>(3);
+    /* UnityEngine.Quaternion get_OrgRotation() */
+    inline static auto& m_get_OrgRotation = methods.get<false, false>(4);
+    /* UnityEngine.Vector3 get_Velocity() */
+    inline static auto& m_get_Velocity = methods.get<false, false>(5);
+    /* UnityEngine.Vector3 get_AngularVelocity() */
+    inline static auto& m_get_AngularVelocity = methods.get<false, false>(6);
+    /* UnityEngine.Vector3 get_AngularDirection() */
+    inline static auto& m_get_AngularDirection = methods.get<false, false>(7);
+    /* System.Single get_AngularSpeed() */
+    inline static auto& m_get_AngularSpeed = methods.get<false, false>(8);
+    /* System.Int32 get_ParentMoverID() */
+    inline static auto& m_get_ParentMoverID = methods.get<false, false>(9);
+    /* System.Boolean get_PausedMovement() */
+    inline static auto& m_get_PausedMovement = methods.get<false, false>(10);
+    /* System.Void set_PausedMovement(System.Boolean value) */
+    inline static auto& m_set_PausedMovement = methods.get<false, false>(11);
+    /* UnityEngine.Vector3 get_WorldVelocity() */
+    inline static auto& m_get_WorldVelocity = methods.get<false, true>(12);
+    /* MVMovable get_ParentMover() */
+    inline static auto& m_get_ParentMover = methods.get<false, false>(13);
+    /* System.Boolean get_IsRoot() */
+    inline static auto& m_get_IsRoot = methods.get<false, false>(14);
+    /* MVMovable get_RootMover() */
+    inline static auto& m_get_RootMover = methods.get<false, false>(15);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m__ctor = methods.get<false, false>(16);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(17);
+    /* System.Boolean get_Visible() */
+    inline static auto& m_get_Visible = methods.get<false, true>(18);
+    /* System.Void set_Visible(System.Boolean value) */
+    inline static auto& m_set_Visible = methods.get<false, true>(19);
+    /* System.Void SetVisible(System.Boolean newVisible) */
+    inline static auto& m_SetVisible = methods.get<false, false>(20);
+    /* System.Void OnInputStateChanged() */
+    inline static auto& m_OnInputStateChanged = methods.get<false, true>(21);
+    /* System.Void InitializeInventory() */
+    inline static auto& m_InitializeInventory = methods.get<false, true>(22);
+    /* System.Void InitializeCommon() */
+    inline static auto& m_InitializeCommon = methods.get<false, false>(23);
+    /* System.String GetParamPath(System.String param) */
+    inline static auto& m_GetParamPath = methods.get<false, false>(24);
+    /* System.Void SetDistance(System.Single distance, System.Boolean updateWOData = False, System.Boolean syncServer = False) */
+    inline static auto& m_SetDistance = methods.get<false, false>(25);
+    /* System.Void SetOrgRotation(UnityEngine.Quaternion orgRotation, System.Boolean updateWOData = False, System.Boolean syncServer = False) */
+    inline static auto& m_SetOrgRotation = methods.get<false, false>(26);
+    /* System.Void SetVelocity(UnityEngine.Vector3 velocity, System.Boolean updateWOData = False, System.Boolean syncServer = False) */
+    inline static auto& m_SetVelocity = methods.get<false, false>(27);
+    /* System.Void SetAngularDirection(UnityEngine.Vector3 angularDirection, System.Boolean updateWOData = False, System.Boolean syncServer = False) */
+    inline static auto& m_SetAngularDirection = methods.get<false, false>(28);
+    /* System.Void SetAngularSpeed(System.Single angularSpeed, System.Boolean updateWOData = False, System.Boolean syncServer = False) */
+    inline static auto& m_SetAngularSpeed = methods.get<false, false>(29);
+    /* System.Void SetParentMoverID(System.Int32 parentMoverID, System.Boolean updateWOData = False, System.Boolean syncServer = False) */
+    inline static auto& m_SetParentMoverID = methods.get<false, false>(30);
+    /* System.Void SyncProperties() */
+    inline static auto& m_SyncProperties = methods.get<false, false>(31);
+    /* System.Void ReadWOData() */
+    inline static auto& m_ReadWOData = methods.get<false, false>(32);
+    /* System.Void UpdateMoverTree(System.Single directionFactor) */
+    inline static auto& m_UpdateMoverTree = methods.get<false, false>(33);
+    /* System.Void UpdateMoverSubTree(System.Single directionFactor, System.Int32 breakid) */
+    inline static auto& m_UpdateMoverSubTree = methods.get<false, false>(34);
+    /* System.Void AddMovableChild(MVMovable child) */
+    inline static auto& m_AddMovableChild = methods.get<false, false>(35);
+    /* System.Void RemoveMovableChild(MVMovable child) */
+    inline static auto& m_RemoveMovableChild = methods.get<false, false>(36);
+    /* System.Void Move(System.Single directionFactor, System.Int32 breakid) */
+    inline static auto& m_Move = methods.get<false, false>(37);
+    /* System.Void RecalcTimeToEnd() */
+    inline static auto& m_RecalcTimeToEnd = methods.get<false, false>(38);
+    /* System.Void OnDataUpdate() */
+    inline static auto& m_OnDataUpdate = methods.get<false, true>(39);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<false, true>(40);
+    /* System.Boolean OnEnterObject(EditorStateMachine e) */
+    inline static auto& m_OnEnterObject = methods.get<false, true>(41);
+    /* System.Boolean OnExitObject(EditorStateMachine e) */
+    inline static auto& m_OnExitObject = methods.get<false, true>(42);
+    /* System.Void .cctor() */
+    inline static auto& m__cctor = methods.get<true, false>(43);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

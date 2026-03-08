@@ -59,7 +59,7 @@ namespace KoGaMaTools::Services::KieroUI
 
 	LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
-		if (ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
+		if (ImGui::GetCurrentContext() != nullptr && ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
 			return true;
 		// 2. Check if ImGui wants to capture the input
 		ImGuiIO& io = ImGui::GetIO();
@@ -79,33 +79,35 @@ namespace KoGaMaTools::Services::KieroUI
 
 	HRESULT hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags)
 	{
+		// 1. Limpeza rigorosa
 		if (mainRenderTargetView) {
-			pContext->OMSetRenderTargets(0, 0, 0);
+			pContext->OMSetRenderTargets(0, NULL, NULL);
 			mainRenderTargetView->Release();
+			mainRenderTargetView = nullptr;
 		}
 
+		// 2. Chamar a função original
 		HRESULT hr = oResizeBuffers(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
 
-		ID3D11Texture2D* pBuffer;
-		pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBuffer);
-		// Perform error handling here!
+		// 3. Verificação de sucesso e tamanho
+		if (SUCCEEDED(hr) && Width > 0 && Height > 0) {
+			ID3D11Texture2D* pBuffer = nullptr;
+			hr = pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBuffer);
 
-		pDevice->CreateRenderTargetView(pBuffer, NULL, &mainRenderTargetView);
-		// Perform error handling here!
-		pBuffer->Release();
+			if (SUCCEEDED(hr)) {
+				pDevice->CreateRenderTargetView(pBuffer, NULL, &mainRenderTargetView);
+				pBuffer->Release();
 
-		pContext->OMSetRenderTargets(1, &mainRenderTargetView, NULL);
+				// Configuração do pipeline
+				pContext->OMSetRenderTargets(1, &mainRenderTargetView, NULL);
 
-		// Set up the viewport.
-		D3D11_VIEWPORT vp;
-		vp.Width = Width;
-		vp.Height = Height;
-		vp.MinDepth = 0.0f;
-		vp.MaxDepth = 1.0f;
-		vp.TopLeftX = 0;
-		vp.TopLeftY = 0;
-		pContext->RSSetViewports(1, &vp);
+				D3D11_VIEWPORT vp = { 0.0f, 0.0f, (float)Width, (float)Height, 0.0f, 1.0f };
+				pContext->RSSetViewports(1, &vp);
+			}
+		}
+
 		return hr;
+
 	}
 
 

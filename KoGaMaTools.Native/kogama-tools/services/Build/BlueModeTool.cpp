@@ -52,6 +52,8 @@ void KoGaMaTools::Services::BlueModeTool::Render()
 
 }
 
+
+
 void KoGaMaTools::Services::BlueModeTool::LoadConfig(const nlohmann::json& value)
 {
 	Enabled = value.value("BlueMode.Enabled", Enabled);

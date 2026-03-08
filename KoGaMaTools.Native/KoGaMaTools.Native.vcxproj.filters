@@ -18,162 +18,207 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\PathHelper.cpp">
+    <ClCompile Include="kogama-tools\services\PathHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\KieroUI.cpp">
+    <ClCompile Include="kogama-tools\services\KieroUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\Build\SinglePaintFace.cpp">
+    <ClCompile Include="kogama-tools\services\Build\SinglePaintFace.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\Build\NoLimit.cpp">
+    <ClCompile Include="kogama-tools\services\Build\NoLimit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UI\MainUI.cpp">
+    <ClCompile Include="kogama-tools\UI\MainUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\Build\BlueModeTool.cpp">
+    <ClCompile Include="kogama-tools\services\Build\BlueModeTool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\LoggerService.cpp">
+    <ClCompile Include="kogama-tools\services\LoggerService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\Build\DestructiblesUnlock.cpp">
+    <ClCompile Include="kogama-tools\services\Build\DestructiblesUnlock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\Build\CustomGrid.cpp">
+    <ClCompile Include="kogama-tools\services\Build\CustomGrid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\Build\EditModeSpeed.cpp">
+    <ClCompile Include="kogama-tools\services\Build\EditModeSpeed.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\Build\RotationStep.cpp">
+    <ClCompile Include="kogama-tools\services\Build\RotationStep.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\Build\UnlimitedConfig.cpp">
+    <ClCompile Include="kogama-tools\services\Build\UnlimitedConfig.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\Common\MainComponent.cpp">
+    <ClCompile Include="kogama-tools\services\Common\MainComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\PvP\AntiAfk.cpp">
+    <ClCompile Include="kogama-tools\services\PvP\AntiAfk.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\PvP\CustomCrossHairColor.cpp">
+    <ClCompile Include="kogama-tools\services\PvP\CustomCrossHairColor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\PvP\FastRespawn.cpp">
+    <ClCompile Include="kogama-tools\services\PvP\FastRespawn.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\PvP\CustomCrossHairTexture.cpp">
+    <ClCompile Include="kogama-tools\services\PvP\CustomCrossHairTexture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\Common\ConfigService.cpp">
+    <ClCompile Include="kogama-tools\services\Common\ConfigService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core\DITools.cpp">
+    <ClCompile Include="kogama-tools\Core\DITools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\Common\TextCommandService.cpp">
+    <ClCompile Include="kogama-tools\services\Common\TextCommandService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\Info\GameInfoService.cpp">
+    <ClCompile Include="kogama-tools\services\Info\GameInfoService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Helpers\StringExtensions.cpp">
+    <ClCompile Include="kogama-tools\Helpers\StringExtensions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="services\Common\ContextMenuService.cpp">
+    <ClCompile Include="kogama-tools\services\Common\ContextMenuService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Helpers\DelegateUtils.cpp">
+    <ClCompile Include="kogama-tools\Helpers\DelegateUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kogama-tools\services\Build\ModelModule\CopyModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kogama-tools\services\Build\ModelModule\CubeInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kogama-tools\Types\IntVector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kogama-tools\services\Build\ModelModule\module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kogama-tools\services\Build\ModelModule\PasteModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kogama-tools\services\Build\ModelModule\ModelService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kogama-tools\services\Build\ModelModule\ModelUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="services\PathHelper.h">
+    <ClInclude Include="kogama-tools\services\PathHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\KieroUI.h">
+    <ClInclude Include="kogama-tools\services\KieroUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\Build\SinglePaintFace.h">
+    <ClInclude Include="kogama-tools\services\Build\SinglePaintFace.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\Build\NoLimit.h">
+    <ClInclude Include="kogama-tools\services\Build\NoLimit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UI\MainUI.h">
+    <ClInclude Include="kogama-tools\UI\MainUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\services.h">
+    <ClInclude Include="kogama-tools\services\services.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\Build\BlueModeTool.h">
+    <ClInclude Include="kogama-tools\services\Build\BlueModeTool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\LoggerService.h">
+    <ClInclude Include="kogama-tools\services\LoggerService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\Build\DestructiblesUnlock.h">
+    <ClInclude Include="kogama-tools\services\Build\DestructiblesUnlock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\Build\CustomGrid.h">
+    <ClInclude Include="kogama-tools\services\Build\CustomGrid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\Build\EditModeSpeed.h">
+    <ClInclude Include="kogama-tools\services\Build\EditModeSpeed.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\Build\RotationStep.h">
+    <ClInclude Include="kogama-tools\services\Build\RotationStep.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\Build\UnlimitedConfig.h">
+    <ClInclude Include="kogama-tools\services\Build\UnlimitedConfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\PvP\AntiAfk.h">
+    <ClInclude Include="kogama-tools\services\PvP\AntiAfk.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\Common\MainComponent.h">
+    <ClInclude Include="kogama-tools\services\Common\MainComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\PvP\CustomCrossHairColor.h">
+    <ClInclude Include="kogama-tools\services\PvP\CustomCrossHairColor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Types\Vector4.h">
+    <ClInclude Include="kogama-tools\Types\Vector4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\PvP\FastRespawn.h">
+    <ClInclude Include="kogama-tools\services\PvP\FastRespawn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\PvP\CustomCrossHairTexture.h">
+    <ClInclude Include="kogama-tools\services\PvP\CustomCrossHairTexture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\Common\ConfigService.h">
+    <ClInclude Include="kogama-tools\services\Common\ConfigService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Core\DITools.h">
+    <ClInclude Include="kogama-tools\Core\DITools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Types\Vector3.h">
+    <ClInclude Include="kogama-tools\Types\Vector3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Types\Quaternion.h">
+    <ClInclude Include="kogama-tools\Types\Quaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\Common\TextCommandService.h">
+    <ClInclude Include="kogama-tools\services\Common\TextCommandService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\Info\GameInfoService.h">
+    <ClInclude Include="kogama-tools\services\Info\GameInfoService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Helpers\StringExtensions.h">
+    <ClInclude Include="kogama-tools\Helpers\StringExtensions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="services\Common\ContextMenuService.h">
+    <ClInclude Include="kogama-tools\services\Common\ContextMenuService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Helpers\DelegateUtils.h">
+    <ClInclude Include="kogama-tools\Helpers\DelegateUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Build\ModelModule\CopyModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Build\ModelModule\CubeInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\Types\IntVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Build\ModelModule\module.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Build\ModelModule\PasteModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\Helpers\TypeParameters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Build\ModelModule\ModelService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Build\ModelModule\ModelUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

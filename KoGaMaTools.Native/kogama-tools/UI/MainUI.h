@@ -15,6 +15,7 @@ namespace KoGaMaTools::UI {
 		using PtrIComponent = std::shared_ptr<IComponent>;
 		inline static std::shared_ptr<MainUI> Instance;
 		std::vector<std::pair<std::string, std::vector<PtrIComponent>>> components;
+		
 		void Init(Core::DIContainer& di);
 		static void Render();
 		void TabBarTools();
