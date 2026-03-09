@@ -97,3 +97,6 @@ klasses:
 - fullname: MVRotator
 - fullname: EditableCubeModelWrapper
 - fullname: MVMovable
+- fullname: SettingsInputFieldSlider
+- fullname: UnityEngine.UI.InputField
+  name: UI_InputField

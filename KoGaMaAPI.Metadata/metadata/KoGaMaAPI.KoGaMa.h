@@ -4961,4 +4961,393 @@ inline static auto /* System.Collections.Generic.List`1<MVMovable> */ &f_Moveabl
 };
 
 
+struct SettingsInputFieldSlider {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<5> fields;
+inline static auto /* UnityEngine.UI.InputField */ &f_inputField = fields.get<false>(0), /* SettingsSlider */ &f_settingsSlider = fields.get<false>(1), /* System.Boolean */ &f_round = fields.get<false>(2), /* System.String */ &f_suffix = fields.get<false>(3), /* System.String */ &f_key = fields.get<false>(4);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<16> methods;
+    /* UnityEngine.UI.InputField get_InputField() */
+    inline static auto& m_get_InputField = methods.get<false, false>(0);
+    /* UnityEngine.UI.Slider get_Slider() */
+    inline static auto& m_get_Slider = methods.get<false, false>(1);
+    /* System.Void SetText(System.String text) */
+    inline static auto& m_SetText = methods.get<false, false>(2);
+    /* System.Void Initialize(System.String key, System.Collections.Generic.Dictionary`2<System.Object, System.Object> itemData, System.Func`2<System.String, System.ValueTuple`2<System.Single, System.Single>> minMaxFunc, System.Single conversionValue = 1) */
+    inline static auto& m0_Initialize = methods.get<false, false>(3);
+    /* System.Void Initialize(System.String key, System.Collections.Generic.Dictionary`2<System.Object, System.Object> itemData, System.Single min, System.Single max, System.Single conversionValue = 1) */
+    inline static auto& m1_Initialize = methods.get<false, false>(4);
+    /* System.Void Initialize(System.String key, System.Single value) */
+    inline static auto& m2_Initialize = methods.get<false, false>(5);
+    /* System.Void Initialize(System.String key, System.Int32 value) */
+    inline static auto& m3_Initialize = methods.get<false, false>(6);
+    /* System.Void Update() */
+    inline static auto& m_Update = methods.get<false, false>(7);
+    /* System.Void SliderValueChanged() */
+    inline static auto& m_SliderValueChanged = methods.get<false, false>(8);
+    /* System.String ConvertFloatToString(System.Single inputFieldValue) */
+    inline static auto& m_ConvertFloatToString = methods.get<true, false>(9);
+    /* System.Void InputFieldValueChanged() */
+    inline static auto& m_InputFieldValueChanged = methods.get<false, false>(10);
+    /* System.Single ConvertStringToFloat(System.String inputFieldText) */
+    inline static auto& m_ConvertStringToFloat = methods.get<false, false>(11);
+    /* System.Void ValueChanged(System.String value) */
+    inline static auto& m_ValueChanged = methods.get<false, false>(12);
+    /* System.Void Reset() */
+    inline static auto& m_Reset = methods.get<false, false>(13);
+    /* System.Single GetInputFieldValue(System.Single value) */
+    inline static auto& m_GetInputFieldValue = methods.get<false, false>(14);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(15);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct UI_InputField {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<55> fields;
+inline static auto /* System.Char[] */ &f_kSeparators = fields.get<true>(1), /* System.Boolean */ &f_s_IsQuestDevice = fields.get<true>(2), /* System.Single */ &f_kHScrollSpeed = fields.get<true>(37), /* System.Single */ &f_kVScrollSpeed = fields.get<true>(38), /* System.String */ &f_kEmailSpecialCharacters = fields.get<true>(51), /* System.String */ &f_kOculusQuestDeviceModel = fields.get<true>(52), /* System.Int32 */ &f_k_MaxTextLength = fields.get<true>(54);
+inline static auto /* UnityEngine.TouchScreenKeyboard */ &f_m_Keyboard = fields.get<false>(0), /* UnityEngine.UI.Text */ &f_m_TextComponent = fields.get<false>(3), /* UnityEngine.UI.Graphic */ &f_m_Placeholder = fields.get<false>(4), /* UnityEngine.UI.InputField+ContentType */ &f_m_ContentType = fields.get<false>(5), /* UnityEngine.UI.InputField+InputType */ &f_m_InputType = fields.get<false>(6), /* System.Char */ &f_m_AsteriskChar = fields.get<false>(7), /* UnityEngine.TouchScreenKeyboardType */ &f_m_KeyboardType = fields.get<false>(8), /* UnityEngine.UI.InputField+LineType */ &f_m_LineType = fields.get<false>(9), /* System.Boolean */ &f_m_HideMobileInput = fields.get<false>(10), /* UnityEngine.UI.InputField+CharacterValidation */ &f_m_CharacterValidation = fields.get<false>(11), /* System.Int32 */ &f_m_CharacterLimit = fields.get<false>(12), /* UnityEngine.UI.InputField+SubmitEvent */ &f_m_OnSubmit = fields.get<false>(13), /* UnityEngine.UI.InputField+EndEditEvent */ &f_m_OnDidEndEdit = fields.get<false>(14), /* UnityEngine.UI.InputField+OnChangeEvent */ &f_m_OnValueChanged = fields.get<false>(15), /* UnityEngine.UI.InputField+OnValidateInput */ &f_m_OnValidateInput = fields.get<false>(16), /* UnityEngine.Color */ &f_m_CaretColor = fields.get<false>(17), /* System.Boolean */ &f_m_CustomCaretColor = fields.get<false>(18), /* UnityEngine.Color */ &f_m_SelectionColor = fields.get<false>(19), /* System.String */ &f_m_Text = fields.get<false>(20), /* System.Single */ &f_m_CaretBlinkRate = fields.get<false>(21), /* System.Int32 */ &f_m_CaretWidth = fields.get<false>(22), /* System.Boolean */ &f_m_ReadOnly = fields.get<false>(23), /* System.Boolean */ &f_m_ShouldActivateOnSelect = fields.get<false>(24), /* System.Int32 */ &f_m_CaretPosition = fields.get<false>(25), /* System.Int32 */ &f_m_CaretSelectPosition = fields.get<false>(26), /* UnityEngine.RectTransform */ &f_caretRectTrans = fields.get<false>(27), /* UnityEngine.UIVertex[] */ &f_m_CursorVerts = fields.get<false>(28), /* UnityEngine.TextGenerator */ &f_m_InputTextCache = fields.get<false>(29), /* UnityEngine.CanvasRenderer */ &f_m_CachedInputRenderer = fields.get<false>(30), /* System.Boolean */ &f_m_PreventFontCallback = fields.get<false>(31), /* UnityEngine.Mesh */ &f_m_Mesh = fields.get<false>(32), /* System.Boolean */ &f_m_AllowInput = fields.get<false>(33), /* System.Boolean */ &f_m_ShouldActivateNextUpdate = fields.get<false>(34), /* System.Boolean */ &f_m_UpdateDrag = fields.get<false>(35), /* System.Boolean */ &f_m_DragPositionOutOfBounds = fields.get<false>(36), /* System.Boolean */ &f_m_CaretVisible = fields.get<false>(39), /* UnityEngine.Coroutine */ &f_m_BlinkCoroutine = fields.get<false>(40), /* System.Single */ &f_m_BlinkStartTime = fields.get<false>(41), /* System.Int32 */ &f_m_DrawStart = fields.get<false>(42), /* System.Int32 */ &f_m_DrawEnd = fields.get<false>(43), /* UnityEngine.Coroutine */ &f_m_DragCoroutine = fields.get<false>(44), /* System.String */ &f_m_OriginalText = fields.get<false>(45), /* System.Boolean */ &f_m_WasCanceled = fields.get<false>(46), /* System.Boolean */ &f_m_HasDoneFocusTransition = fields.get<false>(47), /* UnityEngine.WaitForSecondsRealtime */ &f_m_WaitForSecondsRealtime = fields.get<false>(48), /* System.Boolean */ &f_m_TouchKeyboardAllowsInPlaceEditing = fields.get<false>(49), /* System.Boolean */ &f_m_IsCompositionActive = fields.get<false>(50), /* UnityEngine.Event */ &f_m_ProcessingEvent = fields.get<false>(53);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<165> methods;
+    /* UnityEngine.EventSystems.BaseInput get_input() */
+    inline static auto& m_get_input = methods.get<false, false>(0);
+    /* System.String get_compositionString() */
+    inline static auto& m_get_compositionString = methods.get<false, false>(1);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(2);
+    /* UnityEngine.Mesh get_mesh() */
+    inline static auto& m_get_mesh = methods.get<false, false>(3);
+    /* UnityEngine.TextGenerator get_cachedInputTextGenerator() */
+    inline static auto& m_get_cachedInputTextGenerator = methods.get<false, false>(4);
+    /* System.Void set_shouldHideMobileInput(System.Boolean value) */
+    inline static auto& m_set_shouldHideMobileInput = methods.get<false, false>(5);
+    /* System.Boolean get_shouldHideMobileInput() */
+    inline static auto& m_get_shouldHideMobileInput = methods.get<false, false>(6);
+    /* System.Void set_shouldActivateOnSelect(System.Boolean value) */
+    inline static auto& m_set_shouldActivateOnSelect = methods.get<false, true>(7);
+    /* System.Boolean get_shouldActivateOnSelect() */
+    inline static auto& m_get_shouldActivateOnSelect = methods.get<false, true>(8);
+    /* System.String get_text() */
+    inline static auto& m_get_text = methods.get<false, false>(9);
+    /* System.Void set_text(System.String value) */
+    inline static auto& m_set_text = methods.get<false, false>(10);
+    /* System.Void SetTextWithoutNotify(System.String input) */
+    inline static auto& m_SetTextWithoutNotify = methods.get<false, false>(11);
+    /* System.Void SetText(System.String value, System.Boolean sendCallback = True) */
+    inline static auto& m_SetText = methods.get<false, false>(12);
+    /* System.Boolean get_isFocused() */
+    inline static auto& m_get_isFocused = methods.get<false, false>(13);
+    /* System.Single get_caretBlinkRate() */
+    inline static auto& m_get_caretBlinkRate = methods.get<false, false>(14);
+    /* System.Void set_caretBlinkRate(System.Single value) */
+    inline static auto& m_set_caretBlinkRate = methods.get<false, false>(15);
+    /* System.Int32 get_caretWidth() */
+    inline static auto& m_get_caretWidth = methods.get<false, false>(16);
+    /* System.Void set_caretWidth(System.Int32 value) */
+    inline static auto& m_set_caretWidth = methods.get<false, false>(17);
+    /* UnityEngine.UI.Text get_textComponent() */
+    inline static auto& m_get_textComponent = methods.get<false, false>(18);
+    /* System.Void set_textComponent(UnityEngine.UI.Text value) */
+    inline static auto& m_set_textComponent = methods.get<false, false>(19);
+    /* UnityEngine.UI.Graphic get_placeholder() */
+    inline static auto& m_get_placeholder = methods.get<false, false>(20);
+    /* System.Void set_placeholder(UnityEngine.UI.Graphic value) */
+    inline static auto& m_set_placeholder = methods.get<false, false>(21);
+    /* UnityEngine.Color get_caretColor() */
+    inline static auto& m_get_caretColor = methods.get<false, false>(22);
+    /* System.Void set_caretColor(UnityEngine.Color value) */
+    inline static auto& m_set_caretColor = methods.get<false, false>(23);
+    /* System.Boolean get_customCaretColor() */
+    inline static auto& m_get_customCaretColor = methods.get<false, false>(24);
+    /* System.Void set_customCaretColor(System.Boolean value) */
+    inline static auto& m_set_customCaretColor = methods.get<false, false>(25);
+    /* UnityEngine.Color get_selectionColor() */
+    inline static auto& m_get_selectionColor = methods.get<false, false>(26);
+    /* System.Void set_selectionColor(UnityEngine.Color value) */
+    inline static auto& m_set_selectionColor = methods.get<false, false>(27);
+    /* UnityEngine.UI.InputField+EndEditEvent get_onEndEdit() */
+    inline static auto& m_get_onEndEdit = methods.get<false, false>(28);
+    /* System.Void set_onEndEdit(UnityEngine.UI.InputField+EndEditEvent value) */
+    inline static auto& m_set_onEndEdit = methods.get<false, false>(29);
+    /* UnityEngine.UI.InputField+SubmitEvent get_onSubmit() */
+    inline static auto& m_get_onSubmit = methods.get<false, false>(30);
+    /* System.Void set_onSubmit(UnityEngine.UI.InputField+SubmitEvent value) */
+    inline static auto& m_set_onSubmit = methods.get<false, false>(31);
+    /* UnityEngine.UI.InputField+OnChangeEvent get_onValueChange() */
+    inline static auto& m_get_onValueChange = methods.get<false, false>(32);
+    /* System.Void set_onValueChange(UnityEngine.UI.InputField+OnChangeEvent value) */
+    inline static auto& m_set_onValueChange = methods.get<false, false>(33);
+    /* UnityEngine.UI.InputField+OnChangeEvent get_onValueChanged() */
+    inline static auto& m_get_onValueChanged = methods.get<false, false>(34);
+    /* System.Void set_onValueChanged(UnityEngine.UI.InputField+OnChangeEvent value) */
+    inline static auto& m_set_onValueChanged = methods.get<false, false>(35);
+    /* UnityEngine.UI.InputField+OnValidateInput get_onValidateInput() */
+    inline static auto& m_get_onValidateInput = methods.get<false, false>(36);
+    /* System.Void set_onValidateInput(UnityEngine.UI.InputField+OnValidateInput value) */
+    inline static auto& m_set_onValidateInput = methods.get<false, false>(37);
+    /* System.Int32 get_characterLimit() */
+    inline static auto& m_get_characterLimit = methods.get<false, false>(38);
+    /* System.Void set_characterLimit(System.Int32 value) */
+    inline static auto& m_set_characterLimit = methods.get<false, false>(39);
+    /* UnityEngine.UI.InputField+ContentType get_contentType() */
+    inline static auto& m_get_contentType = methods.get<false, false>(40);
+    /* System.Void set_contentType(UnityEngine.UI.InputField+ContentType value) */
+    inline static auto& m_set_contentType = methods.get<false, false>(41);
+    /* UnityEngine.UI.InputField+LineType get_lineType() */
+    inline static auto& m_get_lineType = methods.get<false, false>(42);
+    /* System.Void set_lineType(UnityEngine.UI.InputField+LineType value) */
+    inline static auto& m_set_lineType = methods.get<false, false>(43);
+    /* UnityEngine.UI.InputField+InputType get_inputType() */
+    inline static auto& m_get_inputType = methods.get<false, false>(44);
+    /* System.Void set_inputType(UnityEngine.UI.InputField+InputType value) */
+    inline static auto& m_set_inputType = methods.get<false, false>(45);
+    /* UnityEngine.TouchScreenKeyboard get_touchScreenKeyboard() */
+    inline static auto& m_get_touchScreenKeyboard = methods.get<false, false>(46);
+    /* UnityEngine.TouchScreenKeyboardType get_keyboardType() */
+    inline static auto& m_get_keyboardType = methods.get<false, false>(47);
+    /* System.Void set_keyboardType(UnityEngine.TouchScreenKeyboardType value) */
+    inline static auto& m_set_keyboardType = methods.get<false, false>(48);
+    /* UnityEngine.UI.InputField+CharacterValidation get_characterValidation() */
+    inline static auto& m_get_characterValidation = methods.get<false, false>(49);
+    /* System.Void set_characterValidation(UnityEngine.UI.InputField+CharacterValidation value) */
+    inline static auto& m_set_characterValidation = methods.get<false, false>(50);
+    /* System.Boolean get_readOnly() */
+    inline static auto& m_get_readOnly = methods.get<false, false>(51);
+    /* System.Void set_readOnly(System.Boolean value) */
+    inline static auto& m_set_readOnly = methods.get<false, false>(52);
+    /* System.Boolean get_multiLine() */
+    inline static auto& m_get_multiLine = methods.get<false, false>(53);
+    /* System.Char get_asteriskChar() */
+    inline static auto& m_get_asteriskChar = methods.get<false, false>(54);
+    /* System.Void set_asteriskChar(System.Char value) */
+    inline static auto& m_set_asteriskChar = methods.get<false, false>(55);
+    /* System.Boolean get_wasCanceled() */
+    inline static auto& m_get_wasCanceled = methods.get<false, false>(56);
+    /* System.Void ClampPos(ref System.Int32 pos) */
+    inline static auto& m_ClampPos = methods.get<false, false>(57);
+    /* System.Int32 get_caretPositionInternal() */
+    inline static auto& m_get_caretPositionInternal = methods.get<false, false>(58);
+    /* System.Void set_caretPositionInternal(System.Int32 value) */
+    inline static auto& m_set_caretPositionInternal = methods.get<false, false>(59);
+    /* System.Int32 get_caretSelectPositionInternal() */
+    inline static auto& m_get_caretSelectPositionInternal = methods.get<false, false>(60);
+    /* System.Void set_caretSelectPositionInternal(System.Int32 value) */
+    inline static auto& m_set_caretSelectPositionInternal = methods.get<false, false>(61);
+    /* System.Boolean get_hasSelection() */
+    inline static auto& m_get_hasSelection = methods.get<false, false>(62);
+    /* System.Int32 get_caretPosition() */
+    inline static auto& m_get_caretPosition = methods.get<false, false>(63);
+    /* System.Void set_caretPosition(System.Int32 value) */
+    inline static auto& m_set_caretPosition = methods.get<false, false>(64);
+    /* System.Int32 get_selectionAnchorPosition() */
+    inline static auto& m_get_selectionAnchorPosition = methods.get<false, false>(65);
+    /* System.Void set_selectionAnchorPosition(System.Int32 value) */
+    inline static auto& m_set_selectionAnchorPosition = methods.get<false, false>(66);
+    /* System.Int32 get_selectionFocusPosition() */
+    inline static auto& m_get_selectionFocusPosition = methods.get<false, false>(67);
+    /* System.Void set_selectionFocusPosition(System.Int32 value) */
+    inline static auto& m_set_selectionFocusPosition = methods.get<false, false>(68);
+    /* System.Void OnEnable() */
+    inline static auto& m_OnEnable = methods.get<false, true>(69);
+    /* System.Void OnDisable() */
+    inline static auto& m_OnDisable = methods.get<false, true>(70);
+    /* System.Void OnDestroy() */
+    inline static auto& m_OnDestroy = methods.get<false, true>(71);
+    /* System.Collections.IEnumerator CaretBlink() */
+    inline static auto& m_CaretBlink = methods.get<false, false>(72);
+    /* System.Void SetCaretVisible() */
+    inline static auto& m_SetCaretVisible = methods.get<false, false>(73);
+    /* System.Void SetCaretActive() */
+    inline static auto& m_SetCaretActive = methods.get<false, false>(74);
+    /* System.Void UpdateCaretMaterial() */
+    inline static auto& m_UpdateCaretMaterial = methods.get<false, false>(75);
+    /* System.Void OnFocus() */
+    inline static auto& m_OnFocus = methods.get<false, false>(76);
+    /* System.Void SelectAll() */
+    inline static auto& m_SelectAll = methods.get<false, false>(77);
+    /* System.Void MoveTextEnd(System.Boolean shift) */
+    inline static auto& m_MoveTextEnd = methods.get<false, false>(78);
+    /* System.Void MoveTextStart(System.Boolean shift) */
+    inline static auto& m_MoveTextStart = methods.get<false, false>(79);
+    /* System.String get_clipboard() */
+    inline static auto& m_get_clipboard = methods.get<true, false>(80);
+    /* System.Void set_clipboard(System.String value) */
+    inline static auto& m_set_clipboard = methods.get<true, false>(81);
+    /* System.Boolean TouchScreenKeyboardShouldBeUsed() */
+    inline static auto& m_TouchScreenKeyboardShouldBeUsed = methods.get<false, false>(82);
+    /* System.Boolean InPlaceEditing() */
+    inline static auto& m_InPlaceEditing = methods.get<false, false>(83);
+    /* System.Boolean InPlaceEditingChanged() */
+    inline static auto& m_InPlaceEditingChanged = methods.get<false, false>(84);
+    /* UnityEngine.RangeInt GetInternalSelection() */
+    inline static auto& m_GetInternalSelection = methods.get<false, false>(85);
+    /* System.Void UpdateKeyboardCaret() */
+    inline static auto& m_UpdateKeyboardCaret = methods.get<false, false>(86);
+    /* System.Void UpdateCaretFromKeyboard() */
+    inline static auto& m_UpdateCaretFromKeyboard = methods.get<false, false>(87);
+    /* System.Void LateUpdate() */
+    inline static auto& m_LateUpdate = methods.get<false, true>(88);
+    /* UnityEngine.Vector2 ScreenToLocal(UnityEngine.Vector2 screen) */
+    inline static auto& m_ScreenToLocal = methods.get<false, false>(89);
+    /* System.Int32 GetUnclampedCharacterLineFromPosition(UnityEngine.Vector2 pos, UnityEngine.TextGenerator generator) */
+    inline static auto& m_GetUnclampedCharacterLineFromPosition = methods.get<false, false>(90);
+    /* System.Int32 GetCharacterIndexFromPosition(UnityEngine.Vector2 pos) */
+    inline static auto& m_GetCharacterIndexFromPosition = methods.get<false, false>(91);
+    /* System.Boolean MayDrag(UnityEngine.EventSystems.PointerEventData eventData) */
+    inline static auto& m_MayDrag = methods.get<false, false>(92);
+    /* System.Void OnBeginDrag(UnityEngine.EventSystems.PointerEventData eventData) */
+    inline static auto& m_OnBeginDrag = methods.get<false, true>(93);
+    /* System.Void OnDrag(UnityEngine.EventSystems.PointerEventData eventData) */
+    inline static auto& m_OnDrag = methods.get<false, true>(94);
+    /* System.Collections.IEnumerator MouseDragOutsideRect(UnityEngine.EventSystems.PointerEventData eventData) */
+    inline static auto& m_MouseDragOutsideRect = methods.get<false, false>(95);
+    /* System.Void OnEndDrag(UnityEngine.EventSystems.PointerEventData eventData) */
+    inline static auto& m_OnEndDrag = methods.get<false, true>(96);
+    /* System.Void OnPointerDown(UnityEngine.EventSystems.PointerEventData eventData) */
+    inline static auto& m_OnPointerDown = methods.get<false, true>(97);
+    /* UnityEngine.UI.InputField+EditState KeyPressed(UnityEngine.Event evt) */
+    inline static auto& m_KeyPressed = methods.get<false, false>(98);
+    /* System.Boolean IsValidChar(System.Char c) */
+    inline static auto& m_IsValidChar = methods.get<false, false>(99);
+    /* System.Void ProcessEvent(UnityEngine.Event e) */
+    inline static auto& m_ProcessEvent = methods.get<false, false>(100);
+    /* System.Void OnUpdateSelected(UnityEngine.EventSystems.BaseEventData eventData) */
+    inline static auto& m_OnUpdateSelected = methods.get<false, true>(101);
+    /* System.String GetSelectedString() */
+    inline static auto& m_GetSelectedString = methods.get<false, false>(102);
+    /* System.Int32 FindtNextWordBegin() */
+    inline static auto& m_FindtNextWordBegin = methods.get<false, false>(103);
+    /* System.Void MoveRight(System.Boolean shift, System.Boolean ctrl) */
+    inline static auto& m_MoveRight = methods.get<false, false>(104);
+    /* System.Int32 FindtPrevWordBegin() */
+    inline static auto& m_FindtPrevWordBegin = methods.get<false, false>(105);
+    /* System.Void MoveLeft(System.Boolean shift, System.Boolean ctrl) */
+    inline static auto& m_MoveLeft = methods.get<false, false>(106);
+    /* System.Int32 DetermineCharacterLine(System.Int32 charPos, UnityEngine.TextGenerator generator) */
+    inline static auto& m_DetermineCharacterLine = methods.get<false, false>(107);
+    /* System.Int32 LineUpCharacterPosition(System.Int32 originalPos, System.Boolean goToFirstChar) */
+    inline static auto& m_LineUpCharacterPosition = methods.get<false, false>(108);
+    /* System.Int32 LineDownCharacterPosition(System.Int32 originalPos, System.Boolean goToLastChar) */
+    inline static auto& m_LineDownCharacterPosition = methods.get<false, false>(109);
+    /* System.Void MoveDown(System.Boolean shift) */
+    inline static auto& m0_MoveDown = methods.get<false, false>(110);
+    /* System.Void MoveDown(System.Boolean shift, System.Boolean goToLastChar) */
+    inline static auto& m1_MoveDown = methods.get<false, false>(111);
+    /* System.Void MoveUp(System.Boolean shift) */
+    inline static auto& m0_MoveUp = methods.get<false, false>(112);
+    /* System.Void MoveUp(System.Boolean shift, System.Boolean goToFirstChar) */
+    inline static auto& m1_MoveUp = methods.get<false, false>(113);
+    /* System.Void Delete() */
+    inline static auto& m_Delete = methods.get<false, false>(114);
+    /* System.Void ForwardSpace() */
+    inline static auto& m_ForwardSpace = methods.get<false, false>(115);
+    /* System.Void Backspace() */
+    inline static auto& m_Backspace = methods.get<false, false>(116);
+    /* System.Void Insert(System.Char c) */
+    inline static auto& m_Insert = methods.get<false, false>(117);
+    /* System.Void UpdateTouchKeyboardFromEditChanges() */
+    inline static auto& m_UpdateTouchKeyboardFromEditChanges = methods.get<false, false>(118);
+    /* System.Void SendOnValueChangedAndUpdateLabel() */
+    inline static auto& m_SendOnValueChangedAndUpdateLabel = methods.get<false, false>(119);
+    /* System.Void SendOnValueChanged() */
+    inline static auto& m_SendOnValueChanged = methods.get<false, false>(120);
+    /* System.Void SendOnEndEdit() */
+    inline static auto& m_SendOnEndEdit = methods.get<false, false>(121);
+    /* System.Void SendOnSubmit() */
+    inline static auto& m_SendOnSubmit = methods.get<false, false>(122);
+    /* System.Void Append(System.String input) */
+    inline static auto& m0_Append = methods.get<false, true>(123);
+    /* System.Void Append(System.Char input) */
+    inline static auto& m1_Append = methods.get<false, true>(124);
+    /* System.Void UpdateLabel() */
+    inline static auto& m_UpdateLabel = methods.get<false, false>(125);
+    /* System.Boolean IsSelectionVisible() */
+    inline static auto& m_IsSelectionVisible = methods.get<false, false>(126);
+    /* System.Int32 GetLineStartPosition(UnityEngine.TextGenerator gen, System.Int32 line) */
+    inline static auto& m_GetLineStartPosition = methods.get<true, false>(127);
+    /* System.Int32 GetLineEndPosition(UnityEngine.TextGenerator gen, System.Int32 line) */
+    inline static auto& m_GetLineEndPosition = methods.get<true, false>(128);
+    /* System.Void SetDrawRangeToContainCaretPosition(System.Int32 caretPos) */
+    inline static auto& m_SetDrawRangeToContainCaretPosition = methods.get<false, false>(129);
+    /* System.Void ForceLabelUpdate() */
+    inline static auto& m_ForceLabelUpdate = methods.get<false, false>(130);
+    /* System.Void MarkGeometryAsDirty() */
+    inline static auto& m_MarkGeometryAsDirty = methods.get<false, false>(131);
+    /* System.Void Rebuild(UnityEngine.UI.CanvasUpdate update) */
+    inline static auto& m_Rebuild = methods.get<false, true>(132);
+    /* System.Void LayoutComplete() */
+    inline static auto& m_LayoutComplete = methods.get<false, true>(133);
+    /* System.Void GraphicUpdateComplete() */
+    inline static auto& m_GraphicUpdateComplete = methods.get<false, true>(134);
+    /* System.Void UpdateGeometry() */
+    inline static auto& m_UpdateGeometry = methods.get<false, false>(135);
+    /* System.Void AssignPositioningIfNeeded() */
+    inline static auto& m_AssignPositioningIfNeeded = methods.get<false, false>(136);
+    /* System.Void OnFillVBO(UnityEngine.Mesh vbo) */
+    inline static auto& m_OnFillVBO = methods.get<false, false>(137);
+    /* System.Void GenerateCaret(UnityEngine.UI.VertexHelper vbo, UnityEngine.Vector2 roundingOffset) */
+    inline static auto& m_GenerateCaret = methods.get<false, false>(138);
+    /* System.Void CreateCursorVerts() */
+    inline static auto& m_CreateCursorVerts = methods.get<false, false>(139);
+    /* System.Void GenerateHighlight(UnityEngine.UI.VertexHelper vbo, UnityEngine.Vector2 roundingOffset) */
+    inline static auto& m_GenerateHighlight = methods.get<false, false>(140);
+    /* System.Char Validate(System.String text, System.Int32 pos, System.Char ch) */
+    inline static auto& m_Validate = methods.get<false, false>(141);
+    /* System.Void ActivateInputField() */
+    inline static auto& m_ActivateInputField = methods.get<false, false>(142);
+    /* System.Void ActivateInputFieldInternal() */
+    inline static auto& m_ActivateInputFieldInternal = methods.get<false, false>(143);
+    /* System.Void OnSelect(UnityEngine.EventSystems.BaseEventData eventData) */
+    inline static auto& m_OnSelect = methods.get<false, true>(144);
+    /* System.Void OnPointerClick(UnityEngine.EventSystems.PointerEventData eventData) */
+    inline static auto& m_OnPointerClick = methods.get<false, true>(145);
+    /* System.Void DeactivateInputField() */
+    inline static auto& m_DeactivateInputField = methods.get<false, false>(146);
+    /* System.Void OnDeselect(UnityEngine.EventSystems.BaseEventData eventData) */
+    inline static auto& m_OnDeselect = methods.get<false, true>(147);
+    /* System.Void OnSubmit(UnityEngine.EventSystems.BaseEventData eventData) */
+    inline static auto& m_OnSubmit = methods.get<false, true>(148);
+    /* System.Void EnforceContentType() */
+    inline static auto& m_EnforceContentType = methods.get<false, false>(149);
+    /* System.Void EnforceTextHOverflow() */
+    inline static auto& m_EnforceTextHOverflow = methods.get<false, false>(150);
+    /* System.Void SetToCustomIfContentTypeIsNot(UnityEngine.UI.InputField+ContentType[] allowedContentTypes) */
+    inline static auto& m_SetToCustomIfContentTypeIsNot = methods.get<false, false>(151);
+    /* System.Void SetToCustom() */
+    inline static auto& m_SetToCustom = methods.get<false, false>(152);
+    /* System.Void DoStateTransition(UnityEngine.UI.Selectable+SelectionState state, System.Boolean instant) */
+    inline static auto& m_DoStateTransition = methods.get<false, true>(153);
+    /* System.Void CalculateLayoutInputHorizontal() */
+    inline static auto& m_CalculateLayoutInputHorizontal = methods.get<false, true>(154);
+    /* System.Void CalculateLayoutInputVertical() */
+    inline static auto& m_CalculateLayoutInputVertical = methods.get<false, true>(155);
+    /* System.Single get_minWidth() */
+    inline static auto& m_get_minWidth = methods.get<false, true>(156);
+    /* System.Single get_preferredWidth() */
+    inline static auto& m_get_preferredWidth = methods.get<false, true>(157);
+    /* System.Single get_flexibleWidth() */
+    inline static auto& m_get_flexibleWidth = methods.get<false, true>(158);
+    /* System.Single get_minHeight() */
+    inline static auto& m_get_minHeight = methods.get<false, true>(159);
+    /* System.Single get_preferredHeight() */
+    inline static auto& m_get_preferredHeight = methods.get<false, true>(160);
+    /* System.Single get_flexibleHeight() */
+    inline static auto& m_get_flexibleHeight = methods.get<false, true>(161);
+    /* System.Int32 get_layoutPriority() */
+    inline static auto& m_get_layoutPriority = methods.get<false, true>(162);
+    /* System.Void .cctor() */
+    inline static auto& m__cctor = methods.get<true, false>(163);
+    /* UnityEngine.Transform UnityEngine.UI.ICanvasElement.get_transform() */
+    inline static auto& m_UnityEngine_UI_ICanvasElement_get_transform = methods.get<false, true>(164);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

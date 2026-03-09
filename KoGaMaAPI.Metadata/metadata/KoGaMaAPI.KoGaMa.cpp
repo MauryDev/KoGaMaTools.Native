@@ -376,6 +376,16 @@ void MVMovable::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 
 }
 
+void SettingsInputFieldSlider::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 75, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void UI_InputField::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 76, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -452,5 +462,7 @@ void MVMovable::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         MVRotator::Init(metadataInfo);
         EditableCubeModelWrapper::Init(metadataInfo);
         MVMovable::Init(metadataInfo);
+        SettingsInputFieldSlider::Init(metadataInfo);
+        UI_InputField::Init(metadataInfo);
     }
 }

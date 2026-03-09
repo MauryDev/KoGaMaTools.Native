@@ -17,6 +17,23 @@ namespace KoGaMaTools::Services {
 
 		static void Initialize1(void* instance, void* key, float value, float minValue, float maxValue);
 		static void Initialize2(void* instance, void* key, int value, int minValue, int maxValue);
+		static void Initialize3(void* instance, void* key, float value);
+		static void Initialize4(void* instance, void* key, int value);
+		static void Initialize5(
+			void* instance,
+			void* key,
+			void* itemData,
+			float min,
+			float max,
+			float conversionValue = 1.0f
+		);
+		static void Initialize6(
+			void* instance,
+			void* key,
+			void* itemData,
+			void* minMaxFunc,
+			float conversionValue
+		);
 		static void ProcessLimits(void* instance, auto& value, auto& minValue, auto& maxValue);
 
 		// Inherited via IInitializable

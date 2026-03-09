@@ -8,6 +8,20 @@
 namespace {
 	void(*m0_Initialize_Old)(void*, void* key, float value, float minValue, float maxValue);
 	void(*m1_Initialize_Old)(void*, void* key, int value, int minValue, int maxValue);
+	void(*m2_Initialize_Old)(void*, void*, float);
+	void(*m3_Initialize_Old)(void*, void*, int);
+	void (*m4_Initialize_Old)(void* instance,
+		void* key,
+		void* itemData,
+		float min,
+		float max,
+		float conversionValue);
+
+	void (*m5_Initialize_Old)(void* instance,
+		void* key,
+		void* itemData,
+		void* minMaxFunc,
+		float conversionValue);
 }
 
 
@@ -23,14 +37,11 @@ void KoGaMaTools::Services::UnlimitedConfig::Render()
     {
         ImGui::Indent(10.0f);
 
-        // Usage of InputFloat for "No Limit" feel (unlike Sliders which are bounded)
-        // We use "%.3f" to allow precision for float settings
         ImGui::InputFloat("Min Value##unlim_min", &MinValue, 1.0f, 100000.0f, "%.3f");
         ImGui::InputFloat("Max Value##unlim_max", &MaxValue, 10000.0f, 100000.0f, "%.3f");
 
         ImGui::Spacing();
 
-        // Secondary logic: Should the current value be forced (clamped) inside the new range?
         ImGui::Checkbox("Clamp Current Value", &ClampValues);
 
         if (ImGui::IsItemHovered())
@@ -66,11 +77,69 @@ void KoGaMaTools::Services::UnlimitedConfig::Initialize2(void* instance, void* k
 
 }
 
+void KoGaMaTools::Services::UnlimitedConfig::Initialize3(void* instance, void* key, float value)
+{
+	namespace K = KoGaMaAPI::KoGaMa;
+
+	if (Instance->Enabled)
+	{
+		auto inputField = K::SettingsInputFieldSlider::m_get_InputField(instance);
+		K::UI_InputField::m_set_characterLimit(inputField, 6);
+	}
+
+	m2_Initialize_Old(instance, key, value);
+
+}
+
+void KoGaMaTools::Services::UnlimitedConfig::Initialize4(void* instance, void* key, int value)
+{
+	namespace K = KoGaMaAPI::KoGaMa;
+
+	if (Instance->Enabled)
+	{
+		auto inputField = K::SettingsInputFieldSlider::m_get_InputField(instance);
+		K::UI_InputField::m_set_characterLimit(inputField, 6);
+	}
+
+	m3_Initialize_Old(instance, key, value);
+}
+
+void KoGaMaTools::Services::UnlimitedConfig::Initialize5(void* instance, void* key, void* itemData, float min, float max, float conversionValue)
+{
+	namespace K = KoGaMaAPI::KoGaMa;
+
+	if (Instance->Enabled)
+	{
+		auto inputField = K::SettingsInputFieldSlider::m_get_InputField(instance);
+		K::UI_InputField::m_set_characterLimit(inputField, 6);
+	}
+
+	m4_Initialize_Old(instance, key, itemData,min, max, conversionValue);
+}
+void KoGaMaTools::Services::UnlimitedConfig::Initialize6(void* instance,
+	void* key,
+	void* itemData,
+	void* minMaxFunc,
+	float conversionValue)
+{
+	namespace K = KoGaMaAPI::KoGaMa;
+
+	if (Instance->Enabled)
+	{
+		auto inputField = K::SettingsInputFieldSlider::m_get_InputField(instance);
+		K::UI_InputField::m_set_characterLimit(inputField, 6);
+	}
+
+	m5_Initialize_Old(instance, key, itemData, minMaxFunc, conversionValue);
+}
+
 void KoGaMaTools::Services::UnlimitedConfig::ProcessLimits(void* instance,auto& value, auto& minValue, auto& maxValue)
 {
     namespace K = KoGaMaAPI::KoGaMa;
 
 	using T = std::remove_reference_t<decltype(value)>;
+
+	
 	if (Instance->Enabled)
 	{
 
@@ -88,6 +157,13 @@ void KoGaMaTools::Services::UnlimitedConfig::ProcessLimits(void* instance,auto& 
 
 void KoGaMaTools::Services::UnlimitedConfig::Init(Core::DIContainer& di)
 {
+	struct HookInfo
+	{
+		void** methodPtr;
+		void* detour;
+		void** original;
+		const char* name;
+	};
     namespace K = KoGaMaAPI::KoGaMa;
     Instance = di.Get<UnlimitedConfig>();
     auto logger = di.Get<LoggerService>();
@@ -95,34 +171,34 @@ void KoGaMaTools::Services::UnlimitedConfig::Init(Core::DIContainer& di)
 
 	LoadConfig(configService->GetConfig());
 
-    auto methodPtr1 = (void**)K::SettingsSlider::m0_Initialize.ptr;
-    auto methodPtr2 = (void**)K::SettingsSlider::m1_Initialize.ptr;
+	
 
-    logger->Assert(methodPtr1 != nullptr, "[UnlimitedConfig] - Null methodPtr1");
-    logger->Assert(methodPtr2 != nullptr, "[UnlimitedConfig] - Null methodPtr2");
+	HookInfo hooks[] =
+	{
+		{(void**)K::SettingsSlider::m0_Initialize.ptr, Initialize1, (void**)&m0_Initialize_Old, "m0_Initialize"},
+		{(void**)K::SettingsSlider::m1_Initialize.ptr, Initialize2, (void**)&m1_Initialize_Old, "m1_Initialize"},
+		{(void**)K::SettingsInputFieldSlider::m2_Initialize.ptr, Initialize3, (void**)&m2_Initialize_Old, "m2_Initialize"},
+		{(void**)K::SettingsInputFieldSlider::m3_Initialize.ptr, Initialize4, (void**)&m3_Initialize_Old, "m3_Initialize"},
+		{(void**)K::SettingsInputFieldSlider::m0_Initialize.ptr, Initialize6, (void**)&m5_Initialize_Old, "m4_Initialize"},
+		{(void**)K::SettingsInputFieldSlider::m1_Initialize.ptr, Initialize5, (void**)&m4_Initialize_Old, "m5_Initialize"},
 
-    logger->Assert(*methodPtr1 != nullptr, "[UnlimitedConfig] - Null target m0_Initialize");
-    logger->Assert(*methodPtr2 != nullptr, "[UnlimitedConfig] - Null target m1_Initialize");
+	};
 
-    logger->Assert(
-        MH_CreateHook(*methodPtr1, Initialize1, (void**)&m0_Initialize_Old) == MH_OK,
-        "[UnlimitedConfig] - CreateHook m0_Initialize"
-    );
+	for (auto& h : hooks)
+	{
+		logger->Assert(h.methodPtr != nullptr, "[UnlimitedConfig] - Null methodPtr");
+		logger->Assert(*h.methodPtr != nullptr, "[UnlimitedConfig] - Null target");
 
-    logger->Assert(
-        MH_CreateHook(*methodPtr2, Initialize2, (void**)&m1_Initialize_Old) == MH_OK,
-        "[UnlimitedConfig] - CreateHook m1_Initialize"
-    );
+		logger->Assert(
+			MH_CreateHook(*h.methodPtr, h.detour, h.original) == MH_OK,
+			"[UnlimitedConfig] - CreateHook"
+		);
 
-    logger->Assert(
-        MH_EnableHook(*methodPtr1) == MH_OK,
-        "[UnlimitedConfig] - EnableHook m0_Initialize"
-    );
-
-    logger->Assert(
-        MH_EnableHook(*methodPtr2) == MH_OK,
-        "[UnlimitedConfig] - EnableHook m1_Initialize"
-    );
+		logger->Assert(
+			MH_EnableHook(*h.methodPtr) == MH_OK,
+			"[UnlimitedConfig] - EnableHook"
+		);
+	}
 }
 
 void KoGaMaTools::Services::UnlimitedConfig::LoadConfig(const nlohmann::json& value)

@@ -51,7 +51,7 @@ void KoGaMaTools::Services::GameInfoService::Render()
         ImGui::Separator();
 
         ImGui::TextUnformatted("Made by MauryDev");
-        ImGui::TextUnformatted("Special thanks to Becko and Snowy");
+        ImGui::TextUnformatted("Special thanks to Becko, Snowy and RooKie");
 
     }
 }
