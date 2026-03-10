@@ -5,11 +5,15 @@
 #include  <algorithm>
 #include "../LoggerService.h"
 #include "../Common/ConfigService.h"
+#include "../Common/HookingService.h"
+#include "../../Helpers/HookHelper.h"
+
+#include <format>
 namespace {
 	void(*m0_Initialize_Old)(void*, void* key, float value, float minValue, float maxValue);
 	void(*m1_Initialize_Old)(void*, void* key, int value, int minValue, int maxValue);
-	void(*m2_Initialize_Old)(void*, void*, float);
-	void(*m3_Initialize_Old)(void*, void*, int);
+	void(*m2_Initialize_Old)(void*, void* key, float value);
+	void(*m3_Initialize_Old)(void*, void* key, int value);
 	void (*m4_Initialize_Old)(void* instance,
 		void* key,
 		void* itemData,
@@ -157,48 +161,27 @@ void KoGaMaTools::Services::UnlimitedConfig::ProcessLimits(void* instance,auto& 
 
 void KoGaMaTools::Services::UnlimitedConfig::Init(Core::DIContainer& di)
 {
-	struct HookInfo
-	{
-		void** methodPtr;
-		void* detour;
-		void** original;
-		const char* name;
-	};
-    namespace K = KoGaMaAPI::KoGaMa;
-    Instance = di.Get<UnlimitedConfig>();
-    auto logger = di.Get<LoggerService>();
-    auto configService = di.Get<ConfigService>();
+	namespace K = KoGaMaAPI::KoGaMa;
+
+	Instance = di.Get<UnlimitedConfig>();
+
+	auto logger = di.Get<LoggerService>();
+	auto configService = di.Get<ConfigService>();
+	auto hookingService = di.Get<HookingService>();
 
 	LoadConfig(configService->GetConfig());
 
-	
-
-	HookInfo hooks[] =
+	const char* module = "UnlimitedConfig";
+	Helpers::HookHelper::HookDesc descs[] =
 	{
-		{(void**)K::SettingsSlider::m0_Initialize.ptr, Initialize1, (void**)&m0_Initialize_Old, "m0_Initialize"},
-		{(void**)K::SettingsSlider::m1_Initialize.ptr, Initialize2, (void**)&m1_Initialize_Old, "m1_Initialize"},
-		{(void**)K::SettingsInputFieldSlider::m2_Initialize.ptr, Initialize3, (void**)&m2_Initialize_Old, "m2_Initialize"},
-		{(void**)K::SettingsInputFieldSlider::m3_Initialize.ptr, Initialize4, (void**)&m3_Initialize_Old, "m3_Initialize"},
-		{(void**)K::SettingsInputFieldSlider::m0_Initialize.ptr, Initialize6, (void**)&m5_Initialize_Old, "m4_Initialize"},
-		{(void**)K::SettingsInputFieldSlider::m1_Initialize.ptr, Initialize5, (void**)&m4_Initialize_Old, "m5_Initialize"},
-
+		{(void**)K::SettingsSlider::m0_Initialize.ptr, Initialize1, (void**)&m0_Initialize_Old},
+		{(void**)K::SettingsSlider::m1_Initialize.ptr, Initialize2, (void**)&m1_Initialize_Old},
+		{(void**)K::SettingsInputFieldSlider::m2_Initialize.ptr, Initialize3, (void**)&m2_Initialize_Old},
+		{(void**)K::SettingsInputFieldSlider::m3_Initialize.ptr, Initialize4, (void**)&m3_Initialize_Old},
+		{(void**)K::SettingsInputFieldSlider::m0_Initialize.ptr, Initialize6, (void**)&m5_Initialize_Old},
+		{(void**)K::SettingsInputFieldSlider::m1_Initialize.ptr, Initialize5, (void**)&m4_Initialize_Old},
 	};
-
-	for (auto& h : hooks)
-	{
-		logger->Assert(h.methodPtr != nullptr, "[UnlimitedConfig] - Null methodPtr");
-		logger->Assert(*h.methodPtr != nullptr, "[UnlimitedConfig] - Null target");
-
-		logger->Assert(
-			MH_CreateHook(*h.methodPtr, h.detour, h.original) == MH_OK,
-			"[UnlimitedConfig] - CreateHook"
-		);
-
-		logger->Assert(
-			MH_EnableHook(*h.methodPtr) == MH_OK,
-			"[UnlimitedConfig] - EnableHook"
-		);
-	}
+	Helpers::HookHelper::InstallHooks(logger, module, hookingService, descs);
 }
 
 void KoGaMaTools::Services::UnlimitedConfig::LoadConfig(const nlohmann::json& value)

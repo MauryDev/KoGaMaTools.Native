@@ -3,6 +3,7 @@
 #include <MinHook.h>
 #include "../LoggerService.h"
 #include "../Common/ConfigService.h"
+#include "../../Helpers/HookHelper.h"
 #include <imgui.h>
 #include <format>
 
@@ -36,31 +37,17 @@ void KoGaMaTools::Services::CustomGrid::Init(Core::DIContainer& diContainer)
     Instance = diContainer.Get<CustomGrid>();
     auto logger = diContainer.Get<LoggerService>();
     auto configService = diContainer.Get<ConfigService>();
+    auto hookingService = diContainer.Get<HookingService>();
     
     LoadConfig(configService->GetConfig());
 
-    auto methodPtr1 = (void**)KoGaMaAPI::KoGaMa::ESTranslate::m_Execute.ptr;
-    auto methodPtr2 = (void**)KoGaMaAPI::KoGaMa::SharedCubeFunctions::m_GetClosestGridPoint.ptr;
-
-    logger->Assert(methodPtr1 != nullptr && *methodPtr1 != nullptr,"[CustomGrid] - Method or Method Pointer is null");
-    logger->Assert(
-        MH_CreateHook(*methodPtr1, Execute,(void**)&Execute_Old) == MH_OK,
-        "[CustomGrid] - Create Hook #1"
-    );
-    logger->Assert(
-        MH_CreateHook(*methodPtr2, GetClosestGridPoint, (void**)&GetClosestGridPoint_Old) == MH_OK,
-        "[CustomGrid] - Create Hook #2"
-    );
-
-    logger->Assert(
-        MH_EnableHook(*methodPtr1) == MH_OK,
-        "[CustomGrid] - Enabled Hook #1"
-    );
-    logger->Assert(
-        MH_EnableHook(*methodPtr2) == MH_OK,
-        "[CustomGrid] - Enabled Hook #2"
-    );
-
+    const char* module = "CustomGrid";
+    Helpers::HookHelper::HookDesc descs[] =
+    {
+        {(void**)KoGaMaAPI::KoGaMa::ESTranslate::m_Execute.ptr, Execute, (void**)&Execute_Old},
+        {(void**)KoGaMaAPI::KoGaMa::SharedCubeFunctions::m_GetClosestGridPoint.ptr, GetClosestGridPoint, (void**)&GetClosestGridPoint_Old},
+    };
+    Helpers::HookHelper::InstallHooks(logger, module, hookingService, descs);
 }
 
 void KoGaMaTools::Services::CustomGrid::Render()

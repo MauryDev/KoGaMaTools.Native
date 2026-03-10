@@ -15,14 +15,14 @@ namespace KoGaMaTools::Services::ModelModule::ModelUtils {
 		auto chunkEnum = IEnumerable::m_GetEnumerator(chunksValues);
 
 		std::set<KoGaMaTools::Types::IntVector> cubesPos;
-		while (IEnumerator::m_MoveNext(chunkEnum).Unbox<Tools::Il2Cpp::Il2CppBoolean>())
+		while (IEnumerator::m_MoveNext(chunkEnum).Unbox<bool>())
 		{
 			auto chunk = IEnumerator::m_get_Current(chunkEnum);
 			auto cells = CubeModelChunk::f_cells.Get<Il2CppObj>(chunk);
 			auto cellsKeys = IDictionary::m_get_Keys(cells);
 			auto cellsEnum = IEnumerable::m_GetEnumerator(cellsKeys);
 
-			while (IEnumerator::m_MoveNext(cellsEnum).Unbox<Tools::Il2Cpp::Il2CppBoolean>())
+			while (IEnumerator::m_MoveNext(cellsEnum).Unbox<bool>())
 			{
 				auto pos = IEnumerator::m_get_Current(cellsEnum).Unbox<Types::IntVector>();
 
@@ -171,13 +171,13 @@ namespace KoGaMaTools::Services::ModelModule::ModelUtils {
 		auto chunkEnum = IEnumerable::m_GetEnumerator(chunksValues);
 
 		std::vector<CubeInfo> cubeInfos;
-		while (IEnumerator::m_MoveNext(chunkEnum).Unbox<Tools::Il2Cpp::Il2CppBoolean>())
+		while (IEnumerator::m_MoveNext(chunkEnum).Unbox<bool>())
 		{
 			auto chunk = IEnumerator::m_get_Current(chunkEnum);
 			auto cells = CubeModelChunk::f_cells.Get<Il2CppObj>(chunk);
 			auto cellsEnum = IEnumerable::m_GetEnumerator(cells);
 
-			while (IEnumerator::m_MoveNext(cellsEnum).Unbox<Tools::Il2Cpp::Il2CppBoolean>())
+			while (IEnumerator::m_MoveNext(cellsEnum).Unbox<bool>())
 			{
 				auto currentEntry = IEnumerator::m_get_Current(cellsEnum);
 

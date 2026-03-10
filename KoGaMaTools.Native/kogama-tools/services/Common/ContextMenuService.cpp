@@ -4,6 +4,7 @@
 #include <metadata/KoGaMaAPI.KoGaMa.h>
 #include <Tools.Il2Cpp.ICalls.h>
 #include "../../Helpers/DelegateUtils.h"
+#include "../../Helpers/HookHelper.h"
 #include "TextCommandService.h"
 namespace {
 	void(*OnInitializeOld)(void* instance, void* name, void* unityAction);
@@ -62,24 +63,14 @@ void KoGaMaTools::Services::ContextMenuService::Init(Core::DIContainer& di)
 	Instance = di.Get<ContextMenuService>();
 
 	auto logger = di.Get<LoggerService>();
-	auto methodPtr = (void**)KoGaMaAPI::KoGaMa::ContextMenu::m_AddButton.ptr;
-	logger->Assert(methodPtr != nullptr, "[ContextMenuService] - Null target");
-	logger->Assert(*methodPtr != nullptr, "[ContextMenuService] - Method Pointer is null");
+	auto hookingService = di.Get<HookingService>();
 
-
-	logger->Assert(
-		MH_CreateHook(
-			*methodPtr,
-			OnInitialize,
-			(void**)&OnInitializeOld
-		) == MH_OK,
-		"[ContextMenuService] - CreateHook"
-	);
-	logger->Assert(
-		MH_EnableHook(*methodPtr) == MH_OK,
-		"[ContextMenuService] - EnableHook"
-	);
-
+	const char* module = "ContextMenuService";
+	Helpers::HookHelper::HookDesc descs[] =
+	{
+		{(void**)KoGaMaAPI::KoGaMa::ContextMenu::m_AddButton.ptr, OnInitialize, (void**)&OnInitializeOld},
+	};
+	Helpers::HookHelper::InstallHooks(logger, module, hookingService, descs);
 }
 
 void KoGaMaTools::Services::ContextMenuService::SetupButtons()

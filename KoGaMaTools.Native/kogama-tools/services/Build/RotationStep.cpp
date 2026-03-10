@@ -3,6 +3,7 @@
 #include <MinHook.h>
 #include "../LoggerService.h"
 #include "../Common/ConfigService.h"
+#include "../../Helpers/HookHelper.h"
 #include <imgui.h>
 
 namespace {
@@ -58,25 +59,17 @@ void KoGaMaTools::Services::RotationStep::Init(Core::DIContainer& di)
     Instance = di.Get<RotationStep>();
     auto logger = di.Get<LoggerService>();
     auto configService = di.Get<ConfigService>();
+    auto hookingService = di.Get<HookingService>();
     
     // Load initial configuration values
 	LoadConfig(configService->GetConfig());
     
-    
-    
-    auto methodPtr = (void**)KoGaMaAPI::KoGaMa::RotationHelper::m_RotateStep.ptr;
-    logger->Assert(methodPtr != nullptr, "[RotationStep] - Null method");
-
-    logger->Assert(*methodPtr != nullptr, "[RotationStep] - Null methodPointer");
-
-    logger->Assert(
-        MH_CreateHook(*methodPtr, RotateStep_Detour, (void**)&RotateStep_Old) == MH_OK,
-        "[RotationStep] - CreateHook"
-    );
-    logger->Assert(
-        MH_EnableHook(*methodPtr) == MH_OK,
-        "[RotationStep] - EnableHook"
-    );
+    const char* module = "RotationStep";
+    Helpers::HookHelper::HookDesc descs[] =
+    {
+        {(void**)KoGaMaAPI::KoGaMa::RotationHelper::m_RotateStep.ptr, RotateStep_Detour, (void**)&RotateStep_Old},
+    };
+    Helpers::HookHelper::InstallHooks(logger, module, hookingService, descs);
 }
 
 void KoGaMaTools::Services::RotationStep::LoadConfig(const nlohmann::json& value)

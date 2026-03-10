@@ -4,6 +4,7 @@
 #include <imgui.h>
 #include "../LoggerService.h"
 #include "../Common/ConfigService.h"
+#include "../../Helpers/HookHelper.h"
 using namespace Tools::Il2Cpp;
 
 namespace KoGaMaTools::Services
@@ -22,24 +23,17 @@ namespace KoGaMaTools::Services
 		Instance = di.Get<SinglePaintFace>();
 		auto logger = di.Get<LoggerService>();
 		auto configService = di.Get<ConfigService>();
+		auto hookingService = di.Get<HookingService>();
 
 		// Load initial configuration values
 		LoadConfig(configService->GetConfig());
 
-		auto methodVer = (void**)KoGaMaAPI::KoGaMa::PaintCubes::m_Execute.ptr;
-
-		logger->Assert(methodVer != nullptr, "[SinglePaintFace] - Null methodPtr");
-		logger->Assert(*methodVer != nullptr, "[SinglePaintFace] - Null target");
-
-		logger->Assert(
-			MH_CreateHook(*methodVer, PaintCubes_Execute, (void**)&OldFunc) == MH_OK,
-			"[SinglePaintFace] - CreateHook"
-		);
-
-		logger->Assert(
-			MH_EnableHook(*methodVer) == MH_OK,
-			"[SinglePaintFace] - EnableHook"
-		);
+		const char* module = "SinglePaintFace";
+		Helpers::HookHelper::HookDesc descs[] =
+		{
+			{(void**)KoGaMaAPI::KoGaMa::PaintCubes::m_Execute.ptr, PaintCubes_Execute, (void**)&OldFunc},
+		};
+		Helpers::HookHelper::InstallHooks(logger, module, hookingService, descs);
 	}
 	void SinglePaintFace::LoadConfig(const nlohmann::json& value)
 	{
@@ -58,7 +52,7 @@ namespace KoGaMaTools::Services
 		namespace K = KoGaMaAPI::KoGaMa;
 		if (Instance->Enabled)
 		{
-			if (K::CubeModelTool::f_waitForMouseUp.Get<Tools::Il2Cpp::Il2CppBoolean>(instance))
+			if (K::CubeModelTool::f_waitForMouseUp.Get<bool>(instance))
 			{
 				auto value = K::MVInputWrapper::m0_GetBooleanControl(K::KogamaControls::f_PointerSelect.Get<int>()).Unbox<Il2CppBoolean>();
 				K::CubeModelTool::f_waitForMouseUp.Set(instance, value);

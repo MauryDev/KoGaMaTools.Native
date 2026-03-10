@@ -2,6 +2,8 @@
 #include <MinHook.h>
 #include "metadata/KoGaMaAPI.KoGaMa.h"
 #include "../LoggerService.h"
+#include "../Common/ConfigService.h"
+#include "../../Helpers/HookHelper.h"
 #include <imgui.h>
 
 using namespace Tools::Il2Cpp;
@@ -41,33 +43,17 @@ void KoGaMaTools::Services::FastRespawn::Init(Core::DIContainer& di)
 	Instance = di.Get<FastRespawn>();
 	auto logger = di.Get<LoggerService>();
 	auto configService = di.Get<ConfigService>();
+	auto hookingService = di.Get<HookingService>();
 
 	LoadConfig(configService->GetConfig());
-	auto method1 = (void**)KoGaMaAPI::KoGaMa::PlayButton::m_HandlePlayAvailable.ptr;
-	auto method2 = (void**)KoGaMaAPI::KoGaMa::DeathUIBoostMenuController::m_Update.ptr;
-
-	logger->Assert(method1 != nullptr, "[FastRespawn] - Null methodPtr #1");
-	logger->Assert(*method1 != nullptr, "[FastRespawn] - Null target #1");
-	logger->Assert(method2 != nullptr, "[FastRespawn] - Null methodPtr #2");
-	logger->Assert(*method2 != nullptr, "[FastRespawn] - Null target #2");
-
-	logger->Assert(
-		MH_CreateHook(*method1, OnExecute, (void**)&Respawn_old) == MH_OK,
-		"[FastRespawn] - CreateHook #1"
-	);
-	logger->Assert(
-		MH_CreateHook(*method2, OnUpdate, (void**)&Update_old) == MH_OK,
-		"[FastRespawn] - CreateHook #2"
-	);
-	logger->Assert(
-		MH_EnableHook(*method1) == MH_OK,
-		"[FastRespawn] - EnableHook #1"
-	);
-	logger->Assert(
-		MH_EnableHook(*method2) == MH_OK,
-		"[FastRespawn] - EnableHook #2"
-	);
 	
+	const char* module = "FastRespawn";
+	Helpers::HookHelper::HookDesc descs[] =
+	{
+		{(void**)KoGaMaAPI::KoGaMa::PlayButton::m_HandlePlayAvailable.ptr, OnExecute, (void**)&Respawn_old},
+		{(void**)KoGaMaAPI::KoGaMa::DeathUIBoostMenuController::m_Update.ptr, OnUpdate, (void**)&Update_old},
+	};
+	Helpers::HookHelper::InstallHooks(logger, module, hookingService, descs);
 }
 
 void KoGaMaTools::Services::FastRespawn::LoadConfig(const nlohmann::json& value)

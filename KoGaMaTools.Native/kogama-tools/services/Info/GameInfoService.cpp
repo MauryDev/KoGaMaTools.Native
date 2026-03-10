@@ -117,14 +117,14 @@ void KoGaMaTools::Services::GameInfoService::GetLogicObjects()
     if (enumerator.isNull()) return;
 
     int count = 0;
-    while (Tools::Il2Cpp::ICalls::IEnumerator::m_MoveNext(enumerator).Unbox<Tools::Il2Cpp::Il2CppBoolean>())
+    while (Tools::Il2Cpp::ICalls::IEnumerator::m_MoveNext(enumerator).Unbox<bool>())
     {
         auto wo = Tools::Il2Cpp::ICalls::IEnumerator::m_get_Current(enumerator);
         if (wo.isNull()) continue;
         
-		if (MVWorldObjectClient::m_get_HasInputConnector(wo).Unbox<Tools::Il2Cpp::Il2CppBoolean>() ||
-            MVWorldObjectClient::m_get_HasObjectConnector(wo).Unbox<Tools::Il2Cpp::Il2CppBoolean>() ||
-            MVWorldObjectClient::m_get_HasOutputConnector(wo).Unbox<Tools::Il2Cpp::Il2CppBoolean>()
+		if (MVWorldObjectClient::m_get_HasInputConnector(wo).Unbox<bool>() ||
+            MVWorldObjectClient::m_get_HasObjectConnector(wo).Unbox<bool>() ||
+            MVWorldObjectClient::m_get_HasOutputConnector(wo).Unbox<bool>()
             )
         {
             count++;
@@ -217,13 +217,13 @@ void KoGaMaTools::Services::GameInfoService::GetPrototypeCount()
     auto enumerator = Tools::Il2Cpp::ICalls::IEnumerable::m_GetEnumerator(worldObjectsObjValues);
     if (enumerator.isNull()) return;
 
-    while (Tools::Il2Cpp::ICalls::IEnumerator::m_MoveNext(enumerator).Unbox<Tools::Il2Cpp::Il2CppBoolean>())
+    while (Tools::Il2Cpp::ICalls::IEnumerator::m_MoveNext(enumerator).Unbox<bool>())
     {
         auto wo = Tools::Il2Cpp::ICalls::IEnumerator::m_get_Current(enumerator);
         if (wo.isNull()) continue;
 		auto flag = InteractionFlags::f_HasCubeModel.Get<int64_t>();
         if (MVWorldObjectClient::m_HasInteractionFlag(wo, flag)
-            .Unbox<Tools::Il2Cpp::Il2CppBoolean>())
+            .Unbox<bool>())
         {
             count++;
         }

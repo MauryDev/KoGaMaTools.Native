@@ -23,5 +23,6 @@
 #include "Common/TextCommandService.h"
 #include "Info/GameInfoService.h"
 #include "Common/ContextMenuService.h"
+#include "Common/HookingService.h"
 
 #include "Build/ModelModule/module.h"

@@ -4,6 +4,7 @@
 #include <MinHook.h>
 #include <Tools.Il2Cpp.Lib.h>
 #include <Il2CppUtils.h>
+#include "../../Helpers/HookHelper.h"
 #include <string_view>
 namespace {
 	void(*OnTextCommand_old)(void* txt);
@@ -38,22 +39,14 @@ void KoGaMaTools::Services::TextCommandService::Init(Core::DIContainer& di)
 {
 	Instance = di.Get<TextCommandService>();
 	auto logger = di.Get<LoggerService>();
+	auto hookingService = di.Get<HookingService>();
 
-	auto method1 = (void**)KoGaMaAPI::KoGaMa::TextCommand::m_Resolve.ptr;
-
-	logger->Assert(method1 != nullptr, "[TextCommandService] - Null methodPtr #1");
-	logger->Assert(*method1 != nullptr, "[TextCommandService] - Null target #1");
-
-	logger->Assert(
-		MH_CreateHook(*method1, OnTextCommand, (void**)&OnTextCommand_old) == MH_OK,
-		"[TextCommandService] - CreateHook #1"
-	);
-
-	logger->Assert(
-		MH_EnableHook(*method1) == MH_OK,
-		"[TextCommandService] - EnableHook #1"
-	);
-
+	const char* module = "TextCommandService";
+	Helpers::HookHelper::HookDesc descs[] =
+	{
+		{(void**)KoGaMaAPI::KoGaMa::TextCommand::m_Resolve.ptr, OnTextCommand, (void**)&OnTextCommand_old},
+	};
+	Helpers::HookHelper::InstallHooks(logger, module, hookingService, descs);
 }
 
 void KoGaMaTools::Services::TextCommandService::SetupCommandsResolve()

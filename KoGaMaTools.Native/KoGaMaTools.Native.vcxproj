@@ -160,6 +160,7 @@
     <ClCompile Include="kogama-tools\Core\DITools.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="kogama-tools\Helpers\DelegateUtils.cpp" />
+    <ClCompile Include="kogama-tools\Helpers\HookHelper.cpp" />
     <ClCompile Include="kogama-tools\Helpers\StringExtensions.cpp" />
     <ClCompile Include="kogama-tools\services\Build\BlueModeTool.cpp" />
     <ClCompile Include="kogama-tools\services\Build\ModelModule\CopyModel.cpp" />
@@ -175,6 +176,7 @@
     <ClCompile Include="kogama-tools\services\Build\UnlimitedConfig.cpp" />
     <ClCompile Include="kogama-tools\services\Common\ConfigService.cpp" />
     <ClCompile Include="kogama-tools\services\Common\ContextMenuService.cpp" />
+    <ClCompile Include="kogama-tools\services\Common\HookingService.cpp" />
     <ClCompile Include="kogama-tools\services\Common\MainComponent.cpp" />
     <ClCompile Include="kogama-tools\services\Common\TextCommandService.cpp" />
     <ClCompile Include="kogama-tools\services\Info\GameInfoService.cpp" />
@@ -193,6 +195,7 @@
   <ItemGroup>
     <ClInclude Include="kogama-tools\Core\DITools.h" />
     <ClInclude Include="kogama-tools\Helpers\DelegateUtils.h" />
+    <ClInclude Include="kogama-tools\Helpers\HookHelper.h" />
     <ClInclude Include="kogama-tools\Helpers\StringExtensions.h" />
     <ClInclude Include="kogama-tools\Helpers\TypeParameters.h" />
     <ClInclude Include="kogama-tools\services\Build\BlueModeTool.h" />
@@ -209,6 +212,7 @@
     <ClInclude Include="kogama-tools\services\Build\UnlimitedConfig.h" />
     <ClInclude Include="kogama-tools\services\Common\ConfigService.h" />
     <ClInclude Include="kogama-tools\services\Common\ContextMenuService.h" />
+    <ClInclude Include="kogama-tools\services\Common\HookingService.h" />
     <ClInclude Include="kogama-tools\services\Common\MainComponent.h" />
     <ClInclude Include="kogama-tools\services\Common\TextCommandService.h" />
     <ClInclude Include="kogama-tools\services\Info\GameInfoService.h" />

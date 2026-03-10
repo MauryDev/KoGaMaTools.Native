@@ -3,6 +3,9 @@
 #include "../LoggerService.h"
 #include <imgui.h>
 #include <MinHook.h>
+
+#include "../../Helpers/HookHelper.h"
+
 using namespace Tools::Il2Cpp;
 namespace {
 	void (*MainCameraManager_set_BlueModeEnabled_Old)(void* instance, uint8_t value, void* methodInfo);
@@ -22,25 +25,18 @@ void KoGaMaTools::Services::BlueModeTool::Init(Core::DIContainer& di)
 {
 	auto logger = di.Get<LoggerService>();
 	auto configService = di.Get<ConfigService>();
+	auto hookingService = di.Get<HookingService>();
+
 	LoadConfig(configService->GetConfig());
 
-	auto methodPtr = (void**)KoGaMaAPI::KoGaMa::MainCameraManager::m_set_BlueModeEnabled.ptr;
-	logger->Assert(methodPtr != nullptr, "[BlueMode] - Null target");
-	logger->Assert(*methodPtr != nullptr, "[BlueMode] - Method Pointer is null");
+	const char* module = "BlueModeTool";
+	Helpers::HookHelper::HookDesc descs[] =
+	{
+		{(void**)KoGaMaAPI::KoGaMa::MainCameraManager::m_set_BlueModeEnabled.ptr,OnExecute, (void**)&MainCameraManager_set_BlueModeEnabled_Old}
+	};
 
-	
-	logger->Assert(
-		MH_CreateHook(
-			*methodPtr,
-			OnExecute,
-			(void**)&MainCameraManager_set_BlueModeEnabled_Old
-		) == MH_OK,
-		"[BlueMode] - CreateHook"
-	);
-	logger->Assert(
-		MH_EnableHook(*methodPtr) == MH_OK,
-		"[BlueMode] - EnableHook"
-	);
+	Helpers::HookHelper::InstallHooks(logger, module, hookingService, descs);
+
 	Instance = di.Get<BlueModeTool>();
 
 	

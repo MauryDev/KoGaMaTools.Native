@@ -4,6 +4,7 @@
 #include <imgui.h>
 #include "../LoggerService.h"
 #include "../Common/ConfigService.h"
+#include "../../Helpers/HookHelper.h"
 
 namespace {
 	bool(*IsAvailable_Old)(void* instance, void* methodInfo);
@@ -19,24 +20,16 @@ void KoGaMaTools::Services::DestructiblesUnlock::Init(Core::DIContainer& di)
     Instance = di.Get<DestructiblesUnlock>();
     auto logger = di.Get<LoggerService>();
     auto configService = di.Get<ConfigService>();
+    auto hookingService = di.Get<HookingService>();
 
     LoadConfig(configService->GetConfig());
-    
 
-    auto methodPtr = (void**)KoGaMaAPI::KoGaMa::MVMaterial::m_get_IsAvailable.ptr;
-
-    logger->Assert(methodPtr != nullptr, "[DestructiblesUnlock] - Null methodPtr");
-    logger->Assert(*methodPtr != nullptr, "[DestructiblesUnlock] - Null target");
-
-    logger->Assert(
-        MH_CreateHook(*methodPtr, IsAvailable, (void**)&IsAvailable_Old) == MH_OK,
-        "[DestructiblesUnlock] - CreateHook"
-    );
-
-    logger->Assert(
-        MH_EnableHook(*methodPtr) == MH_OK,
-        "[DestructiblesUnlock] - EnableHook"
-    );
+    const char* module = "DestructiblesUnlock";
+    Helpers::HookHelper::HookDesc descs[] =
+    {
+        {(void**)KoGaMaAPI::KoGaMa::MVMaterial::m_get_IsAvailable.ptr, IsAvailable, (void**)&IsAvailable_Old},
+    };
+    Helpers::HookHelper::InstallHooks(logger, module, hookingService, descs);
 }
 
 void KoGaMaTools::Services::DestructiblesUnlock::Render()

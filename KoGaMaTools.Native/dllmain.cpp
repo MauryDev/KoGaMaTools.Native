@@ -72,6 +72,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::ConfigService,
 		S::TextCommandService,
 		S::ContextMenuService,
+		S::HookingService,
 		S::SinglePaintFace, 
 		S::NoLimit,
 		S::BlueModeTool,

@@ -4,6 +4,7 @@
 #include <imgui.h>
 #include "../LoggerService.h"
 #include "../Common/ConfigService.h"
+#include "../../Helpers/HookHelper.h"
 
 using namespace Tools::Il2Cpp;
 
@@ -47,24 +48,17 @@ void KoGaMaTools::Services::CustomCrossHairColor::Init(Core::DIContainer& di)
     Instance = di.Get<CustomCrossHairColor>();
     auto logger = di.Get<LoggerService>();
     auto configService = di.Get<ConfigService>();
+    auto hookingService = di.Get<HookingService>();
 
     // Load initial configuration values
 	LoadConfig(configService->GetConfig());
 
-    auto method1 = (void**)KoGaMaAPI::KoGaMa::CrossHair::m_UpdateCrossHair.ptr;
-
-    logger->Assert(method1 != nullptr, "[CustomCrossHairColor] - Null methodPtr");
-    logger->Assert(*method1 != nullptr, "[CustomCrossHairColor] - Null target");
-
-    logger->Assert(
-        MH_CreateHook(*method1, &OnExecute, (void**)&UpdateCrossHair_old) == MH_OK,
-        "[CustomCrossHairColor] - CreateHook"
-    );
-
-    logger->Assert(
-        MH_EnableHook(*method1) == MH_OK,
-        "[CustomCrossHairColor] - EnableHook"
-    );
+    const char* module = "CustomCrossHairColor";
+    Helpers::HookHelper::HookDesc descs[] =
+    {
+        {(void**)KoGaMaAPI::KoGaMa::CrossHair::m_UpdateCrossHair.ptr, OnExecute, (void**)&UpdateCrossHair_old},
+    };
+    Helpers::HookHelper::InstallHooks(logger, module, hookingService, descs);
 }
 
 void KoGaMaTools::Services::CustomCrossHairColor::LoadConfig(const nlohmann::json& value)

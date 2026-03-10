@@ -3,6 +3,7 @@
 #include <MinHook.h>
 #include "../LoggerService.h"
 #include "../Common/ConfigService.h"
+#include "../../Helpers/HookHelper.h"
 #include <imgui.h>
 
 using namespace Tools::Il2Cpp;
@@ -38,24 +39,17 @@ void KoGaMaTools::Services::EditModeSpeed::Init(Core::DIContainer& di)
     namespace K = KoGaMaAPI::KoGaMa;
     auto logger = di.Get<LoggerService>();
     auto configService = di.Get<ConfigService>();
+    auto hookingService = di.Get<HookingService>();
 
     // Load initial configuration values
 	LoadConfig(configService->GetConfig());
 
-    auto ptr = (void**)K::MVBuildModeAvatarLocal_EditMode::m_MoveCharacter.ptr;
-
-    logger->Assert(ptr != nullptr, "[EditModeSpeed] - Null methodPtr");
-    logger->Assert(*ptr != nullptr, "[EditModeSpeed] - Null target");
-
-    logger->Assert(
-        MH_CreateHook(*ptr, MoveCharacter, (void**)&MoveCharacter_Old) == MH_OK,
-        "[EditModeSpeed] - CreateHook"
-    );
-
-    logger->Assert(
-        MH_EnableHook(*ptr) == MH_OK,
-        "[EditModeSpeed] - EnableHook"
-    );
+    const char* module = "EditModeSpeed";
+    Helpers::HookHelper::HookDesc descs[] =
+    {
+        {(void**)K::MVBuildModeAvatarLocal_EditMode::m_MoveCharacter.ptr, MoveCharacter, (void**)&MoveCharacter_Old},
+    };
+    Helpers::HookHelper::InstallHooks(logger, module, hookingService, descs);
 }
 
 void KoGaMaTools::Services::EditModeSpeed::Render()
