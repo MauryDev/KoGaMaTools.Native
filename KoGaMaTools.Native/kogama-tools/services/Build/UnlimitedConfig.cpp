@@ -26,6 +26,9 @@ namespace {
 		void* itemData,
 		void* minMaxFunc,
 		float conversionValue);
+	void (*m6_Initialize_Old)(void* instance,
+		void* key,
+		void* value);
 }
 
 
@@ -137,6 +140,19 @@ void KoGaMaTools::Services::UnlimitedConfig::Initialize6(void* instance,
 	m5_Initialize_Old(instance, key, itemData, minMaxFunc, conversionValue);
 }
 
+void KoGaMaTools::Services::UnlimitedConfig::Initialize7(void* instance, void* key, void* value)
+{
+	namespace K = KoGaMaAPI::KoGaMa;
+
+	if (Instance->Enabled)
+	{
+		auto inputField = K::SettingsInputField::f_inputField.Get<Tools::Il2Cpp::Il2CppObject>(instance);
+		K::UI_InputField::m_set_characterLimit(inputField, 60000);
+	}
+	m6_Initialize_Old(instance, key, value);
+
+}
+
 void KoGaMaTools::Services::UnlimitedConfig::ProcessLimits(void* instance,auto& value, auto& minValue, auto& maxValue)
 {
     namespace K = KoGaMaAPI::KoGaMa;
@@ -180,6 +196,8 @@ void KoGaMaTools::Services::UnlimitedConfig::Init(Core::DIContainer& di)
 		{(void**)K::SettingsInputFieldSlider::m3_Initialize.ptr, Initialize4, (void**)&m3_Initialize_Old},
 		{(void**)K::SettingsInputFieldSlider::m0_Initialize.ptr, Initialize6, (void**)&m5_Initialize_Old},
 		{(void**)K::SettingsInputFieldSlider::m1_Initialize.ptr, Initialize5, (void**)&m4_Initialize_Old},
+		{(void**)K::SettingsInputField::m_Initialize.ptr, Initialize7, (void**)&m6_Initialize_Old},
+
 	};
 	Helpers::HookHelper::InstallHooks(logger, module, hookingService, descs);
 }

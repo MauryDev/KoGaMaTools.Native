@@ -100,3 +100,4 @@ klasses:
 - fullname: SettingsInputFieldSlider
 - fullname: UnityEngine.UI.InputField
   name: UI_InputField
+- fullname: SettingsInputField

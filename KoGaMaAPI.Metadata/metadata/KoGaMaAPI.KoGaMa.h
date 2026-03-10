@@ -5350,4 +5350,27 @@ inline static auto /* UnityEngine.TouchScreenKeyboard */ &f_m_Keyboard = fields.
 };
 
 
+struct SettingsInputField {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<2> fields;
+inline static auto /* UnityEngine.UI.InputField */ &f_inputField = fields.get<false>(0), /* System.String */ &f_key = fields.get<false>(1);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<5> methods;
+    /* System.Void Initialize(System.String key, System.String value) */
+    inline static auto& m_Initialize = methods.get<false, false>(0);
+    /* System.Void Update() */
+    inline static auto& m_Update = methods.get<false, false>(1);
+    /* System.Void ValueChanged(System.String value) */
+    inline static auto& m_ValueChanged = methods.get<false, false>(2);
+    /* System.Void Reset() */
+    inline static auto& m_Reset = methods.get<false, false>(3);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(4);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

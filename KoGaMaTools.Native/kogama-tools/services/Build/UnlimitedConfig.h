@@ -34,6 +34,12 @@ namespace KoGaMaTools::Services {
 			void* minMaxFunc,
 			float conversionValue
 		);
+
+		static void Initialize7(
+			void* instance,
+			void* key,
+			void* value
+		);
 		static void ProcessLimits(void* instance, auto& value, auto& minValue, auto& maxValue);
 
 		// Inherited via IInitializable

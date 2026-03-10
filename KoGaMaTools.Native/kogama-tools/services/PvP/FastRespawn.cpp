@@ -89,7 +89,6 @@ bool KoGaMaTools::Services::FastRespawn::Resolve(TextCommandService::CommandData
 		}
 	}
 
-	// Feedback unificado
 	std::string status = stateVar ? "Enabled " : "Disabled ";
 	TextCommandService::NotifyUser(status + "Fast Respawn");
 	return true;
