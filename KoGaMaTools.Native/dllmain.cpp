@@ -85,7 +85,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::CustomCrossHairColor,
 		S::FastRespawn,
 		S::CustomCrossHairTexture,
-		S::GameInfoService
+		S::GameInfoService,
+		S::ResolutionService
 	>();
 	KoGaMaTools::Services::ModelModule::Init(app);
 
@@ -108,7 +109,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 	SetupUI<S::AntiAfk,
 		S::CustomCrossHairColor,
 		S::FastRespawn,
-		S::CustomCrossHairTexture>(*ui, "PvP");
+		S::CustomCrossHairTexture,
+		S::ResolutionService>(*ui, "PvP");
 
 	SetupUI<S::GameInfoService>(*ui, "Info");
 

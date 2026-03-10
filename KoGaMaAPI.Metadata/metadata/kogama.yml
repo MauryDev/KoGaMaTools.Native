@@ -101,3 +101,9 @@ klasses:
 - fullname: UnityEngine.UI.InputField
   name: UI_InputField
 - fullname: SettingsInputField
+- fullname: UnityEngine.Screen
+  name: UE_Screen
+- fullname: UnityEngine.FullScreenMode
+  name: UE_FullScreenMode
+- fullname: UnityEngine.FullScreenMode
+  name: UE_RefreshRate

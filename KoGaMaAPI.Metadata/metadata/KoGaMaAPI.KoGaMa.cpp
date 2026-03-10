@@ -391,6 +391,21 @@ void SettingsInputField::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataI
 
 }
 
+void UE_Screen::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 78, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void UE_FullScreenMode::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 79, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void UE_RefreshRate::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 80, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -470,5 +485,8 @@ void SettingsInputField::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataI
         SettingsInputFieldSlider::Init(metadataInfo);
         UI_InputField::Init(metadataInfo);
         SettingsInputField::Init(metadataInfo);
+        UE_Screen::Init(metadataInfo);
+        UE_FullScreenMode::Init(metadataInfo);
+        UE_RefreshRate::Init(metadataInfo);
     }
 }

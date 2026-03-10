@@ -117,6 +117,9 @@
     <ClCompile Include="kogama-tools\Helpers\HookHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="kogama-tools\services\PvP\ResolutionService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\services\PathHelper.h">
@@ -231,6 +234,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="kogama-tools\Helpers\HookHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\PvP\ResolutionService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5373,4 +5373,78 @@ inline static auto /* UnityEngine.UI.InputField */ &f_inputField = fields.get<fa
 };
 
 
+struct UE_Screen {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<0> fields;
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<17> methods;
+    /* System.Int32 get_width() */
+    inline static auto& m_get_width = methods.get<true, false>(0);
+    /* System.Int32 get_height() */
+    inline static auto& m_get_height = methods.get<true, false>(1);
+    /* System.Single get_dpi() */
+    inline static auto& m_get_dpi = methods.get<true, false>(2);
+    /* System.Void RequestOrientation(UnityEngine.ScreenOrientation orient) */
+    inline static auto& m_RequestOrientation = methods.get<true, false>(3);
+    /* UnityEngine.ScreenOrientation GetScreenOrientation() */
+    inline static auto& m_GetScreenOrientation = methods.get<true, false>(4);
+    /* UnityEngine.ScreenOrientation get_orientation() */
+    inline static auto& m_get_orientation = methods.get<true, false>(5);
+    /* System.Void set_orientation(UnityEngine.ScreenOrientation value) */
+    inline static auto& m_set_orientation = methods.get<true, false>(6);
+    /* UnityEngine.Resolution get_currentResolution() */
+    inline static auto& m_get_currentResolution = methods.get<true, false>(7);
+    /* System.Boolean get_fullScreen() */
+    inline static auto& m_get_fullScreen = methods.get<true, false>(8);
+    /* System.Void set_fullScreen(System.Boolean value) */
+    inline static auto& m_set_fullScreen = methods.get<true, false>(9);
+    /* UnityEngine.Rect[] get_cutouts() */
+    inline static auto& m_get_cutouts = methods.get<true, false>(10);
+    /* System.Void SetResolution(System.Int32 width, System.Int32 height, UnityEngine.FullScreenMode fullscreenMode, UnityEngine.RefreshRate preferredRefreshRate) */
+    inline static auto& m0_SetResolution = methods.get<true, false>(11);
+    /* System.Void SetResolution(System.Int32 width, System.Int32 height, System.Boolean fullscreen, System.Int32 preferredRefreshRate) */
+    inline static auto& m1_SetResolution = methods.get<true, false>(12);
+    /* System.Void SetResolution(System.Int32 width, System.Int32 height, System.Boolean fullscreen) */
+    inline static auto& m2_SetResolution = methods.get<true, false>(13);
+    /* System.Void get_currentResolution_Injected(out UnityEngine.Resolution ret) */
+    inline static auto& m_get_currentResolution_Injected = methods.get<true, false>(14);
+    /* System.Void get_cutouts_Injected(out UnityEngine.Bindings.BlittableArrayWrapper ret) */
+    inline static auto& m_get_cutouts_Injected = methods.get<true, false>(15);
+    /* System.Void SetResolution_Injected(System.Int32 width, System.Int32 height, UnityEngine.FullScreenMode fullscreenMode, in UnityEngine.RefreshRate preferredRefreshRate) */
+    inline static auto& m_SetResolution_Injected = methods.get<true, false>(16);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct UE_FullScreenMode {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<5> fields;
+inline static auto /* UnityEngine.FullScreenMode */ &f_ExclusiveFullScreen = fields.get<true>(1), /* UnityEngine.FullScreenMode */ &f_FullScreenWindow = fields.get<true>(2), /* UnityEngine.FullScreenMode */ &f_MaximizedWindow = fields.get<true>(3), /* UnityEngine.FullScreenMode */ &f_Windowed = fields.get<true>(4);
+inline static auto /* System.Int32 */ &f_value__ = fields.get<false>(0);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<0> methods;
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct UE_RefreshRate {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<5> fields;
+inline static auto /* UnityEngine.FullScreenMode */ &f_ExclusiveFullScreen = fields.get<true>(1), /* UnityEngine.FullScreenMode */ &f_FullScreenWindow = fields.get<true>(2), /* UnityEngine.FullScreenMode */ &f_MaximizedWindow = fields.get<true>(3), /* UnityEngine.FullScreenMode */ &f_Windowed = fields.get<true>(4);
+inline static auto /* System.Int32 */ &f_value__ = fields.get<false>(0);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<0> methods;
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

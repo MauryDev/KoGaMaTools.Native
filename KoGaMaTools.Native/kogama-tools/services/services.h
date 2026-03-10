@@ -16,6 +16,7 @@
 #include "PvP/CustomCrossHairColor.h"
 #include "PvP/FastRespawn.h"
 #include "PvP/CustomCrossHairTexture.h"
+#include "PvP/ResolutionService.h"
 
 #include "Common/MainComponent.h"
 

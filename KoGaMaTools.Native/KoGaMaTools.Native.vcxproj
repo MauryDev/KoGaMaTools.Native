@@ -189,6 +189,7 @@
     <ClCompile Include="kogama-tools\services\PvP\CustomCrossHairColor.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\CustomCrossHairTexture.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\FastRespawn.cpp" />
+    <ClCompile Include="kogama-tools\services\PvP\ResolutionService.cpp" />
     <ClCompile Include="kogama-tools\Types\IntVector.cpp" />
     <ClCompile Include="kogama-tools\UI\MainUI.cpp" />
   </ItemGroup>
@@ -224,6 +225,7 @@
     <ClInclude Include="kogama-tools\services\PvP\CustomCrossHairColor.h" />
     <ClInclude Include="kogama-tools\services\PvP\CustomCrossHairTexture.h" />
     <ClInclude Include="kogama-tools\services\PvP\FastRespawn.h" />
+    <ClInclude Include="kogama-tools\services\PvP\ResolutionService.h" />
     <ClInclude Include="kogama-tools\services\services.h" />
     <ClInclude Include="kogama-tools\services\Build\SinglePaintFace.h" />
     <ClInclude Include="kogama-tools\Types\IntVector.h" />
