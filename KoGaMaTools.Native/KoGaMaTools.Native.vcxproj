@@ -186,6 +186,7 @@
     <ClCompile Include="kogama-tools\services\PathHelper.cpp" />
     <ClCompile Include="kogama-tools\services\Build\SinglePaintFace.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\AntiAfk.cpp" />
+    <ClCompile Include="kogama-tools\services\PvP\CameraService.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\CustomCrossHairColor.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\CustomCrossHairTexture.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\FastRespawn.cpp" />
@@ -211,6 +212,7 @@
     <ClInclude Include="kogama-tools\services\Build\ModelModule\PasteModel.h" />
     <ClInclude Include="kogama-tools\services\Build\RotationStep.h" />
     <ClInclude Include="kogama-tools\services\Build\UnlimitedConfig.h" />
+    <ClInclude Include="kogama-tools\services\Common\CameraService.h" />
     <ClInclude Include="kogama-tools\services\Common\ConfigService.h" />
     <ClInclude Include="kogama-tools\services\Common\ContextMenuService.h" />
     <ClInclude Include="kogama-tools\services\Common\HookingService.h" />
@@ -222,6 +224,7 @@
     <ClInclude Include="kogama-tools\services\LoggerService.h" />
     <ClInclude Include="kogama-tools\services\PathHelper.h" />
     <ClInclude Include="kogama-tools\services\PvP\AntiAfk.h" />
+    <ClInclude Include="kogama-tools\services\PvP\CameraService.h" />
     <ClInclude Include="kogama-tools\services\PvP\CustomCrossHairColor.h" />
     <ClInclude Include="kogama-tools\services\PvP\CustomCrossHairTexture.h" />
     <ClInclude Include="kogama-tools\services\PvP\FastRespawn.h" />

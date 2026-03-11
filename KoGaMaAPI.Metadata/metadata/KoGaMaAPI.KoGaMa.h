@@ -5447,4 +5447,238 @@ inline static auto /* System.Int32 */ &f_value__ = fields.get<false>(0);
 };
 
 
+struct UE_Camera {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<8> fields;
+inline static auto /* System.Single */ &f_kMinAperture = fields.get<true>(0), /* System.Single */ &f_kMaxAperture = fields.get<true>(1), /* System.Int32 */ &f_kMinBladeCount = fields.get<true>(2), /* System.Int32 */ &f_kMaxBladeCount = fields.get<true>(3), /* UnityEngine.Camera+CameraCallback */ &f_onPreCull = fields.get<true>(5), /* UnityEngine.Camera+CameraCallback */ &f_onPreRender = fields.get<true>(6), /* UnityEngine.Camera+CameraCallback */ &f_onPostRender = fields.get<true>(7);
+inline static auto /* System.UInt32 */ &f_m_NonSerializedVersion = fields.get<false>(4);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<110> methods;
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(0);
+    /* System.Single get_nearClipPlane() */
+    inline static auto& m_get_nearClipPlane = methods.get<false, false>(1);
+    /* System.Void set_nearClipPlane(System.Single value) */
+    inline static auto& m_set_nearClipPlane = methods.get<false, false>(2);
+    /* System.Single get_farClipPlane() */
+    inline static auto& m_get_farClipPlane = methods.get<false, false>(3);
+    /* System.Void set_farClipPlane(System.Single value) */
+    inline static auto& m_set_farClipPlane = methods.get<false, false>(4);
+    /* System.Single get_fieldOfView() */
+    inline static auto& m_get_fieldOfView = methods.get<false, false>(5);
+    /* System.Void set_fieldOfView(System.Single value) */
+    inline static auto& m_set_fieldOfView = methods.get<false, false>(6);
+    /* System.Void set_renderingPath(UnityEngine.RenderingPath value) */
+    inline static auto& m_set_renderingPath = methods.get<false, false>(7);
+    /* System.Single get_orthographicSize() */
+    inline static auto& m_get_orthographicSize = methods.get<false, false>(8);
+    /* System.Void set_orthographicSize(System.Single value) */
+    inline static auto& m_set_orthographicSize = methods.get<false, false>(9);
+    /* System.Boolean get_orthographic() */
+    inline static auto& m_get_orthographic = methods.get<false, false>(10);
+    /* System.Void set_orthographic(System.Boolean value) */
+    inline static auto& m_set_orthographic = methods.get<false, false>(11);
+    /* System.Single get_depth() */
+    inline static auto& m_get_depth = methods.get<false, false>(12);
+    /* System.Void set_depth(System.Single value) */
+    inline static auto& m_set_depth = methods.get<false, false>(13);
+    /* System.Single get_aspect() */
+    inline static auto& m_get_aspect = methods.get<false, false>(14);
+    /* System.Void set_aspect(System.Single value) */
+    inline static auto& m_set_aspect = methods.get<false, false>(15);
+    /* System.Int32 get_cullingMask() */
+    inline static auto& m_get_cullingMask = methods.get<false, false>(16);
+    /* System.Void set_cullingMask(System.Int32 value) */
+    inline static auto& m_set_cullingMask = methods.get<false, false>(17);
+    /* System.Int32 get_eventMask() */
+    inline static auto& m_get_eventMask = methods.get<false, false>(18);
+    /* UnityEngine.Color get_backgroundColor() */
+    inline static auto& m_get_backgroundColor = methods.get<false, false>(19);
+    /* System.Void set_backgroundColor(UnityEngine.Color value) */
+    inline static auto& m_set_backgroundColor = methods.get<false, false>(20);
+    /* UnityEngine.CameraClearFlags get_clearFlags() */
+    inline static auto& m_get_clearFlags = methods.get<false, false>(21);
+    /* System.Void set_clearFlags(UnityEngine.CameraClearFlags value) */
+    inline static auto& m_set_clearFlags = methods.get<false, false>(22);
+    /* UnityEngine.DepthTextureMode get_depthTextureMode() */
+    inline static auto& m_get_depthTextureMode = methods.get<false, false>(23);
+    /* System.Void set_depthTextureMode(UnityEngine.DepthTextureMode value) */
+    inline static auto& m_set_depthTextureMode = methods.get<false, false>(24);
+    /* System.Void SetReplacementShader(UnityEngine.Shader shader, System.String replacementTag) */
+    inline static auto& m_SetReplacementShader = methods.get<false, false>(25);
+    /* System.Void ResetReplacementShader() */
+    inline static auto& m_ResetReplacementShader = methods.get<false, false>(26);
+    /* System.Void set_rect(UnityEngine.Rect value) */
+    inline static auto& m_set_rect = methods.get<false, false>(27);
+    /* UnityEngine.Rect get_pixelRect() */
+    inline static auto& m_get_pixelRect = methods.get<false, false>(28);
+    /* System.Int32 get_pixelWidth() */
+    inline static auto& m_get_pixelWidth = methods.get<false, false>(29);
+    /* System.Int32 get_pixelHeight() */
+    inline static auto& m_get_pixelHeight = methods.get<false, false>(30);
+    /* UnityEngine.RenderTexture get_targetTexture() */
+    inline static auto& m_get_targetTexture = methods.get<false, false>(31);
+    /* System.Void set_targetTexture(UnityEngine.RenderTexture value) */
+    inline static auto& m_set_targetTexture = methods.get<false, false>(32);
+    /* System.Int32 get_targetDisplay() */
+    inline static auto& m_get_targetDisplay = methods.get<false, false>(33);
+    /* UnityEngine.Matrix4x4 get_worldToCameraMatrix() */
+    inline static auto& m_get_worldToCameraMatrix = methods.get<false, false>(34);
+    /* System.Void set_worldToCameraMatrix(UnityEngine.Matrix4x4 value) */
+    inline static auto& m_set_worldToCameraMatrix = methods.get<false, false>(35);
+    /* UnityEngine.Matrix4x4 get_projectionMatrix() */
+    inline static auto& m_get_projectionMatrix = methods.get<false, false>(36);
+    /* System.Void set_projectionMatrix(UnityEngine.Matrix4x4 value) */
+    inline static auto& m_set_projectionMatrix = methods.get<false, false>(37);
+    /* UnityEngine.Matrix4x4 CalculateObliqueMatrix(UnityEngine.Vector4 clipPlane) */
+    inline static auto& m_CalculateObliqueMatrix = methods.get<false, false>(38);
+    /* UnityEngine.Vector3 WorldToScreenPoint(UnityEngine.Vector3 position, UnityEngine.Camera+MonoOrStereoscopicEye eye) */
+    inline static auto& m0_WorldToScreenPoint = methods.get<false, false>(39);
+    /* UnityEngine.Vector3 WorldToScreenPoint(UnityEngine.Vector3 position) */
+    inline static auto& m1_WorldToScreenPoint = methods.get<false, false>(42);
+    /* UnityEngine.Vector3 WorldToViewportPoint(UnityEngine.Vector3 position, UnityEngine.Camera+MonoOrStereoscopicEye eye) */
+    inline static auto& m0_WorldToViewportPoint = methods.get<false, false>(40);
+    /* UnityEngine.Vector3 WorldToViewportPoint(UnityEngine.Vector3 position) */
+    inline static auto& m1_WorldToViewportPoint = methods.get<false, false>(43);
+    /* UnityEngine.Vector3 ScreenToWorldPoint(UnityEngine.Vector3 position, UnityEngine.Camera+MonoOrStereoscopicEye eye) */
+    inline static auto& m0_ScreenToWorldPoint = methods.get<false, false>(41);
+    /* UnityEngine.Vector3 ScreenToWorldPoint(UnityEngine.Vector3 position) */
+    inline static auto& m1_ScreenToWorldPoint = methods.get<false, false>(44);
+    /* UnityEngine.Vector3 ScreenToViewportPoint(UnityEngine.Vector3 position) */
+    inline static auto& m_ScreenToViewportPoint = methods.get<false, false>(45);
+    /* UnityEngine.Ray ScreenPointToRay(UnityEngine.Vector2 pos, UnityEngine.Camera+MonoOrStereoscopicEye eye) */
+    inline static auto& m0_ScreenPointToRay = methods.get<false, false>(46);
+    /* UnityEngine.Ray ScreenPointToRay(UnityEngine.Vector3 pos, UnityEngine.Camera+MonoOrStereoscopicEye eye) */
+    inline static auto& m1_ScreenPointToRay = methods.get<false, false>(47);
+    /* UnityEngine.Ray ScreenPointToRay(UnityEngine.Vector3 pos) */
+    inline static auto& m2_ScreenPointToRay = methods.get<false, false>(48);
+    /* UnityEngine.Camera get_main() */
+    inline static auto& m_get_main = methods.get<true, false>(49);
+    /* UnityEngine.Camera get_current() */
+    inline static auto& m_get_current = methods.get<true, false>(50);
+    /* UnityEngine.Camera get_currentInternal() */
+    inline static auto& m_get_currentInternal = methods.get<true, false>(51);
+    /* System.Int32 GetAllCamerasCount() */
+    inline static auto& m_GetAllCamerasCount = methods.get<true, false>(52);
+    /* System.Int32 GetAllCamerasImpl(out UnityEngine.Camera[] cam) */
+    inline static auto& m_GetAllCamerasImpl = methods.get<true, false>(53);
+    /* System.Int32 get_allCamerasCount() */
+    inline static auto& m_get_allCamerasCount = methods.get<true, false>(54);
+    /* System.Int32 GetAllCameras(UnityEngine.Camera[] cameras) */
+    inline static auto& m_GetAllCameras = methods.get<true, false>(55);
+    /* System.Void Render() */
+    inline static auto& m_Render = methods.get<false, false>(56);
+    /* System.Void SetupCurrent(UnityEngine.Camera cur) */
+    inline static auto& m_SetupCurrent = methods.get<true, false>(57);
+    /* System.Void FireOnPreCull(UnityEngine.Camera cam) */
+    inline static auto& m_FireOnPreCull = methods.get<true, false>(58);
+    /* System.Void FireOnPreRender(UnityEngine.Camera cam) */
+    inline static auto& m_FireOnPreRender = methods.get<true, false>(59);
+    /* System.Void FireOnPostRender(UnityEngine.Camera cam) */
+    inline static auto& m_FireOnPostRender = methods.get<true, false>(60);
+    /* System.Void BumpNonSerializedVersion(UnityEngine.Camera cam) */
+    inline static auto& m_BumpNonSerializedVersion = methods.get<true, false>(61);
+    /* System.Single get_nearClipPlane_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_nearClipPlane_Injected = methods.get<true, false>(62);
+    /* System.Void set_nearClipPlane_Injected(System.IntPtr _unity_self, System.Single value) */
+    inline static auto& m_set_nearClipPlane_Injected = methods.get<true, false>(63);
+    /* System.Single get_farClipPlane_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_farClipPlane_Injected = methods.get<true, false>(64);
+    /* System.Void set_farClipPlane_Injected(System.IntPtr _unity_self, System.Single value) */
+    inline static auto& m_set_farClipPlane_Injected = methods.get<true, false>(65);
+    /* System.Single get_fieldOfView_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_fieldOfView_Injected = methods.get<true, false>(66);
+    /* System.Void set_fieldOfView_Injected(System.IntPtr _unity_self, System.Single value) */
+    inline static auto& m_set_fieldOfView_Injected = methods.get<true, false>(67);
+    /* System.Void set_renderingPath_Injected(System.IntPtr _unity_self, UnityEngine.RenderingPath value) */
+    inline static auto& m_set_renderingPath_Injected = methods.get<true, false>(68);
+    /* System.Single get_orthographicSize_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_orthographicSize_Injected = methods.get<true, false>(69);
+    /* System.Void set_orthographicSize_Injected(System.IntPtr _unity_self, System.Single value) */
+    inline static auto& m_set_orthographicSize_Injected = methods.get<true, false>(70);
+    /* System.Boolean get_orthographic_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_orthographic_Injected = methods.get<true, false>(71);
+    /* System.Void set_orthographic_Injected(System.IntPtr _unity_self, System.Boolean value) */
+    inline static auto& m_set_orthographic_Injected = methods.get<true, false>(72);
+    /* System.Single get_depth_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_depth_Injected = methods.get<true, false>(73);
+    /* System.Void set_depth_Injected(System.IntPtr _unity_self, System.Single value) */
+    inline static auto& m_set_depth_Injected = methods.get<true, false>(74);
+    /* System.Single get_aspect_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_aspect_Injected = methods.get<true, false>(75);
+    /* System.Void set_aspect_Injected(System.IntPtr _unity_self, System.Single value) */
+    inline static auto& m_set_aspect_Injected = methods.get<true, false>(76);
+    /* System.Int32 get_cullingMask_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_cullingMask_Injected = methods.get<true, false>(77);
+    /* System.Void set_cullingMask_Injected(System.IntPtr _unity_self, System.Int32 value) */
+    inline static auto& m_set_cullingMask_Injected = methods.get<true, false>(78);
+    /* System.Int32 get_eventMask_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_eventMask_Injected = methods.get<true, false>(79);
+    /* System.Void get_backgroundColor_Injected(System.IntPtr _unity_self, out UnityEngine.Color ret) */
+    inline static auto& m_get_backgroundColor_Injected = methods.get<true, false>(80);
+    /* System.Void set_backgroundColor_Injected(System.IntPtr _unity_self, in UnityEngine.Color value) */
+    inline static auto& m_set_backgroundColor_Injected = methods.get<true, false>(81);
+    /* UnityEngine.CameraClearFlags get_clearFlags_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_clearFlags_Injected = methods.get<true, false>(82);
+    /* System.Void set_clearFlags_Injected(System.IntPtr _unity_self, UnityEngine.CameraClearFlags value) */
+    inline static auto& m_set_clearFlags_Injected = methods.get<true, false>(83);
+    /* UnityEngine.DepthTextureMode get_depthTextureMode_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_depthTextureMode_Injected = methods.get<true, false>(84);
+    /* System.Void set_depthTextureMode_Injected(System.IntPtr _unity_self, UnityEngine.DepthTextureMode value) */
+    inline static auto& m_set_depthTextureMode_Injected = methods.get<true, false>(85);
+    /* System.Void SetReplacementShader_Injected(System.IntPtr _unity_self, System.IntPtr shader, ref UnityEngine.Bindings.ManagedSpanWrapper replacementTag) */
+    inline static auto& m_SetReplacementShader_Injected = methods.get<true, false>(86);
+    /* System.Void ResetReplacementShader_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_ResetReplacementShader_Injected = methods.get<true, false>(87);
+    /* System.Void set_rect_Injected(System.IntPtr _unity_self, in UnityEngine.Rect value) */
+    inline static auto& m_set_rect_Injected = methods.get<true, false>(88);
+    /* System.Void get_pixelRect_Injected(System.IntPtr _unity_self, out UnityEngine.Rect ret) */
+    inline static auto& m_get_pixelRect_Injected = methods.get<true, false>(89);
+    /* System.Int32 get_pixelWidth_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_pixelWidth_Injected = methods.get<true, false>(90);
+    /* System.Int32 get_pixelHeight_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_pixelHeight_Injected = methods.get<true, false>(91);
+    /* System.IntPtr get_targetTexture_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_targetTexture_Injected = methods.get<true, false>(92);
+    /* System.Void set_targetTexture_Injected(System.IntPtr _unity_self, System.IntPtr value) */
+    inline static auto& m_set_targetTexture_Injected = methods.get<true, false>(93);
+    /* System.Int32 get_targetDisplay_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_targetDisplay_Injected = methods.get<true, false>(94);
+    /* System.Void get_worldToCameraMatrix_Injected(System.IntPtr _unity_self, out UnityEngine.Matrix4x4 ret) */
+    inline static auto& m_get_worldToCameraMatrix_Injected = methods.get<true, false>(95);
+    /* System.Void set_worldToCameraMatrix_Injected(System.IntPtr _unity_self, in UnityEngine.Matrix4x4 value) */
+    inline static auto& m_set_worldToCameraMatrix_Injected = methods.get<true, false>(96);
+    /* System.Void get_projectionMatrix_Injected(System.IntPtr _unity_self, out UnityEngine.Matrix4x4 ret) */
+    inline static auto& m_get_projectionMatrix_Injected = methods.get<true, false>(97);
+    /* System.Void set_projectionMatrix_Injected(System.IntPtr _unity_self, in UnityEngine.Matrix4x4 value) */
+    inline static auto& m_set_projectionMatrix_Injected = methods.get<true, false>(98);
+    /* System.Void CalculateObliqueMatrix_Injected(System.IntPtr _unity_self, in UnityEngine.Vector4 clipPlane, out UnityEngine.Matrix4x4 ret) */
+    inline static auto& m_CalculateObliqueMatrix_Injected = methods.get<true, false>(99);
+    /* System.Void WorldToScreenPoint_Injected(System.IntPtr _unity_self, in UnityEngine.Vector3 position, UnityEngine.Camera+MonoOrStereoscopicEye eye, out UnityEngine.Vector3 ret) */
+    inline static auto& m_WorldToScreenPoint_Injected = methods.get<true, false>(100);
+    /* System.Void WorldToViewportPoint_Injected(System.IntPtr _unity_self, in UnityEngine.Vector3 position, UnityEngine.Camera+MonoOrStereoscopicEye eye, out UnityEngine.Vector3 ret) */
+    inline static auto& m_WorldToViewportPoint_Injected = methods.get<true, false>(101);
+    /* System.Void ScreenToWorldPoint_Injected(System.IntPtr _unity_self, in UnityEngine.Vector3 position, UnityEngine.Camera+MonoOrStereoscopicEye eye, out UnityEngine.Vector3 ret) */
+    inline static auto& m_ScreenToWorldPoint_Injected = methods.get<true, false>(102);
+    /* System.Void ScreenToViewportPoint_Injected(System.IntPtr _unity_self, in UnityEngine.Vector3 position, out UnityEngine.Vector3 ret) */
+    inline static auto& m_ScreenToViewportPoint_Injected = methods.get<true, false>(103);
+    /* System.Void ScreenPointToRay_Injected(System.IntPtr _unity_self, in UnityEngine.Vector2 pos, UnityEngine.Camera+MonoOrStereoscopicEye eye, out UnityEngine.Ray ret) */
+    inline static auto& m_ScreenPointToRay_Injected = methods.get<true, false>(104);
+    /* System.IntPtr get_main_Injected() */
+    inline static auto& m_get_main_Injected = methods.get<true, false>(105);
+    /* System.IntPtr get_currentInternal_Injected() */
+    inline static auto& m_get_currentInternal_Injected = methods.get<true, false>(106);
+    /* System.Int32 GetAllCamerasImpl_Injected(out UnityEngine.Camera[] cam) */
+    inline static auto& m_GetAllCamerasImpl_Injected = methods.get<true, false>(107);
+    /* System.Void Render_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_Render_Injected = methods.get<true, false>(108);
+    /* System.Void SetupCurrent_Injected(System.IntPtr cur) */
+    inline static auto& m_SetupCurrent_Injected = methods.get<true, false>(109);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

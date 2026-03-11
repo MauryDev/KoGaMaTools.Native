@@ -5,7 +5,6 @@
 
 #include <Tools.Il2Cpp.Lib.h>
 #include "kogama-tools/services/services.h"
-#include "metadata/KoGaMaAPI.KoGaMa.h"
 #include "kogama-tools/UI/MainUI.h"
 #include <MetadataInit.h>
 #include "kogama-tools/Core/DITools.h"
@@ -85,6 +84,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::CustomCrossHairColor,
 		S::FastRespawn,
 		S::CustomCrossHairTexture,
+		S::CameraService,
 		S::GameInfoService,
 		S::ResolutionService
 	>();
@@ -110,7 +110,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::CustomCrossHairColor,
 		S::FastRespawn,
 		S::CustomCrossHairTexture,
-		S::ResolutionService>(*ui, "PvP");
+		S::ResolutionService,
+		S::CameraService>(*ui, "PvP");
 
 	SetupUI<S::GameInfoService>(*ui, "Info");
 

@@ -18,13 +18,14 @@ void KoGaMaTools::Services::ResolutionService::Render()
 
 	if (ImGui::Button("Apply Resolution"))
 	{
-		KoGaMaTools::Services::ResolutionService::SetResolution(width, height, windowType);
+		this->SetResolution(width, height,windowType);
 	}
 }
 
 void KoGaMaTools::Services::ResolutionService::Init(Core::DIContainer& di)
 {
 	this->Instance = di.Get<ResolutionService>();
+	mainComponent = di.Get<MainComponent>();
 }
 
 bool KoGaMaTools::Services::ResolutionService::Resolve(TextCommandService::CommandData& command)
@@ -90,7 +91,7 @@ std::string_view KoGaMaTools::Services::ResolutionService::GetCommandHelp()
         "Example: resolution 1920 1080 3";
 }
 
-void KoGaMaTools::Services::ResolutionService::SetResolution(int width, int height, int windowsType)
+void KoGaMaTools::Services::ResolutionService::SetResolution(int width, int height, int windowType)
 {
 	/*
 		ExclusiveFullScreen,
@@ -98,7 +99,16 @@ void KoGaMaTools::Services::ResolutionService::SetResolution(int width, int heig
 		MaximizedWindow,
 		Windowed
 	*/
-	namespace K = KoGaMaAPI::KoGaMa;
-	int refresh[2] = { 0,1 };
-	K::UE_Screen::m0_SetResolution(width, height, windowsType, refresh);
+    mainComponent->ExecuteCallback([width, height, windowType](void*) {
+        namespace K = KoGaMaAPI::KoGaMa;
+        SetResolutionImpl(width, height, windowType);
+	});
+	
+}
+
+void KoGaMaTools::Services::ResolutionService::SetResolutionImpl(int width, int height, int windowType)
+{
+    namespace K = KoGaMaAPI::KoGaMa;
+    int refresh[2] = { 0,1 };
+    K::UE_Screen::m0_SetResolution(width, height, windowType, refresh);
 }

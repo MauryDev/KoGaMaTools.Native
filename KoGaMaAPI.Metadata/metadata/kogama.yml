@@ -107,3 +107,5 @@ klasses:
   name: UE_FullScreenMode
 - fullname: UnityEngine.FullScreenMode
   name: UE_RefreshRate
+- fullname: UnityEngine.Camera
+  name: UE_Camera

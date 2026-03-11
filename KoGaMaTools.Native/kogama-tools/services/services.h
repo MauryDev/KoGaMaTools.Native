@@ -17,6 +17,7 @@
 #include "PvP/FastRespawn.h"
 #include "PvP/CustomCrossHairTexture.h"
 #include "PvP/ResolutionService.h"
+#include "PvP/CameraService.h"
 
 #include "Common/MainComponent.h"
 

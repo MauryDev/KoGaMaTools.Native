@@ -11,7 +11,7 @@ namespace KoGaMaTools::Services {
 	struct UnlimitedConfig : UI::MainUI::IComponent, Core::IInitializable, Services::IConfigurable, Services::ICommandResolve {
 		inline static std::shared_ptr<UnlimitedConfig> Instance;
 		bool Enabled = false, ClampValues = true;
-		float MinValue = 0.0f, MaxValue = 1.0f;
+		float MinValue = 0.0f, MaxValue = 100.0f;
 
 		void Render() override;
 
