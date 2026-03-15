@@ -285,5 +285,14 @@
     <Image Include="kogama-tools\Resources\sunset.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="kogama-tools\Resources\paste.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="kogama-tools\Resources\copy.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="kogama-tools\Resources\settings.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

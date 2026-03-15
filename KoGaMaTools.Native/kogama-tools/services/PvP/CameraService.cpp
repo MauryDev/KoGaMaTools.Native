@@ -2,6 +2,8 @@
 #include <metadata/KoGaMaAPI.KoGaMa.h>
 #include <imgui.h>
 #include <kogama-tools/Helpers/HookHelper.h>
+#include <kogama-tools/Resources/resource.h>
+
 namespace {
 	float (*Original_GetFov)(void* instance) = nullptr;
 	float (*Original_GetFov2)(void* instance) = nullptr;
@@ -131,19 +133,19 @@ void KoGaMaTools::Services::CameraService::SetAspectImpl(float x, float y)
 
 void KoGaMaTools::Services::CameraService::Render()
 {
-	ImGui::Image(textureManager->GetTexture("ID_102"), ImVec2(24, 24));
+	ImGui::Image(textureManager->GetTexture(IDB_PNG1), ImVec2(24, 24));
 	ImGui::SameLine();
 	ImGui::SeparatorText("Camera Settings");
 
 	ImGui::PushItemWidth(220);
 
-	ImGui::Image(textureManager->GetTexture("ID_104"), ImVec2(16, 16));
+	ImGui::Image(textureManager->GetTexture(IDB_PNG2), ImVec2(16, 16));
 	ImGui::SameLine();
 	ImGui::Checkbox("Enable Third Person", &enableThirdPerson);
 	if (ImGui::IsItemHovered())
 		ImGui::SetTooltip("Toggles third-person camera view.");
 
-	ImGui::Image(textureManager->GetTexture("ID_106"), ImVec2(16, 16));
+	ImGui::Image(textureManager->GetTexture(IDB_PNG4), ImVec2(16, 16));
 	ImGui::SameLine();
 	ImGui::Checkbox("Override FOV", &enableFov);
 	if (ImGui::IsItemHovered())
@@ -158,7 +160,7 @@ void KoGaMaTools::Services::CameraService::Render()
 	if (!enableFov) ImGui::EndDisabled();
 
 
-	ImGui::Image(textureManager->GetTexture("ID_107"), ImVec2(16, 16));
+	ImGui::Image(textureManager->GetTexture(IDB_PNG5), ImVec2(16, 16));
 	ImGui::SameLine();
 	if (ImGui::SliderFloat("Render Distance", &farClip, 10.0f, 10000.0f, "%.0f units"))
 	{
@@ -168,7 +170,7 @@ void KoGaMaTools::Services::CameraService::Render()
 		ImGui::SetTooltip("Maximum distance the camera can see.\nReduce this value to improve performance (FPS).");
 
 
-	ImGui::Image(textureManager->GetTexture("ID_105"), ImVec2(16, 16));
+	ImGui::Image(textureManager->GetTexture(IDB_PNG3), ImVec2(16, 16));
 	ImGui::SameLine();
 	ImGui::SeparatorText("Aspect Ratio");
 

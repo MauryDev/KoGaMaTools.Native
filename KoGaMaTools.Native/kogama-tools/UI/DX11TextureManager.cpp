@@ -1,7 +1,6 @@
 #include "DX11TextureManager.h"
-
+#include <format>
 #include <kogama-tools/services/KieroUI.h>
-// Recomendado: incluir stb_image para carregar os bytes do disco
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
@@ -59,6 +58,14 @@ ImTextureID KoGaMaTools::UI::DX11TextureManager::GetTexture(std::string_view nam
 {
     auto it = m_textures.find(std::string(name));
     return (it != m_textures.end()) ? (ImTextureID)it->second : 0;
+}
+
+ImTextureID KoGaMaTools::UI::DX11TextureManager::GetTexture(int ResourceId) const
+{
+    char buffer[30];
+    auto result = std::format_to(buffer, "ID_{}", ResourceId);
+    *result = '\0';
+    return this->GetTexture(buffer);
 }
 
 bool KoGaMaTools::UI::DX11TextureManager::LoadTexture(std::string_view name, std::string_view filePath)

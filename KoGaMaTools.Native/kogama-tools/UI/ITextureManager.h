@@ -18,6 +18,7 @@ namespace KoGaMaTools::UI
 
 		// Usa string_view para evitar alocações desnecessárias ao buscar texturas
 		virtual ImTextureID GetTexture(std::string_view name) const = 0;
+		virtual ImTextureID GetTexture(int ResourceId) const = 0;
 
 		// Carregamento de arquivos físicos
 		virtual bool LoadTexture(std::string_view name, std::string_view filePath) = 0;

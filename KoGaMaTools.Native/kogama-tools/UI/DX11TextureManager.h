@@ -18,7 +18,7 @@ namespace KoGaMaTools::UI
         void Init(Core::DIContainer& di) override;
 
         ImTextureID GetTexture(std::string_view name) const override;
-
+        ImTextureID GetTexture(int ResourceId) const override;
         bool LoadTexture(std::string_view name, std::string_view filePath) override;
 
         bool LoadTextureMemory(std::string_view name, std::span<const std::byte> data) override;
