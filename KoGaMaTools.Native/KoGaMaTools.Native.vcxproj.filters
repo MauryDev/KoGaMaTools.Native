@@ -294,5 +294,11 @@
     <Image Include="kogama-tools\Resources\settings.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="kogama-tools\Resources\grid.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="kogama-tools\Resources\ruler.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

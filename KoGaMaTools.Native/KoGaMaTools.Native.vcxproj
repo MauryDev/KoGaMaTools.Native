@@ -255,7 +255,9 @@
     <Image Include="kogama-tools\Resources\computer.png" />
     <Image Include="kogama-tools\Resources\copy.png" />
     <Image Include="kogama-tools\Resources\eye.png" />
+    <Image Include="kogama-tools\Resources\grid.png" />
     <Image Include="kogama-tools\Resources\paste.png" />
+    <Image Include="kogama-tools\Resources\ruler.png" />
     <Image Include="kogama-tools\Resources\settings.png" />
     <Image Include="kogama-tools\Resources\sunset.png" />
     <Image Include="kogama-tools\Resources\user.png" />

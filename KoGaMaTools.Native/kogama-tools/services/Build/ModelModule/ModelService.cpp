@@ -16,12 +16,10 @@ void KoGaMaTools::Services::ModelModule::ModelService::Render()
 {
     ImGui::BeginGroup();
 
-    ImGui::PushID(new ModelService());
 
     ImGui::TextDisabled("MODEL MANIPULATION");
     ImGui::Spacing();
 
-   
     if (ImGui::ImageButton("##CopyBtn", textureManager->GetTexture(IDB_PNG6), ImVec2(32, 32))) {
         UI_CopyModel();
     }

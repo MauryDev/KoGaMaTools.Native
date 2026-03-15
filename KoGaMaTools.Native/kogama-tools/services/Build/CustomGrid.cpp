@@ -1,12 +1,10 @@
 #include "CustomGrid.h"
 #include "metadata/KoGaMaAPI.KoGaMa.h"
-#include <MinHook.h>
 #include "../LoggerService.h"
 #include "../Common/ConfigService.h"
 #include "../../Helpers/HookHelper.h"
 #include <imgui.h>
-#include <format>
-
+#include <kogama-tools/Resources/resource.h>
 
 
 namespace {
@@ -38,7 +36,8 @@ void KoGaMaTools::Services::CustomGrid::Init(Core::DIContainer& diContainer)
     auto logger = diContainer.Get<LoggerService>();
     auto configService = diContainer.Get<ConfigService>();
     auto hookingService = diContainer.Get<HookingService>();
-    
+    textureManager = diContainer.Get<UI::ITextureManager>();
+
     LoadConfig(configService->GetConfig());
 
     const char* module = "CustomGrid";
@@ -52,36 +51,50 @@ void KoGaMaTools::Services::CustomGrid::Init(Core::DIContainer& diContainer)
 
 void KoGaMaTools::Services::CustomGrid::Render()
 {
-    // Main Toggle
-    ImGui::Checkbox("Enabled Custom Grid", &Enabled);
+    
+    ImGui::Image(textureManager->GetTexture(IDB_PNG9), ImVec2(24, 24));
+    ImGui::SameLine();
+    ImGui::SeparatorText("Grid Configuration");
 
-    // Keep UI stable by disabling instead of hiding
+    ImGui::Checkbox("Enable", &Enabled);
+
     ImGui::BeginDisabled(!Enabled);
     {
         ImGui::Indent(10.0f);
+        ImGui::Spacing();
 
-        // Slider with unit suffix
-        ImGui::SliderFloat("Grid Size##customgrid", &GridSize, 0.001f, 5.0f, "%.3f units");
+        
+        ImGui::Image(textureManager->GetTexture(IDB_PNG10), ImVec2(24, 24));
+        ImGui::SameLine();
+        ImGui::PushItemWidth(200);
+        if (ImGui::SliderFloat("Grid Size##customgrid", &GridSize, 0.001f, 5.0f, "%.3f units"))
+        {
+            gridPreset = 3;
+        }
 
         if (ImGui::IsItemHovered())
             ImGui::SetTooltip("Adjusts the snapping increment. Smaller = more precision.");
 
-        // Common Snap Presets (Standard KoGaMa/Engine sizes)
-        ImGui::Text("Presets:");
-        ImGui::SameLine();
-        if (ImGui::Button("Small (0.025)")) { GridSize = 0.025f; }
-        ImGui::SameLine();
-        if (ImGui::Button("Medium (0.5)")) { GridSize = 0.5f; }
-        ImGui::SameLine();
-        if (ImGui::Button("Default (1.0)")) { GridSize = 1.0f; }
+        const char* presets[] = { "Small (0.025)", "Medium (0.5)", "Default (1.0)", "Custom" };
 
+        ImGui::Image(textureManager->GetTexture(IDB_PNG11), ImVec2(24, 24)); 
+        ImGui::SameLine();
+
+        if (ImGui::Combo("Presets", &gridPreset, presets, IM_ARRAYSIZE(presets)))
+        {
+            if (gridPreset == 0) GridSize = 0.025f;
+            else if (gridPreset == 1) GridSize = 0.5f;
+            else if (gridPreset == 2) GridSize = 1.0f;
+        }
+
+        if (ImGui::IsItemHovered())
+            ImGui::SetTooltip("Choose a predefined grid size for faster snapping.");
+
+        ImGui::PopItemWidth();
         ImGui::Unindent(10.0f);
     }
     ImGui::EndDisabled();
-
-    ImGui::Separator();
 }
-
 void KoGaMaTools::Services::CustomGrid::LoadConfig(const nlohmann::json& value)
 {
     this->Enabled = value.value("CustomGrid.Enabled", Enabled);

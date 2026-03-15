@@ -9,6 +9,7 @@
 #include "../../Types/Quaternion.h"
 #include "../../Types/Vector3.h"
 #include "../Common/TextCommandService.h"
+#include <kogama-tools/UI/ITextureManager.h>
 
 namespace KoGaMaTools::Services {
 	struct CustomGrid : UI::MainUI::IComponent,
@@ -18,8 +19,11 @@ namespace KoGaMaTools::Services {
 
 	{
 		inline static std::shared_ptr<CustomGrid> Instance;
+		std::shared_ptr<UI::ITextureManager> textureManager;
+
 		bool Enabled = false;
 		float GridSize = 1.0f;
+		int gridPreset = 3;
 
 		static void Execute(void* instance, void* methodInfo);
 		static Types::Vector3 GetClosestGridPoint(Types::Vector3 worldPosition, Types::Quaternion rotation, float gridSize, Types::Vector3 scale, void* methodInfo);
