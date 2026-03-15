@@ -7,6 +7,8 @@
 #include "../Common/MainComponent.h"
 #include <kogama-tools/services/LoggerService.h>
 #include <metadata/KoGaMaAPI.KoGaMa.h>
+#include <kogama-tools/UI/ITextureManager.h>
+
 namespace KoGaMaTools::Services {
 	struct CameraService : UI::MainUI::IComponent,
 		Core::IInitializable,
@@ -15,7 +17,7 @@ namespace KoGaMaTools::Services {
 		inline static std::shared_ptr<CameraService> Instance;
 		std::shared_ptr<MainComponent> mainComponent;
 		std::shared_ptr<LoggerService> logger;
-
+		std::shared_ptr<UI::ITextureManager> textureManager;
 		float fov = 90.0f;
 		bool enableFov = false;
 		bool enableThirdPerson = false;

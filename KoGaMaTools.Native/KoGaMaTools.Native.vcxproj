@@ -240,11 +240,22 @@
     <ClInclude Include="kogama-tools\UI\DX11TextureManager.h" />
     <ClInclude Include="kogama-tools\UI\ITextureManager.h" />
     <ClInclude Include="kogama-tools\UI\MainUI.h" />
+    <ClInclude Include="kogama-tools\Resources\resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KoGaMaAPI.Metadata\KoGaMaAPI.Metadata.vcxproj">
       <Project>{5b051167-4000-4d3a-a2ce-ed39c6b1380a}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="kogama-tools\Resources\Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="kogama-tools\Resources\camera.png" />
+    <Image Include="kogama-tools\Resources\computer.png" />
+    <Image Include="kogama-tools\Resources\eye.png" />
+    <Image Include="kogama-tools\Resources\sunset.png" />
+    <Image Include="kogama-tools\Resources\user.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

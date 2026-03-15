@@ -19,7 +19,6 @@ BOOL CALLBACK KoGaMaTools::UI::DX11TextureManager::EnumResourcesCallback(HMODULE
 {
     auto* manager = reinterpret_cast<DX11TextureManager*>(lParam);
 
-    // Identificar o nome do recurso (pode ser um ID numérico ou uma String)
     std::string resourceName;
     if (IS_INTRESOURCE(lpszName)) {
         resourceName = "ID_" + std::to_string(reinterpret_cast<uintptr_t>(lpszName));
@@ -50,7 +49,8 @@ void KoGaMaTools::UI::DX11TextureManager::Init(Core::DIContainer& di)
     this->Clear();
     Services::KieroUI::SetOnInited([this]() {
         auto device = Services::KieroUI::GetDevice();
-        //EnumResourceNamesA(_module, (LPCSTR)RT_RCDATA, EnumResourcesCallback, reinterpret_cast<LONG_PTR>(this));
+		this->m_pd3dDevice = device;
+        EnumResourceNamesA(_module, "PNG", EnumResourcesCallback, reinterpret_cast<LONG_PTR>(this));
 
     });
 }

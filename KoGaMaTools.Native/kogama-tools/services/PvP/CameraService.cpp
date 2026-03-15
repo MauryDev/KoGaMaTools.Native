@@ -2,7 +2,6 @@
 #include <metadata/KoGaMaAPI.KoGaMa.h>
 #include <imgui.h>
 #include <kogama-tools/Helpers/HookHelper.h>
-
 namespace {
 	float (*Original_GetFov)(void* instance) = nullptr;
 	float (*Original_GetFov2)(void* instance) = nullptr;
@@ -11,15 +10,14 @@ namespace {
 }
 bool KoGaMaTools::Services::CameraService::Resolve(TextCommandService::CommandData& command)
 {
+	// FOV Command
 	if (command.name == L"setfov" && command.args.size() == 1)
 	{
 		try {
 			float value = std::stof(std::wstring(command.args[0]));
 			fov = value;
-			enableFov = true;
+			enableFov = true; // Auto-enable when using command
 			TextCommandService::NotifyUser(L"FOV set to " + std::to_wstring(value));
-
-			
 		}
 		catch (const std::exception&)
 		{
@@ -27,6 +25,7 @@ bool KoGaMaTools::Services::CameraService::Resolve(TextCommandService::CommandDa
 		}
 		return true;
 	}
+	// Render Distance Command
 	else if (command.name == L"setrenderdist" && command.args.size() == 1)
 	{
 		try {
@@ -41,6 +40,27 @@ bool KoGaMaTools::Services::CameraService::Resolve(TextCommandService::CommandDa
 		}
 		return true;
 	}
+	// Improved Third Person Command
+	else if (command.name == L"thirdperson")
+	{
+		if (command.args.empty())
+		{
+			// Toggle if no args
+			enableThirdPerson = !enableThirdPerson;
+		}
+		else
+		{
+			// Set specific state if arg provided (on/off, 1/0, true/false)
+			auto arg = command.args[0];
+			if (arg == L"on" || arg == L"1" || arg == L"true") enableThirdPerson = true;
+			else if (arg == L"off" || arg == L"0" || arg == L"false") enableThirdPerson = false;
+		}
+
+		std::wstring status = enableThirdPerson ? L"ENABLED" : L"DISABLED";
+		TextCommandService::NotifyUser(L"Third Person view: " + status);
+		return true;
+	}
+	// Aspect Ratio Command
 	else if (command.name == L"setaspect" && command.args.size() == 2)
 	{
 		try {
@@ -67,8 +87,11 @@ std::string_view KoGaMaTools::Services::CameraService::GetCommandHelp()
 	return "Camera Commands:\n"
 		"setfov <value>       - Set the camera's field of view.\n"
 		"setrenderdist <value> - Set the camera's render distance (far clip).\n"
+		"thirdperson [on/off] - Toggle or set third-person camera mode.\n"
 		"setaspect <x> <y>    - Set the camera's aspect ratio (x:y).";
 }
+
+
 
 void KoGaMaTools::Services::CameraService::SetFairClipPlane(float value)
 {
@@ -108,15 +131,20 @@ void KoGaMaTools::Services::CameraService::SetAspectImpl(float x, float y)
 
 void KoGaMaTools::Services::CameraService::Render()
 {
+	ImGui::Image(textureManager->GetTexture("ID_102"), ImVec2(24, 24));
+	ImGui::SameLine();
 	ImGui::SeparatorText("Camera Settings");
 
 	ImGui::PushItemWidth(220);
 
+	ImGui::Image(textureManager->GetTexture("ID_104"), ImVec2(16, 16));
+	ImGui::SameLine();
 	ImGui::Checkbox("Enable Third Person", &enableThirdPerson);
 	if (ImGui::IsItemHovered())
 		ImGui::SetTooltip("Toggles third-person camera view.");
 
-
+	ImGui::Image(textureManager->GetTexture("ID_106"), ImVec2(16, 16));
+	ImGui::SameLine();
 	ImGui::Checkbox("Override FOV", &enableFov);
 	if (ImGui::IsItemHovered())
 		ImGui::SetTooltip("Enables manual Field of View (FOV) control.");
@@ -130,6 +158,8 @@ void KoGaMaTools::Services::CameraService::Render()
 	if (!enableFov) ImGui::EndDisabled();
 
 
+	ImGui::Image(textureManager->GetTexture("ID_107"), ImVec2(16, 16));
+	ImGui::SameLine();
 	if (ImGui::SliderFloat("Render Distance", &farClip, 10.0f, 10000.0f, "%.0f units"))
 	{
 		SetFairClipPlane(farClip);
@@ -137,6 +167,9 @@ void KoGaMaTools::Services::CameraService::Render()
 	if (ImGui::IsItemHovered())
 		ImGui::SetTooltip("Maximum distance the camera can see.\nReduce this value to improve performance (FPS).");
 
+
+	ImGui::Image(textureManager->GetTexture("ID_105"), ImVec2(16, 16));
+	ImGui::SameLine();
 	ImGui::SeparatorText("Aspect Ratio");
 
 
@@ -180,6 +213,8 @@ void KoGaMaTools::Services::CameraService::Init(Core::DIContainer& di)
 	mainComponent = di.Get<MainComponent>();
 	logger = di.Get<Services::LoggerService>();
 	auto hooking = di.Get<Services::HookingService>();
+	textureManager = di.Get<UI::ITextureManager>();
+
 	Helpers::HookHelper::HookDesc desc[] = {
 		{ (void**)KoGaMaAPI::KoGaMa::FirstPersonCamera::m_get_FieldOfView.ptr, CameraHookWrapper<Original_GetFov>, (void**)&Original_GetFov},
 		{ (void**)KoGaMaAPI::KoGaMa::MVCameraBase::m_get_FieldOfView.ptr, CameraHookWrapper<Original_GetFov2>, (void**)&Original_GetFov2 },

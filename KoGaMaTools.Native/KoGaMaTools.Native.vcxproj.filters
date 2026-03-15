@@ -260,5 +260,30 @@
     <ClInclude Include="kogama-tools\UI\DX11TextureManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="kogama-tools\Resources\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="kogama-tools\Resources\Resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="kogama-tools\Resources\camera.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="kogama-tools\Resources\user.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="kogama-tools\Resources\eye.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="kogama-tools\Resources\computer.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="kogama-tools\Resources\sunset.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
