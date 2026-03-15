@@ -30,7 +30,7 @@ namespace KoGaMaTools::Services::KieroUI
 	void InitHook()
 	{
 		bool init_hook = false;
-
+		
 		do
 		{
 			if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success)
@@ -49,8 +49,13 @@ namespace KoGaMaTools::Services::KieroUI
 		ImGui::SetCurrentContext(ImGui::CreateContext());
 		ImGuiIO& io = ImGui::GetIO();
 		io.ConfigFlags = ImGuiConfigFlags_NoMouseCursorChange;
+
+		
 		ImGui_ImplWin32_Init(window);
 		ImGui_ImplDX11_Init(pDevice, pContext);
+
+		
+
 	}
 
 	void SetOnRender(OnRender render)
@@ -144,11 +149,16 @@ namespace KoGaMaTools::Services::KieroUI
 				pBackBuffer->Release();
 				oWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
 				InitImGui();
-				std::lock_guard<std::mutex> lock(init_mutex);
+				{
+					std::lock_guard<std::mutex> lock(init_mutex);
 
+					for (auto& callback : onInitedCallbacks)
+					{
+						callback();
+					}
+					onInitedCallbacks.clear();
+				}
 				init = true;
-				for (const auto& callback : onInitedCallbacks)
-					callback();
 			}
 
 			else
@@ -159,6 +169,7 @@ namespace KoGaMaTools::Services::KieroUI
 		ImGui_ImplWin32_NewFrame();
 		ImGui::NewFrame();
 
+		
 		if (KieroUI::RenderUi != nullptr)
 			KieroUI::RenderUi();
 

@@ -129,6 +129,12 @@
     <ClCompile Include="kogama-tools\UI\ITextureManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="kogama-tools\UI\IFontManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kogama-tools\UI\DX11FontManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\services\PathHelper.h">
@@ -263,6 +269,12 @@
     <ClInclude Include="kogama-tools\Resources\resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="kogama-tools\UI\IFontManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\UI\DX11FontManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="kogama-tools\Resources\Resource.rc">
@@ -270,35 +282,42 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="kogama-tools\Resources\camera.png">
+    <Image Include="kogama-tools\Resources\img\camera.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="kogama-tools\Resources\user.png">
+    <Image Include="kogama-tools\Resources\img\user.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="kogama-tools\Resources\eye.png">
+    <Image Include="kogama-tools\Resources\img\eye.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="kogama-tools\Resources\computer.png">
+    <Image Include="kogama-tools\Resources\img\computer.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="kogama-tools\Resources\sunset.png">
+    <Image Include="kogama-tools\Resources\img\sunset.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="kogama-tools\Resources\paste.png">
+    <Image Include="kogama-tools\Resources\img\paste.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="kogama-tools\Resources\copy.png">
+    <Image Include="kogama-tools\Resources\img\copy.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="kogama-tools\Resources\settings.png">
+    <Image Include="kogama-tools\Resources\img\settings.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="kogama-tools\Resources\grid.png">
+    <Image Include="kogama-tools\Resources\img\grid.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="kogama-tools\Resources\ruler.png">
+    <Image Include="kogama-tools\Resources\img\ruler.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="kogama-tools\Resources\img\menu-list.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="kogama-tools\Resources\fonts\Roboto-Thin.ttf" />
+    <Font Include="kogama-tools\Resources\fonts\Roboto-Regular.ttf" />
   </ItemGroup>
 </Project>

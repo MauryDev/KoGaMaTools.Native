@@ -4,6 +4,8 @@
 #include <string>
 #include "../Core/DITools.h"
 #include "../services/LoggerService.h"
+#include "IFontManager.h"
+
 namespace KoGaMaTools::UI {
 
 	struct MainUI : Core::IInitializable {
@@ -14,6 +16,8 @@ namespace KoGaMaTools::UI {
 
 		using PtrIComponent = std::shared_ptr<IComponent>;
 		inline static std::shared_ptr<MainUI> Instance;
+		inline static std::shared_ptr<IFontManager> fontManager;
+
 		std::vector<std::pair<std::string, std::vector<PtrIComponent>>> components;
 		
 		void Init(Core::DIContainer& di);

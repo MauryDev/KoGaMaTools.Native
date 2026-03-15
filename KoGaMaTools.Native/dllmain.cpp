@@ -10,6 +10,8 @@
 #include "kogama-tools/Core/DITools.h"
 #include <kogama-tools/Helpers/TypeParameters.h>
 #include <kogama-tools/UI/DX11TextureManager.h>
+#include <kogama-tools/UI/DX11FontManager.h>
+
 namespace {
 	template <typename T>
 	void AddComponent(KoGaMaTools::UI::MainUI& ui, size_t idx, const T&)
@@ -55,19 +57,25 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 	LoadLibraryA(dllMinHook.c_str());
 	
 
+	auto& app = KoGaMaTools::Core::DIContainer::GetInstance();
+
+	app.NewServiceAs<KoGaMaTools::UI::ITextureManager, KoGaMaTools::UI::DX11TextureManager>(moduleDll);
+	app.NewServiceAs<KoGaMaTools::UI::IFontManager, KoGaMaTools::UI::DX11FontManager>(moduleDll);
+	auto fontManager = app.Get<KoGaMaTools::UI::IFontManager>();
+
+	fontManager->Initialize();
 
 	KoGaMaTools::Services::KieroUI::InitHook();
 
 	KoGaMaAPI::Metadata::Install(metadata1Path, metadata2Path);
 
 	MH_Initialize();
-	auto& app = KoGaMaTools::Core::DIContainer::GetInstance();
 	
+
 	
 	namespace S = KoGaMaTools::Services;
 
-	app.NewServiceAs<KoGaMaTools::UI::ITextureManager, KoGaMaTools::UI::DX11TextureManager>(moduleDll);
-
+	
 	KoGaMaTools::Core::InstallMultiple<S::MainComponent,
 		S::LoggerService,
 		KoGaMaTools::UI::MainUI,

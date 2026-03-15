@@ -192,7 +192,9 @@
     <ClCompile Include="kogama-tools\services\PvP\FastRespawn.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\ResolutionService.cpp" />
     <ClCompile Include="kogama-tools\Types\IntVector.cpp" />
+    <ClCompile Include="kogama-tools\UI\DX11FontManager.cpp" />
     <ClCompile Include="kogama-tools\UI\DX11TextureManager.cpp" />
+    <ClCompile Include="kogama-tools\UI\IFontManager.cpp" />
     <ClCompile Include="kogama-tools\UI\ITextureManager.cpp" />
     <ClCompile Include="kogama-tools\UI\MainUI.cpp" />
   </ItemGroup>
@@ -237,7 +239,9 @@
     <ClInclude Include="kogama-tools\Types\Quaternion.h" />
     <ClInclude Include="kogama-tools\Types\Vector3.h" />
     <ClInclude Include="kogama-tools\Types\Vector4.h" />
+    <ClInclude Include="kogama-tools\UI\DX11FontManager.h" />
     <ClInclude Include="kogama-tools\UI\DX11TextureManager.h" />
+    <ClInclude Include="kogama-tools\UI\IFontManager.h" />
     <ClInclude Include="kogama-tools\UI\ITextureManager.h" />
     <ClInclude Include="kogama-tools\UI\MainUI.h" />
     <ClInclude Include="kogama-tools\Resources\resource.h" />
@@ -251,16 +255,21 @@
     <ResourceCompile Include="kogama-tools\Resources\Resource.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="kogama-tools\Resources\camera.png" />
-    <Image Include="kogama-tools\Resources\computer.png" />
-    <Image Include="kogama-tools\Resources\copy.png" />
-    <Image Include="kogama-tools\Resources\eye.png" />
-    <Image Include="kogama-tools\Resources\grid.png" />
-    <Image Include="kogama-tools\Resources\paste.png" />
-    <Image Include="kogama-tools\Resources\ruler.png" />
-    <Image Include="kogama-tools\Resources\settings.png" />
-    <Image Include="kogama-tools\Resources\sunset.png" />
-    <Image Include="kogama-tools\Resources\user.png" />
+    <Image Include="kogama-tools\Resources\img\camera.png" />
+    <Image Include="kogama-tools\Resources\img\computer.png" />
+    <Image Include="kogama-tools\Resources\img\copy.png" />
+    <Image Include="kogama-tools\Resources\img\eye.png" />
+    <Image Include="kogama-tools\Resources\img\grid.png" />
+    <Image Include="kogama-tools\Resources\img\menu-list.png" />
+    <Image Include="kogama-tools\Resources\img\paste.png" />
+    <Image Include="kogama-tools\Resources\img\ruler.png" />
+    <Image Include="kogama-tools\Resources\img\settings.png" />
+    <Image Include="kogama-tools\Resources\img\sunset.png" />
+    <Image Include="kogama-tools\Resources\img\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="kogama-tools\Resources\fonts\Roboto-Regular.ttf" />
+    <Font Include="kogama-tools\Resources\fonts\Roboto-Thin.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

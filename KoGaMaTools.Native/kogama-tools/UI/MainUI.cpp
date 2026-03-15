@@ -2,7 +2,7 @@
 #include <imgui.h>
 #include "../services/services.h"
 #include <metadata/KoGaMaAPI.KoGaMa.h>
-
+#include <kogama-tools/Resources/resource.h>
 namespace KoGaMaTools::UI {
 	namespace {
 		template <typename ...T>
@@ -22,6 +22,7 @@ namespace KoGaMaTools::UI {
 void KoGaMaTools::UI::MainUI::Init(Core::DIContainer& di)
 {
 	Instance = di.Get<MainUI>();
+	fontManager = di.Get<IFontManager>();
 	
 }
 void KoGaMaTools::UI::MainUI::Render()
@@ -42,6 +43,7 @@ void KoGaMaTools::UI::MainUI::Render()
 	if (!enable)
 		return;
 	
+	ImGui::PushFont(fontManager->GetFont(IDR_TTF2));
 
 	ImGui::Begin("KoGaMa Tools", nullptr);
 	
@@ -55,8 +57,9 @@ void KoGaMaTools::UI::MainUI::Render()
 	Instance->TabBarTools();
 	
 	ImGui::TextUnformatted("Ctrl + B - Toggle Enabled UI");
-
 	ImGui::End();
+	ImGui::PopFont();
+
 }
 
 void KoGaMaTools::UI::MainUI::TabBarTools()

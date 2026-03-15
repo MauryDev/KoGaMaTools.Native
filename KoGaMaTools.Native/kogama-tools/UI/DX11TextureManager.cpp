@@ -54,7 +54,7 @@ void KoGaMaTools::UI::DX11TextureManager::Init(Core::DIContainer& di)
     });
 }
 
-ImTextureID KoGaMaTools::UI::DX11TextureManager::GetTexture(std::string_view name) const
+ImTextureID KoGaMaTools::UI::DX11TextureManager::GetTexture(const std::string_view& name) const
 {
     auto it = m_textures.find(std::string(name));
     return (it != m_textures.end()) ? (ImTextureID)it->second : 0;
@@ -68,7 +68,7 @@ ImTextureID KoGaMaTools::UI::DX11TextureManager::GetTexture(int ResourceId) cons
     return this->GetTexture(buffer);
 }
 
-bool KoGaMaTools::UI::DX11TextureManager::LoadTexture(std::string_view name, std::string_view filePath)
+bool KoGaMaTools::UI::DX11TextureManager::LoadTexture(const std::string_view& name, const std::string_view& filePath)
 {
     int width, height, channels;
     unsigned char* data = stbi_load(filePath.data(), &width, &height, &channels, 4);
@@ -79,7 +79,7 @@ bool KoGaMaTools::UI::DX11TextureManager::LoadTexture(std::string_view name, std
     return success;
 }
 
-bool KoGaMaTools::UI::DX11TextureManager::LoadTextureMemory(std::string_view name, std::span<const std::byte> data)
+bool KoGaMaTools::UI::DX11TextureManager::LoadTextureMemory(const std::string_view& name, std::span<const std::byte> data)
 {
     int width, height, channels;
     unsigned char* decodedData = stbi_load_from_memory(
@@ -94,7 +94,7 @@ bool KoGaMaTools::UI::DX11TextureManager::LoadTextureMemory(std::string_view nam
     return success;
 }
 
-void KoGaMaTools::UI::DX11TextureManager::UnloadTexture(std::string_view name)
+void KoGaMaTools::UI::DX11TextureManager::UnloadTexture(const std::string_view& name)
 {
     auto it = m_textures.find(std::string(name));
     if (it != m_textures.end()) {
@@ -111,12 +111,12 @@ void KoGaMaTools::UI::DX11TextureManager::Clear()
     m_textures.clear();
 }
 
-bool KoGaMaTools::UI::DX11TextureManager::HasTexture(std::string_view name) const
+bool KoGaMaTools::UI::DX11TextureManager::HasTexture(const std::string_view& name) const
 {
     return m_textures.find(std::string(name)) != m_textures.end();
 }
 
-bool KoGaMaTools::UI::DX11TextureManager::CreateDXResource(std::string_view name, unsigned char* data, int w, int h)
+bool KoGaMaTools::UI::DX11TextureManager::CreateDXResource(const std::string_view& name, unsigned char* data, int w, int h)
 {
     ID3D11ShaderResourceView* srv = nullptr;
 

@@ -229,6 +229,7 @@ void KoGaMaTools::Services::GameInfoService::GetPrototypeCount()
         }
     }
 
+
 	this->models = count;
 }
 
@@ -257,7 +258,7 @@ void KoGaMaTools::Services::GameInfoService::GetVersion()
 {
     using namespace KoGaMaAPI::KoGaMa;
     auto versionObj = BuildSystem_GameBuildSettings::m_get_VersionString().As<Tools::Il2Cpp::Il2CppString>();
-	if (versionObj.isNull()) return;
+	if (versionObj.isNull() && versionObj.getLength() == 0) return;
 
     this->version = Tools::Il2Cpp::Utils::convert_il2cpstring_to_char_array(versionObj);
 }
