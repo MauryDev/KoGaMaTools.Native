@@ -5,6 +5,8 @@
 //#include "../Common/ConfigService.h"
 #include "../Common/TextCommandService.h"
 #include "../Common/MainComponent.h"
+#include <kogama-tools/services/LoggerService.h>
+#include <metadata/KoGaMaAPI.KoGaMa.h>
 namespace KoGaMaTools::Services {
 	struct CameraService : UI::MainUI::IComponent,
 		Core::IInitializable,
@@ -12,6 +14,8 @@ namespace KoGaMaTools::Services {
 	{
 		inline static std::shared_ptr<CameraService> Instance;
 		std::shared_ptr<MainComponent> mainComponent;
+		std::shared_ptr<LoggerService> logger;
+
 		float fov = 90.0f;
 		bool enableFov = false;
 		bool enableThirdPerson = false;
@@ -43,16 +47,26 @@ namespace KoGaMaTools::Services {
 
 		static void SetFairClipPlaneImpl(float value);
 		static void SetAspectImpl(float x, float y);
-		static bool PickupItem_m_get_FirstPerson(void* instance);
-
+		static void OnSetCameraHook(void* instance, int cameratype);
 
 		template <auto& OriginalFn>
 		static float CameraHookWrapper(void* instance)
 		{
-			if (!Instance->enableFov) return OriginalFn(instance);
+			if (!instance) {
+				Instance->logger->Warning("CameraHookWrapper received a null instance pointer.");
+				return 0.0f;
+			}
 
-			return Instance->fov;
+			auto klass = Tools::Il2Cpp::Il2CppObject(instance);
+			auto className = klass.GetClass().getName();
+
+			float originalValue = OriginalFn(instance);
+
+			if (Instance->enableFov)
+			{
+				return Instance->fov;
+			}
+			return originalValue;
 		}
-
 	};
 }

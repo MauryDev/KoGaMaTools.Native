@@ -431,6 +431,16 @@ void PickupItem::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 
 }
 
+void CameraType::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 86, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void AvatarCamerasDesktop::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 87, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -518,5 +528,7 @@ void PickupItem::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         MVCameraBase::Init(metadataInfo);
         TransitionCamera::Init(metadataInfo);
         PickupItem::Init(metadataInfo);
+        CameraType::Init(metadataInfo);
+        AvatarCamerasDesktop::Init(metadataInfo);
     }
 }

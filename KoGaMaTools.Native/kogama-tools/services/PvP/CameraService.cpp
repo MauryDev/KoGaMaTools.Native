@@ -6,8 +6,7 @@
 namespace {
 	float (*Original_GetFov)(void* instance) = nullptr;
 	float (*Original_GetFov2)(void* instance) = nullptr;
-	float (*Original_GetFov3)(void* instance) = nullptr;
-	float (*m_get_FirstPerson_Old)(void* instance) = nullptr;
+	void (*Original_SetCamera)(void* instance,int) = nullptr;
 
 }
 bool KoGaMaTools::Services::CameraService::Resolve(TextCommandService::CommandData& command)
@@ -19,6 +18,8 @@ bool KoGaMaTools::Services::CameraService::Resolve(TextCommandService::CommandDa
 			fov = value;
 			enableFov = true;
 			TextCommandService::NotifyUser(L"FOV set to " + std::to_wstring(value));
+
+			
 		}
 		catch (const std::exception&)
 		{
@@ -104,13 +105,6 @@ void KoGaMaTools::Services::CameraService::SetAspectImpl(float x, float y)
 	K::UE_Camera::m_set_aspect(camera, value);
 }
 
-bool KoGaMaTools::Services::CameraService::PickupItem_m_get_FirstPerson(void* instance)
-{
-	if (Instance->enableThirdPerson)
-		return false;
-
-	return m_get_FirstPerson_Old(instance);
-}
 
 void KoGaMaTools::Services::CameraService::Render()
 {
@@ -168,21 +162,28 @@ void KoGaMaTools::Services::CameraService::Render()
 }
 
 
+void KoGaMaTools::Services::CameraService::OnSetCameraHook(void* instance, int cameratype)
+{
+	namespace K = KoGaMaAPI::KoGaMa;
+
+	if (Instance->enableThirdPerson && cameratype == K::CameraType::f_FirstPersonCamera.Get<int>())
+	{
+		return;
+	}
+
+	Original_SetCamera(instance, cameratype);
+}
 
 void KoGaMaTools::Services::CameraService::Init(Core::DIContainer& di)
 {
 	Instance = di.Get<CameraService>();
 	mainComponent = di.Get<MainComponent>();
-	auto logger = di.Get<Services::LoggerService>();
+	logger = di.Get<Services::LoggerService>();
 	auto hooking = di.Get<Services::HookingService>();
-	
-	static void* fn_old = nullptr;
 	Helpers::HookHelper::HookDesc desc[] = {
-		{ (void**)KoGaMaAPI::KoGaMa::FirstPersonCamera::m_get_FieldOfView.ptr, (void*)CameraHookWrapper<Original_GetFov>, (void**)&Original_GetFov},
-		{ (void**)KoGaMaAPI::KoGaMa::MVCameraBase::m_get_FieldOfView.ptr, (void*)CameraHookWrapper<Original_GetFov2>, (void**)&Original_GetFov2 },
-		{ (void**)KoGaMaAPI::KoGaMa::TransitionCamera::m_get_FieldOfView.ptr, (void*)CameraHookWrapper<Original_GetFov3>, (void**)&Original_GetFov3 },
-		{ (void**)KoGaMaAPI::KoGaMa::PickupItem::m_get_FirstPerson.ptr, (void*)PickupItem_m_get_FirstPerson, (void**)&m_get_FirstPerson_Old }
-
+		{ (void**)KoGaMaAPI::KoGaMa::FirstPersonCamera::m_get_FieldOfView.ptr, CameraHookWrapper<Original_GetFov>, (void**)&Original_GetFov},
+		{ (void**)KoGaMaAPI::KoGaMa::MVCameraBase::m_get_FieldOfView.ptr, CameraHookWrapper<Original_GetFov2>, (void**)&Original_GetFov2 },
+		{  (void**)KoGaMaAPI::KoGaMa::AvatarCamerasDesktop::m0_SetCamera.ptr, OnSetCameraHook, (void**)&Original_SetCamera },
 	};
 	Helpers::HookHelper::InstallHooks(logger, "CameraService", hooking, desc);
 }

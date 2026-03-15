@@ -192,6 +192,8 @@
     <ClCompile Include="kogama-tools\services\PvP\FastRespawn.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\ResolutionService.cpp" />
     <ClCompile Include="kogama-tools\Types\IntVector.cpp" />
+    <ClCompile Include="kogama-tools\UI\DX11TextureManager.cpp" />
+    <ClCompile Include="kogama-tools\UI\ITextureManager.cpp" />
     <ClCompile Include="kogama-tools\UI\MainUI.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +237,8 @@
     <ClInclude Include="kogama-tools\Types\Quaternion.h" />
     <ClInclude Include="kogama-tools\Types\Vector3.h" />
     <ClInclude Include="kogama-tools\Types\Vector4.h" />
+    <ClInclude Include="kogama-tools\UI\DX11TextureManager.h" />
+    <ClInclude Include="kogama-tools\UI\ITextureManager.h" />
     <ClInclude Include="kogama-tools\UI\MainUI.h" />
   </ItemGroup>
   <ItemGroup>

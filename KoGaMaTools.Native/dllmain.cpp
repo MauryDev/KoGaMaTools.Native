@@ -9,7 +9,7 @@
 #include <MetadataInit.h>
 #include "kogama-tools/Core/DITools.h"
 #include <kogama-tools/Helpers/TypeParameters.h>
-
+#include <kogama-tools/UI/DX11TextureManager.h>
 namespace {
 	template <typename T>
 	void AddComponent(KoGaMaTools::UI::MainUI& ui, size_t idx, const T&)
@@ -35,7 +35,8 @@ namespace {
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
-	KoGaMaTools::Services::PathHelper::Install((HMODULE)lpReserved);
+	auto moduleDll = (HMODULE)lpReserved;
+	KoGaMaTools::Services::PathHelper::Install(moduleDll);
 	do {
 		Sleep(4000);
 
@@ -64,6 +65,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 	
 	
 	namespace S = KoGaMaTools::Services;
+
+	app.NewServiceAs<KoGaMaTools::UI::ITextureManager, KoGaMaTools::UI::DX11TextureManager>(moduleDll);
 
 	KoGaMaTools::Core::InstallMultiple<S::MainComponent,
 		S::LoggerService,

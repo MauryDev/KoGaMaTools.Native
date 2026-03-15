@@ -123,6 +123,12 @@
     <ClCompile Include="kogama-tools\services\PvP\CameraService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="kogama-tools\UI\DX11TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kogama-tools\UI\ITextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\services\PathHelper.h">
@@ -246,6 +252,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="kogama-tools\services\PvP\CameraService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\UI\ITextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\UI\DX11TextureManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

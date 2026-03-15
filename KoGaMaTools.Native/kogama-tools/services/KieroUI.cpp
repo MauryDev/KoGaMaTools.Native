@@ -2,7 +2,7 @@
 #include <imgui_impl_win32.h>
 #include <imgui_impl_dx11.h>
 #include <kiero.h>
-
+#include <mutex>
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
 
@@ -24,7 +24,8 @@ namespace KoGaMaTools::Services::KieroUI
 		ID3D11RenderTargetView* mainRenderTargetView;
 		HRESULT(__stdcall* oResizeBuffers)(IDXGISwapChain*, UINT, UINT, UINT, DXGI_FORMAT, UINT);
 		bool init = false;
-
+		std::mutex init_mutex;
+		std::vector<OnInitedFn> onInitedCallbacks;
 	}
 	void InitHook()
 	{
@@ -55,6 +56,22 @@ namespace KoGaMaTools::Services::KieroUI
 	void SetOnRender(OnRender render)
 	{
 		RenderUi = render;
+	}
+
+	void SetOnInited(OnInitedFn fn)
+	{
+		std::lock_guard<std::mutex> lock(init_mutex);
+		if (init)
+			fn();
+		else
+		{
+			onInitedCallbacks.push_back(fn);
+		}
+	}
+
+	ID3D11Device* GetDevice()
+	{
+		return pDevice;
 	}
 
 	LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
@@ -127,7 +144,11 @@ namespace KoGaMaTools::Services::KieroUI
 				pBackBuffer->Release();
 				oWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
 				InitImGui();
+				std::lock_guard<std::mutex> lock(init_mutex);
+
 				init = true;
+				for (const auto& callback : onInitedCallbacks)
+					callback();
 			}
 
 			else

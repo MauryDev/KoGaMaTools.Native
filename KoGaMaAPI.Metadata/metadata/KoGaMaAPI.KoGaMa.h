@@ -5929,4 +5929,51 @@ inline static auto /* UnityEngine.Transform */ &f_muzzlePoint = fields.get<false
 };
 
 
+struct CameraType {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<14> fields;
+inline static auto /* CameraType */ &f_None = fields.get<true>(1), /* CameraType */ &f_ThirdPerson = fields.get<true>(2), /* CameraType */ &f_EditorCamera = fields.get<true>(3), /* CameraType */ &f_LobbyState = fields.get<true>(4), /* CameraType */ &f_TransitionCamera = fields.get<true>(5), /* CameraType */ &f_VehicleCamera = fields.get<true>(6), /* CameraType */ &f_AirCraftCamera = fields.get<true>(7), /* CameraType */ &f_AvatarEditModeCamera = fields.get<true>(8), /* CameraType */ &f_FirstPersonCamera = fields.get<true>(9), /* CameraType */ &f_TimeAttackFlagDebriefingCamera = fields.get<true>(10), /* CameraType */ &f_TimeAttackFlagCountdownCamera = fields.get<true>(11), /* CameraType */ &f_GhostCamera = fields.get<true>(12), /* CameraType */ &f_DeadCamera = fields.get<true>(13);
+inline static auto /* System.Int32 */ &f_value__ = fields.get<false>(0);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<0> methods;
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct AvatarCamerasDesktop {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<9> fields;
+inline static auto /* AvatarCamerasWrapper */ &f_avatarCamerasWrapper = fields.get<false>(0), /* MVCameraController */ &f_cameraController = fields.get<false>(1), /* DesktopFirstPersonCamera */ &f_firstPersonDesktopCamera = fields.get<false>(2), /* ThirdPersonCamera */ &f_thirdPersonDesktopCamera = fields.get<false>(3), /* LobbyStateCamera */ &f_lobbyStateCamera = fields.get<false>(4), /* TimeAttackFlagDebriefingCamera */ &f_timeAttackFlagDebriefingCamera = fields.get<false>(5), /* TimeAttackFlagCountdownCamera */ &f_timeAttackFlagCountdownCamera = fields.get<false>(6), /* GhostCamera */ &f_ghostCamera = fields.get<false>(7), /* DeadCamera */ &f_deadCamera = fields.get<false>(8);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<10> methods;
+    /* System.Void Initialize(MVAvatarLocal avatarLocal) */
+    inline static auto& m_Initialize = methods.get<false, true>(0);
+    /* System.Void ActivateCameraController() */
+    inline static auto& m_ActivateCameraController = methods.get<false, true>(1);
+    /* System.Void SetCamera(CameraType cameraType) */
+    inline static auto& m0_SetCamera = methods.get<false, true>(2);
+    /* System.Void SetCamera(MVCameraBase cameraBase) */
+    inline static auto& m1_SetCamera = methods.get<false, true>(3);
+    /* System.Void PushCamera(CameraType cameraType) */
+    inline static auto& m0_PushCamera = methods.get<false, true>(4);
+    /* System.Void PushCamera(MVCameraBase cameraBase) */
+    inline static auto& m1_PushCamera = methods.get<false, true>(5);
+    /* System.Void RemoveCamera(CameraType cameraType) */
+    inline static auto& m0_RemoveCamera = methods.get<false, true>(6);
+    /* System.Void RemoveCamera(MVCameraBase cameraBase) */
+    inline static auto& m1_RemoveCamera = methods.get<false, true>(7);
+    /* System.Collections.Generic.List`1<MVCameraBase> GetCameraBases() */
+    inline static auto& m_GetCameraBases = methods.get<false, true>(8);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(9);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }
