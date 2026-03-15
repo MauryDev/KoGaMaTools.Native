@@ -14,7 +14,7 @@ namespace KoGaMaTools::Services {
 	{
 		inline static std::shared_ptr<ResolutionService> Instance;
 		std::shared_ptr<MainComponent> mainComponent;
-		int height = 400, width = 300, windowType = 0;
+		int height = 80, width = 600, windowType = 1;
 		void Render() override;
 		
 

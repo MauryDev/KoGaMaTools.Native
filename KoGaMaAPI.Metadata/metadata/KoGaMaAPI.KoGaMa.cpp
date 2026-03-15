@@ -411,6 +411,26 @@ void UE_Camera::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 
 }
 
+void FirstPersonCamera::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 82, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVCameraBase::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 83, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void TransitionCamera::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 84, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void PickupItem::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 85, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -494,5 +514,9 @@ void UE_Camera::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         UE_FullScreenMode::Init(metadataInfo);
         UE_RefreshRate::Init(metadataInfo);
         UE_Camera::Init(metadataInfo);
+        FirstPersonCamera::Init(metadataInfo);
+        MVCameraBase::Init(metadataInfo);
+        TransitionCamera::Init(metadataInfo);
+        PickupItem::Init(metadataInfo);
     }
 }

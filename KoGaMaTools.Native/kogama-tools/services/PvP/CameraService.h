@@ -1,5 +1,4 @@
 #pragma once
-#include <cinttypes>
 #include <string_view>
 #include "../../Core/DITools.h"
 #include "../../UI/MainUI.h"
@@ -14,11 +13,17 @@ namespace KoGaMaTools::Services {
 		inline static std::shared_ptr<CameraService> Instance;
 		std::shared_ptr<MainComponent> mainComponent;
 		float fov = 90.0f;
+		bool enableFov = false;
+		bool enableThirdPerson = false;
 		float farClip = 1000.0f;
 		float aspect[2] = { 16.0f, 9.0f };
 		int aspectPreset = 0;
 		const char* aspectItems[3] = { "16:9", "4:3", "21:9" };
-
+		const float aspectItemsValue[3][2] = {
+			{16.0f, 9.0f},
+			{4.0f,3.0f},
+			{21.0f, 9.0f}
+		};
 		void Render() override;
 
 
@@ -32,13 +37,22 @@ namespace KoGaMaTools::Services {
 		bool Resolve(TextCommandService::CommandData& command) override;
 		std::string_view GetCommandHelp() override;
 
-		void SetFov(float value);
+		static float Hook_GetFovImpl(void* instance);
 		void SetFairClipPlane(float value);
 		void SetAspect(float x, float y);
 
-		static void SetFovImpl(float value);
 		static void SetFairClipPlaneImpl(float value);
 		static void SetAspectImpl(float x, float y);
+		static bool PickupItem_m_get_FirstPerson(void* instance);
+
+
+		template <auto& OriginalFn>
+		static float CameraHookWrapper(void* instance)
+		{
+			if (!Instance->enableFov) return OriginalFn(instance);
+
+			return Instance->fov;
+		}
 
 	};
 }

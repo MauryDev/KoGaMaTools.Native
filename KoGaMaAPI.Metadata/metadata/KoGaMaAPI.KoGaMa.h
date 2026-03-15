@@ -5681,4 +5681,252 @@ inline static auto /* System.UInt32 */ &f_m_NonSerializedVersion = fields.get<fa
 };
 
 
+struct FirstPersonCamera {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<15> fields;
+inline static auto /* System.Single */ &f_cameraHeight = fields.get<false>(0), /* System.Single */ &f_maxLookAngleDownward = fields.get<false>(1), /* System.Single */ &f_maxLookAngleUpward = fields.get<false>(2), /* UnityEngine.Vector3 */ &f_cameraOffset = fields.get<false>(3), /* System.Single */ &f_pitchSensitivity = fields.get<false>(4), /* System.Single */ &f_yawSensitivity = fields.get<false>(5), /* FirstPersonWeaponBob */ &f_weaponBob = fields.get<false>(6), /* DamageIndicator */ &f_damageIndicator = fields.get<false>(7), /* ModifierIndicator */ &f_modifierIndicator = fields.get<false>(8), /* HealingIndicator */ &f_healingIndicator = fields.get<false>(9), /* TargetRotation */ &f_smoothRotation = fields.get<false>(10), /* UnityEngine.Vector2 */ &f_targetRotation = fields.get<false>(11), /* MVAvatarLocal */ &f_localAvatar = fields.get<false>(12), /* System.Collections.Generic.List`1<UnityEngine.MeshRenderer> */ &f_vehiclesHiddenMeshRenderers = fields.get<false>(13), /* System.Boolean */ &f_haveHiddenVehicle = fields.get<false>(14);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<22> methods;
+    /* CameraType get_CameraType() */
+    inline static auto& m_get_CameraType = methods.get<false, true>(0);
+    /* System.Single get_FieldOfView() */
+    inline static auto& m_get_FieldOfView = methods.get<false, true>(1);
+    /* System.Void UpdateCameraRotation() */
+    inline static auto& m_UpdateCameraRotation = methods.get<false, true>(2);
+    /* System.Void Reset() */
+    inline static auto& m_Reset = methods.get<false, true>(3);
+    /* System.Void Initialize(MVAvatarLocal avatarLocal) */
+    inline static auto& m0_Initialize = methods.get<false, false>(4);
+    /* System.Void Initialize() */
+    inline static auto& m1_Initialize = methods.get<false, false>(5);
+    /* System.Void Enter(MVCameraController cameraController) */
+    inline static auto& m_Enter = methods.get<false, true>(6);
+    /* System.Void Resume(MVCameraController cameraController) */
+    inline static auto& m_Resume = methods.get<false, true>(7);
+    /* System.Void Exit(MVCameraController camController) */
+    inline static auto& m_Exit = methods.get<false, true>(8);
+    /* System.Void Suspend(MVCameraController camController) */
+    inline static auto& m_Suspend = methods.get<false, true>(9);
+    /* System.Void ActivateFirstPerson() */
+    inline static auto& m_ActivateFirstPerson = methods.get<false, false>(10);
+    /* System.Void OnDestroy() */
+    inline static auto& m_OnDestroy = methods.get<false, false>(11);
+    /* System.Void DeactivateFirstPerson() */
+    inline static auto& m_DeactivateFirstPerson = methods.get<false, false>(12);
+    /* System.Void MoveItemToFirstpersonView(PickupItem item) */
+    inline static auto& m_MoveItemToFirstpersonView = methods.get<false, false>(13);
+    /* System.Void HideBody(System.Boolean shouldHideBody) */
+    inline static auto& m_HideBody = methods.get<false, false>(14);
+    /* System.Void HideBlinking(System.Boolean shouldHideBlinking) */
+    inline static auto& m_HideBlinking = methods.get<false, false>(15);
+    /* System.Void HideVehicle() */
+    inline static auto& m_HideVehicle = methods.get<false, false>(16);
+    /* System.Void ShowVehicle() */
+    inline static auto& m_ShowVehicle = methods.get<false, false>(17);
+    /* System.Void UpdateCamera(MVCameraController camController, ProtectedTransform targetTransform) */
+    inline static auto& m_UpdateCamera = methods.get<false, true>(18);
+    /* System.Void UpdateCameraPosition() */
+    inline static auto& m_UpdateCameraPosition = methods.get<false, false>(19);
+    /* System.Void UpdateAvatar() */
+    inline static auto& m_UpdateAvatar = methods.get<false, false>(20);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(21);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVCameraBase {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<3> fields;
+inline static auto /* CameraImpact */ &f_cameraImpact = fields.get<false>(0), /* IgnoreInputTypes */ &f_ignoreInputTypes = fields.get<false>(1), /* System.Single */ &f_cameraRadius = fields.get<false>(2);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<20> methods;
+    /* System.Boolean get_InputActive() */
+    inline static auto& m_get_InputActive = methods.get<false, false>(0);
+    /* CameraType get_CameraType() */
+    inline static auto& m_get_CameraType = methods.get<false, true>(1);
+    /* System.Void Awake() */
+    inline static auto& m_Awake = methods.get<false, true>(2);
+    /* System.Single get_FieldOfView() */
+    inline static auto& m_get_FieldOfView = methods.get<false, true>(3);
+    /* System.Void camController_onIgnoreInputTypes(System.Object sender, OnIgnoreInputTypesArgs e) */
+    inline static auto& m_camController_onIgnoreInputTypes = methods.get<false, false>(4);
+    /* System.Void UpdateCamera(MVCameraController camController, ProtectedTransform targetTransform) */
+    inline static auto& m_UpdateCamera = methods.get<false, true>(5);
+    /* System.Void UpdateImpactSimulation(ProtectedTransform targetTransform) */
+    inline static auto& m_UpdateImpactSimulation = methods.get<false, false>(6);
+    /* System.Void SimulateImpact(UnityEngine.Vector3 impactDirection, UnityEngine.AnimationCurve impactCurve, System.Single forceMultiplier = 1, UnityEngine.Space impactSpace = 0) */
+    inline static auto& m0_SimulateImpact = methods.get<false, false>(7);
+    /* System.Void SimulateImpact(UnityEngine.Transform targetTransform) */
+    inline static auto& m1_SimulateImpact = methods.get<false, false>(8);
+    /* System.Void SimulateImpact(UnityEngine.Transform targetTransform, UnityEngine.Vector3 impactDirection, UnityEngine.AnimationCurve impactCurve, System.Single forceMultiplier, UnityEngine.Space impactSpace = 0) */
+    inline static auto& m2_SimulateImpact = methods.get<false, false>(9);
+    /* System.Void CameraCollision() */
+    inline static auto& m_CameraCollision = methods.get<false, true>(10);
+    /* System.Void Enter(MVCameraController camController) */
+    inline static auto& m_Enter = methods.get<false, true>(11);
+    /* System.Void Exit(MVCameraController camController) */
+    inline static auto& m_Exit = methods.get<false, true>(12);
+    /* System.Void Suspend(MVCameraController camController) */
+    inline static auto& m_Suspend = methods.get<false, true>(13);
+    /* System.Void Resume(MVCameraController camController) */
+    inline static auto& m_Resume = methods.get<false, true>(14);
+    /* System.Void Reset() */
+    inline static auto& m_Reset = methods.get<false, true>(15);
+    /* System.Void FocusOnObject(MVWorldObjectClient wo, System.Single transitionTime = 2, UnityEngine.Vector3 avatarOffset = null, UnityEngine.Vector3 cameraOffset = null) */
+    inline static auto& m_FocusOnObject = methods.get<false, true>(16);
+    /* System.Void Activate() */
+    inline static auto& m_Activate = methods.get<false, true>(17);
+    /* System.Void Deactivate() */
+    inline static auto& m_Deactivate = methods.get<false, true>(18);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(19);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct TransitionCamera {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<6> fields;
+inline static auto /* System.Single */ &f_fieldOfView = fields.get<false>(0), /* System.Single */ &f_transitionPercentage = fields.get<false>(1), /* System.Boolean */ &f_superSoft = fields.get<false>(2), /* UnityEngine.Vector3 */ &f_prevCameraPosition = fields.get<false>(3), /* UnityEngine.Quaternion */ &f_prevCameraRotation = fields.get<false>(4), /* System.Single */ &f_time = fields.get<false>(5);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<9> methods;
+    /* System.Single get_FieldOfView() */
+    inline static auto& m_get_FieldOfView = methods.get<false, true>(0);
+    /* System.Single get_TransitionPercentage() */
+    inline static auto& m_get_TransitionPercentage = methods.get<false, false>(1);
+    /* CameraType get_CameraType() */
+    inline static auto& m_get_CameraType = methods.get<false, true>(2);
+    /* System.Void InitTransition(UnityEngine.Transform targetCameraTransform, System.Single transitionTime = 2, System.Boolean soft = False) */
+    inline static auto& m_InitTransition = methods.get<false, false>(3);
+    /* System.Void AbortTransition() */
+    inline static auto& m_AbortTransition = methods.get<false, false>(4);
+    /* System.Void UpdateCamera(MVCameraController camController, ProtectedTransform targetTransform) */
+    inline static auto& m_UpdateCamera = methods.get<false, true>(5);
+    /* UnityEngine.Quaternion RotateTowardsY(UnityEngine.Vector3 eulerFrom, UnityEngine.Vector3 eulerTo, System.Single percentage) */
+    inline static auto& m_RotateTowardsY = methods.get<false, false>(6);
+    /* UnityEngine.Quaternion RotateTowardsX(UnityEngine.Vector3 eulerFrom, UnityEngine.Vector3 eulerTo, System.Single percentage) */
+    inline static auto& m_RotateTowardsX = methods.get<false, false>(7);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(8);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct PickupItem {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<15> fields;
+inline static auto /* UnityEngine.Transform */ &f_muzzlePoint = fields.get<false>(0), /* UnityEngine.Transform */ &f_holsterTransformOffset = fields.get<false>(1), /* UnityEngine.Transform */ &f_firstPersonTransform = fields.get<false>(2), /* UnityEngine.Transform */ &f_handTransform = fields.get<false>(3), /* UnityEngine.Transform */ &f_center = fields.get<false>(4), /* UnityEngine.MeshRenderer[] */ &f_meshRenderers = fields.get<false>(5), /* MVPickupOwner */ &f_owner = fields.get<false>(6), /* System.Boolean */ &f_firedThisFrame = fields.get<false>(7), /* UnityEngine.Transform */ &f_originalParent = fields.get<false>(8), /* UnityEngine.Vector3 */ &f_originalPos = fields.get<false>(9), /* UnityEngine.Quaternion */ &f_originalRot = fields.get<false>(10), /* UnityEngine.Vector3 */ &f_originalScale = fields.get<false>(11), /* System.Boolean */ &f__IsHolstered_k__BackingField = fields.get<false>(12), /* System.Int32 */ &f__VariantID_k__BackingField = fields.get<false>(13), /* System.Boolean */ &f__AbleToFire_k__BackingField = fields.get<false>(14);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<47> methods;
+    /* MV.Common.AvatarItemType get_Type() */
+    inline static auto& m_get_Type = methods.get<false, true>(0);
+    /* System.Int32 get_MaxAmmo() */
+    inline static auto& m_get_MaxAmmo = methods.get<false, true>(1);
+    /* System.Int32 get_Quantity() */
+    inline static auto& m_get_Quantity = methods.get<false, true>(2);
+    /* UnityEngine.Color get_CrossHairColor() */
+    inline static auto& m_get_CrossHairColor = methods.get<false, true>(3);
+    /* System.Single get_ChargeState() */
+    inline static auto& m_get_ChargeState = methods.get<false, true>(4);
+    /* System.Boolean get_FirstPerson() */
+    inline static auto& m_get_FirstPerson = methods.get<false, true>(5);
+    /* System.Boolean get_GunMode() */
+    inline static auto& m_get_GunMode = methods.get<false, true>(6);
+    /* System.Boolean get_IsHandEquippable() */
+    inline static auto& m_get_IsHandEquippable = methods.get<false, true>(7);
+    /* System.Boolean get_ThirdPersonGunMode() */
+    inline static auto& m_get_ThirdPersonGunMode = methods.get<false, true>(8);
+    /* System.Boolean get_CanHolster() */
+    inline static auto& m_get_CanHolster = methods.get<false, true>(9);
+    /* System.Boolean get_HasUnlimitedAmmo() */
+    inline static auto& m_get_HasUnlimitedAmmo = methods.get<false, true>(10);
+    /* System.Boolean get_HasPercentageAmmo() */
+    inline static auto& m_get_HasPercentageAmmo = methods.get<false, true>(11);
+    /* System.Boolean get_CanUnequip() */
+    inline static auto& m_get_CanUnequip = methods.get<false, true>(12);
+    /* System.Boolean get_IsAmmoDepleted() */
+    inline static auto& m_get_IsAmmoDepleted = methods.get<false, true>(13);
+    /* System.Boolean get_IsHolstered() */
+    inline static auto& m_get_IsHolstered = methods.get<false, false>(14);
+    /* System.Void set_IsHolstered(System.Boolean value) */
+    inline static auto& m_set_IsHolstered = methods.get<false, false>(15);
+    /* UnityEngine.Vector3 get_Origin() */
+    inline static auto& m_get_Origin = methods.get<false, false>(16);
+    /* System.Boolean get_IsInFirstPersonMode() */
+    inline static auto& m_get_IsInFirstPersonMode = methods.get<false, false>(17);
+    /* System.Boolean get_IsAmmoEmpty() */
+    inline static auto& m_get_IsAmmoEmpty = methods.get<false, false>(18);
+    /* System.Int32 get_VariantID() */
+    inline static auto& m_get_VariantID = methods.get<false, false>(19);
+    /* System.Void set_VariantID(System.Int32 value) */
+    inline static auto& m_set_VariantID = methods.get<false, false>(20);
+    /* System.Boolean get_AbleToFire() */
+    inline static auto& m_get_AbleToFire = methods.get<false, false>(21);
+    /* System.Void set_AbleToFire(System.Boolean value) */
+    inline static auto& m_set_AbleToFire = methods.get<false, false>(22);
+    /* UnityEngine.GameObject InstantiatePickupItem(MV.Common.AvatarItemType type, System.Int32 variantId) */
+    inline static auto& m_InstantiatePickupItem = methods.get<true, false>(23);
+    /* System.Void HolsterPickup(UnityEngine.Transform targetHolsterTransform) */
+    inline static auto& m_HolsterPickup = methods.get<false, false>(24);
+    /* System.Void UnholsterPickup() */
+    inline static auto& m_UnholsterPickup = methods.get<false, false>(25);
+    /* System.Void EnterFirstPersonView(MVCameraBase camera) */
+    inline static auto& m_EnterFirstPersonView = methods.get<false, false>(26);
+    /* System.Void EquipToHand(UnityEngine.Transform hand) */
+    inline static auto& m_EquipToHand = methods.get<false, false>(27);
+    /* System.Void LeaveFirstPersonView() */
+    inline static auto& m_LeaveFirstPersonView = methods.get<false, false>(28);
+    /* System.Void RevertToOriginalTransform() */
+    inline static auto& m_RevertToOriginalTransform = methods.get<false, false>(29);
+    /* System.Boolean CanFire() */
+    inline static auto& m_CanFire = methods.get<false, true>(30);
+    /* System.Void TriggerBegin(System.Int32 instigatorActorNr) */
+    inline static auto& m_TriggerBegin = methods.get<false, true>(31);
+    /* System.Void TriggerEnd() */
+    inline static auto& m_TriggerEnd = methods.get<false, true>(32);
+    /* System.Void OnStateChanged(System.Collections.Generic.Dictionary`2<System.Object, System.Object> newState) */
+    inline static auto& m_OnStateChanged = methods.get<false, true>(33);
+    /* System.Void OnEquip() */
+    inline static auto& m_OnEquip = methods.get<false, true>(34);
+    /* System.Void OnUnequip() */
+    inline static auto& m_OnUnequip = methods.get<false, true>(35);
+    /* System.Void ResetAmmo() */
+    inline static auto& m_ResetAmmo = methods.get<false, true>(36);
+    /* System.Void OnLeaveVehicleWithWeapon() */
+    inline static auto& m_OnLeaveVehicleWithWeapon = methods.get<false, true>(37);
+    /* System.Void OnEnterVehicleWithWeapon() */
+    inline static auto& m_OnEnterVehicleWithWeapon = methods.get<false, true>(38);
+    /* System.Void OnHolstered() */
+    inline static auto& m_OnHolstered = methods.get<false, true>(39);
+    /* System.Void OnUnholstered() */
+    inline static auto& m_OnUnholstered = methods.get<false, true>(40);
+    /* System.Int32 CalculateMaxAmmo(System.Int32 defaultAmmo) */
+    inline static auto& m_CalculateMaxAmmo = methods.get<false, true>(41);
+    /* System.Void UpdateWithDirection(UnityEngine.Vector3 dir) */
+    inline static auto& m_UpdateWithDirection = methods.get<false, true>(42);
+    /* System.Boolean GetAndResetFiredThisFrame() */
+    inline static auto& m_GetAndResetFiredThisFrame = methods.get<false, false>(43);
+    /* UnityEngine.GameObject CloneCubeModelInstance(MVCubeModelInstance cmb, System.Boolean forceVisible = False) */
+    inline static auto& m_CloneCubeModelInstance = methods.get<true, false>(44);
+    /* UnityEngine.GameObject InstantiateMeleeWeapon(System.Int32 variantId) */
+    inline static auto& m_InstantiateMeleeWeapon = methods.get<true, false>(45);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(46);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

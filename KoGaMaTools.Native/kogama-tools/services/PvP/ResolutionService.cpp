@@ -26,6 +26,7 @@ void KoGaMaTools::Services::ResolutionService::Init(Core::DIContainer& di)
 {
 	this->Instance = di.Get<ResolutionService>();
 	mainComponent = di.Get<MainComponent>();
+
 }
 
 bool KoGaMaTools::Services::ResolutionService::Resolve(TextCommandService::CommandData& command)

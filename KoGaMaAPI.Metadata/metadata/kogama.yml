@@ -109,3 +109,7 @@ klasses:
   name: UE_RefreshRate
 - fullname: UnityEngine.Camera
   name: UE_Camera
+- fullname: FirstPersonCamera
+- fullname: MVCameraBase
+- fullname: TransitionCamera
+- fullname: PickupItem
