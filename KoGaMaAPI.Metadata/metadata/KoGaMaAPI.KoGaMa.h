@@ -5976,4 +5976,44 @@ inline static auto /* AvatarCamerasWrapper */ &f_avatarCamerasWrapper = fields.g
 };
 
 
+struct GameStatCounterType {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<10> fields;
+inline static auto /* GameStatCounterType */ &f_None = fields.get<true>(1), /* GameStatCounterType */ &f_Kill = fields.get<true>(2), /* GameStatCounterType */ &f_Flag = fields.get<true>(3), /* GameStatCounterType */ &f_Collectible = fields.get<true>(4), /* GameStatCounterType */ &f_Time = fields.get<true>(5), /* GameStatCounterType */ &f_FlagCaptured = fields.get<true>(6), /* GameStatCounterType */ &f_OculusKill = fields.get<true>(7), /* GameStatCounterType */ &f_GameCoin = fields.get<true>(8), /* GameStatCounterType */ &f_TimeAttackFlag = fields.get<true>(9);
+inline static auto /* System.Byte */ &f_value__ = fields.get<false>(0);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<0> methods;
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct WinningConditionControl {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<0> fields;
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<7> methods;
+    /* System.Boolean TryGetPrioritizedWinCondition(out WinningConditionType condition) */
+    inline static auto& m_TryGetPrioritizedWinCondition = methods.get<true, false>(0);
+    /* System.Boolean IsWinConditionPresent(WinningConditionType condition) */
+    inline static auto& m_IsWinConditionPresent = methods.get<true, false>(1);
+    /* System.Boolean TryGetPrioritizedStat(out GameStatCounterType statType) */
+    inline static auto& m_TryGetPrioritizedStat = methods.get<true, false>(2);
+    /* System.Int32 GetPrioritizedStatLimit(GameStatCounterType gameStatType) */
+    inline static auto& m_GetPrioritizedStatLimit = methods.get<true, false>(3);
+    /* System.Boolean IsNewScoreBetter(System.Int32 newScore, System.Int32 oldScore, GameStatCounterType statType) */
+    inline static auto& m_IsNewScoreBetter = methods.get<true, false>(4);
+    /* System.String MakeIntoScoreText(System.Int32 score, GameStatCounterType statType) */
+    inline static auto& m_MakeIntoScoreText = methods.get<true, false>(5);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(6);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

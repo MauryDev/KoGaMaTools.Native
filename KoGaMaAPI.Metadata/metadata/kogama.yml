@@ -115,3 +115,5 @@ klasses:
 - fullname: PickupItem
 - fullname: CameraType
 - fullname: AvatarCamerasDesktop
+- fullname: GameStatCounterType
+- fullname: WinningConditionControl

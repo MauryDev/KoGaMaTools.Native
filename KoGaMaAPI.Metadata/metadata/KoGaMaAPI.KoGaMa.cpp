@@ -441,6 +441,16 @@ void AvatarCamerasDesktop::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadat
 
 }
 
+void GameStatCounterType::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 88, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void WinningConditionControl::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 89, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -530,5 +540,7 @@ void AvatarCamerasDesktop::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadat
         PickupItem::Init(metadataInfo);
         CameraType::Init(metadataInfo);
         AvatarCamerasDesktop::Init(metadataInfo);
+        GameStatCounterType::Init(metadataInfo);
+        WinningConditionControl::Init(metadataInfo);
     }
 }

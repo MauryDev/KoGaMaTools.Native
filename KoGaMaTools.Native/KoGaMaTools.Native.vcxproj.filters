@@ -135,6 +135,9 @@
     <ClCompile Include="kogama-tools\UI\DX11FontManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="kogama-tools\services\PvP\KillCountService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\services\PathHelper.h">
@@ -273,6 +276,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="kogama-tools\UI\DX11FontManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\PvP\KillCountService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

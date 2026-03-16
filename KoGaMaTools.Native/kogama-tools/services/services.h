@@ -18,6 +18,7 @@
 #include "PvP/CustomCrossHairTexture.h"
 #include "PvP/ResolutionService.h"
 #include "PvP/CameraService.h"
+#include "PvP/KillCountService.h"
 
 #include "Common/MainComponent.h"
 

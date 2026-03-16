@@ -97,7 +97,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::CustomCrossHairTexture,
 		S::CameraService,
 		S::GameInfoService,
-		S::ResolutionService
+		S::ResolutionService,
+		S::KillCountService
 	>();
 	KoGaMaTools::Services::ModelModule::Init(app);
 
@@ -122,7 +123,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::FastRespawn,
 		S::CustomCrossHairTexture,
 		S::ResolutionService,
-		S::CameraService>(*ui, "PvP");
+		S::CameraService,
+		S::KillCountService>(*ui, "PvP");
 
 	SetupUI<S::GameInfoService>(*ui, "Info");
 
