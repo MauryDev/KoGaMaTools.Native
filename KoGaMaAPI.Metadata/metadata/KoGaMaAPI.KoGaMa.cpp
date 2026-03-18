@@ -451,6 +451,16 @@ void WinningConditionControl::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& meta
 
 }
 
+void ThemeRepository::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 90, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void Theme::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 91, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -542,5 +552,7 @@ void WinningConditionControl::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& meta
         AvatarCamerasDesktop::Init(metadataInfo);
         GameStatCounterType::Init(metadataInfo);
         WinningConditionControl::Init(metadataInfo);
+        ThemeRepository::Init(metadataInfo);
+        Theme::Init(metadataInfo);
     }
 }

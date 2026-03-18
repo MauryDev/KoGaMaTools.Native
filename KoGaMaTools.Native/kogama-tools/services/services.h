@@ -29,3 +29,5 @@
 #include "Common/HookingService.h"
 
 #include "Build/ModelModule/module.h"
+
+#include "Graphics/ThemeService.h"

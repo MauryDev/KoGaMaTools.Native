@@ -6016,4 +6016,101 @@ struct WinningConditionControl {
 };
 
 
+struct ThemeRepository {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<4> fields;
+inline static auto /* ThemeRepository */ &f__Instance_k__BackingField = fields.get<true>(0);
+inline static auto /* System.Collections.Generic.List`1<Theme> */ &f_themePrefabs = fields.get<false>(1), /* System.Collections.Generic.Dictionary`2<System.String, Theme> */ &f_IdentifierToTheme = fields.get<false>(2), /* System.Boolean */ &f__ThemesEnabled_k__BackingField = fields.get<false>(3);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<16> methods;
+    /* ThemeRepository get_Instance() */
+    inline static auto& m_get_Instance = methods.get<true, false>(0);
+    /* System.Void set_Instance(ThemeRepository value) */
+    inline static auto& m_set_Instance = methods.get<true, false>(1);
+    /* System.Boolean get_ThemesEnabled() */
+    inline static auto& m_get_ThemesEnabled = methods.get<false, false>(2);
+    /* System.Void set_ThemesEnabled(System.Boolean value) */
+    inline static auto& m_set_ThemesEnabled = methods.get<false, false>(3);
+    /* System.Int32 get_CurrentThemeWoid() */
+    inline static auto& m_get_CurrentThemeWoid = methods.get<false, false>(4);
+    /* Theme get_CurrentThemeVisualization() */
+    inline static auto& m_get_CurrentThemeVisualization = methods.get<false, false>(5);
+    /* System.String get_CurrentThemeIdentifier() */
+    inline static auto& m_get_CurrentThemeIdentifier = methods.get<false, false>(6);
+    /* System.Boolean get_SkyboxOverride() */
+    inline static auto& m_get_SkyboxOverride = methods.get<false, false>(7);
+    /* System.Boolean get_ThemeIsActive() */
+    inline static auto& m_get_ThemeIsActive = methods.get<false, false>(8);
+    /* ThemeWorldObject get_CurrentTheme() */
+    inline static auto& m_get_CurrentTheme = methods.get<false, false>(9);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, false>(10);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<true, false>(11);
+    /* Theme GetThemePrefab(System.String identifier) */
+    inline static auto& m_GetThemePrefab = methods.get<false, false>(12);
+    /* Theme CreateTemporaryThemeVisualization(System.String identifier) */
+    inline static auto& m_CreateTemporaryThemeVisualization = methods.get<false, false>(13);
+    /* System.Void DestroyTemporary(Theme theme) */
+    inline static auto& m_DestroyTemporary = methods.get<false, false>(14);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(15);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct Theme {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<4> fields;
+inline static auto /* System.Boolean */ &f_overrideSkyboxManager = fields.get<false>(0), /* UnityEngine.RectTransform */ &f_themeButtonImagePrefab = fields.get<false>(1), /* System.Collections.Generic.List`1<ThemeComponent> */ &f_components = fields.get<false>(2), /* ThemeSettings.SettingsWrapper */ &f__Settings_k__BackingField = fields.get<false>(3);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<19> methods;
+    /* System.Boolean get_OverrideSkyboxManager() */
+    inline static auto& m_get_OverrideSkyboxManager = methods.get<false, false>(0);
+    /* UnityEngine.RectTransform get_ThemeButtonImagePrefab() */
+    inline static auto& m_get_ThemeButtonImagePrefab = methods.get<false, false>(1);
+    /* System.String get_Identifier() */
+    inline static auto& m_get_Identifier = methods.get<false, true>(2);
+    /* System.String get_DisplayName() */
+    inline static auto& m_get_DisplayName = methods.get<false, true>(3);
+    /* System.String get_Description() */
+    inline static auto& m_get_Description = methods.get<false, true>(4);
+    /* System.Void InitializeComponents() */
+    inline static auto& m_InitializeComponents = methods.get<false, true>(5);
+    /* System.Void InitializeAttributes() */
+    inline static auto& m_InitializeAttributes = methods.get<false, true>(6);
+    /* ThemeSettings.SettingsWrapper get_Settings() */
+    inline static auto& m_get_Settings = methods.get<false, false>(7);
+    /* System.Void set_Settings(ThemeSettings.SettingsWrapper value) */
+    inline static auto& m_set_Settings = methods.get<false, false>(8);
+    /* System.Collections.Generic.List`1<UnityEngine.RectTransform> get_Controllers() */
+    inline static auto& m_get_Controllers = methods.get<false, true>(9);
+    /* System.Void InitializeForPreview() */
+    inline static auto& m_InitializeForPreview = methods.get<false, false>(10);
+    /* System.Void Initialize(System.Int32 woid) */
+    inline static auto& m0_Initialize = methods.get<false, false>(11);
+    /* System.Void Initialize() */
+    inline static auto& m1_Initialize = methods.get<false, false>(12);
+    /* System.Void Activate() */
+    inline static auto& m_Activate = methods.get<false, false>(13);
+    /* System.Void Deactivate() */
+    inline static auto& m_Deactivate = methods.get<false, false>(14);
+    /* System.Void Add(ThemeComponent component) */
+    inline static auto& m_Add = methods.get<false, false>(15);
+    /* System.Void Purchase(System.Int32 id) */
+    inline static auto& m_Purchase = methods.get<false, false>(16);
+    /* System.Void ThemeReset() */
+    inline static auto& m_ThemeReset = methods.get<false, true>(17);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(18);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

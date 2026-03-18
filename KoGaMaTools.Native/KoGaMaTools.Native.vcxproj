@@ -179,6 +179,7 @@
     <ClCompile Include="kogama-tools\services\Common\HookingService.cpp" />
     <ClCompile Include="kogama-tools\services\Common\MainComponent.cpp" />
     <ClCompile Include="kogama-tools\services\Common\TextCommandService.cpp" />
+    <ClCompile Include="kogama-tools\services\Graphics\ThemeUtils.cpp" />
     <ClCompile Include="kogama-tools\services\Info\GameInfoService.cpp" />
     <ClCompile Include="kogama-tools\services\KieroUI.cpp" />
     <ClCompile Include="kogama-tools\services\Build\NoLimit.cpp" />
@@ -198,6 +199,7 @@
     <ClCompile Include="kogama-tools\UI\IFontManager.cpp" />
     <ClCompile Include="kogama-tools\UI\ITextureManager.cpp" />
     <ClCompile Include="kogama-tools\UI\MainUI.cpp" />
+    <ClCompile Include="kogama-tools\services\Graphics\ThemeService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\Core\DITools.h" />
@@ -223,6 +225,7 @@
     <ClInclude Include="kogama-tools\services\Common\HookingService.h" />
     <ClInclude Include="kogama-tools\services\Common\MainComponent.h" />
     <ClInclude Include="kogama-tools\services\Common\TextCommandService.h" />
+    <ClInclude Include="kogama-tools\services\Graphics\ThemeUtils.h" />
     <ClInclude Include="kogama-tools\services\Info\GameInfoService.h" />
     <ClInclude Include="kogama-tools\services\KieroUI.h" />
     <ClInclude Include="kogama-tools\services\Build\NoLimit.h" />
@@ -247,6 +250,7 @@
     <ClInclude Include="kogama-tools\UI\ITextureManager.h" />
     <ClInclude Include="kogama-tools\UI\MainUI.h" />
     <ClInclude Include="kogama-tools\Resources\resource.h" />
+    <ClInclude Include="kogama-tools\services\Graphics\ThemeService.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KoGaMaAPI.Metadata\KoGaMaAPI.Metadata.vcxproj">
@@ -262,6 +266,7 @@
     <Image Include="kogama-tools\Resources\img\copy.png" />
     <Image Include="kogama-tools\Resources\img\eye.png" />
     <Image Include="kogama-tools\Resources\img\grid.png" />
+    <Image Include="kogama-tools\Resources\img\mark.png" />
     <Image Include="kogama-tools\Resources\img\menu-list.png" />
     <Image Include="kogama-tools\Resources\img\paste.png" />
     <Image Include="kogama-tools\Resources\img\ruler.png" />

@@ -117,3 +117,5 @@ klasses:
 - fullname: AvatarCamerasDesktop
 - fullname: GameStatCounterType
 - fullname: WinningConditionControl
+- fullname: ThemeRepository
+- fullname: Theme

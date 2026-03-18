@@ -138,6 +138,12 @@
     <ClCompile Include="kogama-tools\services\PvP\KillCountService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="kogama-tools\services\Graphics\ThemeService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kogama-tools\services\Graphics\ThemeUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\services\PathHelper.h">
@@ -281,6 +287,12 @@
     <ClInclude Include="kogama-tools\services\PvP\KillCountService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="kogama-tools\services\Graphics\ThemeService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Graphics\ThemeUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="kogama-tools\Resources\Resource.rc">
@@ -319,6 +331,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="kogama-tools\Resources\img\menu-list.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="kogama-tools\Resources\img\mark.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

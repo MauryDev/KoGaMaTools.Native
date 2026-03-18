@@ -98,7 +98,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::CameraService,
 		S::GameInfoService,
 		S::ResolutionService,
-		S::KillCountService
+		S::KillCountService,
+		S::ThemeService
 	>();
 	KoGaMaTools::Services::ModelModule::Init(app);
 
@@ -128,7 +129,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 
 	SetupUI<S::GameInfoService>(*ui, "Info");
 
-	SetupUI<S::ConfigService>(*ui, "Others");
+	SetupUI<S::ConfigService>(*ui, "Config");
+	SetupUI<S::ThemeService>(*ui, "Graphics");
 
 
 	app.Get<S::ConfigService>()->SetupConfigurables();
