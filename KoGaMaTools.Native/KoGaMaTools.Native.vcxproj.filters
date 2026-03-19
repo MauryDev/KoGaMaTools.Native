@@ -293,6 +293,9 @@
     <ClInclude Include="kogama-tools\services\Graphics\ThemeUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="kogama-tools\services\Graphics\FogService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="kogama-tools\Resources\Resource.rc">

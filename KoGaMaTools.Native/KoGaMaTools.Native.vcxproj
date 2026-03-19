@@ -225,6 +225,7 @@
     <ClInclude Include="kogama-tools\services\Common\HookingService.h" />
     <ClInclude Include="kogama-tools\services\Common\MainComponent.h" />
     <ClInclude Include="kogama-tools\services\Common\TextCommandService.h" />
+    <ClInclude Include="kogama-tools\services\Graphics\FogService.h" />
     <ClInclude Include="kogama-tools\services\Graphics\ThemeUtils.h" />
     <ClInclude Include="kogama-tools\services\Info\GameInfoService.h" />
     <ClInclude Include="kogama-tools\services\KieroUI.h" />

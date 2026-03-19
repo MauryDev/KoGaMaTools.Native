@@ -72,12 +72,54 @@ void KoGaMaTools::Services::ThemeService::Render()
 
 bool KoGaMaTools::Services::ThemeService::Resolve(TextCommandService::CommandData& command)
 {
-    return false;
-}
+    if (command.name != L"theme" && command.name != L"t")
+        return false;
 
+    if (command.args.empty()) {
+        TextCommandService::NotifyUser("Uso: /theme [set/remove/list]");
+        return true;
+    }
+
+    std::wstring_view subCommand = command.args[0];
+
+    if (subCommand == L"list") {
+        LoadThemes();
+        TextCommandService::NotifyUser("Lista de temas atualizada no menu!");
+        return true;
+    }
+
+    if (subCommand == L"set" && command.args.size() >= 2) {
+        std::wstring target(command.args[1]);
+        std::string targetStr(target.begin(), target.end()); // Conversão simples para busca
+
+        for (size_t i = 0; i < Themes.size(); ++i) {
+            if (Themes[i] == targetStr) {
+                selectedThemeIdx = (int)i;
+                ApplyTheme();
+
+                std::string msg = "Tema aplicado: " + Themes[i];
+                TextCommandService::NotifyUser(msg);
+                return true;
+            }
+        }
+        TextCommandService::NotifyUser("Erro: Tema nao encontrado.");
+        return true;
+    }
+
+    if (subCommand == L"remove" || subCommand == L"clear") {
+        RemoveTheme();
+        TextCommandService::NotifyUser("Tema removido com sucesso.");
+        return true;
+    }
+
+    return true;
+}
 std::string_view KoGaMaTools::Services::ThemeService::GetCommandHelp()
 {
-    return std::string_view();
+    return "Theme Manager:\n"
+        "  /theme set <name> - Applies a specific theme\n"
+        "  /theme remove     - Removes the current theme\n"
+        "  /theme list       - Refresh theme list";
 }
 
 void KoGaMaTools::Services::ThemeService::LoadThemes()
