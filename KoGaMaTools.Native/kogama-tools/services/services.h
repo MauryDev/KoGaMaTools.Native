@@ -31,3 +31,4 @@
 #include "Build/ModelModule/module.h"
 
 #include "Graphics/ThemeService.h"
+#include "Graphics/FogService.h"

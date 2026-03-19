@@ -119,3 +119,5 @@ klasses:
 - fullname: WinningConditionControl
 - fullname: ThemeRepository
 - fullname: Theme
+- fullname: UnityEngine.RenderSettings
+  name: UE_RenderSettings

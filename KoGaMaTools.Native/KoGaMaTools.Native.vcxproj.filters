@@ -144,6 +144,9 @@
     <ClCompile Include="kogama-tools\services\Graphics\ThemeUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="kogama-tools\services\Graphics\FogService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\services\PathHelper.h">

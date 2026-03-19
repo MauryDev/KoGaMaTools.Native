@@ -1,6 +1,5 @@
 #pragma once
 #include "../../Core/DITools.h"
-#include <string>
 #include <string_view>
 
 namespace KoGaMaTools::Services {

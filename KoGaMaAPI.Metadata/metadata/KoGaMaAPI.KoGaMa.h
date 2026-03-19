@@ -6113,4 +6113,40 @@ inline static auto /* System.Boolean */ &f_overrideSkyboxManager = fields.get<fa
 };
 
 
+struct UE_RenderSettings {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<0> fields;
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<12> methods;
+    /* System.Void set_fog(System.Boolean value) */
+    inline static auto& m_set_fog = methods.get<true, false>(0);
+    /* System.Void set_fogStartDistance(System.Single value) */
+    inline static auto& m_set_fogStartDistance = methods.get<true, false>(1);
+    /* System.Void set_fogEndDistance(System.Single value) */
+    inline static auto& m_set_fogEndDistance = methods.get<true, false>(2);
+    /* System.Void set_fogMode(UnityEngine.FogMode value) */
+    inline static auto& m_set_fogMode = methods.get<true, false>(3);
+    /* System.Void set_fogColor(UnityEngine.Color value) */
+    inline static auto& m_set_fogColor = methods.get<true, false>(4);
+    /* System.Void set_fogDensity(System.Single value) */
+    inline static auto& m_set_fogDensity = methods.get<true, false>(5);
+    /* System.Void set_ambientIntensity(System.Single value) */
+    inline static auto& m_set_ambientIntensity = methods.get<true, false>(6);
+    /* UnityEngine.Color get_ambientLight() */
+    inline static auto& m_get_ambientLight = methods.get<true, false>(7);
+    /* System.Void set_ambientLight(UnityEngine.Color value) */
+    inline static auto& m_set_ambientLight = methods.get<true, false>(8);
+    /* System.Void set_fogColor_Injected(in UnityEngine.Color value) */
+    inline static auto& m_set_fogColor_Injected = methods.get<true, false>(9);
+    /* System.Void get_ambientLight_Injected(out UnityEngine.Color ret) */
+    inline static auto& m_get_ambientLight_Injected = methods.get<true, false>(10);
+    /* System.Void set_ambientLight_Injected(in UnityEngine.Color value) */
+    inline static auto& m_set_ambientLight_Injected = methods.get<true, false>(11);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

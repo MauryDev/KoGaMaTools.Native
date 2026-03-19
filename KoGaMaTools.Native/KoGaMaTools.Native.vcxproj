@@ -179,6 +179,7 @@
     <ClCompile Include="kogama-tools\services\Common\HookingService.cpp" />
     <ClCompile Include="kogama-tools\services\Common\MainComponent.cpp" />
     <ClCompile Include="kogama-tools\services\Common\TextCommandService.cpp" />
+    <ClCompile Include="kogama-tools\services\Graphics\FogService.cpp" />
     <ClCompile Include="kogama-tools\services\Graphics\ThemeUtils.cpp" />
     <ClCompile Include="kogama-tools\services\Info\GameInfoService.cpp" />
     <ClCompile Include="kogama-tools\services\KieroUI.cpp" />
