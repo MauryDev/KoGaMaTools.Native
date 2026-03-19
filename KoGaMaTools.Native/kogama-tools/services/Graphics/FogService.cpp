@@ -12,7 +12,6 @@ void KoGaMaTools::Services::FogService::Init(Core::DIContainer& di)
 
 void KoGaMaTools::Services::FogService::Render()
 {
-
 	ImGui::Spacing();
 	ImGui::SeparatorText("Fog Service");
 
@@ -20,7 +19,6 @@ void KoGaMaTools::Services::FogService::Render()
 	{
 		SetFog();
 	}
-
 }
 
 bool KoGaMaTools::Services::FogService::Resolve(TextCommandService::CommandData& command)

@@ -147,6 +147,9 @@
     <ClCompile Include="kogama-tools\services\Graphics\FogService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="kogama-tools\services\Build\LogicRenderService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\services\PathHelper.h">
@@ -297,6 +300,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="kogama-tools\services\Graphics\FogService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Build\LogicRenderService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

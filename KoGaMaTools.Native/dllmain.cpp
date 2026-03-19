@@ -100,7 +100,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::ResolutionService,
 		S::KillCountService,
 		S::ThemeService,
-		S::FogService
+		S::FogService,
+		S::LogicRenderService
 	>();
 	KoGaMaTools::Services::ModelModule::Init(app);
 
@@ -117,7 +118,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		S::EditModeSpeed,
 		S::RotationStep,
 		S::UnlimitedConfig,
-		S::ModelModule::ModelService>(*ui, "Build");
+		S::ModelModule::ModelService,
+		S::LogicRenderService>(*ui, "Build");
 
 
 	SetupUI<S::AntiAfk,
