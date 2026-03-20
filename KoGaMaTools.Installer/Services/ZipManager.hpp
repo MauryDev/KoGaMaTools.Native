@@ -17,7 +17,7 @@
 #pragma comment(lib, "bcrypt.lib")
 
 
-#include "resource.h"
+#include "../resource.h"
 
 class ZipManager {
 public:
