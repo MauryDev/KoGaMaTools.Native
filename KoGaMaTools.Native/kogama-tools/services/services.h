@@ -32,4 +32,5 @@
 
 #include "Graphics/ThemeService.h"
 #include "Graphics/FogService.h"
-#include "Build/LogicRenderService.h"
+#include "Graphics/LogicRenderService.h"
+#include "Graphics/MessageReceiveService.h"

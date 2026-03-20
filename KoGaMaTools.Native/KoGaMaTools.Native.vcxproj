@@ -163,7 +163,7 @@
     <ClCompile Include="kogama-tools\Helpers\HookHelper.cpp" />
     <ClCompile Include="kogama-tools\Helpers\StringExtensions.cpp" />
     <ClCompile Include="kogama-tools\services\Build\BlueModeTool.cpp" />
-    <ClCompile Include="kogama-tools\services\Build\LogicRenderService.cpp" />
+    <ClCompile Include="kogama-tools\services\Graphics\LogicRenderService.cpp" />
     <ClCompile Include="kogama-tools\services\Build\ModelModule\CopyModel.cpp" />
     <ClCompile Include="kogama-tools\services\Build\CustomGrid.cpp" />
     <ClCompile Include="kogama-tools\services\Build\DestructiblesUnlock.cpp" />
@@ -181,6 +181,7 @@
     <ClCompile Include="kogama-tools\services\Common\MainComponent.cpp" />
     <ClCompile Include="kogama-tools\services\Common\TextCommandService.cpp" />
     <ClCompile Include="kogama-tools\services\Graphics\FogService.cpp" />
+    <ClCompile Include="kogama-tools\services\Graphics\MessageReceiveService.cpp" />
     <ClCompile Include="kogama-tools\services\Graphics\ThemeUtils.cpp" />
     <ClCompile Include="kogama-tools\services\Info\GameInfoService.cpp" />
     <ClCompile Include="kogama-tools\services\KieroUI.cpp" />
@@ -210,7 +211,7 @@
     <ClInclude Include="kogama-tools\Helpers\StringExtensions.h" />
     <ClInclude Include="kogama-tools\Helpers\TypeParameters.h" />
     <ClInclude Include="kogama-tools\services\Build\BlueModeTool.h" />
-    <ClInclude Include="kogama-tools\services\Build\LogicRenderService.h" />
+    <ClInclude Include="kogama-tools\services\Graphics\LogicRenderService.h" />
     <ClInclude Include="kogama-tools\services\Build\ModelModule\CubeInfo.h" />
     <ClInclude Include="kogama-tools\services\Build\ModelModule\CopyModel.h" />
     <ClInclude Include="kogama-tools\services\Build\CustomGrid.h" />
@@ -229,6 +230,7 @@
     <ClInclude Include="kogama-tools\services\Common\MainComponent.h" />
     <ClInclude Include="kogama-tools\services\Common\TextCommandService.h" />
     <ClInclude Include="kogama-tools\services\Graphics\FogService.h" />
+    <ClInclude Include="kogama-tools\services\Graphics\MessageReceiveService.h" />
     <ClInclude Include="kogama-tools\services\Graphics\ThemeUtils.h" />
     <ClInclude Include="kogama-tools\services\Info\GameInfoService.h" />
     <ClInclude Include="kogama-tools\services\KieroUI.h" />

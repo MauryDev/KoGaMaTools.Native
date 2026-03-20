@@ -15,10 +15,11 @@ namespace KoGaMaTools::Services
 		void Render() override;
 		bool Resolve(TextCommandService::CommandData& command) override;
 		std::string_view GetCommandHelp() override;
-		void EnableRender(bool enable);
 	private:
 		bool Enabled;
 		std::shared_ptr<MainComponent> mainComponent;
 		inline static std::shared_ptr<LogicRenderService> Instance;
+
+		void EnableRender(bool enable);
 	};
 }
