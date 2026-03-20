@@ -39,7 +39,7 @@ int APIENTRY wWinMain(
                 ImGui::SetNextWindowSize(ImVec2(700, 400));
             }
 
-            ImGui::Begin("KoGaMa Installer", &popen,
+            ImGui::Begin("KoGaMa Tools Installer", &popen,
                 ImGuiWindowFlags_NoMove |
                 ImGuiWindowFlags_NoCollapse);
 
