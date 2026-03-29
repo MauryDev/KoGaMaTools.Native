@@ -6149,4 +6149,43 @@ struct UE_RenderSettings {
 };
 
 
+struct EditorWorldObjectCreation {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<2> fields;
+inline static auto /* ThemeRepository */ &f_themeRepository = fields.get<false>(0), /* EditorStateMachine */ &f_esm = fields.get<false>(1);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<13> methods;
+    /* System.Void Initialize(EditorStateMachine esm) */
+    inline static auto& m_Initialize = methods.get<false, false>(0);
+    /* System.Void Clone(MVWorldObjectClient original, System.Boolean cloneToRoot, System.Boolean setAsPreviewItem, System.Boolean goToInsert = False) */
+    inline static auto& m_Clone = methods.get<false, true>(1);
+    /* System.Void OnAddItemFromInventory(InventoryItem item) */
+    inline static auto& m_OnAddItemFromInventory = methods.get<false, true>(2);
+    /* KoGaMaPackageClient GetKoGaMaPackageFromItem(InventoryItem item) */
+    inline static auto& m_GetKoGaMaPackageFromItem = methods.get<true, false>(3);
+    /* System.Void OnAddNewPrototype(System.String name, System.Single scale) */
+    inline static auto& m_OnAddNewPrototype = methods.get<false, true>(4);
+    /* System.Void CloneWorldObjectTreeResponseHandler(System.Object sender, CloneWorldObjectTreeResponseEventArgs e) */
+    inline static auto& m_CloneWorldObjectTreeResponseHandler = methods.get<false, false>(5);
+    /* System.Boolean ValidateAddItemFromInventory(KoGaMaPackageClient package) */
+    inline static auto& m_ValidateAddItemFromInventory = methods.get<false, false>(6);
+    /* System.Boolean IsItemAnAllowedWinningCondition(MVWorldObjectClient worldObject) */
+    inline static auto& m_IsItemAnAllowedWinningCondition = methods.get<false, false>(7);
+    /* System.Boolean IsWinningConditionPlaceable() */
+    inline static auto& m_IsWinningConditionPlaceable = methods.get<false, false>(8);
+    /* System.Collections.Generic.List`1<MVWorldObjectClient> GetPlacedWinningConditions() */
+    inline static auto& m_GetPlacedWinningConditions = methods.get<false, false>(9);
+    /* System.Void WOCM_InitializedGameQueryData(System.Object sender, InitializedGameQueryDataEventArgs e) */
+    inline static auto& m_WOCM_InitializedGameQueryData = methods.get<false, false>(10);
+    /* System.Void OnChangePrototypeScale(System.Int32 worldId, System.Single scale) */
+    inline static auto& m_OnChangePrototypeScale = methods.get<false, true>(11);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(12);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

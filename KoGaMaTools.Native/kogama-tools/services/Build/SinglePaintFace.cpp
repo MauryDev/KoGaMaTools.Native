@@ -15,8 +15,9 @@ namespace KoGaMaTools::Services
 	
 	void SinglePaintFace::Render()
 	{
-		ImGui::Checkbox("Single Face", &Enabled);
-
+		ImGui::Checkbox("Single Paint Face", &Enabled);
+		if (ImGui::IsItemHovered())
+			ImGui::SetTooltip("When enabled, only a single face of a cube will be painted at a time.");
 	}
 	void SinglePaintFace::Init(Core::DIContainer& di)
 	{
@@ -25,7 +26,6 @@ namespace KoGaMaTools::Services
 		auto configService = di.Get<ConfigService>();
 		auto hookingService = di.Get<HookingService>();
 
-		// Load initial configuration values
 		LoadConfig(configService->GetConfig());
 
 		const char* module = "SinglePaintFace";

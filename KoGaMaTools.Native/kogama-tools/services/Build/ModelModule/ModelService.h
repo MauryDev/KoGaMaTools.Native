@@ -6,6 +6,7 @@
 #include "CopyModel.h"
 #include <kogama-tools/services/Common/MainComponent.h>
 #include <kogama-tools/UI/ITextureManager.h>
+#include "CustomModelScale.h"
 
 namespace KoGaMaTools::Services::ModelModule {
 	struct ModelService : UI::MainUI::IComponent,
@@ -14,6 +15,8 @@ namespace KoGaMaTools::Services::ModelModule {
 		inline static std::shared_ptr<ModelService> Instance;
 		std::shared_ptr<CopyModelService> copyService;
 		std::shared_ptr<PasteModelService> pasteService;
+		std::shared_ptr<CustomModelScale> customModelScale;
+
 		std::shared_ptr<MainComponent> mainComponent;
 		std::shared_ptr<UI::ITextureManager> textureManager;
 

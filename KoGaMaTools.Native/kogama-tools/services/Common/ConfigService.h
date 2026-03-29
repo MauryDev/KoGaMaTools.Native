@@ -4,10 +4,11 @@
 #include <memory>
 #include <string>
 #include <string_view>
-#include <filesystem>
-#include "../../UI/MainUI.h"
-#include "../../Core/DITools.h"
+#include <kogama-tools/UI/MainUI.h>
+#include <kogama-tools/Core/DITools.h>
 #include "TextCommandService.h"
+#include <kogama-tools/services/IO/IKoGaMaEnvironment.h>
+
 namespace KoGaMaTools::Services {
 	struct IConfigurable {
 		virtual void OnChangedConfig(const nlohmann::json& value) {}
@@ -19,7 +20,8 @@ namespace KoGaMaTools::Services {
 	{
 		using json = nlohmann::json;
 		
-		static std::shared_ptr<ConfigService> Instance;
+		inline static std::shared_ptr<ConfigService> Instance;
+		std::shared_ptr<IKoGaMaEnvironment> environment;
 		json config;
 		std::string configPath;
 		std::vector<std::shared_ptr<IConfigurable>> configurables;

@@ -1,5 +1,4 @@
 #pragma once
-#include "PathHelper.h"
 #include "KieroUI.h"
 #include "LoggerService.h"
 
@@ -34,3 +33,7 @@
 #include "Graphics/FogService.h"
 #include "Graphics/LogicRenderService.h"
 #include "Graphics/MessageReceiveService.h"
+
+
+#include "IO/KoGaMaEnvironmentWindows.h"
+#include "IO/WindowsFileService.h"

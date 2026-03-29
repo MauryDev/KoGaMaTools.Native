@@ -466,6 +466,11 @@ void UE_RenderSettings::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataIn
 
 }
 
+void EditorWorldObjectCreation::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 93, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -560,5 +565,6 @@ void UE_RenderSettings::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataIn
         ThemeRepository::Init(metadataInfo);
         Theme::Init(metadataInfo);
         UE_RenderSettings::Init(metadataInfo);
+        EditorWorldObjectCreation::Init(metadataInfo);
     }
 }

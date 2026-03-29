@@ -47,6 +47,18 @@ namespace KoGaMaTools::UI {
 			// 2. Fold expression to call the single-component AddComponent for each item
 			(AddComponent(static_cast<int>(i), std::static_pointer_cast<IComponent>(components)), ...);
 		}
+		template <typename... Ts>
+		void AddComponents(const std::string& name)
+		{
+			auto& di = Core::DIContainer::GetInstance();
+			AddComponents<Ts...>(name, di.Get<Ts>()...);
+		}
+		template <typename... Ts>
+		void AddComponents(int i)
+		{
+			auto& di = Core::DIContainer::GetInstance();
+			AddComponents<Ts...>(i, di.Get<Ts>()...);
+		}
 		void StartUI();
 	};
 	

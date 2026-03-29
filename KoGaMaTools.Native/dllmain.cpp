@@ -1,150 +1,19 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include <windows.h>
 
-#include <MinHook.h>
 
-#include <Tools.Il2Cpp.Lib.h>
-#include "kogama-tools/services/services.h"
-#include "kogama-tools/UI/MainUI.h"
-#include <MetadataInit.h>
-#include "kogama-tools/Core/DITools.h"
-#include <kogama-tools/Helpers/TypeParameters.h>
-#include <kogama-tools/UI/DX11TextureManager.h>
-#include <kogama-tools/UI/DX11FontManager.h>
+#include <kogama-tools/services/AppBootstrapper.h>
 
-namespace {
-	template <typename T>
-	void AddComponent(KoGaMaTools::UI::MainUI& ui, size_t idx, const T&)
-	{
-		auto& app = KoGaMaTools::Core::DIContainer::GetInstance();
-		ui.AddComponent(static_cast<int>(idx), app.Get<T>());
-	}
-	template <typename ...T>
-	void AddComponent(KoGaMaTools::UI::MainUI& ui, size_t idx, const  KoGaMaTools::Helpers::TypeParameters<T...>&)
-	{
-		(AddComponent(ui, idx, T{}), ...);
-	}
-	template <typename ...T>
-	void SetupUI(KoGaMaTools::UI::MainUI& ui, const std::string& name)
-	{
-		ui.AddComponentType(name);
-		auto i = ui.components.size() - 1;
-		(AddComponent(ui, i, T{}), ...);
-	}
-}
+
 
 
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
 	auto moduleDll = (HMODULE)lpReserved;
-	KoGaMaTools::Services::PathHelper::Install(moduleDll);
-	do {
-		Sleep(4000);
 
-	} while (GetModuleHandleA("GameAssembly.dll") == nullptr || GetModuleHandleA("UnityPlayer.dll") == nullptr);
-
-	auto& folderWork = KoGaMaTools::Services::PathHelper::GetFolderWork();
-	auto region = KoGaMaTools::Services::PathHelper::RegionToStr(KoGaMaTools::Services::PathHelper::GetRegion());
-#ifdef NDEBUG
-	auto dllMinHook = (folderWork / "minhook.x64.dll").string();
-#else
-	auto dllMinHook = (folderWork / "minhook.x64d.dll").string();
-#endif
-
-	auto metadata1Path = (folderWork / region / "Tools.Il2Cpp.ICalls.dat").string();
-	auto metadata2Path = (folderWork / region / "KoGaMaAPI.KoGaMa.dat").string();
-	LoadLibraryA(dllMinHook.c_str());
+	KoGaMaTools::Services::AppBootstrapper::Run(moduleDll);
 	
-
-	auto& app = KoGaMaTools::Core::DIContainer::GetInstance();
-
-	app.NewServiceAs<KoGaMaTools::UI::ITextureManager, KoGaMaTools::UI::DX11TextureManager>(moduleDll);
-	app.NewServiceAs<KoGaMaTools::UI::IFontManager, KoGaMaTools::UI::DX11FontManager>(moduleDll);
-	auto fontManager = app.Get<KoGaMaTools::UI::IFontManager>();
-
-	fontManager->Initialize();
-
-	KoGaMaTools::Services::KieroUI::InitHook();
-
-	KoGaMaAPI::Metadata::Install(metadata1Path, metadata2Path);
-
-	MH_Initialize();
-	
-
-	
-	namespace S = KoGaMaTools::Services;
-
-	
-	KoGaMaTools::Core::InstallMultiple<S::MainComponent,
-		S::LoggerService,
-		KoGaMaTools::UI::MainUI,
-		S::ConfigService,
-		S::TextCommandService,
-		S::ContextMenuService,
-		S::HookingService,
-		S::SinglePaintFace, 
-		S::NoLimit,
-		S::BlueModeTool,
-		S::DestructiblesUnlock,
-		S::CustomGrid,
-		S::EditModeSpeed,
-		S::RotationStep,
-		S::UnlimitedConfig,
-		S::AntiAfk,
-		S::CustomCrossHairColor,
-		S::FastRespawn,
-		S::CustomCrossHairTexture,
-		S::CameraService,
-		S::GameInfoService,
-		S::ResolutionService,
-		S::KillCountService,
-		S::ThemeService,
-		S::FogService,
-		S::LogicRenderService,
-		S::MessageReceiveService
-	>();
-	KoGaMaTools::Services::ModelModule::Init(app);
-
-
-	app.InitAll();
-
-	auto ui = app.Get<KoGaMaTools::UI::MainUI>();
-	
-	SetupUI<S::SinglePaintFace,
-		S::NoLimit,
-		S::BlueModeTool,
-		S::DestructiblesUnlock,
-		S::CustomGrid,
-		S::EditModeSpeed,
-		S::RotationStep,
-		S::UnlimitedConfig,
-		S::ModelModule::ModelService>(*ui, "Build");
-
-
-	SetupUI<S::AntiAfk,
-		S::CustomCrossHairColor,
-		S::FastRespawn,
-		S::CustomCrossHairTexture,
-		S::ResolutionService,
-		S::CameraService,
-		S::KillCountService>(*ui, "PvP");
-
-	SetupUI<S::GameInfoService>(*ui, "Info");
-
-	SetupUI<S::ConfigService>(*ui, "Config");
-	SetupUI<S::ThemeService,
-		S::FogService,
-		S::LogicRenderService,
-		S::MessageReceiveService>(*ui, "UI");
-
-
-	app.Get<S::ConfigService>()->SetupConfigurables();
-	app.Get<S::TextCommandService>()->SetupCommandsResolve();
-	app.Get<S::ContextMenuService>()->SetupButtons();
-
-	ui->StartUI();
-
 	
 	return TRUE;
 }

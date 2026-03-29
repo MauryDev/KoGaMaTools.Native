@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
-#include "../../Core/DITools.h"
+#include <kogama-tools/Core/DITools.h>
+#include <kogama-tools/services/IO/IKoGaMaEnvironment.h>
 
 namespace KoGaMaTools::Services {
 	
@@ -13,8 +14,7 @@ namespace KoGaMaTools::Services {
 			void** original;
 		};
 		inline static std::shared_ptr<HookingService> Instance;
-		
-		// Inherited via IInitializable
+		HookingService(const IKoGaMaEnvironment& env);
 		void Init(Core::DIContainer& di) override;
 
 		bool CreateHook(void* methodPtr, void* detour, void** original);

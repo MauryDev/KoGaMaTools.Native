@@ -3,6 +3,21 @@
 
 
 
+KoGaMaTools::Services::HookingService::HookingService(const IKoGaMaEnvironment& env)
+{
+	auto& folder = env.GetFolderWork();
+
+#ifdef NDEBUG
+	auto minhook = (folder / "minhook.x64.dll").string();
+#else
+	auto minhook = (folder / "minhook.x64d.dll").string();
+#endif
+	LoadLibraryA(minhook.c_str());
+
+	MH_Initialize();
+
+}
+
 void KoGaMaTools::Services::HookingService::Init(Core::DIContainer& di)
 {
 	Instance = di.Get<HookingService>();

@@ -111,8 +111,9 @@ namespace KoGaMaTools::Services::KieroUI
 		// 2. Chamar a função original
 		HRESULT hr = oResizeBuffers(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
 
+		
 		// 3. Verificação de sucesso e tamanho
-		if (SUCCEEDED(hr) && Width > 0 && Height > 0) {
+		if (init && SUCCEEDED(hr) && Width > 0 && Height > 0) {
 			ID3D11Texture2D* pBuffer = nullptr;
 			hr = pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBuffer);
 

@@ -7,22 +7,23 @@ A native tool developed in C++ designed to inject extra features and modificatio
 ## 🛡 Badges
 
 ![C++](https://img.shields.io/badge/Language-C++20-blue)
-![Platform](https://img.shields.io/badge/Platform-Windows-0078D6)
+![Platform](https://img.shields.io/badge/Platform-Windows%20x64-0078D6)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-Develop-orange)
+![Status](https://img.shields.io/badge/Status-Active%20Development-orange)
 
 ## 🚧 Project Status
 
-The project is under active development (develop `branch`). New features and metadata are being mapped continuously.
+The project is under active development on the `develop` branch. New features and metadata mappings are being continuously added and refined.
 
 ## 📋 Table of Contents
 
 - [About](#kogamatoolsnative)
 - [Features](#-features)
 - [Demonstration](#-application-demonstration)
+- [Project Structure](#-project-structure)
 - [Prerequisites](#-prerequisites)
 - [How to Run](#-how-to-run)
-- [Technologies Used](#-techonologies-used)
+- [Technologies Used](#-technologies-used)
 - [Contribution](#-contribution)
 - [Acknowledgments](#-acknowledgments)
 - [Author](#-author)
@@ -59,7 +60,7 @@ The project injects a DLL into the game process and presents an Overlay menu usi
 * **Multi-Region Support**: Automatic detection of the server region (BR, WWW, Friends) to load the correct metadata.
 * **Chat Command**: A system that allows executing commands through the in-game chat, providing quick access to features without opening the menu.
 * **Configuration**: The project includes a configuration system that allows users to save and load their settings, ensuring that preferences are retained across gaming sessions.
-* **Info**: Displays real-time information about the current game state, such as player XP, models count, and etc..
+* **Info**: Displays real-time information about the current game state, such as player XP, models count, and more.
 
 ## 📷 Application Demonstration
 
@@ -69,60 +70,83 @@ The project injects a DLL into the game process and presents an Overlay menu usi
 
 ![In-Game Project](src/img/demostração3.png)
 
+## 📁 Project Structure
+
+### Root Directory
+
+* **`/src`**: Contains the source code files.
+    * **`/img`**: Image assets used in the documentation.
+    * **`/dll`**: The generated DLL files after the build.
+    * **`/metadata`**: Folder where the metadata files are located (BR, WWW, etc.).
+* **`build/`**: Contains scripts and files related to project building and publishing.
+* **`LICENSE.txt`**: The license file for the project.
+* **`README.md`**: This readme file.
+
+```mermaid
+graph TD
+
+A[KoGaMaInjector] --> B[KoGaMaTools.Native DLL]
+
+B --> C[Services Layer]
+B --> D[UI Layer]
+B --> E[Metadata Layer]
+
+C --> C1[Build Features]
+C --> C2[PvP Features]
+C --> C3[Kiero Hook]
+C --> C4[Logger]
+C --> C5[PathHelper]
+C --> C5[Graphic Features]
+
+D --> D1[ImGui MainUI]
+
+E --> E1[MetadataInit]
+E --> E2[IL2CPP Stubs]
+
+C3 --> F[DirectX 11]
+C3 --> G[Kiero Library]
+C --> H[MinHook Library]
+```
+
 ## ⚙️ Prerequisites
 
 To compile and run the project, you will need:
 
-* **Operating System**: Windows (x64).
-* **IDE**: Visual Studio 2022 (C++ v145 support).
+* **Operating System**: Windows 10 or later (64-bit).
+* **IDE**: Visual Studio 2022 or later with C++ workload installed.
+* **Compiler**: MSVC v145 (C++ v145 support).
 * **Dependencies**:
-    * The project relies on generated IL2CPP metadata (`Tools.Il2Cpp.ICalls.dat`, `KoGaMaAPI.KoGaMa.dat`).
-    * MinHook and Kiero Libraries (already referenced in the project).
+    * The project relies on generated IL2CPP metadata files:
+        * `Tools.Il2Cpp.ICalls.dat`
+        * `KoGaMaAPI.KoGaMa.dat`
+    * MinHook library (included in the project).
+    * Kiero library (included in the project).
+    * ImGui library (included as dependency).
+    * DirectX 11 SDK (included with Windows SDK).
+* **Shared Project**: Il2CppInteropCpp (referenced as shared project).
 
 ## 🏃 How to Run
 
 ### Compilation
 
-1.  Clone the repository.
-2.  Open the solution file `KoGaMaTools.Native.slnx` in Visual Studio.
-3.  Select the `Release` or `Debug` configuration and the `x64` platform.
-4.  Build the project.
+1. Clone the repository.
+2. Open the solution file `KoGaMaTools.Native.sln` in Visual Studio 2022.
 
-### Installation/Injection
+3. Ensure all dependencies are resolved (vcpkg manifest mode is enabled).
 
-After compilation, the build script (`build/publish.cmd`) organizes the output files.
+4. Select **Release** configuration and **x64** platform (Debug is also available for testing).
 
-1.  The generated DLL (`KoGaMaTools.Native.dll`) must be injected into the KoGaMa game process.
-2.  **Important**: The DLL expects a specific folder structure to load the correct metadata based on the game executable's region. Ensure that `minhook.x64.dll` and the metadata folder (e.g., `BR/`, `WWW/`) are in the working directory expected by the injector.
+5. Build the solution using __Build > Build Solution__ or press `Ctrl + Shift + B`.
 
-## 🛠 Technologies used
+### Compilation Output
 
-* **[C++ 20](https://en.cppreference.com/w/cpp/20)** - Main programming language.
-* **[MinHook](https://github.com/TsudaKageyu/minhook)** - Library for hooking Windows API functions.
-* **[Kiero](https://github.com/Rebzzel/kiero)** - Universal hook for graphical interfaces (DirectX 11).
-* **[ImGui](https://github.com/ocornut/imgui)** - Library for creating the user interface (Overlay).
-* **IL2CPP Interop** - System for interacting with Unity's IL2CPP backend.
+After a successful build:
+- The main DLL: `KoGaMaTools.Native\x64\Release\Native\KoGaMaTools.Native.dll`
+- Supporting DLL: `KoGaMaTools.Native\x64\Release\Metadata\KoGaMaAPI.Metadata.dll`
 
-## 🤝 Contribution
+### Code Guidelines
 
-Contributions are welcome! Feel free to open issues reporting problems or pull requests with improvements.
-
-1.  Fork the project.
-2.  Create your Feature Branch (`git checkout -b feature/MyFeature`)
-3.  Commit your changes (`git commit -m 'Adding new feature'`)
-4.  Push to the Branch (`git push origin feature/MyFeature`)
-5.  Open a Pull Request.
-
-## 👏 Acknowledgments
-
-Special thanks to the following for testing and feedback:
-
-* **Snowy** - *Testing and Feedback*
-
-## 👤 Author
-
-* **MauryDev** - *Initial Development* - [GitHub Profile](https://github.com/MauryDev)
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details.
+* Follow C++20 standards and modern practices.
+* Maintain consistent code formatting and style.
+* Add comments for complex logic.
+* Test thoroughly before submitting a PR.

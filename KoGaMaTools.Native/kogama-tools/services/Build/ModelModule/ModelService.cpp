@@ -9,6 +9,8 @@ void KoGaMaTools::Services::ModelModule::ModelService::Init(Core::DIContainer& d
 	copyService = di.Get<CopyModelService>();
 	pasteService = di.Get<PasteModelService>();
 	mainComponent = di.Get<MainComponent>();
+    customModelScale = di.Get<CustomModelScale>();
+
 	textureManager = di.Get<UI::ITextureManager>();
 }
 
@@ -17,7 +19,11 @@ void KoGaMaTools::Services::ModelModule::ModelService::Render()
     ImGui::BeginGroup();
 
 
-    ImGui::TextDisabled("MODEL MANIPULATION");
+    ImGui::TextDisabled("Model Tools");
+    ImGui::Spacing();
+
+    customModelScale->Render();
+
     ImGui::Spacing();
 
     if (ImGui::ImageButton("##CopyBtn", textureManager->GetTexture(IDB_PNG6), ImVec2(32, 32))) {

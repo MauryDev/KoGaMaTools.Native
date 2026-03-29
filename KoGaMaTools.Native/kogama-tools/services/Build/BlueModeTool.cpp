@@ -45,7 +45,7 @@ void KoGaMaTools::Services::BlueModeTool::Init(Core::DIContainer& di)
 void KoGaMaTools::Services::BlueModeTool::Render()
 {
 	ImGui::Checkbox("Blue Mode", &Enabled);
-
+	
 }
 
 

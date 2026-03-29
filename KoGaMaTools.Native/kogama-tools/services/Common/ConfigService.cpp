@@ -1,21 +1,16 @@
 #include "ConfigService.h"
 #include <fstream>
-#include <sstream>
-#include "../../UI/MainUI.h"
 #include <imgui.h>
-#include "../PathHelper.h"
 using json = nlohmann::json;
 
 
 namespace KoGaMaTools::Services {
 	
-	std::shared_ptr<ConfigService> ConfigService::Instance;
-
 
 
 	bool ConfigService::LoadConfig(const std::string& filePath)
 	{
-		auto& folderWork = KoGaMaTools::Services::PathHelper::GetFolderWork();
+		auto& folderWork = environment->GetFolderWork();
 
 		configPath = (folderWork / filePath).string();
 		std::ifstream file(configPath);
@@ -123,6 +118,7 @@ namespace KoGaMaTools::Services {
 	{
 		if (!Instance) {
 			Instance = di.Get<ConfigService>();
+			environment = di.Get<IKoGaMaEnvironment>();
 			LoadConfig();
 			firstLoad = false;
 		}

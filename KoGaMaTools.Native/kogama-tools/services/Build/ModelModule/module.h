@@ -1,7 +1,10 @@
 #pragma once
 
-#include "CopyModel.h"
+#include <kogama-tools/Core/DITools.h>
 #include "PasteModel.h"
+#include "CopyModel.h"
+#include "CustomModelScale.h"
+
 #include "ModelService.h"
 namespace KoGaMaTools::Services::ModelModule {
 	void Init(Core::DIContainer& di);

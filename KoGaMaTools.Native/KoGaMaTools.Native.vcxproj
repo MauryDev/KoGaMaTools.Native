@@ -162,7 +162,12 @@
     <ClCompile Include="kogama-tools\Helpers\DelegateUtils.cpp" />
     <ClCompile Include="kogama-tools\Helpers\HookHelper.cpp" />
     <ClCompile Include="kogama-tools\Helpers\StringExtensions.cpp" />
+    <ClCompile Include="kogama-tools\services\AppBootstrapper.cpp" />
     <ClCompile Include="kogama-tools\services\Build\BlueModeTool.cpp" />
+    <ClCompile Include="kogama-tools\services\Build\ModelModule\CustomModelScale.cpp" />
+    <ClCompile Include="kogama-tools\services\IO\IKoGaMaEnvironment.cpp" />
+    <ClCompile Include="kogama-tools\services\IO\KoGaMaEnvironmentWindows.cpp" />
+    <ClCompile Include="kogama-tools\services\IO\WindowsFileService.cpp" />
     <ClCompile Include="kogama-tools\services\Graphics\LogicRenderService.cpp" />
     <ClCompile Include="kogama-tools\services\Build\ModelModule\CopyModel.cpp" />
     <ClCompile Include="kogama-tools\services\Build\CustomGrid.cpp" />
@@ -187,7 +192,6 @@
     <ClCompile Include="kogama-tools\services\KieroUI.cpp" />
     <ClCompile Include="kogama-tools\services\Build\NoLimit.cpp" />
     <ClCompile Include="kogama-tools\services\LoggerService.cpp" />
-    <ClCompile Include="kogama-tools\services\PathHelper.cpp" />
     <ClCompile Include="kogama-tools\services\Build\SinglePaintFace.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\AntiAfk.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\CameraService.cpp" />
@@ -203,6 +207,11 @@
     <ClCompile Include="kogama-tools\UI\ITextureManager.cpp" />
     <ClCompile Include="kogama-tools\UI\MainUI.cpp" />
     <ClCompile Include="kogama-tools\services\Graphics\ThemeService.cpp" />
+    <ClCompile Include="kogama-tools\UI\Tabs\BuildUITab.cpp" />
+    <ClCompile Include="kogama-tools\UI\Tabs\ConfigUITab.cpp" />
+    <ClCompile Include="kogama-tools\UI\Tabs\InfoUITab.cpp" />
+    <ClCompile Include="kogama-tools\UI\Tabs\PvPUITab.cpp" />
+    <ClCompile Include="kogama-tools\UI\Tabs\UI_UITab.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\Core\DITools.h" />
@@ -210,7 +219,13 @@
     <ClInclude Include="kogama-tools\Helpers\HookHelper.h" />
     <ClInclude Include="kogama-tools\Helpers\StringExtensions.h" />
     <ClInclude Include="kogama-tools\Helpers\TypeParameters.h" />
+    <ClInclude Include="kogama-tools\services\AppBootstrapper.h" />
     <ClInclude Include="kogama-tools\services\Build\BlueModeTool.h" />
+    <ClInclude Include="kogama-tools\services\Build\ModelModule\CustomModelScale.h" />
+    <ClInclude Include="kogama-tools\services\IO\IFileService.h" />
+    <ClInclude Include="kogama-tools\services\IO\IKoGaMaEnvironment.h" />
+    <ClInclude Include="kogama-tools\services\IO\KoGaMaEnvironmentWindows.h" />
+    <ClInclude Include="kogama-tools\services\IO\WindowsFileService.h" />
     <ClInclude Include="kogama-tools\services\Graphics\LogicRenderService.h" />
     <ClInclude Include="kogama-tools\services\Build\ModelModule\CubeInfo.h" />
     <ClInclude Include="kogama-tools\services\Build\ModelModule\CopyModel.h" />
@@ -236,7 +251,6 @@
     <ClInclude Include="kogama-tools\services\KieroUI.h" />
     <ClInclude Include="kogama-tools\services\Build\NoLimit.h" />
     <ClInclude Include="kogama-tools\services\LoggerService.h" />
-    <ClInclude Include="kogama-tools\services\PathHelper.h" />
     <ClInclude Include="kogama-tools\services\PvP\AntiAfk.h" />
     <ClInclude Include="kogama-tools\services\PvP\CameraService.h" />
     <ClInclude Include="kogama-tools\services\PvP\CustomCrossHairColor.h" />
@@ -254,9 +268,16 @@
     <ClInclude Include="kogama-tools\UI\DX11TextureManager.h" />
     <ClInclude Include="kogama-tools\UI\IFontManager.h" />
     <ClInclude Include="kogama-tools\UI\ITextureManager.h" />
+    <ClInclude Include="kogama-tools\UI\IUIGroupService.h" />
     <ClInclude Include="kogama-tools\UI\MainUI.h" />
     <ClInclude Include="kogama-tools\Resources\resource.h" />
     <ClInclude Include="kogama-tools\services\Graphics\ThemeService.h" />
+    <ClInclude Include="kogama-tools\UI\Tabs\BuildUITab.h" />
+    <ClInclude Include="kogama-tools\UI\Tabs\ConfigUITab.h" />
+    <ClInclude Include="kogama-tools\UI\Tabs\InfoUITab.h" />
+    <ClInclude Include="kogama-tools\UI\Tabs\PvPUITab.h" />
+    <ClInclude Include="kogama-tools\UI\Tabs\TabsUI.h" />
+    <ClInclude Include="kogama-tools\UI\Tabs\UI_UITab.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KoGaMaAPI.Metadata\KoGaMaAPI.Metadata.vcxproj">

@@ -1,7 +1,7 @@
 #include "LoggerService.h"
 #include <chrono>
 #include <iomanip>
-#include "PathHelper.h"
+#include "IO/IKoGaMaEnvironment.h"
 
 namespace KoGaMaTools::Services {
 
@@ -31,7 +31,8 @@ namespace KoGaMaTools::Services {
 
     void LoggerService::Init(Core::DIContainer& di)
     {
-        auto localPath = PathHelper::GetFolderWork() / (std::string("teste") + ".log");
+        auto kogamaEnvironment = di.Get<IKoGaMaEnvironment>();
+        auto localPath = kogamaEnvironment->GetFolderWork() / (std::string("kogama-tools-output") + ".log");
 
         // Abrimos em modo append
         _logFile.open(localPath.string(), std::ios::out);
