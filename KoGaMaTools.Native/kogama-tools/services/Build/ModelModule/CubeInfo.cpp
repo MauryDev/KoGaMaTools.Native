@@ -9,3 +9,13 @@ void KoGaMaTools::Services::ModelModule::to_json(nlohmann::json& j, const CubeIn
 	};
 
 }
+
+void KoGaMaTools::Services::ModelModule::from_json(const nlohmann::json& j, CubeInfo& info)
+{
+	info = {
+		.Position = j.at("Position").get<Types::IntVector>(),
+		.FaceMaterials = j.at("FaceMaterials").get<std::array<uint8_t, 6>>(),
+		.Corners = j.at("Corners").get<std::array<uint8_t, 8>>()
+	};
+
+}

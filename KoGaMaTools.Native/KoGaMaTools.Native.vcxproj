@@ -289,13 +289,18 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="kogama-tools\Resources\img\camera.png" />
+    <Image Include="kogama-tools\Resources\img\checked.png" />
+    <Image Include="kogama-tools\Resources\img\color-swatch-theme.png" />
     <Image Include="kogama-tools\Resources\img\computer.png" />
     <Image Include="kogama-tools\Resources\img\copy.png" />
+    <Image Include="kogama-tools\Resources\img\export.png" />
     <Image Include="kogama-tools\Resources\img\eye.png" />
     <Image Include="kogama-tools\Resources\img\grid.png" />
+    <Image Include="kogama-tools\Resources\img\import.png" />
     <Image Include="kogama-tools\Resources\img\mark.png" />
     <Image Include="kogama-tools\Resources\img\menu-list.png" />
     <Image Include="kogama-tools\Resources\img\paste.png" />
+    <Image Include="kogama-tools\Resources\img\remove.png" />
     <Image Include="kogama-tools\Resources\img\ruler.png" />
     <Image Include="kogama-tools\Resources\img\settings.png" />
     <Image Include="kogama-tools\Resources\img\sunset.png" />

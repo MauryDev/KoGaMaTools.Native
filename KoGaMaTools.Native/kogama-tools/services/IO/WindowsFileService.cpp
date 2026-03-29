@@ -2,35 +2,87 @@
 
 #include <fstream>
 #include <sstream>
-#include <filesystem>
 
-std::string KoGaMaTools::Services::WindowsFileService::ReadFile(const std::string& path)
-{
-    std::ifstream file(path, std::ios::binary | std::ios::ate);
-    if (!file)
-        return {};
+namespace KoGaMaTools::Services {
 
-    std::streamsize size = file.tellg();
-    file.seekg(0, std::ios::beg);
+	std::filesystem::path WindowsFileService::ToPath(std::string_view path)
+	{
+		return std::filesystem::path(path);
+	}
 
-    std::string buffer(size, '\0');
-    if (!file.read(buffer.data(), size))
-        return {};
+	// =========================
+	// TEXT
+	// =========================
 
-    return buffer;
-}
+	std::optional<std::string> WindowsFileService::ReadFile(std::string_view path)
+	{
+		std::ifstream file(ToPath(path), std::ios::in);
 
-bool KoGaMaTools::Services::WindowsFileService::WriteFile(const std::string& path, const std::string& content)
-{
-    std::ofstream file(path, std::ios::binary);
-    if (!file)
-        return false;
+		if (!file.is_open())
+			return std::nullopt;
 
-    file.write(content.data(), static_cast<std::streamsize>(content.size()));
-    return file.good();
-}
+		std::stringstream buffer;
+		buffer << file.rdbuf();
 
-bool KoGaMaTools::Services::WindowsFileService::FileExists(const std::string& path)
-{
-    return std::filesystem::exists(path) && std::filesystem::is_regular_file(path);
+		return buffer.str();
+	}
+
+	bool WindowsFileService::WriteFile(std::string_view path, std::span<const char> content)
+	{
+		std::ofstream file(ToPath(path), std::ios::out | std::ios::trunc);
+
+		if (!file.is_open())
+			return false;
+
+		file.write(content.data(), static_cast<std::streamsize>(content.size()));
+
+		return file.good();
+	}
+
+	// =========================
+	// BINARY
+	// =========================
+
+	std::optional<std::vector<char>> WindowsFileService::ReadBinary(std::string_view path)
+	{
+		std::ifstream file(ToPath(path), std::ios::binary | std::ios::ate);
+
+		if (!file.is_open())
+			return std::nullopt;
+
+		std::streamsize size = file.tellg();
+		if (size < 0)
+			return std::nullopt;
+
+		file.seekg(0, std::ios::beg);
+
+		std::vector<char> buffer(static_cast<size_t>(size));
+
+		if (!file.read(buffer.data(), size))
+			return std::nullopt;
+
+		return buffer;
+	}
+
+	bool WindowsFileService::WriteBinary(std::string_view path, std::span<const char> data)
+	{
+		std::ofstream file(ToPath(path), std::ios::binary | std::ios::trunc);
+
+		if (!file.is_open())
+			return false;
+
+		file.write(data.data(), static_cast<std::streamsize>(data.size()));
+
+		return file.good();
+	}
+
+	// =========================
+	// UTILS
+	// =========================
+
+	bool WindowsFileService::Exists(std::string_view path)
+	{
+		return std::filesystem::exists(ToPath(path));
+	}
+
 }

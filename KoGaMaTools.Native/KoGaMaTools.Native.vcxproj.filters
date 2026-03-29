@@ -417,6 +417,21 @@
     <Image Include="kogama-tools\Resources\img\mark.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="kogama-tools\Resources\img\remove.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="kogama-tools\Resources\img\color-swatch-theme.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="kogama-tools\Resources\img\checked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="kogama-tools\Resources\img\export.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="kogama-tools\Resources\img\import.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Font Include="kogama-tools\Resources\fonts\Roboto-Thin.ttf" />

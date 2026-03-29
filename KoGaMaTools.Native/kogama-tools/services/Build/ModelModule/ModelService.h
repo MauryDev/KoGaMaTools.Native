@@ -7,6 +7,7 @@
 #include <kogama-tools/services/Common/MainComponent.h>
 #include <kogama-tools/UI/ITextureManager.h>
 #include "CustomModelScale.h"
+#include <kogama-tools/services/IO/IFileService.h>
 
 namespace KoGaMaTools::Services::ModelModule {
 	struct ModelService : UI::MainUI::IComponent,
@@ -19,12 +20,14 @@ namespace KoGaMaTools::Services::ModelModule {
 
 		std::shared_ptr<MainComponent> mainComponent;
 		std::shared_ptr<UI::ITextureManager> textureManager;
+		std::shared_ptr<IFileService> fileService;
 
 		void Init(Core::DIContainer& di) override;
 		void Render() override;
-		void UI_CopyModel();
-		void UI_PasteModel();
-
+		void Execute_CopyModel();
+		void Execute_PasteModel();
+		void Execute_SaveModel();
+		void Execute_LoadModel();
 
 
 	};

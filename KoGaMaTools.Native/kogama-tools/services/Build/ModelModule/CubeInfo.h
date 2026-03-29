@@ -8,5 +8,7 @@ namespace KoGaMaTools::Services::ModelModule {
 		std::array<uint8_t, 6> FaceMaterials;
 		std::array<uint8_t, 8> Corners;
 		friend void to_json(nlohmann::json& j, const CubeInfo& info);
+		friend void from_json(const nlohmann::json& j, CubeInfo& info);
+
 	};
 }

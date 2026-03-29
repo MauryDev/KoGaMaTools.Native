@@ -1,12 +1,19 @@
 #include "IntVector.h"
 
-void KoGaMaTools::Types::to_json(nlohmann::json& j, const IntVector& info)
+void KoGaMaTools::Types::to_json(nlohmann::json& j, const IntVector& intpos)
 {
 	j = {
-		{"X", info.X},
-		{"Y", info.Y},
-		{"Z", info.Z}
+		{"X", intpos.X},
+		{"Y", intpos.Y},
+		{"Z", intpos.Z}
 	};
+}
+void KoGaMaTools::Types::from_json(const nlohmann::json& j, IntVector& intpos)
+{
+   
+    intpos.X = j.at("X").get<int16_t>();
+    intpos.Y = j.at("Y").get<int16_t>();
+    intpos.Z = j.at("Z").get<int16_t>();
 }
 bool KoGaMaTools::Types::IntVector::operator==(const IntVector& other)
 {

@@ -10,7 +10,6 @@ namespace {
 bool KoGaMaTools::Services::KillCountService::Detour_TryGetPrioritizedWinCondition(int* condition)
 {
 	namespace K = KoGaMaAPI::KoGaMa;
-	// in future, we can add more conditions here, like showing the flag count in CTF, or the time left in Time Attack, etc.
 	if (Instance->showKillCount)
 	{
 		

@@ -2,7 +2,8 @@
 #include <imgui.h>
 #include "ModelUtils.h"
 #include <kogama-tools/Resources/resource.h>
-
+#include <portable-file-dialogs.h>
+#include <thread>
 void KoGaMaTools::Services::ModelModule::ModelService::Init(Core::DIContainer& di)
 {
 	Instance = di.Get<ModelService>();
@@ -12,6 +13,7 @@ void KoGaMaTools::Services::ModelModule::ModelService::Init(Core::DIContainer& d
     customModelScale = di.Get<CustomModelScale>();
 
 	textureManager = di.Get<UI::ITextureManager>();
+	fileService = di.Get<IFileService>();
 }
 
 void KoGaMaTools::Services::ModelModule::ModelService::Render()
@@ -25,18 +27,36 @@ void KoGaMaTools::Services::ModelModule::ModelService::Render()
     customModelScale->Render();
 
     ImGui::Spacing();
+    ImGui::Spacing();
 
     if (ImGui::ImageButton("##CopyBtn", textureManager->GetTexture(IDB_PNG6), ImVec2(32, 32))) {
-        UI_CopyModel();
+        Execute_CopyModel();
     }
     if (ImGui::IsItemHovered()) ImGui::SetTooltip("Copy Model");
 
     ImGui::SameLine();
 
+
     if (ImGui::ImageButton("##PasteBtn", textureManager->GetTexture(IDB_PNG7), ImVec2(32, 32))) {
-        UI_PasteModel();
+        Execute_PasteModel();
     }
     if (ImGui::IsItemHovered()) ImGui::SetTooltip("Paste Model");
+
+	ImGui::TextDisabled("File Operations");
+    // SALVAR
+    if (ImGui::ImageButton("##ExporFiletBtn", textureManager->GetTexture(IDB_PNG16), ImVec2(32, 32))) {
+        std::thread([this]() {this->Execute_SaveModel(); }).detach();
+
+    }
+    if (ImGui::IsItemHovered()) ImGui::SetTooltip("Export Model");
+
+    ImGui::SameLine();
+
+    // CARREGAR
+    if (ImGui::ImageButton("##ImportFileBtn", textureManager->GetTexture(IDB_PNG17), ImVec2(32, 32))) {
+        std::thread([this]() {this->Execute_LoadModel(); }).detach();
+    }
+    if (ImGui::IsItemHovered()) ImGui::SetTooltip("Load Model");
 
     ImGui::Spacing();
 
@@ -59,7 +79,7 @@ void KoGaMaTools::Services::ModelModule::ModelService::Render()
     ImGui::EndGroup();
 }
 
-void KoGaMaTools::Services::ModelModule::ModelService::UI_CopyModel()
+void KoGaMaTools::Services::ModelModule::ModelService::Execute_CopyModel()
 {
     auto modelCurrent = ModelUtils::GetCurrentModel();
     if (!modelCurrent.isNull() && ModelUtils::IsOwner(modelCurrent))
@@ -79,7 +99,7 @@ void KoGaMaTools::Services::ModelModule::ModelService::UI_CopyModel()
     }
 }
 
-void KoGaMaTools::Services::ModelModule::ModelService::UI_PasteModel()
+void KoGaMaTools::Services::ModelModule::ModelService::Execute_PasteModel()
 {
     auto modelCurrent = ModelUtils::GetCurrentModel();
     if (!modelCurrent.isNull())
@@ -96,4 +116,69 @@ void KoGaMaTools::Services::ModelModule::ModelService::UI_PasteModel()
 
             });
     }
+}
+
+void KoGaMaTools::Services::ModelModule::ModelService::Execute_SaveModel()
+{
+    auto filePath = pfd::save_file("Save model config").result();
+    if (filePath.empty())
+        return;
+
+    this->mainComponent->ExecuteCallback([filePath](void*)
+        {
+            try
+            {
+                const auto& cubes = Instance->copyService->copiedCubes;
+
+                if (cubes.empty())
+                    return;
+
+                auto msgpack = nlohmann::json::to_msgpack(cubes);
+
+                std::span<const char> buffer(
+                    reinterpret_cast<const char*>(msgpack.data()),
+                    msgpack.size()
+                );
+
+                if (!Instance->fileService->WriteBinary(filePath, buffer))
+                {
+                    // TODO: log erro
+                }
+            }
+            catch (const std::exception& e)
+            {
+                // TODO: log erro (e.what())
+            }
+        });
+}
+void KoGaMaTools::Services::ModelModule::ModelService::Execute_LoadModel()
+{
+    auto selectedItems = pfd::open_file("Select a file").result();
+    if (selectedItems.empty())
+        return;
+
+    auto filePath = selectedItems[0];
+
+    this->mainComponent->ExecuteCallback([filePath](void*)
+        {
+            try
+            {
+                auto data = Instance->fileService->ReadBinary(filePath);
+
+                if (!data || data->empty())
+                {
+                    // TODO: log erro
+                    return;
+                }
+
+                auto jsonData = nlohmann::json::from_msgpack(*data);
+
+                Instance->copyService->copiedCubes =
+                    jsonData.get<std::vector<CubeInfo>>();
+            }
+            catch (const std::exception& e)
+            {
+                // TODO: log erro (arquivo inválido / corrompido)
+            }
+        });
 }
