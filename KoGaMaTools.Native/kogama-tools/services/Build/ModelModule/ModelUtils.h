@@ -40,5 +40,5 @@ namespace KoGaMaTools::Services::ModelModule::ModelUtils
 		(TryGetEditableModel<T>(wo, result) || ...);
 		return result;
 	}
-	bool UserContainsMaterial(int materialId);
+	bool UserContainsMaterial(uint8_t materialId);
 }

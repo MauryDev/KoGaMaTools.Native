@@ -229,15 +229,13 @@ namespace KoGaMaTools::Services::ModelModule::ModelUtils {
 		return K::CubeModelingStateMachine::m_get_TargetCubeModel(cmsm);
 	}
 
-	bool UserContainsMaterial(int materialId)
+	bool UserContainsMaterial(uint8_t materialId)
 	{
 		namespace K = KoGaMaAPI::KoGaMa;
 		auto instance = K::MVMaterialRepository::f_instance.Get<Tools::Il2Cpp::Il2CppObject>();
-		auto material = K::MVMaterialRepository::m_GetMaterial(instance, (uint8_t)materialId);
-		if (material.isNull())
-			return false;
-		auto isUnlocked = K::MVMaterial::f_isUnlocked.Get<bool>(instance);
-		return isUnlocked;
+		return K::MVMaterialRepository::m1_IsMaterialUnlocked(instance, materialId)
+			.Unbox<bool>();
+		
 	}
 
 }
