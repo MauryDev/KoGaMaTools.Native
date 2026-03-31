@@ -21,7 +21,7 @@ namespace KoGaMaTools::Services::ModelModule {
 		std::shared_ptr<MainComponent> mainComponent;
 		std::shared_ptr<UI::ITextureManager> textureManager;
 		std::shared_ptr<IFileService> fileService;
-
+		std::atomic<bool> isBusy = false;
 		void Init(Core::DIContainer& di) override;
 		void Render() override;
 		void Execute_CopyModel();

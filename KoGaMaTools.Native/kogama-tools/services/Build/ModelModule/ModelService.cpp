@@ -43,8 +43,10 @@ void KoGaMaTools::Services::ModelModule::ModelService::Render()
     if (ImGui::IsItemHovered()) ImGui::SetTooltip("Paste Model");
 
 	ImGui::TextDisabled("File Operations");
-    // SALVAR
-    if (ImGui::ImageButton("##ExporFiletBtn", textureManager->GetTexture(IDB_PNG16), ImVec2(32, 32))) {
+    ImGui::BeginDisabled(isBusy);
+
+    if (ImGui::ImageButton("##ExportFiletBtn", textureManager->GetTexture(IDB_PNG16), ImVec2(32, 32))) {
+		isBusy = true;
         std::thread([this]() {this->Execute_SaveModel(); }).detach();
 
     }
@@ -52,11 +54,17 @@ void KoGaMaTools::Services::ModelModule::ModelService::Render()
 
     ImGui::SameLine();
 
-    // CARREGAR
     if (ImGui::ImageButton("##ImportFileBtn", textureManager->GetTexture(IDB_PNG17), ImVec2(32, 32))) {
+        isBusy = true;
         std::thread([this]() {this->Execute_LoadModel(); }).detach();
     }
     if (ImGui::IsItemHovered()) ImGui::SetTooltip("Load Model");
+
+    if (isBusy) {
+        ImGui::Text("Processing...");
+    }
+
+	ImGui::EndDisabled();
 
     ImGui::Spacing();
 
@@ -149,6 +157,8 @@ void KoGaMaTools::Services::ModelModule::ModelService::Execute_SaveModel()
             {
                 // TODO: log erro (e.what())
             }
+            Instance->isBusy = false;
+
         });
 }
 void KoGaMaTools::Services::ModelModule::ModelService::Execute_LoadModel()
@@ -180,5 +190,6 @@ void KoGaMaTools::Services::ModelModule::ModelService::Execute_LoadModel()
             {
                 // TODO: log erro (arquivo inválido / corrompido)
             }
+            Instance->isBusy = false;
         });
 }

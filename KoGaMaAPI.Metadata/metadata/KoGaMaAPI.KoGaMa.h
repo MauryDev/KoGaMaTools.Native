@@ -6188,4 +6188,54 @@ inline static auto /* ThemeRepository */ &f_themeRepository = fields.get<false>(
 };
 
 
+struct MVMaterialRepository {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<8> fields;
+inline static auto /* System.Int32 */ &f_DEFAULT_MATERIAL_ID = fields.get<true>(0), /* MVMaterialRepository */ &f_instance = fields.get<true>(1);
+inline static auto /* System.Boolean */ &f_allowDestructibleMaterialSelection = fields.get<false>(2), /* System.Collections.Generic.List`1<MVMaterial> */ &f_materials = fields.get<false>(3), /* MVMaterial */ &f_noMaterial = fields.get<false>(4), /* MVMaterial */ &f_inAirMaterial = fields.get<false>(5), /* MV.WorldObject.PhysicalProperties */ &f_physicalPropertiesDefault = fields.get<false>(6), /* System.Boolean */ &f__IsButtonTexturesInitialized_k__BackingField = fields.get<false>(7);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<18> methods;
+    /* System.Boolean get_AllowDestructibleMaterialSelection() */
+    inline static auto& m_get_AllowDestructibleMaterialSelection = methods.get<true, false>(0);
+    /* System.Void set_AllowDestructibleMaterialSelection(System.Boolean value) */
+    inline static auto& m_set_AllowDestructibleMaterialSelection = methods.get<true, false>(1);
+    /* System.Int32 get_MaterialCount() */
+    inline static auto& m_get_MaterialCount = methods.get<false, false>(2);
+    /* MVMaterial get_InAirMaterial() */
+    inline static auto& m_get_InAirMaterial = methods.get<false, false>(3);
+    /* System.Boolean get_IsButtonTexturesInitialized() */
+    inline static auto& m_get_IsButtonTexturesInitialized = methods.get<false, false>(4);
+    /* System.Void set_IsButtonTexturesInitialized(System.Boolean value) */
+    inline static auto& m_set_IsButtonTexturesInitialized = methods.get<false, false>(5);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(6);
+    /* System.Void InitializeMaterials(System.Collections.Generic.Dictionary`2<System.Object, System.Object> materialList) */
+    inline static auto& m_InitializeMaterials = methods.get<false, false>(7);
+    /* System.Void Reset() */
+    inline static auto& m_Reset = methods.get<false, false>(8);
+    /* System.Void SetMaterialPrice(System.Int32 materialID, System.Int32 materialUnlockPriceGold) */
+    inline static auto& m_SetMaterialPrice = methods.get<false, false>(9);
+    /* System.Void SetMaterialUnlocked(System.Int32 materialId, System.Boolean unlocked) */
+    inline static auto& m_SetMaterialUnlocked = methods.get<false, false>(10);
+    /* System.Boolean AllMaterialUnlocked() */
+    inline static auto& m_AllMaterialUnlocked = methods.get<false, false>(11);
+    /* System.Void GenerateMaterialButtonTextures() */
+    inline static auto& m_GenerateMaterialButtonTextures = methods.get<false, false>(12);
+    /* System.Void AddMaterial(System.String name, System.String description, System.String path, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType, System.Int32 priceGold, System.Boolean isUnlocked, System.Single[] physicalProperties, MaterialButtonTextureGenerator materialButtonTextureGenerator) */
+    inline static auto& m_AddMaterial = methods.get<false, false>(13);
+    /* MVMaterial GetMaterial(System.Byte materialId) */
+    inline static auto& m_GetMaterial = methods.get<false, false>(14);
+    /* MV.WorldObject.PhysicalProperties GetMaterialPhysicalProperties(System.Byte materialId) */
+    inline static auto& m_GetMaterialPhysicalProperties = methods.get<false, false>(15);
+    /* System.Boolean IsMaterialUnlocked(System.Byte[] mats) */
+    inline static auto& m0_IsMaterialUnlocked = methods.get<false, false>(16);
+    /* System.Boolean IsMaterialUnlocked(System.Byte mat) */
+    inline static auto& m1_IsMaterialUnlocked = methods.get<false, false>(17);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

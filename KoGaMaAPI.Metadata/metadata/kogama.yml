@@ -122,3 +122,4 @@ klasses:
 - fullname: UnityEngine.RenderSettings
   name: UE_RenderSettings
 - fullname: EditorWorldObjectCreation
+- fullname: MVMaterialRepository

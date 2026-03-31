@@ -47,7 +47,14 @@ namespace KoGaMaTools::Services::ModelModule::ModelUtils {
 			auto cornersArray = Tools::Il2Cpp::Il2CppArray::New(Tools::Il2Cpp::ICalls::Byte::klass, 8);
 			memcpy_s(cornersArray.GetItems<uint8_t>(), 8, cubeinfo.Corners.data(), 8);
 			memcpy_s(faceMaterialsArray.GetItems<uint8_t>(), 6, cubeinfo.FaceMaterials.data(), 6);
+			for (size_t i = 0; i < 6; i++)
+			{
+				auto cur = faceMaterialsArray.GetItem<uint8_t>(i);
+				if (UserContainsMaterial(cur))
+					continue;
 
+				faceMaterialsArray.SetItem(i, (uint8_t)21);
+			}
 			K::Cube::m0__ctor(cubeNew, cornersArray, faceMaterialsArray);
 			if (existingCube.isNull())
 			{
@@ -220,6 +227,17 @@ namespace KoGaMaTools::Services::ModelModule::ModelUtils {
 		auto cmsm = K::EditorStateMachine::m_get_CubeModelingStateMachine(emsm);
 		if (cmsm.isNull()) return {};
 		return K::CubeModelingStateMachine::m_get_TargetCubeModel(cmsm);
+	}
+
+	bool UserContainsMaterial(int materialId)
+	{
+		namespace K = KoGaMaAPI::KoGaMa;
+		auto instance = K::MVMaterialRepository::f_instance.Get<Tools::Il2Cpp::Il2CppObject>();
+		auto material = K::MVMaterialRepository::m_GetMaterial(instance, (uint8_t)materialId);
+		if (material.isNull())
+			return false;
+		auto isUnlocked = K::MVMaterial::f_isUnlocked.Get<bool>(instance);
+		return isUnlocked;
 	}
 
 }
