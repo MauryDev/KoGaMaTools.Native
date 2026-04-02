@@ -2,7 +2,7 @@
 #include "AvatarUtils.h"
 #include <portable-file-dialogs.h>
 #include <kogama-tools/Resources/resource.h>
-
+#include <metadata/KoGaMaAPI.KoGaMa.h>
 void KoGaMaTools::Services::AvatarModule::AvatarService::Init(Core::DIContainer& di)
 {
 	Instance = di.Get<AvatarService>();
@@ -19,7 +19,7 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::Render()
 
 	ImGui::Spacing();
 
-	if (ImGui::ImageButton("##CopyBtn", textureManager->GetTexture(IDB_PNG6), ImVec2(32, 32))) {
+	if (ImGui::ImageButton("##AvatarCopyBtn", textureManager->GetTexture(IDB_PNG6), ImVec2(32, 32))) {
 		CopyAvatar();
 	}
 	if (ImGui::IsItemHovered()) ImGui::SetTooltip("Copy Avatar");
@@ -27,7 +27,7 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::Render()
 	ImGui::SameLine();
 
 
-	if (ImGui::ImageButton("##PasteBtn", textureManager->GetTexture(IDB_PNG7), ImVec2(32, 32))) {
+	if (ImGui::ImageButton("##AvatarPasteBtn", textureManager->GetTexture(IDB_PNG7), ImVec2(32, 32))) {
 		PasteAvatar();
 	}
 	if (ImGui::IsItemHovered()) ImGui::SetTooltip("Paste Avatar");
@@ -36,7 +36,7 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::Render()
 	ImGui::TextDisabled("File Operations");
 	ImGui::BeginDisabled(isBusy);
 
-	if (ImGui::ImageButton("##ExportFiletBtn", textureManager->GetTexture(IDB_PNG16), ImVec2(32, 32))) {
+	if (ImGui::ImageButton("##AvatarExportFiletBtn", textureManager->GetTexture(IDB_PNG16), ImVec2(32, 32))) {
 		isBusy = true;
 		std::thread([this]() {this->ExportAvatar(); }).detach();
 
@@ -45,7 +45,7 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::Render()
 
 	ImGui::SameLine();
 
-	if (ImGui::ImageButton("##ImportFileBtn", textureManager->GetTexture(IDB_PNG17), ImVec2(32, 32))) {
+	if (ImGui::ImageButton("##AvatarImportFileBtn", textureManager->GetTexture(IDB_PNG17), ImVec2(32, 32))) {
 		isBusy = true;
 		std::thread([this]() {this->ImportAvatar(); }).detach();
 	}
@@ -67,7 +67,7 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::Render()
 
 	ImGui::Indent(10.0f);
 
-	ImGui::Checkbox("##ReplaceOld", &RemoveOldWorkpace);
+	ImGui::Checkbox("##AvatarReplaceOld", &RemoveOldWorkpace);
 	ImGui::SameLine();
 	ImGui::Text("Clean workspace on paste");
 	if (ImGui::IsItemHovered()) {
@@ -75,6 +75,7 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::Render()
 	}
 
 	ImGui::Unindent(10.0f);
+
 
 	ImGui::EndGroup();
 
