@@ -180,6 +180,15 @@
     <ClCompile Include="kogama-tools\services\AppBootstrapper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="kogama-tools\services\Build\AvatarModule\AvatarUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kogama-tools\services\Build\AvatarModule\AvatarService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kogama-tools\services\Build\AvatarModule\AvatarInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\services\KieroUI.h">
@@ -372,6 +381,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="kogama-tools\services\AppBootstrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Build\AvatarModule\AvatarUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Build\AvatarModule\AvatarService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Build\AvatarModule\AvatarInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

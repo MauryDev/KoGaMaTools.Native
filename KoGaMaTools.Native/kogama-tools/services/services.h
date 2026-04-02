@@ -28,6 +28,7 @@
 #include "Common/HookingService.h"
 
 #include "Build/ModelModule/module.h"
+#include "Build/AvatarModule/AvatarService.h"
 
 #include "Graphics/ThemeService.h"
 #include "Graphics/FogService.h"

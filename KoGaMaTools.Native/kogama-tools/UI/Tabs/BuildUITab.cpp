@@ -16,5 +16,6 @@ void KoGaMaTools::UI::BuildUITab::Setup(KoGaMaTools::UI::MainUI& ui)
 		S::EditModeSpeed,
 		S::RotationStep,
 		S::UnlimitedConfig,
-		S::ModelModule::ModelService>(i);
+		S::ModelModule::ModelService,
+		S::AvatarModule::AvatarService>(i);
 }

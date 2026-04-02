@@ -163,6 +163,9 @@
     <ClCompile Include="kogama-tools\Helpers\HookHelper.cpp" />
     <ClCompile Include="kogama-tools\Helpers\StringExtensions.cpp" />
     <ClCompile Include="kogama-tools\services\AppBootstrapper.cpp" />
+    <ClCompile Include="kogama-tools\services\Build\AvatarModule\AvatarInfo.cpp" />
+    <ClCompile Include="kogama-tools\services\Build\AvatarModule\AvatarService.cpp" />
+    <ClCompile Include="kogama-tools\services\Build\AvatarModule\AvatarUtils.cpp" />
     <ClCompile Include="kogama-tools\services\Build\BlueModeTool.cpp" />
     <ClCompile Include="kogama-tools\services\Build\ModelModule\CustomModelScale.cpp" />
     <ClCompile Include="kogama-tools\services\IO\IKoGaMaEnvironment.cpp" />
@@ -220,6 +223,9 @@
     <ClInclude Include="kogama-tools\Helpers\StringExtensions.h" />
     <ClInclude Include="kogama-tools\Helpers\TypeParameters.h" />
     <ClInclude Include="kogama-tools\services\AppBootstrapper.h" />
+    <ClInclude Include="kogama-tools\services\Build\AvatarModule\AvatarInfo.h" />
+    <ClInclude Include="kogama-tools\services\Build\AvatarModule\AvatarService.h" />
+    <ClInclude Include="kogama-tools\services\Build\AvatarModule\AvatarUtils.h" />
     <ClInclude Include="kogama-tools\services\Build\BlueModeTool.h" />
     <ClInclude Include="kogama-tools\services\Build\ModelModule\CustomModelScale.h" />
     <ClInclude Include="kogama-tools\services\IO\IFileService.h" />

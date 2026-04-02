@@ -123,3 +123,12 @@ klasses:
   name: UE_RenderSettings
 - fullname: EditorWorldObjectCreation
 - fullname: MVMaterialRepository
+- fullname: MV.WorldObject.MvAvatarMetaDataWoMap
+  name: MvAvatarMetaDataWoMap
+- fullname: MV.WorldObject.MvAvatarMetaData
+  name: MvAvatarMetaData
+- fullname: AvatarSelectionController
+- fullname: MVBody
+- fullname: AvatarEditModeBodyController
+- fullname:  MV.WorldObject.MVWorldObject
+  name: MVWorldObject

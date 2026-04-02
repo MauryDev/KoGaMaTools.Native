@@ -104,7 +104,8 @@ namespace KoGaMaTools::Services {
             S::ThemeService,
             S::FogService,
             S::LogicRenderService,
-            S::MessageReceiveService
+            S::MessageReceiveService,
+            S::AvatarModule::AvatarService
         > ();
         KoGaMaTools::Services::ModelModule::Init(app);
 

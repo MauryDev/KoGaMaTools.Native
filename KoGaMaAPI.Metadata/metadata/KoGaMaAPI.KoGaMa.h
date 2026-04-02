@@ -6238,4 +6238,414 @@ inline static auto /* System.Boolean */ &f_allowDestructibleMaterialSelection = 
 };
 
 
+struct MvAvatarMetaDataWoMap {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<1> fields;
+inline static auto /* System.Collections.Generic.Dictionary`2<System.Int32, MV.WorldObject.MvAvatarMetaData> */ &f_avatarWOIDAvatarMetaData = fields.get<false>(0);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<6> methods;
+    /* System.Void .ctor() */
+    inline static auto& m0__ctor = methods.get<false, false>(0);
+    /* System.Void .ctor(MV.WorldObject.BytePacker bp) */
+    inline static auto& m1__ctor = methods.get<false, false>(1);
+    /* System.Boolean TryGetValue(System.Int32 woID, out MV.WorldObject.MvAvatarMetaData avatarMetaData) */
+    inline static auto& m_TryGetValue = methods.get<false, false>(2);
+    /* System.Void Add(System.Int32 woID, MV.WorldObject.MvAvatarMetaData avatarMetaData) */
+    inline static auto& m_Add = methods.get<false, false>(3);
+    /* System.Void ResetAvatar(System.Int32 prevAvatarWoID, System.Int32 newAvatarWoID) */
+    inline static auto& m_ResetAvatar = methods.get<false, false>(4);
+    /* System.String ToString() */
+    inline static auto& m_ToString = methods.get<false, true>(5);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MvAvatarMetaData {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<5> fields;
+inline static auto /* System.Int32 */ &f_avatarID = fields.get<false>(0), /* System.String */ &f_name = fields.get<false>(1), /* System.Int32 */ &f_priceGold = fields.get<false>(2), /* System.Boolean */ &f_isOnMarketPlace = fields.get<false>(3), /* System.Boolean */ &f_canBeSoldOnMarketPlace = fields.get<false>(4);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<2> methods;
+    /* System.Void .ctor(MV.WorldObject.BytePacker bp) */
+    inline static auto& m__ctor = methods.get<false, false>(0);
+    /* System.String ToString() */
+    inline static auto& m_ToString = methods.get<false, true>(1);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct AvatarSelectionController {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<8> fields;
+inline static auto /* AvatarSelectionController */ &f_instance = fields.get<true>(6);
+inline static auto /* AvatarSelectionSlot */ &f_avatarSelectionSlotPrefab = fields.get<false>(0), /* UnityEngine.RectTransform */ &f_avatarSelectionContentRoot = fields.get<false>(1), /* SellAvatarController */ &f_sellAvatarPrefab = fields.get<false>(2), /* UnityEngine.GameObject */ &f_publishAvatarGO = fields.get<false>(3), /* System.Int32 */ &f_currSelectedSlot = fields.get<false>(4), /* System.Collections.Generic.Dictionary`2<System.Int32, AvatarSelectionSlot> */ &f_avatarSlots = fields.get<false>(5), /* AvatarEditModeBodyController */ &f_avatarBodyController = fields.get<false>(7);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<15> methods;
+    /* System.Int32 get_CurrentlySelectedSlotIndex() */
+    inline static auto& m_get_CurrentlySelectedSlotIndex = methods.get<true, false>(0);
+    /* System.Void set_CurrentlySelectedSlotIndex(System.Int32 value) */
+    inline static auto& m_set_CurrentlySelectedSlotIndex = methods.get<true, false>(1);
+    /* System.Void Initialize(AvatarEditModeBodyController bodyController, EditorStateMachine esm) */
+    inline static auto& m_Initialize = methods.get<false, false>(2);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<false, false>(3);
+    /* System.Void ResetCurrentAvatar() */
+    inline static auto& m_ResetCurrentAvatar = methods.get<false, false>(4);
+    /* System.Void AvatarSlotClicked(System.Int32 slotIndex) */
+    inline static auto& m_AvatarSlotClicked = methods.get<false, true>(5);
+    /* System.Void SetStateToRoam() */
+    inline static auto& m_SetStateToRoam = methods.get<false, false>(6);
+    /* System.Void OnPicUpdateForPrevAvatar(System.Int32 index, UnityEngine.Texture2D image) */
+    inline static auto& m_OnPicUpdateForPrevAvatar = methods.get<false, false>(7);
+    /* System.Void SellCurrentAvatar() */
+    inline static auto& m_SellCurrentAvatar = methods.get<false, false>(8);
+    /* System.Void TakeScreenshotForProfile() */
+    inline static auto& m_TakeScreenshotForProfile = methods.get<false, false>(9);
+    /* System.Void SetToNextAnimation() */
+    inline static auto& m_SetToNextAnimation = methods.get<false, false>(10);
+    /* System.Void OpenAvatarShop() */
+    inline static auto& m_OpenAvatarShop = methods.get<false, false>(11);
+    /* System.Void OnPictureTakenCallback(System.Int32 index, UnityEngine.Texture2D image) */
+    inline static auto& m_OnPictureTakenCallback = methods.get<false, false>(12);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(13);
+    /* System.Void <SetStateToRoam>b__15_0(UnityEngine.EventSystems.IAvatarSetBodyGroup x, UnityEngine.EventSystems.BaseEventData y) */
+    inline static auto& m__SetStateToRoam_b__15_0 = methods.get<false, false>(14);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVBody {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<16> fields;
+inline static auto /* BodyAccessoriesController */ &f_bodyAccessoriesController = fields.get<false>(0), /* BodyAccessoriesController */ &f_previewBodyAccessoriesController = fields.get<false>(1), /* System.Boolean */ &f_collidersEnabled = fields.get<false>(2), /* System.Boolean */ &f_shadowVisible = fields.get<false>(3), /* System.Boolean */ &f_visible = fields.get<false>(4), /* System.Boolean */ &f_forceHidden = fields.get<false>(5), /* MVBodyObject */ &f_bodyObject = fields.get<false>(6), /* System.Collections.Generic.Dictionary`2<System.Int32, IModelingConstraint> */ &f_constraints = fields.get<false>(7), /* System.Collections.Generic.List`1<UnityEngine.Renderer> */ &f_renderers = fields.get<false>(8), /* System.Collections.Generic.List`1<UnityEngine.Collider> */ &f_colliders = fields.get<false>(9), /* System.Collections.Generic.List`1<MVCubeModelInstance> */ &f_attachedPartModels = fields.get<false>(10), /* System.Boolean */ &f_initialized = fields.get<false>(11), /* System.Boolean */ &f_hasAvatarBeenAttached = fields.get<false>(12), /* UnityEngine.Vector3 */ &f_modelScale = fields.get<false>(13), /* System.String */ &f__LayerToSetTo_k__BackingField = fields.get<false>(14), /* BodyClone */ &f_bodyClone = fields.get<false>(15);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<62> methods;
+    /* System.String get_LayerToSetTo() */
+    inline static auto& m_get_LayerToSetTo = methods.get<false, false>(0);
+    /* System.Void set_LayerToSetTo(System.String value) */
+    inline static auto& m_set_LayerToSetTo = methods.get<false, false>(1);
+    /* BoneAnimation get_Animation() */
+    inline static auto& m_get_Animation = methods.get<false, false>(2);
+    /* System.Boolean get_IsPlayerBody() */
+    inline static auto& m_get_IsPlayerBody = methods.get<false, false>(3);
+    /* BodyData get_BodyData() */
+    inline static auto& m_get_BodyData = methods.get<false, false>(4);
+    /* System.Collections.Generic.List`1<MVCubeModelInstance> get_AttachedParts() */
+    inline static auto& m_get_AttachedParts = methods.get<false, false>(5);
+    /* AvatarBlobShadowController get_BlobShadow() */
+    inline static auto& m_get_BlobShadow = methods.get<false, false>(6);
+    /* System.Boolean get_Visible() */
+    inline static auto& m_get_Visible = methods.get<false, false>(7);
+    /* System.Void set_Visible(System.Boolean value) */
+    inline static auto& m_set_Visible = methods.get<false, false>(8);
+    /* System.Boolean get_ForceHidden() */
+    inline static auto& m_get_ForceHidden = methods.get<false, false>(9);
+    /* System.Void set_ForceHidden(System.Boolean value) */
+    inline static auto& m_set_ForceHidden = methods.get<false, false>(10);
+    /* System.Boolean get_ShadowVisible() */
+    inline static auto& m_get_ShadowVisible = methods.get<false, false>(11);
+    /* System.Void set_ShadowVisible(System.Boolean value) */
+    inline static auto& m_set_ShadowVisible = methods.get<false, false>(12);
+    /* System.Boolean get_CollidersEnabled() */
+    inline static auto& m_get_CollidersEnabled = methods.get<false, false>(13);
+    /* System.Void set_CollidersEnabled(System.Boolean value) */
+    inline static auto& m_set_CollidersEnabled = methods.get<false, false>(14);
+    /* System.Boolean IsAccessorySlotOccupied(MV.Common.AccessorySlotType accessorySlotType) */
+    inline static auto& m_IsAccessorySlotOccupied = methods.get<false, false>(15);
+    /* System.Single GetAccessoryOffset(MV.Common.AccessorySlotType slot) */
+    inline static auto& m_GetAccessoryOffset = methods.get<false, false>(16);
+    /* System.Void ApplyAccessoryOffset(System.Single yOffset, MV.Common.AccessorySlotType slot) */
+    inline static auto& m_ApplyAccessoryOffset = methods.get<false, false>(17);
+    /* System.Single GetAccessoryScale(MV.Common.AccessorySlotType slot) */
+    inline static auto& m_GetAccessoryScale = methods.get<false, false>(18);
+    /* System.Void ApplyAccessorySize(System.Single size, MV.Common.AccessorySlotType slot) */
+    inline static auto& m_ApplyAccessorySize = methods.get<false, false>(19);
+    /* System.Boolean IsAccessoryEquipped(System.Int32 streamingAssetId) */
+    inline static auto& m_IsAccessoryEquipped = methods.get<false, false>(20);
+    /* System.Boolean get_AccessoryMoveOverride() */
+    inline static auto& m_get_AccessoryMoveOverride = methods.get<false, false>(21);
+    /* System.Void set_AccessoryMoveOverride(System.Boolean value) */
+    inline static auto& m_set_AccessoryMoveOverride = methods.get<false, false>(22);
+    /* UnityEngine.GameObject CreateClone(System.Boolean enableAllRenderers = False, System.Boolean hideEquippedItem = False) */
+    inline static auto& m_CreateClone = methods.get<false, false>(23);
+    /* System.Void DestroyClone() */
+    inline static auto& m_DestroyClone = methods.get<false, false>(24);
+    /* System.Void .ctor(System.Collections.Generic.Dictionary`2<System.Object, System.Object> data, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects) */
+    inline static auto& m__ctor = methods.get<false, false>(25);
+    /* System.Void PreviewAccessory(AccessoryDataClient viewItem) */
+    inline static auto& m_PreviewAccessory = methods.get<false, false>(26);
+    /* System.Void EndPreviewAccessory() */
+    inline static auto& m_EndPreviewAccessory = methods.get<false, false>(27);
+    /* System.Void UpdateBodyClone(System.Collections.Generic.Dictionary`2<System.Object, System.Object> accessoryData) */
+    inline static auto& m_UpdateBodyClone = methods.get<false, false>(28);
+    /* System.Void SyncOffset(MV.Common.AccessorySlotType slot, System.Single offset) */
+    inline static auto& m_SyncOffset = methods.get<false, false>(29);
+    /* System.Void SyncScale(MV.Common.AccessorySlotType slot, System.Single scale) */
+    inline static auto& m_SyncScale = methods.get<false, false>(30);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, true>(31);
+    /* System.Void InitializeHealth(System.Single currentHealthAmount) */
+    inline static auto& m_InitializeHealth = methods.get<false, false>(32);
+    /* System.Void InitializeShield(System.Single currentShieldAmount) */
+    inline static auto& m_InitializeShield = methods.get<false, false>(33);
+    /* System.Void UpdateBlinking() */
+    inline static auto& m_UpdateBlinking = methods.get<false, false>(34);
+    /* System.Void InitializeInventory() */
+    inline static auto& m_InitializeInventory = methods.get<false, true>(35);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<false, true>(36);
+    /* System.Void Attach(MVAvatar mvAvatar, System.Boolean isLocal) */
+    inline static auto& m_Attach = methods.get<false, false>(37);
+    /* System.Void Detach() */
+    inline static auto& m_Detach = methods.get<false, false>(38);
+    /* System.Void StartBlinking(BlinkType type, System.Single duration) */
+    inline static auto& m_StartBlinking = methods.get<false, false>(39);
+    /* System.Void StopBlinking(BlinkType type) */
+    inline static auto& m_StopBlinking = methods.get<false, false>(40);
+    /* System.Void ToggleBlinking(System.Boolean shouldShowBlinking) */
+    inline static auto& m_ToggleBlinking = methods.get<false, false>(41);
+    /* UnityEngine.GameObject CopyByValue() */
+    inline static auto& m_CopyByValue = methods.get<false, false>(42);
+    /* System.Void CopyMaterialsByValue(UnityEngine.GameObject bodyCloneGO) */
+    inline static auto& m_CopyMaterialsByValue = methods.get<false, false>(43);
+    /* System.Void InitializeCommon() */
+    inline static auto& m_InitializeCommon = methods.get<false, false>(44);
+    /* System.Void RefreshAccessories() */
+    inline static auto& m_RefreshAccessories = methods.get<false, false>(45);
+    /* System.Collections.Generic.Dictionary`2<System.Object, System.Object> GetAccessoryData() */
+    inline static auto& m_GetAccessoryData = methods.get<false, false>(46);
+    /* System.Void UpdateVisibility() */
+    inline static auto& m_UpdateVisibility = methods.get<false, false>(47);
+    /* UnityEngine.Bounds GetLocalBounds(BoundsContext boundsContext) */
+    inline static auto& m_GetLocalBounds = methods.get<false, true>(48);
+    /* MVWorldObjectClient Clone(System.Int32 ownerActorNumber, System.Int32 cloneGroupId, CloneBookkeeping cloneBookkeeping, System.Collections.Generic.Dictionary`2<System.Int32, MVWorldObjectClient> worldObjects, System.Collections.Generic.Dictionary`2<System.Int32, RuntimePrototypeCubeModel> prototypes) */
+    inline static auto& m_Clone = methods.get<false, true>(49);
+    /* IModelingConstraint GetModelConstaint(MVCubeModelInstance cubeModel) */
+    inline static auto& m_GetModelConstaint = methods.get<false, true>(50);
+    /* System.Void OnDataUpdate() */
+    inline static auto& m_OnDataUpdate = methods.get<false, true>(51);
+    /* System.Void OnAnimationUpdate(System.Object newAnimationData) */
+    inline static auto& m_OnAnimationUpdate = methods.get<false, false>(52);
+    /* System.Void OnHealthUpdate(System.Object newHealthData) */
+    inline static auto& m_OnHealthUpdate = methods.get<false, false>(53);
+    /* System.Void OnShieldUpdate(System.Object newShieldData) */
+    inline static auto& m_OnShieldUpdate = methods.get<false, false>(54);
+    /* System.Void EnableBodyBlinker() */
+    inline static auto& m_EnableBodyBlinker = methods.get<false, false>(55);
+    /* System.Void DisableBodyBlinker() */
+    inline static auto& m_DisableBodyBlinker = methods.get<false, false>(56);
+    /* System.Void StartAnimation(System.String newAnimation) */
+    inline static auto& m_StartAnimation = methods.get<false, false>(57);
+    /* MVCubeModelInstance GetBodyPart(System.String part) */
+    inline static auto& m_GetBodyPart = methods.get<false, false>(58);
+    /* System.Void AttachCubes() */
+    inline static auto& m_AttachCubes = methods.get<false, false>(59);
+    /* System.Void AttachCube(System.String boneName) */
+    inline static auto& m_AttachCube = methods.get<false, false>(60);
+    /* System.Void AlignModel(System.String boneName, UnityEngine.Transform bone, UnityEngine.GameObject model) */
+    inline static auto& m_AlignModel = methods.get<false, false>(61);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct AvatarEditModeBodyController {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<19> fields;
+inline static auto /* CloudyThemeBase */ &f_Theme = fields.get<true>(18);
+inline static auto /* System.Collections.Generic.List`1<MVBody> */ &f_bodies = fields.get<false>(0), /* MVSpawnPointRed */ &f_bodySpawnPoint = fields.get<false>(1), /* UnityEngine.Vector3 */ &f_displayPos = fields.get<false>(2), /* UnityEngine.Quaternion */ &f_displayRotation = fields.get<false>(3), /* UnityEngine.Vector3 */ &f_hidePos = fields.get<false>(4), /* System.Int32 */ &f_currentBodyIndex = fields.get<false>(5), /* AvatarRepositoryItem */ &f_purchasingItem = fields.get<false>(6), /* System.String */ &f_currentActionSuccessMessage = fields.get<false>(7), /* System.Boolean */ &f_playingPurchaseSoundAfterScreenshot = fields.get<false>(8), /* AvatarPictureTakerUGUI */ &f_pictureTaker = fields.get<false>(9), /* NotificationPopup */ &f_notificationPopup = fields.get<false>(10), /* PleaseWaitPopup */ &f_pleaseWaitPopupPrefab = fields.get<false>(11), /* UploadAvatarScreenshotHandler */ &f_uploadAvatarScreenshotHandler = fields.get<false>(12), /* ResetAvatarHandler */ &f_resetAvatarHandler = fields.get<false>(13), /* System.Collections.Generic.List`1<System.String> */ &f_animations = fields.get<false>(14), /* System.Int32 */ &f_currentAnimationIndex = fields.get<false>(15), /* System.Action`2<System.Int32, UnityEngine.Texture2D> */ &f_Picture2DTakenCallback = fields.get<false>(16), /* UnityEngine.GameObject */ &f_publishAvatarBtn = fields.get<false>(17);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<29> methods;
+    /* MVBody get_CurrentBody() */
+    inline static auto& m_get_CurrentBody = methods.get<false, false>(0);
+    /* UnityEngine.Vector3 get_DisplayPos() */
+    inline static auto& m_get_DisplayPos = methods.get<false, false>(1);
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, false>(2);
+    /* System.Void SetPublishAvatarGO(UnityEngine.GameObject publishAvatarGO) */
+    inline static auto& m_SetPublishAvatarGO = methods.get<false, false>(3);
+    /* System.Void ResetCurrentBody() */
+    inline static auto& m_ResetCurrentBody = methods.get<false, false>(4);
+    /* System.Void ExecuteReset() */
+    inline static auto& m_ExecuteReset = methods.get<false, false>(5);
+    /* System.Void ResetCallback(System.Object sender, InitializedGameQueryDataEventArgs e) */
+    inline static auto& m_ResetCallback = methods.get<false, false>(6);
+    /* System.Void SetCurrentBodyByWoId(System.Int32 woId) */
+    inline static auto& m_SetCurrentBodyByWoId = methods.get<false, false>(7);
+    /* System.Void SetCurrentBody(System.Int32 index) */
+    inline static auto& m_SetCurrentBody = methods.get<false, false>(8);
+    /* System.Void SetPublishAvatarButtonActive() */
+    inline static auto& m_SetPublishAvatarButtonActive = methods.get<false, false>(9);
+    /* System.Void CaptureScreenshotForBody(System.Int32 index, System.Action`2<System.Int32, UnityEngine.Texture2D> OnPictureTaken) */
+    inline static auto& m_CaptureScreenshotForBody = methods.get<false, false>(10);
+    /* System.Void CaptureScreenshotsForAllAvatars(System.Action`2<System.Int32, UnityEngine.Texture2D> OnPictureTaken) */
+    inline static auto& m_CaptureScreenshotsForAllAvatars = methods.get<false, false>(11);
+    /* System.Void GenerateIconForBody(System.Int32 index) */
+    inline static auto& m_GenerateIconForBody = methods.get<false, false>(12);
+    /* System.Void TakeScreenshot() */
+    inline static auto& m_TakeScreenshot = methods.get<false, false>(13);
+    /* System.Void PurchaseAvatar(AvatarRepositoryItem item) */
+    inline static auto& m_PurchaseAvatar = methods.get<false, false>(14);
+    /* System.Void OnPurchaseAvatarConfirmation(System.Boolean confirmed, ConfirmationPopup confirmationPopup) */
+    inline static auto& m_OnPurchaseAvatarConfirmation = methods.get<false, false>(15);
+    /* System.Void OnProductPurchaseAvatarResponse(System.Int32 returnCode, System.Collections.Generic.Dictionary`2<System.Object, System.Object> purchaseResponseData) */
+    inline static auto& m_OnProductPurchaseAvatarResponse = methods.get<false, false>(16);
+    /* System.Void InitializedPurchasedAvatar(System.Object sender, InitializedGameQueryDataEventArgs e) */
+    inline static auto& m_InitializedPurchasedAvatar = methods.get<false, false>(17);
+    /* System.Void OnActiveAvatarSetAfterPurchase() */
+    inline static auto& m_OnActiveAvatarSetAfterPurchase = methods.get<false, false>(18);
+    /* System.Void SellCurrentAvatar(SellAvatarController avatarSeller) */
+    inline static auto& m_SellCurrentAvatar = methods.get<false, false>(19);
+    /* System.Void ScreenShotCallback(UnityEngine.Texture2D screenshotTex, System.String successMessage) */
+    inline static auto& m_ScreenShotCallback = methods.get<false, false>(20);
+    /* System.Void UploadedImageData() */
+    inline static auto& m_UploadedImageData = methods.get<false, false>(21);
+    /* System.Void MVNetworGame_ScreenshotUploadedHandler(System.Object sender, ScreenshotUploadedEventArgs e) */
+    inline static auto& m_MVNetworGame_ScreenshotUploadedHandler = methods.get<false, false>(22);
+    /* System.Void SetToNextAnimation() */
+    inline static auto& m_SetToNextAnimation = methods.get<false, false>(23);
+    /* System.Void Set(System.String animation) */
+    inline static auto& m_Set = methods.get<false, true>(24);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(25);
+    /* System.Void <ResetCallback>b__27_0(UnityEngine.EventSystems.IAvatarSetBodyGroup x, UnityEngine.EventSystems.BaseEventData y) */
+    inline static auto& m__ResetCallback_b__27_0 = methods.get<false, false>(26);
+    /* System.Void <PurchaseAvatar>b__35_0(UnityEngine.EventSystems.IModalPopupCreator x, UnityEngine.EventSystems.BaseEventData y) */
+    inline static auto& m__PurchaseAvatar_b__35_0 = methods.get<false, false>(27);
+    /* System.Void <InitializedPurchasedAvatar>b__38_1(UnityEngine.EventSystems.IAvatarSetBodyGroup x, UnityEngine.EventSystems.BaseEventData y) */
+    inline static auto& m__InitializedPurchasedAvatar_b__38_1 = methods.get<false, false>(28);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct MVWorldObject {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<18> fields;
+inline static auto /* System.Int32 */ &f_id = fields.get<false>(0), /* System.Int32 */ &f_groupId = fields.get<false>(1), /* System.Int32 */ &f_itemId = fields.get<false>(2), /* System.Boolean */ &f_inputState = fields.get<false>(3), /* System.Collections.Generic.List`1<MV.WorldObject.Link> */ &f_outputLinkRefs = fields.get<false>(4), /* System.Collections.Generic.List`1<MV.WorldObject.Link> */ &f_inputLinkRefs = fields.get<false>(5), /* System.Collections.Generic.List`1<MV.WorldObject.ObjectLink> */ &f_objectLinkRefs = fields.get<false>(6), /* System.Int32 */ &f_ownerActorNr = fields.get<false>(7), /* System.Int32 */ &f_previewOwnerProfileId = fields.get<false>(8), /* UnityEngine.Vector3 */ &f_position = fields.get<false>(9), /* UnityEngine.Quaternion */ &f_rotation = fields.get<false>(10), /* UnityEngine.Vector3 */ &f_scale = fields.get<false>(11), /* MV.WorldObject.WorldObjectType */ &f_type = fields.get<false>(12), /* System.Collections.Generic.Dictionary`2<System.Object, System.Object> */ &f_data = fields.get<false>(13), /* System.Collections.Generic.Dictionary`2<System.Object, System.Object> */ &f_runTimeData = fields.get<false>(14), /* System.Int32 */ &f_timestamp = fields.get<false>(15), /* System.Action`1<System.Collections.Generic.List`1<MV.WorldObject.Link>> */ &f_OnInputLinkChanged = fields.get<false>(16), /* System.Action`1<System.Collections.Generic.List`1<MV.WorldObject.Link>> */ &f_OnOutputLinkChanged = fields.get<false>(17);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<51> methods;
+    /* System.Int32 get_Id() */
+    inline static auto& m_get_Id = methods.get<false, false>(0);
+    /* System.Int32 get_GroupId() */
+    inline static auto& m_get_GroupId = methods.get<false, false>(1);
+    /* System.Void set_GroupId(System.Int32 value) */
+    inline static auto& m_set_GroupId = methods.get<false, false>(2);
+    /* System.Int32 get_ItemId() */
+    inline static auto& m_get_ItemId = methods.get<false, false>(3);
+    /* System.Void set_ItemId(System.Int32 value) */
+    inline static auto& m_set_ItemId = methods.get<false, false>(4);
+    /* System.Int32 get_OwnerActorNr() */
+    inline static auto& m_get_OwnerActorNr = methods.get<false, false>(5);
+    /* System.Void set_OwnerActorNr(System.Int32 value) */
+    inline static auto& m_set_OwnerActorNr = methods.get<false, false>(6);
+    /* System.Int32 get_PreviewOwnerProfileId() */
+    inline static auto& m_get_PreviewOwnerProfileId = methods.get<false, false>(7);
+    /* System.Void set_PreviewOwnerProfileId(System.Int32 value) */
+    inline static auto& m_set_PreviewOwnerProfileId = methods.get<false, false>(8);
+    /* UnityEngine.Vector3 get_Position() */
+    inline static auto& m_get_Position = methods.get<false, true>(9);
+    /* System.Void set_Position(UnityEngine.Vector3 value) */
+    inline static auto& m_set_Position = methods.get<false, true>(10);
+    /* UnityEngine.Quaternion get_Rotation() */
+    inline static auto& m_get_Rotation = methods.get<false, true>(11);
+    /* System.Void set_Rotation(UnityEngine.Quaternion value) */
+    inline static auto& m_set_Rotation = methods.get<false, true>(12);
+    /* UnityEngine.Vector3 get_Scale() */
+    inline static auto& m_get_Scale = methods.get<false, true>(13);
+    /* System.Void set_Scale(UnityEngine.Vector3 value) */
+    inline static auto& m_set_Scale = methods.get<false, true>(14);
+    /* UnityEngine.Vector3 get_WorldPosition() */
+    inline static auto& m_get_WorldPosition = methods.get<false, true>(15);
+    /* UnityEngine.Quaternion get_WorldRotation() */
+    inline static auto& m_get_WorldRotation = methods.get<false, true>(16);
+    /* MV.WorldObject.WorldObjectType get_WorldObjectType() */
+    inline static auto& m_get_WorldObjectType = methods.get<false, false>(17);
+    /* System.Void set_WorldObjectType(MV.WorldObject.WorldObjectType value) */
+    inline static auto& m_set_WorldObjectType = methods.get<false, false>(18);
+    /* System.Collections.Generic.Dictionary`2<System.Object, System.Object> get_Data() */
+    inline static auto& m_get_Data = methods.get<false, false>(19);
+    /* System.Void set_Data(System.Collections.Generic.Dictionary`2<System.Object, System.Object> value) */
+    inline static auto& m_set_Data = methods.get<false, false>(20);
+    /* System.Collections.Generic.Dictionary`2<System.Object, System.Object> get_RunTimeData() */
+    inline static auto& m_get_RunTimeData = methods.get<false, true>(21);
+    /* System.Void set_RunTimeData(System.Collections.Generic.Dictionary`2<System.Object, System.Object> value) */
+    inline static auto& m_set_RunTimeData = methods.get<false, true>(22);
+    /* System.Collections.Generic.List`1<MV.WorldObject.Link> get_InputLinkRefs() */
+    inline static auto& m_get_InputLinkRefs = methods.get<false, false>(23);
+    /* System.Collections.Generic.List`1<MV.WorldObject.Link> get_OutputLinkRefs() */
+    inline static auto& m_get_OutputLinkRefs = methods.get<false, false>(24);
+    /* System.Collections.Generic.List`1<MV.WorldObject.ObjectLink> get_ObjectLinkRefs() */
+    inline static auto& m_get_ObjectLinkRefs = methods.get<false, false>(25);
+    /* System.Boolean get_InputState() */
+    inline static auto& m_get_InputState = methods.get<false, false>(26);
+    /* System.Boolean get_HasOutputConnector() */
+    inline static auto& m_get_HasOutputConnector = methods.get<false, true>(27);
+    /* System.Boolean get_HasInputConnector() */
+    inline static auto& m_get_HasInputConnector = methods.get<false, true>(28);
+    /* System.Boolean get_HasObjectConnector() */
+    inline static auto& m_get_HasObjectConnector = methods.get<false, true>(29);
+    /* System.Void OnInputStateChanged() */
+    inline static auto& m_OnInputStateChanged = methods.get<false, true>(30);
+    /* System.Void Reset() */
+    inline static auto& m_Reset = methods.get<false, true>(31);
+    /* System.Void OnObjectLinkChanged(MV.WorldObject.ObjectLinkChangeType changeType, MV.WorldObject.ObjectLink objectLink) */
+    inline static auto& m_OnObjectLinkChanged = methods.get<false, true>(32);
+    /* System.Boolean IsSingletonObject() */
+    inline static auto& m_IsSingletonObject = methods.get<false, true>(33);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(34);
+    /* System.Collections.Generic.Dictionary`2<System.Object, System.Object> DeepCopyWorldObjectDataParameters() */
+    inline static auto& m_DeepCopyWorldObjectDataParameters = methods.get<false, false>(35);
+    /* System.Void GetLinksForClone(System.Collections.Generic.List`1<System.Int32> links) */
+    inline static auto& m_GetLinksForClone = methods.get<false, false>(36);
+    /* System.Void GetObjectLinksForClone(System.Collections.Generic.List`1<System.Int32> objectLinks) */
+    inline static auto& m_GetObjectLinksForClone = methods.get<false, false>(37);
+    /* System.Void AddOutputLink(MV.WorldObject.Link link) */
+    inline static auto& m_AddOutputLink = methods.get<false, false>(38);
+    /* System.Void AddInputLink(MV.WorldObject.Link link) */
+    inline static auto& m_AddInputLink = methods.get<false, false>(39);
+    /* System.Boolean AddObjectLink(MV.WorldObject.ObjectLink link) */
+    inline static auto& m_AddObjectLink = methods.get<false, false>(40);
+    /* System.Boolean RemoveOutputLink(MV.WorldObject.Link link) */
+    inline static auto& m_RemoveOutputLink = methods.get<false, false>(41);
+    /* System.Boolean RemoveInputLink(MV.WorldObject.Link link) */
+    inline static auto& m_RemoveInputLink = methods.get<false, false>(42);
+    /* System.Boolean RemoveObjectLink(MV.WorldObject.ObjectLink link) */
+    inline static auto& m_RemoveObjectLink = methods.get<false, false>(43);
+    /* System.Boolean ContainObjectLink(MV.WorldObject.ObjectLink link) */
+    inline static auto& m_ContainObjectLink = methods.get<false, false>(44);
+    /* System.Int32 GetIndexOfObjectLink(MV.WorldObject.ObjectLink link) */
+    inline static auto& m_GetIndexOfObjectLink = methods.get<false, false>(45);
+    /* MV.WorldObject.MVWorldObject ShallowCopy() */
+    inline static auto& m_ShallowCopy = methods.get<false, true>(46);
+    /* MV.WorldObject.MVWorldObject DeepCopy() */
+    inline static auto& m_DeepCopy = methods.get<false, true>(47);
+    /* System.String ToString() */
+    inline static auto& m_ToString = methods.get<false, true>(48);
+    /* System.Void PartialUpdateWOData(System.Collections.Generic.Dictionary`2<System.Object, System.Object> newWOData) */
+    inline static auto& m_PartialUpdateWOData = methods.get<false, true>(49);
+    /* System.Void PartialRemoveFromWOData(System.Collections.Generic.Dictionary`2<System.Object, System.Object> dataToRemove) */
+    inline static auto& m_PartialRemoveFromWOData = methods.get<false, true>(50);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

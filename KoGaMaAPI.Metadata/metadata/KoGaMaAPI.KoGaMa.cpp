@@ -476,6 +476,36 @@ void MVMaterialRepository::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadat
 
 }
 
+void MvAvatarMetaDataWoMap::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 95, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MvAvatarMetaData::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 96, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void AvatarSelectionController::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 97, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVBody::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 98, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void AvatarEditModeBodyController::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 99, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVWorldObject::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 100, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -572,5 +602,11 @@ void MVMaterialRepository::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadat
         UE_RenderSettings::Init(metadataInfo);
         EditorWorldObjectCreation::Init(metadataInfo);
         MVMaterialRepository::Init(metadataInfo);
+        MvAvatarMetaDataWoMap::Init(metadataInfo);
+        MvAvatarMetaData::Init(metadataInfo);
+        AvatarSelectionController::Init(metadataInfo);
+        MVBody::Init(metadataInfo);
+        AvatarEditModeBodyController::Init(metadataInfo);
+        MVWorldObject::Init(metadataInfo);
     }
 }
