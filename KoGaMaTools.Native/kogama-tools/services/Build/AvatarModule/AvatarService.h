@@ -4,6 +4,7 @@
 #include <kogama-tools/services/Common/MainComponent.h>
 #include <kogama-tools/services/IO/IFileService.h>
 #include <kogama-tools/UI/ITextureManager.h>
+#include <kogama-tools/services/LoggerService.h>
 
 #include "AvatarInfo.h"
 
@@ -17,6 +18,8 @@ namespace KoGaMaTools::Services::AvatarModule
 		std::shared_ptr<MainComponent> _mainComponent;
 		std::shared_ptr<UI::ITextureManager> textureManager;
 		std::shared_ptr<IFileService> fileService;
+		std::shared_ptr<LoggerService> loggerService;
+
 		std::atomic<bool> isBusy = false;
 		bool RemoveOldWorkpace = true;
 

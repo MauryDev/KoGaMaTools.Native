@@ -2,13 +2,14 @@
 #include "AvatarUtils.h"
 #include <portable-file-dialogs.h>
 #include <kogama-tools/Resources/resource.h>
-#include <metadata/KoGaMaAPI.KoGaMa.h>
+
 void KoGaMaTools::Services::AvatarModule::AvatarService::Init(Core::DIContainer& di)
 {
 	Instance = di.Get<AvatarService>();
 	_mainComponent = di.Get<MainComponent>();
 	textureManager = di.Get<UI::ITextureManager>();
 	fileService = di.Get<IFileService>();
+	loggerService = di.Get<LoggerService>();
 }
 
 void KoGaMaTools::Services::AvatarModule::AvatarService::Render()
@@ -93,21 +94,26 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::PasteAvatar()
 
 void KoGaMaTools::Services::AvatarModule::AvatarService::CopyAvatar()
 {
-	auto current = AvatarUtils::GetCurrentAvatar();
-	if (!current.isNull() && AvatarUtils::IsOwner(current))
-	{
-		_mainComponent->ExecuteCallback([current, this](void*) {
+	
+	_mainComponent->ExecuteCallback([this](void*) {
+		auto current = AvatarUtils::GetCurrentAvatar();
+		if (!current.isNull() && AvatarUtils::IsOwner(current))
+		{
 			_avatarInfo = AvatarUtils::GetAvatarInfo(current);
+		}
 
-			});
-	}
+	});
+	
 }
 
 void KoGaMaTools::Services::AvatarModule::AvatarService::ImportAvatar()
 {
 	auto selectedItems = pfd::open_file("Select a file").result();
 	if (selectedItems.empty())
+	{
+		isBusy = false;
 		return;
+	}
 
 	auto filePath = selectedItems[0];
 
@@ -119,7 +125,7 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::ImportAvatar()
 
 				if (!data || data->empty())
 				{
-					// TODO: log erro
+					loggerService->Error("Failed to read avatar file: " + filePath);
 					return;
 				}
 
@@ -130,7 +136,7 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::ImportAvatar()
 			}
 			catch (const std::exception& e)
 			{
-				// TODO: log erro (arquivo inválido / corrompido)
+				loggerService->Error(std::string("ImportAvatar exception: ") + e.what());
 			}
 			Instance->isBusy = false;
 		});
@@ -140,7 +146,10 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::ExportAvatar()
 {
 	auto filePath = pfd::save_file("Save model config").result();
 	if (filePath.empty())
+	{
+		isBusy = false;
 		return;
+	}
 
 	this->_mainComponent->ExecuteCallback([this, filePath](void*)
 		{
@@ -159,12 +168,13 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::ExportAvatar()
 
 				if (!fileService->WriteBinary(filePath, buffer))
 				{
-					// TODO: log erro
+					loggerService->Error("Failed to write avatar file: " + filePath);
+
 				}
 			}
 			catch (const std::exception& e)
 			{
-				// TODO: log erro (e.what())
+				loggerService->Error(std::string("ExportAvatar exception: ") + e.what());
 			}
 			isBusy = false;
 

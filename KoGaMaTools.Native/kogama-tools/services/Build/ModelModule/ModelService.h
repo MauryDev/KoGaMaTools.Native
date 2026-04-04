@@ -8,6 +8,7 @@
 #include <kogama-tools/UI/ITextureManager.h>
 #include "CustomModelScale.h"
 #include <kogama-tools/services/IO/IFileService.h>
+#include <kogama-tools/services/LoggerService.h>
 
 namespace KoGaMaTools::Services::ModelModule {
 	struct ModelService : UI::MainUI::IComponent,
@@ -21,6 +22,9 @@ namespace KoGaMaTools::Services::ModelModule {
 		std::shared_ptr<MainComponent> mainComponent;
 		std::shared_ptr<UI::ITextureManager> textureManager;
 		std::shared_ptr<IFileService> fileService;
+		std::shared_ptr<LoggerService> loggerService;
+
+
 		std::atomic<bool> isBusy = false;
 		void Init(Core::DIContainer& di) override;
 		void Render() override;

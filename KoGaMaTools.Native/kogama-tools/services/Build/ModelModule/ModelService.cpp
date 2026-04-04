@@ -14,6 +14,7 @@ void KoGaMaTools::Services::ModelModule::ModelService::Init(Core::DIContainer& d
 
 	textureManager = di.Get<UI::ITextureManager>();
 	fileService = di.Get<IFileService>();
+	loggerService = di.Get<LoggerService>();
 }
 
 void KoGaMaTools::Services::ModelModule::ModelService::Render()
@@ -89,48 +90,50 @@ void KoGaMaTools::Services::ModelModule::ModelService::Render()
 
 void KoGaMaTools::Services::ModelModule::ModelService::Execute_CopyModel()
 {
-    auto modelCurrent = ModelUtils::GetCurrentModel();
-    if (!modelCurrent.isNull() && ModelUtils::IsOwner(modelCurrent))
-    {
-        mainComponent->ExecuteCallback([modelCurrent, this](void*) {
+ 
+    mainComponent->ExecuteCallback([this](void*) {
+        auto modelCurrent = ModelUtils::GetCurrentModel();
+        if (!modelCurrent.isNull() && ModelUtils::IsOwner(modelCurrent))
+        {
             copyService->CopyModel(modelCurrent);
             TextCommandService::NotifyUser("Model data copied from current model.");
-        });
-        
-
-    }
-    else {
-        mainComponent->ExecuteCallback([](void*) {
+        }
+        else {
             TextCommandService::NotifyUser("No model selected to copy.");
 
-        });
-    }
+        }
+    });
+        
 }
 
 void KoGaMaTools::Services::ModelModule::ModelService::Execute_PasteModel()
 {
-    auto modelCurrent = ModelUtils::GetCurrentModel();
-    if (!modelCurrent.isNull())
-    {
-        mainComponent->ExecuteCallback([this, modelCurrent](void*) {
+    
+    mainComponent->ExecuteCallback([this](void*) {
+        auto modelCurrent = ModelUtils::GetCurrentModel();
+        if (!modelCurrent.isNull())
+        {
             this->pasteService->PasteCube(modelCurrent);
             TextCommandService::NotifyUser("Pasting model to current model.");
-        });
-        
-    }
-    else {
-        mainComponent->ExecuteCallback([](void*) {
+        }
+        else {
             TextCommandService::NotifyUser("No model selected to copy.");
 
-            });
-    }
+        }
+            
+    });
+        
+    
 }
 
 void KoGaMaTools::Services::ModelModule::ModelService::Execute_SaveModel()
 {
     auto filePath = pfd::save_file("Save model config").result();
     if (filePath.empty())
+    {
+        isBusy = false;
         return;
+    }
 
     this->mainComponent->ExecuteCallback([filePath](void*)
         {
@@ -150,12 +153,12 @@ void KoGaMaTools::Services::ModelModule::ModelService::Execute_SaveModel()
 
                 if (!Instance->fileService->WriteBinary(filePath, buffer))
                 {
-                    // TODO: log erro
+                    Instance->loggerService->Error("Failed to write model file: " + filePath);
                 }
             }
             catch (const std::exception& e)
             {
-                // TODO: log erro (e.what())
+                Instance->loggerService->Error("Failed to write model file: " + filePath);
             }
             Instance->isBusy = false;
 
@@ -165,7 +168,10 @@ void KoGaMaTools::Services::ModelModule::ModelService::Execute_LoadModel()
 {
     auto selectedItems = pfd::open_file("Select a file").result();
     if (selectedItems.empty())
+    {
+		isBusy = false;
         return;
+    }
 
     auto filePath = selectedItems[0];
 
@@ -177,7 +183,7 @@ void KoGaMaTools::Services::ModelModule::ModelService::Execute_LoadModel()
 
                 if (!data || data->empty())
                 {
-                    // TODO: log erro
+					Instance->loggerService->Error("Failed to read model file: " + filePath);   
                     return;
                 }
 
@@ -188,7 +194,7 @@ void KoGaMaTools::Services::ModelModule::ModelService::Execute_LoadModel()
             }
             catch (const std::exception& e)
             {
-                // TODO: log erro (arquivo inválido / corrompido)
+				Instance->loggerService->Error(std::string("Failed to read model file: ") + filePath);
             }
             Instance->isBusy = false;
         });
