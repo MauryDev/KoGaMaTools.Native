@@ -8,7 +8,7 @@
 #include "Build/DestructiblesUnlock.h"
 #include "Build/CustomGrid.h"
 #include "Build/EditModeSpeed.h"
-#include "Build/RotationStep.h"
+#include "Build/RotationService.h"
 
 #include "Build/UnlimitedConfig.h"
 #include "PvP/AntiAfk.h"
@@ -29,6 +29,7 @@
 
 #include "Build/ModelModule/module.h"
 #include "Build/AvatarModule/AvatarService.h"
+#include "Common/AntiBanService.h"
 
 #include "Graphics/ThemeService.h"
 #include "Graphics/FogService.h"

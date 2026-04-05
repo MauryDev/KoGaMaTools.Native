@@ -168,6 +168,7 @@
     <ClCompile Include="kogama-tools\services\Build\AvatarModule\AvatarUtils.cpp" />
     <ClCompile Include="kogama-tools\services\Build\BlueModeTool.cpp" />
     <ClCompile Include="kogama-tools\services\Build\ModelModule\CustomModelScale.cpp" />
+    <ClCompile Include="kogama-tools\services\Common\AntiBanService.cpp" />
     <ClCompile Include="kogama-tools\services\IO\IKoGaMaEnvironment.cpp" />
     <ClCompile Include="kogama-tools\services\IO\KoGaMaEnvironmentWindows.cpp" />
     <ClCompile Include="kogama-tools\services\IO\WindowsFileService.cpp" />
@@ -181,7 +182,7 @@
     <ClCompile Include="kogama-tools\services\Build\ModelModule\ModelUtils.cpp" />
     <ClCompile Include="kogama-tools\services\Build\ModelModule\module.cpp" />
     <ClCompile Include="kogama-tools\services\Build\ModelModule\PasteModel.cpp" />
-    <ClCompile Include="kogama-tools\services\Build\RotationStep.cpp" />
+    <ClCompile Include="kogama-tools\services\Build\RotationService.cpp" />
     <ClCompile Include="kogama-tools\services\Build\UnlimitedConfig.cpp" />
     <ClCompile Include="kogama-tools\services\Common\ConfigService.cpp" />
     <ClCompile Include="kogama-tools\services\Common\ContextMenuService.cpp" />
@@ -228,6 +229,7 @@
     <ClInclude Include="kogama-tools\services\Build\AvatarModule\AvatarUtils.h" />
     <ClInclude Include="kogama-tools\services\Build\BlueModeTool.h" />
     <ClInclude Include="kogama-tools\services\Build\ModelModule\CustomModelScale.h" />
+    <ClInclude Include="kogama-tools\services\Common\AntiBanService.h" />
     <ClInclude Include="kogama-tools\services\IO\IFileService.h" />
     <ClInclude Include="kogama-tools\services\IO\IKoGaMaEnvironment.h" />
     <ClInclude Include="kogama-tools\services\IO\KoGaMaEnvironmentWindows.h" />
@@ -242,7 +244,7 @@
     <ClInclude Include="kogama-tools\services\Build\ModelModule\ModelUtils.h" />
     <ClInclude Include="kogama-tools\services\Build\ModelModule\module.h" />
     <ClInclude Include="kogama-tools\services\Build\ModelModule\PasteModel.h" />
-    <ClInclude Include="kogama-tools\services\Build\RotationStep.h" />
+    <ClInclude Include="kogama-tools\services\Build\RotationService.h" />
     <ClInclude Include="kogama-tools\services\Build\UnlimitedConfig.h" />
     <ClInclude Include="kogama-tools\services\Common\CameraService.h" />
     <ClInclude Include="kogama-tools\services\Common\ConfigService.h" />

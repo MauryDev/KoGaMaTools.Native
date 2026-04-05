@@ -506,6 +506,16 @@ void MVWorldObject::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) 
 
 }
 
+void GizmoRotationButtonHolderNg::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 101, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void CheatHandling::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 102, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -608,5 +618,7 @@ void MVWorldObject::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) 
         MVBody::Init(metadataInfo);
         AvatarEditModeBodyController::Init(metadataInfo);
         MVWorldObject::Init(metadataInfo);
+        GizmoRotationButtonHolderNg::Init(metadataInfo);
+        CheatHandling::Init(metadataInfo);
     }
 }

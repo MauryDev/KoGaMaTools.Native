@@ -6648,4 +6648,47 @@ inline static auto /* System.Int32 */ &f_id = fields.get<false>(0), /* System.In
 };
 
 
+struct GizmoRotationButtonHolderNg {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<3> fields;
+inline static auto /* UGUI.Desktop.Scripts.EditMode.Gizmo.GizmoRotationButtonNg */ &f_leftButton = fields.get<false>(0), /* UGUI.Desktop.Scripts.EditMode.Gizmo.GizmoRotationButtonNg */ &f_rightButton = fields.get<false>(1), /* UGUI.Desktop.Scripts.EditMode.Gizmo.GizmoRotationButtonNg */ &f_flipButton = fields.get<false>(2);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<2> methods;
+    /* System.Void Setup(System.Boolean canRotate, System.Boolean memberRequired) */
+    inline static auto& m_Setup = methods.get<false, false>(0);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(1);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct CheatHandling {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<0> fields;
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<7> methods;
+    /* System.Void Init() */
+    inline static auto& m_Init = methods.get<true, false>(0);
+    /* System.Void MachineBanDetected() */
+    inline static auto& m_MachineBanDetected = methods.get<true, false>(1);
+    /* System.Void CheatSoftwareRunningDetected() */
+    inline static auto& m_CheatSoftwareRunningDetected = methods.get<true, false>(2);
+    /* System.Void TextureHackDetected() */
+    inline static auto& m_TextureHackDetected = methods.get<true, false>(3);
+    /* System.Void SpeedHackDetected() */
+    inline static auto& m_SpeedHackDetected = methods.get<true, false>(4);
+    /* System.Void ObscuredCheatingDetected() */
+    inline static auto& m_ObscuredCheatingDetected = methods.get<true, false>(5);
+    /* System.Void ExecuteBan(MV.Common.CheatType cheatType) */
+    inline static auto& m_ExecuteBan = methods.get<true, false>(6);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

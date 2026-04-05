@@ -45,7 +45,7 @@
     <ClCompile Include="kogama-tools\services\Build\EditModeSpeed.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="kogama-tools\services\Build\RotationStep.cpp">
+    <ClCompile Include="kogama-tools\services\Build\RotationService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="kogama-tools\services\Build\UnlimitedConfig.cpp">
@@ -189,6 +189,9 @@
     <ClCompile Include="kogama-tools\services\Build\AvatarModule\AvatarInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="kogama-tools\services\Common\AntiBanService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\services\KieroUI.h">
@@ -221,7 +224,7 @@
     <ClInclude Include="kogama-tools\services\Build\EditModeSpeed.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="kogama-tools\services\Build\RotationStep.h">
+    <ClInclude Include="kogama-tools\services\Build\RotationService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="kogama-tools\services\Build\UnlimitedConfig.h">
@@ -390,6 +393,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="kogama-tools\services\Build\AvatarModule\AvatarInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Common\AntiBanService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

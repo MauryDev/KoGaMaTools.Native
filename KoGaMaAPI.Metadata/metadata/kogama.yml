@@ -132,3 +132,6 @@ klasses:
 - fullname: AvatarEditModeBodyController
 - fullname:  MV.WorldObject.MVWorldObject
   name: MVWorldObject
+- fullname: UGUI.Desktop.Scripts.EditMode.Gizmo.GizmoRotationButtonHolderNg
+  name: GizmoRotationButtonHolderNg
+- fullname: CheatHandling

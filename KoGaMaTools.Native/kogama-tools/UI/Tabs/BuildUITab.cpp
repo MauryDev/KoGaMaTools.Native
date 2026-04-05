@@ -14,7 +14,7 @@ void KoGaMaTools::UI::BuildUITab::Setup(KoGaMaTools::UI::MainUI& ui)
 		S::DestructiblesUnlock,
 		S::CustomGrid,
 		S::EditModeSpeed,
-		S::RotationStep,
+		S::RotationService,
 		S::UnlimitedConfig,
 		S::ModelModule::ModelService,
 		S::AvatarModule::AvatarService>(i);
