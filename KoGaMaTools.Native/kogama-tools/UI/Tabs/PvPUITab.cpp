@@ -14,6 +14,7 @@ void KoGaMaTools::UI::PvPUITab::Setup(KoGaMaTools::UI::MainUI& ui)
 		S::CustomCrossHairTexture,
 		S::ResolutionService,
 		S::CameraService,
-		S::KillCountService>(i);
+		S::KillCountService,
+	S::FreeEliteService>(i);
 
 }

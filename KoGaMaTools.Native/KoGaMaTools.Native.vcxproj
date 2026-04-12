@@ -202,6 +202,7 @@
     <ClCompile Include="kogama-tools\services\PvP\CustomCrossHairColor.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\CustomCrossHairTexture.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\FastRespawn.cpp" />
+    <ClCompile Include="kogama-tools\services\PvP\FreeEliteService.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\KillCountService.cpp" />
     <ClCompile Include="kogama-tools\services\PvP\ResolutionService.cpp" />
     <ClCompile Include="kogama-tools\Types\IntVector.cpp" />
@@ -264,6 +265,7 @@
     <ClInclude Include="kogama-tools\services\PvP\CustomCrossHairColor.h" />
     <ClInclude Include="kogama-tools\services\PvP\CustomCrossHairTexture.h" />
     <ClInclude Include="kogama-tools\services\PvP\FastRespawn.h" />
+    <ClInclude Include="kogama-tools\services\PvP\FreeEliteService.h" />
     <ClInclude Include="kogama-tools\services\PvP\KillCountService.h" />
     <ClInclude Include="kogama-tools\services\PvP\ResolutionService.h" />
     <ClInclude Include="kogama-tools\services\services.h" />

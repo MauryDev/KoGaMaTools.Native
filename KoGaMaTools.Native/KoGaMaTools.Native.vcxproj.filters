@@ -192,6 +192,9 @@
     <ClCompile Include="kogama-tools\services\Common\AntiBanService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="kogama-tools\services\PvP\FreeEliteService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\services\KieroUI.h">
@@ -396,6 +399,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="kogama-tools\services\Common\AntiBanService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\PvP\FreeEliteService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

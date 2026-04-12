@@ -516,6 +516,11 @@ void CheatHandling::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) 
 
 }
 
+void MVClientSettings::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 103, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
     void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
         PaintCubes::Init(metadataInfo);
         CubeModelTool::Init(metadataInfo);
@@ -620,5 +625,6 @@ void CheatHandling::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) 
         MVWorldObject::Init(metadataInfo);
         GizmoRotationButtonHolderNg::Init(metadataInfo);
         CheatHandling::Init(metadataInfo);
+        MVClientSettings::Init(metadataInfo);
     }
 }

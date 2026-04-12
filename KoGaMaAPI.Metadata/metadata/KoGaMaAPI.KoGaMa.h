@@ -6691,4 +6691,73 @@ struct CheatHandling {
 };
 
 
+struct MVClientSettings {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<4> fields;
+inline static auto /* MV.Common.ClientSettingFlags */ &f_flags = fields.get<true>(0), /* System.Boolean */ &f_flagsSet = fields.get<true>(1), /* System.Int32 */ &f__PostGameInterstitialIntervalInSeconds_k__BackingField = fields.get<true>(2), /* System.Int32 */ &f__ReviveFlags_k__BackingField = fields.get<true>(3);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<28> methods;
+    /* MV.Common.ClientSettingFlags get_ClientSettingFlags() */
+    inline static auto& m_get_ClientSettingFlags = methods.get<true, false>(0);
+    /* System.Void set_ClientSettingFlags(MV.Common.ClientSettingFlags value) */
+    inline static auto& m_set_ClientSettingFlags = methods.get<true, false>(1);
+    /* System.Int32 get_PostGameInterstitialIntervalInSeconds() */
+    inline static auto& m_get_PostGameInterstitialIntervalInSeconds = methods.get<true, false>(2);
+    /* System.Void set_PostGameInterstitialIntervalInSeconds(System.Int32 value) */
+    inline static auto& m_set_PostGameInterstitialIntervalInSeconds = methods.get<true, false>(3);
+    /* System.Int32 get_ReviveFlags() */
+    inline static auto& m_get_ReviveFlags = methods.get<true, false>(4);
+    /* System.Void set_ReviveFlags(System.Int32 value) */
+    inline static auto& m_set_ReviveFlags = methods.get<true, false>(5);
+    /* System.Boolean get_TouristChatAllowed() */
+    inline static auto& m_get_TouristChatAllowed = methods.get<true, false>(6);
+    /* System.Boolean get_EnableSentry() */
+    inline static auto& m_get_EnableSentry = methods.get<true, false>(7);
+    /* System.Boolean get_ShowTouristPromotion() */
+    inline static auto& m_get_ShowTouristPromotion = methods.get<true, false>(8);
+    /* System.Boolean get_SpinEnabled() */
+    inline static auto& m_get_SpinEnabled = methods.get<true, false>(9);
+    /* System.Boolean get_PostGameInterstitialEnabled() */
+    inline static auto& m_get_PostGameInterstitialEnabled = methods.get<true, false>(10);
+    /* System.Boolean get_SeekAdConsent() */
+    inline static auto& m_get_SeekAdConsent = methods.get<true, false>(11);
+    /* System.Boolean get_JoinFlowAdsEnabled() */
+    inline static auto& m_get_JoinFlowAdsEnabled = methods.get<true, false>(12);
+    /* System.Boolean get_WebAdSDKsEnabled() */
+    inline static auto& m_get_WebAdSDKsEnabled = methods.get<true, false>(13);
+    /* System.Boolean get_GameDistributionAdsEnabled() */
+    inline static auto& m_get_GameDistributionAdsEnabled = methods.get<true, false>(14);
+    /* System.Boolean get_PokiAdsEnabled() */
+    inline static auto& m_get_PokiAdsEnabled = methods.get<true, false>(15);
+    /* System.Boolean get_CrazyAdsEnabled() */
+    inline static auto& m_get_CrazyAdsEnabled = methods.get<true, false>(16);
+    /* System.Boolean get_PlayButtonAdsRegisteredUsers() */
+    inline static auto& m_get_PlayButtonAdsRegisteredUsers = methods.get<true, false>(17);
+    /* System.Boolean get_FirstPreviewTierFreeEnabled() */
+    inline static auto& m_get_FirstPreviewTierFreeEnabled = methods.get<true, false>(18);
+    /* System.Boolean get_ReviveEnabled() */
+    inline static auto& m_get_ReviveEnabled = methods.get<true, false>(19);
+    /* System.Boolean get_PlayButtonAdsEnabled() */
+    inline static auto& m_get_PlayButtonAdsEnabled = methods.get<true, false>(20);
+    /* System.Boolean get_BoostersEnabled() */
+    inline static auto& m_get_BoostersEnabled = methods.get<true, false>(21);
+    /* System.Boolean get_InterstitialsAdsEnabled() */
+    inline static auto& m_get_InterstitialsAdsEnabled = methods.get<true, false>(22);
+    /* System.Boolean get_RewardedAdsEnabled() */
+    inline static auto& m_get_RewardedAdsEnabled = methods.get<true, false>(23);
+    /* System.Boolean IsFlagSet(MV.Common.ClientSettingFlags flag) */
+    inline static auto& m_IsFlagSet = methods.get<true, false>(24);
+    /* System.Boolean get_EnableStathat() */
+    inline static auto& m_get_EnableStathat = methods.get<true, false>(25);
+    /* System.Boolean IsReviveFlagEnabledForSessionType() */
+    inline static auto& m_IsReviveFlagEnabledForSessionType = methods.get<true, false>(26);
+    /* System.Boolean get_IsSubscriber() */
+    inline static auto& m_get_IsSubscriber = methods.get<true, false>(27);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 }

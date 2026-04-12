@@ -135,3 +135,4 @@ klasses:
 - fullname: UGUI.Desktop.Scripts.EditMode.Gizmo.GizmoRotationButtonHolderNg
   name: GizmoRotationButtonHolderNg
 - fullname: CheatHandling
+- fullname: MVClientSettings

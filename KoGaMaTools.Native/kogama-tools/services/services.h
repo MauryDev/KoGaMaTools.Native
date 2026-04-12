@@ -18,6 +18,7 @@
 #include "PvP/ResolutionService.h"
 #include "PvP/CameraService.h"
 #include "PvP/KillCountService.h"
+#include "PvP/FreeEliteService.h"
 
 #include "Common/MainComponent.h"
 
