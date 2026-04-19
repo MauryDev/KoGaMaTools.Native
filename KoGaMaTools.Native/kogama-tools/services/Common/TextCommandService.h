@@ -20,8 +20,6 @@ namespace KoGaMaTools::Services {
 		static void NotifyUser(const std::string_view& message);
 	private:
 
-		
-
 		// Subfunções auxiliares
 		static std::wstring_view Trim(std::wstring_view s);
 		static std::wstring_view ExtractCommandName(std::wstring_view& command);

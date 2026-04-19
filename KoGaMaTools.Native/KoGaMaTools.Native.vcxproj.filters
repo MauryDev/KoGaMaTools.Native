@@ -195,6 +195,9 @@
     <ClCompile Include="kogama-tools\services\PvP\FreeEliteService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="kogama-tools\services\Build\ModelModule\ModelPreviewTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\services\KieroUI.h">
@@ -402,6 +405,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="kogama-tools\services\PvP\FreeEliteService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Build\ModelModule\ModelPreviewTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

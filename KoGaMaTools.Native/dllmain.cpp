@@ -30,5 +30,6 @@ BOOL WINAPI DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 		//kiero::shutdown();
 		break;
 	}
+
 	return TRUE;
 }

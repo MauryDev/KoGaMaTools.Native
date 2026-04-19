@@ -161,363 +161,403 @@ void Vector2::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 
 }
 
-void Rect::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void Vector3::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 32, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void Texture::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void Rect::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 33, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void TextCommand::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void Texture::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 34, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVWorldObjectClientManager::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void TextCommand::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 35, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVWorldObjectClient::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVWorldObjectClientManager::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 36, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void WorldNetwork::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVWorldObjectClient::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 37, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void Links::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void WorldNetwork::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 38, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void ObjectLinks::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void Links::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 39, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void World::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void ObjectLinks::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 40, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVWorldInventory::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void World::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 41, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVNetworkGame::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVWorldInventory::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 42, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void PhotonPeer::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVNetworkGame::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 43, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void UE_Time::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void PhotonPeer::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 44, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void BuildSystem_GameBuildSettings::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void UE_Time::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 45, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void InteractionFlags::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void BuildSystem_GameBuildSettings::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 46, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVPlayer::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void InteractionFlags::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 47, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void Metadata_UserProfileData::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVPlayer::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 48, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void XPProgressData::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void Metadata_UserProfileData::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 49, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVLocalPlayer::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void XPProgressData::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 50, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void ContextMenu::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVLocalPlayer::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 51, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void UE_Events_UnityAction::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void ContextMenu::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 52, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void TM::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void UE_Events_UnityAction::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 53, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void DesktopEditModeController::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void TM::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 54, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void EditorStateMachine::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void DesktopEditModeController::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 55, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void RuntimePrototypeCubeModel::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void EditorStateMachine::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 56, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void CubeModelChunk::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void RuntimePrototypeCubeModel::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 57, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void Cell::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void CubeModelChunk::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 58, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void IntVector::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void Cell::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 59, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void CubeBase::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void IntVector::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 60, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void Cube::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void CubeBase::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 61, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVAdvancedGhost::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void Cube::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 62, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void CollectTheItemCollectable::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVAdvancedGhost::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 63, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void CollectTheItemDropOff::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void CollectTheItemCollectable::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 64, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVJetPack::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void CollectTheItemDropOff::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 65, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVSimpleOneSeatVehicle::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVJetPack::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 66, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVDoorBlueprint::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVSimpleOneSeatVehicle::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 67, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVVehicleEnergy::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVDoorBlueprint::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 68, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVSentryGunBlueprint::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVVehicleEnergy::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 69, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVEditablePickupItemBaseBlueprint::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVSentryGunBlueprint::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 70, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVMovingPlatformGroup::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVEditablePickupItemBaseBlueprint::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 71, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVRotator::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVMovingPlatformGroup::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 72, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void EditableCubeModelWrapper::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVRotator::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 73, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVMovable::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void EditableCubeModelWrapper::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 74, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void SettingsInputFieldSlider::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVMovable::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 75, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void UI_InputField::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void SettingsInputFieldSlider::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 76, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void SettingsInputField::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void UI_InputField::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 77, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void UE_Screen::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void SettingsInputField::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 78, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void UE_FullScreenMode::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void UE_Screen::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 79, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void UE_RefreshRate::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void UE_FullScreenMode::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 80, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void UE_Camera::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void UE_RefreshRate::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 81, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void FirstPersonCamera::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void UE_Camera::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 82, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVCameraBase::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void FirstPersonCamera::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 83, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void TransitionCamera::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVCameraBase::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 84, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void PickupItem::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void TransitionCamera::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 85, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void CameraType::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void PickupItem::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 86, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void AvatarCamerasDesktop::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void CameraType::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 87, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void GameStatCounterType::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void AvatarCamerasDesktop::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 88, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void WinningConditionControl::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void GameStatCounterType::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 89, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void ThemeRepository::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void WinningConditionControl::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 90, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void Theme::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void ThemeRepository::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 91, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void UE_RenderSettings::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void Theme::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 92, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void EditorWorldObjectCreation::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void UE_RenderSettings::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 93, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVMaterialRepository::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void EditorWorldObjectCreation::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 94, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MvAvatarMetaDataWoMap::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVMaterialRepository::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 95, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MvAvatarMetaData::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MvAvatarMetaDataWoMap::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 96, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void AvatarSelectionController::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MvAvatarMetaData::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 97, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVBody::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void AvatarSelectionController::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 98, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void AvatarEditModeBodyController::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVBody::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 99, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVWorldObject::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void AvatarEditModeBodyController::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 100, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void GizmoRotationButtonHolderNg::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void MVWorldObject::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 101, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void CheatHandling::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void GizmoRotationButtonHolderNg::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 102, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
-void MVClientSettings::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+void CheatHandling::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
 ::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 103, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void MVClientSettings::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 104, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void InventoryItemPreviewer::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 105, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void UE_Object::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 106, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void UE_RenderTexture::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 107, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void UE_GameObject::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 108, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void ObjectPreviewer::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 109, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void PlayerInventoryController::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 110, klass,fields.data(), fields.size(), methods.data(), methods.size());
+
+}
+
+void PlayerInventoryPreviewItem::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo) {
+::Tools::Il2Cpp::Metadata::InitClass(metadataInfo, 111, klass,fields.data(), fields.size(), methods.data(), methods.size());
 
 }
 
@@ -554,6 +594,7 @@ void MVClientSettings::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInf
         Image::Init(metadataInfo);
         Sprite::Init(metadataInfo);
         Vector2::Init(metadataInfo);
+        Vector3::Init(metadataInfo);
         Rect::Init(metadataInfo);
         Texture::Init(metadataInfo);
         TextCommand::Init(metadataInfo);
@@ -626,5 +667,12 @@ void MVClientSettings::Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInf
         GizmoRotationButtonHolderNg::Init(metadataInfo);
         CheatHandling::Init(metadataInfo);
         MVClientSettings::Init(metadataInfo);
+        InventoryItemPreviewer::Init(metadataInfo);
+        UE_Object::Init(metadataInfo);
+        UE_RenderTexture::Init(metadataInfo);
+        UE_GameObject::Init(metadataInfo);
+        ObjectPreviewer::Init(metadataInfo);
+        PlayerInventoryController::Init(metadataInfo);
+        PlayerInventoryPreviewItem::Init(metadataInfo);
     }
 }

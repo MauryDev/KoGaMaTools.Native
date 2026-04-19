@@ -1,8 +1,6 @@
 #include "CustomCrossHairTexture.h"
 #include <imgui.h>
 #include <filesystem>
-#include <imgui_stdlib.h>
-#include <Tools.Il2Cpp.Lib.h>
 #include <Tools.Il2Cpp.ICalls.h>
 #include <metadata/KoGaMaAPI.KoGaMa.h>
 #include <fstream>

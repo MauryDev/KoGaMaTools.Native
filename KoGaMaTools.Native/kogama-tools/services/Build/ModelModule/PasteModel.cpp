@@ -3,12 +3,15 @@
 #include <metadata/KoGaMaAPI.KoGaMa.h>
 #include <Tools.Il2Cpp.ICalls.h>
 #include "ModelUtils.h"
+#include <kogama-tools/Resources/resource.h>
 
 void KoGaMaTools::Services::ModelModule::PasteModelService::Init(Core::DIContainer& di)
 {
 	Instance = di.Get<PasteModelService>();
 	copyService = di.Get<CopyModelService>();
 	mainComponent = di.Get<MainComponent>();
+	textureManager = di.Get<UI::ITextureManager>();
+
 }
 
 
@@ -27,14 +30,20 @@ bool KoGaMaTools::Services::ModelModule::PasteModelService::PasteCube(Tools::Il2
 	return PasteCube(wo, ReplaceOld, this->copyService->copiedCubes);
 }
 
-bool KoGaMaTools::Services::ModelModule::PasteModelService::PasteCube(Tools::Il2Cpp::Il2CppObject wo, bool replaceOld, const std::vector<KoGaMaTools::Services::ModelModule::CubeInfo>& cubes)
+bool KoGaMaTools::Services::ModelModule::PasteModelService::PasteCube(Tools::Il2Cpp::Il2CppObject wo, bool replaceOld, std::shared_ptr<std::vector<KoGaMaTools::Services::ModelModule::CubeInfo>> cubes)
 {
-	if (cubes.empty())
+	if (cubes->empty())
 	{
 		return false;
 	}
-	auto model = ModelUtils::GetModel(wo);
-	Instance->mainComponent->AddCoroutine(ModelUtils::PasteCubeCoro(model, replaceOld, cubes));
+
+	Instance->mainComponent->ExecuteCallback([wo, replaceOld, cubes](void*) {
+		auto model = ModelUtils::GetModel(wo);
+		Instance->mainComponent->AddCoroutine(ModelUtils::PasteCubeCoro(model, replaceOld, cubes));
+		TextCommandService::NotifyUser("Pasting model to current model.");
+
+	});
+	
 	return true;
 }
 
@@ -81,4 +90,57 @@ bool KoGaMaTools::Services::ModelModule::PasteModelService::Resolve(TextCommandS
 std::string_view KoGaMaTools::Services::ModelModule::PasteModelService::GetCommandHelp()
 {
 	return "/paste-model: Pastes the copied model data to the selected object. Use /paste-model-option replace-old to replace cubes in the way, or /paste-model-option keep-old to not replace them.";
+}
+
+void KoGaMaTools::Services::ModelModule::PasteModelService::RenderPopup()
+{
+	if (openPopupRequested)
+	{
+		ImGui::OpenPopup("Paste Model");
+		openPopupRequested = false;
+	}
+	ImGui::SetNextWindowSize(ImVec2(300, 150), ImGuiCond_Appearing);
+
+	if (ImGui::BeginPopupModal("Paste Model", NULL))
+	{
+		
+		ImGui::AlignTextToFramePadding();
+		ImGui::Image(textureManager->GetTexture(IDB_PNG8), ImVec2(24, 24));
+		ImGui::SameLine();
+		ImGui::Text("Options:");
+
+		ImGui::Indent(10.0f);
+
+		ImGui::Checkbox("##ReplaceOld", &ReplaceOld);
+		ImGui::SameLine();
+		ImGui::Text("Clean workspace on paste");
+		if (ImGui::IsItemHovered()) {
+			ImGui::SetTooltip("Removes existing cubes before placing the new model to avoid overlapping.");
+		}
+
+		ImGui::Unindent(10.0f);
+
+		if (ImGui::Button("Fechar"))
+			ImGui::CloseCurrentPopup();
+
+
+		ImGui::SameLine();
+
+		if (ImGui::Button("Execute"))
+		{
+			ImGui::CloseCurrentPopup();
+			this->PasteCube(static_cast<Tools::Il2Cpp::Il2CppObject>(modelCurrent));
+		}
+
+
+		ImGui::EndPopup();
+	}
+
+}
+
+void KoGaMaTools::Services::ModelModule::PasteModelService::RequestOpenPopup(void* modelCurrent)
+{
+	this->modelCurrent = modelCurrent;
+	openPopupRequested = true;
+	
 }

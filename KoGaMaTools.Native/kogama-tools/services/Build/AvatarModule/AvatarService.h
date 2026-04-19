@@ -13,7 +13,7 @@ namespace KoGaMaTools::Services::AvatarModule
 	class AvatarService : public UI::MainUI::IComponent,
 		public Core::IInitializable
 	{
-		AvatarInfo _avatarInfo;
+		std::shared_ptr<AvatarInfo> _avatarInfo;
 		inline static std::shared_ptr<AvatarService> Instance;
 		std::shared_ptr<MainComponent> _mainComponent;
 		std::shared_ptr<UI::ITextureManager> textureManager;

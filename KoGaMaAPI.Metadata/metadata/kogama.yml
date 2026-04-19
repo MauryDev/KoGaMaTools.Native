@@ -42,6 +42,8 @@ klasses:
   fullname: UnityEngine.Sprite
 - name: Vector2
   fullname: UnityEngine.Vector2
+- name: Vector3
+  fullname: UnityEngine.Vector3
 - name: Rect
   fullname: UnityEngine.Rect
 - fullname: UnityEngine.Texture
@@ -136,3 +138,13 @@ klasses:
   name: GizmoRotationButtonHolderNg
 - fullname: CheatHandling
 - fullname: MVClientSettings
+- fullname: InventoryItemPreviewer
+- fullname: UnityEngine.Object
+  name: UE_Object
+- fullname: UnityEngine.RenderTexture
+  name: UE_RenderTexture
+- fullname: UnityEngine.GameObject
+  name: UE_GameObject
+- fullname: ObjectPreviewer
+- fullname: PlayerInventoryController
+- fullname: PlayerInventoryPreviewItem

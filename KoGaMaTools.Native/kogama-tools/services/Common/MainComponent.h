@@ -9,6 +9,7 @@
 namespace KoGaMaTools::Services {
 	struct MainComponent: Core::IInitializable  {
 
+		struct TaskAwaiter;
 		struct TaskCoroutine {
 			struct promise_type {
 				TaskCoroutine get_return_object() {
@@ -16,9 +17,8 @@ namespace KoGaMaTools::Services {
 				}
 				std::suspend_never initial_suspend() { return {}; }
 				std::suspend_always final_suspend() noexcept { return {}; }
-				void return_void() {} // This allows the coroutine to end without a value
+				void return_void() {}
 				void unhandled_exception() { std::terminate(); }
-				// Se quiser usar co_yield sem valor nenhum:
 				std::suspend_always yield_value(std::monostate) { return {}; }
 			};
 			std::coroutine_handle<promise_type> handle;
@@ -44,8 +44,10 @@ namespace KoGaMaTools::Services {
 
 			// Our "Move Next" function
 			bool next();
-		};
 
+		};
+		
+		
 
 		using CallbackType = std::function<void(void*)>;
 		static inline std::shared_ptr<MainComponent> Instance = nullptr;

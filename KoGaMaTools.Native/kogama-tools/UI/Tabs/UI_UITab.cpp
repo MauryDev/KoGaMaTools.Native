@@ -4,7 +4,7 @@
 void KoGaMaTools::UI::UI_UITab::Setup(KoGaMaTools::UI::MainUI& ui)
 {
 	ui.AddComponentType("UI");
-	auto i = ui.components.size() - 1;
+	auto i = static_cast<int>(ui.components.size() - 1);
 
 	namespace S = KoGaMaTools::Services;
 

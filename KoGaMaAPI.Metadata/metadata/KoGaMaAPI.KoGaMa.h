@@ -1987,6 +1987,118 @@ inline static auto /* System.Single */ &f_x = fields.get<false>(0), /* System.Si
 };
 
 
+struct Vector3 {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<15> fields;
+inline static auto /* System.Single */ &f_kEpsilon = fields.get<true>(0), /* System.Single */ &f_kEpsilonNormalSqrt = fields.get<true>(1), /* UnityEngine.Vector3 */ &f_zeroVector = fields.get<true>(5), /* UnityEngine.Vector3 */ &f_oneVector = fields.get<true>(6), /* UnityEngine.Vector3 */ &f_upVector = fields.get<true>(7), /* UnityEngine.Vector3 */ &f_downVector = fields.get<true>(8), /* UnityEngine.Vector3 */ &f_leftVector = fields.get<true>(9), /* UnityEngine.Vector3 */ &f_rightVector = fields.get<true>(10), /* UnityEngine.Vector3 */ &f_forwardVector = fields.get<true>(11), /* UnityEngine.Vector3 */ &f_backVector = fields.get<true>(12), /* UnityEngine.Vector3 */ &f_positiveInfinityVector = fields.get<true>(13), /* UnityEngine.Vector3 */ &f_negativeInfinityVector = fields.get<true>(14);
+inline static auto /* System.Single */ &f_x = fields.get<false>(2), /* System.Single */ &f_y = fields.get<false>(3), /* System.Single */ &f_z = fields.get<false>(4);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<49> methods;
+    /* UnityEngine.Vector3 Slerp(UnityEngine.Vector3 a, UnityEngine.Vector3 b, System.Single t) */
+    inline static auto& m_Slerp = methods.get<true, false>(0);
+    /* UnityEngine.Vector3 Lerp(UnityEngine.Vector3 a, UnityEngine.Vector3 b, System.Single t) */
+    inline static auto& m_Lerp = methods.get<true, false>(1);
+    /* UnityEngine.Vector3 LerpUnclamped(UnityEngine.Vector3 a, UnityEngine.Vector3 b, System.Single t) */
+    inline static auto& m_LerpUnclamped = methods.get<true, false>(2);
+    /* System.Single get_Item(System.Int32 index) */
+    inline static auto& m_get_Item = methods.get<false, false>(3);
+    /* System.Void set_Item(System.Int32 index, System.Single value) */
+    inline static auto& m_set_Item = methods.get<false, false>(4);
+    /* System.Void .ctor(System.Single x, System.Single y, System.Single z) */
+    inline static auto& m0__ctor = methods.get<false, false>(5);
+    /* System.Void .ctor(System.Single x, System.Single y) */
+    inline static auto& m1__ctor = methods.get<false, false>(6);
+    /* UnityEngine.Vector3 Scale(UnityEngine.Vector3 a, UnityEngine.Vector3 b) */
+    inline static auto& m0_Scale = methods.get<true, false>(7);
+    /* System.Void Scale(UnityEngine.Vector3 scale) */
+    inline static auto& m1_Scale = methods.get<false, false>(8);
+    /* UnityEngine.Vector3 Cross(UnityEngine.Vector3 lhs, UnityEngine.Vector3 rhs) */
+    inline static auto& m_Cross = methods.get<true, false>(9);
+    /* System.Int32 GetHashCode() */
+    inline static auto& m_GetHashCode = methods.get<false, true>(10);
+    /* System.Boolean Equals(System.Object other) */
+    inline static auto& m0_Equals = methods.get<false, true>(11);
+    /* System.Boolean Equals(UnityEngine.Vector3 other) */
+    inline static auto& m1_Equals = methods.get<false, true>(12);
+    /* UnityEngine.Vector3 Normalize(UnityEngine.Vector3 value) */
+    inline static auto& m0_Normalize = methods.get<true, false>(13);
+    /* System.Void Normalize() */
+    inline static auto& m1_Normalize = methods.get<false, false>(14);
+    /* UnityEngine.Vector3 get_normalized() */
+    inline static auto& m_get_normalized = methods.get<false, false>(15);
+    /* System.Single Dot(UnityEngine.Vector3 lhs, UnityEngine.Vector3 rhs) */
+    inline static auto& m_Dot = methods.get<true, false>(16);
+    /* UnityEngine.Vector3 Project(UnityEngine.Vector3 vector, UnityEngine.Vector3 onNormal) */
+    inline static auto& m_Project = methods.get<true, false>(17);
+    /* System.Single Angle(UnityEngine.Vector3 from, UnityEngine.Vector3 to) */
+    inline static auto& m_Angle = methods.get<true, false>(18);
+    /* System.Single Distance(UnityEngine.Vector3 a, UnityEngine.Vector3 b) */
+    inline static auto& m_Distance = methods.get<true, false>(19);
+    /* UnityEngine.Vector3 ClampMagnitude(UnityEngine.Vector3 vector, System.Single maxLength) */
+    inline static auto& m_ClampMagnitude = methods.get<true, false>(20);
+    /* System.Single Magnitude(UnityEngine.Vector3 vector) */
+    inline static auto& m_Magnitude = methods.get<true, false>(21);
+    /* System.Single get_magnitude() */
+    inline static auto& m_get_magnitude = methods.get<false, false>(22);
+    /* System.Single SqrMagnitude(UnityEngine.Vector3 vector) */
+    inline static auto& m_SqrMagnitude = methods.get<true, false>(23);
+    /* System.Single get_sqrMagnitude() */
+    inline static auto& m_get_sqrMagnitude = methods.get<false, false>(24);
+    /* UnityEngine.Vector3 Min(UnityEngine.Vector3 lhs, UnityEngine.Vector3 rhs) */
+    inline static auto& m_Min = methods.get<true, false>(25);
+    /* UnityEngine.Vector3 Max(UnityEngine.Vector3 lhs, UnityEngine.Vector3 rhs) */
+    inline static auto& m_Max = methods.get<true, false>(26);
+    /* UnityEngine.Vector3 get_zero() */
+    inline static auto& m_get_zero = methods.get<true, false>(27);
+    /* UnityEngine.Vector3 get_one() */
+    inline static auto& m_get_one = methods.get<true, false>(28);
+    /* UnityEngine.Vector3 get_forward() */
+    inline static auto& m_get_forward = methods.get<true, false>(29);
+    /* UnityEngine.Vector3 get_back() */
+    inline static auto& m_get_back = methods.get<true, false>(30);
+    /* UnityEngine.Vector3 get_up() */
+    inline static auto& m_get_up = methods.get<true, false>(31);
+    /* UnityEngine.Vector3 get_down() */
+    inline static auto& m_get_down = methods.get<true, false>(32);
+    /* UnityEngine.Vector3 get_left() */
+    inline static auto& m_get_left = methods.get<true, false>(33);
+    /* UnityEngine.Vector3 get_right() */
+    inline static auto& m_get_right = methods.get<true, false>(34);
+    /* UnityEngine.Vector3 get_negativeInfinity() */
+    inline static auto& m_get_negativeInfinity = methods.get<true, false>(35);
+    /* UnityEngine.Vector3 op_Addition(UnityEngine.Vector3 a, UnityEngine.Vector3 b) */
+    inline static auto& m_op_Addition = methods.get<true, false>(36);
+    /* UnityEngine.Vector3 op_Subtraction(UnityEngine.Vector3 a, UnityEngine.Vector3 b) */
+    inline static auto& m_op_Subtraction = methods.get<true, false>(37);
+    /* UnityEngine.Vector3 op_UnaryNegation(UnityEngine.Vector3 a) */
+    inline static auto& m_op_UnaryNegation = methods.get<true, false>(38);
+    /* UnityEngine.Vector3 op_Multiply(UnityEngine.Vector3 a, System.Single d) */
+    inline static auto& m0_op_Multiply = methods.get<true, false>(39);
+    /* UnityEngine.Vector3 op_Multiply(System.Single d, UnityEngine.Vector3 a) */
+    inline static auto& m1_op_Multiply = methods.get<true, false>(40);
+    /* UnityEngine.Vector3 op_Division(UnityEngine.Vector3 a, System.Single d) */
+    inline static auto& m_op_Division = methods.get<true, false>(41);
+    /* System.Boolean op_Equality(UnityEngine.Vector3 lhs, UnityEngine.Vector3 rhs) */
+    inline static auto& m_op_Equality = methods.get<true, false>(42);
+    /* System.Boolean op_Inequality(UnityEngine.Vector3 lhs, UnityEngine.Vector3 rhs) */
+    inline static auto& m_op_Inequality = methods.get<true, false>(43);
+    /* System.String ToString() */
+    inline static auto& m0_ToString = methods.get<false, true>(44);
+    /* System.String ToString(System.String format) */
+    inline static auto& m1_ToString = methods.get<false, false>(45);
+    /* System.String ToString(System.String format, System.IFormatProvider formatProvider) */
+    inline static auto& m2_ToString = methods.get<false, true>(46);
+    /* System.Void .cctor() */
+    inline static auto& m__cctor = methods.get<true, false>(47);
+    /* System.Void Slerp_Injected(in UnityEngine.Vector3 a, in UnityEngine.Vector3 b, System.Single t, out UnityEngine.Vector3 ret) */
+    inline static auto& m_Slerp_Injected = methods.get<true, false>(48);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
 struct Rect {
 	inline static ::Tools::Il2Cpp::Il2CppClass klass;
     inline static ::Tools::Il2Cpp::Metadata::array_field<4> fields;
@@ -6753,6 +6865,650 @@ inline static auto /* MV.Common.ClientSettingFlags */ &f_flags = fields.get<true
     inline static auto& m_IsReviveFlagEnabledForSessionType = methods.get<true, false>(26);
     /* System.Boolean get_IsSubscriber() */
     inline static auto& m_get_IsSubscriber = methods.get<true, false>(27);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct InventoryItemPreviewer {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<10> fields;
+inline static auto /* System.Single */ &f_PreviewObjMaxSize = fields.get<true>(0), /* System.Single */ &f_PreviewItemRotateSpeed = fields.get<true>(1);
+inline static auto /* UnityEngine.Vector3 */ &f_previewCamOffset = fields.get<false>(2), /* UnityEngine.Vector3 */ &f_inventoryItemStandardOffset = fields.get<false>(3), /* LayerFlags */ &f_layersToRender = fields.get<false>(4), /* UnityEngine.Camera */ &f_previewCam = fields.get<false>(5), /* UnityEngine.RenderTexture */ &f_previewTexture = fields.get<false>(6), /* UnityEngine.Vector3 */ &f_pivotPoint = fields.get<false>(7), /* UnityEngine.GameObject */ &f__PreviewGameObject_k__BackingField = fields.get<false>(8), /* System.Collections.Generic.Dictionary`2<MVWorldObjectDocumentationType, System.Single> */ &f_WorldObjectCameraFOVOverload = fields.get<false>(9);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<9> methods;
+    /* UnityEngine.RenderTexture get_PreviewTexture() */
+    inline static auto& m_get_PreviewTexture = methods.get<false, false>(0);
+    /* UnityEngine.GameObject get_PreviewGameObject() */
+    inline static auto& m_get_PreviewGameObject = methods.get<false, false>(1);
+    /* System.Void set_PreviewGameObject(UnityEngine.GameObject value) */
+    inline static auto& m_set_PreviewGameObject = methods.get<false, false>(2);
+    /* System.Void Initialize(System.Int32 textureWidth, System.Int32 textureHeight, UnityEngine.CameraClearFlags clearFlags, LayerFlags layersToRender, UnityEngine.Vector3 cameraOffset, UnityEngine.Transform previewItemsRoot, UnityEngine.Vector3 previewPosition, System.String name, MVWorldObjectClient wo, UnityEngine.GameObject woGameObjectCopy) */
+    inline static auto& m_Initialize = methods.get<false, false>(3);
+    /* System.Void OnPreCull() */
+    inline static auto& m_OnPreCull = methods.get<false, false>(4);
+    /* System.Void OnPostRender() */
+    inline static auto& m_OnPostRender = methods.get<false, false>(5);
+    /* System.Void UpdateRotation(System.Single rotateSpeed = 0) */
+    inline static auto& m_UpdateRotation = methods.get<false, false>(6);
+    /* System.Void OnDestroy() */
+    inline static auto& m_OnDestroy = methods.get<false, false>(7);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(8);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct UE_Object {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<5> fields;
+inline static auto /* System.Int32 */ &f_kInstanceID_None = fields.get<true>(0), /* System.Int32 */ &f_OffsetOfInstanceIDInCPlusPlusObject = fields.get<true>(2), /* System.String */ &f_objectIsNullMessage = fields.get<true>(3), /* System.String */ &f_cloneDestroyedMessage = fields.get<true>(4);
+inline static auto /* System.IntPtr */ &f_m_CachedPtr = fields.get<false>(1);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<66> methods;
+    /* System.Int32 GetInstanceID() */
+    inline static auto& m_GetInstanceID = methods.get<false, false>(0);
+    /* System.Int32 GetHashCode() */
+    inline static auto& m_GetHashCode = methods.get<false, true>(1);
+    /* System.Boolean Equals(System.Object other) */
+    inline static auto& m_Equals = methods.get<false, true>(2);
+    /* System.Boolean op_Implicit(UnityEngine.Object exists) */
+    inline static auto& m_op_Implicit = methods.get<true, false>(3);
+    /* System.Boolean CompareBaseObjects(UnityEngine.Object lhs, UnityEngine.Object rhs) */
+    inline static auto& m_CompareBaseObjects = methods.get<true, false>(4);
+    /* System.Boolean IsNativeObjectAlive(UnityEngine.Object o) */
+    inline static auto& m_IsNativeObjectAlive = methods.get<true, false>(5);
+    /* System.IntPtr GetCachedPtr() */
+    inline static auto& m_GetCachedPtr = methods.get<false, false>(6);
+    /* System.String get_name() */
+    inline static auto& m_get_name = methods.get<false, false>(7);
+    /* System.Void set_name(System.String value) */
+    inline static auto& m_set_name = methods.get<false, false>(8);
+    /* UnityEngine.Object Instantiate(UnityEngine.Object original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) */
+    inline static auto& m0_Instantiate = methods.get<true, false>(9);
+    /* UnityEngine.Object Instantiate(UnityEngine.Object original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation, UnityEngine.Transform parent) */
+    inline static auto& m1_Instantiate = methods.get<true, false>(10);
+    /* UnityEngine.Object Instantiate(UnityEngine.Object original) */
+    inline static auto& m2_Instantiate = methods.get<true, false>(11);
+    /* UnityEngine.Object Instantiate(UnityEngine.Object original, UnityEngine.Transform parent, System.Boolean instantiateInWorldSpace) */
+    inline static auto& m3_Instantiate = methods.get<true, false>(12);
+    /* T Instantiate(T original) */
+    inline static auto& m4_Instantiate = methods.get<true, false>(13);
+    /* T Instantiate(T original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) */
+    inline static auto& m5_Instantiate = methods.get<true, false>(14);
+    /* T Instantiate(T original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation, UnityEngine.Transform parent) */
+    inline static auto& m6_Instantiate = methods.get<true, false>(15);
+    /* T Instantiate(T original, UnityEngine.Transform parent) */
+    inline static auto& m7_Instantiate = methods.get<true, false>(16);
+    /* T Instantiate(T original, UnityEngine.Transform parent, System.Boolean worldPositionStays) */
+    inline static auto& m8_Instantiate = methods.get<true, false>(17);
+    /* System.Void Destroy(UnityEngine.Object obj, System.Single t) */
+    inline static auto& m0_Destroy = methods.get<true, false>(18);
+    /* System.Void Destroy(UnityEngine.Object obj) */
+    inline static auto& m1_Destroy = methods.get<true, false>(19);
+    /* System.Void DestroyImmediate(UnityEngine.Object obj, System.Boolean allowDestroyingAssets) */
+    inline static auto& m0_DestroyImmediate = methods.get<true, false>(20);
+    /* System.Void DestroyImmediate(UnityEngine.Object obj) */
+    inline static auto& m1_DestroyImmediate = methods.get<true, false>(21);
+    /* UnityEngine.Object[] FindObjectsByType(System.Type type, UnityEngine.FindObjectsSortMode sortMode) */
+    inline static auto& m0_FindObjectsByType = methods.get<true, false>(22);
+    /* UnityEngine.Object[] FindObjectsByType(System.Type type, UnityEngine.FindObjectsInactive findObjectsInactive, UnityEngine.FindObjectsSortMode sortMode) */
+    inline static auto& m1_FindObjectsByType = methods.get<true, false>(23);
+    /* T[] FindObjectsByType(UnityEngine.FindObjectsSortMode sortMode) */
+    inline static auto& m2_FindObjectsByType = methods.get<true, false>(27);
+    /* System.Void DontDestroyOnLoad(UnityEngine.Object target) */
+    inline static auto& m_DontDestroyOnLoad = methods.get<true, false>(24);
+    /* UnityEngine.HideFlags get_hideFlags() */
+    inline static auto& m_get_hideFlags = methods.get<false, false>(25);
+    /* System.Void set_hideFlags(UnityEngine.HideFlags value) */
+    inline static auto& m_set_hideFlags = methods.get<false, false>(26);
+    /* T FindFirstObjectByType() */
+    inline static auto& m0_FindFirstObjectByType = methods.get<true, false>(28);
+    /* UnityEngine.Object FindFirstObjectByType(System.Type type, UnityEngine.FindObjectsInactive findObjectsInactive) */
+    inline static auto& m1_FindFirstObjectByType = methods.get<true, false>(31);
+    /* T FindAnyObjectByType() */
+    inline static auto& m0_FindAnyObjectByType = methods.get<true, false>(29);
+    /* UnityEngine.Object FindAnyObjectByType(System.Type type, UnityEngine.FindObjectsInactive findObjectsInactive) */
+    inline static auto& m1_FindAnyObjectByType = methods.get<true, false>(32);
+    /* System.Void CheckNullArgument(System.Object arg, System.String message) */
+    inline static auto& m_CheckNullArgument = methods.get<true, false>(30);
+    /* System.String ToString() */
+    inline static auto& m0_ToString = methods.get<false, true>(33);
+    /* System.String ToString(UnityEngine.Object obj) */
+    inline static auto& m1_ToString = methods.get<true, false>(41);
+    /* System.Boolean op_Equality(UnityEngine.Object x, UnityEngine.Object y) */
+    inline static auto& m_op_Equality = methods.get<true, false>(34);
+    /* System.Boolean op_Inequality(UnityEngine.Object x, UnityEngine.Object y) */
+    inline static auto& m_op_Inequality = methods.get<true, false>(35);
+    /* System.Int32 GetOffsetOfInstanceIDInCPlusPlusObject() */
+    inline static auto& m_GetOffsetOfInstanceIDInCPlusPlusObject = methods.get<true, false>(36);
+    /* UnityEngine.Object Internal_CloneSingle(UnityEngine.Object data) */
+    inline static auto& m_Internal_CloneSingle = methods.get<true, false>(37);
+    /* UnityEngine.Object Internal_CloneSingleWithParent(UnityEngine.Object data, UnityEngine.Transform parent, System.Boolean worldPositionStays) */
+    inline static auto& m_Internal_CloneSingleWithParent = methods.get<true, false>(38);
+    /* UnityEngine.Object Internal_InstantiateSingle(UnityEngine.Object data, UnityEngine.Vector3 pos, UnityEngine.Quaternion rot) */
+    inline static auto& m_Internal_InstantiateSingle = methods.get<true, false>(39);
+    /* UnityEngine.Object Internal_InstantiateSingleWithParent(UnityEngine.Object data, UnityEngine.Transform parent, UnityEngine.Vector3 pos, UnityEngine.Quaternion rot) */
+    inline static auto& m_Internal_InstantiateSingleWithParent = methods.get<true, false>(40);
+    /* System.String GetName() */
+    inline static auto& m_GetName = methods.get<false, false>(42);
+    /* System.Boolean IsPersistent(UnityEngine.Object obj) */
+    inline static auto& m_IsPersistent = methods.get<true, false>(43);
+    /* System.Void SetName(System.String name) */
+    inline static auto& m_SetName = methods.get<false, false>(44);
+    /* UnityEngine.Object FindObjectFromInstanceID(System.Int32 instanceID) */
+    inline static auto& m_FindObjectFromInstanceID = methods.get<true, false>(45);
+    /* UnityEngine.Object ForceLoadFromInstanceID(System.Int32 instanceID) */
+    inline static auto& m_ForceLoadFromInstanceID = methods.get<true, false>(46);
+    /* System.Void MarkDirty() */
+    inline static auto& m_MarkDirty = methods.get<false, false>(47);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(48);
+    /* System.Void .cctor() */
+    inline static auto& m__cctor = methods.get<true, false>(49);
+    /* System.Void Destroy_Injected(System.IntPtr obj, System.Single t) */
+    inline static auto& m_Destroy_Injected = methods.get<true, false>(50);
+    /* System.Void DestroyImmediate_Injected(System.IntPtr obj, System.Boolean allowDestroyingAssets) */
+    inline static auto& m_DestroyImmediate_Injected = methods.get<true, false>(51);
+    /* System.Void DontDestroyOnLoad_Injected(System.IntPtr target) */
+    inline static auto& m_DontDestroyOnLoad_Injected = methods.get<true, false>(52);
+    /* UnityEngine.HideFlags get_hideFlags_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_hideFlags_Injected = methods.get<true, false>(53);
+    /* System.Void set_hideFlags_Injected(System.IntPtr _unity_self, UnityEngine.HideFlags value) */
+    inline static auto& m_set_hideFlags_Injected = methods.get<true, false>(54);
+    /* System.IntPtr Internal_CloneSingle_Injected(System.IntPtr data) */
+    inline static auto& m_Internal_CloneSingle_Injected = methods.get<true, false>(55);
+    /* System.IntPtr Internal_CloneSingleWithParent_Injected(System.IntPtr data, System.IntPtr parent, System.Boolean worldPositionStays) */
+    inline static auto& m_Internal_CloneSingleWithParent_Injected = methods.get<true, false>(56);
+    /* System.IntPtr Internal_InstantiateSingle_Injected(System.IntPtr data, in UnityEngine.Vector3 pos, in UnityEngine.Quaternion rot) */
+    inline static auto& m_Internal_InstantiateSingle_Injected = methods.get<true, false>(57);
+    /* System.IntPtr Internal_InstantiateSingleWithParent_Injected(System.IntPtr data, System.IntPtr parent, in UnityEngine.Vector3 pos, in UnityEngine.Quaternion rot) */
+    inline static auto& m_Internal_InstantiateSingleWithParent_Injected = methods.get<true, false>(58);
+    /* System.Void ToString_Injected(System.IntPtr obj, out UnityEngine.Bindings.ManagedSpanWrapper ret) */
+    inline static auto& m_ToString_Injected = methods.get<true, false>(59);
+    /* System.Void GetName_Injected(System.IntPtr _unity_self, out UnityEngine.Bindings.ManagedSpanWrapper ret) */
+    inline static auto& m_GetName_Injected = methods.get<true, false>(60);
+    /* System.Boolean IsPersistent_Injected(System.IntPtr obj) */
+    inline static auto& m_IsPersistent_Injected = methods.get<true, false>(61);
+    /* System.Void SetName_Injected(System.IntPtr _unity_self, ref UnityEngine.Bindings.ManagedSpanWrapper name) */
+    inline static auto& m_SetName_Injected = methods.get<true, false>(62);
+    /* System.IntPtr FindObjectFromInstanceID_Injected(System.Int32 instanceID) */
+    inline static auto& m_FindObjectFromInstanceID_Injected = methods.get<true, false>(63);
+    /* System.IntPtr ForceLoadFromInstanceID_Injected(System.Int32 instanceID) */
+    inline static auto& m_ForceLoadFromInstanceID_Injected = methods.get<true, false>(64);
+    /* System.Void MarkDirty_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_MarkDirty_Injected = methods.get<true, false>(65);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct UE_RenderTexture {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<0> fields;
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<89> methods;
+    /* System.Int32 get_width() */
+    inline static auto& m_get_width = methods.get<false, true>(0);
+    /* System.Void set_width(System.Int32 value) */
+    inline static auto& m_set_width = methods.get<false, true>(1);
+    /* System.Int32 get_height() */
+    inline static auto& m_get_height = methods.get<false, true>(2);
+    /* System.Void set_height(System.Int32 value) */
+    inline static auto& m_set_height = methods.get<false, true>(3);
+    /* UnityEngine.Experimental.Rendering.GraphicsFormat GetColorFormat(System.Boolean suppressWarnings) */
+    inline static auto& m_GetColorFormat = methods.get<false, false>(4);
+    /* System.Void SetColorFormat(UnityEngine.Experimental.Rendering.GraphicsFormat format) */
+    inline static auto& m_SetColorFormat = methods.get<false, false>(5);
+    /* UnityEngine.Experimental.Rendering.GraphicsFormat get_graphicsFormat() */
+    inline static auto& m_get_graphicsFormat = methods.get<false, false>(6);
+    /* System.Void set_graphicsFormat(UnityEngine.Experimental.Rendering.GraphicsFormat value) */
+    inline static auto& m_set_graphicsFormat = methods.get<false, false>(7);
+    /* UnityEngine.RenderTextureFormat get_format() */
+    inline static auto& m_get_format = methods.get<false, false>(8);
+    /* System.Void set_depthStencilFormat(UnityEngine.Experimental.Rendering.GraphicsFormat value) */
+    inline static auto& m_set_depthStencilFormat = methods.get<false, false>(9);
+    /* System.Void set_antiAliasing(System.Int32 value) */
+    inline static auto& m_set_antiAliasing = methods.get<false, false>(10);
+    /* System.Void set_isPowerOfTwo(System.Boolean value) */
+    inline static auto& m_set_isPowerOfTwo = methods.get<false, false>(11);
+    /* UnityEngine.RenderTexture GetActive() */
+    inline static auto& m_GetActive = methods.get<true, false>(12);
+    /* System.Void SetActive(UnityEngine.RenderTexture rt) */
+    inline static auto& m_SetActive = methods.get<true, false>(13);
+    /* UnityEngine.RenderTexture get_active() */
+    inline static auto& m_get_active = methods.get<true, false>(14);
+    /* System.Void set_active(UnityEngine.RenderTexture value) */
+    inline static auto& m_set_active = methods.get<true, false>(15);
+    /* UnityEngine.RenderBuffer GetColorBuffer() */
+    inline static auto& m_GetColorBuffer = methods.get<false, false>(16);
+    /* UnityEngine.RenderBuffer GetDepthBuffer() */
+    inline static auto& m_GetDepthBuffer = methods.get<false, false>(17);
+    /* System.Void SetMipMapCount(System.Int32 count) */
+    inline static auto& m_SetMipMapCount = methods.get<false, false>(18);
+    /* System.Void SetShadowSamplingMode(UnityEngine.Rendering.ShadowSamplingMode samplingMode) */
+    inline static auto& m_SetShadowSamplingMode = methods.get<false, false>(19);
+    /* UnityEngine.RenderBuffer get_colorBuffer() */
+    inline static auto& m_get_colorBuffer = methods.get<false, false>(20);
+    /* UnityEngine.RenderBuffer get_depthBuffer() */
+    inline static auto& m_get_depthBuffer = methods.get<false, false>(21);
+    /* System.Void DiscardContents(System.Boolean discardColor, System.Boolean discardDepth) */
+    inline static auto& m0_DiscardContents = methods.get<false, false>(22);
+    /* System.Void DiscardContents() */
+    inline static auto& m1_DiscardContents = methods.get<false, false>(23);
+    /* System.Boolean Create() */
+    inline static auto& m_Create = methods.get<false, false>(24);
+    /* System.Void Release() */
+    inline static auto& m_Release = methods.get<false, false>(25);
+    /* System.Void SetSRGBReadWrite(System.Boolean srgb) */
+    inline static auto& m_SetSRGBReadWrite = methods.get<false, false>(26);
+    /* System.Void Internal_Create(UnityEngine.RenderTexture rt) */
+    inline static auto& m_Internal_Create = methods.get<true, false>(27);
+    /* System.Void SetRenderTextureDescriptor(UnityEngine.RenderTextureDescriptor desc) */
+    inline static auto& m_SetRenderTextureDescriptor = methods.get<false, false>(28);
+    /* UnityEngine.RenderTextureDescriptor GetDescriptor() */
+    inline static auto& m_GetDescriptor = methods.get<false, false>(29);
+    /* UnityEngine.RenderTexture GetTemporary_Internal(UnityEngine.RenderTextureDescriptor desc) */
+    inline static auto& m_GetTemporary_Internal = methods.get<true, false>(30);
+    /* System.Void ReleaseTemporary(UnityEngine.RenderTexture temp) */
+    inline static auto& m_ReleaseTemporary = methods.get<true, false>(31);
+    /* System.Void .ctor() */
+    inline static auto& m0__ctor = methods.get<false, false>(32);
+    /* System.Void .ctor(UnityEngine.RenderTextureDescriptor desc) */
+    inline static auto& m1__ctor = methods.get<false, false>(33);
+    /* System.Void .ctor(UnityEngine.RenderTexture textureToCopy) */
+    inline static auto& m2__ctor = methods.get<false, false>(34);
+    /* System.Void .ctor(System.Int32 width, System.Int32 height, System.Int32 depth, UnityEngine.Experimental.Rendering.DefaultFormat format) */
+    inline static auto& m3__ctor = methods.get<false, false>(35);
+    /* System.Void .ctor(System.Int32 width, System.Int32 height, System.Int32 depth, UnityEngine.Experimental.Rendering.GraphicsFormat format) */
+    inline static auto& m4__ctor = methods.get<false, false>(36);
+    /* System.Void .ctor(System.Int32 width, System.Int32 height, System.Int32 depth, UnityEngine.Experimental.Rendering.GraphicsFormat format, System.Int32 mipCount) */
+    inline static auto& m5__ctor = methods.get<false, false>(37);
+    /* System.Void .ctor(System.Int32 width, System.Int32 height, UnityEngine.Experimental.Rendering.GraphicsFormat colorFormat, UnityEngine.Experimental.Rendering.GraphicsFormat depthStencilFormat, System.Int32 mipCount) */
+    inline static auto& m6__ctor = methods.get<false, false>(38);
+    /* System.Void .ctor(System.Int32 width, System.Int32 height, UnityEngine.Experimental.Rendering.GraphicsFormat colorFormat, UnityEngine.Experimental.Rendering.GraphicsFormat depthStencilFormat) */
+    inline static auto& m7__ctor = methods.get<false, false>(39);
+    /* System.Void .ctor(System.Int32 width, System.Int32 height, System.Int32 depth, UnityEngine.RenderTextureFormat format, UnityEngine.RenderTextureReadWrite readWrite) */
+    inline static auto& m8__ctor = methods.get<false, false>(40);
+    /* System.Void .ctor(System.Int32 width, System.Int32 height, System.Int32 depth, UnityEngine.RenderTextureFormat format) */
+    inline static auto& m9__ctor = methods.get<false, false>(41);
+    /* System.Void .ctor(System.Int32 width, System.Int32 height, System.Int32 depth) */
+    inline static auto& m10__ctor = methods.get<false, false>(42);
+    /* System.Void .ctor(System.Int32 width, System.Int32 height, System.Int32 depth, UnityEngine.RenderTextureFormat format, System.Int32 mipCount) */
+    inline static auto& m11__ctor = methods.get<false, false>(43);
+    /* System.Void Initialize(System.Int32 width, System.Int32 height, System.Int32 depth, UnityEngine.RenderTextureFormat format, UnityEngine.RenderTextureReadWrite readWrite, System.Int32 mipCount) */
+    inline static auto& m_Initialize = methods.get<false, false>(44);
+    /* UnityEngine.Experimental.Rendering.GraphicsFormat GetDepthStencilFormatLegacy(System.Int32 depthBits, UnityEngine.Experimental.Rendering.GraphicsFormat colorFormat) */
+    inline static auto& m0_GetDepthStencilFormatLegacy = methods.get<true, false>(45);
+    /* UnityEngine.Experimental.Rendering.GraphicsFormat GetDepthStencilFormatLegacy(System.Int32 depthBits, UnityEngine.RenderTextureFormat format, System.Boolean disableFallback = False) */
+    inline static auto& m1_GetDepthStencilFormatLegacy = methods.get<true, false>(46);
+    /* UnityEngine.Experimental.Rendering.GraphicsFormat GetDepthStencilFormatLegacy(System.Int32 depthBits, UnityEngine.Experimental.Rendering.DefaultFormat format) */
+    inline static auto& m2_GetDepthStencilFormatLegacy = methods.get<true, false>(47);
+    /* UnityEngine.Experimental.Rendering.GraphicsFormat GetDepthStencilFormatLegacy(System.Int32 depthBits, UnityEngine.Rendering.ShadowSamplingMode shadowSamplingMode) */
+    inline static auto& m3_GetDepthStencilFormatLegacy = methods.get<true, false>(48);
+    /* UnityEngine.Experimental.Rendering.GraphicsFormat GetDepthStencilFormatLegacy(System.Int32 depthBits, System.Boolean requestedShadowMap) */
+    inline static auto& m4_GetDepthStencilFormatLegacy = methods.get<true, false>(49);
+    /* UnityEngine.RenderTextureDescriptor get_descriptor() */
+    inline static auto& m_get_descriptor = methods.get<false, false>(50);
+    /* System.Void ValidateRenderTextureDesc(ref UnityEngine.RenderTextureDescriptor desc) */
+    inline static auto& m_ValidateRenderTextureDesc = methods.get<true, false>(51);
+    /* UnityEngine.Experimental.Rendering.GraphicsFormat GetDefaultColorFormat(UnityEngine.Experimental.Rendering.DefaultFormat format) */
+    inline static auto& m_GetDefaultColorFormat = methods.get<true, false>(52);
+    /* UnityEngine.Experimental.Rendering.GraphicsFormat GetDefaultDepthStencilFormat(UnityEngine.Experimental.Rendering.DefaultFormat format, System.Int32 depth) */
+    inline static auto& m_GetDefaultDepthStencilFormat = methods.get<true, false>(53);
+    /* UnityEngine.Rendering.ShadowSamplingMode GetShadowSamplingModeForFormat(UnityEngine.RenderTextureFormat format) */
+    inline static auto& m0_GetShadowSamplingModeForFormat = methods.get<true, false>(54);
+    /* UnityEngine.Rendering.ShadowSamplingMode GetShadowSamplingModeForFormat(UnityEngine.Experimental.Rendering.DefaultFormat format) */
+    inline static auto& m1_GetShadowSamplingModeForFormat = methods.get<true, false>(55);
+    /* System.Void WarnAboutFallbackTo16BitsDepth(UnityEngine.RenderTextureFormat format) */
+    inline static auto& m_WarnAboutFallbackTo16BitsDepth = methods.get<true, false>(56);
+    /* UnityEngine.Experimental.Rendering.GraphicsFormat GetCompatibleFormat(UnityEngine.RenderTextureFormat renderTextureFormat, UnityEngine.RenderTextureReadWrite readWrite) */
+    inline static auto& m_GetCompatibleFormat = methods.get<true, false>(57);
+    /* UnityEngine.RenderTexture GetTemporary(UnityEngine.RenderTextureDescriptor desc) */
+    inline static auto& m0_GetTemporary = methods.get<true, false>(58);
+    /* UnityEngine.RenderTexture GetTemporary(System.Int32 width, System.Int32 height, System.Int32 depthBuffer, UnityEngine.RenderTextureFormat format, UnityEngine.RenderTextureReadWrite readWrite, System.Int32 antiAliasing, UnityEngine.RenderTextureMemoryless memorylessMode, UnityEngine.VRTextureUsage vrUsage, System.Boolean useDynamicScale) */
+    inline static auto& m1_GetTemporary = methods.get<true, false>(60);
+    /* UnityEngine.RenderTexture GetTemporary(System.Int32 width, System.Int32 height, System.Int32 depthBuffer, UnityEngine.RenderTextureFormat format, UnityEngine.RenderTextureReadWrite readWrite, System.Int32 antiAliasing, UnityEngine.RenderTextureMemoryless memorylessMode, UnityEngine.VRTextureUsage vrUsage) */
+    inline static auto& m2_GetTemporary = methods.get<true, false>(61);
+    /* UnityEngine.RenderTexture GetTemporary(System.Int32 width, System.Int32 height, System.Int32 depthBuffer, UnityEngine.RenderTextureFormat format, UnityEngine.RenderTextureReadWrite readWrite, System.Int32 antiAliasing, UnityEngine.RenderTextureMemoryless memorylessMode) */
+    inline static auto& m3_GetTemporary = methods.get<true, false>(62);
+    /* UnityEngine.RenderTexture GetTemporary(System.Int32 width, System.Int32 height, System.Int32 depthBuffer, UnityEngine.RenderTextureFormat format, UnityEngine.RenderTextureReadWrite readWrite, System.Int32 antiAliasing) */
+    inline static auto& m4_GetTemporary = methods.get<true, false>(63);
+    /* UnityEngine.RenderTexture GetTemporary(System.Int32 width, System.Int32 height, System.Int32 depthBuffer, UnityEngine.RenderTextureFormat format, UnityEngine.RenderTextureReadWrite readWrite) */
+    inline static auto& m5_GetTemporary = methods.get<true, false>(64);
+    /* UnityEngine.RenderTexture GetTemporary(System.Int32 width, System.Int32 height, System.Int32 depthBuffer, UnityEngine.RenderTextureFormat format) */
+    inline static auto& m6_GetTemporary = methods.get<true, false>(65);
+    /* UnityEngine.RenderTexture GetTemporary(System.Int32 width, System.Int32 height, System.Int32 depthBuffer) */
+    inline static auto& m7_GetTemporary = methods.get<true, false>(66);
+    /* UnityEngine.RenderTexture GetTemporaryImpl(System.Int32 width, System.Int32 height, UnityEngine.Experimental.Rendering.GraphicsFormat depthStencilFormat, UnityEngine.Experimental.Rendering.GraphicsFormat colorFormat, System.Int32 antiAliasing = 1, UnityEngine.RenderTextureMemoryless memorylessMode = 0, UnityEngine.VRTextureUsage vrUsage = 0, System.Boolean useDynamicScale = False, UnityEngine.Rendering.ShadowSamplingMode shadowSamplingMode = 2) */
+    inline static auto& m_GetTemporaryImpl = methods.get<true, false>(59);
+    /* System.Int32 get_width_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_width_Injected = methods.get<true, false>(67);
+    /* System.Void set_width_Injected(System.IntPtr _unity_self, System.Int32 value) */
+    inline static auto& m_set_width_Injected = methods.get<true, false>(68);
+    /* System.Int32 get_height_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_height_Injected = methods.get<true, false>(69);
+    /* System.Void set_height_Injected(System.IntPtr _unity_self, System.Int32 value) */
+    inline static auto& m_set_height_Injected = methods.get<true, false>(70);
+    /* UnityEngine.Experimental.Rendering.GraphicsFormat GetColorFormat_Injected(System.IntPtr _unity_self, System.Boolean suppressWarnings) */
+    inline static auto& m_GetColorFormat_Injected = methods.get<true, false>(71);
+    /* System.Void SetColorFormat_Injected(System.IntPtr _unity_self, UnityEngine.Experimental.Rendering.GraphicsFormat format) */
+    inline static auto& m_SetColorFormat_Injected = methods.get<true, false>(72);
+    /* System.Void set_depthStencilFormat_Injected(System.IntPtr _unity_self, UnityEngine.Experimental.Rendering.GraphicsFormat value) */
+    inline static auto& m_set_depthStencilFormat_Injected = methods.get<true, false>(73);
+    /* System.Void set_antiAliasing_Injected(System.IntPtr _unity_self, System.Int32 value) */
+    inline static auto& m_set_antiAliasing_Injected = methods.get<true, false>(74);
+    /* System.IntPtr GetActive_Injected() */
+    inline static auto& m_GetActive_Injected = methods.get<true, false>(75);
+    /* System.Void SetActive_Injected(System.IntPtr rt) */
+    inline static auto& m_SetActive_Injected = methods.get<true, false>(76);
+    /* System.Void GetColorBuffer_Injected(System.IntPtr _unity_self, out UnityEngine.RenderBuffer ret) */
+    inline static auto& m_GetColorBuffer_Injected = methods.get<true, false>(77);
+    /* System.Void GetDepthBuffer_Injected(System.IntPtr _unity_self, out UnityEngine.RenderBuffer ret) */
+    inline static auto& m_GetDepthBuffer_Injected = methods.get<true, false>(78);
+    /* System.Void SetMipMapCount_Injected(System.IntPtr _unity_self, System.Int32 count) */
+    inline static auto& m_SetMipMapCount_Injected = methods.get<true, false>(79);
+    /* System.Void SetShadowSamplingMode_Injected(System.IntPtr _unity_self, UnityEngine.Rendering.ShadowSamplingMode samplingMode) */
+    inline static auto& m_SetShadowSamplingMode_Injected = methods.get<true, false>(80);
+    /* System.Void DiscardContents_Injected(System.IntPtr _unity_self, System.Boolean discardColor, System.Boolean discardDepth) */
+    inline static auto& m_DiscardContents_Injected = methods.get<true, false>(81);
+    /* System.Boolean Create_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_Create_Injected = methods.get<true, false>(82);
+    /* System.Void Release_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_Release_Injected = methods.get<true, false>(83);
+    /* System.Void SetSRGBReadWrite_Injected(System.IntPtr _unity_self, System.Boolean srgb) */
+    inline static auto& m_SetSRGBReadWrite_Injected = methods.get<true, false>(84);
+    /* System.Void SetRenderTextureDescriptor_Injected(System.IntPtr _unity_self, in UnityEngine.RenderTextureDescriptor desc) */
+    inline static auto& m_SetRenderTextureDescriptor_Injected = methods.get<true, false>(85);
+    /* System.Void GetDescriptor_Injected(System.IntPtr _unity_self, out UnityEngine.RenderTextureDescriptor ret) */
+    inline static auto& m_GetDescriptor_Injected = methods.get<true, false>(86);
+    /* System.IntPtr GetTemporary_Internal_Injected(in UnityEngine.RenderTextureDescriptor desc) */
+    inline static auto& m_GetTemporary_Internal_Injected = methods.get<true, false>(87);
+    /* System.Void ReleaseTemporary_Injected(System.IntPtr temp) */
+    inline static auto& m_ReleaseTemporary_Injected = methods.get<true, false>(88);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct UE_GameObject {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<0> fields;
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<59> methods;
+    /* T GetComponent() */
+    inline static auto& m0_GetComponent = methods.get<false, false>(0);
+    /* UnityEngine.Component GetComponent(System.Type type) */
+    inline static auto& m1_GetComponent = methods.get<false, false>(1);
+    /* System.Void GetComponentFastPath(System.Type type, System.IntPtr oneFurtherThanResultValue) */
+    inline static auto& m_GetComponentFastPath = methods.get<false, false>(2);
+    /* UnityEngine.Component GetComponentInChildren(System.Type type, System.Boolean includeInactive) */
+    inline static auto& m0_GetComponentInChildren = methods.get<false, false>(3);
+    /* T GetComponentInChildren() */
+    inline static auto& m1_GetComponentInChildren = methods.get<false, false>(4);
+    /* T GetComponentInChildren(System.Boolean includeInactive) */
+    inline static auto& m2_GetComponentInChildren = methods.get<false, false>(5);
+    /* UnityEngine.Component GetComponentInParent(System.Type type, System.Boolean includeInactive) */
+    inline static auto& m0_GetComponentInParent = methods.get<false, false>(6);
+    /* T GetComponentInParent() */
+    inline static auto& m1_GetComponentInParent = methods.get<false, false>(7);
+    /* T GetComponentInParent(System.Boolean includeInactive) */
+    inline static auto& m2_GetComponentInParent = methods.get<false, false>(8);
+    /* System.Array GetComponentsInternal(System.Type type, System.Boolean useSearchTypeAsArrayReturnType, System.Boolean recursive, System.Boolean includeInactive, System.Boolean reverse, System.Object resultList) */
+    inline static auto& m_GetComponentsInternal = methods.get<false, false>(9);
+    /* T[] GetComponents() */
+    inline static auto& m0_GetComponents = methods.get<false, false>(10);
+    /* System.Void GetComponents(System.Collections.Generic.List`1<T> results) */
+    inline static auto& m1_GetComponents = methods.get<false, false>(11);
+    /* T[] GetComponentsInChildren(System.Boolean includeInactive) */
+    inline static auto& m0_GetComponentsInChildren = methods.get<false, false>(12);
+    /* System.Void GetComponentsInChildren(System.Boolean includeInactive, System.Collections.Generic.List`1<T> results) */
+    inline static auto& m1_GetComponentsInChildren = methods.get<false, false>(13);
+    /* T[] GetComponentsInChildren() */
+    inline static auto& m2_GetComponentsInChildren = methods.get<false, false>(14);
+    /* System.Void GetComponentsInChildren(System.Collections.Generic.List`1<T> results) */
+    inline static auto& m3_GetComponentsInChildren = methods.get<false, false>(15);
+    /* System.Void GetComponentsInParent(System.Boolean includeInactive, System.Collections.Generic.List`1<T> results) */
+    inline static auto& m0_GetComponentsInParent = methods.get<false, false>(16);
+    /* T[] GetComponentsInParent(System.Boolean includeInactive) */
+    inline static auto& m1_GetComponentsInParent = methods.get<false, false>(17);
+    /* System.Boolean TryGetComponent(out T component) */
+    inline static auto& m0_TryGetComponent = methods.get<false, false>(18);
+    /* System.Boolean TryGetComponent(System.Type type, out UnityEngine.Component component) */
+    inline static auto& m1_TryGetComponent = methods.get<false, false>(19);
+    /* UnityEngine.Component TryGetComponentInternal(System.Type type) */
+    inline static auto& m_TryGetComponentInternal = methods.get<false, false>(20);
+    /* System.Void TryGetComponentFastPath(System.Type type, System.IntPtr oneFurtherThanResultValue) */
+    inline static auto& m_TryGetComponentFastPath = methods.get<false, false>(21);
+    /* UnityEngine.Component Internal_AddComponentWithType(System.Type componentType) */
+    inline static auto& m_Internal_AddComponentWithType = methods.get<false, false>(22);
+    /* UnityEngine.Component AddComponent(System.Type componentType) */
+    inline static auto& m0_AddComponent = methods.get<false, false>(23);
+    /* T AddComponent() */
+    inline static auto& m1_AddComponent = methods.get<false, false>(24);
+    /* UnityEngine.Transform get_transform() */
+    inline static auto& m_get_transform = methods.get<false, false>(25);
+    /* System.Int32 get_layer() */
+    inline static auto& m_get_layer = methods.get<false, false>(26);
+    /* System.Void set_layer(System.Int32 value) */
+    inline static auto& m_set_layer = methods.get<false, false>(27);
+    /* System.Void SetActive(System.Boolean value) */
+    inline static auto& m_SetActive = methods.get<false, false>(28);
+    /* System.Boolean get_activeSelf() */
+    inline static auto& m_get_activeSelf = methods.get<false, false>(29);
+    /* System.Boolean get_activeInHierarchy() */
+    inline static auto& m_get_activeInHierarchy = methods.get<false, false>(30);
+    /* System.Boolean get_isStatic() */
+    inline static auto& m_get_isStatic = methods.get<false, false>(31);
+    /* System.Void set_isStatic(System.Boolean value) */
+    inline static auto& m_set_isStatic = methods.get<false, false>(32);
+    /* System.Void SendMessage(System.String methodName, System.Object value, UnityEngine.SendMessageOptions options) */
+    inline static auto& m_SendMessage = methods.get<false, false>(33);
+    /* System.Void .ctor(System.String name) */
+    inline static auto& m0__ctor = methods.get<false, false>(34);
+    /* System.Void .ctor() */
+    inline static auto& m1__ctor = methods.get<false, false>(35);
+    /* System.Void .ctor(System.String name, System.Type[] components) */
+    inline static auto& m2__ctor = methods.get<false, false>(36);
+    /* System.Void Internal_CreateGameObject(UnityEngine.GameObject self, System.String name) */
+    inline static auto& m_Internal_CreateGameObject = methods.get<true, false>(37);
+    /* UnityEngine.GameObject Find(System.String name) */
+    inline static auto& m_Find = methods.get<true, false>(38);
+    /* UnityEngine.GameObject get_gameObject() */
+    inline static auto& m_get_gameObject = methods.get<false, false>(39);
+    /* System.IntPtr GetComponent_Injected(System.IntPtr _unity_self, System.Type type) */
+    inline static auto& m_GetComponent_Injected = methods.get<true, false>(40);
+    /* System.Void GetComponentFastPath_Injected(System.IntPtr _unity_self, System.Type type, System.IntPtr oneFurtherThanResultValue) */
+    inline static auto& m_GetComponentFastPath_Injected = methods.get<true, false>(41);
+    /* System.IntPtr GetComponentInChildren_Injected(System.IntPtr _unity_self, System.Type type, System.Boolean includeInactive) */
+    inline static auto& m_GetComponentInChildren_Injected = methods.get<true, false>(42);
+    /* System.IntPtr GetComponentInParent_Injected(System.IntPtr _unity_self, System.Type type, System.Boolean includeInactive) */
+    inline static auto& m_GetComponentInParent_Injected = methods.get<true, false>(43);
+    /* System.Array GetComponentsInternal_Injected(System.IntPtr _unity_self, System.Type type, System.Boolean useSearchTypeAsArrayReturnType, System.Boolean recursive, System.Boolean includeInactive, System.Boolean reverse, System.Object resultList) */
+    inline static auto& m_GetComponentsInternal_Injected = methods.get<true, false>(44);
+    /* System.IntPtr TryGetComponentInternal_Injected(System.IntPtr _unity_self, System.Type type) */
+    inline static auto& m_TryGetComponentInternal_Injected = methods.get<true, false>(45);
+    /* System.Void TryGetComponentFastPath_Injected(System.IntPtr _unity_self, System.Type type, System.IntPtr oneFurtherThanResultValue) */
+    inline static auto& m_TryGetComponentFastPath_Injected = methods.get<true, false>(46);
+    /* System.IntPtr Internal_AddComponentWithType_Injected(System.IntPtr _unity_self, System.Type componentType) */
+    inline static auto& m_Internal_AddComponentWithType_Injected = methods.get<true, false>(47);
+    /* System.IntPtr get_transform_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_transform_Injected = methods.get<true, false>(48);
+    /* System.Int32 get_layer_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_layer_Injected = methods.get<true, false>(49);
+    /* System.Void set_layer_Injected(System.IntPtr _unity_self, System.Int32 value) */
+    inline static auto& m_set_layer_Injected = methods.get<true, false>(50);
+    /* System.Void SetActive_Injected(System.IntPtr _unity_self, System.Boolean value) */
+    inline static auto& m_SetActive_Injected = methods.get<true, false>(51);
+    /* System.Boolean get_activeSelf_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_activeSelf_Injected = methods.get<true, false>(52);
+    /* System.Boolean get_activeInHierarchy_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_activeInHierarchy_Injected = methods.get<true, false>(53);
+    /* System.Boolean get_isStatic_Injected(System.IntPtr _unity_self) */
+    inline static auto& m_get_isStatic_Injected = methods.get<true, false>(54);
+    /* System.Void set_isStatic_Injected(System.IntPtr _unity_self, System.Boolean value) */
+    inline static auto& m_set_isStatic_Injected = methods.get<true, false>(55);
+    /* System.Void SendMessage_Injected(System.IntPtr _unity_self, ref UnityEngine.Bindings.ManagedSpanWrapper methodName, System.Object value, UnityEngine.SendMessageOptions options) */
+    inline static auto& m_SendMessage_Injected = methods.get<true, false>(56);
+    /* System.Void Internal_CreateGameObject_Injected(UnityEngine.GameObject self, ref UnityEngine.Bindings.ManagedSpanWrapper name) */
+    inline static auto& m_Internal_CreateGameObject_Injected = methods.get<true, false>(57);
+    /* System.IntPtr Find_Injected(ref UnityEngine.Bindings.ManagedSpanWrapper name) */
+    inline static auto& m_Find_Injected = methods.get<true, false>(58);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct ObjectPreviewer {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<11> fields;
+inline static auto /* System.Single */ &f_previewObjMaxSize = fields.get<true>(0), /* System.Single */ &f_previewCamAdditionalHeight = fields.get<true>(1), /* System.Single */ &f_previewCamDist = fields.get<true>(2), /* System.Single */ &f_previewItemRotateSpeed = fields.get<true>(3), /* System.Int32 */ &f_previewerIndex = fields.get<true>(4);
+inline static auto /* UnityEngine.Vector3 */ &f_previewCamOffset = fields.get<false>(5), /* LayerFlags */ &f_layersToRender = fields.get<false>(6), /* UnityEngine.Camera */ &f_previewCam = fields.get<false>(7), /* UnityEngine.Vector3 */ &f_pivotPoint = fields.get<false>(8), /* UnityEngine.RenderTexture */ &f__PreviewTexture_k__BackingField = fields.get<false>(9), /* UnityEngine.GameObject */ &f__PreviewGameObject_k__BackingField = fields.get<false>(10);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<14> methods;
+    /* UnityEngine.RenderTexture get_PreviewTexture() */
+    inline static auto& m_get_PreviewTexture = methods.get<false, false>(0);
+    /* System.Void set_PreviewTexture(UnityEngine.RenderTexture value) */
+    inline static auto& m_set_PreviewTexture = methods.get<false, false>(1);
+    /* UnityEngine.GameObject get_PreviewGameObject() */
+    inline static auto& m_get_PreviewGameObject = methods.get<false, false>(2);
+    /* System.Void set_PreviewGameObject(UnityEngine.GameObject value) */
+    inline static auto& m_set_PreviewGameObject = methods.get<false, false>(3);
+    /* ObjectPreviewer Create(System.Int32 textureSize, UnityEngine.CameraClearFlags clearFlags, LayerFlags layersToRender, UnityEngine.Transform previewItemsRoot, System.String name, UnityEngine.GameObject woGameObjectCopy) */
+    inline static auto& m0_Create = methods.get<true, false>(4);
+    /* ObjectPreviewer Create(System.Int32 textureSize, UnityEngine.CameraClearFlags clearFlags, LayerFlags layersToRender, UnityEngine.Vector3 cameraOffset, UnityEngine.Transform previewItemsRoot, UnityEngine.Vector3 previewPosition, System.String name, MVWorldObjectClient wo, UnityEngine.GameObject woGameObjectCopy) */
+    inline static auto& m1_Create = methods.get<true, false>(5);
+    /* ObjectPreviewer Create(System.Int32 textureWidth, System.Int32 textureHeight, UnityEngine.CameraClearFlags clearFlags, LayerFlags layersToRender, UnityEngine.Vector3 cameraOffset, UnityEngine.Transform previewItemsRoot, UnityEngine.Vector3 previewPosition, System.String name, MVWorldObjectClient wo, UnityEngine.GameObject woGameObjectCopy) */
+    inline static auto& m2_Create = methods.get<true, false>(6);
+    /* UnityEngine.Bounds ComputeLocalBounds(UnityEngine.GameObject go) */
+    inline static auto& m_ComputeLocalBounds = methods.get<true, false>(7);
+    /* System.Void OnPreCull() */
+    inline static auto& m_OnPreCull = methods.get<false, false>(8);
+    /* System.Void OnPostRender() */
+    inline static auto& m_OnPostRender = methods.get<false, false>(9);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(10);
+    /* System.Void UpdateRotation(System.Single rotateSpeed = 0) */
+    inline static auto& m_UpdateRotation = methods.get<false, false>(11);
+    /* System.Void Destroy() */
+    inline static auto& m_Destroy = methods.get<false, false>(12);
+    /* System.Void .cctor() */
+    inline static auto& m__cctor = methods.get<true, false>(13);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct PlayerInventoryController {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<16> fields;
+inline static auto /* InventoryController */ &f_inventoryControllerPrefab = fields.get<false>(0), /* System.Int32 */ &f_numberOfSlotsPrPage = fields.get<false>(1), /* PlayerInventoryPreviewItem */ &f_previewItemPrefab = fields.get<false>(2), /* UnityEngine.Transform */ &f_previewRootTransform = fields.get<false>(3), /* UnityEngine.Transform */ &f_tempPreviewRoot = fields.get<false>(4), /* InventoryController */ &f_inventoryController = fields.get<false>(5), /* System.Int32 */ &f_selectedTab = fields.get<false>(6), /* System.Collections.Generic.Dictionary`2<System.Int32, TabState> */ &f_tabs = fields.get<false>(7), /* System.Collections.Generic.Dictionary`2<System.Int32, System.String> */ &f_tabsNonLocalized = fields.get<false>(8), /* System.Collections.Generic.List`1<MVWorldObjectClient> */ &f_previewedObjects = fields.get<false>(9), /* UGUI.Desktop.Scripts.EditMode.Inventories.PlayerShopInventoryRepository */ &f_repository = fields.get<false>(10), /* System.Collections.Generic.List`1<InventoryItem> */ &f_items = fields.get<false>(11), /* System.Collections.Generic.List`1<InventoryItem> */ &f_itemsWithData = fields.get<false>(12), /* PlayerInventoryPreviewItem */ &f_draggedPreviewItem = fields.get<false>(13), /* MVWorldObjectClient */ &f_worldObjectDataCopy = fields.get<false>(14), /* InventoryItemPreviewer */ &f_draggedPreview = fields.get<false>(15);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<21> methods;
+    /* System.Void Initialize() */
+    inline static auto& m_Initialize = methods.get<false, false>(0);
+    /* System.Void InventoryChanged() */
+    inline static auto& m_InventoryChanged = methods.get<false, false>(1);
+    /* System.Void UpdatePageCount() */
+    inline static auto& m_UpdatePageCount = methods.get<false, false>(2);
+    /* System.Boolean UsingDragAndDrop(InventoryCategoryType categoryType) */
+    inline static auto& m_UsingDragAndDrop = methods.get<true, false>(3);
+    /* System.Void Activate(UIPushOption options) */
+    inline static auto& m_Activate = methods.get<false, true>(4);
+    /* System.Void OpenTab(UIPushOption options, System.Int32 categoryId) */
+    inline static auto& m_OpenTab = methods.get<false, true>(5);
+    /* System.Void OpenPage(UIPushOption options, System.Int32 categoryId, System.Int32 slotPosition) */
+    inline static auto& m_OpenPage = methods.get<false, true>(6);
+    /* System.Void ActivateAtCategoryWithSlot(UIPushOption options, System.Int32 categoryId, System.Int32 slotPosition) */
+    inline static auto& m_ActivateAtCategoryWithSlot = methods.get<false, true>(7);
+    /* System.Void OnPop() */
+    inline static auto& m_OnPop = methods.get<false, false>(8);
+    /* System.Void TabSelected(System.Int32 tab) */
+    inline static auto& m_TabSelected = methods.get<false, false>(9);
+    /* System.Void PageTurned(System.Int32 dir) */
+    inline static auto& m_PageTurned = methods.get<false, false>(10);
+    /* System.Void PreserveDraggedItemAcrossPages() */
+    inline static auto& m_PreserveDraggedItemAcrossPages = methods.get<false, false>(11);
+    /* System.Void UpdateContent() */
+    inline static auto& m_UpdateContent = methods.get<false, true>(12);
+    /* System.Void UpdateSlotsWithDragAndDrop(TabState tabState) */
+    inline static auto& m_UpdateSlotsWithDragAndDrop = methods.get<false, false>(13);
+    /* System.Void UpdateSlots(TabState tabState) */
+    inline static auto& m_UpdateSlots = methods.get<false, false>(14);
+    /* System.Void SlotChanged(System.Int32 from, System.Int32 to) */
+    inline static auto& m_SlotChanged = methods.get<false, false>(15);
+    /* MVWorldObjectClient GetWorldObjectFromItemData(InventoryItem item) */
+    inline static auto& m_GetWorldObjectFromItemData = methods.get<true, false>(16);
+    /* System.Void SetCurrentDragTarget(UnityEngine.GameObject draggingGameObject) */
+    inline static auto& m_SetCurrentDragTarget = methods.get<false, true>(17);
+    /* System.Void DragFailed() */
+    inline static auto& m_DragFailed = methods.get<false, true>(18);
+    /* System.Void ItemDataLoaded(PlayerInventoryPreviewItem itemPreview, InventoryItem inventoryItem) */
+    inline static auto& m_ItemDataLoaded = methods.get<false, true>(19);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(20);
+
+    static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
+
+
+};
+
+
+struct PlayerInventoryPreviewItem {
+	inline static ::Tools::Il2Cpp::Il2CppClass klass;
+    inline static ::Tools::Il2Cpp::Metadata::array_field<21> fields;
+inline static auto /* UnityEngine.UI.RawImage */ &f_previewImage = fields.get<false>(0), /* System.Int32 */ &f_previewWidth = fields.get<false>(1), /* System.Int32 */ &f_previewHeight = fields.get<false>(2), /* InventoryItemDragHandler */ &f_dragHandler = fields.get<false>(3), /* PlayerInventoryItemManager */ &f_itemManagerPrefab = fields.get<false>(4), /* InventoryItemMetaData */ &f_metaData = fields.get<false>(5), /* InventoryItemPreviewer */ &f_objectPreviewerPrefab = fields.get<false>(6), /* InventoryItemPreview */ &f_itemPreviewerPrefab = fields.get<false>(7), /* InventoryItemCubeModelHandler */ &f_itemPreviewerCubeModelPrefab = fields.get<false>(8), /* ToolTip */ &f_toolTip = fields.get<false>(9), /* UnityEngine.GameObject */ &f_padLock = fields.get<false>(10), /* ItemPurchasePopup */ &f_popup = fields.get<false>(11), /* UnityEngine.UI.Text */ &f_text = fields.get<false>(12), /* UnityEngine.Texture */ &f_noImageTexture = fields.get<false>(13), /* UnityEngine.UI.Image */ &f_loadingWheel = fields.get<false>(14), /* InventoryItem */ &f_item = fields.get<false>(15), /* InventoryItemPreviewer */ &f_objectPreviewer = fields.get<false>(16), /* System.Boolean */ &f_initialized = fields.get<false>(17), /* System.Boolean */ &f_hasItemPreviewer = fields.get<false>(18), /* System.Boolean */ &f_requiresUnlocking = fields.get<false>(19), /* MVWorldObjectDocumentationType */ &f_DocumentationType = fields.get<false>(20);
+
+    inline static ::Tools::Il2Cpp::Metadata::array_method<18> methods;
+    /* System.Void Initialize(UnityEngine.Transform rootTransform, InventoryItem invItem, System.Boolean draggable, System.Boolean done) */
+    inline static auto& m0_Initialize = methods.get<false, false>(0);
+    /* System.Void Initialize(UnityEngine.Transform rootTransform, InventoryItem invItem, MVWorldObjectClient woPreviewObject, System.Boolean draggable) */
+    inline static auto& m1_Initialize = methods.get<false, false>(2);
+    /* System.Collections.IEnumerator DownloadImage(System.String url) */
+    inline static auto& m_DownloadImage = methods.get<false, false>(1);
+    /* System.Void LoadItemPreviewer(UnityEngine.Transform rootTransform, InventoryItem item, MVWorldObjectClient woPreviewObject) */
+    inline static auto& m_LoadItemPreviewer = methods.get<false, false>(3);
+    /* System.Void OnDestroy() */
+    inline static auto& m_OnDestroy = methods.get<false, false>(4);
+    /* InventoryItemPreviewer GetPreviewer() */
+    inline static auto& m_GetPreviewer = methods.get<false, false>(5);
+    /* InventoryItem GetItem() */
+    inline static auto& m_GetItem = methods.get<false, false>(6);
+    /* System.Void AdditionalItemSettingsPressed() */
+    inline static auto& m_AdditionalItemSettingsPressed = methods.get<false, false>(7);
+    /* System.Void SlotPressed() */
+    inline static auto& m_SlotPressed = methods.get<false, false>(8);
+    /* System.Void OnInventoryItemFailedToLoad() */
+    inline static auto& m_OnInventoryItemFailedToLoad = methods.get<false, false>(9);
+    /* System.Void AddItemToWorldFromInventory() */
+    inline static auto& m_AddItemToWorldFromInventory = methods.get<false, false>(10);
+    /* System.Void OnInventoryItemLoaded(System.Object sender, ReceivedItemFromQueryEventArgs e) */
+    inline static auto& m_OnInventoryItemLoaded = methods.get<false, false>(11);
+    /* System.Collections.IEnumerator AddToWorldInSeconds(System.Int32 seconds) */
+    inline static auto& m_AddToWorldInSeconds = methods.get<false, false>(12);
+    /* System.Void ShowPurchasePopUp() */
+    inline static auto& m_ShowPurchasePopUp = methods.get<false, false>(13);
+    /* System.Void Update() */
+    inline static auto& m_Update = methods.get<false, false>(14);
+    /* System.Void .ctor() */
+    inline static auto& m__ctor = methods.get<false, false>(15);
+    /* System.Void <AddItemToWorldFromInventory>b__31_1(UnityEngine.EventSystems.IAddItemFromInventory x, UnityEngine.EventSystems.BaseEventData y) */
+    inline static auto& m__AddItemToWorldFromInventory_b__31_1 = methods.get<false, false>(16);
+    /* System.Void <OnInventoryItemLoaded>b__32_0(UnityEngine.EventSystems.IPlayerInventory x, UnityEngine.EventSystems.BaseEventData y) */
+    inline static auto& m__OnInventoryItemLoaded_b__32_0 = methods.get<false, false>(17);
 
     static void Init(::Tools::Il2Cpp::Metadata::MetadataRoot& metadataInfo);
 

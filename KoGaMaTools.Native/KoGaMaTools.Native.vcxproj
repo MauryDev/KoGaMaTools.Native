@@ -73,11 +73,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(SolutionDir)KoGaMaAPI.Metadata;$(ProjectDir);$(IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\Native</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\Native\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(ProjectDir);$(SolutionDir)KoGaMaAPI.Metadata;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\Native</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\Native\</OutDir>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg">
     <VcpkgEnableManifest>true</VcpkgEnableManifest>
@@ -128,6 +128,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -148,6 +149,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -168,6 +170,7 @@
     <ClCompile Include="kogama-tools\services\Build\AvatarModule\AvatarUtils.cpp" />
     <ClCompile Include="kogama-tools\services\Build\BlueModeTool.cpp" />
     <ClCompile Include="kogama-tools\services\Build\ModelModule\CustomModelScale.cpp" />
+    <ClCompile Include="kogama-tools\services\Build\ModelModule\ModelPreviewTest.cpp" />
     <ClCompile Include="kogama-tools\services\Common\AntiBanService.cpp" />
     <ClCompile Include="kogama-tools\services\IO\IKoGaMaEnvironment.cpp" />
     <ClCompile Include="kogama-tools\services\IO\KoGaMaEnvironmentWindows.cpp" />
@@ -230,6 +233,7 @@
     <ClInclude Include="kogama-tools\services\Build\AvatarModule\AvatarUtils.h" />
     <ClInclude Include="kogama-tools\services\Build\BlueModeTool.h" />
     <ClInclude Include="kogama-tools\services\Build\ModelModule\CustomModelScale.h" />
+    <ClInclude Include="kogama-tools\services\Build\ModelModule\ModelPreviewTest.h" />
     <ClInclude Include="kogama-tools\services\Common\AntiBanService.h" />
     <ClInclude Include="kogama-tools\services\IO\IFileService.h" />
     <ClInclude Include="kogama-tools\services\IO\IKoGaMaEnvironment.h" />

@@ -90,7 +90,7 @@ bool KoGaMaTools::Services::ThemeService::Resolve(TextCommandService::CommandDat
 
     if (subCommand == L"set" && command.args.size() >= 2) {
         std::wstring target(command.args[1]);
-        std::string targetStr(target.begin(), target.end()); // Conversão simples para busca
+        std::string targetStr(target.begin(), target.end());
 
         for (size_t i = 0; i < Themes.size(); ++i) {
             if (Themes[i] == targetStr) {

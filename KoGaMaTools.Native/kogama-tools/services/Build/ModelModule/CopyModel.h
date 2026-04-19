@@ -1,5 +1,4 @@
 #pragma once
-#include <cinttypes>
 #include <memory>
 #include "kogama-tools/UI/MainUI.h"
 #include "kogama-tools/Core/DITools.h"
@@ -12,7 +11,8 @@ namespace KoGaMaTools::Services::ModelModule{
 		Services::ICommandResolve
 	{
 		inline static std::shared_ptr<CopyModelService> Instance;
-		std::vector<CubeInfo> copiedCubes;
+		std::shared_ptr<std::vector<CubeInfo>> copiedCubes;
+
 		void Init(Core::DIContainer& di) override;
 
 		

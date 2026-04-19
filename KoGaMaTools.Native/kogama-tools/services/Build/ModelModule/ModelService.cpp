@@ -11,7 +11,7 @@ void KoGaMaTools::Services::ModelModule::ModelService::Init(Core::DIContainer& d
 	pasteService = di.Get<PasteModelService>();
 	mainComponent = di.Get<MainComponent>();
     customModelScale = di.Get<CustomModelScale>();
-
+    modelPreviewTest = di.Get<ModelPreviewTest>();
 	textureManager = di.Get<UI::ITextureManager>();
 	fileService = di.Get<IFileService>();
 	loggerService = di.Get<LoggerService>();
@@ -24,11 +24,13 @@ void KoGaMaTools::Services::ModelModule::ModelService::Render()
 
     ImGui::TextDisabled("Model Tools");
     ImGui::Spacing();
+    ImGui::Spacing();
 
     customModelScale->Render();
 
     ImGui::Spacing();
     ImGui::Spacing();
+    ImGui::TextDisabled("Local Operations");
 
     if (ImGui::ImageButton("##CopyBtn", textureManager->GetTexture(IDB_PNG6), ImVec2(32, 32))) {
         Execute_CopyModel();
@@ -57,7 +59,7 @@ void KoGaMaTools::Services::ModelModule::ModelService::Render()
 
     if (ImGui::ImageButton("##ImportFileBtn", textureManager->GetTexture(IDB_PNG17), ImVec2(32, 32))) {
         isBusy = true;
-        std::thread([this]() {this->Execute_LoadModel(); }).detach();
+        std::thread([this]() { this->Execute_LoadModel(); }).detach();
     }
     if (ImGui::IsItemHovered()) ImGui::SetTooltip("Load Model");
 
@@ -66,26 +68,13 @@ void KoGaMaTools::Services::ModelModule::ModelService::Render()
     }
 
 	ImGui::EndDisabled();
+    
+    //modelPreviewTest->Render();
 
-    ImGui::Spacing();
-
-    ImGui::AlignTextToFramePadding();
-    ImGui::Image(textureManager->GetTexture(IDB_PNG8), ImVec2(24, 24));
-    ImGui::SameLine();
-    ImGui::Text("Options:");
-
-    ImGui::Indent(10.0f);
-
-    ImGui::Checkbox("##ReplaceOld", &pasteService->ReplaceOld);
-    ImGui::SameLine();
-    ImGui::Text("Clean workspace on paste");
-    if (ImGui::IsItemHovered()) {
-        ImGui::SetTooltip("Removes existing cubes before placing the new model to avoid overlapping.");
-    }
-
-    ImGui::Unindent(10.0f);
 
     ImGui::EndGroup();
+
+	this->pasteService->RenderPopup();
 }
 
 void KoGaMaTools::Services::ModelModule::ModelService::Execute_CopyModel()
@@ -108,13 +97,12 @@ void KoGaMaTools::Services::ModelModule::ModelService::Execute_CopyModel()
 
 void KoGaMaTools::Services::ModelModule::ModelService::Execute_PasteModel()
 {
-    
+
     mainComponent->ExecuteCallback([this](void*) {
         auto modelCurrent = ModelUtils::GetCurrentModel();
         if (!modelCurrent.isNull())
         {
-            this->pasteService->PasteCube(modelCurrent);
-            TextCommandService::NotifyUser("Pasting model to current model.");
+            this->pasteService->RequestOpenPopup(modelCurrent);
         }
         else {
             TextCommandService::NotifyUser("No model selected to copy.");
@@ -139,12 +127,12 @@ void KoGaMaTools::Services::ModelModule::ModelService::Execute_SaveModel()
         {
             try
             {
-                const auto& cubes = Instance->copyService->copiedCubes;
+                const auto cubes = Instance->copyService->copiedCubes;
 
-                if (cubes.empty())
+                if (cubes->empty())
                     return;
 
-                auto msgpack = nlohmann::json::to_msgpack(cubes);
+                auto msgpack = nlohmann::json::to_msgpack(*cubes);
 
                 std::span<const char> buffer(
                     reinterpret_cast<const char*>(msgpack.data()),
@@ -189,8 +177,9 @@ void KoGaMaTools::Services::ModelModule::ModelService::Execute_LoadModel()
 
                 auto jsonData = nlohmann::json::from_msgpack(*data);
 
-                Instance->copyService->copiedCubes =
-                    jsonData.get<std::vector<CubeInfo>>();
+				Instance->copyService->copiedCubes = std::make_shared<std::vector<CubeInfo>>(
+                    jsonData.get<std::vector<CubeInfo>>()
+                );
             }
             catch (const std::exception& e)
             {

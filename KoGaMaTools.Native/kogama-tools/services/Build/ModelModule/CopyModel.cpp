@@ -48,7 +48,9 @@ bool KoGaMaTools::Services::ModelModule::CopyModelService::Resolve(TextCommandSe
 
 void KoGaMaTools::Services::ModelModule::CopyModelService::CopyModel(Tools::Il2Cpp::Il2CppObject wo)
 {
-	copiedCubes = ModelUtils::GetCubesInfo(ModelUtils::GetModel(wo));
+	copiedCubes = std::make_shared<std::vector<CubeInfo>>(
+		ModelUtils::GetCubesInfo(ModelUtils::GetModel(wo))
+	);
 }
 
 std::string_view KoGaMaTools::Services::ModelModule::CopyModelService::GetCommandHelp()

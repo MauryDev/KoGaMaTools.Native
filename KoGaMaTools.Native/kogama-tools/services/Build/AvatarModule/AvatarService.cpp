@@ -87,7 +87,7 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::PasteAvatar()
 	auto current = AvatarUtils::GetCurrentAvatar();
 	if (!current.isNull() && AvatarUtils::IsOwner(current))
 	{
-		_mainComponent->AddCoroutine(AvatarUtils::PasteAvatarCoro(current, RemoveOldWorkpace, _avatarInfo));
+		_mainComponent->AddCoroutine(AvatarUtils::PasteAvatarCoro(current, RemoveOldWorkpace, *_avatarInfo));
 	}
 
 }
@@ -99,7 +99,7 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::CopyAvatar()
 		auto current = AvatarUtils::GetCurrentAvatar();
 		if (!current.isNull() && AvatarUtils::IsOwner(current))
 		{
-			_avatarInfo = AvatarUtils::GetAvatarInfo(current);
+			_avatarInfo = std::make_shared<AvatarInfo>(AvatarUtils::GetAvatarInfo(current));
 		}
 
 	});
@@ -130,9 +130,9 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::ImportAvatar()
 				}
 
 				auto jsonData = nlohmann::json::from_msgpack(*data);
-
-				Instance->_avatarInfo =
-					jsonData.get<AvatarInfo>();
+				Instance->_avatarInfo = std::make_shared<AvatarInfo>(
+					jsonData.get<AvatarInfo>()
+				);
 			}
 			catch (const std::exception& e)
 			{
@@ -155,11 +155,11 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::ExportAvatar()
 		{
 			try
 			{
-				const auto& cubes = _avatarInfo;
+				const auto cubes = _avatarInfo;
 
 				
 
-				auto msgpack = nlohmann::json::to_msgpack(cubes);
+				auto msgpack = nlohmann::json::to_msgpack(*cubes);
 
 				std::span<const char> buffer(
 					reinterpret_cast<const char*>(msgpack.data()),
