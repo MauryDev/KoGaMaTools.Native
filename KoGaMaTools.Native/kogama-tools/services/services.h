@@ -40,3 +40,4 @@
 
 #include "IO/KoGaMaEnvironmentWindows.h"
 #include "IO/WindowsFileService.h"
+#include "Graphics/ScreenshotModule/ScreenshotService.h"

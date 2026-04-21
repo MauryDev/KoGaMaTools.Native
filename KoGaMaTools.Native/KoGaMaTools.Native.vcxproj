@@ -172,6 +172,8 @@
     <ClCompile Include="kogama-tools\services\Build\ModelModule\CustomModelScale.cpp" />
     <ClCompile Include="kogama-tools\services\Build\ModelModule\ModelPreviewTest.cpp" />
     <ClCompile Include="kogama-tools\services\Common\AntiBanService.cpp" />
+    <ClCompile Include="kogama-tools\services\Graphics\ScreenshotModule\ScreenshotService.cpp" />
+    <ClCompile Include="kogama-tools\services\Graphics\ScreenshotModule\ScreenshotUtils.cpp" />
     <ClCompile Include="kogama-tools\services\IO\IKoGaMaEnvironment.cpp" />
     <ClCompile Include="kogama-tools\services\IO\KoGaMaEnvironmentWindows.cpp" />
     <ClCompile Include="kogama-tools\services\IO\WindowsFileService.cpp" />
@@ -235,6 +237,10 @@
     <ClInclude Include="kogama-tools\services\Build\ModelModule\CustomModelScale.h" />
     <ClInclude Include="kogama-tools\services\Build\ModelModule\ModelPreviewTest.h" />
     <ClInclude Include="kogama-tools\services\Common\AntiBanService.h" />
+    <ClInclude Include="kogama-tools\services\Graphics\ScreenshootModule\ScreenshootUtils.h" />
+    <ClInclude Include="kogama-tools\services\Graphics\ScreenshotModule\Structs.h" />
+    <ClInclude Include="kogama-tools\services\Graphics\ScreenshotModule\ScreenshotService.h" />
+    <ClInclude Include="kogama-tools\services\Graphics\ScreenshotModule\ScreenshotUtils.h" />
     <ClInclude Include="kogama-tools\services\IO\IFileService.h" />
     <ClInclude Include="kogama-tools\services\IO\IKoGaMaEnvironment.h" />
     <ClInclude Include="kogama-tools\services\IO\KoGaMaEnvironmentWindows.h" />

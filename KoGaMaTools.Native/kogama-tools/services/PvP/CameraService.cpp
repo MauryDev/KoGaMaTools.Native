@@ -201,10 +201,12 @@ void KoGaMaTools::Services::CameraService::OnSetCameraHook(void* instance, int c
 {
 	namespace K = KoGaMaAPI::KoGaMa;
 
+	/*
 	if (Instance->enableThirdPerson && cameratype == K::CameraType::f_FirstPersonCamera.Get<int>())
 	{
 		return;
 	}
+	*/
 
 	Original_SetCamera(instance, cameratype);
 }

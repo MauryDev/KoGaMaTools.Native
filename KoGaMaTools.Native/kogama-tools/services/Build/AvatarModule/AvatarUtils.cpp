@@ -80,6 +80,12 @@ namespace KoGaMaTools::Services::AvatarModule::AvatarUtils  {
         }
     }
 
+    KoGaMaTools::Services::MainComponent::TaskCoroutine PasteAvatarCoro(Tools::Il2Cpp::Il2CppObject bodyAvatar, bool replaceOld, std::shared_ptr<AvatarInfo> avatarInfo)
+    {
+        auto task = PasteAvatarCoro(bodyAvatar, replaceOld, *avatarInfo);
+        while (task.next()) co_yield{};
+    }
+
     Tools::Il2Cpp::Il2CppObject GetAvatarPart(Tools::Il2Cpp::Il2CppObject body, const char* namePart)
     {
         namespace K = KoGaMaAPI::KoGaMa;

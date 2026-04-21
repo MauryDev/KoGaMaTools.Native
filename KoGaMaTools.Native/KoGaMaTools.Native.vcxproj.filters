@@ -198,6 +198,12 @@
     <ClCompile Include="kogama-tools\services\Build\ModelModule\ModelPreviewTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="kogama-tools\services\Graphics\ScreenshotModule\ScreenshotUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kogama-tools\services\Graphics\ScreenshotModule\ScreenshotService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kogama-tools\services\KieroUI.h">
@@ -408,6 +414,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="kogama-tools\services\Build\ModelModule\ModelPreviewTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Graphics\ScreenshootModule\ScreenshootUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Graphics\ScreenshotModule\ScreenshotUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Graphics\ScreenshotModule\ScreenshotService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kogama-tools\services\Graphics\ScreenshotModule\Structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

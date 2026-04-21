@@ -11,5 +11,6 @@ void KoGaMaTools::UI::UI_UITab::Setup(KoGaMaTools::UI::MainUI& ui)
 	ui.AddComponents<S::ThemeService,
 		S::FogService,
 		S::LogicRenderService,
-		S::MessageReceiveService>(i);
+		S::MessageReceiveService,
+		S::ScreenshotModule::ScreenshotService>(i);
 }

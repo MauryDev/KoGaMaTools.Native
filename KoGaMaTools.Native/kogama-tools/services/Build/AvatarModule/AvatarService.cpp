@@ -19,7 +19,7 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::Render()
 	ImGui::SeparatorText("Avatar Tools");
 
 	ImGui::Spacing();
-
+	ImGui::TextDisabled("Local Operations");
 	if (ImGui::ImageButton("##AvatarCopyBtn", textureManager->GetTexture(IDB_PNG6), ImVec2(32, 32))) {
 		CopyAvatar();
 	}
@@ -87,7 +87,7 @@ void KoGaMaTools::Services::AvatarModule::AvatarService::PasteAvatar()
 	auto current = AvatarUtils::GetCurrentAvatar();
 	if (!current.isNull() && AvatarUtils::IsOwner(current))
 	{
-		_mainComponent->AddCoroutine(AvatarUtils::PasteAvatarCoro(current, RemoveOldWorkpace, *_avatarInfo));
+		_mainComponent->AddCoroutine(AvatarUtils::PasteAvatarCoro(current, RemoveOldWorkpace, _avatarInfo));
 	}
 
 }
