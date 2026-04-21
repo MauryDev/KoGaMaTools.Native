@@ -68,7 +68,9 @@ void KoGaMaTools::Services::ScreenshotModule::ScreenshotService::SelectFileToSav
 {
     IsBusy = true;
     std::thread([this]() {
-        auto selection = pfd::save_file("Select a file").result();
+        auto selection = pfd::save_file("Select a file", {}, {
+                "Image File", "*.png"
+            }).result();
         if (!selection.empty())
         {
             SaveScreenshot(selection);
